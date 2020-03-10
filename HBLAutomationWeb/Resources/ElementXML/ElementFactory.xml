@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ElementFactory>
+  <Module name="Login">
+    <Element keyword="Login_UserId" locator="//input[@name='Username']"/>
+    <Element keyword="Login_Password" locator="//input[@name='Password']"/>
+    <Element keyword="Login_SignIn_Button" locator="//button[@class='btn submit-btn ng-binding']"/>
+    <Element keyword="Login_OTP_field" locator="//input[@name='OneTimePassword']"/>
+    <Element keyword="Login_OTP_Verify_Button" locator="//button[@class='btn submit-btn']"/>
+    
+  </Module>
+    
+  <Module name ="BeneficiaryManagement">
+    <Element keyword="BeneficiaryManagement_Link" locator="//*[contains(text(),'Beneficiary Management ')]"/>
+    <Element keyword="BeneficiaryManagement_AddNewBtn" locator="//a[@title = 'Add New' and @class='btn add btn-responsive-fix d-md-block d-lg-block d-xl-block ng-scope']"/>
+    <Element keyword="BeneficiaryManagement_Bank" locator="//select[@name='bank']"/>
+    <Element keyword="BeneficiaryManagement_AccountNo" locator="//input[@name='account']"/>
+    <Element keyword="BeneficiaryManagement_BeneNick" locator="//input[@name='beneNick']"/>
+    <Element keyword="BeneficiaryManagement_PayeeEmail" locator="//input[@name='PayeeEmail']"/>
+    <Element keyword="BeneficiaryManagement_PayeeMobileNumber" locator="//input[@name='PayeeMobileNumber']"/>
+    <Element keyword="BeneficiaryManagement_Validate_Button" locator="//button[@class='btn submit-btn ng-binding']"/>
+  </Module>
+</ElementFactory>

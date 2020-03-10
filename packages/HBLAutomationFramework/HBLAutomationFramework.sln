@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataManipulationComponents", "DataManipulationComponents\DataManipulationComponents.csproj", "{5A3D65A0-17D5-43BA-945C-EA263B3E09E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessComponents", "DataAccessComponents\DataAccessComponents.csproj", "{D77282B9-F48F-4DDD-B438-6610A407EFF6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5A3D65A0-17D5-43BA-945C-EA263B3E09E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A3D65A0-17D5-43BA-945C-EA263B3E09E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A3D65A0-17D5-43BA-945C-EA263B3E09E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A3D65A0-17D5-43BA-945C-EA263B3E09E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D77282B9-F48F-4DDD-B438-6610A407EFF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D77282B9-F48F-4DDD-B438-6610A407EFF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D77282B9-F48F-4DDD-B438-6610A407EFF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D77282B9-F48F-4DDD-B438-6610A407EFF6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45
+	EndGlobalSection
+EndGlobal

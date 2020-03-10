@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>HBLAutomationFramework</id>
+    <version>1.0.0</version>
+    <title>HBLAutomationFramework</title>
+    <authors>Ali Abbas</authors>
+    <owners>Ali Abbas</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+	<dependencies>
+      <group targetFramework=".NETFramework4.5.2" />
+    </dependencies>
+    <license type="expression">MIT</license>
+    <description>Customized Database Layer For HBL Automation Framework</description>
+    <releaseNotes>Customized Database Layer For HBL Automation Framework</releaseNotes>
+    <copyright>Copyright 2020</copyright>
+  </metadata> 
+</package>

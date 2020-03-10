@@ -1,0 +1,17 @@
+C:\Users\mojiz.abidi50\Documents\Visual Studio 2015\Projects\HBLAutomationFramework\DataManipulationComponents\bin\Debug\DataManipulationComponents.dll.config
+C:\Users\mojiz.abidi50\Documents\Visual Studio 2015\Projects\HBLAutomationFramework\DataManipulationComponents\bin\Debug\DataManipulationComponents.dll
+C:\Users\mojiz.abidi50\Documents\Visual Studio 2015\Projects\HBLAutomationFramework\DataManipulationComponents\bin\Debug\DataManipulationComponents.pdb
+C:\Users\mojiz.abidi50\Documents\Visual Studio 2015\Projects\HBLAutomationFramework\DataManipulationComponents\bin\Debug\DataAccessComponent.dll
+C:\Users\mojiz.abidi50\Documents\Visual Studio 2015\Projects\HBLAutomationFramework\DataManipulationComponents\bin\Debug\log4net.dll
+C:\Users\mojiz.abidi50\Documents\Visual Studio 2015\Projects\HBLAutomationFramework\DataManipulationComponents\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\mojiz.abidi50\Documents\Visual Studio 2015\Projects\HBLAutomationFramework\DataManipulationComponents\bin\Debug\Oracle.DataAccess.dll
+C:\Users\mojiz.abidi50\Documents\Visual Studio 2015\Projects\HBLAutomationFramework\DataManipulationComponents\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\mojiz.abidi50\Documents\Visual Studio 2015\Projects\HBLAutomationFramework\DataManipulationComponents\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\mojiz.abidi50\Documents\Visual Studio 2015\Projects\HBLAutomationFramework\DataManipulationComponents\bin\Debug\DataAccessComponent.pdb
+C:\Users\mojiz.abidi50\Documents\Visual Studio 2015\Projects\HBLAutomationFramework\DataManipulationComponents\bin\Debug\log4net.xml
+C:\Users\mojiz.abidi50\Documents\Visual Studio 2015\Projects\HBLAutomationFramework\DataManipulationComponents\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\mojiz.abidi50\Documents\Visual Studio 2015\Projects\HBLAutomationFramework\DataManipulationComponents\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+C:\Users\mojiz.abidi50\Documents\Visual Studio 2015\Projects\HBLAutomationFramework\DataManipulationComponents\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\mojiz.abidi50\Documents\Visual Studio 2015\Projects\HBLAutomationFramework\DataManipulationComponents\obj\Debug\DataManipulationComponents.csprojResolveAssemblyReference.cache
+C:\Users\mojiz.abidi50\Documents\Visual Studio 2015\Projects\HBLAutomationFramework\DataManipulationComponents\obj\Debug\DataManipulationComponents.dll
+C:\Users\mojiz.abidi50\Documents\Visual Studio 2015\Projects\HBLAutomationFramework\DataManipulationComponents\obj\Debug\DataManipulationComponents.pdb
