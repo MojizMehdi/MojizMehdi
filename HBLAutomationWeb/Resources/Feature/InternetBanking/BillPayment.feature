@@ -32,8 +32,9 @@ Scenario Outline: 2 As a user i want to Verify Bill Payment through PAY
 	And I am performing on "Pay_BillPayment_NextBtn"
 	And I wait 3000
 	And I am performing on "Pay_BillPayment_Inquiry_NextBtn"
-	#And I scroll down "2" on "Pay_Transaction_Scroll_AmountLabel"
-	And I have given "<OTP_Value>" on "Login_OTP_field"
+	And I scroll to element "Pay_BillPayment_PayBtn"
+	And I have otp check and given <OTP_Value> on "Login_OTP_field" on company code <company_code_value>
+	And I have transaction pass check and given <tran_pass_value> on "Pay_Transaction_PayBill_TransactionPassword" on company code <company_code_value>
 	And I press Enter on "Pay_BillPayment_PayBtn"
 	And I wait 10000
 	Then verify through "Transaction is successful." on "Pay_Transaction_Success"
@@ -48,8 +49,8 @@ Scenario Outline: 2 As a user i want to Verify Bill Payment through PAY
 	And I am clicking on "Pay_Transaction_PayBillAmount_CloseBtn"
 	#And I have given "<Pay_BillPayment_ConsumerNo_Value>" on "Pay_Transaction_PayBill_BeneSearchTextbox"
 	#Then verify through "ConsumerNoContextVal" on "Pay_Transaction_Success"
-	And I am performing on "Pay_Transaction_PayBill_RatingCloseBtn"
+	#And I am performing on "Pay_Transaction_PayBill_RatingCloseBtn"
 	#And verify the result from <result_query> on Schema "<result_db_value>"
 	@source:Data/IBBillPayment.xlsx
 	Examples: 
-	|Case|status_query|DB_Value|Category_Value|Company_Value|Pay_BillPayment_ConsumerNo_Value|OTP_Value|tran_amount_query|from_account_query|company_name_query|consumer_no_query|db_val|
+	|Case|status_query|DB_Value|Category_Value|Company_Value|Pay_BillPayment_ConsumerNo_Value|company_code_value|OTP_Value|tran_pass_value|tran_amount_query|from_account_query|company_name_query|consumer_no_query|db_val|

@@ -359,5 +359,50 @@ namespace HBLAutomationWeb.Core
             selhelper.PressEnter(keyword.Locator);
         }
 
+
+        [When(@"I scroll to element ""(.*)""")]
+        public void WhenIScrollToElement(string Keyword)
+        {
+            SeleniumHelper selhelper = new SeleniumHelper();
+            //selhelper.checkPageIsReady();
+            Thread.Sleep(3000);
+            Element keyword = ContextPage.GetInstance().GetElement(Keyword);
+            selhelper.ScrollToElement(keyword.Locator);
+        }
+
+        [When(@"I have otp check and given (.*) on ""(.*)"" on company code (.*)")]
+        public void WhenIHaveOtpCheckAndGivenOnOnCompanyCode(string otp_value, string Keyword, string company_code_value)
+        {
+            string query = "SELECT CC.IS_OTP_REQUIRED FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE = '" + company_code_value + "' AND CC.CHANNEL_CODE = 'MB'";
+            DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
+            DataTable SourceDataTable = dlink.GetDataTable(query, "QAT_BPS");
+            string is_otp_req = SourceDataTable.Rows[0][0].ToString();
+            if (is_otp_req == "1")
+            {
+                SeleniumHelper selhelper = new SeleniumHelper();
+                //selhelper.checkPageIsReady();
+                Thread.Sleep(3000);
+                Element keyword = ContextPage.GetInstance().GetElement(Keyword);
+                selhelper.SetTextBoxValue(otp_value, keyword.Locator);
+            }
+        }
+
+        [When(@"I have transaction pass check and given (.*) on ""(.*)"" on company code (.*)")]
+        public void WhenIHaveTransactionPassCheckAndGivenOnOnCompanyCode(string otp_value, string Keyword, string company_code_value)
+        {
+            string query = "SELECT CC.IS_PWD_REQUIRED FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE = '" + company_code_value + "' AND CC.CHANNEL_CODE = 'MB'";
+            DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
+            DataTable SourceDataTable = dlink.GetDataTable(query, "QAT_BPS");
+            string is_tran_req = SourceDataTable.Rows[0][0].ToString();
+            if (is_tran_req == "1")
+            {
+                SeleniumHelper selhelper = new SeleniumHelper();
+                //selhelper.checkPageIsReady();
+                Thread.Sleep(3000);
+                Element keyword = ContextPage.GetInstance().GetElement(Keyword);
+                selhelper.SetTextBoxValue(otp_value, keyword.Locator);
+            }
+        }
+
     }
 }

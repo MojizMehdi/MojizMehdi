@@ -44,5 +44,6 @@
     <Element keyword="Pay_Transaction_PayBill_BeneSearchTextbox" locator="//input[@class='search-list ng-pristine ng-untouched ng-valid ng-empty']"/>
     <Element keyword="Pay_Transaction_PayBill_BeneSearchConsumerNo" locator="//p[@class='text-right ng-binding']"/>
     <Element keyword="Pay_Transaction_PayBill_RatingCloseBtn" locator="//div[@class='text-right ng-scope']//button[contains(text(),'Close')]"/>
+    <Element keyword="Pay_Transaction_PayBill_TransactionPassword" locator="//input[@name='TransactionPassword']"/> 
   </Module>  
 </ElementFactory>

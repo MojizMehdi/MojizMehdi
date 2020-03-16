@@ -56,6 +56,25 @@ namespace HBLAutomationWeb.Pages
             }
         }
 
+        public void ScrollToElement(string locator)
+        {
+            waitDriver.Until(ExpectedConditions.ElementExists(By.XPath(locator)));
+            {
+                IWebElement elementbutton = waitDriver.Until(ExpectedConditions.ElementExists(By.XPath(locator)));
+                IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+                js.ExecuteScript("arguments[0].scrollIntoView();", elementbutton);
+                // var elmnt = document.getElementById("content");
+                //  elmnt.scrollIntoView();
+                //IWebElement button = waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
+                //{
+                //    //button.SendKeys(OpenQA.Selenium.Keys.Enter);
+                //    button.Click();
+                //}
+                // js.executeScript("arguments[0].scrollIntoView();", locator);
+
+            }
+        }
+
         public void verification(string message, string locator)
         {
             try
