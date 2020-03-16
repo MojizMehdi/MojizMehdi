@@ -19,4 +19,30 @@
     <Element keyword="BeneficiaryManagement_PayeeMobileNumber" locator="//input[@name='PayeeMobileNumber']"/>
     <Element keyword="BeneficiaryManagement_Validate_Button" locator="//button[@class='btn submit-btn ng-binding']"/>
   </Module>
+
+  <Module name ="Pay">
+    <Element keyword="Pay_Link" locator="//*[contains(text(),'Pay ')]"/>
+    <Element keyword="Pay_AddNewBtn" locator="//a[contains(text(),'   Add New                 ') and @class='btn add float-right']"/>
+    <Element keyword="Pay_BillPaymentCategory" locator="//li[contains(text(),'{BillPaymentCategory}')]"/>
+    <Element keyword="Pay_BillPaymentCategory_Company" locator="//h2[@class='head ng-binding ng-scope' and contains(text(),'{Pay_BillPaymentCategory_Company}')]"/>
+    <Element keyword="Pay_BillPayment_ConsumerNo" locator="//input[@id='ConsumerNo']"/>
+    <Element keyword="Pay_BillPayment_NextBtn" locator="//button[@class='btn submit-btn' and text()='Next']"/>
+    <Element keyword="Pay_BillPayment_Inquiry_NextBtn" locator="//button[@class='btn btn submit-btn' and text()='Next']"/>
+    <Element keyword="Pay_BillPayment_PayBtn" locator="//button[@class='btn submit-btn' and text()='Pay']"/>
+    <Element keyword="Pay_Transaction_Success" locator="//div[@class='congrats-div ng-scope']//div[@class='display-table']//p"/>
+    <Element keyword="Pay_Transaction_Success_Amount" locator="//h2[@class='ng-binding' and text()='Transaction Amount']//following-sibling::p"/>
+    <Element keyword="Pay_Transaction_Success_FromAccount" locator="//h2[@class='ng-binding' and text()='From']//following-sibling::p"/>
+    <Element keyword="Pay_Transaction_Success_CompanyName" locator="//h2[@class='ng-binding' and text()='Billing Company Name']//following-sibling::p"/>
+    <Element keyword="Pay_Transaction_Success_ConsumerNo" locator="//h2[@class='ng-binding' and text()='Consumer Number']//following-sibling::p"/>
+    <Element keyword="Pay_Transaction_ID" locator="//*[contains(text(),'Transaction ID')]//following-sibling::p"/>
+    <Element keyword="Pay_Transaction_Scroll_AmountLabel" locator="//label[@for='Amount']"/>
+    <Element keyword="Pay_Transaction_ToggleAutoPay" locator="//label[@class='auto-pay']"/>
+    <Element keyword="Pay_Transaction_PayBillAmount_RadioBtn" locator="//label[@class='custom-control-label' and contains(text(),'Pay Bill Amount')]"/>
+    <Element keyword="Pay_Transaction_PayBillAmount_NextBtn" locator="//div[@class='ng-scope']//button[@class='btn submit-btn' and contains(text(),'Next')]"/>
+    <Element keyword="Pay_Transaction_PayBillAmount_AgreeBtn" locator="//button[@class='btn ng-scope' and contains(text(),'Agree')]"/>
+    <Element keyword="Pay_Transaction_PayBillAmount_CloseBtn" locator="//div[@class='ng-scope']//a[@class='btn ng-scope' and contains(text(),'Close')]"/>
+    <Element keyword="Pay_Transaction_PayBill_BeneSearchTextbox" locator="//input[@class='search-list ng-pristine ng-untouched ng-valid ng-empty']"/>
+    <Element keyword="Pay_Transaction_PayBill_BeneSearchConsumerNo" locator="//p[@class='text-right ng-binding']"/>
+    <Element keyword="Pay_Transaction_PayBill_RatingCloseBtn" locator="//div[@class='text-right ng-scope']//button[contains(text(),'Close')]"/>
+  </Module>  
 </ElementFactory>

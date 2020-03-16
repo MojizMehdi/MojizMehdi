@@ -70,13 +70,21 @@ namespace HBLAutomationWeb.Core
 
             try
             {
-                if (Common.Configuration.GetInstance().GetByKey("ConnectionString") != null && Common.Configuration.GetInstance().GetByKey("ProviderName") != null)
+                if (Common.Configuration.GetInstance().GetByKey("ConnectionString_QADB") != null && Common.Configuration.GetInstance().GetByKey("ProviderName") != null)
                 {
-                    connectionStringsSection.ConnectionStrings["QADB"].ConnectionString = Common.Configuration.GetInstance().GetByKey("ConnectionString");
+                    connectionStringsSection.ConnectionStrings["QADB"].ConnectionString = Common.Configuration.GetInstance().GetByKey("ConnectionString_QADB");
                     connectionStringsSection.ConnectionStrings["QADB"].ProviderName = Common.Configuration.GetInstance().GetByKey("ProviderName");
                     config.Save();
                     ConfigurationManager.RefreshSection("connectionStrings");
                 }
+                if (Common.Configuration.GetInstance().GetByKey("ConnectionString_QAT_BPS") != null && Common.Configuration.GetInstance().GetByKey("ProviderName") != null)
+                {
+                    connectionStringsSection.ConnectionStrings["QAT_BPS"].ConnectionString = Common.Configuration.GetInstance().GetByKey("ConnectionString_QAT_BPS");
+                    connectionStringsSection.ConnectionStrings["QAT_BPS"].ProviderName = Common.Configuration.GetInstance().GetByKey("ProviderName");
+                    config.Save();
+                    ConfigurationManager.RefreshSection("connectionStrings");
+                }
+
             }
             catch (Exception ex)
             {
