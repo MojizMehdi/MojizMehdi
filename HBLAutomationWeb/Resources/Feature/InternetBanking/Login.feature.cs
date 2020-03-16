@@ -67,11 +67,13 @@ namespace HBLAutomationWeb.Resources.Feature.InternetBanking
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("1 As a user i want to Verify login for HBL Web")]
         [NUnit.Framework.CategoryAttribute("Bene_Addition")]
-        [NUnit.Framework.TestCaseAttribute("When user id and password are valid", "naeemcar", "pakistan1", "12345", null, Category="source:Data/IBLogin.xlsx")]
+        [NUnit.Framework.CategoryAttribute("BillPayment")]
+        [NUnit.Framework.TestCaseAttribute("When user id and password are valid", "abby", "pakistan1", "12345", null, Category="source:Data/IBLogin.xlsx")]
         public virtual void _1AsAUserIWantToVerifyLoginForHBLWeb(string @case, string login_UserId_Value, string login_Password_Value, string oTP_Value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "Bene_Addition"};
+                    "Bene_Addition",
+                    "BillPayment"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -115,8 +117,6 @@ this.ScenarioSetup(scenarioInfo);
  this.ScenarioSetup(scenarioInfo);
 #line 22
  testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 23
- testRunner.And(string.Format("update the data by query \"{0}\"", statusQuery), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 24
  testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 25

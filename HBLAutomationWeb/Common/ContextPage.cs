@@ -27,6 +27,8 @@ namespace HBLAutomationWeb.Common
 
         //public string Response;
         string Bene_AccountNo;
+        string Transaction_Id;
+        string Consumer_No;
 
         ////public string ENTITY_NAME = null;
         ////public string ACCOUNT_NO = null;
@@ -84,7 +86,22 @@ namespace HBLAutomationWeb.Common
         ////public string KeyError = null;
         //public int ErrorCount = 0;
 
-
+        public void SetConsumer_No(string Consumer_No)
+        {
+            this.Consumer_No = Consumer_No;
+        }
+        public string GetConsumer_No()
+        {
+            return Consumer_No;
+        }
+        public void SetTransaction_Id(string Transaction_Id)
+        {
+            this.Transaction_Id = Transaction_Id;
+        }
+        public string GetTransaction_Id()
+        {
+            return Transaction_Id;
+        }
         public void SetBeneAccountNo(string Bene_AccountNo)
         {
             this.Bene_AccountNo = Bene_AccountNo;
@@ -93,7 +110,6 @@ namespace HBLAutomationWeb.Common
         {
             return Bene_AccountNo;
         }
-
         //public void SetErrorCountValue(int ErrorCountvalue)
         //{
         //    ErrorCount = ErrorCountvalue;

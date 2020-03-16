@@ -1,5 +1,6 @@
 ﻿using HBLAutomationWeb.Common;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UITesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
@@ -47,18 +48,37 @@ namespace HBLAutomationWeb.Pages
                 //  elmnt.scrollIntoView();
                 IWebElement button = waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
                 {
-                    button.SendKeys(OpenQA.Selenium.Keys.Enter);
+                    //button.SendKeys(OpenQA.Selenium.Keys.Enter);
+                    button.Click();
                 }
                 // js.executeScript("arguments[0].scrollIntoView();", locator);
 
             }
         }
 
+        public void verification(string message, string locator)
+        {
+            try
+            {
+                IWebElement Control = waitDriver.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
+                Assert.AreEqual(message, Control.Text);
+            }
+            catch (ElementNotVisibleException ex)
+            {
+                throw new AssertFailedException(string.Format("The element provided {0} is invalid", locator));
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         //For returning the value from the web page of the keyword given
         public string ReturnKeywordValue(string locator)
         {
-            IWebElement Element = driver.FindElement(By.XPath(locator));
-            return Element.Text;
+            IWebElement Control = waitDriver.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
+            return Control.Text;
 
         }
 
@@ -130,6 +150,35 @@ namespace HBLAutomationWeb.Pages
                     Value.Clear();
                     Value.SendKeys(textboxvalue);
                 }
+            }
+            catch (ElementNotVisibleException)
+            {
+                throw new AssertFailedException(string.Format("The element provided {0} is not on screen", locator));
+            }
+            catch (StaleElementReferenceException)
+            {
+                throw new AssertFailedException(string.Format("The element provided {0} is Stale", locator));
+            }
+            catch (InvalidElementStateException)
+            {
+                throw new AssertFailedException(string.Format("The element provided {0} is not in desired state", locator));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("ex message: " + ex.Message);
+                throw new AssertFailedException(string.Format("The element provided {0} is invalid", locator));
+            }
+
+        }
+
+        //Method For Scroll Down
+
+        public void ScrollDown(int count, string locator)
+        {
+            try
+            {
+                Keyboard.SendKeys("{DOWN}");
+                
             }
             catch (ElementNotVisibleException)
             {

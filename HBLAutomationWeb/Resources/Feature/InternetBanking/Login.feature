@@ -3,7 +3,7 @@
 	As a math idiot
 	I want to be told the sum of two numbers
 
-@Bene_Addition
+@Bene_Addition @BillPayment
 Scenario Outline: 1 As a user i want to Verify login for HBL Web
 	Given the test case title is "<Case>"
 	And the user is arrive to Internet Banking home page 
@@ -20,7 +20,7 @@ Scenario Outline: 1 As a user i want to Verify login for HBL Web
 @Bene_Addition
 	Scenario Outline: As a user i want to Verify Beneficiary Addition for HBL Web
 	Given the test case title is "<Case>"
-	And update the data by query "<StatusQuery>"
+	#And update the data by query "<StatusQuery>"
 	And the user is arrive to Internet Banking home page
 	And I am clicking on "BeneficiaryManagement_Link"
 	And I am clicking on "BeneficiaryManagement_AddNewBtn"
