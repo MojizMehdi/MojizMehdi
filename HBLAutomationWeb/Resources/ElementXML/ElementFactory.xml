@@ -22,7 +22,7 @@
 
   <Module name ="Pay">
     <Element keyword="Pay_Link" locator="//*[contains(text(),'Pay ')]"/>
-    <Element keyword="Pay_AddNewBtn" locator="//a[contains(text(),'   Add New                 ') and @class='btn add float-right']"/>
+    <Element keyword="Pay_AddNewBtn" locator="//a[contains(text(),'Add New') and @class='btn add float-right']"/>
     <Element keyword="Pay_BillPaymentCategory" locator="//li[contains(text(),'{BillPaymentCategory}')]"/>
     <Element keyword="Pay_BillPaymentCategory_Company" locator="//h2[@class='head ng-binding ng-scope' and contains(text(),'{Pay_BillPaymentCategory_Company}')]"/>
     <Element keyword="Pay_BillPayment_ConsumerNo" locator="//input[@id='ConsumerNo']"/>
@@ -40,10 +40,12 @@
     <Element keyword="Pay_Transaction_PayBillAmount_RadioBtn" locator="//label[@class='custom-control-label' and contains(text(),'Pay Bill Amount')]"/>
     <Element keyword="Pay_Transaction_PayBillAmount_NextBtn" locator="//div[@class='ng-scope']//button[@class='btn submit-btn' and contains(text(),'Next')]"/>
     <Element keyword="Pay_Transaction_PayBillAmount_AgreeBtn" locator="//button[@class='btn ng-scope' and contains(text(),'Agree')]"/>
-    <Element keyword="Pay_Transaction_PayBillAmount_CloseBtn" locator="//div[@class='ng-scope']//a[@class='btn ng-scope' and contains(text(),'Close')]"/>
+    <Element keyword="Pay_Transaction_PayBillAmount_CloseBtn" locator="//div[@class='ng-scope']//a[contains(text(),'Close')]"/>
     <Element keyword="Pay_Transaction_PayBill_BeneSearchTextbox" locator="//input[@class='search-list ng-pristine ng-untouched ng-valid ng-empty']"/>
     <Element keyword="Pay_Transaction_PayBill_BeneSearchConsumerNo" locator="//p[@class='text-right ng-binding']"/>
     <Element keyword="Pay_Transaction_PayBill_RatingCloseBtn" locator="//div[@class='text-right ng-scope']//button[contains(text(),'Close')]"/>
-    <Element keyword="Pay_Transaction_PayBill_TransactionPassword" locator="//input[@name='TransactionPassword']"/> 
+    <Element keyword="Pay_Transaction_PayBill_RatingOkBtn" locator="//div[@class='text-right ng-scope']//button[contains(text(),'Ok')]"/>
+    <Element keyword="Pay_Transaction_PayBill_TransactionPassword" locator="//input[@name='TransactionPassword']"/>
+    <Element keyword="Pay_Transaction_PayBill_Rating" locator="//ul[@class='rating']//li[last()]"/>
   </Module>  
 </ElementFactory>

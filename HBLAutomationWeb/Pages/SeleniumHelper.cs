@@ -313,6 +313,68 @@ namespace HBLAutomationWeb.Pages
 
         }
 
+
+
+        //Method For Rating
+        public void rating(string locator)
+        {
+            try
+            {
+
+
+                //Home Page Locator
+                if (locator.Equals("Home Page Locator"))
+                {
+                    driver.Navigate().GoToUrl(Configuration.GetInstance().GetByKey("redirectionURL"));
+                    Thread.Sleep(2000);
+
+                    IWebElement link = waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
+
+                    link.Click();
+                }
+                else
+                {
+
+                    Thread.Sleep(3000);
+                    IWebElement link = waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
+                    if (Convert.ToBoolean(link.Displayed) == true)
+                    {
+                        waitDriver.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
+                        {
+                            waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
+                            {
+                                //IWebElement link = waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
+
+                                link.Click();
+                            }
+                        }
+                    }
+                    //IWebElement link = waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
+                    // if(locator.)
+                    else
+                    {
+                        //do nothing
+                    }
+                }
+            }
+            catch (ElementNotVisibleException)
+            {
+
+                throw new AssertFailedException(string.Format("The element provided {0} is not on screen", locator));
+            }
+            catch (StaleElementReferenceException)
+            {
+
+                throw new AssertFailedException(string.Format("The element provided {0} is Stale", locator));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("ex message: " + ex.Message);
+
+            }
+
+        }
+
         public void checkPageIsReady()
         {
             IJavaScriptExecutor js = (IJavaScriptExecutor)driver;

@@ -106,13 +106,21 @@ namespace HBLAutomationWeb.Core
 
             try
             {
-                if (!String.IsNullOrEmpty(Keyword))
+                if (Keyword == "Pay_Transaction_PayBill_Rating")
+                {
+                    SeleniumHelper selhelper = new SeleniumHelper();
+                    selhelper.checkPageIsReady();
+                    Element keyword = ContextPage.GetInstance().GetElement(Keyword);
+                    selhelper.rating(keyword.Locator);
+                }
+                else if (!String.IsNullOrEmpty(Keyword))
                 {
                     SeleniumHelper selhelper = new SeleniumHelper();
                     selhelper.checkPageIsReady();
                     Element keyword = ContextPage.GetInstance().GetElement(Keyword);
                     selhelper.links(keyword.Locator);
                 }
+                
 
             }
 
