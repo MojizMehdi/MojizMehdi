@@ -155,7 +155,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 26
  testRunner.And("I am clicking on \"Pay_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 27
- testRunner.When("I am performing on \"Pay_AddNewBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I am clicking on \"Pay_AddNewBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 28
  testRunner.And(string.Format("I am clicking on link \"{0}\" on \"Pay_BillPaymentCategory\"", category_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 29
@@ -203,8 +203,8 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.And("I am clicking on \"Pay_Transaction_PayBillAmount_AgreeBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 48
  testRunner.And("I am clicking on \"Pay_Transaction_PayBillAmount_CloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 52
- testRunner.And("verify the result from <result_query> on Schema \"<result_db_value>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 49
+ testRunner.And("I am clicking on \"Pay_Transaction_PayBill_Rating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

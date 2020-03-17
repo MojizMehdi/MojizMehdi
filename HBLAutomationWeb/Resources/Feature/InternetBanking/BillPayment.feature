@@ -24,7 +24,7 @@ Scenario Outline: 2 As a user i want to Verify Bill Payment through PAY
 	And update the data by query "<status_query2>" on DIGITAL_CHANNEL_SEC
 	And the user is arrive to Internet Banking home page 
 	And I am clicking on "Pay_Link"
-	When I am performing on "Pay_AddNewBtn"
+	When I am clicking on "Pay_AddNewBtn"
 	And I am clicking on link "<Category_Value>" on "Pay_BillPaymentCategory"
 	And I am clicking on link "<Company_Value>" on "Pay_BillPaymentCategory_Company"
 	And I have given "<Pay_BillPayment_ConsumerNo_Value>" on "Pay_BillPayment_ConsumerNo"
@@ -46,10 +46,11 @@ Scenario Outline: 2 As a user i want to Verify Bill Payment through PAY
 	And I am clicking on "Pay_Transaction_PayBillAmount_NextBtn"
 	And I am clicking on "Pay_Transaction_PayBillAmount_AgreeBtn"
 	And I am clicking on "Pay_Transaction_PayBillAmount_CloseBtn"
+	And I am clicking on "Pay_Transaction_PayBill_Rating"
 	#And I have given "<Pay_BillPayment_ConsumerNo_Value>" on "Pay_Transaction_PayBill_BeneSearchTextbox"
 	#Then verify through "ConsumerNoContextVal" on "Pay_Transaction_Success"
 	#And I am performing on "Pay_Transaction_PayBill_RatingCloseBtn"
-	And verify the result from <result_query> on Schema "<result_db_value>"
+	#And verify the result from <result_query> on Schema "<result_db_value>"
 	@source:Data/IBBillPayment.xlsx
 	Examples: 
 	|Case|status_query|status_query2|Category_Value|Company_Value|Pay_BillPayment_ConsumerNo_Value|company_code_value|OTP_Value|tran_pass_value|tran_amount_query|from_account_query|company_name_query|consumer_no_query|db_val|
