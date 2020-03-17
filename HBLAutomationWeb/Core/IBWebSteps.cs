@@ -215,6 +215,42 @@ namespace HBLAutomationWeb.Core
             }
         }
 
+        [Given(@"update the data by query ""(.*)"" on DIGITAL_CHANNEL_SEC")]
+        public void GivenUpdateTheDataByQueryOnDIGITAL_CHANNEL_SEC(string query)
+        {
+            if (query != "")
+            {
+                try
+                {
+                    DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
+                    dlink.GetNonQueryResult(query, "DIGITAL_CHANNEL_SEC");
+                }
+                catch (Exception e)
+                {
+                    throw new AssertFailedException(e.Message);
+
+                }
+            }
+        }
+        [Given(@"update the data by query ""(.*)"" on QAT_BPS")]
+        public void GivenUpdateTheDataByQueryOnQAT_BPS(string query)
+        {
+            if (query != "")
+            {
+                try
+                {
+                    DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
+                    dlink.GetNonQueryResult(query, "QAT_BPS");
+                }
+                catch (Exception e)
+                {
+                    throw new AssertFailedException(e.Message);
+
+                }
+            }
+
+        }
+
         [When(@"I sleep (.*)")]
         public void WhenISleep(int count)
         {
@@ -226,7 +262,7 @@ namespace HBLAutomationWeb.Core
             if (query != "")
             {
                 DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
-                DataTable SourceDataTable = dlink.GetDataTable(query, "QADB");
+                DataTable SourceDataTable = dlink.GetDataTable(query, "DIGITAL_CHANNEL_SEC");
                 string Bene_AccountNo = SourceDataTable.Rows[0][0].ToString();
                 context.SetBeneAccountNo(Bene_AccountNo);
             }
