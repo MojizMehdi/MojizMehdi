@@ -70,10 +70,10 @@ namespace HBLAutomationWeb.Core
 
             try
             {
-                if (Common.Configuration.GetInstance().GetByKey("ConnectionString_QADB") != null && Common.Configuration.GetInstance().GetByKey("ProviderName") != null)
+                if (Common.Configuration.GetInstance().GetByKey("ConnectionString_DIGITAL_CHANNEL_SEC") != null && Common.Configuration.GetInstance().GetByKey("ProviderName") != null)
                 {
-                    connectionStringsSection.ConnectionStrings["QADB"].ConnectionString = Common.Configuration.GetInstance().GetByKey("ConnectionString_QADB");
-                    connectionStringsSection.ConnectionStrings["QADB"].ProviderName = Common.Configuration.GetInstance().GetByKey("ProviderName");
+                    connectionStringsSection.ConnectionStrings["DIGITAL_CHANNEL_SEC"].ConnectionString = Common.Configuration.GetInstance().GetByKey("ConnectionString_DIGITAL_CHANNEL_SEC");
+                    connectionStringsSection.ConnectionStrings["DIGITAL_CHANNEL_SEC"].ProviderName = Common.Configuration.GetInstance().GetByKey("ProviderName");
                     config.Save();
                     ConfigurationManager.RefreshSection("connectionStrings");
                 }
@@ -194,10 +194,9 @@ namespace HBLAutomationWeb.Core
 
             var stepType = ScenarioStepContext.Current.StepInfo.StepDefinitionType.ToString();
 
-            PropertyInfo pInfo = typeof(ScenarioContext).GetProperty("TestStatus", BindingFlags.Instance | BindingFlags.NonPublic);
+            PropertyInfo pInfo = typeof(ScenarioContext).GetProperty("ScenarioExecutionStatus", BindingFlags.Instance | BindingFlags.Public);
             MethodInfo getter = pInfo.GetGetMethod(nonPublic: true);
             object TestResult = getter.Invoke(ScenarioContext.Current, null);
-
             if (ScenarioContext.Current.TestError == null && (!(TestResult.ToString().Contains("skipped") || TestResult.ToString() == "StepDefinitionPending")))
             {
                 if (stepType == "Given")
