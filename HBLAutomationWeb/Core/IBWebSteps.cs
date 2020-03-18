@@ -106,7 +106,7 @@ namespace HBLAutomationWeb.Core
 
             try
             {
-                if (Keyword == "Pay_Transaction_PayBill_Rating")
+                if (Keyword == "Pay_Transaction_PayBill_Rating" || Keyword == "Pay_Transaction_PayBill_RatingOkBtn")
                 {
                     SeleniumHelper selhelper = new SeleniumHelper();
                     selhelper.checkPageIsReady();

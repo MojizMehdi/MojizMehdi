@@ -41,7 +41,7 @@
     <Element keyword="Pay_Transaction_PayBillAmount_NextBtn" locator="//div[@class='ng-scope']//button[@class='btn submit-btn' and contains(text(),'Next')]"/>
     <Element keyword="Pay_Transaction_PayBillAmount_AgreeBtn" locator="//button[@class='btn ng-scope' and contains(text(),'Agree')]"/>
     <Element keyword="Pay_Transaction_PayBillAmount_CloseBtn" locator="//div[@class='ng-scope']//a[contains(text(),'Close')]"/>
-    <Element keyword="Pay_Transaction_PayBill_BeneSearchTextbox" locator="//input[@class='search-list ng-pristine ng-untouched ng-valid ng-empty']"/>
+    <Element keyword="Pay_Transaction_PayBill_BeneSearchTextbox" locator="//input[@type='search']/following-sibling::input"/>
     <Element keyword="Pay_Transaction_PayBill_BeneSearchConsumerNo" locator="//p[@class='text-right ng-binding']"/>
     <Element keyword="Pay_Transaction_PayBill_RatingCloseBtn" locator="//div[@class='text-right ng-scope']//button[contains(text(),'Close')]"/>
     <Element keyword="Pay_Transaction_PayBill_RatingOkBtn" locator="//div[@class='text-right ng-scope']//button[contains(text(),'Ok')]"/>
