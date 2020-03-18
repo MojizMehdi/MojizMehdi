@@ -10,7 +10,7 @@
   </Module>
     
   <Module name ="BeneficiaryManagement">
-    <Element keyword="BeneficiaryManagement_Link" locator="//*[contains(text(),'Beneficiary Management ')]"/>
+     <Element keyword="BeneficiaryManagement_Link" locator="//*[contains(text(),'Beneficiary Management ')]"/>
     <Element keyword="BeneficiaryManagement_AddNewBtn" locator="//a[@title = 'Add New' and @class='btn add btn-responsive-fix d-md-block d-lg-block d-xl-block ng-scope']"/>
     <Element keyword="BeneficiaryManagement_Bank" locator="//select[@name='bank']"/>
     <Element keyword="BeneficiaryManagement_AccountNo" locator="//input[@name='account']"/>
