@@ -49,7 +49,7 @@ Scenario Outline: 2 As a user i want to Verify Bill Payment through PAY
 	And I am clicking on "Pay_Transaction_PayBill_Rating"
 	And I am clicking on "Pay_Transaction_PayBill_RatingOkBtn"
 	And I have given "<Pay_BillPayment_ConsumerNo_Value>" on "Pay_Transaction_PayBill_BeneSearchTextbox"
-	Then verify through "ConsumerNoContextVal" on "Pay_Transaction_Success"
+	Then verify through "ConsumerNoContextVal" on "Pay_Transaction_PayBill_BeneSearchConsumerNo"
 	#And I am performing on "Pay_Transaction_PayBill_RatingCloseBtn"
 	#And verify the result from <result_query> on Schema "<result_db_value>"
 	@source:Data/IBBillPayment.xlsx
