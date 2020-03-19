@@ -55,6 +55,14 @@ namespace HBLAutomationWeb.Core
             //    SourceDataTable = dlink.GetDataTable("SELECT LB.COMPANY_CODE FROM LP_BILLS LB WHERE LB.CONSUMER_NO = '0400000263263' and LB.BILL_STATUS_ID=1 and LB.STAGING_ID='32551140'", "QAT_BPS");
             //    string Company = SourceDataTable.Rows[0][0].ToString();
             //}
+            if (Keyword.Contains("Accounts_NoOfDays"))
+            {
+                if ((Convert.ToInt32(textboxvalue) > Convert.ToInt32(context.GetAccStatementDays())) && (Convert.ToInt32(textboxvalue) == 0))
+                {
+                    throw new AssertFailedException("Number of Days must be between 1 and 100");
+                }
+            }
+
             if (Keyword.Contains("BeneficiaryManagement_AccountNo"))
             {
                 textboxvalue = context.GetBeneAccountNo();
@@ -448,5 +456,52 @@ namespace HBLAutomationWeb.Core
             }
         }
 
+        [When(@"I want value from textbox ""(.*)"" on database ""(.*)"" as ""(.*)""")]
+        public void WhenIWantValueFromTextboxOnDatabaseAs(string Keyword, string db_value, string query)
+        {
+            string value = "";
+            string value2 = "";
+            SeleniumHelper selhelper = new SeleniumHelper();
+            Element keyword = ContextPage.GetInstance().GetElement(Keyword);
+
+            if (query != "")
+            {
+                Thread.Sleep(2000);
+                DataAccessComponent.DataAccessLink dLink = new DataAccessComponent.DataAccessLink();
+                DataTable SourceDataTable = dLink.GetDataTable(query, db_value);
+                value = SourceDataTable.Rows[0][0].ToString();
+                string query_temp = query.Replace("'ACC_STATEMENT_MAX_DAY'", "'No of Days'");
+                SourceDataTable = null;
+                SourceDataTable = dLink.GetDataTable(query_temp, db_value);
+                value2 = SourceDataTable.Rows[0][0].ToString();
+                context.SetAccStatementDays(value2);
+            }
+
+            string keyword_value = selhelper.ReturnTextBoxValue(keyword.Locator);
+            if (value != keyword_value)
+            {
+                throw new AssertFailedException(string.Format("The Value against keyword is: {0} and value against db is:", keyword_value, value));
+            }
+        }
+
+        [When(@"I select date ""(.*)"" on month ""(.*)"" on year ""(.*)""")]
+        public void WhenISelectDateOnMonthOnYear(string date, string month, string year)
+        {
+            string keyword_date = "//a[contains(text(), ";
+            string keyword_month = "//select[@class='ui-datepicker-month']";
+            string keyword_year = "//select[@class='ui-datepicker-year']";
+            SeleniumHelper selhelper = new SeleniumHelper();
+            selhelper.checkPageIsReady();
+            //Element keyword = ContextPage.GetInstance().GetElement(keyword_month);
+            selhelper.combobox(month, keyword_month);
+            //keyword = null; 
+            //keyword = ContextPage.GetInstance().GetElement(keyword_year);
+            selhelper.combobox(year, keyword_year);
+            //keyword = null;
+            keyword_date = keyword_date + "'" + date + "')]";
+            //keyword = ContextPage.GetInstance().GetElement(keyword_year);
+            selhelper.links(keyword_date);
+
+        }
     }
 }

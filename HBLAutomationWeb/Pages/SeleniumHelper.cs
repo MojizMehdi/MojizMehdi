@@ -101,6 +101,13 @@ namespace HBLAutomationWeb.Pages
 
         }
 
+        //For returning the value inside of a text field of a keyword given
+        public string ReturnTextBoxValue(string locator)
+        {
+            IWebElement Control = waitDriver.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
+            return Control.GetAttribute("value");
+
+        }
 
         //Method For Scrolling
         public void Scroll(string locator)

@@ -47,5 +47,24 @@
     <Element keyword="Pay_Transaction_PayBill_RatingOkBtn" locator="//div[@class='text-right ng-scope']//button[contains(text(),'Ok')]"/>
     <Element keyword="Pay_Transaction_PayBill_TransactionPassword" locator="//input[@name='TransactionPassword']"/>
     <Element keyword="Pay_Transaction_PayBill_Rating" locator="//ul[@class='rating']//li[last()]"/>
-  </Module>  
+  </Module>
+
+  <Module name ="Accounts">
+    <Element keyword="Accounts_Link" locator="//a[contains(text(),'Accounts')]"/>
+    <Element keyword="Accounts_FromDate" locator="//input[@name='fromDate']"/>
+    <Element keyword="Accounts_ToDate" locator="//input[@name='ToDate']"/>
+    <Element keyword="Accounts_NoOfDays" locator="//input[@name='NumberOfDays']"/>
+    <Element keyword="Accounts_Generate_Button" locator="//button[@type='button' and text()='Generate']"/>
+    <Element keyword="Accounts_CSV_Button" locator="//button[@type='button' and text()='CSV']"/>
+    <Element keyword="Accounts_PDF_Button" locator="//button[@type='button' and text()='PDF']"/>
+  </Module>
+
+  <Module name="Settings">
+    <Element keyword="Settings_icon" locator="//div[@class='actions col-lg-5 col-xl-5']//a[contains(text(),'Settings')]"/>
+    <Element keyword="Settings_login_old_pass" locator="//input[@ng-model='ChangePassword.oldPassword']"/>
+    <Element keyword="Settings_login_new_pass" locator="//input[@ng-model='ChangePassword.newPassword']"/>
+    <Element keyword="Settings_login_confirm_pass" locator="//input[@ng-model='ChangePassword.confrimpassword']"/>
+    <Element keyword="Settings_change_login_button" locator="//div[@ng-form='LoginPasswordForm']//button[@class='btn submit-btn']"/>
+    
+  </Module>
 </ElementFactory>

@@ -29,6 +29,7 @@ namespace HBLAutomationWeb.Common
         string Bene_AccountNo;
         string Transaction_Id;
         string Consumer_No;
+        string Acc_Statement_Days;
 
         ////public string ENTITY_NAME = null;
         ////public string ACCOUNT_NO = null;
@@ -109,6 +110,15 @@ namespace HBLAutomationWeb.Common
         public string GetBeneAccountNo()
         {
             return Bene_AccountNo;
+        }
+
+        public void SetAccStatementDays(string Acc_Statement_Days)
+        {
+            this.Acc_Statement_Days = Acc_Statement_Days;
+        }
+        public string GetAccStatementDays()
+        {
+            return Acc_Statement_Days;
         }
         //public void SetErrorCountValue(int ErrorCountvalue)
         //{
