@@ -336,14 +336,16 @@ namespace HBLAutomationWeb.Pages
                 {
 
                     Thread.Sleep(3000);
-                    IWebElement link = waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
-                    if (Convert.ToBoolean(link.Displayed) == true)
+                    Boolean a = driver.FindElements(By.XPath(locator)).Count != 0;
+                    //bool a = driver.FindElement(By.XPath(locator)).Displayed;
+                    //IWebElement link = waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
+                    if (a == true)
                     {
                         waitDriver.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
                         {
                             waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
                             {
-                                //IWebElement link = waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
+                                IWebElement link = waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
 
                                 link.Click();
                             }
