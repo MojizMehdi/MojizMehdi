@@ -30,7 +30,8 @@ namespace HBLAutomationWeb.Common
         string Transaction_Id;
         string Consumer_No;
         string Acc_Statement_Days;
-
+        string Bill_Status;
+        string Company_Code;
         ////public string ENTITY_NAME = null;
         ////public string ACCOUNT_NO = null;
         ////public string EndPoint = null;
@@ -86,7 +87,14 @@ namespace HBLAutomationWeb.Common
         ////public string TimeInternationalTran = null;
         ////public string KeyError = null;
         //public int ErrorCount = 0;
-
+        public void SetCompany_Code(string Company_Code)
+        {
+            this.Company_Code = Company_Code;
+        }
+        public string GetCompany_Code()
+        {
+            return Company_Code;
+        }
         public void SetConsumer_No(string Consumer_No)
         {
             this.Consumer_No = Consumer_No;
@@ -94,6 +102,14 @@ namespace HBLAutomationWeb.Common
         public string GetConsumer_No()
         {
             return Consumer_No;
+        }
+        public void SetBill_Status(string Bill_Status)
+        {
+            this.Bill_Status = Bill_Status;
+        }
+        public string GetBill_Status()
+        {
+            return Bill_Status;
         }
         public void SetTransaction_Id(string Transaction_Id)
         {

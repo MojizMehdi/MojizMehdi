@@ -47,6 +47,8 @@
     <Element keyword="Pay_Transaction_PayBill_RatingOkBtn" locator="//div[@class='text-right ng-scope']//button[contains(text(),'Ok')]"/>
     <Element keyword="Pay_Transaction_PayBill_TransactionPassword" locator="//input[@name='TransactionPassword']"/>
     <Element keyword="Pay_Transaction_PayBill_Rating" locator="//ul[@class='rating']//li[last()]"/>
+    <Element keyword="Pay_Bill_Status" locator ="//div[@class='details ng-scope']//following-sibling::div[last()]//following-sibling::p[last()]" />
+    <Element keyword="Pay_Transaction_Unpaid_Amount" locator ="//input[@name='Amount']" />
   </Module>
 
   <Module name ="Accounts">
