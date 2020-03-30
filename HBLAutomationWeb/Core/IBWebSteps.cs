@@ -352,6 +352,7 @@ namespace HBLAutomationWeb.Core
             }
         }
 
+        [When(@"verify through database on ""(.*)"" on Schema ""(.*)"" on ""(.*)""")]
         [Then(@"verify through database on ""(.*)"" on Schema ""(.*)"" on ""(.*)""")]
         public void ThenVerifyThroughDatabaseOnOnSchemaOn(string query, string schema, string Keyword)
         {
@@ -381,8 +382,8 @@ namespace HBLAutomationWeb.Core
                     }
                 }
                 //selhelper.Scroll(keyword.Locator);
-                
 
+                
                 selhelper.verification(message, keyword.Locator);
             }
             catch (Exception exception)
@@ -459,6 +460,7 @@ namespace HBLAutomationWeb.Core
         [When(@"I want value from textbox ""(.*)"" on database ""(.*)"" as ""(.*)""")]
         public void WhenIWantValueFromTextboxOnDatabaseAs(string Keyword, string db_value, string query)
         {
+            bool due_date = false;
             string value = "";
             string value2 = "";
             SeleniumHelper selhelper = new SeleniumHelper();
@@ -470,14 +472,45 @@ namespace HBLAutomationWeb.Core
                 DataAccessComponent.DataAccessLink dLink = new DataAccessComponent.DataAccessLink();
                 DataTable SourceDataTable = dLink.GetDataTable(query, db_value);
                 value = SourceDataTable.Rows[0][0].ToString();
-                string query_temp = query.Replace("'ACC_STATEMENT_MAX_DAY'", "'No of Days'");
-                SourceDataTable = null;
-                SourceDataTable = dLink.GetDataTable(query_temp, db_value);
-                value2 = SourceDataTable.Rows[0][0].ToString();
-                context.SetAccStatementDays(value2);
+                if (Keyword.Equals("Accounts_NoOfDays"))
+                {
+                    string query_temp = query.Replace("'ACC_STATEMENT_MAX_DAY'", "'No of Days'");
+                    SourceDataTable = null;
+                    SourceDataTable = dLink.GetDataTable(query_temp, db_value);
+                    value2 = SourceDataTable.Rows[0][0].ToString();
+                    context.SetAccStatementDays(value2);
+                }
+                if (Keyword.Equals("Pay_Transaction_Unpaid_Amount"))
+                {
+                    context.SetCompany_Code(SourceDataTable.Rows[0][1].ToString());
+                    string temp_query = query.Replace("LB.BILL_AMOUNT", "LB.DUE_DATE");
+                    SourceDataTable = null;
+                    SourceDataTable = dLink.GetDataTable(temp_query, db_value);
+                    value2 = SourceDataTable.Rows[0][0].ToString();
+                    if(Convert.ToDateTime(value2) < DateTime.Today)
+                    {
+                        query = "SELECT L.CONSUMER_NAME_TEMPLATE FROM BPS_COMPANY_CHANNEL L WHERE L.CHANNEL_CODE='MB'  AND L.COMPANY_CODE = '" + context.GetCompany_Code() + "'";
+                        SourceDataTable = dLink.GetDataTable(query, db_value);
+                        value = SourceDataTable.Rows[0][0].ToString();
+                        string code = "Payable After Due Date|<FS_01:ATTRIBUTE";
+                        code = value.Substring(value.IndexOf(code) + code.Length);
+                        code = code.Split(new string[] { ">;" }, 2, StringSplitOptions.None)[0];
+                        query = temp_query.Replace("LB.DUE_DATE", "LB.ATTRIBUTE_" + code);
+                        SourceDataTable = dLink.GetDataTable(query, db_value);
+                        value = SourceDataTable.Rows[0][0].ToString();
+                    }
+                    value = Convert.ToDecimal(value).ToString("0.00");
+                }
+                
+
             }
 
             string keyword_value = selhelper.ReturnTextBoxValue(keyword.Locator);
+            if (context.GetBill_Status() != "UNPAID")
+            {
+                value = "";
+                keyword_value = "";
+            }
             if (value != keyword_value)
             {
                 throw new AssertFailedException(string.Format("The Value against keyword is: {0} and value against db is:", keyword_value, value));
@@ -503,5 +536,20 @@ namespace HBLAutomationWeb.Core
             selhelper.links(keyword_date);
 
         }
+
+        [When(@"Set parameter in context class ""(.*)""")]
+        public void WhenSetParameterInContextClass(string Keyword)
+        {
+            if (Keyword.Equals("Pay_Bill_Status"))
+            {
+                Element keyword = ContextPage.GetInstance().GetElement(Keyword);
+                SeleniumHelper selhelper = new SeleniumHelper();
+                selhelper.checkPageIsReady();
+                string bill_status = selhelper.ReturnKeywordValue(keyword.Locator);
+                context.SetBill_Status(bill_status);
+            }
+        }
+
+
     }
 }
