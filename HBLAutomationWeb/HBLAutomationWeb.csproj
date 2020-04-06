@@ -250,6 +250,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Login.feature</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Feature\InternetBanking\SendMoney\SendMoney.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SendMoney.feature</DependentUpon>
+    </Compile>
     <Compile Include="XML\apiconfiguration\ApiConfiguration.cs" />
     <Compile Include="XML\ElementFactory\Element.cs" />
     <Compile Include="XML\ElementFactory\ElementFactory.cs" />
@@ -275,6 +280,10 @@
     <None Include="Resources\Feature\InternetBanking\Login.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Login.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\Feature\InternetBanking\SendMoney\SendMoney.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SendMoney.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
