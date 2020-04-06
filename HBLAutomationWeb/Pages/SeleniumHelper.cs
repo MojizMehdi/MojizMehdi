@@ -128,6 +128,24 @@ namespace HBLAutomationWeb.Pages
         }
 
 
+        //For returning the background color from the web page of the keyword given
+        public string ReturnBackgroundColorKeywordValue(string locator)
+        {
+            IWebElement Control = waitDriver.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
+            string color = Control.GetCssValue("background-color");
+            String[] hexValue = color.Replace("rgba(", "").Replace(")", "").Split(',');
+            int hexValue1 = Convert.ToInt32(hexValue[0]);
+            hexValue[1] = hexValue[1].Trim();
+            int hexValue2 = Convert.ToInt32(hexValue[1]);
+            hexValue[2] = hexValue[2].Trim();
+            int hexValue3 = Convert.ToInt32(hexValue[2]);
+            //string color_actual = ColorTranslator.FromHtml(color);
+            Color myColor = Color.FromArgb(hexValue1, hexValue2, hexValue3);
+            string hex = myColor.R.ToString("X2") + myColor.G.ToString("X2") + myColor.B.ToString("X2");
+            return hex;
+        }
+
+
         ////For Taking Screenshot
         public static void TakeScreenshot()
         {

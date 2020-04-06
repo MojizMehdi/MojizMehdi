@@ -49,7 +49,22 @@
     <Element keyword="Pay_Transaction_PayBill_Rating" locator="//ul[@class='rating']//li[last()]"/>
     <Element keyword="Pay_Bill_Status" locator ="//div[@class='details ng-scope']//following-sibling::div[last()]//following-sibling::p[last()]" />
     <Element keyword="Pay_Transaction_Unpaid_Amount" locator ="//input[@name='Amount']" />
+    <Element keyword="Pay_Bill_Status_Color" locator ="//p[@class='val ng-binding']" />
   </Module>
+  <Module name ="SendMoney">
+    <Element keyword="SendMoney_Link" locator="//*[contains(text(),'Send Money ')]"/>
+    <Element keyword="SendMoney_AddNewBtn" locator="//a[contains(text(),'Add New') and @class='btn only-icon pull-right mr-3 mt-1']"/>
+    <Element keyword="SendMoney_FromAccount" locator="//select[@name='fromAccount']"/>
+    <Element keyword="SendMoney_Bank" locator="//select[@name='bank']"/>
+    <Element keyword="SendMoney_ToAccount" locator="//input[@name='account']"/>
+    <Element keyword="SendMoney_Amount" locator="//input[@name='Amount']"/>
+    <Element keyword="SendMoney_PurposeOfPayment" locator="//select[@name='purposeOfPayment']"/>
+    <Element keyword="SendMoney_BeneNick" locator="//input[@name='beneNick']"/>
+    <Element keyword="SendMoney_BeneMobileNo" locator="//input[@name='PayeeMobileNumber']"/>
+    <Element keyword="SendMoney_NextBtn" locator="//button[text()='Next']"/>
+    <Element keyword="SendMoney_SendBtn" locator="//button[text()='Send']"/>
+  </Module>
+
 
   <Module name ="Accounts">
     <Element keyword="Accounts_Link" locator="//a[contains(text(),'Accounts')]"/>

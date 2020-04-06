@@ -95,21 +95,21 @@ namespace HBLAutomationWeb.Resources.Feature.InternetBanking
 #line 7
 this.ScenarioSetup(scenarioInfo);
 #line 8
- testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
- testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_UserId\"", login_UserId_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And(string.Format("I have given \"{0}\" on \"Login_UserId\"", login_UserId_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_Password\"", login_Password_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And(string.Format("I have given \"{0}\" on \"Login_Password\"", login_Password_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
- testRunner.When("I am performing on \"Login_SignIn_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I am performing on \"Login_SignIn_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13
- testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 14
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 15
- testRunner.And("I am performing on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I am performing on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -162,75 +162,75 @@ this._1AsAUserIWantToVerifyLoginForHBLWebBillPayment("When user id and password 
 #line 21
 this.ScenarioSetup(scenarioInfo);
 #line 22
- testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 24
- testRunner.And(string.Format("update the data by query \"{0}\" on DIGITAL_CHANNEL_SEC", status_Query2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 25
- testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 26
- testRunner.And("I am clicking on \"Pay_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I am clicking on \"Pay_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 27
- testRunner.When("I am clicking on \"Pay_AddNewBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I am clicking on \"Pay_AddNewBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 28
- testRunner.And(string.Format("I am clicking on link \"{0}\" on \"Pay_BillPaymentCategory\"", category_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And(string.Format("I am clicking on link \"{0}\" on \"Pay_BillPaymentCategory\"", category_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 29
- testRunner.And(string.Format("I am clicking on link \"{0}\" on \"Pay_BillPaymentCategory_Company\"", company_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And(string.Format("I am clicking on link \"{0}\" on \"Pay_BillPaymentCategory_Company\"", company_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 30
- testRunner.And(string.Format("I have given \"{0}\" on \"Pay_BillPayment_ConsumerNo\"", pay_BillPayment_ConsumerNo_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And(string.Format("I have given \"{0}\" on \"Pay_BillPayment_ConsumerNo\"", pay_BillPayment_ConsumerNo_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 31
- testRunner.And("I am performing on \"Pay_BillPayment_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I am performing on \"Pay_BillPayment_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 32
- testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 33
- testRunner.And("Set parameter in context class \"Pay_Bill_Status\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("Set parameter in context class \"Pay_Bill_Status\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 35
- testRunner.And(string.Format("I want value from textbox \"Pay_Transaction_Unpaid_Amount\" on database \"{0}\" as \"{" +
-                        "1}\"", db_Val2, bill_Amount_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("verify color of bill status on \"Pay_Bill_Status_Color\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 37
- testRunner.And("I am performing on \"Pay_BillPayment_Inquiry_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 38
- testRunner.And("I scroll to element \"Pay_BillPayment_PayBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And(string.Format("I want value from textbox \"Pay_Transaction_Unpaid_Amount\" on database \"{0}\" as \"{" +
+                        "1}\"", db_Val2, bill_Amount_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 39
- testRunner.And(string.Format("I have otp check and given {0} on \"Login_OTP_field\" on company code {1}", oTP_Value, company_Code_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I am performing on \"Pay_BillPayment_Inquiry_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 40
- testRunner.And(string.Format("I have transaction pass check and given {0} on \"Pay_Transaction_PayBill_Transacti" +
-                        "onPassword\" on company code {1}", tran_Pass_Value, company_Code_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I scroll to element \"Pay_BillPayment_PayBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 41
- testRunner.And("I press Enter on \"Pay_BillPayment_PayBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And(string.Format("I have otp check and given {0} on \"Login_OTP_field\" on company code {1}", oTP_Value, company_Code_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 42
- testRunner.And("I wait 10000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And(string.Format("I have transaction pass check and given {0} on \"Pay_Transaction_PayBill_Transacti" +
+                        "onPassword\" on company code {1}", tran_Pass_Value, company_Code_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 43
- testRunner.Then("verify through \"Transaction is successful.\" on \"Pay_Transaction_Success\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("I press Enter on \"Pay_BillPayment_PayBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 44
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Success_Amou" +
-                        "nt\"", tran_Amount_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I wait 10000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 45
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Success_From" +
-                        "Account\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Then("verify through \"Transaction is successful.\" on \"Pay_Transaction_Success\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 46
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Success_Comp" +
-                        "anyName\"", company_Name_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Success_Amou" +
+                        "nt\"", tran_Amount_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 47
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Success_Cons" +
-                        "umerNo\"", consumer_No_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Success_From" +
+                        "Account\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 48
- testRunner.And("I am clicking on \"Pay_Transaction_ToggleAutoPay\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Success_Comp" +
+                        "anyName\"", company_Name_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 49
- testRunner.And("I am clicking on \"Pay_Transaction_PayBillAmount_RadioBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Success_Cons" +
+                        "umerNo\"", consumer_No_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 50
- testRunner.And("I am clicking on \"Pay_Transaction_PayBillAmount_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I am clicking on \"Pay_Transaction_ToggleAutoPay\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 51
- testRunner.And("I am clicking on \"Pay_Transaction_PayBillAmount_AgreeBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I am clicking on \"Pay_Transaction_PayBillAmount_RadioBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 52
- testRunner.And("I am clicking on \"Pay_Transaction_PayBillAmount_CloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I am clicking on \"Pay_Transaction_PayBillAmount_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 53
- testRunner.And("I am clicking on \"Pay_Transaction_PayBill_Rating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I am clicking on \"Pay_Transaction_PayBillAmount_AgreeBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 54
- testRunner.And("I am clicking on \"Pay_Transaction_PayBill_RatingOkBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I am clicking on \"Pay_Transaction_PayBillAmount_CloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 55
- testRunner.And(string.Format("I have given \"{0}\" on \"Pay_Transaction_PayBill_BeneSearchTextbox\"", pay_BillPayment_ConsumerNo_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("I am clicking on \"Pay_Transaction_PayBill_Rating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 56
- testRunner.Then("verify through \"ConsumerNoContextVal\" on \"Pay_Transaction_PayBill_BeneSearchConsu" +
+testRunner.And("I am clicking on \"Pay_Transaction_PayBill_RatingOkBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 57
+testRunner.And(string.Format("I have given \"{0}\" on \"Pay_Transaction_PayBill_BeneSearchTextbox\"", pay_BillPayment_ConsumerNo_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 58
+testRunner.Then("verify through \"ConsumerNoContextVal\" on \"Pay_Transaction_PayBill_BeneSearchConsu" +
                     "merNo\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

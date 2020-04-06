@@ -128,7 +128,7 @@ namespace HBLAutomationWeb.Core
                     Element keyword = ContextPage.GetInstance().GetElement(Keyword);
                     selhelper.links(keyword.Locator);
                 }
-                
+
 
             }
 
@@ -174,8 +174,8 @@ namespace HBLAutomationWeb.Core
             }
         }
 
-
         [Given(@"I select ""(.*)"" on ""(.*)""")]
+        [When(@"I select ""(.*)"" on ""(.*)""")]
         public void GivenISelectOn(string value, string Keyword)
         {
             if (String.IsNullOrEmpty(value))
@@ -329,7 +329,7 @@ namespace HBLAutomationWeb.Core
                     string tran_id = selhelper.ReturnKeywordValue(keyword.Locator);
                     context.SetTransaction_Id(tran_id);
                 }
-                
+
                 //        try
                 //        {
                 //            SeleniumHelper selhelper1 = new SeleniumHelper();
@@ -383,7 +383,7 @@ namespace HBLAutomationWeb.Core
                 }
                 //selhelper.Scroll(keyword.Locator);
 
-                
+
                 selhelper.verification(message, keyword.Locator);
             }
             catch (Exception exception)
@@ -487,7 +487,7 @@ namespace HBLAutomationWeb.Core
                     SourceDataTable = null;
                     SourceDataTable = dLink.GetDataTable(temp_query, db_value);
                     value2 = SourceDataTable.Rows[0][0].ToString();
-                    if(Convert.ToDateTime(value2) < DateTime.Today)
+                    if (Convert.ToDateTime(value2) < DateTime.Today)
                     {
                         query = "SELECT L.CONSUMER_NAME_TEMPLATE FROM BPS_COMPANY_CHANNEL L WHERE L.CHANNEL_CODE='MB'  AND L.COMPANY_CODE = '" + context.GetCompany_Code() + "'";
                         SourceDataTable = dLink.GetDataTable(query, db_value);
@@ -501,7 +501,7 @@ namespace HBLAutomationWeb.Core
                     }
                     value = Convert.ToDecimal(value).ToString("0.00");
                 }
-                
+
 
             }
 
@@ -550,6 +550,32 @@ namespace HBLAutomationWeb.Core
             }
         }
 
+        [When(@"verify color of bill status on ""(.*)""")]
+        public void WhenVerifyColorOfBillStatusOn(string Keyword)
+        {
+            string color_code = "";
+            Element keyword = ContextPage.GetInstance().GetElement(Keyword);
+            SeleniumHelper selhelper = new SeleniumHelper();
+            selhelper.checkPageIsReady();
+            string color_code_web = selhelper.ReturnBackgroundColorKeywordValue(keyword.Locator);
+            if (context.GetBill_Status() == "Unpaid")
+            {
+                color_code = "b75858";
+            }
+            else if (context.GetBill_Status() == "Paid")
+            {
+                color_code = "green";
+            }
+            else if (context.GetBill_Status() == "Blocked")
+            {
+                color_code = "b75858";
+            }
+            if (color_code.ToLower() != color_code_web.ToLower())
+            {
+                throw new AssertFailedException(string.Format("The Color Code against keyword is: {0} and color code given by user is {1}", color_code_web, color_code));
+            }
 
+
+        }
     }
 }
