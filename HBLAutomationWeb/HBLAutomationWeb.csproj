@@ -250,7 +250,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Login.feature</DependentUpon>
     </Compile>
-    <Compile Include="Resources\Feature\InternetBanking\SendMoney\SendMoney.feature.cs">
+    <Compile Include="Resources\Feature\InternetBanking\SendMoney.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SendMoney.feature</DependentUpon>
@@ -277,11 +277,12 @@
     <None Include="Resources\Feature\InternetBanking\Data\BeneficiaryAddition.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\IBBillPayment.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\IBLogin.xlsx" />
+    <None Include="Resources\Feature\InternetBanking\Data\SendMoney.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Login.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Login.feature.cs</LastGenOutput>
     </None>
-    <None Include="Resources\Feature\InternetBanking\SendMoney\SendMoney.feature">
+    <None Include="Resources\Feature\InternetBanking\SendMoney.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>SendMoney.feature.cs</LastGenOutput>
     </None>
