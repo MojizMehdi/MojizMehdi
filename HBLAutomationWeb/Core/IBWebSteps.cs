@@ -10,6 +10,8 @@ using System.Threading;
 using OpenQA.Selenium;
 using System.Windows.Forms;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Globalization;
+using System.Collections.Generic;
 
 namespace HBLAutomationWeb.Core
 {
@@ -188,6 +190,10 @@ namespace HBLAutomationWeb.Core
                 selhelper.checkPageIsReady();
                 Element keyword = ContextPage.GetInstance().GetElement(Keyword);
                 selhelper.combobox(value, keyword.Locator);
+                if (Keyword.Equals("SendMoney_Frequency"))
+                {
+                    context.Setfrequency(value);
+                }
             }
             catch (Exception exception)
             {
@@ -321,7 +327,7 @@ namespace HBLAutomationWeb.Core
                     message = context.GetConsumer_No();
                 }
                 selhelper.verification(message, keyword.Locator);
-                if (Keyword.Contains("Pay_Transaction_Success"))
+                if (Keyword.Contains("Pay_Transaction_Success") || Keyword.Contains("SendMoney_TranSuccessMessage"))
                 {
                     keyword = null;
                     string tranid_keyword = "Pay_Transaction_ID";
@@ -358,7 +364,14 @@ namespace HBLAutomationWeb.Core
         {
             if (query.Contains("DC_TRANSACTION"))
             {
-                query = query + context.GetTransaction_Id() + "'";
+                if (Keyword.Contains("SendMoney_TranToBank") || Keyword.Contains("SendMoney_TranType"))
+                {
+                    query = query + context.GetTransaction_Id() + "')";
+                }
+                else
+                {
+                    query = query + context.GetTransaction_Id() + "'";
+                }
             }
             try
             {
@@ -460,7 +473,7 @@ namespace HBLAutomationWeb.Core
         [When(@"I want value from textbox ""(.*)"" on database ""(.*)"" as ""(.*)""")]
         public void WhenIWantValueFromTextboxOnDatabaseAs(string Keyword, string db_value, string query)
         {
-            bool due_date = false;
+            //bool due_date = false;
             string value = "";
             string value2 = "";
             SeleniumHelper selhelper = new SeleniumHelper();
@@ -520,6 +533,31 @@ namespace HBLAutomationWeb.Core
         [When(@"I select date ""(.*)"" on month ""(.*)"" on year ""(.*)""")]
         public void WhenISelectDateOnMonthOnYear(string date, string month, string year)
         {
+            if(date == "" && month == "" && year == "")
+            {
+                if(context.Getfrom_to_date_flag() == false)
+                {
+                    string temp = DateTime.Now.Date.AddDays(1).ToString("dd MMM yyyy");
+                    date = temp.Substring(0, 2);
+                    month = temp.Substring(3, 3);
+                    year = temp.Substring(7, 4);
+                    if (Convert.ToInt32(date) < 10)
+                    {
+                        date = date.Substring(1,1);
+                    }
+                }
+                else if (context.Getfrom_to_date_flag() == true)
+                {
+                    string temp = DateTime.Now.Date.AddDays(30).ToString("dd MMM yyyy");
+                    date = temp.Substring(0, 2);
+                    month = temp.Substring(3, 3);
+                    year = temp.Substring(7, 4);
+                    if (Convert.ToInt32(date) < 10)
+                    {
+                        date = date.Substring(1, 1);
+                    }
+                }
+            }
             string keyword_date = "//a[contains(text(), ";
             string keyword_month = "//select[@class='ui-datepicker-month']";
             string keyword_year = "//select[@class='ui-datepicker-year']";
@@ -534,9 +572,24 @@ namespace HBLAutomationWeb.Core
             keyword_date = keyword_date + "'" + date + "')]";
             //keyword = ContextPage.GetInstance().GetElement(keyword_year);
             selhelper.links(keyword_date);
-
+            if (Convert.ToInt32(date) < 10)
+            {
+                date = ("0" + date);
+            }
+            string complete_date = date + " " + month + " " + year;
+            DateTime temp_date = DateTime.ParseExact(complete_date, "dd MMM yyyy", CultureInfo.InvariantCulture);
+            context.Settempdate(temp_date);
         }
-
+        [When(@"I set calendar from date")]
+        public void WhenISetCalendarFromDate()
+        {
+            context.Setcalendar_fromdate(context.Gettempdate());
+        }
+        [When(@"I set calendar to date")]
+        public void WhenISetCalendarToDate()
+        {
+            context.Setcalendar_todate(context.Gettempdate());
+        }
         [When(@"Set parameter in context class ""(.*)""")]
         public void WhenSetParameterInContextClass(string Keyword)
         {
@@ -574,8 +627,64 @@ namespace HBLAutomationWeb.Core
             {
                 throw new AssertFailedException(string.Format("The Color Code against keyword is: {0} and color code given by user is {1}", color_code_web, color_code));
             }
-
-
         }
+
+        [When(@"I am verifying list of execution iterations on ""(.*)""")]
+        public void WhenIAmVerifyingListOfExecutionIterationsOn(string Keyword)
+        {
+            Element keyword = ContextPage.GetInstance().GetElement(Keyword);
+            SeleniumHelper selhelper = new SeleniumHelper();
+            selhelper.checkPageIsReady();
+            //int loop_counter = 0;
+            int loop_increment_counter = 0;
+            string frequency = context.Getfrequency();
+            if (frequency == "Daily")
+            {
+                loop_increment_counter = 1;
+            }
+            else if (frequency == "Weekly")
+            {
+                loop_increment_counter = 7;
+            }
+            else if (frequency == "Fortnightly")
+            {
+                loop_increment_counter = 15;
+            }
+            else if (frequency == "Monthly")
+            {
+                loop_increment_counter = 30;
+            }
+            else if (frequency == "Quarterly")
+            {
+                loop_increment_counter = 90;
+            }
+            List<string> lst = new List<string>();
+            List<string> lstui = new List<string>();
+            double difference = 0;
+            DateTime st_date = context.Getcalendar_fromdate().Date;
+            DateTime ed_date = context.Getcalendar_todate().Date;
+            difference = ((ed_date - st_date).TotalDays) + 1;
+            difference = difference / loop_increment_counter;
+            int diff = Convert.ToInt32(difference) + 1;
+            int counter = 1;
+            for (int i = 0; i < diff * loop_increment_counter; i += loop_increment_counter)
+            {
+                DateTime temp = (st_date.Date.AddDays(i));
+                temp = temp.Date;
+                lst.Add(temp.ToString("dd MMM yyyy"));
+                string locator = keyword.Locator.Replace("{Iteration_Number}", counter.ToString());
+                lstui.Add(selhelper.ReturnKeywordValue(locator));
+                if(lst[counter - 1] != lstui[counter - 1])
+                {
+                    throw new AssertFailedException(string.Format("The Iteration Date against keyword is: {0} and Iteration Date calculated by code is {1}", lstui[counter], lst[counter]));
+                }
+                counter++;
+            }
+            //for (int i = 1; i <= loop_counter; i += loop_increment_counter)
+            //{
+
+            //}
+        }
+
     }
 }

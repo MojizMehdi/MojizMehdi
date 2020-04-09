@@ -32,61 +32,55 @@ namespace HBLAutomationWeb.Common
         string Acc_Statement_Days;
         string Bill_Status;
         string Company_Code;
-        ////public string ENTITY_NAME = null;
-        ////public string ACCOUNT_NO = null;
-        ////public string EndPoint = null;
-        ////public string QueryParam = null;
-        ////public string ResourceID = null;
-        ////public string ContentType = null;
-        ////public string ProductID = null;
-        ////public string Title = null;
-        ////public int AliasID = 0;
-        ////public string Alias = null;
-        ////public int WalletStatus = 0;
-        ////public string Subscriptiontype = null;
-        ////public string UserID = null;
-        ////public string ExternalToken = null;
-        ////public string Body = null;
-        ////public string FileName = null;
-        ////public string FilePath = null;
-        ////public string ContentMessage = null;
-        ////public string productCode = null;
-        ////public string CardID = null;
-        ////public string Relationship_ID = null;
-        ////public string Customer_ID = null;
-        ////public string Customer_CNIC = null;
-        ////public string ProductName = null;
-        ////public string FEE_CODE = null;
-        ////public string CloneName = null;
-        ////public string OTP = null;
-        ////public string NationalId = null;
-        ////public int STAN;
-        ////public string RequestId = null;
-        ////public string Token = null;
-        ////public string Document_ID = null;
+        string frequency;
+        bool from_to_date_flag = false;
+        DateTime calendar_fromdate;
+        DateTime calendar_todate;
+        DateTime tempdate;
 
-        ////public string voucherNumber = null;
-        ////public string apiContest = null;
+
+ 
         public string CutOvertime = null;
         public string Date = null;
 
-        ////public string CustomerId = null;
-        ////public string CustomerNIC_Recard = null;
-        ////public string Employee_CNIC = null;
-        ////public string calculatedHash = null;
 
-        ////public string Merchantid = null;
-        ////public string handlerId = null;
-        ////public string clientID = null;
-        ////public string consumerID = null;
-        ////public string channelID = null;
-        ////public string count = null;
-        ////public string DeviceID = null;
-        ////public string Installation_id = null;
-        ////public string DateInternationalTran = null;
-        ////public string TimeInternationalTran = null;
-        ////public string KeyError = null;
-        //public int ErrorCount = 0;
+        public bool Getfrom_to_date_flag()
+        {
+            return from_to_date_flag;
+        }
+        public void Setcalendar_fromdate(DateTime calendar_fromdate)
+        {
+            this.calendar_fromdate = calendar_fromdate;
+            from_to_date_flag = true;
+        }
+        public DateTime Getcalendar_fromdate()
+        {
+            return calendar_fromdate;
+        }
+        public void Settempdate(DateTime tempdate)
+        {
+            this.tempdate = tempdate;
+        }
+        public DateTime Gettempdate()
+        {
+            return tempdate;
+        }
+        public void Setcalendar_todate(DateTime calendar_todate)
+        {
+            this.calendar_todate = calendar_todate;
+        }
+        public DateTime Getcalendar_todate()
+        {
+            return calendar_todate;
+        }
+        public void Setfrequency(string frequency)
+        {
+            this.frequency = frequency;
+        }
+        public string Getfrequency()
+        {
+            return frequency;
+        }
         public void SetCompany_Code(string Company_Code)
         {
             this.Company_Code = Company_Code;
@@ -136,66 +130,7 @@ namespace HBLAutomationWeb.Common
         {
             return Acc_Statement_Days;
         }
-        //public void SetErrorCountValue(int ErrorCountvalue)
-        //{
-        //    ErrorCount = ErrorCountvalue;
-        //}
 
-        //public int GetErrorCountValue()
-        //{
-        //    return ErrorCount;
-        //}
-
-        //public void SetKeyErrorValue(string error)
-        //{
-        //    KeyError = error;
-        //}
-        //public string GetKeyErrorValue()
-        //{
-        //    return KeyError;
-        //}
-
-        //public void SetClientID(string clientIDD)
-        //{
-        //    clientIDD = clientID;
-        //}
-
-        //public string GetClientID()
-        //{
-        //    return clientID;
-        //}
-
-
-
-        //public void setDeviceID(string deviceId)
-        //{
-        //    DeviceID = deviceId;
-        //}
-
-        //public string getDeviceID()
-        //{
-        //    return DeviceID;
-        //}
-        //public void setxconsumerID(string consumerIDD)
-        //{
-        //    consumerIDD = consumerID;
-        //}
-        //public string getConsumerID()
-        //{
-        //    return consumerID;
-        //}
-
-        //public string GetChannelID()
-        //{
-        //    return consumerID;
-        //}
-        //public string cardAcceptorTermId = null;
-        //public string cardAcceptorIdCode = null;
-
-
-
-
-        //public int t_log_id;
 
         public static IWebDriver driver;
 
@@ -207,7 +142,7 @@ namespace HBLAutomationWeb.Common
 
 
 
-        //List<KeyValuePair<string, string>> Tokens = new List<KeyValuePair<string, string>>();
+       
 
         ExcelRecord excelRecord { get; set; }
 
@@ -222,213 +157,7 @@ namespace HBLAutomationWeb.Common
             excelRecord = record;
         }
 
-
-
-        //public string GetAPIContext()
-        //{
-        //    try
-        //    {
-        //        return apiContest;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new AssertFailedException("Something went wrong with the Framework");
-        //    }
-        //}
-        //public void setAPIContext(string file)
-        //{
-        //    if (file == null)
-        //        throw new System.ArgumentNullException("API Context is null.");
-        //    this.apiContest = file;
-        //}
-
-
-
-        //public void generateHASH(string hashvalues)
-        //{
-        //    SHA256 sha256Enc = SHA256.Create();
-        //    byte[] bytes = Encoding.UTF8.GetBytes(hashvalues);
-        //    byte[] hashKey = sha256Enc.ComputeHash(bytes);
-        //    StringBuilder hashVal = new StringBuilder();
-        //    for (int i = 0; i < hashKey.Length; i++)
-        //    {
-        //        hashVal.Append(hashKey[i].ToString("x2"));
-        //    }
-        //    string hash = hashVal.ToString().ToLower();
-        //    calculatedHash = hash;
-        //}
-        //public string getCalculatedHash()
-        //{
-        //    return calculatedHash;
-        //}
-
-
-        //public void SetTokens(List<KeyValuePair<string, string>> tokens)
-        //{
-        //    Tokens = tokens;
-        //}
-
-
-        //public void SETStan(int stan)
-        //{
-
-
-        //    STAN = stan + 1;
-        //}
-        //public int GetStan()
-        //{
-        //    return STAN;
-        //}
-
-        //public void SetTlogId(int t_log)
-        //{
-
-
-        //    t_log_id = t_log;
-        //}
-        //public int GeTlogId()
-        //{
-        //    return t_log_id;
-        //}
-
-        //public void SETVoucher(string voucher)
-        //{
-
-
-        //    voucherNumber = voucher;
-        //}
-        //public string GetVoucherNumber()
-        //{
-        //    return voucherNumber;
-        //}
-
-
-        //public void SETCardAcceptorTermId(string TermId)
-        //{
-
-
-        //    cardAcceptorTermId = TermId;
-        //}
-        //public string GetCardAcceptorTermId()
-        //{
-        //    return cardAcceptorTermId;
-        //}
-
-
-
-        //public void SETCardAcceptorIdCode(string idCode)
-        //{
-
-
-        //    cardAcceptorIdCode = idCode;
-        //}
-        //public string GetCardAcceptorIdCode()
-        //{
-        //    return cardAcceptorIdCode;
-        //}
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //public void SETDocId(string docId)
-        //{
-
-
-        //    Document_ID = docId;
-        //}
-        //public string GetDocId()
-        //{
-        //    return Document_ID;
-        //}
-        //public string GetReqId()
-        //{
-        //    return RequestId;
-        //}
-        //public void SETReqId(string reqId)
-        //{
-        //    RequestId = reqId;
-        //}
-
-
-        //public string GetMerchantId()
-        //{
-        //    return Merchantid;
-        //}
-        //public void SETMerchantId(string MerchantId)
-        //{
-        //    Merchantid = MerchantId;
-        //}
-
-
-
-        //public string GetHandlerId()
-        //{
-        //    return handlerId;
-        //}
-        //public void SETHandlerId(string handlerId)
-        //{
-        //    this.handlerId = handlerId;
-        //}
-        //public string GetTokens(string key)
-        //{
-        //    foreach (var keyValue in Tokens)
-        //    {
-        //        if (keyValue.Key.Equals(key))
-        //        {
-        //            return keyValue.Value;
-        //        }
-        //    }
-        //    throw new Exception("Failed to generate token from Kong Server.");
-        //}
-
-        //// public void SETOTP(string otp)
-        //// {
-        ////     OTP = otp;
-        //// }
-
-
-        //// public string Getotp()
-        //// {
-        ////     return OTP;
-        //// }
-        //public string GetToken()
-        //{
-        //    return Token;
-        //}
-        //public void SetToken(string token)
-        //{
-        //    Token = token;
-        //}
-
-
-        //public void SetApiConfiguration(ApiConfiguration apiConfiguration)
-        //{
-        //    this.apiConfiguration = apiConfiguration;
-        //}
-
-        //public ApiConfiguration GetApiConfiguration()
-        //{
-        //    return apiConfiguration;
-        //}
-
-        //public void SetCNIC(string cnic)
-        //{
-        //    Customer_CNIC = cnic;
-        //}
-
-        //public string GetCNIC()
-        //{
-        //    return Customer_CNIC;
-        //}
+        
         public string GetDate()
         {
             Date = DateTime.Today.AddDays(-1).ToString();

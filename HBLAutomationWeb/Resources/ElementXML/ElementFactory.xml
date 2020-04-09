@@ -6,9 +6,10 @@
     <Element keyword="Login_SignIn_Button" locator="//button[@class='btn submit-btn ng-binding']"/>
     <Element keyword="Login_OTP_field" locator="//input[@name='OneTimePassword']"/>
     <Element keyword="Login_OTP_Verify_Button" locator="//button[@class='btn submit-btn']"/>
-    
+    <Element keyword="Login_Dashboard" locator="//img[@class='desk-logo']"/>
   </Module>
-    
+
+  
   <Module name ="BeneficiaryManagement">
      <Element keyword="BeneficiaryManagement_Link" locator="//*[contains(text(),'Beneficiary Management ')]"/>
     <Element keyword="BeneficiaryManagement_AddNewBtn" locator="//a[@title = 'Add New' and @class='btn add btn-responsive-fix d-md-block d-lg-block d-xl-block ng-scope']"/>
@@ -59,10 +60,35 @@
     <Element keyword="SendMoney_ToAccount" locator="//input[@name='account']"/>
     <Element keyword="SendMoney_Amount" locator="//input[@name='Amount']"/>
     <Element keyword="SendMoney_PurposeOfPayment" locator="//select[@name='purposeOfPayment']"/>
+    <Element keyword="SendMoney_PurposeOfPaymentBene" locator="//select[@name='payment']"/>
     <Element keyword="SendMoney_BeneNick" locator="//input[@name='beneNick']"/>
     <Element keyword="SendMoney_BeneMobileNo" locator="//input[@name='PayeeMobileNumber']"/>
+    <Element keyword="SendMoney_BeneEmail" locator="//input[@name='PayeeEmail']"/>
     <Element keyword="SendMoney_NextBtn" locator="//button[text()='Next']"/>
     <Element keyword="SendMoney_SendBtn" locator="//button[text()='Send']"/>
+    <Element keyword="SendMoney_TranAmount" locator="//h2[@class='ng-binding' and text()='Transaction Amount']//following-sibling::p"/>
+    <Element keyword="SendMoney_TranFromAcc" locator="//h2[@class='ng-binding' and text()='From Account']//following-sibling::p"/>
+    <Element keyword="SendMoney_TranSourceAcc" locator="//h2[@class='ng-binding' and text()='Source Account Number:']//following-sibling::p" />
+    <Element keyword="SendMoney_TranToAcc" locator="//h2[@class='ng-binding' and text()='To Account']//following-sibling::p"/>
+    <Element keyword="SendMoney_TranToBank" locator="//h2[@class='ng-binding' and text()='To Bank']//following-sibling::p"/>
+    <Element keyword="SendMoney_TranBeneName" locator="//h2[@class='ng-binding' and text()='Beneficiary Name']//following-sibling::p"/>
+    <Element keyword="SendMoney_TranPurpose" locator="//h2[@class='ng-binding' and text()='Purpose']//following-sibling::p"/>
+    <Element keyword="SendMoney_TranFrequency" locator="//h2[@class='ng-binding' and text()='Frequency']//following-sibling::p"/>
+    <Element keyword="SendMoney_TranType" locator="//h2[@class='ng-binding' and text()='Transaction Type']//following-sibling::p"/>
+    <Element keyword="SendMoney_TranSuccessMessage" locator="//div[@class='congrats-div']//p"/>
+    <Element keyword="SendMoney_ScheduleCheck" locator="//span[@class='custom-control-description']"/>
+    <Element keyword="SendMoney_Frequency" locator="//select[@name='frequency']"/>
+    <Element keyword="SendMoney_Schedule_FromDate" locator="//input[@name='FirstExecutionDate']"/>
+    <Element keyword="SendMoney_Schedule_ToDate" locator="//input[@name='ExpiryDate']"/>
+    <Element keyword="SendMoney_Btn_ViewSummary" locator="//button[text()='View Summary']"/>
+    <Element keyword="SendMoney_Btn_Summary_OK" locator="//div[@class='modal-footer']//a[text()='OK' and @data-dismiss='modal']"/>
+    <Element keyword="SendMoney_Btn_Summary_Iteration_Dates" locator="//tr[@class='ng-scope'][{Iteration_Number}]//td[@class='ng-binding']"/>
+    <Element keyword="SendMoney_SearchBeneField" locator="//input[@type='search']"/>
+    <Element keyword="SendMoney_BeneClick" locator="//ul[@class='item']"/>
+    <Element keyword="SendMoney_CloseBtn" locator="//a[text()='Close']"/>
+    <Element keyword="SendMoney_ScheduleBtn" locator="//button[text()='Schedule']"/>
+    
+
   </Module>
 
 
