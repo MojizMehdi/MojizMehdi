@@ -20,8 +20,8 @@ Examples:
 @BillPayment
 Scenario Outline: 2 As a user i want to Verify Bill Payment through PAY
 Given the test case title is "<Case>"
-#And update the data by query "<status_query>" on QAT_BPS
-#And update the data by query "<status_query2>" on DIGITAL_CHANNEL_SEC
+And update the data by query "<status_query>" on QAT_BPS
+And update the data by query "<status_query2>" on DIGITAL_CHANNEL_SEC
 And the user is arrive to Internet Banking home page 
 And I am clicking on "Pay_Link"
 When I am clicking on "Pay_AddNewBtn"

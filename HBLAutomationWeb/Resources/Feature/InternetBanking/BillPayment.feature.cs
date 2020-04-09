@@ -163,6 +163,10 @@ this._1AsAUserIWantToVerifyLoginForHBLWebBillPayment("When user id and password 
 this.ScenarioSetup(scenarioInfo);
 #line 22
 testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 23
+testRunner.And(string.Format("update the data by query \"{0}\" on QAT_BPS", status_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 24
+testRunner.And(string.Format("update the data by query \"{0}\" on DIGITAL_CHANNEL_SEC", status_Query2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 25
 testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 26
@@ -276,4 +280,3 @@ this._2AsAUserIWantToVerifyBillPaymentThroughPAY("When valid bill details are pr
 }
 #pragma warning restore
 #endregion
-
