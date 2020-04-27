@@ -423,6 +423,15 @@ namespace HBLAutomationWeb.Pages
                 Combobox.Click();
                 Thread.Sleep(2000);
                 var selectElement = new SelectElement(Combobox);
+                //List<string> ali = new List<string>();
+                var ali = selectElement.Options;
+                foreach (var item in ali)
+                {
+                    if (item.Text.Contains(value))
+                    {
+                        value = item.Text;
+                    }
+                }
                 selectElement.SelectByText(value);
                 //List<IWebElement> comboValues = Combobox.FindElements(By.XPath(listlocator)).ToList();
                 //{

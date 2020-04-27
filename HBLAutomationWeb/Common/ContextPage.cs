@@ -29,7 +29,10 @@ namespace HBLAutomationWeb.Common
         string Bene_AccountNo;
         string Transaction_Id;
         string Consumer_No;
+        string bene_name;
         string Acc_Statement_Days;
+        decimal tran_balancee;
+        string tran_account;
         string Bill_Status;
         string Company_Code;
         string frequency;
@@ -37,13 +40,35 @@ namespace HBLAutomationWeb.Common
         DateTime calendar_fromdate;
         DateTime calendar_todate;
         DateTime tempdate;
+        string consumerno;
+        //string [,] AccBalance;
+        Dictionary<string, string> acc_info;
+        Dictionary<string, string> tran_info;
 
 
- 
+
         public string CutOvertime = null;
         public string Date = null;
 
+        public void Set_acc_balances(Dictionary<string, string> acc_info)
+        {
+            this.acc_info = acc_info;
+        }
+        public Dictionary<string,string> Get_acc_balance()
+        {
+            return this.acc_info;
 
+        }
+
+        public void Set_tran_balances(Dictionary<string, string> tran_info)
+        {
+            this.tran_info = tran_info;
+        }
+
+        public Dictionary<string, string> Get_tran_balance(Dictionary<string, string> tran_info)
+        {
+            return this.tran_info;
+        }
         public bool Getfrom_to_date_flag()
         {
             return from_to_date_flag;
@@ -130,7 +155,62 @@ namespace HBLAutomationWeb.Common
         {
             return Acc_Statement_Days;
         }
+        //tran_balancee
+        public void SetTran_Balance(decimal tran_balancee)
+        {
+            this.tran_balancee = tran_balancee;
+        }
+        public decimal GetTran_Balance()
+        {
+            return tran_balancee;
+        }
+        public void SetBeneName(string bene_name)
+        {
+            this.bene_name = bene_name;
+        }
+        public string GetBeneName()
+        {
+            return bene_name;
+        }
+        public void SetTran_Account(string tran_account)
+        {
+            this.tran_account = tran_account;
+        }
+        public string GeTran_Account()
+        {
+            return tran_account;
+        }
 
+        //public string[,] AccBalances 
+        // {
+        // get
+        // {
+        //      return AccBalance;
+        //  }
+        // set
+        //   {
+        //      AccBalance = value;
+        //  }
+        //  }
+        //public void SetAccBalance(string [,] arr)
+        //{
+        //    AccBalance = arr;
+        // }
+
+        //public string[,] GetAccBalance()
+        //{
+        //    return AccBalance;
+        //}
+
+
+        //public string this[string key]
+        //{
+        // returns value if exists
+        //get { return acc_info[key]; }
+
+        // updates if exists, adds if doesn't exist
+        //set { acc_info[key] = value; }
+        // }
 
         public static IWebDriver driver;
 
