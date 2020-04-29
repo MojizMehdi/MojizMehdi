@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ElementFactory>
+  <Module name="Login">
+    <!--<Element keyword="Login_UserId" locator="//android.widget.EditText[@resource-id='com.hbl.android.hblmobilebanking:id/l_username_field']"/>
+    <Element keyword="Login_Password" locator="//android.widget.EditText[@resource-id='com.hbl.android.hblmobilebanking:id/l_password_field']"/>
+    <Element keyword="Login_SignIn_Button" locator="//android.widget.Button[@resource-id='com.hbl.android.hblmobilebanking:id/login_button']"/>-->
+    <Element keyword="Login_UserId" locator="com.hbl.android.hblmobilebanking:id/l_username_field"/>
+    <Element keyword="Login_Password" locator="com.hbl.android.hblmobilebanking:id/l_password_field"/>
+    <Element keyword="Login_SignIn_Button" locator="com.hbl.android.hblmobilebanking:id/login_button"/>
+    <!--<Element keyword="Login_OTP_field" locator="//input[@name='OneTimePassword']"/>
+    <Element keyword="Login_OTP_Verify_Button" locator="//button[@class='btn submit-btn']"/>-->
+    <!--<Element keyword="Login_Dashboard" locator="//img[@class='desk-logo']"/>-->
+  </Module>
+
+  
+  <!--<Module name ="BeneficiaryManagement">
+     <Element keyword="BeneficiaryManagement_Link" locator="//*[contains(text(),'Beneficiary Management ')]"/>
+    <Element keyword="BeneficiaryManagement_AddNewBtn" locator="//a[@title = 'Add New' and @class='btn add btn-responsive-fix d-md-block d-lg-block d-xl-block ng-scope']"/>
+    <Element keyword="BeneficiaryManagement_Bank" locator="//select[@name='bank']"/>
+    <Element keyword="BeneficiaryManagement_AccountNo" locator="//input[@name='account']"/>
+    <Element keyword="BeneficiaryManagement_BeneNick" locator="//input[@name='beneNick']"/>
+    <Element keyword="BeneficiaryManagement_PayeeEmail" locator="//input[@name='PayeeEmail']"/>
+    <Element keyword="BeneficiaryManagement_PayeeMobileNumber" locator="//input[@name='PayeeMobileNumber']"/>
+    <Element keyword="BeneficiaryManagement_Validate_Button" locator="//button[@class='btn submit-btn ng-binding']"/>
+  </Module>-->
+
+  <!--<Module name ="Pay">
+    <Element keyword="Pay_Link" locator="//*[contains(text(),'Pay ')]"/>
+    <Element keyword="Pay_AddNewBtn" locator="//a[contains(text(),'Add New') and @class='btn add float-right']"/>
+    <Element keyword="Pay_BillPaymentCategory" locator="//li[contains(text(),'{BillPaymentCategory}')]"/>
+    <Element keyword="Pay_BillPaymentCategory_Company" locator="//h2[@class='head ng-binding ng-scope' and contains(text(),'{Pay_BillPaymentCategory_Company}')]"/>
+    <Element keyword="Pay_BillPayment_ConsumerNo" locator="//input[@id='ConsumerNo']"/>
+    <Element keyword="Pay_BillPayment_NextBtn" locator="//button[@class='btn submit-btn' and text()='Next']"/>
+    <Element keyword="Pay_BillPayment_Inquiry_NextBtn" locator="//button[@class='btn btn submit-btn' and text()='Next']"/>
+    <Element keyword="Pay_BillPayment_PayBtn" locator="//button[@class='btn submit-btn' and text()='Pay']"/>
+    <Element keyword="Pay_Transaction_Success" locator="//div[@class='congrats-div ng-scope']//div[@class='display-table']//p"/>
+    <Element keyword="Pay_Transaction_Success_Amount" locator="//h2[@class='ng-binding' and text()='Transaction Amount']//following-sibling::p"/>
+    <Element keyword="Pay_Transaction_Success_FromAccount" locator="//h2[@class='ng-binding' and text()='From']//following-sibling::p"/>
+    <Element keyword="Pay_Transaction_Success_CompanyName" locator="//h2[@class='ng-binding' and text()='Billing Company Name']//following-sibling::p"/>
+    <Element keyword="Pay_Transaction_Success_ConsumerNo" locator="//h2[@class='ng-binding' and text()='Consumer Number']//following-sibling::p"/>
+    <Element keyword="Pay_Transaction_ID" locator="//*[contains(text(),'Transaction ID')]//following-sibling::p"/>
+    <Element keyword="Pay_Transaction_Scroll_AmountLabel" locator="//label[@for='Amount']"/>
+    <Element keyword="Pay_Transaction_ToggleAutoPay" locator="//label[@class='auto-pay']"/>
+    <Element keyword="Pay_Transaction_PayBillAmount_RadioBtn" locator="//label[@class='custom-control-label' and contains(text(),'Pay Bill Amount')]"/>
+    <Element keyword="Pay_Transaction_PayBillAmount_NextBtn" locator="//div[@class='ng-scope']//button[@class='btn submit-btn' and contains(text(),'Next')]"/>
+    <Element keyword="Pay_Transaction_PayBillAmount_AgreeBtn" locator="//button[@class='btn ng-scope' and contains(text(),'Agree')]"/>
+    <Element keyword="Pay_Transaction_PayBillAmount_CloseBtn" locator="//div[@class='ng-scope']//a[contains(text(),'Close')]"/>
+    <Element keyword="Pay_Transaction_PayBill_BeneSearchTextbox" locator="//input[@type='search']/following-sibling::input"/>
+    <Element keyword="Pay_Transaction_PayBill_BeneSearchConsumerNo" locator="//p[@class='text-right ng-binding']"/>
+    <Element keyword="Pay_Transaction_PayBill_RatingCloseBtn" locator="//div[@class='text-right ng-scope']//button[contains(text(),'Close')]"/>
+    <Element keyword="Pay_Transaction_PayBill_RatingOkBtn" locator="//div[@class='text-right ng-scope']//button[contains(text(),'Ok')]"/>
+    <Element keyword="Pay_Transaction_PayBill_TransactionPassword" locator="//input[@name='TransactionPassword']"/>
+    <Element keyword="Pay_Transaction_PayBill_Rating" locator="//ul[@class='rating']//li[last()]"/>
+    <Element keyword="Pay_Bill_Status" locator ="//div[@class='details ng-scope']//following-sibling::div[last()]//following-sibling::p[last()]" />
+    <Element keyword="Pay_Transaction_Unpaid_Amount" locator ="//input[@name='Amount']" />
+    <Element keyword="Pay_Bill_Status_Color" locator ="//p[@class='val ng-binding']" />
+  </Module>-->
+  <Module name ="SendMoney">
+    <Element keyword="SendMoney_Link" locator="com.hbl.android.hblmobilebanking:id/sendMoney_Btn"/>
+    <Element keyword="SendMoney_AddNewBtn" locator="com.hbl.android.hblmobilebanking:id/newBtnTxt"/>
+    <Element keyword="SendMoney_FromAccount" locator="com.hbl.android.hblmobilebanking:id/spnTransFromAccount"/>
+    <Element keyword="SendMoney_Bank" locator="com.hbl.android.hblmobilebanking:id/spnBeneBankSelection"/>
+    <Element keyword="SendMoney_ToAccount" locator="com.hbl.android.hblmobilebanking:id/eTextBeneAccountNumber"/>
+    <Element keyword="SendMoney_Amount" locator="com.hbl.android.hblmobilebanking:id/eTextTransAmount"/>
+    <Element keyword="SendMoney_PurposeOfPayment" locator="com.hbl.android.hblmobilebanking:id/spnTransPurposeofPayment"/>
+    <Element keyword="SendMoney_BeneNick" locator="com.hbl.android.hblmobilebanking:id/eTextBeneNick"/>
+    <Element keyword="SendMoney_BeneMobileNo" locator="com.hbl.android.hblmobilebanking:id/eTextMobileNumber"/>
+    <Element keyword="SendMoney_BeneEmail" locator="com.hbl.android.hblmobilebanking:id/eTextEmailAddress"/>
+    <Element keyword="SendMoney_NextBtn" locator="com.hbl.android.hblmobilebanking:id/btnTransNext"/>
+    <Element keyword="SendMoney_OTP" locator="com.hbl.android.hblmobilebanking:id/txt_pin_entry"/>
+    <Element keyword="SendMoney_TranPass" locator="com.hbl.android.hblmobilebanking:id/eTextTransPassword"/>
+    <Element keyword="SendMoney_SkipBtn" locator="com.hbl.android.hblmobilebanking:id/btnSkip"/>
+    
+
+
+    <!--<Element keyword="SendMoney_Bank" locator="//select[@name='bank']"/>
+    <Element keyword="SendMoney_ToAccount" locator="//input[@name='account']"/>
+    <Element keyword="SendMoney_Amount" locator="//input[@name='Amount']"/>
+    <Element keyword="SendMoney_PurposeOfPaymentBene" locator="//select[@name='payment']"/>
+    <Element keyword="SendMoney_BeneNick" locator="//input[@name='beneNick']"/>
+    <Element keyword="SendMoney_BeneMobileNo" locator="//input[@name='PayeeMobileNumber']"/>
+    <Element keyword="SendMoney_BeneEmail" locator="//input[@name='PayeeEmail']"/>
+    <Element keyword="SendMoney_NextBtn" locator="//button[text()='Next']"/>
+    <Element keyword="SendMoney_SendBtn" locator="//button[text()='Send']"/>
+    <Element keyword="SendMoney_TranAmount" locator="//h2[@class='ng-binding' and text()='Transaction Amount']//following-sibling::p"/>
+    <Element keyword="SendMoney_TranFromAcc" locator="//h2[@class='ng-binding' and text()='From Account']//following-sibling::p"/>
+    <Element keyword="SendMoney_TranSourceAcc" locator="//h2[@class='ng-binding' and text()='Source Account Number:']//following-sibling::p" />
+    <Element keyword="SendMoney_TranToAcc" locator="//h2[@class='ng-binding' and text()='To Account']//following-sibling::p"/>
+    <Element keyword="SendMoney_TranToBank" locator="//h2[@class='ng-binding' and text()='To Bank']//following-sibling::p"/>
+    <Element keyword="SendMoney_TranBeneName" locator="//h2[@class='ng-binding' and text()='Beneficiary Name']//following-sibling::p"/>
+    <Element keyword="SendMoney_TranPurpose" locator="//h2[@class='ng-binding' and text()='Purpose']//following-sibling::p"/>
+    <Element keyword="SendMoney_TranFrequency" locator="//h2[@class='ng-binding' and text()='Frequency']//following-sibling::p"/>
+    <Element keyword="SendMoney_TranType" locator="//h2[@class='ng-binding' and text()='Transaction Type']//following-sibling::p"/>
+    <Element keyword="SendMoney_TranSuccessMessage" locator="//div[@class='congrats-div']//p"/>
+    <Element keyword="SendMoney_ScheduleCheck" locator="//span[@class='custom-control-description']"/>
+    <Element keyword="SendMoney_Frequency" locator="//select[@name='frequency']"/>
+    <Element keyword="SendMoney_Schedule_FromDate" locator="//input[@name='FirstExecutionDate']"/>
+    <Element keyword="SendMoney_Schedule_ToDate" locator="//input[@name='ExpiryDate']"/>
+    <Element keyword="SendMoney_Btn_ViewSummary" locator="//button[text()='View Summary']"/>
+    <Element keyword="SendMoney_Btn_Summary_OK" locator="//div[@class='modal-footer']//a[text()='OK' and @data-dismiss='modal']"/>
+    <Element keyword="SendMoney_Btn_Summary_Iteration_Dates" locator="//tr[@class='ng-scope'][{Iteration_Number}]//td[@class='ng-binding']"/>
+    <Element keyword="SendMoney_SearchBeneField" locator="//input[@type='search']"/>
+    <Element keyword="SendMoney_BeneClick" locator="//ul[@class='item']"/>
+    <Element keyword="SendMoney_CloseBtn" locator="//a[text()='Close']"/>
+    <Element keyword="SendMoney_ScheduleBtn" locator="//button[text()='Schedule']"/>-->
+    
+
+  </Module>
+
+
+  <!--<Module name ="Accounts">
+    <Element keyword="Accounts_Link" locator="//a[contains(text(),'Accounts')]"/>
+    <Element keyword="Accounts_FromDate" locator="//input[@name='fromDate']"/>
+    <Element keyword="Accounts_ToDate" locator="//input[@name='ToDate']"/>
+    <Element keyword="Accounts_NoOfDays" locator="//input[@name='NumberOfDays']"/>
+    <Element keyword="Accounts_Generate_Button" locator="//button[@type='button' and text()='Generate']"/>
+    <Element keyword="Accounts_CSV_Button" locator="//button[@type='button' and text()='CSV']"/>
+    <Element keyword="Accounts_PDF_Button" locator="//button[@type='button' and text()='PDF']"/>
+  </Module>
+
+  <Module name="Settings">
+    <Element keyword="Settings_icon" locator="//div[@class='actions col-lg-5 col-xl-5']//a[contains(text(),'Settings')]"/>
+    <Element keyword="Settings_login_old_pass" locator="//input[@ng-model='ChangePassword.oldPassword']"/>
+    <Element keyword="Settings_login_new_pass" locator="//input[@ng-model='ChangePassword.newPassword']"/>
+    <Element keyword="Settings_login_confirm_pass" locator="//input[@ng-model='ChangePassword.confrimpassword']"/>
+    <Element keyword="Settings_change_login_button" locator="//div[@ng-form='LoginPasswordForm']//button[@class='btn submit-btn']"/>
+    
+  </Module>-->
+</ElementFactory>
