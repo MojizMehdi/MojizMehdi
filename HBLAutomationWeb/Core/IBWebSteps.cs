@@ -57,6 +57,10 @@ namespace HBLAutomationWeb.Core
             //    SourceDataTable = dlink.GetDataTable("SELECT LB.COMPANY_CODE FROM LP_BILLS LB WHERE LB.CONSUMER_NO = '0400000263263' and LB.BILL_STATUS_ID=1 and LB.STAGING_ID='32551140'", "QAT_BPS");
             //    string Company = SourceDataTable.Rows[0][0].ToString();
             //}
+            if (Keyword.Contains("Pay_Card_Expiry_Date"))
+            {
+                return;
+            }
             if (Keyword.Contains("Accounts_NoOfDays"))
             {
                 if ((Convert.ToInt32(textboxvalue) > Convert.ToInt32(context.GetAccStatementDays())) && (Convert.ToInt32(textboxvalue) == 0))
@@ -136,15 +140,19 @@ namespace HBLAutomationWeb.Core
 
             catch (Exception exception)
             {
-                SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                if (Keyword != "Pay_AddNewBtn")
+                {
+
+                    SeleniumHelper.TakeScreenshot();
+                    throw new AssertFailedException(exception.Message);
+                }
             }
 
         }
 
         [When(@"I am clicking on link ""(.*)"" on ""(.*)""")]
         public void WhenIAmClickingOnLinkOn(string text, string Keyword)
-        {
+        {  
             try
             {
                 if (!String.IsNullOrEmpty(Keyword))
@@ -152,19 +160,19 @@ namespace HBLAutomationWeb.Core
                     SeleniumHelper selhelper = new SeleniumHelper();
                     selhelper.checkPageIsReady();
                     Element keyword = ContextPage.GetInstance().GetElement(Keyword);
-                    string locator = "";
+                    string locator = keyword.Locator;
                     if (Keyword.Contains("BillPaymentCategory"))
                     {
                         locator = keyword.Locator.Replace("{BillPaymentCategory}", text);
-                        keyword.Locator = locator;
+                        //keyword.Locator = locator;
                     }
                     if (Keyword.Contains("Pay_BillPaymentCategory_Company"))
                     {
                         locator = keyword.Locator.Replace("{Pay_BillPaymentCategory_Company}", text);
-                        keyword.Locator = locator;
+                        //keyword.Locator = locator;
                     }
                     //Element keyword = ContextPage.GetInstance().GetElement(Keyword);
-                    selhelper.links(keyword.Locator);
+                    selhelper.links(locator);
                 }
 
             }
@@ -180,6 +188,11 @@ namespace HBLAutomationWeb.Core
         [When(@"I select ""(.*)"" on ""(.*)""")]
         public void GivenISelectOn(string value, string Keyword)
         {
+            int count = context.GeTSizeCount();
+            if (count== 1)
+            {
+                return;
+            }
             if (String.IsNullOrEmpty(value))
             {
                 return;
@@ -238,10 +251,16 @@ namespace HBLAutomationWeb.Core
         }
 
         [Given(@"update the data by query ""(.*)"" on DIGITAL_CHANNEL_SEC")]
+        [When(@"update the data by query ""(.*)"" on DIGITAL_CHANNEL_SEC")]
+        [Then(@"update the data by query ""(.*)"" on DIGITAL_CHANNEL_SEC")]
         public void GivenUpdateTheDataByQueryOnDIGITAL_CHANNEL_SEC(string query)
         {
             if (query != "")
             {
+                if (query.Contains("{ConsumerNo}"))
+                {
+                    query = query.Replace("{ConsumerNo}", context.GetConsumer_No());
+                }
                 try
                 {
                     DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
@@ -259,6 +278,11 @@ namespace HBLAutomationWeb.Core
         {
             if (query != "")
             {
+                if (query.Contains("{ConsumerNo}"))
+                {
+                    query = query.Replace("{ConsumerNo}", context.GetConsumer_No());
+                }
+
                 try
                 {
                     DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
@@ -271,6 +295,20 @@ namespace HBLAutomationWeb.Core
                 }
             }
 
+        }
+        [Given(@"I set value in context from data ""(.*)"" as ""(.*)""")]
+        [When(@"I set value in context from data ""(.*)"" as ""(.*)""")]
+        [Then(@"I set value in context from data ""(.*)"" as ""(.*)""")]
+        public void GivenISetValueInContextFromDataAs(string value, string attribute)
+        {
+            if (attribute == "ConsumerNo")
+            {
+                context.SetConsumer_No(value);
+            }
+            if (attribute == "bene_name")
+            {
+                context.SetBeneName(value);
+            }
         }
 
         [When(@"I sleep (.*)")]
@@ -290,6 +328,7 @@ namespace HBLAutomationWeb.Core
             }
         }
 
+        [Given(@"I wait (.*)")]
         [When(@"I wait (.*)")]
         public void WhenIWait(int p0)
         {
@@ -311,6 +350,40 @@ namespace HBLAutomationWeb.Core
                 };
             }
         }
+
+        [When(@"verify bene status from (.*) on Schema ""(.*)""")]
+        [Then(@"verify bene status from (.*) on Schema ""(.*)""")]
+        public void WhenVerifyBeneStatusFromOnSchema(string query, string db_value)
+        {
+            if (query != "")
+            {
+                if (query.Contains("{ConsumerNo}"))
+                {
+                    query = query.Replace("{ConsumerNo}", context.GetConsumer_No());
+                }
+                string textboxvalue = context.GetBeneName();
+
+                Thread.Sleep(2000);
+                DataAccessComponent.DataAccessLink dLink = new DataAccessComponent.DataAccessLink();
+                DataTable SourceDataTable = dLink.GetDataTable(query, db_value);
+                string bene_name = SourceDataTable.Rows[0][0].ToString();
+
+                if (SourceDataTable.Rows.Count == 0 || (bene_name == "0"))
+                {
+                    SeleniumHelper selhelper = new SeleniumHelper();
+                    Element keyword = ContextPage.GetInstance().GetElement("Pay_Bene_checkbox");
+                    selhelper.links(keyword.Locator);
+
+                    Element keyword2 = ContextPage.GetInstance().GetElement("Pay_Bene_text");
+                    selhelper.SetTextBoxValue(textboxvalue, keyword2.Locator);
+
+                    Element keyword3 = ContextPage.GetInstance().GetElement("Pay_Bene_button");
+                    selhelper.Button(keyword3.Locator);
+                }
+            }
+        }
+
+
 
         [Then(@"verify through ""(.*)"" on ""(.*)""")]
         public void ThenVerifyThroughOn(string message, string Keyword)
@@ -382,10 +455,15 @@ namespace HBLAutomationWeb.Core
                 Element keyword = ContextPage.GetInstance().GetElement(Keyword);
                 if (query != "")
                 {
+                    if (query.Contains("{ConsumerNo}"))
+                    {
+                        query = query.Replace("{ConsumerNo}", context.GetConsumer_No());
+                        //query = a;
+                    }
                     DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
                     DataTable SourceDataTable = dlink.GetDataTable(query, schema);
                     message = SourceDataTable.Rows[0][0].ToString();
-                    if (Keyword.Equals("Pay_Transaction_Success_Amount"))
+                    if (Keyword.Equals("Pay_Transaction_Success_Amount") || Keyword.Equals("Pay_Transaction_Unpaid_Amount"))
                     {
                         message = Convert.ToDecimal(message).ToString("0.00");
                     }
@@ -481,6 +559,11 @@ namespace HBLAutomationWeb.Core
 
             if (query != "")
             {
+                if (query.Contains("{ConsumerNo}"))
+                {
+                    query = query.Replace("{ConsumerNo}", context.GetConsumer_No());
+                    //query = a;
+                }
                 Thread.Sleep(2000);
                 DataAccessComponent.DataAccessLink dLink = new DataAccessComponent.DataAccessLink();
                 DataTable SourceDataTable = dLink.GetDataTable(query, db_value);
@@ -685,6 +768,123 @@ namespace HBLAutomationWeb.Core
 
             //}
         }
+        
+
+
+        [Given(@"I save Account Balances")]
+        
+        public void GivenISaveAccountBalances()
+        {
+            SeleniumHelper selhelper = new SeleniumHelper();
+            Dictionary<string, string> dict = new Dictionary<string, string>();
+            //string[,] arr = new string[,] { };
+            int count = 0;
+            int x = context.GeTSizeCount();
+            string acc_no = "";
+            string acc_bal = "";
+            for (int i=0; i < x; i++)
+            {
+               
+                for (int j = 0; j < 2; j++)
+                {
+                    int temp_counter = count + 1;
+                    if (j == 0)
+                    {                                              
+                        Element keyword = ContextPage.GetInstance().GetElement("Pay_Acc_No");
+                        string temp = keyword.Locator.Replace("{i}", "[" + temp_counter.ToString() + "]");                                              
+
+                        string text = selhelper.ReturnKeywordValue(temp);
+                        string[] split = text.Split('|');
+                        acc_no = split[0].Trim();
+
+                    }
+                    else if (j == 1)
+                    {
+                        Element keyword2 = ContextPage.GetInstance().GetElement("Pay_Acc_Balance");
+                        string temp2 = keyword2.Locator.Replace("{j}", "[" + temp_counter.ToString() + "]");
+                        
+
+                        acc_bal = selhelper.ReturnKeywordValue(temp2);                        
+                    }
+
+                }
+                dict.Add(acc_no, acc_bal);
+                count++;
+            }
+            context.Set_acc_balances(dict);
+            
+            
+        }
+        [When(@"I save Transaction Info")]
+        public void WhenISaveTransactionInfo()
+        {
+            SeleniumHelper selhelper = new SeleniumHelper();
+            Dictionary<string, string> tran_dict = new Dictionary<string, string>();
+            Element keyword = ContextPage.GetInstance().GetElement("Pay_Transaction_Success_FromAccount");
+            string tran_account = selhelper.ReturnKeywordValue(keyword.Locator);
+            context.SetTran_Account(tran_account);
+
+            Element keyword2 = ContextPage.GetInstance().GetElement("Pay_Transaction_Success_Amount");
+            string tran_balance = selhelper.ReturnKeywordValue(keyword2.Locator);
+
+            //tran_dict.Add(tran_account, tran_balance);
+
+            //Dictionary<string, string> old_dict = ;
+            tran_dict = context.Get_acc_balance();
+
+            foreach (var item in tran_dict)
+            {
+                if (tran_account == item.Key)
+                {
+                    decimal tran_balancee = Convert.ToDecimal(item.Value) - Convert.ToDecimal(tran_balance);
+                    context.SetTran_Balance(tran_balancee);
+                }
+              
+            }
+
+        }
+
+        [Then(@"I verify Account Balance")]
+        public void ThenIVerifyAccountBalance()
+        {
+            try
+            {
+
+
+                SeleniumHelper selhelper = new SeleniumHelper();
+                Element keyword = ContextPage.GetInstance().GetElement("Pay_Final_Account_Balance");
+                string tAccountNo = context.GeTran_Account();
+                string temp = keyword.Locator.Replace("{k}", tAccountNo);
+                string new_account_bal = selhelper.ReturnKeywordValue(temp);
+
+                decimal old_account_bal = context.GetTran_Balance();
+
+
+
+                if (Convert.ToDecimal(new_account_bal) != old_account_bal)
+                {
+                    throw new AssertFailedException(string.Format("The old account balance {0} is not equal to new account balance {1} after successfull transaction", old_account_bal, new_account_bal));
+                }
+            }
+            catch (Exception exception)
+            {
+
+                throw new AssertFailedException(exception.Message);
+            }
+
+
+        }
+
+        [Given(@"I count Number of Account")]
+        public void GivenICountNumberOfAccount()
+        {
+            SeleniumHelper selhelper = new SeleniumHelper();
+            Element keyword = ContextPage.GetInstance().GetElement("Pay_Account_No-Count");
+            int size = selhelper.SizeCountElements(keyword.Locator);
+            context.SetSizeCount(size);
+
+        }
 
     }
+
 }
