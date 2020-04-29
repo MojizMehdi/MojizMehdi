@@ -39,6 +39,7 @@
     <Element keyword="Pay_Transaction_Scroll_AmountLabel" locator="//label[@for='Amount']"/>
     <Element keyword="Pay_Transaction_ToggleAutoPay" locator="//label[@class='auto-pay']"/>
     <Element keyword="Pay_Transaction_PayBillAmount_RadioBtn" locator="//label[@class='custom-control-label' and contains(text(),'Pay Bill Amount')]"/>
+    <Element keyword="Pay_Transaction_MaxBillAmount_RadioBtn" locator="//label[@class='custom-control-label' and contains(text(),'Set Maximum Bill Payment Amount')]"/>
     <Element keyword="Pay_Transaction_PayBillAmount_NextBtn" locator="//div[@class='ng-scope']//button[@class='btn submit-btn' and contains(text(),'Next')]"/>
     <Element keyword="Pay_Transaction_PayBillAmount_AgreeBtn" locator="//button[@class='btn ng-scope' and contains(text(),'Agree')]"/>
     <Element keyword="Pay_Transaction_PayBillAmount_CloseBtn" locator="//div[@class='ng-scope']//a[contains(text(),'Close')]"/>
@@ -60,6 +61,7 @@
     <Element keyword="Pay_Final_Account_Balance" locator="//div[@class='acc-num ng-binding'and contains(text(),'{k}')]/parent::*//following-sibling::div[@class='amount col-12 col-md-3 col-lg-3 col-xl-3 d-lg-block d-md-block d-xl-block']/span" />
     <Element keyword="Pay_BillPayment_accountno" locator ="//select[@name='fromAccount']" />
     <Element keyword="Pay_Card_Expiry_Date" locator="//input[@name='CardExpiryDate']" />
+    <Element keyword="Pay_Account_No-Count" locator="//div[@class='acc-num ng-binding']" />
   </Module>
   <Module name ="SendMoney">
     <Element keyword="SendMoney_Link" locator="//*[contains(text(),'Send Money ')]"/>

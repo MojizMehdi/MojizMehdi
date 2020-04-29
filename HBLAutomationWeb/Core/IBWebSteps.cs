@@ -57,7 +57,10 @@ namespace HBLAutomationWeb.Core
             //    SourceDataTable = dlink.GetDataTable("SELECT LB.COMPANY_CODE FROM LP_BILLS LB WHERE LB.CONSUMER_NO = '0400000263263' and LB.BILL_STATUS_ID=1 and LB.STAGING_ID='32551140'", "QAT_BPS");
             //    string Company = SourceDataTable.Rows[0][0].ToString();
             //}
-           
+            if (Keyword.Contains("Pay_Card_Expiry_Date"))
+            {
+                return;
+            }
             if (Keyword.Contains("Accounts_NoOfDays"))
             {
                 if ((Convert.ToInt32(textboxvalue) > Convert.ToInt32(context.GetAccStatementDays())) && (Convert.ToInt32(textboxvalue) == 0))
@@ -185,6 +188,11 @@ namespace HBLAutomationWeb.Core
         [When(@"I select ""(.*)"" on ""(.*)""")]
         public void GivenISelectOn(string value, string Keyword)
         {
+            int count = context.GeTSizeCount();
+            if (count== 1)
+            {
+                return;
+            }
             if (String.IsNullOrEmpty(value))
             {
                 return;
@@ -344,6 +352,7 @@ namespace HBLAutomationWeb.Core
         }
 
         [When(@"verify bene status from (.*) on Schema ""(.*)""")]
+        [Then(@"verify bene status from (.*) on Schema ""(.*)""")]
         public void WhenVerifyBeneStatusFromOnSchema(string query, string db_value)
         {
             if (query != "")
@@ -446,10 +455,15 @@ namespace HBLAutomationWeb.Core
                 Element keyword = ContextPage.GetInstance().GetElement(Keyword);
                 if (query != "")
                 {
+                    if (query.Contains("{ConsumerNo}"))
+                    {
+                        query = query.Replace("{ConsumerNo}", context.GetConsumer_No());
+                        //query = a;
+                    }
                     DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
                     DataTable SourceDataTable = dlink.GetDataTable(query, schema);
                     message = SourceDataTable.Rows[0][0].ToString();
-                    if (Keyword.Equals("Pay_Transaction_Success_Amount"))
+                    if (Keyword.Equals("Pay_Transaction_Success_Amount") || Keyword.Equals("Pay_Transaction_Unpaid_Amount"))
                     {
                         message = Convert.ToDecimal(message).ToString("0.00");
                     }
@@ -765,9 +779,10 @@ namespace HBLAutomationWeb.Core
             Dictionary<string, string> dict = new Dictionary<string, string>();
             //string[,] arr = new string[,] { };
             int count = 0;
+            int x = context.GeTSizeCount();
             string acc_no = "";
             string acc_bal = "";
-            for (int i=0; i < 1; i++)
+            for (int i=0; i < x; i++)
             {
                
                 for (int j = 0; j < 2; j++)
@@ -860,6 +875,15 @@ namespace HBLAutomationWeb.Core
 
         }
 
+        [Given(@"I count Number of Account")]
+        public void GivenICountNumberOfAccount()
+        {
+            SeleniumHelper selhelper = new SeleniumHelper();
+            Element keyword = ContextPage.GetInstance().GetElement("Pay_Account_No-Count");
+            int size = selhelper.SizeCountElements(keyword.Locator);
+            context.SetSizeCount(size);
+
+        }
 
     }
 

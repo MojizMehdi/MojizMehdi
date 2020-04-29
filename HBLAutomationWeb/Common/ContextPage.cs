@@ -44,6 +44,7 @@ namespace HBLAutomationWeb.Common
         //string [,] AccBalance;
         Dictionary<string, string> acc_info;
         Dictionary<string, string> tran_info;
+        int sizecount;
 
 
 
@@ -180,8 +181,16 @@ namespace HBLAutomationWeb.Common
         {
             return tran_account;
         }
+        public void SetSizeCount(int sizecount)
+        {
+            this.sizecount = sizecount;
+        }
+        public int GeTSizeCount()
+        {
+            return sizecount;
+        }
 
-        //public string[,] AccBalances 
+        //public string[,] AccBalances  sizecount
         // {
         // get
         // {

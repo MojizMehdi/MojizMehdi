@@ -79,8 +79,19 @@ namespace HBLAutomationWeb.Pages
         {
             try
             {
+                string value = "";
                 IWebElement Control = waitDriver.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
-                Assert.AreEqual(message, Control.Text);
+                if (locator.Contains("//input["))
+                {
+                    value = Control.GetAttribute("value");
+                }
+                else
+                {
+                    value = Control.Text;
+                }
+                
+                Assert.AreEqual(message, value);
+
             }
             catch (ElementNotVisibleException ex)
             {
@@ -479,5 +490,14 @@ namespace HBLAutomationWeb.Pages
 
 
         }
+        //For returning the values of keyword given
+        public int SizeCountElements(string locator)
+        {
+            IWebElement Control = waitDriver.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
+            var list_elements = driver.FindElements(By.XPath("//div[@class='acc-num ng-binding']"));
+            //return Control.GetAttribute("value");
+            return list_elements.Count;
+        }
+
     }
 }
