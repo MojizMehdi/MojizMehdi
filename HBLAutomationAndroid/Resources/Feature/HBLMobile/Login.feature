@@ -10,7 +10,7 @@ Scenario Outline: When user try to login mobile banking
 	When I have given "<Login_UserId_Value>" on "Login_UserId"
 	And I have given "<Login_Password_Value>" on "Login_Password"
 	And I am performing on "Login_SignIn_Button"
-	And I wait 40000
+	And I wait 40000 
 	@source:Data/HBLMobileLogin.xlsx
 	Examples: 
 	|Case|Login_UserId_Value|Login_Password_Value|OTP_Value|
