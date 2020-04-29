@@ -240,20 +240,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AccountsStatement.feature</DependentUpon>
     </Compile>
-    <Compile Include="Resources\Feature\InternetBanking\BillPayment.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BillPayment.feature</DependentUpon>
-    </Compile>
     <Compile Include="Resources\Feature\InternetBanking\Login.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Login.feature</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Feature\InternetBanking\PayBill.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PayBill.feature</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Feature\InternetBanking\SendMoney.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SendMoney.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Feature\InternetBanking\Settings.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Settings.feature</DependentUpon>
     </Compile>
     <Compile Include="XML\apiconfiguration\ApiConfiguration.cs" />
     <Compile Include="XML\ElementFactory\Element.cs" />
@@ -269,9 +274,6 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AccountsStatement.feature.cs</LastGenOutput>
     </None>
-    <None Include="Resources\Feature\InternetBanking\BillPayment.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-    </None>
     <None Include="Resources\Feature\InternetBanking\Data\AccountsStatement.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\BeneficiaryAddition.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\IBBillPayment.xlsx" />
@@ -280,13 +282,22 @@
     <None Include="Resources\Feature\InternetBanking\Data\SendMoney_Beneficiary.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\SendMoney_Schedule.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\SendMoney_Schedule_Beneficiary.xlsx" />
+    <None Include="Resources\Feature\InternetBanking\Data\Settings.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Login.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Login.feature.cs</LastGenOutput>
     </None>
+    <None Include="Resources\Feature\InternetBanking\PayBill.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PayBill.feature.cs</LastGenOutput>
+    </None>
     <None Include="Resources\Feature\InternetBanking\SendMoney.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>SendMoney.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\Feature\InternetBanking\Settings.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
