@@ -70,9 +70,18 @@
     <Element keyword="SendMoney_OTP" locator="com.hbl.android.hblmobilebanking:id/txt_pin_entry"/>
     <Element keyword="SendMoney_TranPass" locator="com.hbl.android.hblmobilebanking:id/eTextTransPassword"/>
     <Element keyword="SendMoney_SkipBtn" locator="com.hbl.android.hblmobilebanking:id/btnSkip"/>
-    
-
-
+    <Element keyword="SendMoney_TranID" locator="//android.widget.TextView[@text='Transaction ID']/following-sibling::android.widget.TextView"/>
+    <Element keyword="SendMoney_TranSuccessMessage" locator="com.hbl.android.hblmobilebanking:id/successMessageTxt"/>
+    <Element keyword="SendMoney_TranType" locator="//android.widget.TextView[@text='Transaction Type']/following-sibling::android.widget.TextView"/>
+    <Element keyword="SendMoney_TranAmount" locator="//android.widget.TextView[@text='Transaction Amount']/following-sibling::android.widget.TextView"/>
+    <Element keyword="SendMoney_TranFromAcc" locator="//android.widget.TextView[@text='From Account']/following-sibling::android.widget.TextView"/>
+    <Element keyword="SendMoney_TranToAcc" locator="//android.widget.TextView[@text='To Account']/following-sibling::android.widget.TextView"/>
+    <Element keyword="SendMoney_TranBeneName" locator="//android.widget.TextView[@text='Beneficiary Name']/following-sibling::android.widget.TextView"/>
+    <Element keyword="SendMoney_TranToBank" locator="//android.widget.TextView[@text='To Bank']/following-sibling::android.widget.TextView"/>
+    <Element keyword="SendMoney_TranPurpose" locator="//android.widget.TextView[@text='Purpose']/following-sibling::android.widget.TextView"/>
+    <Element keyword="SendMoney_Rating" locator="com.hbl.android.hblmobilebanking:id/rating"/>
+    <Element keyword="SendMoney_RatingOkBtn" locator="com.hbl.android.hblmobilebanking:id/dialog_pos_btn"/>
+    <Element keyword="SendMoney_Rating_Feedback_OkBtn" locator="com.hbl.android.hblmobilebanking:id/dialog_pos_btn"/>
     <!--<Element keyword="SendMoney_Bank" locator="//select[@name='bank']"/>
     <Element keyword="SendMoney_ToAccount" locator="//input[@name='account']"/>
     <Element keyword="SendMoney_Amount" locator="//input[@name='Amount']"/>
