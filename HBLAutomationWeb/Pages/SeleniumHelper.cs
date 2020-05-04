@@ -499,5 +499,13 @@ namespace HBLAutomationWeb.Pages
             return list_elements.Count;
         }
 
+        //For decrypting One Time Password 
+        public string OTPDecrypt(string otp, string Key, string IV)
+        {
+
+            string decryptedstring = AESEncryptorDecryptor.Decrypt(otp, Key, IV);
+            return decryptedstring;
+
+        }
     }
 }

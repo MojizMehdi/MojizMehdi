@@ -45,6 +45,8 @@ namespace HBLAutomationWeb.Common
         Dictionary<string, string> acc_info;
         Dictionary<string, string> tran_info;
         int sizecount;
+        string Account_Type;
+        string username;
 
 
 
@@ -189,8 +191,24 @@ namespace HBLAutomationWeb.Common
         {
             return sizecount;
         }
+        public void SetAccountType(string Account_Type)
+        {
+            this.Account_Type = Account_Type;
+        }
+        public string GetAccountType()
+        {
+            return Account_Type;
+        }
+        public void SetUsername(string username)
+        {
+            this.username = username.ToUpper();
+        }
+        public string GetUsername()
+        {
+            return username;
+        }
 
-        //public string[,] AccBalances  sizecount
+        //public string[,] username  
         // {
         // get
         // {

@@ -8,6 +8,7 @@ Scenario Outline: 1 As a user i want to Verify login for HBL Web Bill Payment
 Given the test case title is "<Case>"
 And the user is arrive to Internet Banking home page 
 And I have given "<Login_UserId_Value>" on "Login_UserId"
+And I set value in context from data "<Login_UserId_Value>" as "username"
 And I have given "<Login_Password_Value>" on "Login_Password"
 When I am performing on "Login_SignIn_Button"
 And I wait 3000
@@ -31,7 +32,10 @@ And I am clicking on "Pay_Link"
 When I am clicking on "Pay_AddNewBtn"
 And I am clicking on link "<Category_Value>" on "Pay_BillPaymentCategory"
 And I am clicking on link "<Company_Value>" on "Pay_BillPaymentCategory_Company"
+And I set value in context from data "<company_code_value>" as "Company_Code"
+And I set value in context from data "<account_type>" as "Account_Type"
 And I select "<account_no>" on "Pay_BillPayment_accountno"
+And verify the result from "<instrument_type>" on Schema "<db_val2>"
 And I have given "<Pay_BillPayment_ConsumerNo_Value>" on "Pay_BillPayment_ConsumerNo"
 And I am performing on "Pay_BillPayment_NextBtn"
 And I have given "<expiry_date>" on "Pay_Card_Expiry_Date"
@@ -61,7 +65,7 @@ And I have given "<maximum_amount>" on "Pay_Transaction_MaxBillAmount_value"
 And I am clicking on "Pay_Transaction_PayBillAmount_NextBtn"
 And I am clicking on "Pay_Transaction_PayBillAmount_AgreeBtn"
 And I set value in context from data "<bene_name>" as "bene_name"
-And verify bene status from <bene_query> on Schema "<db_val>"
+And verify bene status from <bene_query> on Schema "<db_val2>"
 And I am clicking on "Pay_Transaction_PayBillAmount_CloseBtn"
 And I am clicking on "Pay_Transaction_PayBill_Rating"
 And I am clicking on "Pay_Transaction_PayBill_RatingOkBtn"
@@ -73,5 +77,5 @@ And I verify Account Balance
 #And verify the result from <result_query> on Schema "<result_db_value>"
 @source:Data/IBBillPayment.xlsx
 Examples: 
-|Case|status_query|status_query2|Category_Value|Company_Value|Pay_BillPayment_ConsumerNo_Value|Bill_Amount_query|company_code_value|OTP_Value|tran_pass_value|tran_type_query|tran_amount_query|from_account_query|company_name_query|consumer_no_query|db_val|db_val2|account_no|expiry_date|schedule_type|maximum_amount|bene_name|bene_query|
+|Case|status_query|status_query2|Category_Value|Company_Value|Pay_BillPayment_ConsumerNo_Value|Bill_Amount_query|company_code_value|OTP_Value|tran_pass_value|tran_type_query|tran_amount_query|from_account_query|company_name_query|consumer_no_query|db_val|db_val2|account_no|account_type|expiry_date|schedule_type|maximum_amount|bene_name|bene_query|instrument_type|
 
