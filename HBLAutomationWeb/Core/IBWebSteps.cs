@@ -47,57 +47,11 @@ namespace HBLAutomationWeb.Core
         [Then(@"I have given ""(.*)"" on ""(.*)""")]
         public void GivenIHaveGivenOn(string textboxvalue, string Keyword)
         {
-            string otp = "";
-            string Key = "cf345ae2xz40yfc8";
-            string IV = "abcaqwerabcaqwer";
-
-            //if(textboxvalue == "ali")
-            //{
-            //    DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
-            //    DataTable SourceDataTable = dlink.GetDataTable("SELECT CI.CUSTOMER_NAME FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_INFO_ID = '9483386'", "QADB");
-            //    string CustomerName = SourceDataTable.Rows[0][0].ToString();
-
-            //    dlink = new DataAccessComponent.DataAccessLink();
-            //    SourceDataTable = dlink.GetDataTable("SELECT LB.COMPANY_CODE FROM LP_BILLS LB WHERE LB.CONSUMER_NO = '0400000263263' and LB.BILL_STATUS_ID=1 and LB.STAGING_ID='32551140'", "QAT_BPS");
-            //    string Company = SourceDataTable.Rows[0][0].ToString();
-            //}
-
-            //if (Keyword.Contains("Pay_Transaction_MaxBillAmount_value") && textboxvalue == "")
-            //{
-            // return;
-            // }
+            
             if (Keyword.Contains("Login_OTP_field"))
             {
-                string query = "Select PARAMTER_VALUE  from DC_APPLICATION_PARAM_DETAIL i where I.PARAMETER_NAME='OTP_HISTORY_ENCRYPTED'";
-                string schema = "DIGITAL_CHANNEL_SEC";
-
-                DataAccessComponent.DataAccessLink dLink = new DataAccessComponent.DataAccessLink();
-                DataTable SourceDataTable =  dLink.GetDataTable(query, schema);
-                string otp_flag = SourceDataTable.Rows[0][0].ToString();
-
-                if (otp_flag == "1")
-                {
-                    string query3 = "Select CUSTOMER_INFO_ID from dc_customer_info i where I.CUSTOMER_NAME='{usernmae}'";
-                    query3 = query3.Replace("{usernmae}", context.GetUsername());
-
-                    DataAccessComponent.DataAccessLink dLink3 = new DataAccessComponent.DataAccessLink();
-                    DataTable SourceDataTable3 = dLink3.GetDataTable(query3, schema);
-                    string consumer_no = SourceDataTable3.Rows[0][0].ToString();
-
-                    string query2 = "Select I.OTP from DC_OTP_HISTORY I where I.CUSTOMER_INFO_ID='{consumer_no}' ORDER BY I.GENERATED_ON DESC";
-                    query2 = query2.Replace("{consumer_no}", consumer_no);
-
-                    DataAccessComponent.DataAccessLink dLink2 = new DataAccessComponent.DataAccessLink();
-                    DataTable SourceDataTable2 = dLink2.GetDataTable(query2, schema);
-                    otp = SourceDataTable2.Rows[0][0].ToString();
-
                     SeleniumHelper selhelper = new SeleniumHelper();
-                    string dec_otp = selhelper.OTPDecrypt(otp, Key, IV);
-                    
-                }
-
-                
-
+                    textboxvalue = selhelper.GetOTP();
 
             }
             if (Keyword.Contains("Pay_Card_Expiry_Date"))
