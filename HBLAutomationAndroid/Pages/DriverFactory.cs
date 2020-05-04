@@ -65,6 +65,8 @@ namespace HBLAutomationAndroid.Pages
                         options.AddAdditionalCapability("platformVersion", platformVersion);
                         options.AddAdditionalCapability("noReset", "true");
                         options.AddAdditionalCapability("fullReset", "false");
+                        options.AddAdditionalCapability("newCommandTimeout", 30000);
+                        //NEW_COMMAND_TIMEOUT, 300
                         //options.AddAdditionalCapability("newCommandTimeout", 60);
                         initialize(options,serverURL);
                     }

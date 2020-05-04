@@ -101,13 +101,21 @@ namespace HBLAutomationAndroid.Pages
         //    }
         //}
 
-        ////For returning the value from the web page of the keyword given
-        //public string ReturnKeywordValue(string locator)
-        //{
-        //    IWebElement Control = waitDriver.Until(ExpectedConditions.ElementIsVisible(By.Id(locator)));
-        //    return Control.Text;
-
-        //}
+        //For returning the value from the web page of the keyword given using xpath
+        public string ReturnKeywordValue(string locator,string locator_type)
+        {
+            IWebElement Control = null;
+            if (locator_type == "id")
+            {
+                Control = waitDriver.Until(ExpectedConditions.ElementIsVisible(By.Id(locator)));
+            }
+            else if(locator_type == "xpath")
+            {
+                Control = waitDriver.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
+            }
+            return Control.Text;
+            
+        }
 
         ////For returning the value inside of a text field of a keyword given
         //public string ReturnTextBoxValue(string locator)
@@ -159,6 +167,7 @@ namespace HBLAutomationAndroid.Pages
         {
             try
             {
+                
                 string FeatureName = ContextPage.GetInstance().GetExcelRecord().FeatureName;
                 string savelocation = Configuration.GetInstance().GetByKey("ScreenshotFolderPath") + FeatureName + DateTime.Now.ToString("yyyyMMdd") + "/";
                 if (!Directory.Exists(savelocation))
@@ -169,6 +178,7 @@ namespace HBLAutomationAndroid.Pages
                 //Screenshot screenshot = ssdriver.GetScreenshot();
                 //string fileName = ContextPage.GetInstance().GetExcelRecord().ScenarioName + ".png";
                 //screenshot.SaveAsFile(savelocation + fileName, ScreenshotImageFormat.Png);
+                
                 Rectangle bounds = Screen.GetBounds(Point.Empty);
 
                 using (Bitmap bitmap = new Bitmap(bounds.Width, bounds.Height))
@@ -189,19 +199,34 @@ namespace HBLAutomationAndroid.Pages
 
 
         // Method For TextBox
-        public void SetTextBoxValue(string textboxvalue, string locator)
+        public void SetTextBoxValue(string textboxvalue, string locator,string locator_type)
         {
             try
             {
-
-                waitDriver.Until(ExpectedConditions.ElementIsVisible(By.Id(locator)));
+                if (locator_type == "id")
                 {
-                    AndroidElement Value = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
-                    Thread.Sleep(100);
-                    Value.Click();
-                    Value.Clear();
-                    Value.SendKeys(textboxvalue);
-                    driver.HideKeyboard();  
+
+                    waitDriver.Until(ExpectedConditions.ElementIsVisible(By.Id(locator)));
+                    {
+                        AndroidElement Value = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
+                        Thread.Sleep(100);
+                        Value.Click();
+                        Value.Clear();
+                        Value.SendKeys(textboxvalue);
+                        driver.HideKeyboard();
+                    }
+                }
+                else if (locator_type == "xpath")
+                {
+                    waitDriver.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
+                    {
+                        AndroidElement Value = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
+                        Thread.Sleep(100);
+                        Value.Click();
+                        Value.Clear();
+                        Value.SendKeys(textboxvalue);
+                        driver.HideKeyboard();
+                    }
                 }
             }
             catch (ElementNotVisibleException)
@@ -224,53 +249,80 @@ namespace HBLAutomationAndroid.Pages
 
         }
 
-        ////Method For Scroll Down
 
-        //public void ScrollDown(int count, string locator)
-        //{
-        //    try
-        //    {
-        //        Keyboard.SendKeys("{DOWN}");
-                
-        //    }
-        //    catch (ElementNotVisibleException)
-        //    {
-        //        throw new AssertFailedException(string.Format("The element provided {0} is not on screen", locator));
-        //    }
-        //    catch (StaleElementReferenceException)
-        //    {
-        //        throw new AssertFailedException(string.Format("The element provided {0} is Stale", locator));
-        //    }
-        //    catch (InvalidElementStateException)
-        //    {
-        //        throw new AssertFailedException(string.Format("The element provided {0} is not in desired state", locator));
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception("ex message: " + ex.Message);
-        //        throw new AssertFailedException(string.Format("The element provided {0} is invalid", locator));
-        //    }
+        //Method For Message Verification
+        public void verification(string message, string locator,string locator_type)
+        {
+            try
+            {
+                IWebElement Control = null;
+                string value = "";
+                if (locator_type == "id")
+                {
+                    Control = waitDriver.Until(ExpectedConditions.ElementIsVisible(By.Id(locator)));
+                }
+                else if (locator_type == "xpath")
+                {
+                    Control = waitDriver.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
+                }
+                if (locator.Contains("//input["))
+                {
+                    value = Control.GetAttribute("value");
+                }
+                else
+                {
+                    value = Control.Text;
+                }
 
-        //}
+                Assert.AreEqual(message, value);
+
+            }
+            catch (ElementNotVisibleException ex)
+            {
+                throw new AssertFailedException(string.Format("The element provided {0} is invalid", locator));
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
 
 
         //Method For Button
-        public void Button(string locator)
+        public void Button(string locator,string locator_type)
         {
             if (locator != "")
             {
                 try
                 {
                     Thread.Sleep(5000);
-                    waitDriver.Until(ExpectedConditions.ElementIsVisible(By.Id(locator)));
+                    if (locator_type == "id")
                     {
-                        waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
+                        waitDriver.Until(ExpectedConditions.ElementIsVisible(By.Id(locator)));
                         {
-                            AndroidElement Button = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
+                            waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
+                            {
+                                AndroidElement Button = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
 
-                           // var js = ((IJavaScriptExecutor)driver);
-                           // js.ExecuteScript("arguments[0].scrollIntoView(true);", Button);
-                            Button.Click();
+                                // var js = ((IJavaScriptExecutor)driver);
+                                // js.ExecuteScript("arguments[0].scrollIntoView(true);", Button);
+                                Button.Click();
+                            }
+                        }
+                    }
+                    else if (locator_type == "xpath")
+                    {
+                        waitDriver.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
+                        {
+                            waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
+                            {
+                                AndroidElement Button = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
+
+                                // var js = ((IJavaScriptExecutor)driver);
+                                // js.ExecuteScript("arguments[0].scrollIntoView(true);", Button);
+                                Button.Click();
+                            }
                         }
                     }
                 }
@@ -295,7 +347,7 @@ namespace HBLAutomationAndroid.Pages
 
 
         //Method For Link
-        public void links(string locator)
+        public void links(string locator,string locator_type)
         {
             try
             {
@@ -304,8 +356,9 @@ namespace HBLAutomationAndroid.Pages
                 //Home Page Locator
                 if (locator.Equals("Home Page Locator"))
                 {
-                    driver.Navigate().GoToUrl(Configuration.GetInstance().GetByKey("redirectionURL"));
-                    Thread.Sleep(2000);
+                    //driver.Navigate().GoToUrl(Configuration.GetInstance().GetByKey("redirectionURL"));
+                   // Thread.Sleep(2000);
+
 
                     AndroidElement link = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
 
@@ -317,17 +370,37 @@ namespace HBLAutomationAndroid.Pages
 
                     Thread.Sleep(3000);
 
-                    waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
+                    if (locator_type == "id")
                     {
-                        waitDriver.Until(ExpectedConditions.ElementIsVisible(By.Id(locator)));
+                        waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
                         {
-                            waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
+                            waitDriver.Until(ExpectedConditions.ElementIsVisible(By.Id(locator)));
                             {
-                                AndroidElement link = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
-                                //AndroidElement link = driver.FindElementByXPath(locator);
-                                link.Click();
+                                waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
+                                {
+                                    AndroidElement link = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
+                                    //AndroidElement link = driver.FindElementByXPath(locator);
+                                    link.Click();
+                                }
                             }
                         }
+
+                    }
+                    else if (locator_type == "xpath")
+                    {
+                        waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
+                        {
+                            waitDriver.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
+                            {
+                                waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
+                                {
+                                    AndroidElement link = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
+                                    //AndroidElement link = driver.FindElementByXPath(locator);
+                                    link.Click();
+                                }
+                            }
+                        }
+
                     }
                 }
             }
@@ -350,135 +423,63 @@ namespace HBLAutomationAndroid.Pages
         }
 
 
-        ////Method For Link
-        //public void links2(string locator)
-        //{
-        //    try
-        //    {
-
-
-        //        //Home Page Locator
-        //        if (locator.Equals("Home Page Locator"))
-        //        {
-        //            driver.Navigate().GoToUrl(Configuration.GetInstance().GetByKey("redirectionURL"));
-        //            Thread.Sleep(2000);
-
-        //            AndroidElement link = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
-
-        //            link.Click();
-        //        }
-        //        else
-        //        {
-
-        //            Thread.Sleep(3000);
-
-        //            //waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
-        //            //{
-        //            //    waitDriver.Until(ExpectedConditions.ElementIsVisible(By.Id(locator)));
-        //            //    {
-        //            //        waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
-        //            //        {
-        //                        //AndroidElement link = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
-        //                        IWebElement link = driver.FindElementByXPath("android.widget.ImageView[resource-id='com.hbl.android.hblmobilebanking:id/iv_filter']");
-        //                        link.Click();
-        //            //        }
-        //            //    }
-        //            //}
-        //        }
-        //    }
-        //    catch (ElementNotVisibleException)
-        //    {
-
-        //        throw new AssertFailedException(string.Format("The element provided {0} is not on screen", locator));
-        //    }
-        //    catch (StaleElementReferenceException)
-        //    {
-
-        //        throw new AssertFailedException(string.Format("The element provided {0} is Stale", locator));
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception("ex message: " + ex.Message);
-
-        //    }
-
-        //}
         ////Method For Rating
-        //public void rating(string locator)
-        //{
-        //    try
-        //    {
-
-
-        //        //Home Page Locator
-        //        if (locator.Equals("//img[@class='desk-logo']"))
-        //        {
-        //            driver.Navigate().GoToUrl(Configuration.GetInstance().GetByKey("redirectionURL"));
-        //            Thread.Sleep(2000);
-
-        //            IWebElement link = waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
-
-        //            link.Click();
-        //        }
-        //        else
-        //        {
-
-        //            Thread.Sleep(3000);
-        //            Boolean a = driver.FindElements(By.Id(locator)).Count != 0;
-        //            //bool a = driver.FindElement(By.Id(locator)).Displayed;
-        //            //IWebElement link = waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
-        //            if (a == true)
-        //            {
-        //                waitDriver.Until(ExpectedConditions.ElementIsVisible(By.Id(locator)));
-        //                {
-        //                    waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
-        //                    {
-        //                        IWebElement link = waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
-
-        //                        link.Click();
-        //                    }
-        //                }
-        //            }
-        //            //IWebElement link = waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
-        //            // if(locator.)
-        //            else
-        //            {
-        //                //do nothing
-        //            }
-        //        }
-        //    }
-        //    catch (ElementNotVisibleException)
-        //    {
-
-        //        throw new AssertFailedException(string.Format("The element provided {0} is not on screen", locator));
-        //    }
-        //    catch (StaleElementReferenceException)
-        //    {
-
-        //        throw new AssertFailedException(string.Format("The element provided {0} is Stale", locator));
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception("ex message: " + ex.Message);
-
-        //    }
-
-        //}
-
-        public void checkPageIsReady()
+        public void rating(string locator)
         {
-            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
-            string ali = js.ExecuteScript("return document.readyState").ToString();
-            if (js.ExecuteScript("return document.readyState").ToString().Equals("complete"))
+            try
             {
-                Thread.Sleep(200);
-                return;
+                    Thread.Sleep(3000);
+                    Boolean a = driver.FindElements(By.Id(locator)).Count != 0;
+                    if (a == true)
+                    {
+                        waitDriver.Until(ExpectedConditions.ElementIsVisible(By.Id(locator)));
+                        {
+                            waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
+                            {
+                                IWebElement link = waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
+
+                                link.Click();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        //do nothing
+                    }
+                
+            }
+            catch (ElementNotVisibleException)
+            {
+
+                throw new AssertFailedException(string.Format("The element provided {0} is not on screen", locator));
+            }
+            catch (StaleElementReferenceException)
+            {
+
+                throw new AssertFailedException(string.Format("The element provided {0} is Stale", locator));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("ex message: " + ex.Message);
+
             }
 
         }
 
+        //public void checkPageIsReady()
+        //{
+        //    IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+        //    string ali = js.ExecuteScript("return document.readyState").ToString();
+        //    if (js.ExecuteScript("return document.readyState").ToString().Equals("complete"))
+        //    {
+        //        Thread.Sleep(200);
+        //        return;
+        //    }
 
-        //Method For Scroll
+        //}
+
+
+        //Method For Scroll Down
         public void scroll_down()
         {
             try
@@ -496,19 +497,33 @@ namespace HBLAutomationAndroid.Pages
 
             }
         }
-        ////Method For Combobox
-        public void combobox(string value, string locator)
+
+
+        //Method For Combobox
+        public void combobox(string value, string locator,string locator_type)
         {
             try
             {
-                AndroidElement Combobox = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
-                Thread.Sleep(1000);
-                Combobox.Click();
-                Thread.Sleep(2000);
-                AndroidElement ComboboxValue = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//*[contains(@text,'" + value + "')]")));
-                ComboboxValue.Click();
-                Thread.Sleep(3000);
-
+                if (locator_type == "id")
+                {
+                    AndroidElement Combobox = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
+                    Thread.Sleep(1000);
+                    Combobox.Click();
+                    Thread.Sleep(2000);
+                    AndroidElement ComboboxValue = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//*[contains(@text,'" + value + "')]")));
+                    ComboboxValue.Click();
+                    Thread.Sleep(3000);
+                }
+                else if(locator_type == "xpath")
+                {
+                    AndroidElement Combobox = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
+                    Thread.Sleep(1000);
+                    Combobox.Click();
+                    Thread.Sleep(2000);
+                    AndroidElement ComboboxValue = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//*[contains(@text,'" + value + "')]")));
+                    ComboboxValue.Click();
+                    Thread.Sleep(3000);
+                }
 
             }
 

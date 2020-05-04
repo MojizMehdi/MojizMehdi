@@ -8,6 +8,7 @@ using OpenQA.Selenium.Appium.Android;
 using System;
 using System.Threading;
 using TechTalk.SpecFlow;
+using System.Data;
 
 namespace HBLAutomationAndroid.Core
 {
@@ -41,6 +42,7 @@ namespace HBLAutomationAndroid.Core
         [When(@"I have given ""(.*)"" on ""(.*)""")]
         public void WhenIHaveGivenOn(string textboxvalue, string Keyword)
         {
+            string locator_type = "id";
             if (String.IsNullOrEmpty(textboxvalue))
             {
                 return;
@@ -51,7 +53,11 @@ namespace HBLAutomationAndroid.Core
                 //apmhelper.checkPageIsReady();
                 Element keyword = ContextPage.GetInstance().GetElement(Keyword);
                 //keyword.Locator used instead od locator
-                apmhelper.SetTextBoxValue(textboxvalue, keyword.Locator);
+                if (keyword.Locator.StartsWith("/"))
+                {
+                    locator_type = "xpath";
+                }
+                apmhelper.SetTextBoxValue(textboxvalue, keyword.Locator,locator_type);
 
             }
             catch (Exception exception)
@@ -64,12 +70,17 @@ namespace HBLAutomationAndroid.Core
         [When(@"I am performing on ""(.*)""")]
         public void WhenIAmPerformingOn(string Keyword)
         {
+            string locator_type = "id";
             try
             {
                 AppiumHelper apmhelper = new AppiumHelper();
                 //apmhelper.checkPageIsReady();
                 Element keyword = ContextPage.GetInstance().GetElement(Keyword);
-                apmhelper.Button(keyword.Locator);
+                if (keyword.Locator.StartsWith("/"))
+                {
+                    locator_type = "xpath";
+                }
+                apmhelper.Button(keyword.Locator,locator_type);
             }
             catch (Exception exception)
             {
@@ -81,14 +92,25 @@ namespace HBLAutomationAndroid.Core
         [When(@"I am clicking on ""(.*)""")]
         public void WhenIAmClickingOn(string Keyword)
         {
+            string locator_type = "id";
             try
             {
-                if (!String.IsNullOrEmpty(Keyword))
+                if (Keyword == "SendMoney_Rating" || Keyword == "SendMoney_RatingOkBtn" || Keyword == "SendMoney_Rating_Feedback_OkBtn")
+                {
+                    AppiumHelper apmhelper = new AppiumHelper();
+                    Element keyword = ContextPage.GetInstance().GetElement(Keyword);
+                    apmhelper.rating(keyword.Locator);
+                }
+                else if (!String.IsNullOrEmpty(Keyword))
                 {
                     AppiumHelper apmhelper = new AppiumHelper();
                     //apmhelper.checkPageIsReady();
                     Element keyword = ContextPage.GetInstance().GetElement(Keyword);
-                    apmhelper.links(keyword.Locator);
+                    if (keyword.Locator.StartsWith("/"))
+                    {
+                        locator_type = "xpath";
+                    }
+                    apmhelper.links(keyword.Locator,locator_type);
                 }
 
 
@@ -161,6 +183,7 @@ namespace HBLAutomationAndroid.Core
         [When(@"I select ""(.*)"" on ""(.*)""")]
         public void WhenISelectOn(string value, string Keyword)
         {
+            string locator_type = "id";
             if (String.IsNullOrEmpty(value))
             {
                 return;
@@ -170,7 +193,11 @@ namespace HBLAutomationAndroid.Core
                 AppiumHelper apmhelper = new AppiumHelper();
                 //apmhelper.checkPageIsReady();
                 Element keyword = ContextPage.GetInstance().GetElement(Keyword);
-                apmhelper.combobox(value, keyword.Locator);
+                if (keyword.Locator.StartsWith("/"))
+                {
+                    locator_type = "xpath";
+                }
+                apmhelper.combobox(value, keyword.Locator,locator_type);
                 if (Keyword.Equals("SendMoney_Frequency"))
                 {
                     context.Setfrequency(value);
@@ -202,6 +229,111 @@ namespace HBLAutomationAndroid.Core
             Thread.Sleep(p0);
         }
 
+        [Then(@"verify through ""(.*)"" on ""(.*)""")]
+        public void ThenVerifyThroughOn(string message, string Keyword)
+        {
+            string locator_type = "id";
+            try
+            {
+                AppiumHelper apmhelper = new AppiumHelper();
+                //selhelper.checkPageIsReady();
+                Thread.Sleep(3000);
+                Element keyword = ContextPage.GetInstance().GetElement(Keyword);
+                if (keyword.Locator.StartsWith("/"))
+                {
+                    locator_type = "xpath";
+                }
+                if (message == "ConsumerNoContextVal")
+                {
+                    message = context.GetConsumer_No();
+                }
+                apmhelper.verification(message, keyword.Locator,locator_type);
+                if (Keyword.Contains("Pay_Transaction_Success") || Keyword.Contains("SendMoney_TranSuccessMessage"))
+                {
+                    keyword = null;
+                    locator_type = "xpath";
+                    string tranid_keyword = "SendMoney_TranID";
+                    keyword = ContextPage.GetInstance().GetElement(tranid_keyword);
+                    string tran_id = apmhelper.ReturnKeywordValue(keyword.Locator,locator_type);
+                    context.SetTransaction_Id(tran_id);
+                }
+            }
+            catch (Exception exception)
+            {
+
+                throw new AssertFailedException(exception.Message);
+            }
+        }
+        [When(@"verify through database on ""(.*)"" on Schema ""(.*)"" on ""(.*)""")]
+        [Then(@"verify through database on ""(.*)"" on Schema ""(.*)"" on ""(.*)""")]
+        public void ThenVerifyThroughDatabaseOnOnSchemaOn(string query, string schema, string Keyword)
+        {
+            string locator_type = "id";
+            if (query.Contains("DC_TRANSACTION"))
+            {
+                if (Keyword.Contains("SendMoney_TranToBank") || Keyword.Contains("SendMoney_TranType"))
+                {
+                    query = query + context.GetTransaction_Id() + "')";
+                }
+                else
+                {
+                    query = query + context.GetTransaction_Id() + "'";
+                }
+            }
+            try
+            {
+                string message = "";
+                AppiumHelper apmhelper = new AppiumHelper();
+                Thread.Sleep(3000);
+                Element keyword = ContextPage.GetInstance().GetElement(Keyword);
+                if (keyword.Locator.StartsWith("/"))
+                {
+                    locator_type = "xpath";
+                }
+                if (query != "")
+                {
+                    if (query.Contains("{ConsumerNo}"))
+                    {
+                        query = query.Replace("{ConsumerNo}", context.GetConsumer_No());
+                    }
+                    DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
+                    DataTable SourceDataTable = dlink.GetDataTable(query, schema);
+                    message = SourceDataTable.Rows[0][0].ToString();
+                    if(Keyword == "SendMoney_TranBeneName")
+                    {
+                        if(message == "")
+                        {
+                            string temp = query.Replace("DT.BENEFICIARY_NAME", "DT.FT_TO_ACCOUNT_TITLE");
+                            query = temp;
+                        }
+                    }
+                    if (Keyword.Equals("SendMoney_TranAmount") || Keyword.Equals("Pay_Transaction_Unpaid_Amount"))
+                    {
+                        message = Convert.ToDecimal(message).ToString("0.00");
+                    }
+                    if (Keyword.Equals("Pay_Transaction_Success_ConsumerNo"))
+                    {
+                        context.SetConsumer_No(message);
+                    }
+                }
+                apmhelper.verification(message, keyword.Locator,locator_type);
+            }
+            catch (Exception exception)
+            {
+
+                throw new AssertFailedException(exception.Message);
+            }
+        }
+        [Then(@"verify the result from ""(.*)"" on db ""(.*)""")]
+        public void ThenVerifyTheResultFromOnDb(string query, string schema)
+        {
+            DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
+            DataTable SourceDataTable = dlink.GetDataTable(query, schema);
+            if (SourceDataTable.Rows.Count == 0)
+            {
+                throw new AssertFailedException(string.Format("there exists no record in database against query: {0}", query));
+            };
+        }
 
     }
 }
