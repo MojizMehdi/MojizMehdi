@@ -232,6 +232,7 @@
     <Compile Include="Common\PathFinder.cs" />
     <Compile Include="Core\Binding.cs" />
     <Compile Include="Core\IBWebSteps.cs" />
+    <Compile Include="Pages\AESEncryptorDecryptor.cs" />
     <Compile Include="Pages\DriverFactory.cs" />
     <Compile Include="Pages\SeleniumHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

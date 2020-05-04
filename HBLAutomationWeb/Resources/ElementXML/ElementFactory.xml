@@ -62,6 +62,7 @@
     <Element keyword="Pay_BillPayment_accountno" locator ="//select[@name='fromAccount']" />
     <Element keyword="Pay_Card_Expiry_Date" locator="//input[@name='CardExpiryDate']" />
     <Element keyword="Pay_Account_No-Count" locator="//div[@class='acc-num ng-binding']" />
+    <Element keyword="Pay_Transaction_MaxBillAmount_value" locator="//div[@class='hide-label m-2 col-11 ng-scope']//input[@name='Amount']" />
   </Module>
   <Module name ="SendMoney">
     <Element keyword="SendMoney_Link" locator="//*[contains(text(),'Send Money ')]"/>
