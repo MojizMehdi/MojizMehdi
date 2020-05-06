@@ -47,12 +47,24 @@ namespace HBLAutomationWeb.Common
         int sizecount;
         string Account_Type;
         string username;
-
+        bool rating_check = false;
+        string schedule_config;
+        string customer_info_id;
+        string is_tran_req;
+        string is_otp_req;
 
 
         public string CutOvertime = null;
         public string Date = null;
 
+        public void SetRatingCheck(bool rating_check)
+        {
+            this.rating_check = rating_check;
+        }
+        public bool GetRatingCheck()
+        {
+            return rating_check;
+        }
         public void Set_acc_balances(Dictionary<string, string> acc_info)
         {
             this.acc_info = acc_info;
@@ -207,30 +219,41 @@ namespace HBLAutomationWeb.Common
         {
             return username;
         }
+        public void SetScheduleConfig(string schedule_config)
+        {
+            this.schedule_config = schedule_config;
+        }
+        public string GetScheduleConfig()
+        {
+            return schedule_config;
+        }
+        public void SetCustomerInfoID(string customer_info_id)
+        {
+            this.customer_info_id = customer_info_id;
+        }
+        public string GetCustomerInfoID()
+        {
+            return customer_info_id;
+        }
+        public void SetOTPReq(string is_otp_req)
+        {
+            this.is_otp_req = is_otp_req;
+        }
+        public string GetOTPReq()
+        {
+            return is_otp_req;
+        }
+        public void SetTranPassReq(string is_tran_req)
+        {
+            this.is_tran_req = is_tran_req;
+        }
+        public string GetTranPassReq()
+        {
+            return is_tran_req;
+        }
 
-        //public string[,] username  
-        // {
-        // get
-        // {
-        //      return AccBalance;
-        //  }
-        // set
-        //   {
-        //      AccBalance = value;
-        //  }
-        //  }
-        //public void SetAccBalance(string [,] arr)
-        //{
-        //    AccBalance = arr;
-        // }
+        //public string this[string key] schedule_config  
 
-        //public string[,] GetAccBalance()
-        //{
-        //    return AccBalance;
-        //}
-
-
-        //public string this[string key]
         //{
         // returns value if exists
         //get { return acc_info[key]; }

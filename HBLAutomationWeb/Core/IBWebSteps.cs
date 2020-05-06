@@ -97,10 +97,23 @@ namespace HBLAutomationWeb.Core
         {
             try
             {
-                SeleniumHelper selhelper = new SeleniumHelper();
-                selhelper.checkPageIsReady();
-                Element keyword = ContextPage.GetInstance().GetElement(Keyword);
-                selhelper.Button(keyword.Locator);
+                if (Keyword.Equals("Pay_BillPayment_Inquiry_NextBtn"))
+                {
+                    if (context.GetOTPReq() == "1" || context.GetTranPassReq() == "1")
+                    {
+                        SeleniumHelper selhelper = new SeleniumHelper();
+                        selhelper.checkPageIsReady();
+                        Element keyword = ContextPage.GetInstance().GetElement(Keyword);
+                        selhelper.Button(keyword.Locator);
+                    }
+                }
+                else
+                {
+                    SeleniumHelper selhelper = new SeleniumHelper();
+                    selhelper.checkPageIsReady();
+                    Element keyword = ContextPage.GetInstance().GetElement(Keyword);
+                    selhelper.Button(keyword.Locator);
+                }
             }
             catch (Exception exception)
             {
@@ -125,6 +138,20 @@ namespace HBLAutomationWeb.Core
                     selhelper.checkPageIsReady();
                     Element keyword = ContextPage.GetInstance().GetElement(Keyword);
                     selhelper.rating(keyword.Locator);
+                    if(context.GetRatingCheck() == true)
+                    {
+                        string query = "Select PARAM_ANSWER_ID from DC_CUSTOMER_REG_FEEDBACK  i where I.CUSTOMER_INFO_ID='1{customer_info_id}'";
+                        query = query.Replace("{customer_info_id}", context.GetCustomerInfoID());
+                        DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
+                        DataTable SourceDataTable = dlink.GetDataTable(query, "DIGITAL_CHANNEL_SEC");
+                        string rating_ans = SourceDataTable.Rows[0][0].ToString();
+
+                        if (rating_ans != "5")
+                        {
+                            throw new AssertFailedException("Rating verification Failed, Given and DB Value is not equal");
+
+                        }
+                    }
                 }
                 else if (!String.IsNullOrEmpty(Keyword))
                 {
@@ -362,6 +389,11 @@ namespace HBLAutomationWeb.Core
                 DataTable SourceDataTable = dLink.GetDataTable(query, db_value);
                 string inst_type = SourceDataTable.Rows[0][0].ToString();
 
+                if(query.Contains("APPLICATION_PARAMETER_ID='906'"))
+                {
+                    context.SetScheduleConfig(inst_type);
+                }
+
                 if (SourceDataTable.Rows.Count == 0)
                 {
                     throw new AssertFailedException(string.Format("there exists no record in database against query: {0}", query));
@@ -404,7 +436,7 @@ namespace HBLAutomationWeb.Core
                 DataTable SourceDataTable = dLink.GetDataTable(query, db_value);
                 string bene_name = SourceDataTable.Rows[0][0].ToString();
 
-                if (SourceDataTable.Rows.Count == 0 || (bene_name == "1"))
+                if (bene_name == "1" && context.GetBeneName() != "")
                 {
                     SeleniumHelper selhelper = new SeleniumHelper();
                     Element keyword = ContextPage.GetInstance().GetElement("Pay_Bene_checkbox");
@@ -422,6 +454,7 @@ namespace HBLAutomationWeb.Core
 
 
         [Then(@"verify through ""(.*)"" on ""(.*)""")]
+        [When(@"verify through ""(.*)"" on ""(.*)""")]
         public void ThenVerifyThroughOn(string message, string Keyword)
         {
             try
@@ -550,14 +583,28 @@ namespace HBLAutomationWeb.Core
             selhelper.ScrollToElement(keyword.Locator);
         }
 
-        [When(@"I have otp check and given (.*) on ""(.*)"" on company code (.*)")]
-        public void WhenIHaveOtpCheckAndGivenOnOnCompanyCode(string otp_value, string Keyword, string company_code_value)
+        [When(@"I have otp check and given (.*) on ""(.*)""")]
+        public void WhenIHaveOtpCheckAndGivenOnOnCompanyCode(string otp_value, string Keyword)
         {
-            string query = "SELECT CC.IS_OTP_REQUIRED FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE = '" + company_code_value + "' AND CC.CHANNEL_CODE = 'MB'";
-            DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
-            DataTable SourceDataTable = dlink.GetDataTable(query, "QAT_BPS");
-            string is_otp_req = SourceDataTable.Rows[0][0].ToString();
-            if (is_otp_req == "1")
+            
+            if (context.GetOTPReq() == "1")
+            {
+                SeleniumHelper selhelper = new SeleniumHelper();
+                otp_value = selhelper.GetOTP();
+                //selhelper.checkPageIsReady();
+                Thread.Sleep(3000);
+                Element keyword = ContextPage.GetInstance().GetElement(Keyword);
+                selhelper.SetTextBoxValue(otp_value, keyword.Locator);
+
+                
+            }
+        }
+
+        [When(@"I have transaction pass check and given (.*) on ""(.*)""")]
+        public void WhenIHaveTransactionPassCheckAndGivenOnOnCompanyCode(string otp_value, string Keyword)
+        {
+
+            if (context.GetTranPassReq() == "1")
             {
                 SeleniumHelper selhelper = new SeleniumHelper();
                 //selhelper.checkPageIsReady();
@@ -566,23 +613,22 @@ namespace HBLAutomationWeb.Core
                 selhelper.SetTextBoxValue(otp_value, keyword.Locator);
             }
         }
-
-        [When(@"I have transaction pass check and given (.*) on ""(.*)"" on company code (.*)")]
-        public void WhenIHaveTransactionPassCheckAndGivenOnOnCompanyCode(string otp_value, string Keyword, string company_code_value)
-        {
+        [When(@"I am verifying OTP and Transaction pass check on company code (.*)")]
+        public void WhenIAmVerifyingOTPAndTransactionPassCheckOnCompanyCode(string company_code_value)
+        { 
             string query = "SELECT CC.IS_PWD_REQUIRED FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE = '" + company_code_value + "' AND CC.CHANNEL_CODE = 'MB'";
             DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
             DataTable SourceDataTable = dlink.GetDataTable(query, "QAT_BPS");
             string is_tran_req = SourceDataTable.Rows[0][0].ToString();
-            if (is_tran_req == "1")
-            {
-                SeleniumHelper selhelper = new SeleniumHelper();
-                //selhelper.checkPageIsReady();
-                Thread.Sleep(3000);
-                Element keyword = ContextPage.GetInstance().GetElement(Keyword);
-                selhelper.SetTextBoxValue(otp_value, keyword.Locator);
-            }
+            context.SetTranPassReq(is_tran_req);
+
+            string query2 = "SELECT CC.IS_OTP_REQUIRED FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE = '" + company_code_value + "' AND CC.CHANNEL_CODE = 'MB'";
+            DataAccessComponent.DataAccessLink dlink2 = new DataAccessComponent.DataAccessLink();
+            DataTable SourceDataTable2 = dlink2.GetDataTable(query2, "QAT_BPS");
+            string is_otp_req = SourceDataTable2.Rows[0][0].ToString();
+            context.SetOTPReq(is_otp_req);
         }
+
 
         [When(@"I want value from textbox ""(.*)"" on database ""(.*)"" as ""(.*)""")]
         public void WhenIWantValueFromTextboxOnDatabaseAs(string Keyword, string db_value, string query)
@@ -921,6 +967,43 @@ namespace HBLAutomationWeb.Core
 
         }
 
+        //To verify the schedule configuration from Data base 
+        [Then(@"verify the schedule config ""(.*)"" on Schema ""(.*)""")]
+        public void ThenVerifyTheScheduleConfigOnSchema(string query, string db_value)
+        {
+            string query3 = "Select CUSTOMER_INFO_ID from dc_customer_info i where I.CUSTOMER_NAME='{usernmae}'";
+            query3 = query3.Replace("{usernmae}", context.GetUsername());
+
+            DataAccessComponent.DataAccessLink dLink3 = new DataAccessComponent.DataAccessLink();
+            DataTable SourceDataTable3 = dLink3.GetDataTable(query3, db_value);
+            string customer_info_id = SourceDataTable3.Rows[0][0].ToString();
+            context.SetCustomerInfoID(customer_info_id);
+
+            query = query.Replace("{customer_info_id}", customer_info_id);
+
+            DataAccessComponent.DataAccessLink dLink = new DataAccessComponent.DataAccessLink();
+            DataTable SourceDataTable = dLink.GetDataTable(query, db_value);
+            string first_date = SourceDataTable.Rows[0][0].ToString();
+            string last_date = SourceDataTable.Rows[0][1].ToString();
+
+            DateTime EndDate = DateTime.Parse(last_date);
+            DateTime StartDate = DateTime.Parse(first_date);
+
+            string datestring = EndDate.ToString("MM-dd-yyyy", CultureInfo.InvariantCulture);
+            string datestring2 = StartDate.ToString("MM-dd-yyyy", CultureInfo.InvariantCulture);
+
+            double date_diff = ((EndDate - StartDate).TotalDays) / 30;
+
+            int res = Convert.ToInt32(date_diff) + 1;
+
+            if (res != Convert.ToInt32(context.GetScheduleConfig()))
+            {
+                throw new AssertFailedException(string.Format("The scheduled config {0} is not equal to newly scheduled bill {1}", res, context.GetScheduleConfig()));
+
+            }
+        }
+
     }
+
 
 }

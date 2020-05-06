@@ -7,6 +7,7 @@
     <Element keyword="Login_OTP_field" locator="//input[@name='OneTimePassword']"/>
     <Element keyword="Login_OTP_Verify_Button" locator="//button[@class='btn submit-btn']"/>
     <Element keyword="Login_Dashboard" locator="//img[@class='desk-logo']"/>
+    <Element keyword="Login_Success_Text" locator="//h2[@class='over-lap']//span" />
   </Module>
 
   

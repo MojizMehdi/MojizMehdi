@@ -251,6 +251,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PayBill.feature</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Feature\InternetBanking\PayBillWithBene.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PayBillWithBene.feature</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Feature\InternetBanking\SendMoney.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -291,6 +296,10 @@
     <None Include="Resources\Feature\InternetBanking\PayBill.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>PayBill.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\Feature\InternetBanking\PayBillWithBene.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PayBillWithBene.feature.cs</LastGenOutput>
     </None>
     <None Include="Resources\Feature\InternetBanking\SendMoney.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

@@ -12,6 +12,7 @@ Scenario Outline: 1 As a user i want to Verify login for HBL Web
 	When I am performing on "Login_SignIn_Button"
 	And I have given "<OTP_Value>" on "Login_OTP_field"
 	And I am performing on "Login_OTP_Verify_Button"
+	Then verify through "Welcome" on "Login_Success_Text"
 	@source:Data/IBLogin.xlsx
 	Examples: 
 	|Case|Login_UserId_Value|Login_Password_Value|OTP_Value|
