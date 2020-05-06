@@ -4,12 +4,19 @@
     <!--<Element keyword="Login_UserId" locator="//android.widget.EditText[@resource-id='com.hbl.android.hblmobilebanking:id/l_username_field']"/>
     <Element keyword="Login_Password" locator="//android.widget.EditText[@resource-id='com.hbl.android.hblmobilebanking:id/l_password_field']"/>
     <Element keyword="Login_SignIn_Button" locator="//android.widget.Button[@resource-id='com.hbl.android.hblmobilebanking:id/login_button']"/>-->
+    
     <Element keyword="Login_UserId" locator="com.hbl.android.hblmobilebanking:id/l_username_field"/>
     <Element keyword="Login_Password" locator="com.hbl.android.hblmobilebanking:id/l_password_field"/>
     <Element keyword="Login_SignIn_Button" locator="com.hbl.android.hblmobilebanking:id/login_button"/>
     <!--<Element keyword="Login_OTP_field" locator="//input[@name='OneTimePassword']"/>
     <Element keyword="Login_OTP_Verify_Button" locator="//button[@class='btn submit-btn']"/>-->
     <!--<Element keyword="Login_Dashboard" locator="//img[@class='desk-logo']"/>-->
+  </Module>
+
+  <Module name ="Dashboard">
+    <Element keyword="Dashboard" locator="com.hbl.android.hblmobilebanking:id/homeClick"/>
+    <Element keyword="Dashboard_Sidebar" locator="//android.widget.ImageButton"/>
+    <Element keyword="Dashboard_Sidebar_TranActivity" locator="//android.widget.TextView[@resource-id='com.hbl.android.hblmobilebanking:id/menuTitle' and @text='Transaction Activity']"/>
   </Module>
 
   
@@ -67,7 +74,7 @@
     <Element keyword="SendMoney_BeneMobileNo" locator="com.hbl.android.hblmobilebanking:id/eTextMobileNumber"/>
     <Element keyword="SendMoney_BeneEmail" locator="com.hbl.android.hblmobilebanking:id/eTextEmailAddress"/>
     <Element keyword="SendMoney_NextBtn" locator="com.hbl.android.hblmobilebanking:id/btnTransNext"/>
-    <Element keyword="SendMoney_OTP" locator="com.hbl.android.hblmobilebanking:id/txt_pin_entry"/>
+    <Element keyword="SendMoney_OTP_Field" locator="com.hbl.android.hblmobilebanking:id/txt_pin_entry"/>
     <Element keyword="SendMoney_TranPass" locator="com.hbl.android.hblmobilebanking:id/eTextTransPassword"/>
     <Element keyword="SendMoney_SkipBtn" locator="com.hbl.android.hblmobilebanking:id/btnSkip"/>
     <Element keyword="SendMoney_TranID" locator="//android.widget.TextView[@text='Transaction ID']/following-sibling::android.widget.TextView"/>
@@ -79,6 +86,9 @@
     <Element keyword="SendMoney_TranBeneName" locator="//android.widget.TextView[@text='Beneficiary Name']/following-sibling::android.widget.TextView"/>
     <Element keyword="SendMoney_TranToBank" locator="//android.widget.TextView[@text='To Bank']/following-sibling::android.widget.TextView"/>
     <Element keyword="SendMoney_TranPurpose" locator="//android.widget.TextView[@text='Purpose']/following-sibling::android.widget.TextView"/>
+    <Element keyword="SendMoney_TranInfoClose" locator="com.hbl.android.hblmobilebanking:id/btnClose"/>
+    <Element keyword="SendMoney_SearchBeneField" locator="com.hbl.android.hblmobilebanking:id/txtView_Search"/>
+    <Element keyword="SendMoney_SearchBeneAccountNo" locator="com.hbl.android.hblmobilebanking:id/textView_Bene_AccountNumber"/>
     <Element keyword="SendMoney_Rating" locator="com.hbl.android.hblmobilebanking:id/rating"/>
     <Element keyword="SendMoney_RatingOkBtn" locator="com.hbl.android.hblmobilebanking:id/dialog_pos_btn"/>
     <Element keyword="SendMoney_Rating_Feedback_OkBtn" locator="com.hbl.android.hblmobilebanking:id/dialog_pos_btn"/>
@@ -116,18 +126,28 @@
 
   </Module>
 
+  <Module name ="TransactionActivity">
+    <Element keyword="TransactionActivity_Financial" locator="//android.widget.TextView[@text='Financial']"/>
+    <Element keyword="TransactionActivity_NonFinancial" locator="//android.widget.TextView[@text='Non Financial']"/>
+    <Element keyword="TransactionActivity_LatestTranLink" locator="//androidx.recyclerview.widget.RecyclerView[@resource-id='com.hbl.android.hblmobilebanking:id/recViewTransactionActivity']//android.widget.LinearLayout[@resource-id='com.hbl.android.hblmobilebanking:id/recyclerViewTransactionActivity'][1]"/>
+  </Module>
 
-  <!--<Module name ="Accounts">
-    <Element keyword="Accounts_Link" locator="//a[contains(text(),'Accounts')]"/>
-    <Element keyword="Accounts_FromDate" locator="//input[@name='fromDate']"/>
+
+  <Module name ="Accounts">
+    <Element keyword="Accounts_Home_Next" locator="com.hbl.android.hblmobilebanking:id/rightArrow_A"/>
+    <Element keyword="Accounts_Home_Previous" locator="com.hbl.android.hblmobilebanking:id/leftArrow_A"/>
+    <Element keyword="Accounts_Home_No" locator="com.hbl.android.hblmobilebanking:id/accountNo_Txt"/>
+    <Element keyword="Accounts_Home_Balance" locator="com.hbl.android.hblmobilebanking:id/accountB_Txt"/>
+    <!--<Element keyword="Accounts_Link" locator="//a[contains(text(),'Accounts')]"/>-->
+    <!--<Element keyword="Accounts_FromDate" locator="//input[@name='fromDate']"/>
     <Element keyword="Accounts_ToDate" locator="//input[@name='ToDate']"/>
     <Element keyword="Accounts_NoOfDays" locator="//input[@name='NumberOfDays']"/>
     <Element keyword="Accounts_Generate_Button" locator="//button[@type='button' and text()='Generate']"/>
     <Element keyword="Accounts_CSV_Button" locator="//button[@type='button' and text()='CSV']"/>
-    <Element keyword="Accounts_PDF_Button" locator="//button[@type='button' and text()='PDF']"/>
-  </Module>
+    <Element keyword="Accounts_PDF_Button" locator="//button[@type='button' and text()='PDF']"/>-->
+  </Module>-->
 
-  <Module name="Settings">
+  <!--<Module name="Settings">
     <Element keyword="Settings_icon" locator="//div[@class='actions col-lg-5 col-xl-5']//a[contains(text(),'Settings')]"/>
     <Element keyword="Settings_login_old_pass" locator="//input[@ng-model='ChangePassword.oldPassword']"/>
     <Element keyword="Settings_login_new_pass" locator="//input[@ng-model='ChangePassword.newPassword']"/>

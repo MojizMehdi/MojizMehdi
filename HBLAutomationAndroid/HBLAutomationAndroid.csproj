@@ -245,14 +245,15 @@
     <Compile Include="Common\PathFinder.cs" />
     <Compile Include="Core\AndroidSteps.cs" />
     <Compile Include="Core\Binding.cs" />
+    <Compile Include="Pages\AESEncryptorDecryptor.cs" />
     <Compile Include="Pages\DriverFactory.cs" />
     <Compile Include="Pages\AppiumHelper.cs" />
     <Compile Include="Pages\WpDriver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources\Feature\HBLMobile\Login.feature.cs">
+    <Compile Include="Resources\Feature\HBLMobile\SendMoney.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Login.feature</DependentUpon>
+      <DependentUpon>SendMoney.feature</DependentUpon>
     </Compile>
     <Compile Include="XML\apiconfiguration\ApiConfiguration.cs" />
     <Compile Include="XML\ElementFactory\Element.cs" />
@@ -268,9 +269,9 @@
     </None>
     <None Include="Resources\Feature\HBLMobile\Data\HBLMobileLogin.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\SendMoney.xlsx" />
-    <None Include="Resources\Feature\HBLMobile\Login.feature">
+    <None Include="Resources\Feature\HBLMobile\SendMoney.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Login.feature.cs</LastGenOutput>
+      <LastGenOutput>SendMoney.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
