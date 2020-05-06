@@ -1,26 +1,12 @@
-﻿Feature: PayBill
+﻿Feature: PayBillWithBene
 	In order to avoid silly mistakes
 	As a math idiot
 	I want to be told the sum of two numbers
 
-@BillPayment
-Scenario Outline: 1 As a user i want to Verify login for HBL Web Bill Payment
-Given the test case title is "<Case>"
-And the user is arrive to Internet Banking home page 
-And I have given "<Login_UserId_Value>" on "Login_UserId"
-And I set value in context from data "<Login_UserId_Value>" as "username"
-And I have given "<Login_Password_Value>" on "Login_Password"
-When I am performing on "Login_SignIn_Button"
-And I wait 3000
-And I have given "<OTP_Value>" on "Login_OTP_field"
-And I am performing on "Login_OTP_Verify_Button"
-Then verify through "Welcome" on "Login_Success_Text"
-@source:Data/IBLogin.xlsx
-Examples: 
-|Case|Login_UserId_Value|Login_Password_Value|OTP_Value|
+
 
 @BillPayment
-Scenario Outline: 2 As a user i want to Verify Bill Payment through PAY
+Scenario Outline: 2 As a user i want to Verify Bill Payment through PAY with Bene
 Given the test case title is "<Case>"
 And I set value in context from data "<Pay_BillPayment_ConsumerNo_Value>" as "ConsumerNo"
 And update the data by query "<status_query>" on QAT_BPS
@@ -29,12 +15,11 @@ And the user is arrive to Internet Banking home page
 And I am clicking on "Login_Dashboard"
 And I count Number of Account
 And I save Account Balances
-And I am clicking on "Pay_Link"
-When I am clicking on "Pay_AddNewBtn"
-And I am clicking on link "<Category_Value>" on "Pay_BillPaymentCategory"
-And I am clicking on link "<Company_Value>" on "Pay_BillPaymentCategory_Company"
+When I am clicking on "Pay_Link"
 And I set value in context from data "<company_code_value>" as "Company_Code"
 And I set value in context from data "<account_type>" as "Account_Type"
+And I have given "<Pay_BillPayment_ConsumerNo_Value>" on "Pay_Transaction_PayBill_BeneSearchTextbox"
+And I am clicking on "Pay_Transaction_PayBill_BeneSearchConsumerNo"
 And I select "<account_no>" on "Pay_BillPayment_accountno"
 And verify the result from "<instrument_type>" on Schema "<db_val2>"
 And I have given "<Pay_BillPayment_ConsumerNo_Value>" on "Pay_BillPayment_ConsumerNo"
@@ -53,7 +38,7 @@ And I scroll to element "Pay_BillPayment_PayBtn"
 And I have otp check and given <OTP_Value> on "Login_OTP_field"
 And I have transaction pass check and given <tran_pass_value> on "Pay_Transaction_PayBill_TransactionPassword"
 And I press Enter on "Pay_BillPayment_PayBtn"
-And I wait 10000
+And I wait 8000
 And I save Transaction Info
 Then verify through "Transaction is successful." on "Pay_Transaction_Success"
 And verify through database on "<tran_amount_query>" on Schema "<db_val>" on "Pay_Transaction_Success_Amount"

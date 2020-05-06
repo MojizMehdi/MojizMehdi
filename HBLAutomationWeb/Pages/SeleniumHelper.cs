@@ -374,6 +374,7 @@ namespace HBLAutomationWeb.Pages
 
                     Thread.Sleep(3000);
                     Boolean a = driver.FindElements(By.XPath(locator)).Count != 0;
+                    context.SetRatingCheck(a);
                     //bool a = driver.FindElement(By.XPath(locator)).Displayed;
                     //IWebElement link = waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
                     if (a == true)
@@ -495,8 +496,8 @@ namespace HBLAutomationWeb.Pages
         public int SizeCountElements(string locator)
         {
             IWebElement Control = waitDriver.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
-            var list_elements = driver.FindElements(By.XPath("//div[@class='acc-num ng-binding']"));
-            //return Control.GetAttribute("value");
+            var list_elements = driver.FindElements(By.XPath(locator));
+
             return list_elements.Count;
         }
 

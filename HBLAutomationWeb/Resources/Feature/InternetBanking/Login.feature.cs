@@ -109,6 +109,8 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 14
  testRunner.And("I am performing on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 15
+ testRunner.Then("verify through \"Welcome\" on \"Login_Success_Text\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -122,13 +124,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/IBLogin.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "A7575254900")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "AZEEM1969")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
         public virtual void _1AsAUserIWantToVerifyLoginForHBLWeb_WhenUserIdAndPasswordAreValid()
         {
 #line 7
-this._1AsAUserIWantToVerifyLoginForHBLWeb("When user id and password are valid", "A7575254900", "pakistan1", "12345678", new string[] {
+this._1AsAUserIWantToVerifyLoginForHBLWeb("When user id and password are valid", "AZEEM1969", "pakistan1", "12345678", new string[] {
                         "source:Data/IBLogin.xlsx"});
 #line hidden
         }
@@ -142,33 +144,33 @@ this._1AsAUserIWantToVerifyLoginForHBLWeb("When user id and password are valid",
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user i want to Verify Beneficiary Addition for HBL Web", @__tags);
-#line 21
- this.ScenarioSetup(scenarioInfo);
 #line 22
+ this.ScenarioSetup(scenarioInfo);
+#line 23
  testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 24
- testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 25
- testRunner.And("I am clicking on \"BeneficiaryManagement_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 26
- testRunner.And("I am clicking on \"BeneficiaryManagement_AddNewBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"BeneficiaryManagement_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 27
- testRunner.And(string.Format("I select \"{0}\" on \"BeneficiaryManagement_Bank\"", beneficiaryManagement_Bank_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"BeneficiaryManagement_AddNewBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 28
- testRunner.And(string.Format("select value from database by \"{0}\"", account_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I select \"{0}\" on \"BeneficiaryManagement_Bank\"", beneficiaryManagement_Bank_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 29
- testRunner.And(string.Format("I have given \"{0}\" on \"BeneficiaryManagement_AccountNo\"", beneficiaryManagement_AccountNo_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("select value from database by \"{0}\"", account_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 30
- testRunner.And(string.Format("I have given \"{0}\" on \"BeneficiaryManagement_BeneNick\"", beneficiaryManagement_BeneNick_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"BeneficiaryManagement_AccountNo\"", beneficiaryManagement_AccountNo_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 31
- testRunner.And(string.Format("I have given \"{0}\" on \"BeneficiaryManagement_PayeeEmail\"", beneficiaryManagement_PayeeEmail_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"BeneficiaryManagement_BeneNick\"", beneficiaryManagement_BeneNick_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 32
- testRunner.And(string.Format("I have given \"{0}\" on \"BeneficiaryManagement_PayeeMobileNumber\"", beneficiaryManagement_PayeeMobileNumber_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"BeneficiaryManagement_PayeeEmail\"", beneficiaryManagement_PayeeEmail_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 33
- testRunner.When("I am performing on \"BeneficiaryManagement_Validate_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"BeneficiaryManagement_PayeeMobileNumber\"", beneficiaryManagement_PayeeMobileNumber_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 34
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I am performing on \"BeneficiaryManagement_Validate_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 35
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 36
  testRunner.And("I am performing on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -193,7 +195,7 @@ this._1AsAUserIWantToVerifyLoginForHBLWeb("When user id and password are valid",
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345")]
         public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForHBLWeb_WhenUserWantsToAddBeneficiary()
         {
-#line 21
+#line 22
  this.AsAUserIWantToVerifyBeneficiaryAdditionForHBLWeb("When user wants to add beneficiary", @"BEGIN DELETE FROM DC_FUND_TRANSFER_BENEFICIARY TF WHERE TF.ACCOUNT_NO = (SELECT CA.ACCOUNT_NO FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_ACCOUNT_ID = '2498940') AND TF.CUSTOMER_INFO_ID = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DCI WHERE DCI.CUSTOMER_NAME = 'NAEEMCAR');COMMIT;END;", "HBL / Konnect", "SELECT CA.ACCOUNT_NO FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_ACCOUNT_ID = \'" +
                     "2498940\'", "", "Ali", "ali@hbl.com", "03121234567", "12345", new string[] {
                         "source:Data/BeneficiaryAddition.xlsx"});
