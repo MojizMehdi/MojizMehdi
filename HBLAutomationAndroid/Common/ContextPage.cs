@@ -41,13 +41,52 @@ namespace HBLAutomationAndroid.Common
         DateTime calendar_fromdate;
         DateTime calendar_todate;
         DateTime tempdate;
+        Dictionary<string, string> acc_info;
+        string username;
+        decimal tran_balance;
+        string tran_account;
+        string to_account;
 
 
- 
+
         public string CutOvertime = null;
         public string Date = null;
 
+        public void SetTran_Account(string tran_account)
+        {
+            this.tran_account = tran_account;
+        }
+        public string GeTran_Account()
+        {
+            return tran_account;
+        }
+        public void SetTran_Balance(decimal tran_balance)
+        {
+            this.tran_balance = tran_balance;
+        }
+        public decimal GetTran_Balance()
+        {
+            return tran_balance;
+        }
 
+        public void Set_acc_balances(Dictionary<string, string> acc_info)
+        {
+            this.acc_info = acc_info;
+        }
+        public Dictionary<string, string> Get_acc_balance()
+        {
+            return this.acc_info;
+
+        }
+
+        public void SetUsername(string username)
+        {
+            this.username = username.ToUpper();
+        }
+        public string GetUsername()
+        {
+            return username;
+        }
         public bool Getfrom_to_date_flag()
         {
             return from_to_date_flag;
@@ -92,6 +131,14 @@ namespace HBLAutomationAndroid.Common
         public string GetCompany_Code()
         {
             return Company_Code;
+        }
+        public void SetToAccount_No(string to_account)
+        {
+            this.to_account = to_account;
+        }
+        public string GetToAccount_No()
+        {
+            return this.to_account;
         }
         public void SetConsumer_No(string Consumer_No)
         {

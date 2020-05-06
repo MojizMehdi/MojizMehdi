@@ -23,6 +23,7 @@ using OpenQA.Selenium.Appium.Interfaces;
 using OpenQA.Selenium.Remote;
 using DocumentFormat.OpenXml.Spreadsheet;
 using OpenQA.Selenium.Appium.MultiTouch;
+using System.Data;
 
 namespace HBLAutomationAndroid.Pages
 {
@@ -42,8 +43,6 @@ namespace HBLAutomationAndroid.Pages
             }
 
         }
-
-
         //For Scrolling down directly to the button
         //public void PressEnter(string locator)
         //{
@@ -345,6 +344,45 @@ namespace HBLAutomationAndroid.Pages
 
         }
 
+        //Method For Link Visibility
+        public void links_visibility(string locator, string locator_type)
+        {
+            try
+            {
+                    Thread.Sleep(3000);
+
+                    if (locator_type == "id")
+                    {
+
+                        AndroidElement link = driver.FindElementById(locator);
+                        //link.Click();
+                    }
+                    else if (locator_type == "xpath")
+                    {
+                         AndroidElement link = driver.FindElementByXPath(locator);
+                        // link.Click();
+                    }
+                
+            }
+            catch (ElementNotVisibleException)
+            {
+
+                throw new AssertFailedException(string.Format("The element provided {0} is not on screen", locator));
+            }
+            catch (StaleElementReferenceException)
+            {
+
+                throw new AssertFailedException(string.Format("The element provided {0} is Stale", locator));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("ex message: " + ex.Message);
+
+            }
+
+        }
+
+
 
         //Method For Link
         public void links(string locator,string locator_type)
@@ -544,6 +582,42 @@ namespace HBLAutomationAndroid.Pages
 
             }
 
+        }
+
+        //For decrypting One Time Password 
+        public string GetOTP()
+        {
+            string otp = "";
+            string schema = "DIGITAL_CHANNEL_SEC";
+            string Key = "cf345ae2xz40yfc8";
+            string IV = "abcaqwerabcaqwer";
+
+
+            string query3 = "Select CUSTOMER_INFO_ID from dc_customer_info i where I.CUSTOMER_NAME='{usernmae}'";
+            query3 = query3.Replace("{usernmae}", context.GetUsername());
+
+            DataAccessComponent.DataAccessLink dLink3 = new DataAccessComponent.DataAccessLink();
+            DataTable SourceDataTable3 = dLink3.GetDataTable(query3, schema);
+            string customer_info_id = SourceDataTable3.Rows[0][0].ToString();
+
+            string query2 = "Select I.OTP from DC_OTP_HISTORY I where I.CUSTOMER_INFO_ID='{customer_info_id}' ORDER BY I.GENERATED_ON DESC";
+            query2 = query2.Replace("{customer_info_id}", customer_info_id);
+
+            DataAccessComponent.DataAccessLink dLink2 = new DataAccessComponent.DataAccessLink();
+            DataTable SourceDataTable2 = dLink2.GetDataTable(query2, schema);
+            otp = SourceDataTable2.Rows[0][0].ToString();
+
+
+            string chk_encrypt_query = "Select PARAMTER_VALUE  from DC_APPLICATION_PARAM_DETAIL i where I.PARAMETER_NAME='OTP_HISTORY_ENCRYPTED'";
+            DataAccessComponent.DataAccessLink dLink = new DataAccessComponent.DataAccessLink();
+            DataTable SourceDataTable = dLink.GetDataTable(chk_encrypt_query, schema);
+            string otp_flag = SourceDataTable.Rows[0][0].ToString();
+            if (otp_flag == "1")
+            {
+                string decryptedstring = AESEncryptorDecryptor.Decrypt(otp, Key, IV);
+                otp = decryptedstring;
+            }
+            return otp;
         }
     }
 }
