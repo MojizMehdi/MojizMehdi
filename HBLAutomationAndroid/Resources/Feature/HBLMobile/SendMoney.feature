@@ -7,17 +7,20 @@
 @mytag
 Scenario Outline: When user try to login mobile banking
 	Given the test case title is "<Case>"
+	And update the data by query "<Status_query>" on DIGITAL_CHANNEL_SEC
 	And the user is arrive to Mobile Banking home page 
 	When I have given "<Login_UserId_Value>" on "Login_UserId"
 	And I have given "<Login_Password_Value>" on "Login_Password"
 	And I wait 2000
 	And I am performing on "Login_SignIn_Button"
 	And I set value in context from data "<Login_UserId_Value>" as "username"
-	#And I have given "<OTP_Value>" on "SendMoney_OTP_Field"
-	And I wait 40000 
+	And I wait 30000
+	And I have given "<OTP_Value>" on "Login_OTP_field"
+	And I am clicking on "Login_OTP_Verify_Button"
+	And I wait 5000 
 	@source:Data/HBLMobileLogin.xlsx
 	Examples: 
-	|Case|Login_UserId_Value|Login_Password_Value|OTP_Value|
+	|Case|Status_query|Login_UserId_Value|Login_Password_Value|OTP_Value|
 	
 
 
@@ -33,6 +36,7 @@ Scenario Outline: When user try to send money mobile
 	And I select "<From_Account_Value>" on "SendMoney_FromAccount"
 	And I select "<Bank_Value>" on "SendMoney_Bank"
 	And I set value in context from data "<Account_Number_Value>" as "ToAccount"
+	And I set value in context from data "SendMoney" as "Transaction_Type"
 	And I have given "<Account_Number_Value>" on "SendMoney_ToAccount"
 	And I scroll down
 	And I have given "<Amount_Value>" on "SendMoney_Amount"
@@ -46,7 +50,7 @@ Scenario Outline: When user try to send money mobile
 	And I wait 3000
 	And I scroll down
 	And I wait 2000
-	And I have given "<OTP_Value>" on "SendMoney_OTP_Field"
+	And I have given "<OTP_Value>" on "Login_OTP_field"
 	And I wait 2000
 	And I am performing on "SendMoney_NextBtn"
 	And I wait 3000

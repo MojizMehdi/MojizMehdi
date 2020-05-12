@@ -46,11 +46,58 @@ namespace HBLAutomationAndroid.Common
         decimal tran_balance;
         string tran_account;
         string to_account;
-
-
+        string category_value;
+        string Account_Type;
+        string is_otp_req;
+        string is_tranpass_req;
+        string Tran_Type;
+        string bene_name;
 
         public string CutOvertime = null;
         public string Date = null;
+
+
+        public void SetBeneName(string bene_name)
+        {
+            this.bene_name = bene_name;
+        }
+        public string GetBeneName()
+        {
+            return bene_name;
+        }
+        public void Set_is_otp_req(string is_otp_req)
+        {
+            this.is_otp_req = is_otp_req;
+        }
+        public string Get_is_otp_req()
+        {
+            return is_otp_req;
+        }
+        public void Set_is_tranpass_req(string is_tranpass_req)
+        {
+            this.is_tranpass_req = is_tranpass_req;
+        }
+        public string Get_is_tranpass_req()
+        {
+            return is_tranpass_req;
+        }
+
+        public void SetAccountType(string Account_Type)
+        {
+            this.Account_Type = Account_Type;
+        }
+        public string GetAccountType()
+        {
+            return Account_Type;
+        }
+        public void SetCategory_value(string category_value)
+        {
+            this.category_value = category_value;
+        }
+        public string GetCategory_value()
+        {
+            return category_value;
+        }
 
         public void SetTran_Account(string tran_account)
         {
@@ -79,6 +126,15 @@ namespace HBLAutomationAndroid.Common
 
         }
 
+
+        public void SetTranType(string Tran_Type)
+        {
+            this.Tran_Type = Tran_Type;
+        }
+        public string GetTranType()
+        {
+            return Tran_Type;
+        }
         public void SetUsername(string username)
         {
             this.username = username.ToUpper();

@@ -307,6 +307,7 @@ namespace HBLAutomationAndroid.Pages
                                 // var js = ((IJavaScriptExecutor)driver);
                                 // js.ExecuteScript("arguments[0].scrollIntoView(true);", Button);
                                 Button.Click();
+                                
                             }
                         }
                     }
