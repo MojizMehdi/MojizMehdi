@@ -250,6 +250,11 @@
     <Compile Include="Pages\AppiumHelper.cs" />
     <Compile Include="Pages\WpDriver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Feature\HBLMobile\BillPayment.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BillPayment.feature</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Feature\HBLMobile\SendMoney.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -267,6 +272,11 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Resources\Feature\HBLMobile\BillPayment.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>BillPayment.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\Feature\HBLMobile\Data\BillPayment.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\HBLMobileLogin.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\SendMoney.xlsx" />
     <None Include="Resources\Feature\HBLMobile\SendMoney.feature">
