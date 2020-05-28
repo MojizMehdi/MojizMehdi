@@ -276,6 +276,8 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>BillPayment.feature.cs</LastGenOutput>
     </None>
+    <None Include="Resources\Feature\HBLMobile\Data\BillPayment%28ExistingBene%29.xlsx" />
+    <None Include="Resources\Feature\HBLMobile\Data\BillPayment%28ExistingBene%29ViaHome.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\BillPayment.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\HBLMobileLogin.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\SendMoney.xlsx" />

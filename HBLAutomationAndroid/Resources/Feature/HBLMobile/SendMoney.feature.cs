@@ -345,4 +345,3 @@ this.WhenUserTryToSendMoneyMobile("When valid Account Details are provided with 
 }
 #pragma warning restore
 #endregion
-
