@@ -20,6 +20,7 @@
     <Element keyword="Dashboard_Sidebar" locator="//android.widget.ImageButton"/>
     <Element keyword="Dashboard_Sidebar_TranActivity" locator="//android.widget.TextView[@resource-id='com.hbl.android.hblmobilebanking:id/menuTitle' and @text='Transaction Activity']"/>
     <Element keyword="Dashboard_More" locator="com.hbl.android.hblmobilebanking:id/more_icon"/>
+    <Element keyword="Dashboard_BillPayment" locator="com.hbl.android.hblmobilebanking:id/pay_Btn"/>
   </Module>
 
   
@@ -38,9 +39,11 @@
     <Element keyword="BillPayment_CategoryLink" locator="com.hbl.android.hblmobilebanking:id/subcat_title_txtview"/>
     <Element keyword="BillPayment_AddNewBtn" locator="com.hbl.android.hblmobilebanking:id/newBtnTxt"/>
     <Element keyword="BillPayment_FromAccount" locator="com.hbl.android.hblmobilebanking:id/accountSpinner"/>
+    <Element keyword="BillPayment_FromAccount_Bene" locator="com.hbl.android.hblmobilebanking:id/acc_Spinner"/>
     <Element keyword="BillPayment_Category_Company" locator="com.hbl.android.hblmobilebanking:id/s_hbpsBillCompanies"/>
     <Element keyword="BillPayment_ConsumerNo" locator="com.hbl.android.hblmobilebanking:id/consumerText"/>
     <Element keyword="BillPayment_NextBtn" locator="com.hbl.android.hblmobilebanking:id/submitRequestLay"/>
+    <!--<Element keyword="BillPayment_BeneNickOkBtn" locator="com.hbl.android.hblmobilebanking:id/submitRequestLay"/>-->
     <Element keyword="BillPayment_PayNextBtn" locator="com.hbl.android.hblmobilebanking:id/submitRequestLay"/>
     <Element keyword="BillPayment_PayBtn" locator="com.hbl.android.hblmobilebanking:id/submitRequestLay"/>
     <Element keyword="BillPayment_TransactionPassword" locator="com.hbl.android.hblmobilebanking:id/eTextTransPassword"/>
@@ -53,6 +56,7 @@
     <Element keyword="BillPayment_CompanyName" locator="//android.widget.TextView[@text='Billing Company Name']/following-sibling::android.widget.TextView"/>
     <Element keyword="BillPayment_TranSucess_ConsumerNo" locator="//android.widget.TextView[@text='Consumer Number']/following-sibling::android.widget.TextView"/>
     <Element keyword="BillPayment_TranInfoClose" locator="com.hbl.android.hblmobilebanking:id/submitRequestLay"/>
+    <Element keyword="BillPayment_TranInfoClose_Bene" locator="com.hbl.android.hblmobilebanking:id/onCloseClicked"/>
     <Element keyword="BillPayment_SearchBeneField" locator="com.hbl.android.hblmobilebanking:id/txtView_Search"/>
     <Element keyword="BillPayment_SearchBeneConsumerNo" locator="com.hbl.android.hblmobilebanking:id/companyName"/>
     <Element keyword="BillPayment_Rating" locator="com.hbl.android.hblmobilebanking:id/rating"/>
@@ -61,7 +65,21 @@
     <Element keyword="BillPayment_BeneNickText" locator="com.hbl.android.hblmobilebanking:id/myNick_Field"/>
     <Element keyword="BillPayment_BeneNickOkBtn" locator="com.hbl.android.hblmobilebanking:id/dialog_pos_btn"/>
     <Element keyword="BillPayment_BeneNickCancelBtn" locator="com.hbl.android.hblmobilebanking:id/dialog_neg_btn"/>
+    <Element keyword="BillPayment_BeneNick_ViewScreen" locator="com.hbl.android.hblmobilebanking:id/beneficiaryNick"/>
+    <Element keyword="BillPayment_BillAmount_ViewScreen" locator="com.hbl.android.hblmobilebanking:id/bill_amount"/>
+    <Element keyword="BillPayment_DueDate_ViewScreen" locator="com.hbl.android.hblmobilebanking:id/beneficiaryDetail"/>
+    <Element keyword="BillPayment_MultiBillSelect_Next" locator="com.hbl.android.hblmobilebanking:id/btnNext"/>
     <!--<Element keyword="BillPayment_Bill_Status_Color" locator ="//p[@class='val ng-binding']" />-->
+    <Element keyword="BillPayment_Inquiry_CompanyName" locator="//android.widget.TextView[@text='Company']/following-sibling::android.widget.TextView"/>
+    <Element keyword="BillPayment_Inquiry_ConsumerNo" locator="//android.widget.TextView[@text='Consumer No']/following-sibling::android.widget.TextView"/>
+    <Element keyword="BillPayment_Inquiry_ConsumerName" locator="//android.widget.TextView[@text='ConsumerName']/following-sibling::android.widget.TextView"/>
+    <Element keyword="BillPayment_Inquiry_DueDate" locator="//android.widget.TextView[@text='Due Date']/following-sibling::android.widget.TextView"/>
+    <Element keyword="BillPayment_Inquiry_AmountWithInDD" locator="//android.widget.TextView[@text='Payable By Due Date']/following-sibling::android.widget.TextView"/>
+    <Element keyword="BillPayment_Inquiry_AmountAfterDD" locator="//android.widget.TextView[@text='Payable After Due Date']/following-sibling::android.widget.TextView"/>
+    <Element keyword="BillPayment_Inquiry_BillStatus" locator="//android.widget.TextView[@text='Bill Status']/following-sibling::android.widget.TextView"/>
+    <Element keyword="BillPayment_Inquiry_NextArrow" locator="com.hbl.android.hblmobilebanking:id/img_next"/>
+    <Element keyword="BillPayment_multipayment_totalamount" locator="com.hbl.android.hblmobilebanking:id/amount_V"/>
+    <Element keyword="BillPayment_MultiPayment_PayBtn" locator="com.hbl.android.hblmobilebanking:id/btnPay"/>
   </Module>-->
   <Module name ="SendMoney">
     <Element keyword="SendMoney_Link" locator="com.hbl.android.hblmobilebanking:id/sendMoney_Btn"/>

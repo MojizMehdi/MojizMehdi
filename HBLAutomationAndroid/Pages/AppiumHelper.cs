@@ -116,6 +116,23 @@ namespace HBLAutomationAndroid.Pages
             
         }
 
+        //For returning the value from the web page of the keyword given using xpath
+        public void longpress(string locator, string locator_type)
+        {
+            IWebElement Control = null;
+            if (locator_type == "id")
+            {
+                Control = waitDriver.Until(ExpectedConditions.ElementIsVisible(By.Id(locator)));
+            }
+            else if (locator_type == "xpath")
+            {
+                Control = waitDriver.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
+            }
+            ITouchAction tc = new TouchAction(driver);
+            tc.LongPress(Control).Perform();
+
+        }
+
         ////For returning the value inside of a text field of a keyword given
         //public string ReturnTextBoxValue(string locator)
         //{
@@ -393,16 +410,17 @@ namespace HBLAutomationAndroid.Pages
 
 
                 //Home Page Locator
-                if (locator.Equals("Home Page Locator"))
+                if (locator.Equals("com.hbl.android.hblmobilebanking:id/homeClick"))
                 {
-                    //driver.Navigate().GoToUrl(Configuration.GetInstance().GetByKey("redirectionURL"));
-                   // Thread.Sleep(2000);
-
-
-                    AndroidElement link = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
-
-
-                    link.Click();
+                    try
+                    {
+                        AndroidElement link = (AndroidElement)driver.FindElementById(locator);
+                        link.Click();
+                    }
+                    catch
+                    {
+                        return;
+                    }
                 }
                 else
                 {

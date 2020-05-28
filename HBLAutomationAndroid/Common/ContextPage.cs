@@ -49,14 +49,46 @@ namespace HBLAutomationAndroid.Common
         string category_value;
         string Account_Type;
         string is_otp_req;
-        string is_tranpass_req;
+        string is_tranpass_req = "0";
         string Tran_Type;
         string bene_name;
-
+        bool TranTypeBene;
         public string CutOvertime = null;
         public string Date = null;
+        string[] multi_bill_consumers;
+        string[] multi_tran_ids;
 
-
+        public void Set_multi_bill_consumers(string[] multi_bill_consumers)
+        {
+            this.multi_bill_consumers = multi_bill_consumers;
+        }
+        public string[] Get_multi_bill_consumers()
+        {
+            return this.multi_bill_consumers;
+        }
+        public void Set_multi_tran_ids(string[] multi_tran_ids)
+        {
+            this.multi_tran_ids = multi_tran_ids;
+        }
+        public string[] Get_multi_tran_ids()
+        {
+            return this.multi_tran_ids;
+        }
+        public void SetTranTypeBene(string TranTypeBene)
+        {
+            if(TranTypeBene == "0")
+            {
+                this.TranTypeBene = false;
+            }
+            else if (TranTypeBene == "1")
+            {
+                this.TranTypeBene = true;
+            }
+        }
+        public bool GetTranTypeBene()
+        {
+            return TranTypeBene;
+        }
         public void SetBeneName(string bene_name)
         {
             this.bene_name = bene_name;

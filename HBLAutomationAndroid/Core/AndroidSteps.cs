@@ -188,6 +188,7 @@ namespace HBLAutomationAndroid.Core
         [When(@"I am verifying OTP and Transaction pass check on company code ""(.*)""")]
         public void WhenIAmVerifyingOTPAndTransactionPassCheckOnCompanyCode(string company_code_value)
         {
+            //string[] arr = company_code_value.Split(',');
             string query = "SELECT CC.IS_PWD_REQUIRED FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE = '" + company_code_value + "' AND CC.CHANNEL_CODE = 'MB'";
             DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
             DataTable SourceDataTable = dlink.GetDataTable(query, "QAT_BPS");
@@ -199,6 +200,10 @@ namespace HBLAutomationAndroid.Core
             DataTable SourceDataTable2 = dlink2.GetDataTable(query2, "QAT_BPS");
             string is_otp_req = SourceDataTable2.Rows[0][0].ToString();
             context.Set_is_otp_req(is_otp_req);
+            if (context.GetTranTypeBene() == true)
+            {
+                context.Set_is_otp_req("0");
+            }
         }
 
         [When(@"I have otp check and given (.*) on ""(.*)""")]
@@ -224,7 +229,7 @@ namespace HBLAutomationAndroid.Core
 
 
         [When(@"I have transaction pass check and given (.*) on ""(.*)""")]
-        public void WhenIHaveTransactionPassCheckAndGivenOnOnCompanyCode(string otp_value, string Keyword)
+        public void WhenIHaveTransactionPassCheckAndGivenOnOnCompanyCode(string tran_pass_value, string Keyword)
         {
 
             if (context.Get_is_tranpass_req() == "1")
@@ -237,12 +242,12 @@ namespace HBLAutomationAndroid.Core
                 {
                     locator_type = "xpath";
                 }
-                apmhelper.SetTextBoxValue(otp_value, keyword.Locator,locator_type);
+                apmhelper.SetTextBoxValue(tran_pass_value, keyword.Locator,locator_type);
             }
         }
 
 
-
+        [Given(@"I am clicking on ""(.*)""")]
         [When(@"I am clicking on ""(.*)""")]
         [Then(@"I am clicking on ""(.*)""")]
         public void WhenIAmClickingOn(string Keyword)
@@ -268,22 +273,22 @@ namespace HBLAutomationAndroid.Core
                             return;
                         };
                     }
-                    if (Keyword.Contains("BillPayment_NextBtn"))
+                    if (Keyword.Contains("BillPayment_CheckNextBtn"))
                     {
-                        if(context.Get_is_otp_req() == "0" && context.Get_is_tranpass_req() == "0")
+                        if ((context.Get_is_otp_req() == "0" && context.Get_is_tranpass_req() == "0") || (context.Get_is_otp_req() == "1" && context.Get_is_tranpass_req() == "0") || (context.Get_is_otp_req() == "0" && context.Get_is_tranpass_req() == "1"))
                         {
                             return;
                         }
                     }
-                    if (Keyword.Contains("BillPayment_PayNextBtn"))
-                    {
-                        string otp = context.Get_is_otp_req();
-                        string tran_pass = context.Get_is_tranpass_req();
-                        if ((otp == "0" && tran_pass == "0") || (otp == "1" && tran_pass == "0") || (otp == "0" && tran_pass == "1"))
-                        {
-                            return;
-                        }
-                    }
+                    //if (Keyword.Contains("BillPayment_PayNextBtn"))
+                    //{
+                    //    string otp = context.Get_is_otp_req();
+                    //    string tran_pass = context.Get_is_tranpass_req();
+                    //    if ((otp == "0" && tran_pass == "0") || (otp == "1" && tran_pass == "0") || (otp == "0" && tran_pass == "1"))
+                    //    {
+                    //        return;
+                    //    }
+                    //}
 
                     AppiumHelper apmhelper = new AppiumHelper();
                     //apmhelper.checkPageIsReady();
@@ -545,10 +550,10 @@ namespace HBLAutomationAndroid.Core
                     {
                         message = Convert.ToDecimal(message).ToString("0.00");
                     }
-                    if (Keyword.Equals("BillPayment_TranSucess_ConsumerNo"))
-                    {
-                        context.SetConsumer_No(message);
-                    }
+                    //if (Keyword.Equals("BillPayment_TranSucess_ConsumerNo"))
+                    //{
+                    //    context.SetConsumer_No(message);
+                    //}
                 }
                 apmhelper.verification(message, keyword.Locator,locator_type);
             }
@@ -573,6 +578,10 @@ namespace HBLAutomationAndroid.Core
         [Then(@"I set value in context from data ""(.*)"" as ""(.*)""")]
         public void WhenISetValueInContextFromDataAs(string value, string attribute)
         {
+            if(attribute == "TranTypeBene")
+            {
+                context.SetTranTypeBene(value);
+            }
             if (attribute == "ConsumerNo")
             {
                 context.SetConsumer_No(value);
@@ -758,6 +767,7 @@ namespace HBLAutomationAndroid.Core
                     Element keyword = ContextPage.GetInstance().GetElement("BillPayment_BeneNickText");
                     apmhelper.SetTextBoxValue(textboxvalue, keyword.Locator,"id");
                     keyword = null;
+                    Thread.Sleep(1000);
                     keyword = ContextPage.GetInstance().GetElement("BillPayment_BeneNickOkBtn");
                     apmhelper.Button(keyword.Locator,"id");
                 }
@@ -770,6 +780,293 @@ namespace HBLAutomationAndroid.Core
                 {
                     return;
                 }
+            }
+        }
+        [When(@"I select consumers for multi bill payment as ""(.*)"" on ""(.*)""")]
+        public void WhenISelectConsumersForMultiBillPaymentAsOn(string Consumer_No_List, string Keyword)
+        {
+            string BILL_BENE_NICK;
+            string BILL_STATUS;
+            string DUE_DATE;
+            DateTime DUE_DATE_FORMAT;
+            string amount;
+            string ui_amount;
+            string ui_duedate;
+            string ui_bene_nick;
+            AppiumHelper apmhelper = new AppiumHelper();
+            string[] consumer_no_arr = Consumer_No_List.Split(',');
+            context.Set_multi_bill_consumers(consumer_no_arr);
+            for (int i = 0; i < consumer_no_arr.Length; i++)
+            {
+                Element keyword = ContextPage.GetInstance().GetElement(Keyword);
+                apmhelper.SetTextBoxValue(consumer_no_arr[i], keyword.Locator, "id");
+                string query = "SELECT PB.BILL_BENE_NICK,PB.BILL_STATUS,PB.DUE_DATE,PB.AMOUNT_BEFORE_DUE_DATE,PB.AMOUNT_AFTER_DUE_DATE FROM DC_BILL_PAYMENT_BENEFICIARY PB WHERE PB.CONSUMER_NUMBER = '" + consumer_no_arr[i] + "' AND PB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '" + context.GetUsername() + "')";
+                DataAccessComponent.DataAccessLink dLink = new DataAccessComponent.DataAccessLink();
+                DataTable SourceDataTable = dLink.GetDataTable(query, "DIGITAL_CHANNEL_SEC");
+                BILL_BENE_NICK = SourceDataTable.Rows[0][0].ToString();
+                BILL_STATUS = SourceDataTable.Rows[0][1].ToString();
+                DUE_DATE_FORMAT = (Convert.ToDateTime(SourceDataTable.Rows[0][2]));
+                if(DUE_DATE_FORMAT < DateTime.Today)
+                {
+                    amount = SourceDataTable.Rows[0][4].ToString();
+                }
+                else
+                {
+                    amount = SourceDataTable.Rows[0][3].ToString();
+                }
+                DUE_DATE = DUE_DATE_FORMAT.ToString("dd-MMM-yyyy");
+                Element Temp_keyword = ContextPage.GetInstance().GetElement("BillPayment_BeneNick_ViewScreen");
+                ui_bene_nick = apmhelper.ReturnKeywordValue(Temp_keyword.Locator,"id");
+                if(ui_bene_nick != BILL_BENE_NICK)
+                {
+                    throw new AssertFailedException(string.Format("The Bene Nick in database {0} is not equal to Bene Nick On Screen {1}", BILL_BENE_NICK, ui_bene_nick));
+                }
+                Temp_keyword = null;
+                Temp_keyword = ContextPage.GetInstance().GetElement("BillPayment_BillAmount_ViewScreen");
+                ui_amount = apmhelper.ReturnKeywordValue(Temp_keyword.Locator,"id");
+                ui_amount = ui_amount.Replace(@",", string.Empty);
+                if (ui_amount != amount)
+                {
+                    throw new AssertFailedException(string.Format("The Amount database {0} is not equal to Amount On Screen {1}", amount, ui_amount));
+                }
+                Temp_keyword = null;
+                Temp_keyword = ContextPage.GetInstance().GetElement("BillPayment_DueDate_ViewScreen");
+                ui_duedate = apmhelper.ReturnKeywordValue(Temp_keyword.Locator,"id");
+                ui_duedate = ui_duedate.Replace(@"Due Date: ", string.Empty);
+                if (ui_duedate != DUE_DATE)
+                {
+                    throw new AssertFailedException(string.Format("The DueDate in database {0} is not equal to DueDate On Screen {1}", DUE_DATE, ui_duedate));
+                }
+                Element keyword2 = ContextPage.GetInstance().GetElement("BillPayment_SearchBeneConsumerNo");
+                Thread.Sleep(1000);
+                apmhelper.longpress(keyword2.Locator, "id");
+            }
+        }
+        [When(@"I verify bill details of consumer numbers for bill payment")]
+        public void WhenIVerifyBillDetailsOfConsumerNumbersForBillPayment()
+        {
+            string BILL_STATUS;
+            string ui_BILL_STATUS;
+            string DUE_DATE;
+            DateTime DUE_DATE_FORMAT;
+            int amount = 0;
+            string amount_within_dd;
+            string ui_amount_within_dd;
+            string amount_after_dd;
+            string ui_amount_after_dd;
+            string company_name;
+            string ui_company_name;
+            string consumer_name;
+            string ui_consumer_name;
+            string ui_amount;
+            string ui_duedate;
+            AppiumHelper apmhelper = new AppiumHelper();
+            string[] consumer_no_arr = context.Get_multi_bill_consumers();
+            Element Temp_keyword;
+            for (int i = 0; i < consumer_no_arr.Length; i++)
+            {
+                //Element keyword = ContextPage.GetInstance().GetElement(Keyword);
+                //apmhelper.SetTextBoxValue(consumer_no_arr[i], keyword.Locator, "id");
+                string query = "SELECT PB.BILL_STATUS,PB.DUE_DATE,PB.AMOUNT_BEFORE_DUE_DATE,PB.AMOUNT_AFTER_DUE_DATE,PB.COMPANY_NAME,PB.CONSUMER_NAME FROM DC_BILL_PAYMENT_BENEFICIARY PB WHERE PB.CONSUMER_NUMBER = '" + consumer_no_arr[i] + "' AND PB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '" + context.GetUsername() + "')";
+                DataAccessComponent.DataAccessLink dLink = new DataAccessComponent.DataAccessLink();
+                DataTable SourceDataTable = dLink.GetDataTable(query, "DIGITAL_CHANNEL_SEC");
+                BILL_STATUS = SourceDataTable.Rows[0][0].ToString();
+                DUE_DATE_FORMAT = (Convert.ToDateTime(SourceDataTable.Rows[0][1]));
+                amount_within_dd = SourceDataTable.Rows[0][2].ToString();
+                amount_after_dd = SourceDataTable.Rows[0][3].ToString();
+                company_name = SourceDataTable.Rows[0][4].ToString();
+                consumer_name = SourceDataTable.Rows[0][5].ToString();
+                consumer_name = consumer_name.Replace(@" ", string.Empty);
+                if (DUE_DATE_FORMAT < DateTime.Today)
+                {
+                    amount += Convert.ToInt32(amount_after_dd);
+                }
+                else
+                {
+                    amount += Convert.ToInt32(amount_within_dd);
+                }
+                DUE_DATE = DUE_DATE_FORMAT.ToString("dd-MMM-yyyy");
+                Temp_keyword = ContextPage.GetInstance().GetElement("BillPayment_Inquiry_CompanyName");
+                ui_company_name = apmhelper.ReturnKeywordValue(Temp_keyword.Locator, "xpath");
+                query = "SELECT CC.IS_PWD_REQUIRED FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE = (SELECT CC.COMPANY_CODE FROM BPS_COMPANY CC WHERE CC.COMPANY_NAME = '" + company_name + "') AND CC.CHANNEL_CODE = 'MB'";
+                dLink = null;
+                dLink = new DataAccessComponent.DataAccessLink();
+                SourceDataTable = null;
+                SourceDataTable = dLink.GetDataTable(query, "QAT_BPS");
+                string tran_pass_req = SourceDataTable.Rows[0][0].ToString();
+                if(tran_pass_req == "1")
+                {
+                    context.Set_is_tranpass_req(tran_pass_req);
+                }
+                //SourceDataTable = dLink.GetDataTable(query, "QAT_BPS");
+                //BILL_STATUS = SourceDataTable.Rows[0][0].ToString();
+                if (ui_company_name != company_name)
+                {
+                    throw new AssertFailedException(string.Format("The Company Name in database {0} is not equal to Company Name On Screen {1}", company_name, ui_company_name));
+                }
+                Temp_keyword = null;
+                Temp_keyword = ContextPage.GetInstance().GetElement("BillPayment_Inquiry_ConsumerName");
+                ui_consumer_name = apmhelper.ReturnKeywordValue(Temp_keyword.Locator, "xpath");
+                ui_consumer_name = ui_consumer_name.Replace(@" ", string.Empty);
+                if (ui_consumer_name != consumer_name)
+                {
+                    throw new AssertFailedException(string.Format("The Consumer Name in database {0} is not equal to ConsumerName On Screen {1}", consumer_name, ui_consumer_name));
+                }
+                Temp_keyword = null;
+                Temp_keyword = ContextPage.GetInstance().GetElement("BillPayment_Inquiry_DueDate");
+                ui_duedate = apmhelper.ReturnKeywordValue(Temp_keyword.Locator, "xpath");
+                if (ui_duedate != DUE_DATE)
+                {
+                    throw new AssertFailedException(string.Format("The Due Date in database {0} is not equal to Due Date On Screen {1}", DUE_DATE, ui_duedate));
+                }
+                Temp_keyword = null;
+                Temp_keyword = ContextPage.GetInstance().GetElement("BillPayment_Inquiry_AmountWithInDD");
+                ui_amount_within_dd = apmhelper.ReturnKeywordValue(Temp_keyword.Locator, "xpath");
+                if (ui_amount_within_dd != amount_within_dd)
+                {
+                    throw new AssertFailedException(string.Format("The Amount With In Due Date in database {0} is not equal to Amount With In Due Date On Screen {1}", amount_within_dd, ui_amount_within_dd));
+                }
+                Temp_keyword = null;
+                Temp_keyword = ContextPage.GetInstance().GetElement("BillPayment_Inquiry_AmountAfterDD");
+                ui_amount_after_dd = apmhelper.ReturnKeywordValue(Temp_keyword.Locator, "xpath");
+                if (ui_amount_after_dd != amount_after_dd)
+                {
+                    throw new AssertFailedException(string.Format("The Amount After Due Date in database {0} is not equal to Amount After Due Date On Screen {1}", amount_after_dd, ui_amount_after_dd));
+                }
+                Temp_keyword = null;
+                Temp_keyword = ContextPage.GetInstance().GetElement("BillPayment_Inquiry_BillStatus");
+                ui_BILL_STATUS = apmhelper.ReturnKeywordValue(Temp_keyword.Locator, "xpath");
+                if (ui_BILL_STATUS != BILL_STATUS)
+                {
+                    throw new AssertFailedException(string.Format("The Bill Status in database {0} is not equal to Bill Status On Screen {1}", BILL_STATUS, ui_BILL_STATUS));
+                }
+                if (i != consumer_no_arr.Length - 1)
+                {
+                    Temp_keyword = null;
+                    Temp_keyword = ContextPage.GetInstance().GetElement("BillPayment_Inquiry_NextArrow");
+                    apmhelper.links(Temp_keyword.Locator, "id");
+                }
+                
+            }
+            Temp_keyword = null;
+            Temp_keyword = ContextPage.GetInstance().GetElement("BillPayment_multipayment_totalamount");
+            string total_amount = apmhelper.ReturnKeywordValue(Temp_keyword.Locator, "id");
+            total_amount = total_amount.Replace(@",", string.Empty);
+            if (amount.ToString() != total_amount)
+            {
+                throw new AssertFailedException(string.Format("The Total Amount Calculated {0} is not equal to Total Amount On Screen {1}", amount, total_amount));
+            }
+
+        }
+        [Then(@"verify multiple payments through ""(.*)"" on ""(.*)""")]
+        public void ThenVerifyMultiplePaymentsThroughOn(string message, string Keyword)
+        {
+            string locator_type = "id";
+            try
+            {
+                AppiumHelper apmhelper = new AppiumHelper();
+                Thread.Sleep(3000);
+                Element keyword = ContextPage.GetInstance().GetElement(Keyword);
+                if (keyword.Locator.StartsWith("/"))
+                {
+                    locator_type = "xpath";
+                }
+                if (message == "ConsumerNoContextVal")
+                {
+                    message = context.GetConsumer_No();
+                }
+                if (message == "ToAccountNoContextVal")
+                {
+                    message = context.GetToAccount_No();
+                }
+                string[] consumer_no_arr = context.Get_multi_bill_consumers();
+                string[] tran_id_arr = new string[] { };
+                for (int i = 0; i < consumer_no_arr.Length; i++)
+                {
+                    apmhelper.verification(message, keyword.Locator, locator_type);
+                    if (Keyword.Contains("BillPayment_TranSuccess") || Keyword.Contains("SendMoney_TranSuccessMessage"))
+                    {
+                        keyword = null;
+                        locator_type = "xpath";
+                        string tranid_keyword = "SendMoney_TranID";
+                        keyword = ContextPage.GetInstance().GetElement(tranid_keyword);
+                        string tran_id = apmhelper.ReturnKeywordValue(keyword.Locator, locator_type);
+                        tran_id_arr[i] = tran_id;
+                    }
+                }
+                context.Set_multi_tran_ids(tran_id_arr);
+                
+            }
+            catch (Exception exception)
+            {
+
+                throw new AssertFailedException(exception.Message);
+            }
+        }
+        [Then(@"verify multiple payments through database on ""(.*)"" on Schema ""(.*)"" on ""(.*)""")]
+        public void ThenVerifyMultiplePaymentsThroughDatabaseOnOnSchemaOn(string query, string schema, string Keyword)
+        {
+            string[] tran_id_arr = context.Get_multi_tran_ids();
+            string[] consumer_no_arr = context.Get_multi_bill_consumers();
+            //string[] consumer_no_arr_new = new string[] { };
+            for (int i = 0; i < tran_id_arr.Length; i++)
+            {
+                string locator_type = "id";
+                if (query.Contains("DC_TRANSACTION"))
+                {
+                    if (Keyword.Contains("SendMoney_TranToBank") || Keyword.Contains("SendMoney_TranType") || Keyword.Contains("BillPayment_TranType"))
+                    {
+                        query = query + tran_id_arr[i] + "')";
+                    }
+                    else
+                    {
+                        query = query + tran_id_arr[i] + "'";
+                    }
+                }
+                try
+                {
+                    string message = "";
+                    AppiumHelper apmhelper = new AppiumHelper();
+                    Thread.Sleep(3000);
+                    Element keyword = ContextPage.GetInstance().GetElement(Keyword);
+                    if (keyword.Locator.StartsWith("/"))
+                    {
+                        locator_type = "xpath";
+                    }
+                    if (query != "")
+                    {
+                        if (query.Contains("{ConsumerNo}"))
+                        {
+                            query = query.Replace("{ConsumerNo}", consumer_no_arr[i]);
+                        }
+                        DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
+                        DataTable SourceDataTable = dlink.GetDataTable(query, schema);
+                        message = SourceDataTable.Rows[0][0].ToString();
+                        if (Keyword == "SendMoney_TranBeneName")
+                        {
+                            if (message == "")
+                            {
+                                string temp = query.Replace("DT.BENEFICIARY_NAME", "DT.FT_TO_ACCOUNT_TITLE");
+                                query = temp;
+                            }
+                        }
+                        if (Keyword.Equals("SendMoney_TranAmount") || Keyword.Equals("BillPayment_TranAmount"))
+                        {
+                            message = Convert.ToDecimal(message).ToString("0.00");
+                        }
+                        //if (Keyword.Equals("BillPayment_TranSucess_ConsumerNo"))
+                        //{
+                        //    consumer_no_arr_new[i] = message;
+                        //}
+                    }
+                    apmhelper.verification(message, keyword.Locator, locator_type);
+                }
+                catch (Exception exception)
+                {
+
+                    throw new AssertFailedException(exception.Message);
+                }
+                //context.Set_multi_bill_consumers(consumer_no_arr_new);
             }
         }
 
