@@ -122,13 +122,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/IBLogin.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "AZEEM1969")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "YASIR113")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
         public virtual void _1AsAUserIWantToVerifyLoginForHBLWeb_WhenUserIdAndPasswordAreValid()
         {
 #line 7
-this._1AsAUserIWantToVerifyLoginForHBLWeb("When user id and password are valid", "AZEEM1969", "pakistan1", "12345678", new string[] {
+this._1AsAUserIWantToVerifyLoginForHBLWeb("When user id and password are valid", "YASIR113", "pakistan1", "12345678", new string[] {
                         "source:Data/IBLogin.xlsx"});
 #line hidden
         }
@@ -150,6 +150,14 @@ this._1AsAUserIWantToVerifyLoginForHBLWeb("When user id and password are valid",
  testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 24
  testRunner.And("I am clicking on \"Accounts_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 25
+ testRunner.And("I am clicking on \"Accounts_FromDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 26
+ testRunner.When("I select date \"1\" on month \"Jan\" on year \"2020\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 27
+ testRunner.And("I am clicking on \"Accounts_ToDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 28
+ testRunner.When("I select date \"11\" on month \"Mar\" on year \"2020\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 29
  testRunner.When(string.Format("I want value from textbox \"Accounts_NoOfDays\" on database \"{0}\" as \"{1}\"", db_Value, query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 30
@@ -187,3 +195,4 @@ this._1AsAUserIWantToVerifyLoginForHBLWeb("When user id and password are valid",
 }
 #pragma warning restore
 #endregion
+

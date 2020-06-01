@@ -436,13 +436,13 @@ namespace HBLAutomationWeb.Pages
                 Combobox.Click();
                 Thread.Sleep(2000);
                 var selectElement = new SelectElement(Combobox);
-                //List<string> ali = new List<string>();
-                var ali = selectElement.Options;
-                foreach (var item in ali)
+                var selecteditem = selectElement.Options;
+                foreach (var item in selecteditem)
                 {
                     if (item.Text.Contains(value))
                     {
                         value = item.Text;
+                        break;
                     }
                 }
                 selectElement.SelectByText(value);
@@ -492,6 +492,59 @@ namespace HBLAutomationWeb.Pages
 
 
         }
+
+
+
+        //Method For Combobox With Search Field
+        public void comboboxSearch(string value, string locator1,string locator2)
+        {
+            try
+            {
+                bool check_option_value = false;
+                //// Open the dropdown so the options are visible
+                IWebElement Combobox = waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator1)));
+                Combobox.Click();
+                // Get all of the options
+                var options = (driver.FindElements(By.XPath(locator2)));
+                // Loop through the options and select the one that matches
+                foreach (IWebElement opt in options)
+                {
+                    if (opt.Text.Equals(value))
+                    {
+                        opt.Click();
+                        check_option_value = true;
+                        return;
+                    }
+                }
+                if(check_option_value == false)
+                {
+                    throw new AssertFailedException(string.Format("The given value {0} is not present in the list", value));
+                }
+                Thread.Sleep(3000);
+
+
+            }
+
+            catch (ElementNotVisibleException)
+            {
+
+                throw new AssertFailedException(string.Format("The element provided {0} is not on screen", locator1));
+            }
+            catch (StaleElementReferenceException)
+            {
+
+                throw new AssertFailedException(string.Format("The element provided {0} is Stale", locator1));
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("ex message: " + ex.Message);
+
+            }
+
+
+        }
+
         //For returning the values of keyword given
         public int SizeCountElements(string locator)
         {
@@ -535,6 +588,29 @@ namespace HBLAutomationWeb.Pages
                 otp = decryptedstring;
             }
             return otp;
+        }
+
+        //Only for scrolling down without locator
+        public void ScrollDownOnly(int count)
+        {
+            Keyboard.SendKeys("{DOWN}");
+        }
+
+        // For Alert Operation click
+        public void AlertOperation(string option, string locator)
+        {
+            IWebElement link = waitDriver.Until(ExpectedConditions.ElementExists(By.XPath(locator)));
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            if (option == "OK")
+            {
+                js.ExecuteScript("window.confirm = function(msg) { return true; }");
+            }
+            else
+            {
+                js.ExecuteScript("window.confirm = function(msg) { return false; }");
+            }
+            link.Click();
+
         }
     }
 }

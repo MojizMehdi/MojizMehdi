@@ -41,7 +41,6 @@ namespace HBLAutomationWeb.Common
         DateTime calendar_todate;
         DateTime tempdate;
         string consumerno;
-        //string [,] AccBalance;
         Dictionary<string, string> acc_info;
         Dictionary<string, string> tran_info;
         int sizecount;
@@ -52,10 +51,125 @@ namespace HBLAutomationWeb.Common
         string customer_info_id;
         string is_tran_req;
         string is_otp_req;
-
+        string Transaction_Category; string No_of_Transaction; string Tran_Type;
+        string From_Date; string To_Date; 
+        string Min_Amount; string Max_Amount; string Acc_no_or_mobile;
+        string bill_company; string payee_nick; string to_bank;
+        bool tran_from_date_flag = false;
+        bool tran_to_date_flag = false;
+        string scroll_text;
+        string customer_cnic;
+        string customer_type;
+        string ivr_req;
 
         public string CutOvertime = null;
         public string Date = null;
+
+        public void SetTranFromDateFlag(bool tran_from_date_flag)
+        {
+            this.tran_from_date_flag = tran_from_date_flag;
+        }
+        public bool GetTranFromDateFlag()
+        {
+            return tran_from_date_flag;
+        }
+        public void SetTranToDateFlag(bool tran_to_date_flag)
+        {
+            this.tran_to_date_flag = tran_to_date_flag;
+        }
+        public bool GetTranToDateFlag()
+        {
+            return tran_to_date_flag;
+        }
+        public void SetTranCategory(string Transaction_Category)
+        {
+            this.Transaction_Category = Transaction_Category;
+        }
+        public string GetTranCategory()
+        {
+            return Transaction_Category;
+        }
+        public void SetNoOfTran(string No_of_Transaction)
+        {
+            this.No_of_Transaction = No_of_Transaction;
+        }
+        public string GetNoOfTran()
+        {
+            return No_of_Transaction;
+        }
+        public void SetTranType(string Tran_Type)
+        {
+            this.Tran_Type = Tran_Type;
+        }
+        public string GetTranType()
+        {
+            return Tran_Type;
+        }
+        public void SetMinAmount(string Min_Amount)
+        {
+            this.Min_Amount = Min_Amount;
+        }
+        public string GetMinAmount()
+        {
+            return Min_Amount;
+        }
+        public void SetMaxAmount(string Max_Amount)
+        {
+            this.Max_Amount = Max_Amount;
+        }
+        public string GetMaxAmount()
+        {
+            return Max_Amount;
+        }
+        public void SetAccNoMobile(string Acc_no_or_mobile)
+        {
+            this.Acc_no_or_mobile = Acc_no_or_mobile;
+        }
+        public string GetAccNoMobile()
+        {
+            return Acc_no_or_mobile;
+        }
+        public void SetBillCompany(string bill_company)
+        {
+            this.bill_company = bill_company;
+        }
+        public string GetBillCompany()
+        {
+            return bill_company;
+        }
+        public void SetPayeeNick(string payee_nick)
+        {
+            this.payee_nick = payee_nick;
+        }
+        public string GetPayeeNick()
+        {
+            return payee_nick;
+        }
+        public void SetToBank(string to_bank)
+        {
+            this.to_bank = to_bank;
+        }
+        public string GetToBank()
+        {
+            return to_bank;
+        }
+
+        public void SetFromDate(string From_Date)
+        {
+            this.From_Date = From_Date;
+        }
+        public string GetFromDate()
+        {
+            return From_Date;
+        }
+        public void SetToDate(string To_Date)
+        {
+            this.To_Date = To_Date;
+        }
+        public string GetToDate()
+        {
+            return To_Date;
+        }
 
         public void SetRatingCheck(bool rating_check)
         {
@@ -251,8 +365,41 @@ namespace HBLAutomationWeb.Common
         {
             return is_tran_req;
         }
+        public void SetScrollText(string scroll_text)
+        {
+            this.scroll_text = scroll_text;
+        }
+        public string GetScrollText()
+        {
+            return scroll_text;
+        }
+        public void SetCustomerCNIC(string customer_cnic)
+        {
+            this.customer_cnic = customer_cnic;
+        }
+        public string GetCustomerCNIC()
+        {
+            return customer_cnic;
+        }
+        public void SetCustomerType(string customer_type)
+        {
+            this.customer_type = customer_type;
+        }
+        public string GetCustomerType()
+        {
+            return customer_type;
+        }
+        public void SetIVRReq(string ivr_req)
+        {
+            this.ivr_req = ivr_req;
+        }
+        public string GetIVRReq()
+        {
+            return ivr_req;
+        }
+        
 
-        //public string this[string key] schedule_config  
+        //public string this[string key]   ivr_req
 
         //{
         // returns value if exists

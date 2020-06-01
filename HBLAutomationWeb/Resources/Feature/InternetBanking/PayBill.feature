@@ -11,7 +11,7 @@ And I have given "<Login_UserId_Value>" on "Login_UserId"
 And I set value in context from data "<Login_UserId_Value>" as "username"
 And I have given "<Login_Password_Value>" on "Login_Password"
 When I am performing on "Login_SignIn_Button"
-And I wait 3000
+And I wait 4000
 And I have given "<OTP_Value>" on "Login_OTP_field"
 And I am performing on "Login_OTP_Verify_Button"
 Then verify through "Welcome" on "Login_Success_Text"
@@ -77,6 +77,14 @@ And I have given "<Pay_BillPayment_ConsumerNo_Value>" on "Pay_Transaction_PayBil
 Then verify through "ConsumerNoContextVal" on "Pay_Transaction_PayBill_BeneSearchConsumerNo"
 And I am clicking on "Login_Dashboard"
 And I verify Account Balance
+And I am clicking on "Services_Link"
+And I am clicking on "Services_Transaction_Activity"
+And I am clicking on "Services_Last_Transaction"
+And verify through database on "<tran_amount_query>" on Schema "<db_val>" on "Pay_Transaction_Success_Amount"
+And verify through database on "<from_account_query>" on Schema "<db_val>" on "Pay_Transaction_Success_FromAccount"
+And verify through database on "<company_name_query>" on Schema "<db_val>" on "Pay_Transaction_Success_CompanyName"
+And verify through database on "<consumer_no_query>" on Schema "<db_val>" on "Pay_Transaction_Success_ConsumerNo"
+And I am clicking on "Services_Transaction_Close_btn"
 #And I am performing on "Pay_Transaction_PayBill_RatingCloseBtn"
 #And verify the result from <result_query> on Schema "<result_db_value>"
 @source:Data/IBBillPayment.xlsx

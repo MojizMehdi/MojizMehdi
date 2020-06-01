@@ -51,6 +51,7 @@ namespace HBLAutomationWeb.Core
             if (Keyword.Contains("Login_OTP_field"))
             {
                     SeleniumHelper selhelper = new SeleniumHelper();
+                    
                     textboxvalue = selhelper.GetOTP();
 
             }
@@ -89,14 +90,33 @@ namespace HBLAutomationWeb.Core
                 throw new AssertFailedException(exception.Message);
             }
 
-        }
+            if (Keyword.Contains("Signup_FeedbackText"))
+            {
+                DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
+                DataTable SourceDataTable = dlink.GetDataTable("Select ATTRIBUTE_1 from DC_CUSTOMER_REG_FEEDBACK a where A.CUSTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from dc_customer_info j where J.CNIC='" + context.GetCustomerCNIC() + "') ", "DIGITAL_CHANNEL_SEC");
+                string message = SourceDataTable.Rows[0][0].ToString();
 
+                Assert.AreEqual(textboxvalue, message);
+            }
+        }
+        [Given(@"I am performing on ""(.*)""")]
         [When(@"I am performing on ""(.*)""")]
         [Then(@"I am performing on ""(.*)""")]
         public void WhenIAmPerformingOn(string Keyword)
         {
-            try
+            if (Keyword.Contains("Forget_"))
             {
+                if (context.GetCustomerType() == "C" && Keyword.Equals("Forget_PasswordSubmitBtn"))
+                {
+                    Keyword.Replace("Forget_PasswordSubmitBtn", "PasswordSubmitBtnCC");
+                }
+                if (context.GetCustomerType() == "C" && Keyword.Equals("Forget_ChangeLogin_SubmitBtn"))
+                {
+                    Keyword.Replace("Forget_ChangeLogin_SubmitBtn", "Forget_ChangeLogin_SubmitBtnCC");
+                }
+            }
+            try
+            { 
                 if (Keyword.Equals("Pay_BillPayment_Inquiry_NextBtn"))
                 {
                     if (context.GetOTPReq() == "1" || context.GetTranPassReq() == "1")
@@ -130,8 +150,16 @@ namespace HBLAutomationWeb.Core
 
             try
             {
+                if (Keyword.Contains("Services_Date"))
+                {
 
-                
+
+                    if (context.GetTranFromDateFlag() == false || context.GetTranToDateFlag() == false)
+                    {
+                        return;
+                    }
+                }
+
                 if (Keyword == "Pay_Transaction_PayBill_Rating" || Keyword == "Pay_Transaction_PayBill_RatingOkBtn")
                 {
                     SeleniumHelper selhelper = new SeleniumHelper();
@@ -240,23 +268,34 @@ namespace HBLAutomationWeb.Core
                 throw new AssertFailedException(exception.Message);
             }
         }
-        //[Given(@"update the data by query ""(.*)""")]
-        //public void GivenUpdateTheDataByQuery(string query)
-        //{
-        //    if (query != "")
-        //    {
-        //        try
-        //        {
-        //            DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
-        //            dlink.GetNonQueryResult(query, "QADB");
-        //        }
-        //        catch (Exception e)
-        //        {
-        //            throw new AssertFailedException(e.Message);
 
-        //        }
-        //    }
-        //}
+        [When(@"I select on dropdown search ""(.*)"" to select ""(.*)"" on ""(.*)""")]
+        public void WhenISelectOnDropdownSearchToSelectOn(string Keyword1, string value, string Keyword2)
+        {
+            int count = context.GeTSizeCount();
+            if (count == 1)
+            {
+                return;
+            }
+            if (String.IsNullOrEmpty(value))
+            {
+                return;
+            }
+            try
+            {
+                SeleniumHelper selhelper = new SeleniumHelper();
+                selhelper.checkPageIsReady();
+                Element keyword1 = ContextPage.GetInstance().GetElement(Keyword1);
+                Element keyword2 = ContextPage.GetInstance().GetElement(Keyword2);
+                selhelper.comboboxSearch(value, keyword1.Locator,keyword2.Locator);
+            }
+            catch (Exception exception)
+            {
+                SeleniumHelper.TakeScreenshot();
+                throw new AssertFailedException(exception.Message);
+            }
+        }
+
 
         [Given(@"update the data by query ""(.*)"" on Schema ""(.*)""")]
         public void GivenUpdateTheDataByQueryOnSchema(string query, string schema)
@@ -286,6 +325,14 @@ namespace HBLAutomationWeb.Core
                 if (query.Contains("{ConsumerNo}"))
                 {
                     query = query.Replace("{ConsumerNo}", context.GetConsumer_No());
+                }
+                if (query.Contains("{customer_cnic}"))
+                {
+                    query = query.Replace("{customer_cnic}", context.GetCustomerCNIC());
+                }
+                if (query.Contains("{customer_info_id}"))
+                {
+                    query = query.Replace("{customer_info_id}", context.GetCustomerInfoID());
                 }
                 try
                 {
@@ -327,6 +374,7 @@ namespace HBLAutomationWeb.Core
         [Then(@"I set value in context from data ""(.*)"" as ""(.*)""")]
         public void GivenISetValueInContextFromDataAs(string value, string attribute)
         {
+            
             if (attribute == "ConsumerNo")
             {
                 context.SetConsumer_No(value);
@@ -346,6 +394,14 @@ namespace HBLAutomationWeb.Core
             if (attribute == "username")
             {
                 context.SetUsername(value);
+            }
+            if (attribute == "scroll_text")
+            {
+                context.SetScrollText(value);
+            }
+            if (attribute == "customer_cnic")
+            {
+                context.SetCustomerCNIC(value);
             }
         }
 
@@ -368,6 +424,7 @@ namespace HBLAutomationWeb.Core
 
         [Given(@"I wait (.*)")]
         [When(@"I wait (.*)")]
+        [Then(@"I wait (.*)")]
         public void WhenIWait(int p0)
         {
             Thread.Sleep(p0);
@@ -375,10 +432,20 @@ namespace HBLAutomationWeb.Core
 
         [When(@"verify the result from ""(.*)"" on Schema ""(.*)""")]
         [Then(@"verify the result from ""(.*)"" on Schema ""(.*)""")]
+        [Given(@"verify the result from ""(.*)"" on Schema ""(.*)""")]
         public void WhenVerifyTheResultFromOnSchema(string query, string db_value)
         {
             if (query != "")
             {
+                if (query.Contains("{customer_info_id}"))
+                {
+                    query = query.Replace("{customer_info_id}", context.GetCustomerInfoID());
+                }
+                if (query.Contains("{customer_cnic}"))
+                {
+                    query = query.Replace("{customer_cnic}", context.GetCustomerCNIC());
+                }
+
                 if (query.Contains("Company_Code"))
                 {
                     query = query.Replace("{Company_Code}", context.GetCompany_Code());
@@ -388,8 +455,50 @@ namespace HBLAutomationWeb.Core
                 DataAccessComponent.DataAccessLink dLink = new DataAccessComponent.DataAccessLink();
                 DataTable SourceDataTable = dLink.GetDataTable(query, db_value);
                 string inst_type = SourceDataTable.Rows[0][0].ToString();
+                
+                if (query.Contains("IVR_REQUIRED"))
+                {
+                    context.SetIVRReq(inst_type);
+                }
+                if (query.Contains("IS_IVR_ENABLED"))
+                {
+                    if ((context.GetIVRReq() == "1" && inst_type == "0") || (context.GetIVRReq() == "0" && inst_type == "1"))
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        throw new AssertFailedException("IS_IVR_ENABLED setting is not correct");
+                    }
+                }
 
-                if(query.Contains("APPLICATION_PARAMETER_ID='906'"))
+                if (query.Contains("CUSTOMER_TYPE"))
+                {
+                    context.SetCustomerType(inst_type);
+                }
+                if(query.Contains("IS_PASSWORD_CHANGED_REQUIRED"))
+                {
+                    if (inst_type != "0")
+                    {
+                        throw new AssertFailedException("Is Password change is not equal to 0");
+                    }
+                } 
+                if (query.Contains("TRANSACTION_PASSWORD"))
+                {
+                    if (inst_type == null)
+                    {
+                        throw new AssertFailedException("Transaction Password is not updated in data base");
+                    }
+                }
+                if (query.Contains("P.CUSTOMER_TYPE"))
+                {
+                    if (inst_type != "C")
+                    {
+                        throw new AssertFailedException("Customer Type of Credit Card user is not Type C");
+                    }
+                }
+
+                if (query.Contains("APPLICATION_PARAMETER_ID='906'"))
                 {
                     context.SetScheduleConfig(inst_type);
                 }
@@ -452,7 +561,7 @@ namespace HBLAutomationWeb.Core
         }
 
 
-
+        [Given(@"verify through ""(.*)"" on ""(.*)""")]
         [Then(@"verify through ""(.*)"" on ""(.*)""")]
         [When(@"verify through ""(.*)"" on ""(.*)""")]
         public void ThenVerifyThroughOn(string message, string Keyword)
@@ -478,20 +587,31 @@ namespace HBLAutomationWeb.Core
                     context.SetTransaction_Id(tran_id);
                 }
 
-                //        try
-                //        {
-                //            SeleniumHelper selhelper1 = new SeleniumHelper();
-                //            selhelper1.checkPageIsReady();
-                //            Thread.Sleep(3000);
-                //            selhelper.verification(message, keyword.Locator);
+            }
+            catch (Exception exception)
+            {
+                SeleniumHelper.TakeScreenshot();
+                throw new AssertFailedException(exception.Message);
+            }
+        }
+        [When(@"verify the message ""(.*)"" through database on ""(.*)"" on Schema ""(.*)""")]
+        [Given(@"verify the message ""(.*)"" through database on ""(.*)"" on Schema ""(.*)""")]
+        [Then(@"verify the message ""(.*)"" through database on ""(.*)"" on Schema ""(.*)""")]
+        public void WhenVerifyTheMessageThroughDatabaseOnOn(string value, string query, string schema)
+        {
+            if (query.Contains("{customer_cnic}"))
+            {
+                query = query.Replace("{customer_cnic}", context.GetCustomerCNIC());
+            }
+            try
+            {
+                DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
+                DataTable SourceDataTable = dlink.GetDataTable(query, schema);
+                string message = SourceDataTable.Rows[0][0].ToString();
 
-                //        }
-                //        catch (Exception exception)
-                //        {
-                //            SeleniumHelper.TakeScreenshot();
-                //            throw new AssertFailedException(exception.Message);
-                //        }
-                ////context.SetPage(selhelper);
+                Assert.AreEqual(message, value);
+                
+            
             }
             catch (Exception exception)
             {
@@ -500,13 +620,18 @@ namespace HBLAutomationWeb.Core
             }
         }
 
+
         [When(@"verify through database on ""(.*)"" on Schema ""(.*)"" on ""(.*)""")]
         [Then(@"verify through database on ""(.*)"" on Schema ""(.*)"" on ""(.*)""")]
         public void ThenVerifyThroughDatabaseOnOnSchemaOn(string query, string schema, string Keyword)
         {
+            if (query.Contains("{customer_cnic}"))
+            {
+                query = query.Replace("{customer_cnic}", context.GetCustomerCNIC());
+            }
             if (query.Contains("DC_TRANSACTION"))
             {
-                if (Keyword.Contains("SendMoney_TranToBank") || Keyword.Contains("SendMoney_TranType"))
+                if (Keyword.Contains("SendMoney_TranToBank") || Keyword.Contains("SendMoney_TranType") || Keyword.Contains("Forget_PasswordTranType"))
                 {
                     query = query + context.GetTransaction_Id() + "')";
                 }
@@ -532,6 +657,10 @@ namespace HBLAutomationWeb.Core
                     DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
                     DataTable SourceDataTable = dlink.GetDataTable(query, schema);
                     message = SourceDataTable.Rows[0][0].ToString();
+                    if (keyword.Equals("Forget_PasswordTranID"))
+                    {
+                        context.SetTransaction_Id(message);
+                    }
                     if (Keyword.Equals("Pay_Transaction_Success_Amount") || Keyword.Equals("Pay_Transaction_Unpaid_Amount"))
                     {
                         message = Convert.ToDecimal(message).ToString("0.00");
@@ -539,6 +668,11 @@ namespace HBLAutomationWeb.Core
                     if (Keyword.Equals("Pay_Transaction_Success_ConsumerNo"))
                     {
                         context.SetConsumer_No(message);
+                    }
+                    if (Keyword.Contains("TranDate"))
+                    {
+                        DateTime tran_date = Convert.ToDateTime(message);
+                        message = tran_date.ToString("MM/DD/YYYY");
                     }
                 }
                 //selhelper.Scroll(keyword.Locator);
@@ -553,6 +687,7 @@ namespace HBLAutomationWeb.Core
             }
         }
         [When(@"I scroll down ""(.*)"" on ""(.*)""")]
+        [Given(@"I scroll down ""(.*)"" on ""(.*)""")]
         public void WhenIScrollDownOn(int count, string Keyword)
         {
             SeleniumHelper selhelper = new SeleniumHelper();
@@ -576,10 +711,15 @@ namespace HBLAutomationWeb.Core
         [When(@"I scroll to element ""(.*)""")]
         public void WhenIScrollToElement(string Keyword)
         {
+            
             SeleniumHelper selhelper = new SeleniumHelper();
             //selhelper.checkPageIsReady();
             Thread.Sleep(3000);
             Element keyword = ContextPage.GetInstance().GetElement(Keyword);
+            if (Keyword.Contains("Signup_Scroll"))
+            {
+                keyword.Locator = keyword.Locator.Replace("{K}", context.GetScrollText());
+            }
             selhelper.ScrollToElement(keyword.Locator);
         }
 
@@ -700,6 +840,11 @@ namespace HBLAutomationWeb.Core
         {
             if(date == "" && month == "" && year == "")
             {
+                if (context.GetTranFromDateFlag() == false || context.GetTranToDateFlag() == false)
+                {
+                    return;
+                }
+                
                 if(context.Getfrom_to_date_flag() == false)
                 {
                     string temp = DateTime.Now.Date.AddDays(1).ToString("dd MMM yyyy");
@@ -1000,6 +1145,220 @@ namespace HBLAutomationWeb.Core
             {
                 throw new AssertFailedException(string.Format("The scheduled config {0} is not equal to newly scheduled bill {1}", res, context.GetScheduleConfig()));
 
+            }
+        }
+
+        //To save all values from excel sheet in context class for Transaction Activity process
+        [Given(@"I set all excel values ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)"" ""(.*)""  in context class")]
+        public void GivenISetAllExcelValuesInContextClass(string Transaction_Category, string No_of_Transaction, string Tran_Type, string from_day, string from_month, string from_year, string to_day, string to_month, string to_year, string Min_Amount, string Max_Amount, string Acc_no_or_mobile, string bill_company, string payee_nick, string to_bank)
+        {
+            DataAccessComponent.DataAccessLink dLink = new DataAccessComponent.DataAccessLink();
+
+            if (to_bank != "")
+            {
+                DataTable SourceDataTable = dLink.GetDataTable("Select FUND_TRANSFER_BANK_ID from DC_FUND_TRANSFER_BANK i where i.bank_name= '" + to_bank + "'", "DIGITAL_CHANNEL_SEC");
+                to_bank = SourceDataTable.Rows[0][0].ToString();
+            }
+
+            if (bill_company != "")
+            {
+                dLink = null;
+                dLink = new DataAccessComponent.DataAccessLink();
+                DataTable SourceDataTable = dLink.GetDataTable("Select COMPANY_CODE from BPS_Company i where I.COMPANY_NAME = '" + bill_company + "'", "QAT_BPS");
+                bill_company = SourceDataTable.Rows[0][0].ToString();
+            }
+            if (Transaction_Category == "Financial")
+            {
+                Transaction_Category = "F";
+            }
+            if (Transaction_Category == "Non Financial")
+            {
+                Transaction_Category = "NF";
+            }
+
+            context.SetTranCategory(Transaction_Category);
+            context.SetNoOfTran(No_of_Transaction);
+            context.SetTranType(Tran_Type);
+            context.SetMinAmount(Min_Amount);
+            context.SetMaxAmount(Max_Amount);
+            context.SetAccNoMobile(Acc_no_or_mobile);
+            context.SetBillCompany(bill_company);
+            context.SetPayeeNick(payee_nick);
+            context.SetToBank(to_bank);
+
+            if (from_day != "" && from_month != "" && from_year != "")
+            {
+                context.SetTranFromDateFlag(true);
+                string from_date = from_day + " " + from_month + " " + from_year;
+                context.SetFromDate(from_date);
+            }
+            if (to_day != "" && to_month != "" && to_year != "")
+            {
+                context.SetTranToDateFlag(true);
+                string to_date = to_day + " " + to_month + " " + to_year;
+                context.SetToDate(to_date);
+            } 
+            
+        }
+
+        //To make a generic query based on given value
+        [When(@"I generate query based on given data")]
+        [Given(@"I generate query based on given data")]
+        [Then(@"I generate query based on given data")]
+        public void WhenIGenerateQueryBasedOnGivenData()
+        {
+            string query = "SELECT CUSTOMER_INFO_ID FROM dc_customer_info i where I.CUSTOMER_NAME='{user}'";
+            query = query.Replace("{user}", context.GetUsername());
+
+            DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
+            DataTable SourceDataTable = dlink.GetDataTable(query, "DIGITAL_CHANNEL_SEC");
+            string customer_info_id = SourceDataTable.Rows[0][0].ToString();
+            context.SetCustomerInfoID(customer_info_id);
+
+            string main_query = "select CREATED_ON, TRANSACTION_AMOUNT, STATUS from dc_transaction P where P.customer_info_id ='" + customer_info_id + "' and ";
+
+            if (context.GetNoOfTran() != "")
+            {
+                main_query = main_query + "ROWNUM <= " + Convert.ToInt32(context.GetNoOfTran()) + " and ";
+            }
+            if (context.GetAccNoMobile() != "")
+            {
+                main_query = main_query + "P.TO_ACCOUNT like '%" + context.GetAccNoMobile() + "%' and ";
+            }
+            if (context.GetPayeeNick() != "")
+            {
+                main_query = main_query + "P.BENEFICIARY_NAME like '%" + context.GetPayeeNick() + "%' and "; 
+            }
+            if (context.GetToBank() != "")
+            {
+                main_query = main_query + "P.FUND_TRANSFER_BANK_ID = '" + context.GetToBank() + "' and ";
+            }
+            if (context.GetBillCompany() != "")
+            {
+                main_query = main_query + "P.COMPANY_CODE = '" + context.GetBillCompany() + "' and ";
+            }
+            if (context.GetMinAmount() != "" && context.GetMaxAmount() == "")
+            {
+                main_query = main_query + "P.TRANSACTION_AMOUNT >= '" + context.GetMinAmount() + "' and ";
+            }
+            if (context.GetMinAmount() == "" && context.GetMaxAmount() != "")
+            {
+                main_query = main_query + "P.TRANSACTION_AMOUNT <= '" + context.GetMaxAmount() + "' and ";
+            }
+            if (context.GetMinAmount() != "" && context.GetMaxAmount() != "")
+            {
+                main_query = main_query + "P.TRANSACTION_AMOUN between '" + context.GetMinAmount() + "' and '" + context.GetMaxAmount() + "' and ";
+            }
+            if (context.GetFromDate() != "" && context.GetToDate() =="")
+            {
+                main_query = main_query + "P.CREATED_ON >=  TO_DATE('" + context.GetFromDate() + "', 'mm/dd/yyyy') and ";
+            }
+            if (context.GetFromDate() == "" && context.GetToDate() != "")
+            {
+                main_query = main_query + "P.CREATED_ON >=  TO_DATE('" + context.GetToDate() + "', 'mm/dd/yyyy') and ";
+            }
+            if (context.GetFromDate() != "" && context.GetToDate() != "")
+            {
+                main_query = main_query + "P.CREATED_ON between TO_DATE('" + context.GetFromDate() + "', 'mm/dd/yyyy') and TO_DATE ('" + context.GetToDate() + "', 'mm/dd/yyyy') and ";
+            }
+            
+        }
+        // Forgot Password journey based on customer type
+        [When(@"I am giving user details based on customer type as ""(.*)"" and ""(.*)"" and ""(.*)"" and ""(.*)"" and ""(.*)"" on ""(.*)"" and ""(.*)"" and ""(.*)""")]
+        public void WhenIAmGivingUserDetailsBasedOnCustomerTypeAsAndAndAndAndOnAndAnd(string value1, string debit_card, string debit_pin, string credit_card, string email, string keyword1, string keyword2, string keyword3)
+        {           
+            SeleniumHelper selhelper = new SeleniumHelper();
+            Element keyword_value1 = ContextPage.GetInstance().GetElement(keyword1);
+            Element keyword_debit_credit = ContextPage.GetInstance().GetElement(keyword2);
+            Element keyword_pin_email = ContextPage.GetInstance().GetElement(keyword3);
+
+            string locator2 = keyword_debit_credit.Locator;
+            string locator3 = keyword_pin_email.Locator;
+
+            if (context.GetCustomerType() == "C" && keyword1 == "Forget_Password_CNIC")
+            {
+                locator2 = keyword_debit_credit.Locator.Replace("ForgotTransactionPassword.cardNumber", "ForgotTransactionPasswordCC.cardnumber");
+                locator3 = keyword_pin_email.Locator.Replace("ForgotTransactionPassword.pin", "ForgotTransactionPasswordCC.email");
+                selhelper.SetTextBoxValue(value1, keyword_value1.Locator);
+                selhelper.SetTextBoxValue(credit_card, locator2);
+                selhelper.SetTextBoxValue(email, locator3);
+            }
+            if (context.GetCustomerType() == "C" && keyword1 == "Forget_ChangeLogin_NewLogin")
+            {
+                locator2 = keyword_debit_credit.Locator.Replace("CustomerAccountType.cardNumber", "CustomerAccountType.creditCardNumber");
+                locator3 = keyword_pin_email.Locator.Replace("CustomerAccountType.pin", "CustomerAccountType.email");
+                selhelper.SetTextBoxValue(value1, keyword_value1.Locator);
+                selhelper.SetTextBoxValue(credit_card, locator2);
+                selhelper.SetTextBoxValue(email, locator3);
+            }
+            else
+            {
+                selhelper.SetTextBoxValue(value1, keyword_value1.Locator);
+                selhelper.SetTextBoxValue(debit_card, keyword_debit_credit.Locator);
+                selhelper.SetTextBoxValue(debit_pin, keyword_pin_email.Locator);
+            }
+
+        }
+        [Given(@"I verify if text exist on webpage of ""(.*)""")]
+        [When(@"I verify if text exist on webpage of ""(.*)""")]
+        [Then(@"I verify if text exist on webpage of ""(.*)""")]
+        public void GivenIVerifyIfTextExistOnWebpageOf(string keyword)
+        {
+            SeleniumHelper selhelper = new SeleniumHelper();
+            Element Keyword = ContextPage.GetInstance().GetElement(keyword);
+            string keyword_text = "";
+            keyword_text = selhelper.ReturnKeywordValue(Keyword.Locator);
+
+            if (keyword_text == "")
+            {
+                throw new AssertFailedException("Urdu Text does not exist on web page");
+            }
+        }
+        //To perform cancel operation on cross icon
+        [Given(@"I am performing ""(.*)"" alert operation on cross icon on ""(.*)""")]
+        public void GivenIAmPerformingAlertOperationOnCrossIconOn(string option, string keyword)
+        {
+            SeleniumHelper selhelper = new SeleniumHelper();
+            Element Keyword = ContextPage.GetInstance().GetElement(keyword);
+            selhelper.AlertOperation(option, Keyword.Locator);
+        }
+
+
+        // To check dvl setting on sign up to decide for dob field
+        [When(@"verify DVL setting through database on ""(.*)"" on Schema ""(.*)"" with date of birth ""(.*)"" on keyword ""(.*)""")]
+        public void WhenVerifyDVLSettingThroughDatabaseOnOnSchemaWithDateOfBirthOnKeyword(string query, string schema, string value, string keyword)
+        {
+            DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
+            DataTable SourceDataTable = dlink.GetDataTable(query, schema);
+            string message = SourceDataTable.Rows[0][0].ToString();
+
+            if (message == "1")
+            {
+                SeleniumHelper selhelper = new SeleniumHelper();
+                Element Keyword = ContextPage.GetInstance().GetElement(keyword);
+                selhelper.SetTextBoxValue(value, Keyword.Locator);
+            }
+        }
+        //For clicking on any generic xpath
+        [Then(@"I am clicking on keyword ""(.*)"" with value ""(.*)""")]
+        [Given(@"I am clicking on keyword """"(.*)""value""")]
+        [When(@"I am clicking on keyword """"(.*)""value""")]
+        public void ThenIAmClickingOnKeywordWithValue(string value, string keyword)
+        {
+            SeleniumHelper selhelper = new SeleniumHelper();
+            Element Keyword = ContextPage.GetInstance().GetElement(keyword);
+            string locator = Keyword.Locator;
+
+            if (keyword.Contains("FeedbackOption"))
+            {
+                locator = Keyword.Locator.Replace("{X}", value);
+                selhelper.links(locator);
+
+                DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
+                DataTable SourceDataTable = dlink.GetDataTable("Select FEEDBACK from DC_CUSTOMER_REG_FEEDBACK a where A.CUSTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from dc_customer_info j where J.CNIC='" + context.GetCustomerCNIC() + "') ", "DIGITAL_CHANNEL_SEC");
+                string message = SourceDataTable.Rows[0][0].ToString();
+
+                Assert.AreEqual(value, message);
             }
         }
 
