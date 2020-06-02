@@ -241,6 +241,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AccountsStatement.feature</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Feature\InternetBanking\ForgetChange.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ForgetChange.feature</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Feature\InternetBanking\Login.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -256,6 +261,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PayBillWithBene.feature</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Feature\InternetBanking\Registration.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Registration.feature</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Feature\InternetBanking\SendMoney.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -265,6 +275,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Settings.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Feature\InternetBanking\TransactionalActivity.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TransactionalActivity.feature</DependentUpon>
     </Compile>
     <Compile Include="XML\apiconfiguration\ApiConfiguration.cs" />
     <Compile Include="XML\ElementFactory\Element.cs" />
@@ -282,6 +297,11 @@
     </None>
     <None Include="Resources\Feature\InternetBanking\Data\AccountsStatement.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\BeneficiaryAddition.xlsx" />
+    <None Include="Resources\Feature\InternetBanking\Data\ChangeLoginID.xlsx" />
+    <None Include="Resources\Feature\InternetBanking\Data\CreditRegistration.xlsx" />
+    <None Include="Resources\Feature\InternetBanking\Data\DebitRegistration.xlsx" />
+    <None Include="Resources\Feature\InternetBanking\Data\ForgetLoginID.xlsx" />
+    <None Include="Resources\Feature\InternetBanking\Data\ForgetPassword.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\IBBillPayment.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\IBLogin.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\SendMoney.xlsx" />
@@ -289,6 +309,11 @@
     <None Include="Resources\Feature\InternetBanking\Data\SendMoney_Schedule.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\SendMoney_Schedule_Beneficiary.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\Settings.xlsx" />
+    <None Include="Resources\Feature\InternetBanking\Data\TransactionActivity.xlsx" />
+    <None Include="Resources\Feature\InternetBanking\ForgetChange.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ForgetChange.feature.cs</LastGenOutput>
+    </None>
     <None Include="Resources\Feature\InternetBanking\Login.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Login.feature.cs</LastGenOutput>
@@ -301,6 +326,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>PayBillWithBene.feature.cs</LastGenOutput>
     </None>
+    <None Include="Resources\Feature\InternetBanking\Registration.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Registration.feature.cs</LastGenOutput>
+    </None>
     <None Include="Resources\Feature\InternetBanking\SendMoney.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>SendMoney.feature.cs</LastGenOutput>
@@ -308,6 +337,10 @@
     <None Include="Resources\Feature\InternetBanking\Settings.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Settings.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\Feature\InternetBanking\TransactionalActivity.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>TransactionalActivity.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

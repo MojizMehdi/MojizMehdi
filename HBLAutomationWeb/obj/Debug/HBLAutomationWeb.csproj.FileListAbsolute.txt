@@ -706,5 +706,6 @@ D:\HBL-Automation-42920\HBLAutomationWeb\bin\Debug\WebDriver.xml
 D:\HBL-Automation-42920\HBLAutomationWeb\bin\Debug\WebDriver.Support.xml
 D:\HBL-Automation-42920\HBLAutomationWeb\bin\Debug\Microsoft.VisualStudio.TestTools.UITest.Extension.xml
 D:\HBL-Automation-42920\HBLAutomationWeb\bin\Debug\Microsoft.VisualStudio.TestTools.UITest.Common.xml
+D:\HBL-Automation-42920\HBLAutomationWeb\obj\Debug\HBLAutomationWeb.csprojResolveAssemblyReference.cache
 D:\HBL-Automation-42920\HBLAutomationWeb\obj\Debug\HBLAutomationWeb.dll
 D:\HBL-Automation-42920\HBLAutomationWeb\obj\Debug\HBLAutomationWeb.pdb
