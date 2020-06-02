@@ -57,6 +57,16 @@ namespace HBLAutomationAndroid.Common
         public string Date = null;
         string[] multi_bill_consumers;
         string[] multi_tran_ids;
+        int multi_payment_amount;
+
+        public int Get_multi_payment_amount()
+        {
+            return multi_payment_amount;
+        }
+        public void Set_multi_payment_amount(int multi_payment_amount)
+        {
+            this.multi_payment_amount = multi_payment_amount;
+        }
 
         public void Set_multi_bill_consumers(string[] multi_bill_consumers)
         {

@@ -51,6 +51,7 @@
     <Element keyword="BillPayment_Transaction_Unpaid_Amount" locator ="//android.widget.TextView[@text='Amount']/following-sibling::android.widget.TextView" />
     <Element keyword="BillPayment_TranFromAcc" locator="//android.widget.TextView[@text='From']/following-sibling::android.widget.TextView"/>
     <Element keyword="BillPayment_TranSuccess" locator="com.hbl.android.hblmobilebanking:id/successMessageTxt"/>
+    <Element keyword="BillPayment_TranSuccess_MultiBill" locator="//android.widget.TextView[@text='Status']/following-sibling::android.widget.TextView"/>
     <Element keyword="BillPayment_TranType" locator="//android.widget.TextView[@text='Transaction Type']/following-sibling::android.widget.TextView"/>
     <Element keyword="BillPayment_TranAmount" locator="//android.widget.TextView[@text='Transaction Amount']/following-sibling::android.widget.TextView"/>
     <Element keyword="BillPayment_CompanyName" locator="//android.widget.TextView[@text='Billing Company Name']/following-sibling::android.widget.TextView"/>
