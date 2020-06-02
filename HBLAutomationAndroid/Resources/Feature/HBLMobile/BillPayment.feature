@@ -214,25 +214,27 @@ Scenario Outline: As a user i want to Verify Multiple Bill Payment through Mobil
 	And I am clicking on "Dashboard"
 	When I save Account Balances 
 	And I am clicking on "Dashboard_BillPayment"
-	And I select consumers for multi bill payment as "19154110419400,19154110419401,19154110419403" on "BillPayment_SearchBeneField"
+	And I select consumers for multi bill payment as "19154110419400,19154110419401,19154110419404" on "BillPayment_SearchBeneField"
 	And I am clicking on "BillPayment_MultiBillSelect_Next"
+	And I set value in context from data "BillPayment" as "Transaction_Type"
 	And I verify bill details of consumer numbers for bill payment
 	And I am clicking on "BillPayment_NextBtn"
 	And I have transaction pass check and given "pakistan2" on "BillPayment_TransactionPassword"
 	And I am clicking on "BillPayment_MultiPayment_PayBtn"
-	And I wait 10000
+	And I wait 15000
 	And I am clicking on "SendMoney_Rating"
 	And I am clicking on "SendMoney_RatingOkBtn"
 	And I wait 2000
 	And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
-	And I save Transaction Info
-	Then verify multiple payments through "Transaction is successful. " on "BillPayment_TranSuccess"
-	And verify multiple payments through database on "<tran_type_query>" on Schema "<db_val>" on "BillPayment_TranType"
-	And verify multiple payments through database on "<tran_amount_query>" on Schema "<db_val>" on "BillPayment_TranAmount"
-	And verify multiple payments through database on "<from_account_query>" on Schema "<db_val>" on "BillPayment_TranFromAcc"
-	And verify multiple payments through database on "<company_name_query>" on Schema "<db_val>" on "BillPayment_CompanyName"
-	And verify through database on "<consumer_no_query>" on Schema "<db_val>" on "BillPayment_TranSucess_ConsumerNo"
-	And I am clicking on "BillPayment_TranInfoClose_Bene"
+	And I save Transaction Info for MultiPayment
+	Then verify multiple payments summary "Transaction is successful. " on "BillPayment_TranSuccess_MultiBill" and "<tran_type_query>" on "BillPayment_TranType" and "<tran_amount_query>" on "BillPayment_TranAmount" and "<from_account_query>" on "BillPayment_TranFromAcc" and "<company_name_query>" on "BillPayment_CompanyName" and "<consumer_no_query>" on "BillPayment_TranSucess_ConsumerNo" on Schema "<db_val>"
+	#Then verify multiple payments through "Transaction is successful. " on "BillPayment_TranSuccess_MultiBill"
+	#And verify multiple payments through database on "<tran_type_query>" on Schema "<db_val>" on "BillPayment_TranType"
+	#And verify multiple payments through database on "<tran_amount_query>" on Schema "<db_val>" on "BillPayment_TranAmount"
+	#And verify multiple payments through database on "<from_account_query>" on Schema "<db_val>" on "BillPayment_TranFromAcc"
+	#And verify multiple payments through database on "<company_name_query>" on Schema "<db_val>" on "BillPayment_CompanyName"
+	#And verify through database on "<consumer_no_query>" on Schema "<db_val>" on "BillPayment_TranSucess_ConsumerNo"
+	And I am clicking on "BillPayment_TranInfoClose"
 	And I wait 2000
 	And I am clicking on "Dashboard"
 	And I verify Account Balance
