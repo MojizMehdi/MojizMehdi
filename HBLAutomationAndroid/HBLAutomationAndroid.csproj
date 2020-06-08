@@ -280,6 +280,7 @@
     <None Include="Resources\Feature\HBLMobile\Data\BillPayment%28ExistingBene%29ViaHome.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\BillPayment.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\HBLMobileLogin.xlsx" />
+    <None Include="Resources\Feature\HBLMobile\Data\SendMoney%28ViaBene%29.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\SendMoney.xlsx" />
     <None Include="Resources\Feature\HBLMobile\SendMoney.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
