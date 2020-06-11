@@ -52,6 +52,7 @@
     <Element keyword="BillPayment_TranFromAcc" locator="//android.widget.TextView[@text='From']/following-sibling::android.widget.TextView"/>
     <Element keyword="BillPayment_TranSuccess" locator="com.hbl.android.hblmobilebanking:id/successMessageTxt"/>
     <Element keyword="BillPayment_TranSuccess_MultiBill" locator="//android.widget.TextView[@text='Status']/following-sibling::android.widget.TextView"/>
+    <Element keyword="BillPayment_TranSuccess_MultiBill_TranActivity" locator="//android.widget.TextView[@text='Transaction Status']/following-sibling::android.widget.TextView"/>
     <Element keyword="BillPayment_TranType" locator="//android.widget.TextView[@text='Transaction Type']/following-sibling::android.widget.TextView"/>
     <Element keyword="BillPayment_TranAmount" locator="//android.widget.TextView[@text='Transaction Amount']/following-sibling::android.widget.TextView"/>
     <Element keyword="BillPayment_CompanyName" locator="//android.widget.TextView[@text='Billing Company Name']/following-sibling::android.widget.TextView"/>
@@ -107,11 +108,13 @@
     <Element keyword="SendMoney_TranToBank" locator="//android.widget.TextView[@text='To Bank']/following-sibling::android.widget.TextView"/>
     <Element keyword="SendMoney_TranPurpose" locator="//android.widget.TextView[@text='Purpose']/following-sibling::android.widget.TextView"/>
     <Element keyword="SendMoney_TranInfoClose" locator="com.hbl.android.hblmobilebanking:id/btnClose"/>
+    <Element keyword="SendMoney_TranInfoClose_Bene" locator="com.hbl.android.hblmobilebanking:id/btnTransClose"/>
     <Element keyword="SendMoney_SearchBeneField" locator="com.hbl.android.hblmobilebanking:id/txtView_Search"/>
     <Element keyword="SendMoney_SearchBeneAccountNo" locator="com.hbl.android.hblmobilebanking:id/textView_Bene_AccountNumber"/>
     <Element keyword="SendMoney_Rating" locator="com.hbl.android.hblmobilebanking:id/rating"/>
     <Element keyword="SendMoney_RatingOkBtn" locator="com.hbl.android.hblmobilebanking:id/dialog_pos_btn"/>
     <Element keyword="SendMoney_Rating_Feedback_OkBtn" locator="com.hbl.android.hblmobilebanking:id/dialog_pos_btn"/>
+    <Element keyword="SendMoney_SearchBeneConsumerNo" locator="com.hbl.android.hblmobilebanking:id/textView_Bene_AccountNumber"/>
     <!--<Element keyword="SendMoney_Bank" locator="//select[@name='bank']"/>
     <Element keyword="SendMoney_ToAccount" locator="//input[@name='account']"/>
     <Element keyword="SendMoney_Amount" locator="//input[@name='Amount']"/>
@@ -150,6 +153,7 @@
     <Element keyword="TransactionActivity_Financial" locator="//android.widget.TextView[@text='Financial']"/>
     <Element keyword="TransactionActivity_NonFinancial" locator="//android.widget.TextView[@text='Non Financial']"/>
     <Element keyword="TransactionActivity_LatestTranLink" locator="//androidx.recyclerview.widget.RecyclerView[@resource-id='com.hbl.android.hblmobilebanking:id/recViewTransactionActivity']//android.widget.LinearLayout[@resource-id='com.hbl.android.hblmobilebanking:id/recyclerViewTransactionActivity'][1]"/>
+    <Element keyword="TransactionActivity_Financial_Close" locator="com.hbl.android.hblmobilebanking:id/btnTransActivityClose"/>
   </Module>
 
 

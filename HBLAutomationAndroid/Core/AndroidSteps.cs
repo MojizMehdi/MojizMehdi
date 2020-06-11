@@ -1067,7 +1067,6 @@ namespace HBLAutomationAndroid.Core
             {
                 TranSuccessMessage = context.GetToAccount_No();
             }
-            apmhelper.verification(TranSuccessMessage, keyword.Locator, locator_type);
             string[] queries = new string[5];
             string[] keywords = new string[5];
             queries[0] = tran_type_query;
@@ -1084,6 +1083,7 @@ namespace HBLAutomationAndroid.Core
             string temp_query = "";
             for (int i = 0; i < consumer_no_arr.Length; i++)
             {
+                //apmhelper.verification(TranSuccessMessage, keyword.Locator, locator_type);
                 if (Keyword1.Contains("BillPayment_TranSuccess") || Keyword1.Contains("SendMoney_TranSuccessMessage") || Keyword1.Contains("BillPayment_TranSuccess_MultiBill"))
                 {
                     keyword = null;
@@ -1160,6 +1160,126 @@ namespace HBLAutomationAndroid.Core
                 }
             }
         }
+
+        [Then(@"verify transaction activity multiple payments ""(.*)"" on ""(.*)"" and ""(.*)"" on ""(.*)"" and ""(.*)"" on ""(.*)"" and ""(.*)"" on ""(.*)"" and ""(.*)"" on ""(.*)"" and ""(.*)"" on ""(.*)"" on Schema ""(.*)""")]
+        public void ThenVerifyTransactionActivityMultiplePaymentsOnAndOnAndOnAndOnAndOnAndOnOnSchema(string TranSuccessMessage, string Keyword1, string tran_type_query, string Keyword2, string tran_amount_query, string Keyword3, string from_account_query, string Keyword4, string company_name_query, string Keyword5, string consumer_no_query, string Keyword6, string schema)
+        {
+            string[] consumer_no_arr = context.Get_multi_bill_consumers();
+            Element keyword = ContextPage.GetInstance().GetElement(Keyword1);
+            AppiumHelper apmhelper = new AppiumHelper();
+            string locator_type = "xpath";
+            string tran_id = "";
+            if (keyword.Locator.StartsWith("/"))
+            {
+                locator_type = "xpath";
+            }
+            if (TranSuccessMessage == "ConsumerNoContextVal")
+            {
+                TranSuccessMessage = context.GetConsumer_No();
+            }
+            if (TranSuccessMessage == "ToAccountNoContextVal")
+            {
+                TranSuccessMessage = context.GetToAccount_No();
+            }
+            
+            string[] queries = new string[5];
+            string[] keywords = new string[5];
+            queries[0] = tran_type_query;
+            queries[1] = tran_amount_query;
+            queries[2] = from_account_query;
+            queries[3] = company_name_query;
+            queries[4] = consumer_no_query;
+            keywords[0] = Keyword2;
+            keywords[1] = Keyword3;
+            keywords[2] = Keyword4;
+            keywords[3] = Keyword5;
+            keywords[4] = Keyword6;
+            locator_type = "id";
+            string temp_query = "";
+            for (int i = 1; i <= consumer_no_arr.Length; i++)
+            {
+                //apmhelper.verification(TranSuccessMessage, keyword.Locator, locator_type);
+                if (Keyword1.Contains("BillPayment_TranSuccess") || Keyword1.Contains("SendMoney_TranSuccessMessage") || Keyword1.Contains("BillPayment_TranSuccess_MultiBill"))
+                {
+                    keyword = null;
+                    locator_type = "xpath";
+                    string tranid_keyword = "SendMoney_TranID";
+                    keyword = ContextPage.GetInstance().GetElement(tranid_keyword);
+                    tran_id = apmhelper.ReturnKeywordValue(keyword.Locator, locator_type);
+                }
+                for (int j = 0; j < queries.Length; j++)
+                {
+                    if (queries[j].Contains("DC_TRANSACTION"))
+                    {
+                        if (keywords[j].Contains("SendMoney_TranToBank") || keywords[j].Contains("SendMoney_TranType") || keywords[j].Contains("BillPayment_TranType"))
+                        {
+                            temp_query = queries[j];
+                            queries[j] = queries[j] + tran_id + "')";
+                        }
+                        else
+                        {
+                            temp_query = queries[j];
+                            queries[j] = queries[j] + tran_id + "'";
+                        }
+                    }
+                    try
+                    {
+                        string message = "";
+                        Thread.Sleep(3000);
+                        keyword = null;
+                        keyword = ContextPage.GetInstance().GetElement(keywords[j]);
+                        if (keyword.Locator.StartsWith("/"))
+                        {
+                            locator_type = "xpath";
+                        }
+                        if (queries[j] != "")
+                        {
+                            if (queries[j].Contains("{ConsumerNo}"))
+                            {
+                                queries[j] = queries[j].Replace("{ConsumerNo}", consumer_no_arr[i]);
+                            }
+                            DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
+                            DataTable SourceDataTable = dlink.GetDataTable(queries[j], schema);
+                            message = SourceDataTable.Rows[0][0].ToString();
+                            if (keywords[j] == "SendMoney_TranBeneName")
+                            {
+                                if (message == "")
+                                {
+                                    string temp = queries[j].Replace("DT.BENEFICIARY_NAME", "DT.FT_TO_ACCOUNT_TITLE");
+                                    queries[j] = temp;
+                                }
+                            }
+                            if (queries[j].Equals("SendMoney_TranAmount") || keywords[j].Equals("BillPayment_TranAmount"))
+                            {
+                                message = Convert.ToDecimal(message).ToString("0.00");
+                            }
+                            //if (Keyword.Equals("BillPayment_TranSucess_ConsumerNo"))
+                            //{
+                            //    consumer_no_arr_new[i] = message;
+                            //}
+                        }
+                        apmhelper.verification(message, keyword.Locator, locator_type);
+                        queries[j] = temp_query;
+                    }
+                    catch (Exception exception)
+                    {
+
+                        throw new AssertFailedException(exception.Message);
+                    }
+                }
+                if (i != consumer_no_arr.Length)
+                {
+                    keyword = null;
+                    keyword = ContextPage.GetInstance().GetElement("TransactionActivity_Financial_Close");
+                    apmhelper.links(keyword.Locator, "id");
+                    keyword = null;
+                    keyword = ContextPage.GetInstance().GetElement("TransactionActivity_LatestTranLink");
+                    string temp = keyword.Locator.Replace("[1]", "[" + (i + 1).ToString() + "]");
+                    apmhelper.links(keyword.Locator, "xpath");
+                }
+            }
+        }
+
 
         [Then(@"verify multiple payments through database on ""(.*)"" on Schema ""(.*)"" on ""(.*)""")]
         public void ThenVerifyMultiplePaymentsThroughDatabaseOnOnSchemaOn(string query, string schema, string Keyword)

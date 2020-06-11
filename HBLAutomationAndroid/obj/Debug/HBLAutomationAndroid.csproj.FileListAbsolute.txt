@@ -235,9 +235,6 @@ D:\HBL_Auto_Latest_290420\HBLAutomationAndroid\bin\Debug\Microsoft.VisualStudio.
 D:\HBL_Auto_Latest_290420\HBLAutomationAndroid\bin\Debug\Microsoft.VisualStudio.TestTools.UITest.Common.xml
 D:\HBL_Auto_Latest_290420\HBLAutomationAndroid\obj\Debug\HBLAutomationAndroid.dll
 D:\HBL_Auto_Latest_290420\HBLAutomationAndroid\obj\Debug\HBLAutomationAndroid.pdb
-D:\HBL_Auto_050420\HBLAutomationAndroid\obj\Debug\HBLAutomationAndroid.csprojResolveAssemblyReference.cache
-D:\HBL_Auto_050420\HBLAutomationAndroid\obj\Debug\HBLAutomationAndroid.dll
-D:\HBL_Auto_050420\HBLAutomationAndroid\obj\Debug\HBLAutomationAndroid.pdb
 D:\HBL_Auto_050420\HBLAutomationAndroid\bin\Debug\HBLAutomationAndroid.dll.config
 D:\HBL_Auto_050420\HBLAutomationAndroid\bin\Debug\HBLAutomationAndroid.dll
 D:\HBL_Auto_050420\HBLAutomationAndroid\bin\Debug\HBLAutomationAndroid.pdb
@@ -314,3 +311,6 @@ D:\HBL_Auto_050420\HBLAutomationAndroid\bin\Debug\WebDriver.xml
 D:\HBL_Auto_050420\HBLAutomationAndroid\bin\Debug\WebDriver.Support.xml
 D:\HBL_Auto_050420\HBLAutomationAndroid\bin\Debug\Microsoft.VisualStudio.TestTools.UITest.Extension.xml
 D:\HBL_Auto_050420\HBLAutomationAndroid\bin\Debug\Microsoft.VisualStudio.TestTools.UITest.Common.xml
+D:\HBL_Auto_050420\HBLAutomationAndroid\obj\Debug\HBLAutomationAndroid.csprojResolveAssemblyReference.cache
+D:\HBL_Auto_050420\HBLAutomationAndroid\obj\Debug\HBLAutomationAndroid.dll
+D:\HBL_Auto_050420\HBLAutomationAndroid\obj\Debug\HBLAutomationAndroid.pdb
