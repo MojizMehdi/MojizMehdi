@@ -98,6 +98,14 @@ namespace HBLAutomationWeb.Core
 
                 Assert.AreEqual(textboxvalue, message);
             }
+            if (Keyword.Contains("Signup_TransactionPassword"))
+            {
+                context.SetTranPassFlag(true);
+            }
+            if (context.GetLastLoginPassFlag() == true)
+            {
+                context.SetLastLoginFlag(true);
+            }
         }
         [Given(@"I am performing on ""(.*)""")]
         [When(@"I am performing on ""(.*)""")]
@@ -150,6 +158,10 @@ namespace HBLAutomationWeb.Core
 
             try
             {
+                SeleniumHelper selhelper = new SeleniumHelper();
+                selhelper.checkPageIsReady();
+                Element keyword = ContextPage.GetInstance().GetElement(Keyword);
+
                 if (Keyword.Contains("Services_Date"))
                 {
 
@@ -162,9 +174,6 @@ namespace HBLAutomationWeb.Core
 
                 if (Keyword == "Pay_Transaction_PayBill_Rating" || Keyword == "Pay_Transaction_PayBill_RatingOkBtn")
                 {
-                    SeleniumHelper selhelper = new SeleniumHelper();
-                    selhelper.checkPageIsReady();
-                    Element keyword = ContextPage.GetInstance().GetElement(Keyword);
                     selhelper.rating(keyword.Locator);
                     if(context.GetRatingCheck() == true)
                     {
@@ -181,11 +190,19 @@ namespace HBLAutomationWeb.Core
                         }
                     }
                 }
+                if (Keyword.Equals("Signup_AccountToggle"))
+                {
+                    List<string> AccList = new List<string>();
+                    AccList = context.GetAccountForTag();
+                    foreach (var acc_no in AccList)
+                    {
+                        string locator = keyword.Locator.Replace("{i}", acc_no);
+                        selhelper.links(locator);
+                    }
+
+                }
                 else if (!String.IsNullOrEmpty(Keyword))
                 {
-                    SeleniumHelper selhelper = new SeleniumHelper();
-                    selhelper.checkPageIsReady();
-                    Element keyword = ContextPage.GetInstance().GetElement(Keyword);
                     selhelper.links(keyword.Locator);
                 }
 
@@ -344,6 +361,10 @@ namespace HBLAutomationWeb.Core
                     throw new AssertFailedException(e.Message);
 
                 }
+                if (query.Contains("LOGIN_PASSWORD"));
+                {
+                    context.SetLastLoginPassFlag(true);
+                }
             }
         }
         [Given(@"update the data by query ""(.*)"" on QAT_BPS")]
@@ -402,6 +423,21 @@ namespace HBLAutomationWeb.Core
             if (attribute == "customer_cnic")
             {
                 context.SetCustomerCNIC(value);
+            }
+            if (attribute == "AccountForTag")
+            {
+                List<string> lst = new List<string>();
+                if (value.Contains(","))
+                {
+                    string[] delimiters = { "," };
+                    string[] pieces = value.Split(delimiters, StringSplitOptions.None);
+                    lst.AddRange(pieces);
+                }
+                else
+                {
+                    lst.Add(value.ToString());
+                }
+                context.SetAccountForTag(lst);
             }
         }
 
@@ -462,16 +498,30 @@ namespace HBLAutomationWeb.Core
                 }
                 if (query.Contains("IS_IVR_ENABLED"))
                 {
-                    if ((context.GetIVRReq() == "1" && inst_type == "0") || (context.GetIVRReq() == "0" && inst_type == "1"))
+                    if ((context.GetIVRReq() == "1" && inst_type == "0"))
                     {
                         return;
                     }
-                    else
+                    else if (context.GetIVRReq() == "0" && inst_type == "1")
                     {
-                        throw new AssertFailedException("IS_IVR_ENABLED setting is not correct");
+                        return;
+                    }
+                    //if ((context.GetIVRReq() != "1" && inst_type != "0") || (context.GetIVRReq() != "0" && inst_type != "1"))
+                    //{
+                    //    throw new AssertFailedException("IS_IVR_ENABLED setting is not correct");
+                    //}
+                }
+                if (query.Contains("ENABLE_PSD_BIOMETRIC"))
+                {
+                    context.SetEnablePSD(inst_type);
+                }
+                if (query.Contains("Z.ENABLE_PSD "))
+                {
+                    if ((context.GetEnablePSD() != "1" && inst_type != "1") || (context.GetEnablePSD() != "0" && inst_type != "0"))
+                    {
+                        throw new AssertFailedException("ENABLE_PSD setting is not correct");
                     }
                 }
-
                 if (query.Contains("CUSTOMER_TYPE"))
                 {
                     context.SetCustomerType(inst_type);
@@ -485,18 +535,86 @@ namespace HBLAutomationWeb.Core
                 } 
                 if (query.Contains("TRANSACTION_PASSWORD"))
                 {
-                    if (inst_type == null)
+                    if (inst_type == "")
                     {
-                        throw new AssertFailedException("Transaction Password is not updated in data base");
+                        if (context.GetTranPassFlag() == true)
+                        {
+                            throw new AssertFailedException("Transaction Password is not updated in data base");
+                        }
+                        else
+                        {
+                            return;
+                        }
+                    }
+                    if (inst_type != "")
+                    {
+                        if (context.GetTranPassFlag() == false)
+                        {
+                            throw new AssertFailedException("Transaction Password is not updated in data base");
+                        }
+                        else
+                        {
+                            return;
+                        }
                     }
                 }
-                if (query.Contains("P.CUSTOMER_TYPE"))
+
+                if(query.Contains("last_login"))
                 {
-                    if (inst_type != "C")
+                    if (inst_type == "")
                     {
-                        throw new AssertFailedException("Customer Type of Credit Card user is not Type C");
+                        if (context.GetLastLoginFlag() == true)
+                        {
+                            throw new AssertFailedException("Last Login is not updated in data base");
+                        }
+                        else
+                        {
+                            return;
+                        }
                     }
-                }
+                    if (inst_type != "")
+                    {
+                        if (context.GetLastLoginFlag() == false)
+                        {
+                            throw new AssertFailedException("Transaction Password is not updated in data base");
+                        }
+                        else
+                        {
+                            DateTime lastlogin = Convert.ToDateTime(inst_type);
+                            inst_type = lastlogin.ToString("MM/dd/yyyy");
+                            string today_date = DateTime.Today.ToString("MM/dd/yyyy");
+                            Assert.AreEqual(inst_type, today_date);
+                        }
+                    }
+                    if (query.Contains("created_on"))
+                    {
+                        if (inst_type != null)
+                        {
+                            DateTime lastlogin = Convert.ToDateTime(inst_type);
+                            inst_type = lastlogin.ToString("MM/dd/yyyy");
+                            string today_date = DateTime.Today.ToString("MM/dd/yyyy");
+                            Assert.AreEqual(inst_type, today_date);
+                        }
+                        else
+                        {
+                            throw new AssertFailedException("Created On is not updated in data base");
+                        }
+                    }
+                    if (query.Contains("updated_on"))
+                    {
+                        if (inst_type != null)
+                        {
+                            DateTime lastlogin = Convert.ToDateTime(inst_type);
+                            inst_type = lastlogin.ToString("MM/dd/yyyy");
+                            string today_date = DateTime.Today.ToString("MM/dd/yyyy");
+                            Assert.AreEqual(inst_type, today_date);
+                        }
+                        else
+                        {
+                            throw new AssertFailedException("Updated On is not updated in data base");
+                        }
+                    }
+                }   
 
                 if (query.Contains("APPLICATION_PARAMETER_ID='906'"))
                 {
@@ -515,9 +633,22 @@ namespace HBLAutomationWeb.Core
                     {
                         throw new AssertFailedException(string.Format("The instrument Type against company : {0} and the expected instrument type is {1}", inst_type, acc_type));
                     }
-
                 }
-
+                if (query.Contains("PARAM_CHANNEL_ID"))
+                {
+                    if (inst_type != "2")
+                    {
+                        throw new AssertFailedException(string.Format("The PARAM_CHANNEL_ID :{0} is not valid for HBL Web Internet Banking", inst_type));
+                    }
+                }
+                if (query.Contains("LOGIN_PSWD_POLICY_DESC"))
+                {
+                    string[] delimiters = { "<br>" };
+                    string[] pieces = inst_type.Split(delimiters, StringSplitOptions.None);
+                    context.SetPassPolicy1(pieces[0]);
+                    context.SetPassPolicy2(pieces[1]);
+                    context.SetPassPolicy3(pieces[2]);
+                }
             }
         }
 
@@ -577,6 +708,28 @@ namespace HBLAutomationWeb.Core
                 {
                     message = context.GetConsumer_No();
                 }
+                if(message == "Signup_PassPolicy")
+                {
+                    for (int i = 1; i <= 3; i++)
+                    {
+                        string temp = "";
+                        if (i == 1)
+                        {
+                            temp = context.GetPassPolicy1();
+                        }
+                        else if (i == 2)
+                        {
+                            temp = context.GetPassPolicy2();
+                        }
+                        else if (i == 3)
+                        {
+                            temp = context.GetPassPolicy3();
+                        }
+                        string loc = keyword.Locator.Replace("[i]", "[" + (i) + "]");
+                        selhelper.verification(temp, keyword.Locator);
+                    }
+                    return;
+                }
                 selhelper.verification(message, keyword.Locator);
                 if (Keyword.Contains("Pay_Transaction_Success") || Keyword.Contains("SendMoney_TranSuccessMessage"))
                 {
@@ -605,13 +758,58 @@ namespace HBLAutomationWeb.Core
             }
             try
             {
-                DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
-                DataTable SourceDataTable = dlink.GetDataTable(query, schema);
-                string message = SourceDataTable.Rows[0][0].ToString();
+                if (query.Contains("K.IS_ACTIVE"))
+                {
+                    DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
+                    DataTable SourceDataTable = dlink.GetDataTable(query, schema);
 
-                Assert.AreEqual(message, value);
-                
-            
+                    List<string> account_list = new List<string>();
+                    account_list = context.GetAccNumbers();
+                    int count = account_list.Count;
+
+                    List<string> db_account_list = new List<string>();
+
+                    for (int i = 0; i < count; i++)
+                    {
+                        string message = SourceDataTable.Rows[i][0].ToString();
+                        db_account_list.Add(message);
+                    }
+                    if (db_account_list.Count != account_list.Count)
+                    {
+                        throw new AssertFailedException(string.Format("Account Numbers during Sign up:{0} are not the same as in Database:{1}", account_list, db_account_list));
+                    }
+                }
+
+                if (query.Contains("K.IS_ACCOUNT_LINK"))
+                {
+                    DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
+                    DataTable SourceDataTable = dlink.GetDataTable(query, schema);
+
+                    List<string> db_account_list = new List<string>();
+
+                    List<string> account_list = new List<string>();
+                    account_list = context.GetAccountForTag();
+                    int count = account_list.Count;
+
+                    for (int i = 0; i< count; i++)
+                    {
+                        string message = SourceDataTable.Rows[i][0].ToString();
+                        db_account_list.Add(message);
+                    }
+                    if (db_account_list.Count != account_list.Count)
+                    {
+                        throw new AssertFailedException(string.Format("Account Numbers which were tagged during Sign up:{0} are not the same as in Database:{1}", account_list, db_account_list));
+                    }                   
+                }
+                else
+                {
+                    DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
+                    DataTable SourceDataTable = dlink.GetDataTable(query, schema);
+                    string message = SourceDataTable.Rows[0][0].ToString();
+
+                    Assert.AreEqual(message, value);
+                }
+
             }
             catch (Exception exception)
             {
@@ -672,11 +870,12 @@ namespace HBLAutomationWeb.Core
                     if (Keyword.Contains("TranDate"))
                     {
                         DateTime tran_date = Convert.ToDateTime(message);
-                        message = tran_date.ToString("MM/DD/YYYY");
+                        message = tran_date.ToString("MM/dd/yyyy");
                     }
+
                 }
                 //selhelper.Scroll(keyword.Locator);
-
+               
 
                 selhelper.verification(message, keyword.Locator);
             }
@@ -1004,7 +1203,6 @@ namespace HBLAutomationWeb.Core
         {
             SeleniumHelper selhelper = new SeleniumHelper();
             Dictionary<string, string> dict = new Dictionary<string, string>();
-            //string[,] arr = new string[,] { };
             int count = 0;
             int x = context.GeTSizeCount();
             string acc_no = "";
@@ -1101,13 +1299,23 @@ namespace HBLAutomationWeb.Core
 
 
         }
-
         [Given(@"I count Number of Account")]
         public void GivenICountNumberOfAccount()
         {
             SeleniumHelper selhelper = new SeleniumHelper();
-            Element keyword = ContextPage.GetInstance().GetElement("Pay_Account_No-Count");
-            int size = selhelper.SizeCountElements(keyword.Locator);
+            Element Keyword = ContextPage.GetInstance().GetElement("Pay_Account_No-Count");
+            int size = selhelper.SizeCountElements(Keyword.Locator);
+            context.SetSizeCount(size);
+        }
+
+        [Given(@"I count Number of Account on ""(.*)""")]
+        [When(@"I count Number of Account on ""(.*)""")]
+        [Then(@"I count Number of Account on ""(.*)""")]
+        public void GivenICountNumberOfAccountOn(string keyword)
+        {
+            SeleniumHelper selhelper = new SeleniumHelper();
+            Element Keyword = ContextPage.GetInstance().GetElement(keyword);
+            int size = selhelper.SizeCountElements(Keyword.Locator);
             context.SetSizeCount(size);
 
         }
@@ -1361,7 +1569,30 @@ namespace HBLAutomationWeb.Core
                 Assert.AreEqual(value, message);
             }
         }
+        [When(@"I save Account Numbers")]
+        public void WhenISaveAccountNumbers()
+        {
+            SeleniumHelper selhelper = new SeleniumHelper();
+            Element keyword = ContextPage.GetInstance().GetElement("Signup_TagAccountNo");
 
+            List<string> lst = new List<string>();
+            int count = 0;
+            int x = context.GeTSizeCount();
+            string acc_no = "";
+
+            for (int i = 0; i < x; i++)
+            {
+                int temp_counter = count + 1;
+
+                string temp = keyword.Locator.Replace("{i}", temp_counter.ToString());
+                acc_no = selhelper.ReturnKeywordValue(temp);
+                lst.Add(acc_no.ToString());
+                count++;
+            }
+            
+            context.SetAccNumbers(lst);
+        }   
+             
     }
 
 

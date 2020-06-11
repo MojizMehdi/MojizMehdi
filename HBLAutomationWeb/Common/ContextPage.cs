@@ -43,6 +43,8 @@ namespace HBLAutomationWeb.Common
         string consumerno;
         Dictionary<string, string> acc_info;
         Dictionary<string, string> tran_info;
+        List<string> Account_No;
+        List<string> AccountForTag;
         int sizecount;
         string Account_Type;
         string username;
@@ -61,6 +63,13 @@ namespace HBLAutomationWeb.Common
         string customer_cnic;
         string customer_type;
         string ivr_req;
+        string enable_psd;
+        string pass_policy1;
+        string pass_policy2;
+        string pass_policy3;
+        bool tran_pass_flag = false;
+        bool last_login_flag = false;
+        bool last_login_pass_flag = false;
 
         public string CutOvertime = null;
         public string Date = null;
@@ -73,6 +82,46 @@ namespace HBLAutomationWeb.Common
         {
             return tran_from_date_flag;
         }
+        public void SetTranPassFlag(bool tran_pass_flag)
+        {
+            this.tran_pass_flag = tran_pass_flag;
+        }
+        public bool GetTranPassFlag()
+        {
+            return tran_pass_flag;
+        }
+        public void SetLastLoginFlag(bool last_login_flag)
+        {
+            this.last_login_flag = last_login_flag;
+        }
+        public bool GetLastLoginFlag()
+        {
+            return last_login_flag;
+        }
+        public void SetLastLoginPassFlag(bool last_login_pass_flag)
+        {
+            this.last_login_pass_flag = last_login_pass_flag;
+        }
+        public bool GetLastLoginPassFlag()
+        {
+            return last_login_pass_flag;
+        }
+        //public void SetCreatedOnFlag(bool created_on_flag) 
+        //{   
+        //    this.created_on_flag = created_on_flag;
+        //}
+        //public bool GetCreatedOnFlag()
+        //{
+        //    return created_on_flag;
+        //}
+        //public void SetUpdatedOnFlag(bool updated_on_flag)
+        //{
+        //    this.updated_on_flag = updated_on_flag;
+        //}
+        //public bool GetUpdatedOnFlag()
+        //{
+        //    return updated_on_flag;
+        //}
         public void SetTranToDateFlag(bool tran_to_date_flag)
         {
             this.tran_to_date_flag = tran_to_date_flag;
@@ -178,6 +227,22 @@ namespace HBLAutomationWeb.Common
         public bool GetRatingCheck()
         {
             return rating_check;
+        }
+        public void SetAccNumbers(List<string> Account_No)
+        {
+            this.Account_No = Account_No;
+        }
+        public List <string> GetAccNumbers()
+        {
+            return this.Account_No;
+        }
+        public void SetAccountForTag(List<string> AccountForTag)
+        {
+            this.AccountForTag = AccountForTag;
+        }
+        public List<string> GetAccountForTag()
+        {
+            return this.AccountForTag;
         }
         public void Set_acc_balances(Dictionary<string, string> acc_info)
         {
@@ -397,9 +462,40 @@ namespace HBLAutomationWeb.Common
         {
             return ivr_req;
         }
-        
+        public void SetEnablePSD(string enable_psd)
+        {
+            this.enable_psd = enable_psd;
+        }
+        public string GetEnablePSD()
+        {
+            return enable_psd;
+        }
+        public void SetPassPolicy1(string pass_policy1)
+        {
+            this.pass_policy1 = pass_policy1;
+        }
+        public string GetPassPolicy1()
+        {
+            return pass_policy1;
+        }
+        public void SetPassPolicy2(string pass_policy2)
+        {
+            this.pass_policy2 = pass_policy2;
+        }
+        public string GetPassPolicy2()
+        {
+            return pass_policy2;
+        }
+        public void SetPassPolicy3(string pass_policy3)
+        {
+            this.pass_policy3 = pass_policy3;
+        }
+        public string GetPassPolicy3()
+        {
+            return pass_policy3;
+        }
 
-        //public string this[string key]   ivr_req
+        //public string this[string key]    
 
         //{
         // returns value if exists
@@ -852,15 +948,7 @@ namespace HBLAutomationWeb.Common
         //    ENTITY_NAME = entityname;
         //}
 
-        //public string GetACCOUNT_NO()
-        //{
-        //    return ACCOUNT_NO;
-        //}
 
-        //public void SetACCOUNT_NO(string accountno)
-        //{
-        //    ACCOUNT_NO = accountno;
-        //}
 
 
 

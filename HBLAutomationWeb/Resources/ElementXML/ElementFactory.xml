@@ -63,7 +63,7 @@
     <Element keyword="Signup_UrduText" locator="//div[@class='urdu_terms']//p[contains(text(), 'ڈیجیٹل بینکاری')]" />
     <Element keyword="Signup_Scroll" locator="//span[contains(text(),'{K}')]" />
     <Element keyword="Signup_AcceptBtn" locator="//button[@class='btn accept']"/>
-    <Element keyword="Signup_DOB" locator="//input[@name='dob']" />
+    <Element keyword="Signup_DOB" locator="//input[@name='DateOfBirth']" />
     <Element keyword="Signup_CNIC" locator="//input[@name='CNIC']"/>
     <Element keyword="Signup_CardNo" locator="//input[@name='CardNo']"/>
     <Element keyword="Signup_CardPin" locator="//input[@name='PIN']"/>
@@ -71,8 +71,8 @@
     <Element keyword="Signup_Email" locator="//input[@name='EmailAddress']"/>
     <Element keyword="Signup_ContinueBtn" locator="//div[@ng-form='FormStep1']//button[@class='btn submit-btn']"/>
     <Element keyword="Signup_LastRegisterBtn" locator="//div[@ng-form='FirstStep']//div[@class='col-10 enable-ent']//button[@class='btn submit-btn']"/>
-    <Element keyword="Signup_AccountToggle" locator="//label[@class='account-selection']"/>
-    <Element keyword="Signup_TagAccountNo" locator="//label[@class='account-number ng-binding'][1]"/>
+    <Element keyword="Signup_AccountToggle" locator="//input[@id='{i}']//following-sibling::label"/>
+    <Element keyword="Signup_TagAccountNo" locator="(//label[@class='account-number ng-binding'])[{i}]"/>
     <Element keyword="Signup_LoginIdTextVerf" locator="//p[@class='value col-6 ng-binding']"/>
     <Element keyword="Signup_LoginPassword" locator="//input[@name='LoginPassword']" />
     <Element keyword="Signup_ReLoginPassword" locator="//input[@name='ReLoginPassword']" />
@@ -92,10 +92,8 @@
     <Element keyword="Signup_SuccessMessage2" locator="//p[@class='label msg col-12 ng-binding']"/>
     <Element keyword="Signup_SuccessMessage3" locator="//p[@class='label msg col-12']"/>
     <Element keyword="Signup_CrossIcon" locator="//div[@class='reg-close']//i"/>
-    <Element keyword="Signup_PassPolicy" locator="//div[@class='user-policy']//h2" />
-    <Element keyword="Signup_PassPolicy1" locator="//small[@class='form-text ng-binding ng-scope'][1]" />
-    <Element keyword="Signup_PassPolicy2" locator="//small[@class='form-text ng-binding ng-scope'][2]" />
-    <Element keyword="Signup_PassPolicy3" locator="//small[@class='form-text ng-binding ng-scope'][3]" />
+    <Element keyword="Signup_PassPolicy" locator="//small[@class='form-text ng-binding ng-scope'][i]" />
+    <Element keyword="Signup_AccountCount" locator="//div[@class='ng-scope account-list']" />
   </Module>
   
   <Module name ="BeneficiaryManagement">
@@ -151,6 +149,8 @@
     <Element keyword="Pay_Card_Expiry_Date" locator="//input[@name='CardExpiryDate']" />
     <Element keyword="Pay_Account_No-Count" locator="//div[@class='acc-num ng-binding']" />
     <Element keyword="Pay_Transaction_MaxBillAmount_value" locator="//div[@class='hide-label m-2 col-11 ng-scope']//input[@name='Amount']" />
+    <Element keyword="Pay_MultiBillIcon" locator="//a[@class='btn add float-right' and text()='Multiple Bill']"/>
+
   </Module>
   <Module name ="SendMoney">
     <Element keyword="SendMoney_Link" locator="//*[contains(text(),'Send Money ')]"/>
