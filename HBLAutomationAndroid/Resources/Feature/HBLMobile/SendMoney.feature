@@ -141,9 +141,11 @@ Scenario Outline: When user try to send money mobile using already added bene
 	#And verify through database on "<bene_name_query>" on Schema "<db_val>" on "SendMoney_TranBeneName"
 	And verify through database on "<purpose_query>" on Schema "<db_val>" on "SendMoney_TranPurpose"
 	And I am clicking on "SendMoney_TranInfoClose_Bene"
+	And I wait 2000
 	#And I have given "<Account_Number_Value>" on "SendMoney_SearchBeneField"
 	#Then verify through "ToAccountNoContextVal" on "SendMoney_SearchBeneAccountNo"
-	#And I am clicking on "Dashboard"
+	And I am clicking on "Dashboard"
+	And I wait 2000
 	And I verify Account Balance
 	And I am clicking on "Dashboard_Sidebar"
 	And I am clicking on "Dashboard_Sidebar_TranActivity"
