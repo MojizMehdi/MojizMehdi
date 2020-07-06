@@ -4,14 +4,14 @@
     <!--<Element keyword="Login_UserId" locator="//android.widget.EditText[@resource-id='com.hbl.android.hblmobilebanking:id/l_username_field']"/>
     <Element keyword="Login_Password" locator="//android.widget.EditText[@resource-id='com.hbl.android.hblmobilebanking:id/l_password_field']"/>
     <Element keyword="Login_SignIn_Button" locator="//android.widget.Button[@resource-id='com.hbl.android.hblmobilebanking:id/login_button']"/>-->
-    
+
     <Element keyword="Login_UserId" locator="com.hbl.android.hblmobilebanking:id/l_username_field"/>
     <Element keyword="Login_Password" locator="com.hbl.android.hblmobilebanking:id/l_password_field"/>
     <Element keyword="Login_SignIn_Button" locator="com.hbl.android.hblmobilebanking:id/login_button"/>
     <Element keyword="Login_OTP_field" locator="com.hbl.android.hblmobilebanking:id/txt_pin_entry"/>
     <Element keyword="Login_OTP_Verify_Button" locator="com.hbl.android.hblmobilebanking:id/registerDeviceOkBtn"/>-->
 
-    
+
     <!--<Element keyword="Login_Dashboard" locator="//img[@class='desk-logo']"/>-->
   </Module>
 
@@ -23,7 +23,7 @@
     <Element keyword="Dashboard_BillPayment" locator="com.hbl.android.hblmobilebanking:id/pay_Btn"/>
   </Module>
 
-  
+
   <!--<Module name ="BeneficiaryManagement">
      <Element keyword="BeneficiaryManagement_Link" locator="//*[contains(text(),'Beneficiary Management ')]"/>
     <Element keyword="BeneficiaryManagement_AddNewBtn" locator="//a[@title = 'Add New' and @class='btn add btn-responsive-fix d-md-block d-lg-block d-xl-block ng-scope']"/>
@@ -107,6 +107,7 @@
     <Element keyword="SendMoney_TranBeneName" locator="//android.widget.TextView[@text='Beneficiary Name']/following-sibling::android.widget.TextView"/>
     <Element keyword="SendMoney_TranToBank" locator="//android.widget.TextView[@text='To Bank']/following-sibling::android.widget.TextView"/>
     <Element keyword="SendMoney_TranPurpose" locator="//android.widget.TextView[@text='Purpose']/following-sibling::android.widget.TextView"/>
+    <Element keyword="SendMoney_TranFrequency" locator="//android.widget.TextView[@text='Frequency']/following-sibling::android.widget.TextView"/>
     <Element keyword="SendMoney_TranInfoClose" locator="com.hbl.android.hblmobilebanking:id/btnClose"/>
     <Element keyword="SendMoney_TranInfoClose_Bene" locator="com.hbl.android.hblmobilebanking:id/btnTransClose"/>
     <Element keyword="SendMoney_SearchBeneField" locator="com.hbl.android.hblmobilebanking:id/txtView_Search"/>
@@ -115,6 +116,15 @@
     <Element keyword="SendMoney_RatingOkBtn" locator="com.hbl.android.hblmobilebanking:id/dialog_pos_btn"/>
     <Element keyword="SendMoney_Rating_Feedback_OkBtn" locator="com.hbl.android.hblmobilebanking:id/dialog_pos_btn"/>
     <Element keyword="SendMoney_SearchBeneConsumerNo" locator="com.hbl.android.hblmobilebanking:id/textView_Bene_AccountNumber"/>
+    <Element keyword="SendMoney_SchedulePayment_Check" locator="com.hbl.android.hblmobilebanking:id/chkBoxTransSchedulePayment"/>
+    <Element keyword="SendMoney_SchedulePayment_Frequency" locator="com.hbl.android.hblmobilebanking:id/spnTransFrequency"/>
+    <Element keyword="SendMoney_SchedulePayment_StartDate" locator="(//android.widget.ImageView[@resource-id='com.hbl.android.hblmobilebanking:id/calenderImgBtn'])[1]"/>
+    <Element keyword="SendMoney_SchedulePayment_EndDate" locator="(//android.widget.ImageView[@resource-id='com.hbl.android.hblmobilebanking:id/calenderImgBtn'])[2]"/>
+    <Element keyword="SendMoney_SchedulePayment_CalendarDateSelect" locator="//android.view.View[@text='{calendar_date}']"/>
+    <Element keyword="SendMoney_SchedulePayment_CalendarDateSelect_OK" locator="android:id/button1"/>
+    <Element keyword="SendMoney_SchedulePayment_ViewSummary" locator="com.hbl.android.hblmobilebanking:id/btnTransViewSummary"/>
+    <Element keyword="SendMoney_Btn_Summary_Iteration_Dates" locator="//android.widget.LinearLayout[@resource-id='com.hbl.android.hblmobilebanking:id/recyclerViewSIChild']//android.widget.TextView[@resource-id='com.hbl.android.hblmobilebanking:id/siChild_txtView_ExecutionDate' and @text='{Date}']"/>
+    <Element keyword="SendMoney_Btn_Summary_OK" locator="com.hbl.android.hblmobilebanking:id/btnTransViewSummary"/>
     <!--<Element keyword="SendMoney_Bank" locator="//select[@name='bank']"/>
     <Element keyword="SendMoney_ToAccount" locator="//input[@name='account']"/>
     <Element keyword="SendMoney_Amount" locator="//input[@name='Amount']"/>
@@ -140,12 +150,12 @@
     <Element keyword="SendMoney_Schedule_ToDate" locator="//input[@name='ExpiryDate']"/>
     <Element keyword="SendMoney_Btn_ViewSummary" locator="//button[text()='View Summary']"/>
     <Element keyword="SendMoney_Btn_Summary_OK" locator="//div[@class='modal-footer']//a[text()='OK' and @data-dismiss='modal']"/>
-    <Element keyword="SendMoney_Btn_Summary_Iteration_Dates" locator="//tr[@class='ng-scope'][{Iteration_Number}]//td[@class='ng-binding']"/>
+    
     <Element keyword="SendMoney_SearchBeneField" locator="//input[@type='search']"/>
     <Element keyword="SendMoney_BeneClick" locator="//ul[@class='item']"/>
     <Element keyword="SendMoney_CloseBtn" locator="//a[text()='Close']"/>
     <Element keyword="SendMoney_ScheduleBtn" locator="//button[text()='Schedule']"/>-->
-    
+
 
   </Module>
 

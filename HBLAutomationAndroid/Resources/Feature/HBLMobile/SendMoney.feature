@@ -160,4 +160,46 @@ Scenario Outline: When user try to send money mobile using already added bene
 	And verify through database on "<purpose_query>" on Schema "<db_val>" on "SendMoney_TranPurpose"
 	@source:Data/SendMoney(ViaBene).xlsx
 	Examples: 
-	|Case|status_query|BeneName|From_Account_Value|Account_Number_Value|Amount_Value|PurposeOfPayment_Value|Tran_Pass_Value|Success_Message|tran_type_query|tran_amount_query|from_account_query|to_account_query|to_bank_query|bene_name_query|purpose_query|db_val|count_query|
+	|Case|status_query|BeneName|From_Account_Value|Amount_Value|PurposeOfPayment_Value|Tran_Pass_Value|Success_Message|tran_type_query|tran_amount_query|from_account_query|to_account_query|to_bank_query|bene_name_query|purpose_query|db_val|count_query|
+
+
+	Scenario Outline: When user try to send money mobile using already added bene schedule payment
+	Given the test case title is "<Case>"
+	And update the data by query "<status_query>" on DIGITAL_CHANNEL_SEC
+	And the user is arrive to Mobile Banking home page 
+	When I am clicking on "SendMoney_Link"
+	And I wait 2000
+	And I have given "<BeneName>" on "BillPayment_SearchBeneField"
+	And I am clicking on "SendMoney_SearchBeneConsumerNo"
+	And I select "<From_Account_Value>" on "SendMoney_FromAccount"
+	And I have given "<Amount_Value>" on "SendMoney_Amount"
+	When I select "<PurposeOfPayment_Value>" on "SendMoney_PurposeOfPayment"
+	And I am clicking on "SendMoney_SchedulePayment_Check"
+	And I select "<Frequency_Value>" on "SendMoney_SchedulePayment_Frequency"
+	And I am clicking on "SendMoney_SchedulePayment_StartDate"
+	And I select from date "<From_Date_Value>"
+	#And I wait 2000
+	And I am clicking on "SendMoney_SchedulePayment_EndDate"
+	And I wait 2000
+	And I select to date "<To_Date_Value>"
+	And I am clicking on "SendMoney_NextBtn"
+	And I am clicking on "SendMoney_SchedulePayment_ViewSummary"
+	And I wait 3000
+	And I am verifying list of execution iterations on "SendMoney_Btn_Summary_Iteration_Dates"
+	And I am clicking on "SendMoney_Btn_Summary_OK"
+	And I have given "<Tran_Pass_Value>" on "SendMoney_TranPass"
+	And I wait 2000
+	And I am performing on "SendMoney_NextBtn"
+	And I wait 3000
+	And I am clicking on "SendMoney_Rating"
+	And I am clicking on "SendMoney_RatingOkBtn"
+	And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
+	Then verify through "<Success_Message>" on "SendMoney_TranSuccessMessage"
+	And verify through database on "<tran_type_query>" on Schema "<db_val>" on "SendMoney_TranType"
+	And verify through database on "<from_account_query>" on Schema "<db_val>" on "SendMoney_TranFromAcc"
+	And verify through database on "<frequency_query>" on Schema "<db_val>" on "SendMoney_TranFrequency"
+	And verify through database on "<purpose_query>" on Schema "<db_val>" on "SendMoney_TranPurpose"
+	And I am clicking on "SendMoney_TranInfoClose_Bene"
+	@source:Data/SendMoney_Schedule_Beneficiary.xlsx
+	Examples: 
+	|Case|status_query|BeneName|From_Account_Value|Amount_Value|PurposeOfPayment_Value|Frequency_Value|From_Date_Value|To_Date_Value|Tran_Pass_Value|Success_Message|tran_type_query|from_account_query|frequency_query|purpose_query|db_val|

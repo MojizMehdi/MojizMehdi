@@ -293,7 +293,7 @@ namespace HBLAutomationAndroid.Core
                     AppiumHelper apmhelper = new AppiumHelper();
                     //apmhelper.checkPageIsReady();
                     Element keyword = ContextPage.GetInstance().GetElement(Keyword);
-                    if (keyword.Locator.StartsWith("/"))
+                    if (keyword.Locator.StartsWith("/") || keyword.Locator.StartsWith("("))
                     {
                         locator_type = "xpath";
                     }
@@ -397,7 +397,7 @@ namespace HBLAutomationAndroid.Core
                     locator_type = "xpath";
                 }
                 apmhelper.combobox(value, keyword.Locator,locator_type);
-                if (Keyword.Equals("SendMoney_Frequency"))
+                if (Keyword.Equals("SendMoney_SchedulePayment_Frequency"))
                 {
                     context.Setfrequency(value);
                 }
@@ -440,6 +440,104 @@ namespace HBLAutomationAndroid.Core
 
                 }
 
+            }
+        }
+
+        [When(@"I select from date ""(.*)""")]
+        public void WhenISelectFromDate(string date)
+        {
+            AppiumHelper apmhelper = new AppiumHelper();
+            DateTime current_date = DateTime.Today;
+            DateTime given_date = Convert.ToDateTime(date);
+            int monthsApart = 12 * (current_date.Year - given_date.Year) + current_date.Month - given_date.Month;
+            monthsApart = Math.Abs(monthsApart);
+            for (int i = 0; i < monthsApart; i++)
+            {
+                apmhelper.scroll_right(0.6, 0.8, 0.2);
+            }
+            Element keyword = ContextPage.GetInstance().GetElement("SendMoney_SchedulePayment_CalendarDateSelect");
+            string temp = keyword.Locator.Replace("{calendar_date}", date.Split('/')[1].TrimStart(new Char[] { '0' }).ToString());
+            //keyword.Locator = temp;
+            apmhelper.links(temp, "xpath");
+            context.Setcalendar_fromdate(given_date);
+            keyword = ContextPage.GetInstance().GetElement("SendMoney_SchedulePayment_CalendarDateSelect_OK");
+            apmhelper.links(keyword.Locator, "id");
+        }
+        [When(@"I select to date ""(.*)""")]
+        public void WhenISelectToDate(string date)
+        {
+            AppiumHelper apmhelper = new AppiumHelper();
+            DateTime current_date = DateTime.Today;
+            DateTime given_date = Convert.ToDateTime(date);
+            int monthsApart = 12 * (current_date.Year - given_date.Year) + current_date.Month - given_date.Month;
+            monthsApart = Math.Abs(monthsApart);
+            for (int i = 0; i < monthsApart; i++)
+            {
+                apmhelper.scroll_right(0.6, 0.8, 0.2);
+            }
+            Element keyword = ContextPage.GetInstance().GetElement("SendMoney_SchedulePayment_CalendarDateSelect");
+            string temp = keyword.Locator.Replace("{calendar_date}", date.Split('/')[1].TrimStart(new Char[] { '0' }).ToString());
+            //keyword.Locator = temp;
+            apmhelper.links(temp, "xpath");
+            context.Setcalendar_todate(given_date);
+            keyword = ContextPage.GetInstance().GetElement("SendMoney_SchedulePayment_CalendarDateSelect_OK");
+            apmhelper.links(keyword.Locator, "id");
+        }
+
+        [When(@"I am verifying list of execution iterations on ""(.*)""")]
+        public void WhenIAmVerifyingListOfExecutionIterationsOn(string Keyword)
+        {
+            Element keyword = ContextPage.GetInstance().GetElement(Keyword);
+            AppiumHelper apmhelper = new AppiumHelper();
+            //selhelper.checkPageIsReady();
+            //int loop_counter = 0;
+            int loop_increment_counter = 0;
+            string frequency = context.Getfrequency();
+            if (frequency == "Daily")
+            {
+                loop_increment_counter = 1;
+            }
+            else if (frequency == "Weekly")
+            {
+                loop_increment_counter = 7;
+            }
+            else if (frequency == "Fortnightly")
+            {
+                loop_increment_counter = 15;
+            }
+            else if (frequency == "Monthly")
+            {
+                loop_increment_counter = 30;
+            }
+            else if (frequency == "Quarterly")
+            {
+                loop_increment_counter = 90;
+            }
+            List<string> lst = new List<string>();
+            List<string> lstui = new List<string>();
+            double difference = 0;
+            DateTime st_date = context.Getcalendar_fromdate().Date;
+            DateTime ed_date = context.Getcalendar_todate().Date;
+            difference = ((ed_date - st_date).TotalDays) + 1;
+            difference = difference / loop_increment_counter;
+            int diff = Convert.ToInt32(Math.Ceiling(difference));
+            int counter = 1;
+            for (int i = 0; i < diff * loop_increment_counter; i += loop_increment_counter)
+            {
+                DateTime temp = (st_date.Date.AddDays(i));
+                temp = temp.Date;
+                lst.Add(temp.ToString("dd-MM-yyyy"));
+                string locator = keyword.Locator.Replace("{Date}", lst[counter - 1].ToString());
+                lstui.Add(apmhelper.ReturnKeywordValue(locator, "xpath"));
+                if (lst[counter - 1] != lstui[counter - 1])
+                {
+                    throw new AssertFailedException(string.Format("The Iteration Date against keyword is: {0} and Iteration Date calculated by code is {1}", lstui[counter], lst[counter]));
+                }
+                if(counter != 0 && counter % 10 == 0)
+                {
+                    apmhelper.scroll_down();
+                }
+                counter++;
             }
         }
 
