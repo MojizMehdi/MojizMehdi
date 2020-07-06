@@ -282,6 +282,7 @@
     <None Include="Resources\Feature\HBLMobile\Data\HBLMobileLogin.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\SendMoney%28ViaBene%29.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\SendMoney.xlsx" />
+    <None Include="Resources\Feature\HBLMobile\Data\SendMoney_Schedule_Beneficiary.xlsx" />
     <None Include="Resources\Feature\HBLMobile\SendMoney.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>SendMoney.feature.cs</LastGenOutput>

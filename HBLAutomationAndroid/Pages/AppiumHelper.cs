@@ -100,21 +100,6 @@ namespace HBLAutomationAndroid.Pages
         //    }
         //}
 
-        //For returning the value from the web page of the keyword given using xpath
-        public string ReturnKeywordValue(string locator,string locator_type)
-        {
-            IWebElement Control = null;
-            if (locator_type == "id")
-            {
-                Control = waitDriver.Until(ExpectedConditions.ElementIsVisible(By.Id(locator)));
-            }
-            else if(locator_type == "xpath")
-            {
-                Control = waitDriver.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
-            }
-            return Control.Text;
-            
-        }
 
         //For returning the value from the web page of the keyword given using xpath
         public void longpress(string locator, string locator_type)
@@ -479,7 +464,20 @@ namespace HBLAutomationAndroid.Pages
 
         }
 
-
+        //For returning the value from the mobile of the keyword given
+        public string ReturnKeywordValue(string locator,string locator_type)
+        {
+            IWebElement Control = null;
+            if (locator_type == "id")
+            {
+                Control = waitDriver.Until(ExpectedConditions.ElementIsVisible(By.Id(locator)));
+            }
+            if (locator_type == "xpath")
+            {
+                Control = waitDriver.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
+            }
+            return Control.Text;
+        }
         ////Method For Rating
         public void rating(string locator)
         {
@@ -555,6 +553,24 @@ namespace HBLAutomationAndroid.Pages
             }
         }
 
+        //Method For Scroll Down
+        public void scroll_right(double height_dimension, double width_start_dimension, double width_end_dimension)
+        {
+            try
+            {
+                Size dimension = driver.Manage().Window.Size;
+                int y = Convert.ToInt32((dimension.Height * height_dimension));
+                int start_x = (int)(dimension.Width * width_start_dimension);
+                int end_x = (int)(dimension.Width * width_end_dimension);
+                ITouchAction tc = new TouchAction(driver);
+                tc.Press(start_x, y).Wait(1000).MoveTo(end_x, y).Release().Perform();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("ex message: " + ex.Message);
+
+            }
+        }
 
         //Method For Combobox
         public void combobox(string value, string locator,string locator_type)

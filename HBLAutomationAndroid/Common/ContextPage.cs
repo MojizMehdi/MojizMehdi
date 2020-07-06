@@ -59,6 +59,26 @@ namespace HBLAutomationAndroid.Common
         string[] multi_tran_ids;
         int multi_payment_amount;
 
+        //DateTime start_date;
+        //DateTime end_date;
+
+        //public DateTime Get_end_date()
+        //{
+        //    return end_date;
+        //}
+        //public void Set_end_date(DateTime end_date)
+        //{
+        //    this.end_date = end_date;
+        //}
+        //public DateTime Get_start_date()
+        //{
+        //    return start_date;
+        //}
+        //public void Set_start_date(DateTime start_date)
+        //{
+        //    this.start_date = start_date;
+        //}
+
         public int Get_multi_payment_amount()
         {
             return multi_payment_amount;
