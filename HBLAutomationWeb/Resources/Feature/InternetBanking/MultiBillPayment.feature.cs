@@ -83,7 +83,7 @@ namespace HBLAutomationWeb.Resources.Feature.InternetBanking
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void AsAUserIWantToVerifyMultipleBillPaymentScenario(string @case, string status_Query, string status_Query2, string[] exampleTags)
+        public virtual void AsAUserIWantToVerifyMultipleBillPaymentScenario(string @case, string consumer_No_List, string tran_Type_Query, string tran_Amount_Query, string from_Account_Query, string company_Name_Query, string consumer_No_Query, string db_Val, string db_Val2, string account_No, string account_Type, string expiry_Date, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "MultiBillPayment"};
@@ -97,12 +97,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 8
  testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
- testRunner.And("I set value in context from data \"<Pay_BillPayment_ConsumerNo_Value>\" as \"Consume" +
-                    "rNo\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 10
- testRunner.And(string.Format("update the data by query \"{0}\" on QAT_BPS", status_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 11
- testRunner.And(string.Format("update the data by query \"{0}\" on DIGITAL_CHANNEL_SEC", status_Query2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I set value in context from data \"BillPayment\" as \"Transaction_Type\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
  testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
@@ -115,26 +110,73 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.When("I am clicking on \"Pay_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 17
  testRunner.And("I am clicking on \"Pay_MultiBillIcon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 18
+ testRunner.And(string.Format("I select consumers for multi bill payment as \"{0}\" on \"SendMoney_SearchBeneField\"" +
+                        "", consumer_No_List), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 20
+ testRunner.And("I verify bill details of consumer numbers for bill payment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 21
+ testRunner.And(string.Format("I select \"{0}\" on \"Pay_BillPayment_accountno\"", account_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 22
+ testRunner.And("I have transaction pass check and given \"pakistan2\" on \"Pay_Transaction_PayBill_T" +
+                    "ransactionPassword\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 23
+ testRunner.And("I press Enter on \"Pay_MultiBill_PayBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 24
+ testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 25
+ testRunner.And("I save Transaction Info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 26
+ testRunner.Then(string.Format(@"verify multiple payments summary ""Transaction is successful."" on ""Pay_MultiBill_Success_Msg"" and ""{0}"" on ""Pay_MultiBill_TranType"" and ""{1}"" on ""Pay_MultiBill_TranAmount"" and ""{2}"" on ""Pay_MultiBill_FromAccount"" and ""{3}"" on ""Pay_MultiBill_CompanyName"" and ""{4}"" on ""Pay_MultiBill_ConsumerNo"" on Schema ""{5}""", tran_Type_Query, tran_Amount_Query, from_Account_Query, company_Name_Query, consumer_No_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 27
+ testRunner.And("I am clicking on \"Pay_MultiBill_Tran_Ok_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 28
+ testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 31
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 32
+ testRunner.And("I verify Account Balance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 33
+ testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 34
+ testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 35
+ testRunner.And(string.Format(@"I verify multiple payment details in Transaction Activity ""Successful"" on ""Pay_MultiBill_SRV_TranStatus"" and ""{0}"" on ""Pay_MultiBill_SRV_TranType"" and ""{1}"" on ""Pay_MultiBill_SRV_TranAmount"" and ""{2}"" on ""Pay_MultiBill_SRV_FromAcc"" and ""{3}"" on ""Pay_MultiBill_SRV_CompanyName"" and ""{4}"" on ""Pay_MultiBill_SRV_ConsumerNo"" on Schema ""{5}""", tran_Type_Query, tran_Amount_Query, from_Account_Query, company_Name_Query, consumer_No_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 36
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Multiple Bill Payment scenario: When valid bill detail" +
-            "s are provided 05151110478500")]
+            "s are provided for MultiBill Payment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MultiBillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MultiBillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MultiBillPayment.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid bill details are provided 05151110478500")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid bill details are provided 05151110478500")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "UPDATE LP_BILLS L SET L.BILL_STATUS_ID=1 , L.DUE_DATE=TRUNC(SYSDATE) WHERE L.CONS" +
-            "UMER_NO=\'{ConsumerNo}\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query2", @"BEGIN UPDATE DC_SCHEDULED_TRAN_MASTER STM SET STM.STATE = 46 , STM.IS_DELETED = 1 WHERE STM.BILL_BENEFICIARY_ID = (SELECT BPB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY BPB WHERE BPB.CONSUMER_NUMBER = '{ConsumerNo}' AND BPB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = 'YASIR113') AND BPB.IS_ACTIVE = 1);UPDATE DC_BILL_PAYMENT_BENEFICIARY DPB SET DPB.IS_SI_SCHEDULED = 0,DPB.IS_ACTIVE = 0 WHERE DPB.CONSUMER_NUMBER = '{ConsumerNo}' AND DPB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = 'YASIR113') AND DPB.IS_ACTIVE = 1;COMMIT;END;")]
-        public virtual void AsAUserIWantToVerifyMultipleBillPaymentScenario_WhenValidBillDetailsAreProvided05151110478500()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid bill details are provided for MultiBill Payment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid bill details are provided for MultiBill Payment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Consumer_No_List", "19154110419400,19154110419401,19154110419404")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_name_query", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no_query", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "02197900643103")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_type", "RETAIL")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expiry_date", "")]
+        public virtual void AsAUserIWantToVerifyMultipleBillPaymentScenario_WhenValidBillDetailsAreProvidedForMultiBillPayment()
         {
 #line 7
-this.AsAUserIWantToVerifyMultipleBillPaymentScenario("When valid bill details are provided 05151110478500", "UPDATE LP_BILLS L SET L.BILL_STATUS_ID=1 , L.DUE_DATE=TRUNC(SYSDATE) WHERE L.CONS" +
-                    "UMER_NO=\'{ConsumerNo}\'", @"BEGIN UPDATE DC_SCHEDULED_TRAN_MASTER STM SET STM.STATE = 46 , STM.IS_DELETED = 1 WHERE STM.BILL_BENEFICIARY_ID = (SELECT BPB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY BPB WHERE BPB.CONSUMER_NUMBER = '{ConsumerNo}' AND BPB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = 'YASIR113') AND BPB.IS_ACTIVE = 1);UPDATE DC_BILL_PAYMENT_BENEFICIARY DPB SET DPB.IS_SI_SCHEDULED = 0,DPB.IS_ACTIVE = 0 WHERE DPB.CONSUMER_NUMBER = '{ConsumerNo}' AND DPB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = 'YASIR113') AND DPB.IS_ACTIVE = 1;COMMIT;END;", new string[] {
+this.AsAUserIWantToVerifyMultipleBillPaymentScenario("When valid bill details are provided for MultiBill Payment", "19154110419400,19154110419401,19154110419404", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+                    "", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "02197900643103", "RETAIL", "", new string[] {
                         "source:Data/MultiBillPayment.xlsx"});
 #line hidden
         }

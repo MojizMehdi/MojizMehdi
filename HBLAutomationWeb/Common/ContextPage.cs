@@ -70,6 +70,9 @@ namespace HBLAutomationWeb.Common
         bool tran_pass_flag = false;
         bool last_login_flag = false;
         bool last_login_pass_flag = false;
+        int multi_payment_amount;
+
+        string[] multi_bill_consumers;
 
         public string CutOvertime = null;
         public string Date = null;
@@ -106,6 +109,22 @@ namespace HBLAutomationWeb.Common
         {
             return last_login_pass_flag;
         }
+        //public void Set_is_tranpass_req(string is_tranpass_req)
+        //{
+        //    this.is_tranpass_req = is_tranpass_req;
+        //}
+        //public string Get_is_tranpass_req()
+        //{
+        //    return is_tranpass_req;
+        //}
+        public int Get_multi_payment_amount()
+        {
+            return multi_payment_amount;
+        }
+        public void Set_multi_payment_amount(int multi_payment_amount)
+        {
+            this.multi_payment_amount = multi_payment_amount;
+        }
         //public void SetCreatedOnFlag(bool created_on_flag) 
         //{   
         //    this.created_on_flag = created_on_flag;
@@ -122,6 +141,14 @@ namespace HBLAutomationWeb.Common
         //{
         //    return updated_on_flag;
         //}
+        public void Set_multi_bill_consumers(string[] multi_bill_consumers)
+        {
+            this.multi_bill_consumers = multi_bill_consumers;
+        }
+        public string[] Get_multi_bill_consumers()
+        {
+            return this.multi_bill_consumers;
+        }
         public void SetTranToDateFlag(bool tran_to_date_flag)
         {
             this.tran_to_date_flag = tran_to_date_flag;

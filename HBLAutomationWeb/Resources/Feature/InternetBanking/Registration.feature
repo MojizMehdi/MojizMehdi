@@ -29,7 +29,7 @@ Scenario Outline: 2 As a user i want to Signup using Debit Card
 	And I have given "<pin>" on "Signup_CardPin"
 	And I have given "<Login_id>" on "Signup_LoginId"
 	And I am performing on "Signup_ContinueBtn"
-	And I count Number of Account on "Signup_AccountCount"
+	#And I count Number of Account on "Signup_AccountCount"
 	And I save Account Numbers
 	#And verify through "<account_tag1>" on "Signup_TagAccountNo"
 	And I am clicking on "Signup_AccountToggle"

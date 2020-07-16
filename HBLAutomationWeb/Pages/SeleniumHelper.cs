@@ -197,9 +197,10 @@ namespace HBLAutomationWeb.Pages
         {
             try
             {
-
+                
                 waitDriver.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
                 {
+                    
                     IWebElement Value = waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
                     Thread.Sleep(100);
                     Value.Click();

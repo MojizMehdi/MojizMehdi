@@ -164,8 +164,6 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.And(string.Format("I have given \"{0}\" on \"Signup_LoginId\"", login_Id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 31
  testRunner.And("I am performing on \"Signup_ContinueBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 32
- testRunner.And("I count Number of Account on \"Signup_AccountCount\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 33
  testRunner.And("I save Account Numbers", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 35

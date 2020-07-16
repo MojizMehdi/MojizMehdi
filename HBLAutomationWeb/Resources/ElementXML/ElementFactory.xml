@@ -150,7 +150,40 @@
     <Element keyword="Pay_Account_No-Count" locator="//div[@class='acc-num ng-binding']" />
     <Element keyword="Pay_Transaction_MaxBillAmount_value" locator="//div[@class='hide-label m-2 col-11 ng-scope']//input[@name='Amount']" />
     <Element keyword="Pay_MultiBillIcon" locator="//a[@class='btn add float-right' and text()='Multiple Bill']"/>
-
+    <Element keyword="Pay_Multi_ConsumerNoCheck" locator="//span[@class='label-text']" />
+    <Element keyword="Pay_Multi_UIBeneNick" locator="//h2[@class='nick ng-binding']" />
+    <Element keyword="Pay_Multi_UIAmount" locator="//p[@class='bill-amount ng-binding ng-scope unpaid']" />
+    <Element keyword="Pay_MultiBillDueDate" locator="//span[@ng-show='y.due_date']" />
+    <Element keyword="Pay_MultiBillCompanyName_Inquiry" locator="//div[@class='ng-scope carousel-item active']//p[@class='label ng-binding' and text()='Company']//following-sibling::p" />
+    <Element keyword="Pay_MultiBillConsumerName_Inquiry" locator="//div[@class='ng-scope carousel-item active']//p[@class='label ng-binding' and text()='Consumer Name']//following-sibling::p" />
+    <Element keyword="Pay_MultiBillDueDate_Inquiry" locator="//div[@class='ng-scope carousel-item active']//p[@class='label ng-binding' and text()='Due Date']//following-sibling::p" />
+    <Element keyword="Pay_MultiBillAmount_Inquiry" locator="//div[@class='ng-scope carousel-item active']//p[@class='label ng-binding' and text()='Payable By Due Date']//following-sibling::p" />
+    <Element keyword="Pay_MultiBillAmountDD_inquiry" locator="//div[@class='ng-scope carousel-item active']//p[@class='label ng-binding' and text()='Payable After Due Date']//following-sibling::p" />
+    <Element keyword="Pay_MultiBillStatus_Inquiry" locator="//div[@class='ng-scope carousel-item active']//p[@class='label ng-binding' and text()='Bill Status']//following-sibling::p" />
+    <Element keyword="Pay_MultiBill_NextBtn_Icon" locator="//li[@data-target='#carousel-example-2' and @data-slide-to='{a}']" />
+    <Element keyword="Pay_MultiBill_Success_Msg" locator="//div[@class='ng-scope carousel-item active']//div[@class='indivisual-bill-status success-bill']" />
+    <Element keyword="Pay_MultiBill_Tran_Ok_Btn" locator="//div[@class='ng-scope']//a[@class='btn']" />
+    <Element keyword="Pay_MultiBill_Success_TranID" locator=" //div[@class='ng-scope carousel-item active']//label[@class='multi-label-popup ng-binding' and text() = 'Transaction ID']//following-sibling::span" />
+    <Element keyword="Pay_MultiBill_TranType" locator="//div[@class='ng-scope carousel-item active']//label[@class='multi-label-popup ng-binding' and text() = 'Transaction Type']//following-sibling::span" />
+    <Element keyword="Pay_MultiBill_TranAmount" locator="//div[@class='ng-scope carousel-item active']//label[@class='multi-label-popup ng-binding' and text() = 'Transaction Amount']//following-sibling::span" />
+    <Element keyword="Pay_MultiBill_FromAccount" locator="//div[@class='ng-scope carousel-item active']//label[@class='multi-label-popup ng-binding' and text() = 'From']//following-sibling::span" />
+    <Element keyword="Pay_MultiBill_CompanyName" locator="//div[@class='ng-scope carousel-item active']//label[@class='multi-label-popup ng-binding' and text() = 'Billing Company Name']//following-sibling::span" />
+    <Element keyword="Pay_MultiBill_ConsumerNo" locator="//div[@class='ng-scope carousel-item active']//label[@class='multi-label-popup ng-binding' and text() = 'Consumer Number']//following-sibling::span" />
+    <Element keyword="Pay_MultiBill_NextArrow" locator="//a[@class='carousel-control-next']//span[@class='carousel-control-next-icon']" />
+    <Element keyword="Pay_MultiBill_RatingOKBtn" locator="//div[@class='ng-scope']//button[contains(text(),'Ok')]" />
+    <Element keyword="Pay_MultiBill_RatingCloseBtn" locator="//div[@class='ng-scope']//a" />
+    <Element keyword="Pay_MultiBill_Services_row" locator="//tr[@ng-repeat='x in GetDataTransactions.historyList'][{k}]" />
+    <Element keyword="Pay_MultiBill_SRV_TranStatus" locator="//h2[@class='ng-binding' and text()= 'Transaction Status']//following-sibling::p" />
+    <Element keyword="Pay_MultiBill_SRV_TranID" locator="//h2[@class='ng-binding' and text()= 'Transaction ID']//following-sibling::p" />
+    <Element keyword="Pay_MultiBill_SRV_TranType" locator="//h2[@class='ng-binding' and text()= 'Transaction Type']//following-sibling::p" />
+    <Element keyword="Pay_MultiBill_SRV_TranAmount" locator="//h2[@class='ng-binding' and text()= 'Transaction Amount']//following-sibling::p" />
+    <Element keyword="Pay_MultiBill_SRV_FromAcc" locator="//h2[@class='ng-binding' and text()= 'From']//following-sibling::p" />
+    <Element keyword="Pay_MultiBill_SRV_CompanyName" locator="//h2[@class='ng-binding' and text()= 'Billing Company Name']//following-sibling::p" />
+    <Element keyword="Pay_MultiBill_SRV_ConsumerNo" locator="//h2[@class='ng-binding' and text()= 'Consumer Number']//following-sibling::p" />
+    <Element keyword="Pay_MultiBill_SRV_CloseBtn" locator=" //a[@class='btn' and text()= 'Close']" />
+    <Element keyword="Pay_MultiBill_PayBtn" locator="//button[@class='btn btn submit-btn' and text()='Pay']" />
+    
+    
   </Module>
   <Module name ="SendMoney">
     <Element keyword="SendMoney_Link" locator="//*[contains(text(),'Send Money ')]"/>
@@ -232,5 +265,20 @@
     <Element keyword="Services_BENEFICIARY_NAME_List" locator="//select[@name='BENEFICIARY_NAME']//following-sibling::div//div[@class='chosen-drop']//ul//li[@class='active-result ng-binding ng-scope']"/>
     <Element keyword="Services_BENEFICIARY_BANK" locator="//select[@name='BENEFICIARY_BANK']//following-sibling::div//a"/>
     <Element keyword="Services_BENEFICIARY_BANK_List" locator="//select[@name='BENEFICIARY_BANK']//following-sibling::div//div[@class='chosen-drop']//ul//li[@class='active-result ng-binding ng-scope']"/>
+  </Module>
+
+  <Module name="MyAccount">
+    <Element keyword="MyAccount_Icon" locator="//div[@class='actions col-lg-5 col-xl-5']//a[contains(text(),'My Account')]" />
+    <Element keyword="MyAccount_AccLinkOption" locator="//a[@ng-click='CustomerAccountDetail();']" />
+    <Element keyword="MyAccount_LinkToggleBtn" locator="//label[@for='{account_no}']"/>
+    <Element keyword="MyAccount_LinkSubmitBtn" locator=" //div[@class='form-group col-11 text-right']//button"/>
+    <Element keyword="MyAccount_LinkVerifyBtn" locator="//button[text()='Verify']"/>
+    <Element keyword="MyAccount_Tran_DeLink" locator="//h2[@class='ng-binding' and text()= 'Delinked Account Number(s)']//following-sibling::p"/>
+    <Element keyword="MyAccount_Tran_Link" locator="//h2[@class='ng-binding' and text()= 'Linked Account Number(s)']//following-sibling::p"/>
+    <Element keyword="MyAccount_TranPopUp_CloseBtn" locator="//div[@ng-if='Shared.Response.Result.IsFinancial==0']//a"/>
+    <Element keyword="MyAccount_TranPopUp_Text" locator="//div[@class='modal-content ui-draggable-handle ng-pristine ng-valid ng-scope']//div[@class='display-table']//p[@class='ng-binding']"/>
+    <Element keyword="MyAccount_Services_CloseBtn" locator="//div[@class='modal-footer']//a[text()='Close']"/>
+    <Element keyword="MyAccount_LimitMngOption" locator="//a[@ng-click='GetLimitsListData()']" />
+    
   </Module>
 </ElementFactory>
