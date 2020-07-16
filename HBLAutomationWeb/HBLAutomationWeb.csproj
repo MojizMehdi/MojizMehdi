@@ -251,6 +251,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Login.feature</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Feature\InternetBanking\MultiBillPayment.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MultiBillPayment.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Feature\InternetBanking\MyAccount.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyAccount.feature</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Feature\InternetBanking\PayBill.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -304,6 +314,8 @@
     <None Include="Resources\Feature\InternetBanking\Data\ForgetPassword.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\IBBillPayment.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\IBLogin.xlsx" />
+    <None Include="Resources\Feature\InternetBanking\Data\MultiBillPayment.xlsx" />
+    <None Include="Resources\Feature\InternetBanking\Data\MyAccount.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\SendMoney.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\SendMoney_Beneficiary.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\SendMoney_Schedule.xlsx" />
@@ -317,6 +329,14 @@
     <None Include="Resources\Feature\InternetBanking\Login.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Login.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\Feature\InternetBanking\MultiBillPayment.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>MultiBillPayment.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\Feature\InternetBanking\MyAccount.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>MyAccount.feature.cs</LastGenOutput>
     </None>
     <None Include="Resources\Feature\InternetBanking\PayBill.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

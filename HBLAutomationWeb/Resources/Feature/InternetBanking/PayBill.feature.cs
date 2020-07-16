@@ -126,13 +126,13 @@ testRunner.Then("verify through \"Welcome\" on \"Login_Success_Text\"", ((string
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/IBLogin.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "YASIR113")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "ABBY")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
         public virtual void _1AsAUserIWantToVerifyLoginForHBLWebBillPayment_WhenUserIdAndPasswordAreValid()
         {
 #line 7
-this._1AsAUserIWantToVerifyLoginForHBLWebBillPayment("When user id and password are valid", "YASIR113", "pakistan1", "12345678", new string[] {
+this._1AsAUserIWantToVerifyLoginForHBLWebBillPayment("When user id and password are valid", "ABBY", "pakistan1", "12345678", new string[] {
                         "source:Data/IBLogin.xlsx"});
 #line hidden
         }
@@ -555,4 +555,3 @@ this._2AsAUserIWantToVerifyBillPaymentThroughPAY("When valid bill details are pr
 }
 #pragma warning restore
 #endregion
-

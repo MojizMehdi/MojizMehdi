@@ -11,7 +11,7 @@
 	And I have given "<Login_Password_Value>" on "Login_Password"
 	When I am performing on "Login_SignIn_Button"
 	And I have given "<OTP_Value>" on "Login_OTP_field"
-	And I am performing on "Login_OTP_Verify_Button"
+	And I am performing on "Login_OTP_Verify_Button" 
 	#And I sleep "10000"
 	And I am clicking on "Settings_icon"
 	And I have given "<Login_Password_Value>" on "Settings_login_old_pass"
