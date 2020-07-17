@@ -58,6 +58,31 @@ namespace HBLAutomationAPIs.Core
         public void WhenTheAPIHeaderIs(string header)
         {
             string[] api_header = header.Split(',');
+            for (int i = 0; i < api_header.Length; i++)
+            {
+                if (api_header[i].Contains("x-req-id"))
+                {
+                    string RRN = ContextPage.GetInstance().Get_RRN();
+                    string res = (Convert.ToDouble(RRN) + 1).ToString();
+                    string act_res = "";
+                    int count = 0;
+                    while (act_res.Length != 12)
+                    {
+                        if (count == (12 - res.Length))
+                        {
+                            act_res += res;
+                        }
+                        else
+                        {
+                            act_res += "0";
+                        }
+                        count++;
+                    }
+                    api_header[i] = "x-req-id:" + act_res;
+                    ContextPage.GetInstance().Set_RRN(act_res);
+                    break; 
+                }
+            }
             context.Set_Api_header(api_header);
         }
         [When(@"Get request is made")]
@@ -72,6 +97,25 @@ namespace HBLAutomationAPIs.Core
             replacement = replacement.Replace(",", "   ");
             rec.Response = replacement;
             ContextPage.GetInstance().SetExcelRecord(rec);
+        }
+        [When(@"Post request is made")]
+        public void WhenPostRequestIsMade()
+        {
+            ExcelRecord rec = ContextPage.GetInstance().GetExcelRecord();
+            RestProperties rest_prop = new RestProperties();
+            IRestResponse response = rest_prop.CallPostAPIRequest();
+            int code = (int)response.StatusCode;
+            context.Set_Response(response);
+            string ali = response.Content.ToString();
+            string replacement = Regex.Replace(ali, "\"|{|}", "");
+            replacement = replacement.Replace(",", "   ");
+            rec.Response = replacement;
+            ContextPage.GetInstance().SetExcelRecord(rec);
+        }
+        [When(@"the body is ""(.*)""")]
+        public void WhenTheBodyIs(string body)
+        {
+            context.Set_Api_Body(body);
         }
 
     }

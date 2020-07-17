@@ -228,6 +228,76 @@ this.VerifyTheResponseStatusOfCRICallForGetCustomerByCNIC("When CNIC is 91400036
                         "source:Data/HBLGet.xlsx"});
 #line hidden
         }
+        
+        public virtual void VerifyTheResponseStatusOfCallForGetCustomerByCNIC(string @case, string header, string body, string endpoint, string queryparams, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "DemoAPI",
+                    "GetCustomerByCNIC"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify the response status of Call for GetCustomerByCNIC", @__tags);
+#line 20
+this.ScenarioSetup(scenarioInfo);
+#line 21
+ testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 22
+    testRunner.And(string.Format("the endpoint is \"{0}\"", endpoint), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 23
+ testRunner.When(string.Format("the API header is \"{0}\"", header), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 24
+ testRunner.And(string.Format("the body is \"{0}\"", body), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 25
+ testRunner.And(string.Format("the queryparameter is \"{0}\"", queryparams), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 26
+ testRunner.And("Post request is made", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify the response status of Call for GetCustomerByCNIC: When CNIC is 4220107030" +
+            "051")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SpecFlowFeature1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DemoAPI")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("GetCustomerByCNIC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/HBLPost.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When CNIC is 4220107030051")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When CNIC is 4220107030051")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:header", @"x-req-id:89567890987610,x-channel-id:MB,x-sub-channel-id:MB,x-country-code:PK,x-customer-type:C,Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJhZGlsIn0.mRSZXF0glqRPyo2h15jHd51JwCeEnSUIBmYuTaAzmrQ,accept:application/json,Content-Type:application/json")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:body", "{\"nationalIdentityNo\":\"4220107030051\"}")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:endpoint", "v2/customer/validate")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:queryparams", "")]
+        public virtual void VerifyTheResponseStatusOfCallForGetCustomerByCNIC_WhenCNICIs4220107030051()
+        {
+#line 20
+this.VerifyTheResponseStatusOfCallForGetCustomerByCNIC("When CNIC is 4220107030051", @"x-req-id:89567890987610,x-channel-id:MB,x-sub-channel-id:MB,x-country-code:PK,x-customer-type:C,Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJhZGlsIn0.mRSZXF0glqRPyo2h15jHd51JwCeEnSUIBmYuTaAzmrQ,accept:application/json,Content-Type:application/json", "{\"nationalIdentityNo\":\"4220107030051\"}", "v2/customer/validate", "", new string[] {
+                        "source:Data/HBLPost.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify the response status of Call for GetCustomerByCNIC: When CNIC is 4250159948" +
+            "621")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SpecFlowFeature1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DemoAPI")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("GetCustomerByCNIC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/HBLPost.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When CNIC is 4250159948621")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When CNIC is 4250159948621")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:header", @"x-req-id:89567890987610,x-channel-id:MB,x-sub-channel-id:MB,x-country-code:PK,x-customer-type:C,Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJhZGlsIn0.mRSZXF0glqRPyo2h15jHd51JwCeEnSUIBmYuTaAzmrQ,accept:application/json,Content-Type:application/json")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:body", "{\"nationalIdentityNo\":\"4250159948621\"}")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:endpoint", "v2/customer/validate")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:queryparams", "")]
+        public virtual void VerifyTheResponseStatusOfCallForGetCustomerByCNIC_WhenCNICIs4250159948621()
+        {
+#line 20
+this.VerifyTheResponseStatusOfCallForGetCustomerByCNIC("When CNIC is 4250159948621", @"x-req-id:89567890987610,x-channel-id:MB,x-sub-channel-id:MB,x-country-code:PK,x-customer-type:C,Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJhZGlsIn0.mRSZXF0glqRPyo2h15jHd51JwCeEnSUIBmYuTaAzmrQ,accept:application/json,Content-Type:application/json", "{\"nationalIdentityNo\":\"4250159948621\"}", "v2/customer/validate", "", new string[] {
+                        "source:Data/HBLPost.xlsx"});
+#line hidden
+        }
     }
 }
 #pragma warning restore
