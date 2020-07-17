@@ -252,6 +252,7 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Resources\Feature\Data\HBLPost.xlsx" />
     <None Include="Resources\Feature\Data\HBLGet.xlsx" />
     <None Include="Resources\Feature\SpecFlowFeature1.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -263,6 +264,7 @@
     <Content Include="Resources\ElementXML\ElementFactory.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Resources\RRN_Generator\RRN.txt" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

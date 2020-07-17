@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace HBLAutomationAPIs.APIs
 {
@@ -20,6 +21,32 @@ namespace HBLAutomationAPIs.APIs
         /// <returns>
         /// Response of API in IRestResponse
         /// </returns>
+        /// 
+        public IRestResponse CallPostAPIRequest()
+        {
+            try
+            {
+
+                var client = new RestClient(Configuration.GetInstance().GetByKey("BaseUri"));
+                var request = new RestRequest(ContextPage.GetInstance().GetEndPoint() + ContextPage.GetInstance().GetQueryParam(), Method.POST);
+                string[] header = ContextPage.GetInstance().Get_Api_header();
+                foreach (var param in header)
+                {
+                    string[] parameter = param.Split(':');
+                    request.AddHeader(parameter[0], parameter[1]);
+                }
+                request.RequestFormat = DataFormat.Json;
+                request.AddParameter("Application/Json", ContextPage.GetInstance().Get_Api_body(), ParameterType.RequestBody);
+               //request.AddParameter(parameter[1].ToString(), parameter[0], ParameterType.RequestBody);
+
+                return client.Execute(request);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Exception occurred", ex);
+            }
+
+        }
         public IRestResponse CallGetAPIRequest()
         {
             try

@@ -69,7 +69,17 @@ namespace HBLAutomationAPIs.Common
         public ApiConfiguration apiConfiguration;
         IRestResponse response;
         string[] Api_Header;
+        string Api_Body;
+        string RRN;
 
+        public void Set_RRN(string RRN)
+        {
+            this.RRN = RRN;
+        }
+        public string Get_RRN()
+        {
+            return this.RRN;
+        }
         public void Set_Response(IRestResponse response)
         {
             this.response = response;
@@ -78,6 +88,15 @@ namespace HBLAutomationAPIs.Common
         {
             return this.response;
         }
+        public void Set_Api_Body(string body)
+        {
+            Api_Body = body;
+        }
+        public string Get_Api_body()
+        {
+            return this.Api_Body;
+        }
+
         public void Set_Api_header(string[] header)
         {
             Api_Header = new string[header.Length];

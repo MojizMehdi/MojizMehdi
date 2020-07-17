@@ -100,6 +100,10 @@ namespace HBLAutomationAPIs.Core
             XmlTextReader xmlReader1 = new XmlTextReader(pathOfElementXML);
             elementFactory = (ElementFactory)serializer1.Deserialize(xmlReader1);
             ContextPage.GetInstance().SetElement(elementFactory);
+            string pathOfRRN = PathFinder.GetPath();
+            pathOfRRN += "\\HBLAutomationAPIs\\Resources\\RRN_Generator\\RRN.txt";
+            string RRN = File.ReadAllText(pathOfRRN);
+            ContextPage.GetInstance().Set_RRN(RRN);
         }
 
         [BeforeFeature]
@@ -179,6 +183,12 @@ namespace HBLAutomationAPIs.Core
         [AfterTestRun]
         public static void afterTestRun()
         {
+            string pathOfRRN = PathFinder.GetPath();
+            pathOfRRN += "\\HBLAutomationAPIs\\Resources\\RRN_Generator\\RRN.txt";
+            File.WriteAllText(pathOfRRN, String.Empty);
+            TextWriter tw = new StreamWriter(pathOfRRN, true);
+            tw.WriteLine(ContextPage.GetInstance().Get_RRN());
+            tw.Close();
             ExcelWriter.GetInstance().WriteOutputFile();
             if (File.Exists("D:/Automation/list.csv"))
             {
