@@ -540,9 +540,9 @@ namespace HBLAutomationAndroid.Pages
             try
             {
                 Size dimension = driver.Manage().Window.Size;
-                int x = (dimension.Width) / 2;
-                int start_y = (int)(dimension.Height * 0.8);
-                int end_y = (int)(dimension.Height * 0.2);
+                int x = dimension.Width / 2;
+                int start_y = (int)(dimension.Height * 0.65);
+                int end_y = (int)(dimension.Height * 0.30);
                 ITouchAction tc = new TouchAction(driver);
                 tc.Press(x, start_y).Wait(1000).MoveTo(x, end_y).Release().Perform();
             }

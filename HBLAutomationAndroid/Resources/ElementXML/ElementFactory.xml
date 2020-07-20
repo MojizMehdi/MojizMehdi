@@ -103,6 +103,7 @@
     <Element keyword="SendMoney_TranType" locator="//android.widget.TextView[@text='Transaction Type']/following-sibling::android.widget.TextView"/>
     <Element keyword="SendMoney_TranAmount" locator="//android.widget.TextView[@text='Transaction Amount']/following-sibling::android.widget.TextView"/>
     <Element keyword="SendMoney_TranFromAcc" locator="//android.widget.TextView[@text='From Account']/following-sibling::android.widget.TextView"/>
+    <Element keyword="SendMoney_TranSourceAcc" locator="//android.widget.TextView[@text='Source Account Number:']/following-sibling::android.widget.TextView"/>
     <Element keyword="SendMoney_TranToAcc" locator="//android.widget.TextView[@text='To Account']/following-sibling::android.widget.TextView"/>
     <Element keyword="SendMoney_TranBeneName" locator="//android.widget.TextView[@text='Beneficiary Name']/following-sibling::android.widget.TextView"/>
     <Element keyword="SendMoney_TranToBank" locator="//android.widget.TextView[@text='To Bank']/following-sibling::android.widget.TextView"/>
