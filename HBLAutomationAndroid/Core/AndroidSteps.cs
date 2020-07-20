@@ -51,6 +51,10 @@ namespace HBLAutomationAndroid.Core
                 textboxvalue = apmhelper.GetOTP();
 
             }
+            if (Keyword.Contains("SendMoney_Amount"))
+            {
+                context.Set_tran_amount(Convert.ToInt32(textboxvalue));
+            }
             if (Keyword.Contains("SendMoney_SearchBeneField") || Keyword.Contains("BillPayment_SearchBeneField"))
             {
                 context.SetCategory_value(textboxvalue);
@@ -533,12 +537,13 @@ namespace HBLAutomationAndroid.Core
                 {
                     throw new AssertFailedException(string.Format("The Iteration Date against keyword is: {0} and Iteration Date calculated by code is {1}", lstui[counter], lst[counter]));
                 }
-                if(counter != 0 && counter % 10 == 0)
+                if(counter != 0 && counter % 8 == 0)
                 {
                     apmhelper.scroll_down();
                 }
                 counter++;
             }
+            context.Set_iteration_dates_schedule(lst);
         }
 
         [When(@"I scroll down")]
@@ -1445,7 +1450,44 @@ namespace HBLAutomationAndroid.Core
                 //context.Set_multi_bill_consumers(consumer_no_arr_new);
             }
         }
-
-
+        [Then(@"verify the result of schedule payment from database")]
+        public void ThenVerifyTheResultOfSchedulePaymentFromDatabase()
+        {
+            string tran_master_id = "";
+            string query = "SELECT TM.STATE,TM.SCHEDULED_AMOUNT,TM.SCHEDULED_TRAN_TYPE,TM.SCHEDULED_TRAN_MASTER_ID FROM DC_SCHEDULED_TRAN_MASTER TM WHERE TM.FUND_TRANSFER_BENEFICIARY_ID =  (SELECT FT.FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY FT WHERE FT.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '" + context.GetUsername() +"') AND FT.IS_DELETED = 0 AND FT.NICK = '" + context.GetCategory_value() + "') AND TM.IS_DELETED = 0";
+            DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
+            DataTable SourceDataTable = dlink.GetDataTable(query, "DIGITAL_CHANNEL_SEC");
+            string state = SourceDataTable.Rows[0][0].ToString();
+            string tran_amount = SourceDataTable.Rows[0][1].ToString();
+            string tran_type = SourceDataTable.Rows[0][2].ToString();
+            if ("41" != state)
+            {
+                throw new AssertFailedException(string.Format("The State {0} is not equal to State in databse 41", context.Get_tran_amount().ToString()));
+            }
+            if (context.Get_tran_amount().ToString() != tran_amount)
+            {
+                throw new AssertFailedException(string.Format("The Schedule Amount {0} is not equal to Schedule Amount in databse {1}", context.Get_tran_amount().ToString(), SourceDataTable.Rows[0][1].ToString()));
+            }
+            if ("LOCAL_FUND_TRANSFER" != tran_type)
+            {
+                throw new AssertFailedException(string.Format("The Schedule transaction type {0} is not equal to Schedule transaction type in databse LOCAL_FUND_TRANSFER", tran_type));
+            }
+            tran_master_id = SourceDataTable.Rows[0][0].ToString();
+            query = "";
+            query = "SELECT TD.EXECUTION_DATE FROM DC_SCHEDULED_TRAN_DETAIL TD WHERE TD.SCHEDULED_TRAN_MASTER_ID = (SELECT MAX(TM.SCHEDULED_TRAN_MASTER_ID) FROM DC_SCHEDULED_TRAN_MASTER TM WHERE TM.FUND_TRANSFER_BENEFICIARY_ID = (SELECT FT.FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY FT WHERE FT.CUSTOMER_INFO_ID =(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '" + context.GetUsername() + "')AND FT.IS_DELETED = 0 AND FT.NICK = '" + context.GetCategory_value() + "')AND TM.IS_DELETED = 0) ORDER BY TD.EXECUTION_DATE ASC";
+            SourceDataTable = null;
+            SourceDataTable = dlink.GetDataTable(query, "DIGITAL_CHANNEL_SEC");
+            List<string> iterations = context.Get_iteration_dates_schedule();
+            for (int i = 0; i < iterations.Count; i++)
+            {
+                string temp = SourceDataTable.Rows[i][0].ToString();
+                DateTime dt = Convert.ToDateTime(temp);
+                temp = dt.ToString("dd-MM-yyyy");
+                if (iterations[i] != temp)
+                {
+                    throw new AssertFailedException(string.Format("The Schedule Date {0} is not equal to Schedule Date in databse {1}", iterations[i], SourceDataTable.Rows[i][0].ToString()));
+                }
+            }
+        }
     }
 }

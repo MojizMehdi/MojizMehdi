@@ -196,10 +196,11 @@ Scenario Outline: When user try to send money mobile using already added bene
 	And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
 	Then verify through "<Success_Message>" on "SendMoney_TranSuccessMessage"
 	And verify through database on "<tran_type_query>" on Schema "<db_val>" on "SendMoney_TranType"
-	And verify through database on "<from_account_query>" on Schema "<db_val>" on "SendMoney_TranFromAcc"
+	And verify through database on "<from_account_query>" on Schema "<db_val>" on "SendMoney_TranSourceAcc"
 	And verify through database on "<frequency_query>" on Schema "<db_val>" on "SendMoney_TranFrequency"
 	And verify through database on "<purpose_query>" on Schema "<db_val>" on "SendMoney_TranPurpose"
 	And I am clicking on "SendMoney_TranInfoClose_Bene"
+	And verify the result of schedule payment from database 
 	@source:Data/SendMoney_Schedule_Beneficiary.xlsx
 	Examples: 
 	|Case|status_query|BeneName|From_Account_Value|Amount_Value|PurposeOfPayment_Value|Frequency_Value|From_Date_Value|To_Date_Value|Tran_Pass_Value|Success_Message|tran_type_query|from_account_query|frequency_query|purpose_query|db_val|

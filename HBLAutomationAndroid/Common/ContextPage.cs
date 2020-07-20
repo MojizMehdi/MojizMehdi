@@ -58,6 +58,8 @@ namespace HBLAutomationAndroid.Common
         string[] multi_bill_consumers;
         string[] multi_tran_ids;
         int multi_payment_amount;
+        int tran_amount;
+        List<string> iteration_dates_schedule;
 
         //DateTime start_date;
         //DateTime end_date;
@@ -79,6 +81,22 @@ namespace HBLAutomationAndroid.Common
         //    this.start_date = start_date;
         //}
 
+        public int Get_tran_amount()
+        {
+            return tran_amount;
+        }
+        public void Set_tran_amount(int tran_amount)
+        {
+            this.tran_amount = tran_amount;
+        }
+        public List<string> Get_iteration_dates_schedule()
+        {
+            return iteration_dates_schedule;
+        }
+        public void Set_iteration_dates_schedule(List<string> iteration_dates_schedule)
+        {
+            this.iteration_dates_schedule = iteration_dates_schedule;
+        }
         public int Get_multi_payment_amount()
         {
             return multi_payment_amount;
