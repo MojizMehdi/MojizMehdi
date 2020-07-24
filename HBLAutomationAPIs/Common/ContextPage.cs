@@ -71,7 +71,34 @@ namespace HBLAutomationAPIs.Common
         string[] Api_Header;
         string Api_Body;
         string RRN;
+        string api_format;
+        string RRN_FetchDBCard;
+        string baseuri;
 
+        public string Get_baseuri()
+        {
+            return baseuri;
+        }
+        public void Set_baseuri(string baseuri)
+        {
+            this.baseuri = baseuri;
+        }
+        public string Get_api_format()
+        {
+            return api_format;
+        }
+        public void Set_api_format(string api_format)
+        {
+            this.api_format = api_format;
+        }
+        public void Set_RRN_FetchDBCard(string RRN_FetchDBCard)
+        {
+            this.RRN_FetchDBCard = RRN_FetchDBCard;
+        }
+        public string Get_RRN_FetchDBCard()
+        {
+            return this.RRN_FetchDBCard;
+        }
         public void Set_RRN(string RRN)
         {
             this.RRN = RRN;
