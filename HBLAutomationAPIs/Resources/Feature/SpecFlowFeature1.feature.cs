@@ -119,12 +119,12 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When CNIC is 4250159948621")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When CNIC is 4250159948621")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:header", "Content-Type:application/xml,reqID:123456,channelID:MB")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:endpoint", "accounts/CustomerRelationshipInquiry/4250159948621?ReqUID=1234567")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:queryparams", "4250159948621")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:endpoint", "accounts/CustomerRelationshipInquiry/")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:queryparams", "4250159948621?ReqUID=1234567")]
         public virtual void VerifyTheResponseStatusOfCRICallForGetCustomerByCNIC_WhenCNICIs4250159948621()
         {
 #line 7
-this.VerifyTheResponseStatusOfCRICallForGetCustomerByCNIC("When CNIC is 4250159948621", "Content-Type:application/xml,reqID:123456,channelID:MB", "accounts/CustomerRelationshipInquiry/4250159948621?ReqUID=1234567", "4250159948621", new string[] {
+this.VerifyTheResponseStatusOfCRICallForGetCustomerByCNIC("When CNIC is 4250159948621", "Content-Type:application/xml,reqID:123456,channelID:MB", "accounts/CustomerRelationshipInquiry/", "4250159948621?ReqUID=1234567", new string[] {
                         "source:Data/HBLGet.xlsx"});
 #line hidden
         }
@@ -139,12 +139,12 @@ this.VerifyTheResponseStatusOfCRICallForGetCustomerByCNIC("When CNIC is 42501599
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When CNIC is 1610112347845")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When CNIC is 1610112347845")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:header", "Content-Type:application/xml,reqID:123456,channelID:MB")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:endpoint", "accounts/CustomerRelationshipInquiry/1610112347845?ReqUID=1234567")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:queryparams", "1610112347845")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:endpoint", "accounts/CustomerRelationshipInquiry/")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:queryparams", "1610112347845?ReqUID=1234567")]
         public virtual void VerifyTheResponseStatusOfCRICallForGetCustomerByCNIC_WhenCNICIs1610112347845()
         {
 #line 7
-this.VerifyTheResponseStatusOfCRICallForGetCustomerByCNIC("When CNIC is 1610112347845", "Content-Type:application/xml,reqID:123456,channelID:MB", "accounts/CustomerRelationshipInquiry/1610112347845?ReqUID=1234567", "1610112347845", new string[] {
+this.VerifyTheResponseStatusOfCRICallForGetCustomerByCNIC("When CNIC is 1610112347845", "Content-Type:application/xml,reqID:123456,channelID:MB", "accounts/CustomerRelationshipInquiry/", "1610112347845?ReqUID=1234567", new string[] {
                         "source:Data/HBLGet.xlsx"});
 #line hidden
         }
@@ -159,12 +159,12 @@ this.VerifyTheResponseStatusOfCRICallForGetCustomerByCNIC("When CNIC is 16101123
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When CNIC is 1620154029935")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When CNIC is 1620154029935")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:header", "Content-Type:application/xml,reqID:123456,channelID:MB")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:endpoint", "accounts/CustomerRelationshipInquiry/1620154029935?ReqUID=1234567")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:queryparams", "1620154029935")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:endpoint", "accounts/CustomerRelationshipInquiry/")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:queryparams", "1620154029935?ReqUID=1234567")]
         public virtual void VerifyTheResponseStatusOfCRICallForGetCustomerByCNIC_WhenCNICIs1620154029935()
         {
 #line 7
-this.VerifyTheResponseStatusOfCRICallForGetCustomerByCNIC("When CNIC is 1620154029935", "Content-Type:application/xml,reqID:123456,channelID:MB", "accounts/CustomerRelationshipInquiry/1620154029935?ReqUID=1234567", "1620154029935", new string[] {
+this.VerifyTheResponseStatusOfCRICallForGetCustomerByCNIC("When CNIC is 1620154029935", "Content-Type:application/xml,reqID:123456,channelID:MB", "accounts/CustomerRelationshipInquiry/", "1620154029935?ReqUID=1234567", new string[] {
                         "source:Data/HBLGet.xlsx"});
 #line hidden
         }
@@ -179,12 +179,12 @@ this.VerifyTheResponseStatusOfCRICallForGetCustomerByCNIC("When CNIC is 16201540
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When CNIC is 8120216868001")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When CNIC is 8120216868001")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:header", "Content-Type:application/xml,reqID:123456,channelID:MB")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:endpoint", "accounts/CustomerRelationshipInquiry/8120216868001?ReqUID=1234567")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:queryparams", "8120216868001")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:endpoint", "accounts/CustomerRelationshipInquiry/")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:queryparams", "8120216868001?ReqUID=1234567")]
         public virtual void VerifyTheResponseStatusOfCRICallForGetCustomerByCNIC_WhenCNICIs8120216868001()
         {
 #line 7
-this.VerifyTheResponseStatusOfCRICallForGetCustomerByCNIC("When CNIC is 8120216868001", "Content-Type:application/xml,reqID:123456,channelID:MB", "accounts/CustomerRelationshipInquiry/8120216868001?ReqUID=1234567", "8120216868001", new string[] {
+this.VerifyTheResponseStatusOfCRICallForGetCustomerByCNIC("When CNIC is 8120216868001", "Content-Type:application/xml,reqID:123456,channelID:MB", "accounts/CustomerRelationshipInquiry/", "8120216868001?ReqUID=1234567", new string[] {
                         "source:Data/HBLGet.xlsx"});
 #line hidden
         }
@@ -199,12 +199,12 @@ this.VerifyTheResponseStatusOfCRICallForGetCustomerByCNIC("When CNIC is 81202168
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When CNIC is 4210117016716")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When CNIC is 4210117016716")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:header", "Content-Type:application/xml,reqID:123456,channelID:MB")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:endpoint", "accounts/CustomerRelationshipInquiry/4210117016716?ReqUID=1234567")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:queryparams", "4210117016716")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:endpoint", "accounts/CustomerRelationshipInquiry/")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:queryparams", "4210117016716?ReqUID=1234567")]
         public virtual void VerifyTheResponseStatusOfCRICallForGetCustomerByCNIC_WhenCNICIs4210117016716()
         {
 #line 7
-this.VerifyTheResponseStatusOfCRICallForGetCustomerByCNIC("When CNIC is 4210117016716", "Content-Type:application/xml,reqID:123456,channelID:MB", "accounts/CustomerRelationshipInquiry/4210117016716?ReqUID=1234567", "4210117016716", new string[] {
+this.VerifyTheResponseStatusOfCRICallForGetCustomerByCNIC("When CNIC is 4210117016716", "Content-Type:application/xml,reqID:123456,channelID:MB", "accounts/CustomerRelationshipInquiry/", "4210117016716?ReqUID=1234567", new string[] {
                         "source:Data/HBLGet.xlsx"});
 #line hidden
         }
@@ -229,7 +229,7 @@ this.VerifyTheResponseStatusOfCRICallForGetCustomerByCNIC("When CNIC is 91400036
 #line hidden
         }
         
-        public virtual void VerifyTheResponseStatusOfCallForGetCustomerByCNIC(string @case, string header, string body, string endpoint, string queryparams, string[] exampleTags)
+        public virtual void VerifyTheResponseStatusOfCallForGetCustomerByCNICXML(string @case, string baseuri, string header, string body, string endpoint, string queryparams, string format_Value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "DemoAPI",
@@ -238,63 +238,71 @@ this.VerifyTheResponseStatusOfCRICallForGetCustomerByCNIC("When CNIC is 91400036
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify the response status of Call for GetCustomerByCNIC", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify the response status of Call for GetCustomerByCNIC XML", @__tags);
 #line 20
 this.ScenarioSetup(scenarioInfo);
 #line 21
- testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("the test case title is \"<Case>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 22
     testRunner.And(string.Format("the endpoint is \"{0}\"", endpoint), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 23
- testRunner.When(string.Format("the API header is \"{0}\"", header), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And(string.Format("the base uri is \"{0}\"", baseuri), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 24
- testRunner.And(string.Format("the body is \"{0}\"", body), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When(string.Format("the API header is \"{0}\"", header), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 25
- testRunner.And(string.Format("the queryparameter is \"{0}\"", queryparams), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"format\"", format_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 26
+ testRunner.And(string.Format("the body is \"{0}\"", body), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 27
+ testRunner.And(string.Format("the queryparameter is \"{0}\"", queryparams), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 28
  testRunner.And("Post request is made", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify the response status of Call for GetCustomerByCNIC: When CNIC is 4220107030" +
-            "051")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify the response status of Call for GetCustomerByCNIC XML: When CNIC is 422010" +
+            "7030051")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SpecFlowFeature1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DemoAPI")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("GetCustomerByCNIC")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/HBLPost.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When CNIC is 4220107030051")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When CNIC is 4220107030051")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:case", "When CNIC is 4220107030051")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:baseuri", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:header", @"x-req-id:89567890987610,x-channel-id:MB,x-sub-channel-id:MB,x-country-code:PK,x-customer-type:C,Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJhZGlsIn0.mRSZXF0glqRPyo2h15jHd51JwCeEnSUIBmYuTaAzmrQ,accept:application/json,Content-Type:application/json")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:body", "{\"nationalIdentityNo\":\"4220107030051\"}")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:endpoint", "v2/customer/validate")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:queryparams", "")]
-        public virtual void VerifyTheResponseStatusOfCallForGetCustomerByCNIC_WhenCNICIs4220107030051()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:format_value", "json")]
+        public virtual void VerifyTheResponseStatusOfCallForGetCustomerByCNICXML_WhenCNICIs4220107030051()
         {
 #line 20
-this.VerifyTheResponseStatusOfCallForGetCustomerByCNIC("When CNIC is 4220107030051", @"x-req-id:89567890987610,x-channel-id:MB,x-sub-channel-id:MB,x-country-code:PK,x-customer-type:C,Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJhZGlsIn0.mRSZXF0glqRPyo2h15jHd51JwCeEnSUIBmYuTaAzmrQ,accept:application/json,Content-Type:application/json", "{\"nationalIdentityNo\":\"4220107030051\"}", "v2/customer/validate", "", new string[] {
+this.VerifyTheResponseStatusOfCallForGetCustomerByCNICXML("When CNIC is 4220107030051", "", @"x-req-id:89567890987610,x-channel-id:MB,x-sub-channel-id:MB,x-country-code:PK,x-customer-type:C,Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJhZGlsIn0.mRSZXF0glqRPyo2h15jHd51JwCeEnSUIBmYuTaAzmrQ,accept:application/json,Content-Type:application/json", "{\"nationalIdentityNo\":\"4220107030051\"}", "v2/customer/validate", "", "json", new string[] {
                         "source:Data/HBLPost.xlsx"});
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify the response status of Call for GetCustomerByCNIC: When CNIC is 4250159948" +
-            "621")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Verify the response status of Call for GetCustomerByCNIC XML: When CNIC is 135031" +
+            "4051455")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SpecFlowFeature1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DemoAPI")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("GetCustomerByCNIC")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/HBLPost.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When CNIC is 4250159948621")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When CNIC is 4250159948621")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:header", @"x-req-id:89567890987610,x-channel-id:MB,x-sub-channel-id:MB,x-country-code:PK,x-customer-type:C,Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJhZGlsIn0.mRSZXF0glqRPyo2h15jHd51JwCeEnSUIBmYuTaAzmrQ,accept:application/json,Content-Type:application/json")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:body", "{\"nationalIdentityNo\":\"4250159948621\"}")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:endpoint", "v2/customer/validate")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When CNIC is 1350314051455")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:case", "When CNIC is 1350314051455")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:baseuri", "http://10.200.64.3:8011")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:header", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:body", @"<FCDB_REQ_ENV><FCDB_HEADER><SOURCE>FCAT</SOURCE><FCDBCOMP>FCDB</FCDBCOMP><MSGID>{RRN}</MSGID><CORRELID>{RRN}</CORRELID><USERID>615</USERID><BRANCH>000</BRANCH><MODULEID>LGN</MODULEID><SERVICE>RRCBR03</SERVICE><OPERATION>DebitCardFetch</OPERATION><SOURCE_USERID>FCAT</SOURCE_USERID><DESTINATION>FCDB</DESTINATION><COUNTRYCODE>T001</COUNTRYCODE><USERTYPE>ENS</USERTYPE><LANGID>eng</LANGID><CHANNELID>01</CHANNELID></FCDB_HEADER><FCDB_BODY><CNIC>1350314051455</CNIC><CARDSTATUS></CARDSTATUS><PRODUCTCODE></PRODUCTCODE><ADDITIONALINFO></ADDITIONALINFO></FCDB_BODY></FCDB_REQ_ENV>")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:endpoint", "/ESBMOBAPP")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:queryparams", "")]
-        public virtual void VerifyTheResponseStatusOfCallForGetCustomerByCNIC_WhenCNICIs4250159948621()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:format_value", "xml")]
+        public virtual void VerifyTheResponseStatusOfCallForGetCustomerByCNICXML_WhenCNICIs1350314051455()
         {
 #line 20
-this.VerifyTheResponseStatusOfCallForGetCustomerByCNIC("When CNIC is 4250159948621", @"x-req-id:89567890987610,x-channel-id:MB,x-sub-channel-id:MB,x-country-code:PK,x-customer-type:C,Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJhZGlsIn0.mRSZXF0glqRPyo2h15jHd51JwCeEnSUIBmYuTaAzmrQ,accept:application/json,Content-Type:application/json", "{\"nationalIdentityNo\":\"4250159948621\"}", "v2/customer/validate", "", new string[] {
+this.VerifyTheResponseStatusOfCallForGetCustomerByCNICXML("When CNIC is 1350314051455", "http://10.200.64.3:8011", "", @"<FCDB_REQ_ENV><FCDB_HEADER><SOURCE>FCAT</SOURCE><FCDBCOMP>FCDB</FCDBCOMP><MSGID>{RRN}</MSGID><CORRELID>{RRN}</CORRELID><USERID>615</USERID><BRANCH>000</BRANCH><MODULEID>LGN</MODULEID><SERVICE>RRCBR03</SERVICE><OPERATION>DebitCardFetch</OPERATION><SOURCE_USERID>FCAT</SOURCE_USERID><DESTINATION>FCDB</DESTINATION><COUNTRYCODE>T001</COUNTRYCODE><USERTYPE>ENS</USERTYPE><LANGID>eng</LANGID><CHANNELID>01</CHANNELID></FCDB_HEADER><FCDB_BODY><CNIC>1350314051455</CNIC><CARDSTATUS></CARDSTATUS><PRODUCTCODE></PRODUCTCODE><ADDITIONALINFO></ADDITIONALINFO></FCDB_BODY></FCDB_REQ_ENV>", "/ESBMOBAPP", "", "xml", new string[] {
                         "source:Data/HBLPost.xlsx"});
 #line hidden
         }

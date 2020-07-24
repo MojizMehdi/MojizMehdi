@@ -17,14 +17,16 @@ Scenario Outline: Verify the response status of CRI Call for GetCustomerByCNIC
 
 
 @DemoAPI @GetCustomerByCNIC
-Scenario Outline: Verify the response status of Call for GetCustomerByCNIC
+Scenario Outline: Verify the response status of Call for GetCustomerByCNIC XML
 	Given the test case title is "<Case>"
     And the endpoint is "<endpoint>"
+	And the base uri is "<baseuri>"
 	When the API header is "<header>"
+	And I set value in context from data "<format_value>" as "format"
 	And the body is "<body>"
 	And the queryparameter is "<queryparams>"
 	And Post request is made
 
 	@source:Data/HBLPost.xlsx
 	Examples: 
-	|Case|header|body|endpoint|queryparams|
+	|case|baseuri|header|body|endpoint|queryparams|format_value|

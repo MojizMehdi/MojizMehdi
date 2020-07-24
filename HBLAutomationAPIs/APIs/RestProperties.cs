@@ -22,23 +22,41 @@ namespace HBLAutomationAPIs.APIs
         /// Response of API in IRestResponse
         /// </returns>
         /// 
-        public IRestResponse CallPostAPIRequest()
+        public IRestResponse CallPostAPIRequest(string format)
         {
             try
             {
-
-                var client = new RestClient(Configuration.GetInstance().GetByKey("BaseUri"));
+                RestClient client = null;
+                if (ContextPage.GetInstance().Get_baseuri() == "")
+                {
+                    client = new RestClient(Configuration.GetInstance().GetByKey("BaseUri"));
+                }
+                else if(ContextPage.GetInstance().Get_baseuri() != "")
+                {
+                    client = new RestClient(ContextPage.GetInstance().Get_baseuri());
+                }
                 var request = new RestRequest(ContextPage.GetInstance().GetEndPoint() + ContextPage.GetInstance().GetQueryParam(), Method.POST);
                 string[] header = ContextPage.GetInstance().Get_Api_header();
                 foreach (var param in header)
                 {
-                    string[] parameter = param.Split(':');
-                    request.AddHeader(parameter[0], parameter[1]);
+                    if (param != "")
+                    {
+                        string[] parameter = param.Split(':');
+                        request.AddHeader(parameter[0], parameter[1]);
+                    }
                 }
-                request.RequestFormat = DataFormat.Json;
-                request.AddParameter("Application/Json", ContextPage.GetInstance().Get_Api_body(), ParameterType.RequestBody);
-               //request.AddParameter(parameter[1].ToString(), parameter[0], ParameterType.RequestBody);
-
+                if (format.ToLower() == "json")
+                {
+                    request.RequestFormat = DataFormat.Json;
+                    request.AddParameter("Application/Json", ContextPage.GetInstance().Get_Api_body(), ParameterType.RequestBody);
+                    //request.AddParameter(parameter[1].ToString(), parameter[0], ParameterType.RequestBody);
+                }
+                else if (format.ToLower() == "xml")
+                {
+                    request.RequestFormat = DataFormat.Xml;
+                    request.AddParameter("text/xml", ContextPage.GetInstance().Get_Api_body(), ParameterType.RequestBody);
+                    //request.AddParameter(parameter[1].ToString(), parameter[0], ParameterType.RequestBody);
+                }
                 return client.Execute(request);
             }
             catch (Exception ex)
