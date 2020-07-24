@@ -167,7 +167,17 @@
     <Element keyword="TransactionActivity_Financial_Close" locator="com.hbl.android.hblmobilebanking:id/btnTransActivityClose"/>
   </Module>
 
-
+  <Module name ="TermDeposit">
+    <Element keyword="TermDeposit_NoOfYears" locator="//android.widget.TextView[@resource-id ='com.hbl.android.hblmobilebanking:id/periodTitle' and @text='{Years}']/following-sibling::android.widget.RadioButton"/>
+    <Element keyword="TermDeposit_Account" locator="com.hbl.android.hblmobilebanking:id/deposit_creation_acc_spinner"/>
+    <Element keyword="TermDeposit_Profit_Account" locator="com.hbl.android.hblmobilebanking:id/profit_disbursement_acc_spinner"/>
+    <Element keyword="TermDeposit_Next" locator="com.hbl.android.hblmobilebanking:id/form_next_btn"/>
+    <Element keyword="TermDeposit_Amount" locator="com.hbl.android.hblmobilebanking:id/deposit_amount_edtxt"/>
+    <Element keyword="TermDeposit_AgreeBtn" locator="com.hbl.android.hblmobilebanking:id/dialog_pos_btn"/>
+    <Element keyword="TermDeposit_SubmitBtn" locator="com.hbl.android.hblmobilebanking:id/form_submit_btn"/>
+    <Element keyword="TermDeposit_CloseBtn" locator="com.hbl.android.hblmobilebanking:id/onCloseClicked"/>
+    <Element keyword="TermDeposit_TranAmount" locator="//android.widget.TextView[@text='Transaction Amount']/following-sibling::android.widget.TextView"/>
+  </Module>
   <Module name ="Accounts">
     <Element keyword="Accounts_Home_Next" locator="com.hbl.android.hblmobilebanking:id/rightArrow_A"/>
     <Element keyword="Accounts_Home_Previous" locator="com.hbl.android.hblmobilebanking:id/leftArrow_A"/>
@@ -180,7 +190,7 @@
     <Element keyword="Accounts_Generate_Button" locator="//button[@type='button' and text()='Generate']"/>
     <Element keyword="Accounts_CSV_Button" locator="//button[@type='button' and text()='CSV']"/>
     <Element keyword="Accounts_PDF_Button" locator="//button[@type='button' and text()='PDF']"/>-->
-  </Module>-->
+  </Module>
 
   <!--<Module name="Settings">
     <Element keyword="Settings_icon" locator="//div[@class='actions col-lg-5 col-xl-5']//a[contains(text(),'Settings')]"/>

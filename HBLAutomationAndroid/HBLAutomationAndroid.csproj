@@ -260,6 +260,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SendMoney.feature</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Feature\HBLMobile\TermDeposit.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TermDeposit.feature</DependentUpon>
+    </Compile>
     <Compile Include="XML\apiconfiguration\ApiConfiguration.cs" />
     <Compile Include="XML\ElementFactory\Element.cs" />
     <Compile Include="XML\ElementFactory\ElementFactory.cs" />
@@ -280,12 +285,18 @@
     <None Include="Resources\Feature\HBLMobile\Data\BillPayment%28ExistingBene%29ViaHome.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\BillPayment.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\HBLMobileLogin.xlsx" />
+    <None Include="Resources\Feature\HBLMobile\Data\HBLMobileTermDepositLogin.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\SendMoney%28ViaBene%29.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\SendMoney.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\SendMoney_Schedule_Beneficiary.xlsx" />
+    <None Include="Resources\Feature\HBLMobile\Data\TermDeposit.xlsx" />
     <None Include="Resources\Feature\HBLMobile\SendMoney.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>SendMoney.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\Feature\HBLMobile\TermDeposit.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>TermDeposit.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

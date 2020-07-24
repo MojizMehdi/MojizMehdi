@@ -29,6 +29,7 @@ Scenario Outline: When user try to send money mobile
 	Given the test case title is "<Case>"
 	And update the data by query "<status_query>" on DIGITAL_CHANNEL_SEC
 	And the user is arrive to Mobile Banking home page 
+	And I am clicking on "Dashboard"
 	When I save Account Balances
 	And I am clicking on "SendMoney_Link"
 	#And I am clicking on "SendMoney_SkipBtn"
@@ -96,6 +97,7 @@ Scenario Outline: When user try to send money mobile using already added bene
 	Given the test case title is "<Case>"
 	And update the data by query "<status_query>" on DIGITAL_CHANNEL_SEC
 	And the user is arrive to Mobile Banking home page 
+	And I am clicking on "Dashboard"
 	When I save Account Balances
 	And I am clicking on "SendMoney_Link"
 	#And I am clicking on "SendMoney_SkipBtn"
@@ -167,6 +169,7 @@ Scenario Outline: When user try to send money mobile using already added bene
 	Given the test case title is "<Case>"
 	And update the data by query "<status_query>" on DIGITAL_CHANNEL_SEC
 	And the user is arrive to Mobile Banking home page 
+	And I am clicking on "Dashboard"
 	When I am clicking on "SendMoney_Link"
 	And I wait 2000
 	And I have given "<BeneName>" on "BillPayment_SearchBeneField"
