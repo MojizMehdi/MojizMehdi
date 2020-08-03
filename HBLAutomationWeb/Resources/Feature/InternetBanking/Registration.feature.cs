@@ -218,7 +218,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 58
  testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", password_Policy_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 59
- testRunner.And("verify through \"Signup_PassPolicy\" on \"Signup_PassPolicy1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("verify through \"Signup_PassPolicy\" on \"Signup_PassPolicy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 60
  testRunner.Then(string.Format("I have given \"{0}\" on \"Signup_ReLoginPassword\"", new_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 61
@@ -603,7 +603,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 125
  testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", password_Policy_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 126
- testRunner.And("verify through \"Signup_PassPolicy\" on \"Signup_PassPolicy1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("verify through \"Signup_PassPolicy\" on \"Signup_PassPolicy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 127
  testRunner.Then(string.Format("I have given \"{0}\" on \"Signup_ReLoginPassword\"", new_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 128
