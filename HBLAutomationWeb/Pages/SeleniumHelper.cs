@@ -613,5 +613,29 @@ namespace HBLAutomationWeb.Pages
             link.Click();
 
         }
+
+        // For Range Slider with count and option for Left and Right arrow Key
+        public void RangeSlider(int count, string ArrowOption, string locator)
+        {
+            IWebElement slider = waitDriver.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
+            slider.Click();
+
+            
+
+            if (ArrowOption == "LEFT")
+            {
+                for (int i = 1; i <= count; i++)
+                {
+                    slider.SendKeys(OpenQA.Selenium.Keys.ArrowLeft);
+                }
+            }
+            else if (ArrowOption == "RIGHT")
+            {
+                for (int i = 1; i <= count; i++)
+                {
+                    slider.SendKeys("{RIGHT}");
+                }
+            }
+        }
     }
 }

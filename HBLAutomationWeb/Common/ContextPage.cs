@@ -71,12 +71,40 @@ namespace HBLAutomationWeb.Common
         bool last_login_flag = false;
         bool last_login_pass_flag = false;
         int multi_payment_amount;
+        string Customer_Account_Type;
+        string avail_limit_cc;
+        string is_paid_req;
+        string home_branch_del_flag;
 
         string[] multi_bill_consumers;
 
         public string CutOvertime = null;
         public string Date = null;
 
+        public void SetIsPaidReq(string is_paid_req)
+        {
+            this.is_paid_req = is_paid_req;
+        }
+        public string GetIsPaidReq()
+        {
+            return is_paid_req;
+        }
+        public void SetHomeBranchDelFlag(string home_branch_del_flag)
+        {
+            this.home_branch_del_flag = home_branch_del_flag;
+        }
+        public string GetHomeBranchDelFlag()
+        {
+            return home_branch_del_flag;
+        }
+        public void SetCustomerAccType(string Customer_Account_Type)
+        {
+            this.Customer_Account_Type = Customer_Account_Type;
+        }
+        public string GetCustomerAccType()
+        {
+            return Customer_Account_Type;
+        }
         public void SetTranFromDateFlag(bool tran_from_date_flag)
         {
             this.tran_from_date_flag = tran_from_date_flag;
@@ -520,6 +548,14 @@ namespace HBLAutomationWeb.Common
         public string GetPassPolicy3()
         {
             return pass_policy3;
+        }
+        public void SetCC_Limit(string avail_limit_cc)
+        {
+            this.avail_limit_cc = avail_limit_cc;
+        }
+        public string GetCC_Limit()
+        {
+            return avail_limit_cc;
         }
 
         //public string this[string key]    

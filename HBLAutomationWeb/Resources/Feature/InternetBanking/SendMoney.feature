@@ -55,7 +55,7 @@ Scenario Outline: 2 As a user i want to Verify Send Money by adding Beneficiary
 
 
 @SendMoney
-Scenario Outline: 2 As a user i want to Verify Send Money by adding Beneficiary schedule payment
+Scenario Outline: 3 As a user i want to Verify Send Money by adding Beneficiary schedule payment
 	Given the test case title is "<Case>"
 	And the user is arrive to Internet Banking home page 
 	And I am clicking on "Login_Dashboard"
@@ -100,7 +100,7 @@ Scenario Outline: 2 As a user i want to Verify Send Money by adding Beneficiary 
 
 
 	@SendMoney
-Scenario Outline: 2 As a user i want to Verify Send Money by using Beneficiary
+Scenario Outline: 4 As a user i want to Verify Send Money by using Beneficiary
 	Given the test case title is "<Case>"
 	And the user is arrive to Internet Banking home page 
 	And I am clicking on "Login_Dashboard"
@@ -131,7 +131,7 @@ Scenario Outline: 2 As a user i want to Verify Send Money by using Beneficiary
 
 
 	@SendMoney
-Scenario Outline: 2 As a user i want to Verify Send Money by using Beneficiary schedule payment
+Scenario Outline: 5 As a user i want to Verify Send Money by using Beneficiary schedule payment
 	Given the test case title is "<Case>"
 	And the user is arrive to Internet Banking home page 
 	And I am clicking on "Login_Dashboard"

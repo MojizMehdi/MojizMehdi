@@ -138,8 +138,11 @@
     <Element keyword="Pay_Bill_Status" locator ="//div[@class='details ng-scope']//following-sibling::div[last()]//following-sibling::p[last()]" />
     <Element keyword="Pay_Transaction_Unpaid_Amount" locator ="//input[@name='Amount']" />
     <Element keyword="Pay_Bill_Status_Color" locator ="//p[@class='val ng-binding']" />
-    <Element keyword="Pay_Acc_No" locator="//div[@class='row align-items-center dborder ng-scope']{i}//div[@class='acc-num ng-binding']" />
-    <Element keyword="Pay_Acc_Balance" locator="//div[@class='row align-items-center dborder ng-scope']{j}//span[@class='balance ng-binding']" />
+    <Element keyword="Pay_Aval_Limit_CC" locator ="//div[@class='cards account-wrap liabilities ng-scope']//div//span[@class='available balance ng-binding']" />
+    <Element keyword="Pay_Acc_Bal_CC" locator ="//div[@class='cards account-wrap liabilities ng-scope']//div//span[@class='current-bal balance ng-binding']" />
+    <Element keyword="Pay_Acc_No_CC" locator ="//div[@class='cards account-wrap liabilities ng-scope']//div//div[@class='acc-num ng-binding']" />
+    <Element keyword="Pay_Acc_No" locator="//div[@ng-repeat='accountList in CustomerAccountInfo.customerAccountDetails.customerGeneralAccounts']{i}//div[@class='acc-num ng-binding']" />
+    <Element keyword="Pay_Acc_Balance" locator="//div[@ng-repeat='accountList in CustomerAccountInfo.customerAccountDetails.customerGeneralAccounts']{j}//span[@class='balance ng-binding']" />
     <Element keyword="Pay_Bene_checkbox" locator ="//input[@type='checkbox']" />
     <Element keyword="Pay_Bene_text" locator ="//input[@name='Nick']" />
     <Element keyword="Pay_Bene_button" locator ="//button[@class='btn btn']" />
@@ -147,15 +150,17 @@
     <Element keyword="Pay_Final_Account_Balance" locator="//div[@class='acc-num ng-binding'and contains(text(),'{k}')]/parent::*//following-sibling::div[@class='amount col-12 col-md-3 col-lg-3 col-xl-3 d-lg-block d-md-block d-xl-block']/span" />
     <Element keyword="Pay_BillPayment_accountno" locator ="//select[@name='fromAccount']" />
     <Element keyword="Pay_Card_Expiry_Date" locator="//input[@name='CardExpiryDate']" />
-    <Element keyword="Pay_Account_No-Count" locator="//div[@class='acc-num ng-binding']" />
+    <Element keyword="Pay_Account_No-Count" locator="//div[@ng-repeat='accountList in CustomerAccountInfo.customerAccountDetails.customerGeneralAccounts']" />
     <Element keyword="Pay_Transaction_MaxBillAmount_value" locator="//div[@class='hide-label m-2 col-11 ng-scope']//input[@name='Amount']" />
     <Element keyword="Pay_MultiBillIcon" locator="//a[@class='btn add float-right' and text()='Multiple Bill']"/>
     <Element keyword="Pay_Multi_ConsumerNoCheck" locator="//span[@class='label-text']" />
     <Element keyword="Pay_Multi_UIBeneNick" locator="//h2[@class='nick ng-binding']" />
+    <Element keyword="Pay_Multi_UIBillStatus" locator="//span[@class='bill-status-text ng-binding']" />    
     <Element keyword="Pay_Multi_UIAmount" locator="//p[@class='bill-amount ng-binding ng-scope unpaid']" />
     <Element keyword="Pay_MultiBillDueDate" locator="//span[@ng-show='y.due_date']" />
     <Element keyword="Pay_MultiBillCompanyName_Inquiry" locator="//div[@class='ng-scope carousel-item active']//p[@class='label ng-binding' and text()='Company']//following-sibling::p" />
     <Element keyword="Pay_MultiBillConsumerName_Inquiry" locator="//div[@class='ng-scope carousel-item active']//p[@class='label ng-binding' and text()='Consumer Name']//following-sibling::p" />
+    <Element keyword="Pay_MultiBillBillingMonth_Inquiry" locator="//div[@class='ng-scope carousel-item active']//p[@class='label ng-binding' and text()='Billing Month']//following-sibling::p" />
     <Element keyword="Pay_MultiBillDueDate_Inquiry" locator="//div[@class='ng-scope carousel-item active']//p[@class='label ng-binding' and text()='Due Date']//following-sibling::p" />
     <Element keyword="Pay_MultiBillAmount_Inquiry" locator="//div[@class='ng-scope carousel-item active']//p[@class='label ng-binding' and text()='Payable By Due Date']//following-sibling::p" />
     <Element keyword="Pay_MultiBillAmountDD_inquiry" locator="//div[@class='ng-scope carousel-item active']//p[@class='label ng-binding' and text()='Payable After Due Date']//following-sibling::p" />
@@ -279,6 +284,70 @@
     <Element keyword="MyAccount_TranPopUp_Text" locator="//div[@class='modal-content ui-draggable-handle ng-pristine ng-valid ng-scope']//div[@class='display-table']//p[@class='ng-binding']"/>
     <Element keyword="MyAccount_Services_CloseBtn" locator="//div[@class='modal-footer']//a[text()='Close']"/>
     <Element keyword="MyAccount_LimitMngOption" locator="//a[@ng-click='GetLimitsListData()']" />
+    <Element keyword="MyAccount_Limit_Edit_Icon" locator="//div[contains(text(),'{x}')]/parent::div/parent::div/parent::div/parent::div//div[@class='limit-grey-sec']//p//button" />
+    <Element keyword="MyAccount_Limit_Slider" locator="//div[contains(text(),'{x}')]/parent::div/parent::*/parent::*/parent::div[@class='limit-count-update']//div//input" />
+    <Element keyword="MyAccount_Limit_NewPrice" locator="//div[contains(text(),'{x}')]/parent::div/parent::*/parent::*/parent::div[@class='limit-count-update']//div//div//div[@ng-if='onrangeclick']//div" />
+    <Element keyword="MyAccount_Limit_Edit_Save_Btn" locator="//div[contains(text(),'{x}')]/parent::div/parent::*/parent::*/parent::div[@class='limit-count-update']//div[@class='limit-grey-sec text-right']//button[text()='Save']"/>
+    <Element keyword="MyAccount_Limit_Per_Tran" locator="//div[contains(text(),'{x}')]/parent::*/parent::*/parent::*//following-sibling::div[@class='limit-grey-sec']//p//span" />
+    <Element keyword="MyAccount_Limit_daily_limit" locator="//div[contains(text(),'{x}')]/parent::*//following-sibling::div[@class='col-6 col-md-6 col-lg-6 col-xl-4']//div" />
+    <Element keyword="MyAccount_Limit_Edit_Min" locator="//div[contains(text(),'{x}')]/parent::*/parent::*/parent::*/parent::*//following-sibling::div[@class='limit-count-update']//div//div[@class='row mt-2'][2]//div[@class='col-6 col-md-6 col-lg-6 col-xl-8']//div" />
+    <Element keyword="MyAccount_Limit_Edit_Max" locator="//div[contains(text(),'{x}')]/parent::*/parent::*/parent::*/parent::*//following-sibling::div[@class='limit-count-update']//div//div[@class='row mt-2'][2]//div[@class='col-6 col-md-6 col-lg-6 col-xl-4']//div" />
+    <Element keyword="MyAccount_Limit_Edit_Succ_Txt" locator="//div[@id='ViewLimitsPopup']//div[@class='display-table']//p" />
+    <Element keyword="MyAccount_Limit_Edit_Succ_Btn" locator="//div[@id='ViewLimitsPopup']//div[@class='modal-footer']//a" />
+    <Element keyword="MyAccount_Limit_Old_Amount" locator="//div[contains(text(),'{x}')]/parent::*/parent::*/parent::*/parent::*[@class='limit-cont']//div//div//div//div[@class='limit-amt ng-binding']" />
+    <Element keyword="MyAccount_ChangePassOptn" locator="//a[@href = '#changepassword']" />
+    <Element keyword="MyAccount_ChangePassOKBtn" locator="//div[@class='modal-dialog']//a[@class='btn' and text()='OK']" />
+    <Element keyword="MyAccount_ChangeTranPassOptn" locator="//a[@ng-click = 'blockForgot();']" />
+    <Element keyword="MyAccount_TranOldPass" locator="//input[@ng-model='ChangeTransactionPassword.oldtransactionpassword']" />
+    <Element keyword="MyAccount_TranNewPass" locator="//input[@ng-model='ChangeTransactionPassword.newtransactionpassword']" />
+    <Element keyword="MyAccount_TranConfirmPass" locator="//input[@ng-model='ChangeTransactionPassword.confrimtransactionpassword']" />
+    <Element keyword="MyAccount_TranChangeBtn" locator="//div[@ng-form='TransactionPasswordForm']//button[@class='btn submit-btn' and text()='Change']" />
+    <Element keyword="MyAccount_TranPopup_TranSuccess" locator="//div[@class='modal-dialog']//div[@class='display-table']//p" />
+    <Element keyword="MyAccount_TranPopup_TranType" locator="//*[contains(text(), 'Transaction Type']//following-sibling::p" />
+    <Element keyword="MyAccount_TranPopup_TranDate" locator="//*[contains(text(), 'Transaction Date')]//following-sibling::p" />
+    <Element keyword="MyAccount_TranPopupClose" locator="//div[@class='modal-dialog']//div[@ng-if='Shared.Response.Result.IsFinancial==0']//a" />
+    <Element keyword="MyAccount_Tran_ForgotLink" locator="//div[@class='form-group setting-t-pin-forgot']//a" />
+    <Element keyword="MyAccount_Forgot_TranCNIC" locator="//input[@ng-model='ForgotTransactionPassword.customerCNIC']" />
+    <Element keyword="MyAccount_Forgot_TranDOB" locator="//input[@ng-model='ForgotTransactionPassword.CustomerDateofbirth']" />
+    <Element keyword="MyAccount_Forgot_TranCardNo" locator="//input[@ng-model='ForgotTransactionPassword.cardNumber']" />
+    <Element keyword="MyAccount_Forgot_TranPIN" locator="//input[@ng-model='ForgotTransactionPassword.pin']" />
+    <Element keyword="MyAccount_Forgot_TranContBtn" locator="//div[@ng-form='ForgotTransactionPasswordForm']//div[@class='form-group text-right']//button" />
+    <Element keyword="MyAccount_Forgot_Tran_NewPass" locator="//input[@ng-model='ChangeTransactionPasswordFinal.newtransactionpassword']" />
+    <Element keyword="MyAccount_Forgot_Tran_CnfrmPass" locator="//input[@ng-model='ChangeTransactionPasswordFinal.confrimtransactionpassword']" />
+    <Element keyword="MyAccount_Forgot_Tran_ChangeBtn" locator="//div[@ng-form='TransactionPasswordFormS']//div[@class='form-group text-right']//button[text()='Change']" />
+    <Element keyword="MyAccount_Forgot_Tran_Success" locator="//div[@class='custom-pop modal fade ui-draggable show']//p" />
+    <Element keyword="MyAccount_Forgot_Tran_OkBtn" locator="//div[@class='custom-pop modal fade ui-draggable show']//a" />
+    <Element keyword="MyAccount_Forgot_Status" locator="//h2[@class='ng-binding' and text()='Transaction Status']//following-sibling::p" />
+    <Element keyword="MyAccount_Forgot_TranType" locator="//h2[@class='ng-binding' and text()='Transaction Type']//following-sibling::p" />
+    <Element keyword="MyAccount_Forgot_TranDate" locator="//*[contains(text(), 'Transaction Date')]//following-sibling::p" />
+    <Element keyword="MyAccount_Forgot_CloseBtn" locator="//div[@ng-controller='TransactionActivityController']//a[text()='Close']" />
+    <Element keyword="MyAccount_Forgot_UserPassPolicy1" locator="//p[@ng-repeat='x in PasswordPolicy.passwordpolicydescription']" />
+    <Element keyword="MyAccount_Forgot_UserPassPolicy2" locator="//li[@ng-repeat='x in PasswordPolicy.passwordpolicydescription'][i]" />
+    <Element keyword="MyAccount_Forgot_TranPassPolicy1" locator="//p[@ng-repeat='x in PasswordPolicy.transactionpasswordpolicydescription']" />
+    <Element keyword="MyAccount_Forgot_TranPassPolicy2" locator="//li[@ng-repeat='x in PasswordPolicy.transactionpasswordpolicydescription'][i]" />
+    <Element keyword="MyAccount_CheqBook_Opt" locator="//a[@ng-click='GetCityInfo();AccountList(true);']" />
+    <Element keyword="MyAccount_PayOrder_Opt" locator="//a[@ng-click='BankerChequeList();AccountList(true)']" />
+    <Element keyword="MyAccount_WithHold_Tax_Opt" locator="//a[@ng-click='AccountList(true);']" />
+    <Element keyword="MyAccount_CheqBook_forAcc" locator="//select[@name='fromAccounts']" />
+    <Element keyword="MyAccount_CheqBook_No" locator="//select[@name='NoofLeaves']" />
+    <Element keyword="MyAccount_CheqBook_CityList" locator="//label[@for='City']//following-sibling::div//a//span" />
+    <Element keyword="MyAccount_CheqBook_BranchList" locator="//label[@for='Branch']//following-sibling::div//a//span" />
+    <Element keyword="MyAccount_CheqBook_BranchCheck" locator="//input[@ng-model='BranchCheck']" />
+    <Element keyword="MyAccount_CheqBook_TranPass" locator="//input[@name='TransactionPassword']" />
+    <Element keyword="MyAccount_CheqBook_ReqBtn" locator="//button[@class='btn submit-btn' and text()='Send Request']" />
+    <Element keyword="MyAccount_PayOrder_TranPass" locator="//div[@ng-form='payorder']//input[@name='TransactionPassword']" />
+    <Element keyword="MyAccount_PayOrder_ForAcc" locator="//select[@name='fromAccounttt']" />
+    <Element keyword="MyAccount_PayOrder_Amount" locator="//div[@ng-form='payorder']//input[@name='Amount']" />
+    <Element keyword="MyAccount_PayOrder_Bene" locator="//div[@ng-form='payorder']//input[@name='Beneficiary']" />
+    <Element keyword="MyAccount_PayOrder_Purpose" locator="//div[@ng-form='payorder']//select[@name='purpose']" />
+    <Element keyword="MyAccount_PayOrder_City" locator="//label[@for='beniname' and text()='City']//following-sibling::div//a//span" />
+    <Element keyword="MyAccount_PayOrder_Branch" locator="//label[@for='beniname' and text()='Branch']//following-sibling::div//a//span" />
+    <Element keyword="MyAccount_PayOrder_ReqBtn" locator="//div[@ng-form='payorder']//button" />
+    <Element keyword="MyAccount_WithHoldTax_ForAcc" locator="//select[@name='fromAccount']" />
+    <Element keyword="MyAccount_WithHoldTax_FromDate" locator="//input[@name='fromDate']" />
+    <Element keyword="MyAccount_WithHoldTax_ToDate" locator="//input[@name='ToDate']" />
+    <Element keyword="MyAccount_WithHoldTax_ReqBtn" locator="//button[@class='btn submit-btn' and text()='Request']" />
+
     
   </Module>
 </ElementFactory>
