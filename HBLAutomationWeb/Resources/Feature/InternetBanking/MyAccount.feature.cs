@@ -615,7 +615,24 @@ this.AsAUserIWantToVerifyForgotTransactionPassword("As a user i want to verify F
 #line hidden
         }
         
-        public virtual void AsAUserIWantToVerifyChequeBookRequestFromMyAccount(string @case, string for_Account, string no_Of_Cheque, string home_Branch_Option, string city, string branch, string transaction_Password, string customer_Type_Query, string db_Val, string[] exampleTags)
+        public virtual void AsAUserIWantToVerifyChequeBookRequestFromMyAccount(
+                    string @case, 
+                    string for_Account, 
+                    string no_Of_Cheque, 
+                    string home_Branch_Option, 
+                    string city, 
+                    string branch, 
+                    string transaction_Password, 
+                    string customer_Type_Query, 
+                    string db_Val, 
+                    string success_Message, 
+                    string tran_Type_Query, 
+                    string tran_Date_Query, 
+                    string tran_Account_No_Query, 
+                    string tran_Response_Query, 
+                    string tran_Cheque_No_Query, 
+                    string status_Message, 
+                    string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "MyAccount"};
@@ -649,13 +666,46 @@ this.ScenarioSetup(scenarioInfo);
 #line 183
  testRunner.And("I am clicking on \"MyAccount_CheqBook_BranchCheck\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 184
- testRunner.And(string.Format("I select \"{0}\" on \"MyAccount_CheqBook_CityList\"", city), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I select on dropdown search \"MyAccount_CheqBook_CityList\" to select \"<city>\" on \"" +
+                    "MyAccount_CheqBook_CityList_Search\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 185
- testRunner.And(string.Format("I select \"{0}\" on \"MyAccount_CheqBook_BranchList\"", branch), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I select on dropdown search \"MyAccount_CheqBook_BranchList\" to select \"<branch>\" " +
+                    "on \"MyAccount_CheqBook_BranchList_Search\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 186
  testRunner.And(string.Format("I have given \"{0}\" on \"MyAccount_CheqBook_TranPass\"", transaction_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 187
  testRunner.Then("I am performing on \"MyAccount_CheqBook_ReqBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 188
+ testRunner.And(string.Format("verify through \"{0}\" on \"MyAccount_CheqBook_TranMsg\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 189
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Ch" +
+                        "eqBook_TranType\"", tran_Type_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 190
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Ch" +
+                        "eqBook_TranDate\"", tran_Date_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 191
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Ch" +
+                        "eqBook_TranAccNo\"", tran_Account_No_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 192
+ testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"DIGITAL_CHANNEL_SEC" +
+                        "\"", success_Message, tran_Response_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 193
+ testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"DIGITAL_CHANNEL_SEC" +
+                        "\"", no_Of_Cheque, tran_Cheque_No_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 194
+ testRunner.And("I am performing on \"MyAccount_CheqBook_TranCloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 195
+ testRunner.And("I am clicking on \"MyAccount_CheqBook_StatusTab\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 196
+ testRunner.And(string.Format("I select \"{0}\" on \"MyAccount_CheqBook_Status_ForAcc\"", for_Account), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 197
+ testRunner.And(string.Format("verify through \"{0}\" on \"MyAccount_CheqBook_Status_ChqNo\"", no_Of_Cheque), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 198
+ testRunner.And("I am performing on \"MyAccount_CheqBook_Status_CheckBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 199
+ testRunner.And(string.Format("verify through \"{0}\" on \"MyAccount_CheqBook_Status_Msg\"", status_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 200
+ testRunner.And("I am performing on \"MyAccount_CheqBook_Status_CloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -677,16 +727,46 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select CUSTOMER_TYPE from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_n" +
             "ame}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your Cheque Book request has been logged successfully. You can check the status i" +
+            "n My Account-->Cheque Book-->Status")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_account_no_query", "SELECT FROM_ACCOUNT FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_cheque_no_query", "SELECT CHQ_NO_OF_LEAVES FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_message", "Your Cheque Book Request is in process")]
         public virtual void AsAUserIWantToVerifyChequeBookRequestFromMyAccount_AsAUserIWantToVerifyChequeBookRequest()
         {
 #line 172
 this.AsAUserIWantToVerifyChequeBookRequestFromMyAccount("As a user I want to verify Cheque Book Request", "", "10", "yes", "", "", "pakistan2", "Select CUSTOMER_TYPE from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_n" +
-                    "ame}\'", "DIGITAL_CHANNEL_SEC", new string[] {
+                    "ame}\'", "DIGITAL_CHANNEL_SEC", "Your Cheque Book request has been logged successfully. You can check the status i" +
+                    "n My Account-->Cheque Book-->Status", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT FROM_ACCOUNT FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CHQ_NO_OF_LEAVES FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Your Cheque Book Request is in process", new string[] {
                         "source:Data/ChequeBook.xlsx"});
 #line hidden
         }
         
-        public virtual void AsAUserIWantToVerifyPayOrderRequestFromMyAccount(string @case, string for_Account, string amount, string bene_Name, string purpose, string city, string branch, string transaction_Password, string[] exampleTags)
+        public virtual void AsAUserIWantToVerifyPayOrderRequestFromMyAccount(
+                    string @case, 
+                    string for_Account, 
+                    string amount, 
+                    string bene_Name, 
+                    string purpose, 
+                    string city, 
+                    string branch, 
+                    string transaction_Password, 
+                    string success_Message, 
+                    string tran_Type_Query, 
+                    string tran_Amount_Query, 
+                    string from_Account_Query, 
+                    string tran_Branch_Query, 
+                    string tran_Branch_Code_Query, 
+                    string tran_Purpose_Query, 
+                    string tran_Date_Query, 
+                    string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "MyAccount"};
@@ -695,36 +775,63 @@ this.AsAUserIWantToVerifyChequeBookRequestFromMyAccount("As a user I want to ver
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user I want to verify Pay Order Request from My Account", @__tags);
-#line 196
-this.ScenarioSetup(scenarioInfo);
-#line 197
- testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 198
- testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 199
- testRunner.And("I count Number of Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 200
- testRunner.And("I am clicking on \"MyAccount_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 201
- testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 202
- testRunner.And("I am clicking on \"MyAccount_PayOrder_Opt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 203
- testRunner.When(string.Format("I select \"{0}\" on \"MyAccount_PayOrder_ForAcc\"", for_Account), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 204
- testRunner.And(string.Format("I have given \"{0}\" on \"MyAccount_PayOrder_Amount\"", amount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 205
- testRunner.And(string.Format("I have given \"{0}\" on \"MyAccount_PayOrder_Bene\"", bene_Name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 206
- testRunner.And(string.Format("I select \"{0}\" on \"MyAccount_PayOrder_Purpose\"", purpose), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 207
- testRunner.And(string.Format("I select \"{0}\" on \"MyAccount_PayOrder_City\"", city), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 208
- testRunner.And(string.Format("I select \"{0}\" on \"MyAccount_PayOrder_Branch\"", branch), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 209
- testRunner.And(string.Format("I have given \"{0}\" on \"MyAccount_CheqBook_TranPass\"", transaction_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 210
+ testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 211
+ testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 212
+ testRunner.And("I count Number of Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 213
+ testRunner.And("I am clicking on \"MyAccount_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 214
+ testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 215
+ testRunner.And("I am clicking on \"MyAccount_PayOrder_Opt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 216
+ testRunner.When(string.Format("I select \"{0}\" on \"MyAccount_PayOrder_ForAcc\"", for_Account), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 217
+ testRunner.And(string.Format("I have given \"{0}\" on \"MyAccount_PayOrder_Amount\"", amount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 218
+ testRunner.And(string.Format("I have given \"{0}\" on \"MyAccount_PayOrder_Bene\"", bene_Name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 219
+ testRunner.And(string.Format("I select \"{0}\" on \"MyAccount_PayOrder_Purpose\"", purpose), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 220
+ testRunner.And(string.Format("I select on dropdown search \"MyAccount_PayOrder_City\" to select \"{0}\" on \"MyAccou" +
+                        "nt_PayOrder_City_Search\"", city), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 221
+ testRunner.And(string.Format("I select on dropdown search \"MyAccount_PayOrder_Branch\" to select \"{0}\" on \"MyAcc" +
+                        "ount_PayOrder_Branch_Search\"", branch), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 222
+ testRunner.And(string.Format("I have given \"{0}\" on \"MyAccount_CheqBook_TranPass\"", transaction_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 223
  testRunner.Then("I am performing on \"MyAccount_PayOrder_ReqBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 224
+ testRunner.And(string.Format("verify through \"{0}\" on \"MyAccount_PayOrder_Success\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 225
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Pa" +
+                        "yOrder_TranType\"", tran_Type_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 226
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Pa" +
+                        "yOrder_Tran_Amount\"", tran_Amount_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 227
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Pa" +
+                        "yOrder_Tran_FromAcc\"", from_Account_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 228
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Pa" +
+                        "yOrder_Tran_BranchName\"", tran_Branch_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 229
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Pa" +
+                        "yOrder_TranBranchCode\"", tran_Branch_Code_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 230
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Pa" +
+                        "yOrder_Tran_Purpose\"", tran_Purpose_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 231
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Pa" +
+                        "yOrder_TranDate\"", tran_Date_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 232
+ testRunner.And("I am performing on \"MyAccount_PayOrder_Tran_CloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -737,17 +844,31 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/PayOrder.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify Pay Order Request")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify Pay Order Request")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:city", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "580052365603")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount", "500")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "YASIRBENE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose", "Credit Card Payment  ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:city", "Karachi ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch", "1101")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:transaction_password", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your request has been processed successfully. Please visit your branch with the R" +
+            "eference Number to collect the Pay Order/Bankers Cheque.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_branch_query", "SELECT DT.TO_BRANCH FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifyPayOrderRequestFromMyAccount_AsAUserIWantToVerifyPayOrderRequest()
         {
-#line 196
-this.AsAUserIWantToVerifyPayOrderRequestFromMyAccount("As a user I want to verify Pay Order Request", "", "", "", "", "", "", "pakistan2", new string[] {
+#line 209
+this.AsAUserIWantToVerifyPayOrderRequestFromMyAccount("As a user I want to verify Pay Order Request", "580052365603", "500", "YASIRBENE", "Credit Card Payment  ", "Karachi ", "1101", "pakistan2", "Your request has been processed successfully. Please visit your branch with the R" +
+                    "eference Number to collect the Pay Order/Bankers Cheque.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_BRANCH FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
                         "source:Data/PayOrder.xlsx"});
 #line hidden
         }
@@ -761,42 +882,42 @@ this.AsAUserIWantToVerifyPayOrderRequestFromMyAccount("As a user I want to verif
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user I want to verify Withholding Tax Certificate Request from My Account", @__tags);
-#line 220
+#line 242
 this.ScenarioSetup(scenarioInfo);
-#line 221
+#line 243
  testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 222
+#line 244
  testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 223
+#line 245
  testRunner.And("I count Number of Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 224
+#line 246
  testRunner.And("I am clicking on \"MyAccount_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 225
+#line 247
  testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 226
+#line 248
  testRunner.And("I am clicking on \"MyAccount_WithHold_Tax_Opt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 227
+#line 249
  testRunner.When(string.Format("I select \"{0}\" on \"MyAccount_WithHoldTax_ForAcc\"", for_Account), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 228
+#line 250
  testRunner.And("I am clicking on \"MyAccount_WithHoldTax_FromDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 229
+#line 251
  testRunner.And(string.Format("I select date \"{0}\" on month \"{1}\" on year \"{2}\"", from_Day, from_Month, from_Year), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 230
+#line 252
  testRunner.And("I am clicking on \"MyAccount_WithHoldTax_ToDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 231
+#line 253
  testRunner.And(string.Format("I select date \"{0}\" on month \"{1}\" on year \"{2}\"", to_Day, to_Month, to_Year), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 232
+#line 254
  testRunner.Then("I am performing on \"MyAccount_WithHoldTax_ReqBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 233
+#line 255
  testRunner.And(string.Format("verify the message \"Success\" through database on \"{0}\" on Schema \"DIGITAL_CHANNEL" +
                         "_SEC\"", tran_Status_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 234
+#line 256
  testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"DIGITAL_CHANNEL_SEC" +
                         "\"", for_Account, from_Account_Tran_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 235
+#line 257
  testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"DIGITAL_CHANNEL_SEC" +
                         "\"", from_Date, from_Account_Tran_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 236
+#line 258
  testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"DIGITAL_CHANNEL_SEC" +
                         "\"", to_Date, to_Date_Tran_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -831,7 +952,7 @@ this.ScenarioSetup(scenarioInfo);
             "R_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'")]
         public virtual void AsAUserIWantToVerifyWithholdingTaxCertificateRequestFromMyAccount_AsAUserIWantToVerifyWithholdingTaxCertificateRequest()
         {
-#line 220
+#line 242
 this.AsAUserIWantToVerifyWithholdingTaxCertificateRequestFromMyAccount("As a user I want to verify Withholding Tax certificate Request", "", "1", "Aug", "2019", "8/1/2019", "1", "Aug", "2020", "8/1/2020", "Select L.STATUS from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTOMER" +
                     "_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'", "Select L.FROM_ACCOUNT from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CU" +
                     "STOMER_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'" +

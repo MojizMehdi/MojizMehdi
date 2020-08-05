@@ -241,6 +241,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AccountsStatement.feature</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Feature\InternetBanking\BeneManagement.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BeneManagement.feature</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Feature\InternetBanking\ForgetChange.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -290,8 +295,13 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AccountsStatement.feature.cs</LastGenOutput>
     </None>
+    <None Include="Resources\Feature\InternetBanking\BeneManagement.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>BeneManagement.feature.cs</LastGenOutput>
+    </None>
     <None Include="Resources\Feature\InternetBanking\Data\AccountsStatement.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\BeneficiaryAddition.xlsx" />
+    <None Include="Resources\Feature\InternetBanking\Data\BeneVerification.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\ChangeLoginID.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\ChangeLoginPassword.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\ChangeTransactionPassword.xlsx" />
