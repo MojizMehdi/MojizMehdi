@@ -1016,7 +1016,7 @@ namespace HBLAutomationAndroid.Core
                     }
                     if (counter == account_count - 1)
                     {
-                        loop_end_check = false;
+                        break;
                     }
                     counter++;
                     keyword = ContextPage.GetInstance().GetElement("Accounts_Home_Next");
