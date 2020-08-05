@@ -86,6 +86,8 @@
   <Module name ="SendMoney">
     <Element keyword="SendMoney_Link" locator="com.hbl.android.hblmobilebanking:id/sendMoney_Btn"/>
     <Element keyword="SendMoney_AddNewBtn" locator="com.hbl.android.hblmobilebanking:id/newBtnTxt"/>
+    <Element keyword="SendMoney_AddNewBtn_interbranch" locator="com.hbl.android.hblmobilebanking:id/newBtnTxt"/>
+    <Element keyword="SendMoney_AddNewBtn_interbank" locator="com.hbl.android.hblmobilebanking:id/newBtnTxt"/>
     <Element keyword="SendMoney_FromAccount" locator="com.hbl.android.hblmobilebanking:id/spnTransFromAccount"/>
     <Element keyword="SendMoney_Bank" locator="com.hbl.android.hblmobilebanking:id/spnBeneBankSelection"/>
     <Element keyword="SendMoney_ToAccount" locator="com.hbl.android.hblmobilebanking:id/eTextBeneAccountNumber"/>

@@ -260,6 +260,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SendMoney.feature</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Feature\HBLMobile\SendMoneyViaMore.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SendMoneyViaMore.feature</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Feature\HBLMobile\TermDeposit.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -287,12 +292,25 @@
     <None Include="Resources\Feature\HBLMobile\Data\HBLMobileLogin.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\HBLMobileTermDepositLogin.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\SendMoney%28ViaBene%29.xlsx" />
+    <None Include="Resources\Feature\HBLMobile\Data\SendMoney%28ViaBene%29_Interbank.xlsx" />
+    <None Include="Resources\Feature\HBLMobile\Data\SendMoney%28ViaBene%29_Interbank_Schedule.xlsx" />
+    <None Include="Resources\Feature\HBLMobile\Data\SendMoney%28ViaBene%29_Interbranch.xlsx" />
+    <None Include="Resources\Feature\HBLMobile\Data\SendMoney%28ViaBene%29_Interbranch_Schedule.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\SendMoney.xlsx" />
+    <None Include="Resources\Feature\HBLMobile\Data\SendMoneyViaMore_Interbank.xlsx" />
+    <None Include="Resources\Feature\HBLMobile\Data\SendMoneyViaMore_Interbank_Schedule.xlsx" />
+    <None Include="Resources\Feature\HBLMobile\Data\SendMoneyViaMore_Interbranch.xlsx" />
+    <None Include="Resources\Feature\HBLMobile\Data\SendMoneyViaMore_Interbranch_Schedule.xlsx" />
+    <None Include="Resources\Feature\HBLMobile\Data\SendMoney_Schedule.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\SendMoney_Schedule_Beneficiary.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\TermDeposit.xlsx" />
     <None Include="Resources\Feature\HBLMobile\SendMoney.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>SendMoney.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\Feature\HBLMobile\SendMoneyViaMore.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SendMoneyViaMore.feature.cs</LastGenOutput>
     </None>
     <None Include="Resources\Feature\HBLMobile\TermDeposit.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

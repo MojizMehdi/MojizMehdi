@@ -63,7 +63,9 @@ namespace HBLAutomationAndroid.Common
         string TermDepositYears;
         int term_deposit_check = 0;
         decimal term_deposit_balance = 0;
-
+        int no_of_accounts;
+        int bene_count_inter_branch;
+        int bene_count_inter_bank;
         //DateTime start_date;
         //DateTime end_date;
 
@@ -83,6 +85,30 @@ namespace HBLAutomationAndroid.Common
         //{
         //    this.start_date = start_date;
         //}
+        public int Get_bene_count_inter_bank()
+        {
+            return bene_count_inter_bank;
+        }
+        public void Set_bene_count_inter_bank(int bene_count_inter_bank)
+        {
+            this.bene_count_inter_bank = bene_count_inter_bank;
+        }
+        public int Get_bene_count_inter_branch()
+        {
+            return bene_count_inter_branch;
+        }
+        public void Set_bene_count_inter_branch(int bene_count_inter_branch)
+        {
+            this.bene_count_inter_branch = bene_count_inter_branch;
+        }
+        public int Get_no_of_accounts()
+        {
+            return no_of_accounts;
+        }
+        public void Set_no_of_accounts(int no_of_accounts)
+        {
+            this.no_of_accounts = no_of_accounts;
+        }
         public int Get_term_deposit_check()
         {
             return term_deposit_check;
@@ -218,7 +244,7 @@ namespace HBLAutomationAndroid.Common
         {
             this.acc_info = acc_info;
         }
-        public Dictionary<string, string> Get_acc_balance()
+        public Dictionary<string, string> Get_acc_balances()
         {
             return this.acc_info;
 

@@ -284,7 +284,28 @@ namespace HBLAutomationAndroid.Core
                             return;
                         }
                     }
-                    
+                    if (Keyword.Contains("SendMoney_AddNewBtn_interbranch"))
+                    {
+                        if((context.Get_no_of_accounts() + context.Get_bene_count_inter_branch()) <= 1)
+                        {
+                            return;
+                        }
+                    }
+                    if (Keyword.Contains("SendMoney_AddNewBtn_interbank"))
+                    {
+                        if (context.Get_bene_count_inter_bank() <= 1)
+                        {
+                            return;
+                        }
+                    }
+                    if (Keyword == "SendMoney_AddNewBtn")
+                    {
+                        if ((context.Get_no_of_accounts() + context.Get_bene_count_inter_branch() + context.Get_bene_count_inter_bank()) <= 1)
+                        {
+                            return;
+                        }
+                    }
+
                     //if (Keyword.Contains("BillPayment_PayNextBtn"))
                     //{
                     //    string otp = context.Get_is_otp_req();
@@ -732,6 +753,42 @@ namespace HBLAutomationAndroid.Core
                 }
             }
         }
+
+        [When(@"I set value in context from database ""(.*)"" as ""(.*)"" on Schema ""(.*)""")]
+        public void WhenISetValueInContextFromDatabaseAsOnSchema(string query, string attribute, string schema)
+        {
+            if (String.IsNullOrEmpty(query))
+            {
+                return;
+            }
+            try
+            {
+                if (query.Contains("{username}"))
+                {
+                    query = query.Replace("{username}", context.GetUsername());
+                }
+                DataAccessComponent.DataAccessLink dLink = new DataAccessComponent.DataAccessLink();
+                DataTable SourceDataTable = dLink.GetDataTable(query, schema);
+                string db_value = SourceDataTable.Rows[0][0].ToString();
+                if (attribute == "No_Of_Accounts")
+                {
+                    context.Set_no_of_accounts(Convert.ToInt32(db_value));
+                }
+                if(attribute == "Beneficiary_Count_Inter_Branch")
+                {
+                    context.Set_bene_count_inter_branch(Convert.ToInt32(db_value));
+                }
+                if (attribute == "Beneficiary_Count_Inter_Bank")
+                {
+                    context.Set_bene_count_inter_bank(Convert.ToInt32(db_value));
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
         [When(@"I save Account Balances")]
         public void WhenISaveAccountBalances()
         {
@@ -804,7 +861,7 @@ namespace HBLAutomationAndroid.Core
                 locator_type = "xpath";
             }
             string tran_balance = context.Get_multi_payment_amount().ToString();
-            tran_dict = context.Get_acc_balance();
+            tran_dict = context.Get_acc_balances();
 
             foreach (var item in tran_dict)
             {
@@ -849,13 +906,13 @@ namespace HBLAutomationAndroid.Core
                 locator_type = "xpath";
             }
             string tran_balance = apmhelper.ReturnKeywordValue(keyword.Locator,locator_type);
-            tran_dict = context.Get_acc_balance();
+            tran_dict = context.Get_acc_balances();
 
             foreach (var item in tran_dict)
             {
                 if (tran_account == item.Key || item.Key == "Term Deposit")
                 {
-                    if (context.Get_term_deposit_check() != 0 && item.Key == "Term Deposit")
+                    if (context.Get_term_deposit_check() == 1 && item.Key == "Term Deposit")
                     {
                         decimal term_deposit_bal = Convert.ToDecimal(item.Value) + Convert.ToDecimal(tran_balance);
                         context.Set_term_deposit_balance(term_deposit_bal);
@@ -886,6 +943,8 @@ namespace HBLAutomationAndroid.Core
             decimal old_account_bal = 0;
             bool account_bal_checker = false;
             bool term_deposit_checker = false;
+            int account_count = context.Get_acc_balances().Count;
+            int counter = 0;
             while (loop_end_check == true)
             {
                 try
@@ -906,7 +965,7 @@ namespace HBLAutomationAndroid.Core
                     string tAccountNo = context.GeTran_Account();
                     if(tAccountNo == account_no || account_no == "Term Deposit")
                     {
-                        if (context.Get_term_deposit_check() != 0 && account_no == "Term Deposit")
+                        if (context.Get_term_deposit_check() == 1 && account_no == "Term Deposit")
                         {
                             old_account_bal = context.Get_term_deposit_balance();
                             if (Convert.ToDecimal(balance) != old_account_bal)
@@ -919,6 +978,7 @@ namespace HBLAutomationAndroid.Core
                             {
                                 apmhelper.links_visibility(keyword.Locator, locator_type);
                                 apmhelper.links(keyword.Locator, locator_type);
+                                counter++;
                                 continue;
                             }
                             catch
@@ -936,11 +996,11 @@ namespace HBLAutomationAndroid.Core
                             }
                             account_bal_checker = true;
                             keyword = ContextPage.GetInstance().GetElement("Accounts_Home_Next");
-                            keyword = ContextPage.GetInstance().GetElement("Accounts_Home_Next");
                             try
                             {
                                 apmhelper.links_visibility(keyword.Locator, locator_type);
                                 apmhelper.links(keyword.Locator, locator_type);
+                                counter++;
                                 continue;
                             }
                             catch
@@ -948,11 +1008,17 @@ namespace HBLAutomationAndroid.Core
                                 continue;
                             }
                         }
+                        
                     }
                     if(term_deposit_checker == true && account_bal_checker == true)
                     {
                         break;
                     }
+                    if (counter == account_count - 1)
+                    {
+                        loop_end_check = false;
+                    }
+                    counter++;
                     keyword = ContextPage.GetInstance().GetElement("Accounts_Home_Next");
                     apmhelper.links_visibility(keyword.Locator, locator_type);
                     apmhelper.links(keyword.Locator, locator_type);

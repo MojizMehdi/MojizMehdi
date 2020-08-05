@@ -544,6 +544,7 @@ namespace HBLAutomationAndroid.Pages
                 int start_y = (int)(dimension.Height * 0.65);
                 int end_y = (int)(dimension.Height * 0.30);
                 ITouchAction tc = new TouchAction(driver);
+                Thread.Sleep(2000);
                 tc.Press(x, start_y).Wait(1000).MoveTo(x, end_y).Release().Perform();
             }
             catch (Exception ex)
