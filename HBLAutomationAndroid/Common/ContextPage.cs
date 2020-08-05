@@ -60,7 +60,12 @@ namespace HBLAutomationAndroid.Common
         int multi_payment_amount;
         int tran_amount;
         List<string> iteration_dates_schedule;
-
+        string TermDepositYears;
+        int term_deposit_check = 0;
+        decimal term_deposit_balance = 0;
+        int no_of_accounts;
+        int bene_count_inter_branch;
+        int bene_count_inter_bank;
         //DateTime start_date;
         //DateTime end_date;
 
@@ -80,7 +85,46 @@ namespace HBLAutomationAndroid.Common
         //{
         //    this.start_date = start_date;
         //}
-
+        public int Get_bene_count_inter_bank()
+        {
+            return bene_count_inter_bank;
+        }
+        public void Set_bene_count_inter_bank(int bene_count_inter_bank)
+        {
+            this.bene_count_inter_bank = bene_count_inter_bank;
+        }
+        public int Get_bene_count_inter_branch()
+        {
+            return bene_count_inter_branch;
+        }
+        public void Set_bene_count_inter_branch(int bene_count_inter_branch)
+        {
+            this.bene_count_inter_branch = bene_count_inter_branch;
+        }
+        public int Get_no_of_accounts()
+        {
+            return no_of_accounts;
+        }
+        public void Set_no_of_accounts(int no_of_accounts)
+        {
+            this.no_of_accounts = no_of_accounts;
+        }
+        public int Get_term_deposit_check()
+        {
+            return term_deposit_check;
+        }
+        public void Set_term_deposit_check(int term_deposit_check)
+        {
+            this.term_deposit_check = term_deposit_check;
+        }
+        public decimal Get_term_deposit_balance()
+        {
+            return term_deposit_balance;
+        }
+        public void Set_term_deposit_balance(decimal term_deposit_balance)
+        {
+            this.term_deposit_balance += term_deposit_balance;
+        }
         public int Get_tran_amount()
         {
             return tran_amount;
@@ -200,7 +244,7 @@ namespace HBLAutomationAndroid.Common
         {
             this.acc_info = acc_info;
         }
-        public Dictionary<string, string> Get_acc_balance()
+        public Dictionary<string, string> Get_acc_balances()
         {
             return this.acc_info;
 
@@ -214,6 +258,14 @@ namespace HBLAutomationAndroid.Common
         public string GetTranType()
         {
             return Tran_Type;
+        }
+        public void Set_TermDepositYears(string TermDepositYears)
+        {
+            this.TermDepositYears = TermDepositYears;
+        }
+        public string Get_TermDepositYears()
+        {
+            return TermDepositYears;
         }
         public void SetUsername(string username)
         {

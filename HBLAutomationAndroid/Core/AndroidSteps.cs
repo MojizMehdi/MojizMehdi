@@ -284,6 +284,28 @@ namespace HBLAutomationAndroid.Core
                             return;
                         }
                     }
+                    if (Keyword.Contains("SendMoney_AddNewBtn_interbranch"))
+                    {
+                        if((context.Get_no_of_accounts() + context.Get_bene_count_inter_branch()) <= 1)
+                        {
+                            return;
+                        }
+                    }
+                    if (Keyword.Contains("SendMoney_AddNewBtn_interbank"))
+                    {
+                        if (context.Get_bene_count_inter_bank() <= 1)
+                        {
+                            return;
+                        }
+                    }
+                    if (Keyword == "SendMoney_AddNewBtn")
+                    {
+                        if ((context.Get_no_of_accounts() + context.Get_bene_count_inter_branch() + context.Get_bene_count_inter_bank()) <= 1)
+                        {
+                            return;
+                        }
+                    }
+
                     //if (Keyword.Contains("BillPayment_PayNextBtn"))
                     //{
                     //    string otp = context.Get_is_otp_req();
@@ -297,6 +319,11 @@ namespace HBLAutomationAndroid.Core
                     AppiumHelper apmhelper = new AppiumHelper();
                     //apmhelper.checkPageIsReady();
                     Element keyword = ContextPage.GetInstance().GetElement(Keyword);
+                    if (Keyword.Contains("TermDeposit_NoOfYears"))
+                    {
+                        string temp = keyword.Locator.Replace("{Years}", context.Get_TermDepositYears());
+                        keyword.Locator = temp;
+                    }
                     if (keyword.Locator.StartsWith("/") || keyword.Locator.StartsWith("("))
                     {
                         locator_type = "xpath";
@@ -562,6 +589,7 @@ namespace HBLAutomationAndroid.Core
         }
         [When(@"I wait (.*)")]
         [Then(@"I wait (.*)")]
+        [Given(@"I wait (.*)")]
         public void WhenIWait(int p0)
         {
             Thread.Sleep(p0);
@@ -713,7 +741,54 @@ namespace HBLAutomationAndroid.Core
             {
                 context.SetTranType(value);
             }
+            if(attribute == "TermDepositYears")
+            {
+                context.Set_TermDepositYears(value);
+            }
+            if(attribute == "term_deposit_flag")
+            {
+                if (context.Get_term_deposit_check() == 0)
+                {
+                    context.Set_term_deposit_check(Convert.ToInt32(value));
+                }
+            }
         }
+
+        [When(@"I set value in context from database ""(.*)"" as ""(.*)"" on Schema ""(.*)""")]
+        public void WhenISetValueInContextFromDatabaseAsOnSchema(string query, string attribute, string schema)
+        {
+            if (String.IsNullOrEmpty(query))
+            {
+                return;
+            }
+            try
+            {
+                if (query.Contains("{username}"))
+                {
+                    query = query.Replace("{username}", context.GetUsername());
+                }
+                DataAccessComponent.DataAccessLink dLink = new DataAccessComponent.DataAccessLink();
+                DataTable SourceDataTable = dLink.GetDataTable(query, schema);
+                string db_value = SourceDataTable.Rows[0][0].ToString();
+                if (attribute == "No_Of_Accounts")
+                {
+                    context.Set_no_of_accounts(Convert.ToInt32(db_value));
+                }
+                if(attribute == "Beneficiary_Count_Inter_Branch")
+                {
+                    context.Set_bene_count_inter_branch(Convert.ToInt32(db_value));
+                }
+                if (attribute == "Beneficiary_Count_Inter_Bank")
+                {
+                    context.Set_bene_count_inter_bank(Convert.ToInt32(db_value));
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
         [When(@"I save Account Balances")]
         public void WhenISaveAccountBalances()
         {
@@ -732,6 +807,10 @@ namespace HBLAutomationAndroid.Core
                         locator_type = "xpath";
                     }
                     string account_no = apmhelper.ReturnKeywordValue(keyword.Locator, locator_type);
+                    if(account_no == "Term Deposit")
+                    {
+                        context.Set_term_deposit_check(2);
+                    }
                     keyword = ContextPage.GetInstance().GetElement("Accounts_Home_Balance");
                     if (keyword.Locator.StartsWith("/"))
                     {
@@ -782,7 +861,7 @@ namespace HBLAutomationAndroid.Core
                 locator_type = "xpath";
             }
             string tran_balance = context.Get_multi_payment_amount().ToString();
-            tran_dict = context.Get_acc_balance();
+            tran_dict = context.Get_acc_balances();
 
             foreach (var item in tran_dict)
             {
@@ -798,12 +877,15 @@ namespace HBLAutomationAndroid.Core
 
 
         [When(@"I save Transaction Info")]
+        [Then(@"I save Transaction Info")]
         public void WhenISaveTransactionInfo()
         {
             string locator_type = "id";
             AppiumHelper apmhelper = new AppiumHelper();
             Element keyword = null;
             Dictionary<string, string> tran_dict = new Dictionary<string, string>();
+            bool account_bal_checker = false;
+            bool term_deposit_checker = false;
             if (context.GetTranType() == "SendMoney")
             {
                 keyword = ContextPage.GetInstance().GetElement("SendMoney_TranFromAcc");
@@ -824,14 +906,29 @@ namespace HBLAutomationAndroid.Core
                 locator_type = "xpath";
             }
             string tran_balance = apmhelper.ReturnKeywordValue(keyword.Locator,locator_type);
-            tran_dict = context.Get_acc_balance();
+            tran_dict = context.Get_acc_balances();
 
             foreach (var item in tran_dict)
             {
-                if (tran_account == item.Key)
+                if (tran_account == item.Key || item.Key == "Term Deposit")
                 {
-                    decimal tran_balancee = Convert.ToDecimal(item.Value) - Convert.ToDecimal(tran_balance);
-                    context.SetTran_Balance(tran_balancee);
+                    if (context.Get_term_deposit_check() == 1 && item.Key == "Term Deposit")
+                    {
+                        decimal term_deposit_bal = Convert.ToDecimal(item.Value) + Convert.ToDecimal(tran_balance);
+                        context.Set_term_deposit_balance(term_deposit_bal);
+                        term_deposit_checker = true;
+                        continue;
+                    }
+                    else if (tran_account == item.Key)
+                    {
+                        decimal tran_balancee = Convert.ToDecimal(item.Value) - Convert.ToDecimal(tran_balance);
+                        context.SetTran_Balance(tran_balancee);
+                        account_bal_checker = true;
+                        continue;
+                    }
+                }
+                if (term_deposit_checker == true && account_bal_checker == true)
+                {
                     break;
                 }
 
@@ -844,6 +941,10 @@ namespace HBLAutomationAndroid.Core
             string locator_type = "id";
             bool loop_end_check = true;
             decimal old_account_bal = 0;
+            bool account_bal_checker = false;
+            bool term_deposit_checker = false;
+            int account_count = context.Get_acc_balances().Count;
+            int counter = 0;
             while (loop_end_check == true)
             {
                 try
@@ -862,16 +963,63 @@ namespace HBLAutomationAndroid.Core
                     }
                     string balance = apmhelper.ReturnKeywordValue(keyword.Locator, locator_type);
                     string tAccountNo = context.GeTran_Account();
-                    if(tAccountNo == account_no)
+                    if(tAccountNo == account_no || account_no == "Term Deposit")
                     {
-                        old_account_bal = context.GetTran_Balance();
-                        if (Convert.ToDecimal(balance) != old_account_bal)
+                        if (context.Get_term_deposit_check() == 1 && account_no == "Term Deposit")
                         {
-                            throw new AssertFailedException(string.Format("The old account balance {0} is not equal to new account balance {1} after successfull transaction", old_account_bal, balance));
+                            old_account_bal = context.Get_term_deposit_balance();
+                            if (Convert.ToDecimal(balance) != old_account_bal)
+                            {
+                                throw new AssertFailedException(string.Format("The Term Deposit balance {0} is not equal to new Term Deposit balance {1} after successfull transaction", old_account_bal, balance));
+                            }
+                            term_deposit_checker = true;
+                            keyword = ContextPage.GetInstance().GetElement("Accounts_Home_Next");
+                            try
+                            {
+                                apmhelper.links_visibility(keyword.Locator, locator_type);
+                                apmhelper.links(keyword.Locator, locator_type);
+                                counter++;
+                                continue;
+                            }
+                            catch
+                            {
+                                continue;
+                            }
+                            
                         }
+                        else if (tAccountNo == account_no)
+                        {
+                            old_account_bal = context.GetTran_Balance();
+                            if (Convert.ToDecimal(balance) != old_account_bal)
+                            {
+                                throw new AssertFailedException(string.Format("The old account balance {0} is not equal to new account balance {1} after successfull transaction", old_account_bal, balance));
+                            }
+                            account_bal_checker = true;
+                            keyword = ContextPage.GetInstance().GetElement("Accounts_Home_Next");
+                            try
+                            {
+                                apmhelper.links_visibility(keyword.Locator, locator_type);
+                                apmhelper.links(keyword.Locator, locator_type);
+                                counter++;
+                                continue;
+                            }
+                            catch
+                            {
+                                continue;
+                            }
+                        }
+                        
+                    }
+                    if(term_deposit_checker == true && account_bal_checker == true)
+                    {
                         break;
                     }
-                    keyword = ContextPage.GetInstance().GetElement("Accounts_Home_Previous");
+                    if (counter == account_count - 1)
+                    {
+                        loop_end_check = false;
+                    }
+                    counter++;
+                    keyword = ContextPage.GetInstance().GetElement("Accounts_Home_Next");
                     apmhelper.links_visibility(keyword.Locator, locator_type);
                     apmhelper.links(keyword.Locator, locator_type);
                 }
@@ -1462,7 +1610,7 @@ namespace HBLAutomationAndroid.Core
             string tran_type = SourceDataTable.Rows[0][2].ToString();
             if ("41" != state)
             {
-                throw new AssertFailedException(string.Format("The State {0} is not equal to State in databse 41", context.Get_tran_amount().ToString()));
+                throw new AssertFailedException(string.Format("The State {0} is not equal to State in databse 41", state));
             }
             if (context.Get_tran_amount().ToString() != tran_amount)
             {
