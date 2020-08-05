@@ -44,10 +44,10 @@
     <Element keyword="Forget_ChangeLogin_SubmitBtnCC" locator="//div[@ng-show='showcreditcardstep']//button" />
     <Element keyword="Forget_ChangeSuccessMsg" locator="//p[@class='label msg col-12 ng-binding']" />
     <Element keyword="Forget_ChangeOkBtn" locator ="//div[@class='form-group button-center text-right']/a" />
-    
-    
+
+
   </Module>
-  
+
   <Module name="Signup">
     <Element keyword="Signup_registerBtn" locator="//a[@class='btn']"/>
     <Element keyword="Signup_DebitCardNav" locator="//a[@class='nav-link active forDebit']" />
@@ -94,17 +94,6 @@
     <Element keyword="Signup_CrossIcon" locator="//div[@class='reg-close']//i"/>
     <Element keyword="Signup_PassPolicy" locator="//small[@class='form-text ng-binding ng-scope'][i]" />
     <Element keyword="Signup_AccountCount" locator="//div[@class='ng-scope account-list']" />
-  </Module>
-  
-  <Module name ="BeneficiaryManagement">
-     <Element keyword="BeneficiaryManagement_Link" locator="//*[contains(text(),'Beneficiary Management ')]"/>
-    <Element keyword="BeneficiaryManagement_AddNewBtn" locator="//a[@title = 'Add New' and @class='btn add btn-responsive-fix d-md-block d-lg-block d-xl-block ng-scope']"/>
-    <Element keyword="BeneficiaryManagement_Bank" locator="//select[@name='bank']"/>
-    <Element keyword="BeneficiaryManagement_AccountNo" locator="//input[@name='account']"/>
-    <Element keyword="BeneficiaryManagement_BeneNick" locator="//input[@name='beneNick']"/>
-    <Element keyword="BeneficiaryManagement_PayeeEmail" locator="//input[@name='PayeeEmail']"/>
-    <Element keyword="BeneficiaryManagement_PayeeMobileNumber" locator="//input[@name='PayeeMobileNumber']"/>
-    <Element keyword="BeneficiaryManagement_Validate_Button" locator="//button[@class='btn submit-btn ng-binding']"/>
   </Module>
 
   <Module name ="Pay">
@@ -155,7 +144,7 @@
     <Element keyword="Pay_MultiBillIcon" locator="//a[@class='btn add float-right' and text()='Multiple Bill']"/>
     <Element keyword="Pay_Multi_ConsumerNoCheck" locator="//span[@class='label-text']" />
     <Element keyword="Pay_Multi_UIBeneNick" locator="//h2[@class='nick ng-binding']" />
-    <Element keyword="Pay_Multi_UIBillStatus" locator="//span[@class='bill-status-text ng-binding']" />    
+    <Element keyword="Pay_Multi_UIBillStatus" locator="//span[@class='bill-status-text ng-binding']" />
     <Element keyword="Pay_Multi_UIAmount" locator="//p[@class='bill-amount ng-binding ng-scope unpaid']" />
     <Element keyword="Pay_MultiBillDueDate" locator="//span[@ng-show='y.due_date']" />
     <Element keyword="Pay_MultiBillCompanyName_Inquiry" locator="//div[@class='ng-scope carousel-item active']//p[@class='label ng-binding' and text()='Company']//following-sibling::p" />
@@ -187,8 +176,8 @@
     <Element keyword="Pay_MultiBill_SRV_ConsumerNo" locator="//h2[@class='ng-binding' and text()= 'Consumer Number']//following-sibling::p" />
     <Element keyword="Pay_MultiBill_SRV_CloseBtn" locator=" //a[@class='btn' and text()= 'Close']" />
     <Element keyword="Pay_MultiBill_PayBtn" locator="//button[@class='btn btn submit-btn' and text()='Pay']" />
-    
-    
+
+
   </Module>
   <Module name ="SendMoney">
     <Element keyword="SendMoney_Link" locator="//*[contains(text(),'Send Money ')]"/>
@@ -225,7 +214,7 @@
     <Element keyword="SendMoney_BeneClick" locator="//ul[@class='item']"/>
     <Element keyword="SendMoney_CloseBtn" locator="//a[text()='Close']"/>
     <Element keyword="SendMoney_ScheduleBtn" locator="//button[text()='Schedule']"/>
-    
+
 
   </Module>
 
@@ -246,7 +235,7 @@
     <Element keyword="Settings_login_new_pass" locator="//input[@ng-model='ChangePassword.newPassword']"/>
     <Element keyword="Settings_login_confirm_pass" locator="//input[@ng-model='ChangePassword.confrimpassword']"/>
     <Element keyword="Settings_change_login_button" locator="//div[@ng-form='LoginPasswordForm']//button[@class='btn submit-btn']"/>
-    
+
   </Module>
 
   <Module name="Services">
@@ -331,23 +320,92 @@
     <Element keyword="MyAccount_CheqBook_forAcc" locator="//select[@name='fromAccounts']" />
     <Element keyword="MyAccount_CheqBook_No" locator="//select[@name='NoofLeaves']" />
     <Element keyword="MyAccount_CheqBook_CityList" locator="//label[@for='City']//following-sibling::div//a//span" />
+    <Element keyword="MyAccount_CheqBook_CityList_Search" locator="//label[@for='City']//following-sibling::div//input" />
+    <Element keyword="MyAccount_CheqBook_BranchList_Search" locator="//label[@for='Branch']//following-sibling::div//input" />
     <Element keyword="MyAccount_CheqBook_BranchList" locator="//label[@for='Branch']//following-sibling::div//a//span" />
     <Element keyword="MyAccount_CheqBook_BranchCheck" locator="//input[@ng-model='BranchCheck']" />
     <Element keyword="MyAccount_CheqBook_TranPass" locator="//input[@name='TransactionPassword']" />
     <Element keyword="MyAccount_CheqBook_ReqBtn" locator="//button[@class='btn submit-btn' and text()='Send Request']" />
+    <Element keyword="MyAccount_CheqBook_TranMsg" locator="//h2[text()='Transaction ID']/parent::*/parent::*//preceding-sibling::div//p" />
+    <Element keyword="MyAccount_CheqBook_TranType" locator="//*[contains(text(),'Transaction Type')]//following-sibling::p" />
+    <Element keyword="MyAccount_CheqBook_TranDate" locator="//*[contains(text(),'Transaction Date')]//following-sibling::p" />
+    <Element keyword="MyAccount_CheqBook_TranAccNo" locator="//*[contains(text(),'Acccount Number')]//following-sibling::p" />
+    <Element keyword="MyAccount_CheqBook_TranCloseBtn" locator="//div[@ng-if='Shared.Response.Result.IsFinancial==0']//a" />
+    <Element keyword="MyAccount_CheqBook_StatusTab" locator="//a[@ng-click='GetCheckBookInquiry()']" />
+    <Element keyword="MyAccount_CheqBook_Status_ForAcc" locator="//select[@ng-model='postObj.accounts']" />
+    <Element keyword="MyAccount_CheqBook_Status_ChqNo" locator="//div[@class='chq-status mt-5']//label[contains(text(),'Number of Cheques')]//following-sibling::label" />
+    <Element keyword="MyAccount_CheqBook_Status_CheckBtn" locator="//button[@class='btn ng-binding ng-scope']" />
+    <Element keyword="MyAccount_CheqBook_Status_Msg" locator="//p[@ng-repeat='x in $parent.ErrorMessage']" />
+    <Element keyword="MyAccount_CheqBook_Status_CloseBtn" locator="//p[@ng-repeat='x in $parent.ErrorMessage']/parent::*/parent::*/parent::*//following-sibling::div//button" />
     <Element keyword="MyAccount_PayOrder_TranPass" locator="//div[@ng-form='payorder']//input[@name='TransactionPassword']" />
     <Element keyword="MyAccount_PayOrder_ForAcc" locator="//select[@name='fromAccounttt']" />
     <Element keyword="MyAccount_PayOrder_Amount" locator="//div[@ng-form='payorder']//input[@name='Amount']" />
     <Element keyword="MyAccount_PayOrder_Bene" locator="//div[@ng-form='payorder']//input[@name='Beneficiary']" />
     <Element keyword="MyAccount_PayOrder_Purpose" locator="//div[@ng-form='payorder']//select[@name='purpose']" />
     <Element keyword="MyAccount_PayOrder_City" locator="//label[@for='beniname' and text()='City']//following-sibling::div//a//span" />
-    <Element keyword="MyAccount_PayOrder_Branch" locator="//label[@for='beniname' and text()='Branch']//following-sibling::div//a//span" />
+    <Element keyword="MyAccount_PayOrder_City_Search" locator="//label[@for='beniname' and text()='City']//following-sibling::div//a//span" />
+    <Element keyword="MyAccount_PayOrder_Branch" locator="//label[@for='beniname' and text()='Branch']//following-sibling::div//input" />
+    <Element keyword="MyAccount_PayOrder_Branch_Search" locator="//label[@for='beniname' and text()='Branch']//following-sibling::div//input" />
     <Element keyword="MyAccount_PayOrder_ReqBtn" locator="//div[@ng-form='payorder']//button" />
+    <Element keyword="MyAccount_PayOrder_Success" locator="//div[@id='successPopupGen']//div[@class='congrats-div']//p" />
+    <Element keyword="MyAccount_PayOrder_TranType" locator="//h2[text()='Transaction Type']//following-sibling::p" />
+    <Element keyword="MyAccount_PayOrder_TranDate" locator="//*[contains(text(),'Transaction Date')]//following-sibling::p" />
+    <Element keyword="MyAccount_PayOrder_Tran_Amount" locator="//h2[text()='Transaction Amount']//following-sibling::p" />
+    <Element keyword="MyAccount_PayOrder_Tran_FromAcc" locator="//h2[text()='Source Account Number']//following-sibling::p" />
+    <Element keyword="MyAccount_PayOrder_Tran_BranchName" locator="//h2[text()='Delivery Branch Name']//following-sibling::p" />
+    <Element keyword="MyAccount_PayOrder_TranBranchCode" locator="//h2[text()='Delivery Branch Code']//following-sibling::p" />
+    <Element keyword="MyAccount_PayOrder_Tran_Purpose" locator="//h2[text()='Purpose']//following-sibling::p" />
+    <Element keyword="MyAccount_PayOrder_Tran_CloseBtn" locator="//div[@id='successPopupGen']//a" />
     <Element keyword="MyAccount_WithHoldTax_ForAcc" locator="//select[@name='fromAccount']" />
     <Element keyword="MyAccount_WithHoldTax_FromDate" locator="//input[@name='fromDate']" />
     <Element keyword="MyAccount_WithHoldTax_ToDate" locator="//input[@name='ToDate']" />
     <Element keyword="MyAccount_WithHoldTax_ReqBtn" locator="//button[@class='btn submit-btn' and text()='Request']" />
 
-    
+
+  </Module>
+
+  <Module name="BeneManage">
+    <Element keyword="BeneManage_Link" locator ="//*[contains(text(),'Beneficiary Management ')]" />
+    <Element keyword="BeneManage_SendMoney_Tab" locator ="//ul[@id='myTab']//a[text()='Send Money']" />
+    <Element keyword="BeneManage_Pay_Tab" locator ="//ul[@id='myTab']//a[text()='Pay']" />
+    <Element keyword="BeneManage_SendMoney_BeneCount" locator ="//div[@id='send-money']//ul//li" />
+    <Element keyword="BeneManage_Pay_BeneCount" locator ="//div[@id='pay-bills']//div[@ng-repeat='item in BillList.Result.categorizedBillNickBene'][{j}]//li" />
+    <Element keyword="BeneManage_SendMoney_Nick" locator ="//div[@id='send-money']//ul//li[{i}]//div//h2" />
+    <Element keyword="BeneManage_SendMoney_Acc_Title" locator ="//div[@id='send-money']//ul//li[{i}]//div//p[@class='title ng-binding']" />
+    <Element keyword="BeneManage_SendMoney_Acc_No" locator ="//div[@id='send-money']//ul//li[{i}]//div//p[@class='text-right ng-binding']" />
+    <Element keyword="BeneManage_Pay_Nick" locator ="//div[@id='pay-bills']//div[@ng-repeat='item in BillList.Result.categorizedBillNickBene'][{j}]//li[{i}]//h2" />
+    <Element keyword="BeneManage_Pay_CompanyName" locator ="//div[@id='pay-bills']//div[@ng-repeat='item in BillList.Result.categorizedBillNickBene'][{j}]//li[{i}]//div//p[@class='title ng-binding']" />
+    <Element keyword="BeneManage_Pay_ConsumerNo" locator ="//div[@id='pay-bills']//div[@ng-repeat='item in BillList.Result.categorizedBillNickBene'][{j}]//li[{i}]//div//p[@class='text-right ng-binding']" />
+    <Element keyword="BeneManage_Pay_Tab" locator ="//li[@class='nav-item']//a[text()='Pay']" />
+    <Element keyword="BeneManage_Pay_Bene_categSize" locator ="//div[@id='pay-bills']//div[@ng-repeat='item in BillList.Result.categorizedBillNickBene']" />
+    <Element keyword="BeneManage_AddNewBtn" locator="//a[@title = 'Add New' and @class='btn add btn-responsive-fix d-md-block d-lg-block d-xl-block ng-scope']"/>
+    <Element keyword="BeneManage_Bank" locator="//select[@name='bank']"/>
+    <Element keyword="BeneManage_AccountNo" locator="//input[@name='account']"/>
+    <Element keyword="BeneManage_BeneNick" locator="//input[@name='beneNick']"/>
+    <Element keyword="BeneManage_PayeeEmail" locator="//input[@name='PayeeEmail']"/>
+    <Element keyword="BeneManage_PayeeMobileNumber" locator="//input[@name='PayeeMobileNumber']"/>
+    <Element keyword="BeneManage_Validate_Button" locator="//button[@class='btn submit-btn ng-binding']"/>
+    <Element keyword="BeneManage_TranCongrats" locator="//div[@id='benemgt']//div[@class='congrats-div']//h2"/>
+    <Element keyword="BeneManage_TranResponseMsg" locator="//div[@id='benemgt']//div[@class='congrats-div']//p"/>
+    <Element keyword="BeneManage_TranNick" locator="//h2[text()='Beneficiary Nick']//following-sibling::p"/>
+    <Element keyword="BeneManage_TranType" locator="//h2[text()='Transaction Type']//following-sibling::p"/>
+    <Element keyword="BeneManage_TranDate" locator="//*[contains(text(), 'Transaction Date')]//following-sibling::p"/>
+    <Element keyword="BeneManage_Tran_CloseBtn" locator="//a[@class='btn' and text()='Close'] "/>
+
+
+  </Module>
+
+  <Module name="Investment">
+    <Element keyword="Investment_Icon" locator="//a[text()='Investments ']" />
+    <Element keyword="Investment_TermDeposit_Icon" locator="//a[text()='Investments ']//following-sibling::ul//li//a[text()='Term Deposit  ']" />
+    <Element keyword="Investment_ETDRTYpe_List" locator="//select[@ng-model='postObj.EdtrList']" />
+    <Element keyword="Investment_Detail_Tab" locator="//a[@ng-click='GetAccountDetail();']" />
+    <Element keyword="Investment_FromAcc_List" locator="//select[@name='fromAccount']" />
+    <Element keyword="Investment_ProfitAcc_List" locator="//select[@name='AccountforProfit']" />
+    <Element keyword="Investment_Amount" locator="//input[@name='Amount']" />
+    <Element keyword="Investment_NextBtn" locator="//div[@class='form-group pay-final']//button[text()='Next']" />
+
+
+
   </Module>
 </ElementFactory>

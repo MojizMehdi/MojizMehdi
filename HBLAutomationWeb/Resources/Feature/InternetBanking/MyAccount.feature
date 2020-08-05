@@ -181,14 +181,27 @@ Scenario Outline: As a user I want to verify Cheque Book Request from My Account
 	When I select "<for_account>" on "MyAccount_CheqBook_forAcc"
 	And I select "<no_of_cheque>" on "MyAccount_CheqBook_No"
 	And I am clicking on "MyAccount_CheqBook_BranchCheck"
-	And I select "<City>" on "MyAccount_CheqBook_CityList"
-	And I select "<Branch>" on "MyAccount_CheqBook_BranchList"
+	And I select on dropdown search "MyAccount_CheqBook_CityList" to select "<city>" on "MyAccount_CheqBook_CityList_Search"
+	And I select on dropdown search "MyAccount_CheqBook_BranchList" to select "<branch>" on "MyAccount_CheqBook_BranchList_Search"
 	And I have given "<transaction_password>" on "MyAccount_CheqBook_TranPass"
 	Then I am performing on "MyAccount_CheqBook_ReqBtn"
+	And verify through "<success_message>" on "MyAccount_CheqBook_TranMsg"
+	And verify through database on "<tran_type_query>" on Schema "DIGITAL_CHANNEL_SEC" on "MyAccount_CheqBook_TranType"
+	And verify through database on "<tran_date_query>" on Schema "DIGITAL_CHANNEL_SEC" on "MyAccount_CheqBook_TranDate"
+	And verify through database on "<tran_account_no_query>" on Schema "DIGITAL_CHANNEL_SEC" on "MyAccount_CheqBook_TranAccNo"
+	And verify the message "<success_message>" through database on "<tran_response_query>" on Schema "DIGITAL_CHANNEL_SEC"
+	And verify the message "<no_of_cheque>" through database on "<tran_cheque_no_query>" on Schema "DIGITAL_CHANNEL_SEC"
+	And I am performing on "MyAccount_CheqBook_TranCloseBtn"
+	And I am clicking on "MyAccount_CheqBook_StatusTab"
+	And I select "<for_account>" on "MyAccount_CheqBook_Status_ForAcc"
+	And verify through "<no_of_cheque>" on "MyAccount_CheqBook_Status_ChqNo"
+	And I am performing on "MyAccount_CheqBook_Status_CheckBtn"
+	And verify through "<status_message>" on "MyAccount_CheqBook_Status_Msg"
+	And I am performing on "MyAccount_CheqBook_Status_CloseBtn"
 
 	@source:Data/ChequeBook.xlsx
 	Examples: 
-	|Case|for_account|no_of_cheque|home_branch_option|City|Branch|transaction_password|customer_type_query|db_val|
+	|Case|for_account|no_of_cheque|home_branch_option|City|Branch|transaction_password|customer_type_query|db_val|success_message|tran_type_query|tran_date_query|tran_account_no_query|tran_response_query|tran_cheque_no_query|status_message|
 
 
 
@@ -204,15 +217,24 @@ Scenario Outline: As a user I want to verify Pay Order Request from My Account
 	And I have given "<amount>" on "MyAccount_PayOrder_Amount"
 	And I have given "<bene_name>" on "MyAccount_PayOrder_Bene"
 	And I select "<purpose>" on "MyAccount_PayOrder_Purpose"
-	And I select "<city>" on "MyAccount_PayOrder_City"
-	And I select "<branch>" on "MyAccount_PayOrder_Branch"
+	And I select on dropdown search "MyAccount_PayOrder_City" to select "<city>" on "MyAccount_PayOrder_City_Search"
+	And I select on dropdown search "MyAccount_PayOrder_Branch" to select "<branch>" on "MyAccount_PayOrder_Branch_Search"
 	And I have given "<transaction_password>" on "MyAccount_CheqBook_TranPass"
 	Then I am performing on "MyAccount_PayOrder_ReqBtn"
+	And verify through "<success_message>" on "MyAccount_PayOrder_Success"
+	And verify through database on "<tran_type_query>" on Schema "DIGITAL_CHANNEL_SEC" on "MyAccount_PayOrder_TranType"
+	And verify through database on "<tran_amount_query>" on Schema "DIGITAL_CHANNEL_SEC" on "MyAccount_PayOrder_Tran_Amount"
+	And verify through database on "<from_account_query>" on Schema "DIGITAL_CHANNEL_SEC" on "MyAccount_PayOrder_Tran_FromAcc"
+	And verify through database on "<tran_branch_query>" on Schema "DIGITAL_CHANNEL_SEC" on "MyAccount_PayOrder_Tran_BranchName"
+	And verify through database on "<tran_branch_code_query>" on Schema "DIGITAL_CHANNEL_SEC" on "MyAccount_PayOrder_TranBranchCode"
+	And verify through database on "<tran_purpose_query>" on Schema "DIGITAL_CHANNEL_SEC" on "MyAccount_PayOrder_Tran_Purpose"
+	And verify through database on "<tran_date_query>" on Schema "DIGITAL_CHANNEL_SEC" on "MyAccount_PayOrder_TranDate"
+	And I am performing on "MyAccount_PayOrder_Tran_CloseBtn"
 
 
 	@source:Data/PayOrder.xlsx
 	Examples: 
-	|Case|for_account|amount|bene_name|purpose|city|branch|transaction_password|
+	|Case|for_account|amount|bene_name|purpose|city|branch|transaction_password|success_message|tran_type_query|tran_amount_query|from_account_query|tran_branch_query|tran_branch_code_query|tran_purpose_query|tran_date_query|
 
 
 

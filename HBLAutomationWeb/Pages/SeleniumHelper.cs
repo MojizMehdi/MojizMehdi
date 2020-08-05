@@ -90,7 +90,7 @@ namespace HBLAutomationWeb.Pages
                 {
                     value = Control.Text;
                 }
-                
+                value = value.Trim();
                 Assert.AreEqual(message, value);
 
             }
@@ -174,7 +174,7 @@ namespace HBLAutomationWeb.Pages
                 //string fileName = ContextPage.GetInstance().GetExcelRecord().ScenarioName + ".png";
                 //screenshot.SaveAsFile(savelocation + fileName, ScreenshotImageFormat.Png);
                 Rectangle bounds = Screen.GetBounds(Point.Empty);
-                
+
                 using (Bitmap bitmap = new Bitmap(bounds.Width, bounds.Height))
                 {
                     using (Graphics g = Graphics.FromImage(bitmap))
@@ -197,10 +197,10 @@ namespace HBLAutomationWeb.Pages
         {
             try
             {
-                
+
                 waitDriver.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
                 {
-                    
+
                     IWebElement Value = waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
                     Thread.Sleep(100);
                     Value.Click();
@@ -235,7 +235,7 @@ namespace HBLAutomationWeb.Pages
             try
             {
                 Keyboard.SendKeys("{DOWN}");
-                
+
             }
             catch (ElementNotVisibleException)
             {
@@ -468,7 +468,7 @@ namespace HBLAutomationWeb.Pages
                 //        throw new Exception("No value found in Dropdown");
                 //    }
 
-            //}
+                //}
                 Thread.Sleep(3000);
 
 
@@ -497,7 +497,7 @@ namespace HBLAutomationWeb.Pages
 
 
         //Method For Combobox With Search Field
-        public void comboboxSearch(string value, string locator1,string locator2)
+        public void comboboxSearch(string value, string locator1, string locator2)
         {
             try
             {
@@ -517,7 +517,7 @@ namespace HBLAutomationWeb.Pages
                         return;
                     }
                 }
-                if(check_option_value == false)
+                if (check_option_value == false)
                 {
                     throw new AssertFailedException(string.Format("The given value {0} is not present in the list", value));
                 }
@@ -583,7 +583,7 @@ namespace HBLAutomationWeb.Pages
             DataAccessComponent.DataAccessLink dLink = new DataAccessComponent.DataAccessLink();
             DataTable SourceDataTable = dLink.GetDataTable(chk_encrypt_query, schema);
             string otp_flag = SourceDataTable.Rows[0][0].ToString();
-            if(otp_flag == "1")
+            if (otp_flag == "1")
             {
                 string decryptedstring = AESEncryptorDecryptor.Decrypt(otp, Key, IV);
                 otp = decryptedstring;
@@ -620,7 +620,7 @@ namespace HBLAutomationWeb.Pages
             IWebElement slider = waitDriver.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
             slider.Click();
 
-            
+
 
             if (ArrowOption == "LEFT")
             {
