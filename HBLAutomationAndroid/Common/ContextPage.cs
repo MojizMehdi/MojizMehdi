@@ -66,6 +66,67 @@ namespace HBLAutomationAndroid.Common
         int no_of_accounts;
         int bene_count_inter_branch;
         int bene_count_inter_bank;
+        string scroll_text;
+        string customer_cnic;
+        List<string> AccountForTag;
+        List<string> Account_No;
+        int sizecount;
+        bool signup_check;
+        string ivr_req;
+        string enable_psd;
+        bool tran_pass_flag = false;
+        bool last_login_flag = false;
+        string customer_type;
+
+
+        public void SetCustomerType(string customer_type)
+        {
+            this.customer_type = customer_type;
+        }
+        public string GetCustomerType()
+        {
+            return customer_type;
+        }
+        public void SetTranPassFlag(bool tran_pass_flag)
+        {
+            this.tran_pass_flag = tran_pass_flag;
+        }
+        public bool GetTranPassFlag()
+        {
+            return tran_pass_flag;
+        }
+        public void SetLastLoginFlag(bool last_login_flag)
+        {
+            this.last_login_flag = last_login_flag;
+        }
+        public bool GetLastLoginFlag()
+        {
+            return last_login_flag;
+        }
+        public void SetEnablePSD(string enable_psd)
+        {
+            this.enable_psd = enable_psd;
+        }
+        public string GetEnablePSD()
+        {
+            return enable_psd;
+        }
+        public void SetIVRReq(string ivr_req)
+        {
+            this.ivr_req = ivr_req;
+        }
+        public string GetIVRReq()
+        {
+            return ivr_req;
+        }
+        public void Set_signup_check(bool signup_check)
+        {
+            this.signup_check = signup_check;
+        }
+        public bool Get_signup_check()
+        {
+            return this.signup_check;
+        }
         //DateTime start_date;
         //DateTime end_date;
 
@@ -85,6 +146,46 @@ namespace HBLAutomationAndroid.Common
         //{
         //    this.start_date = start_date;
         //}
+        public void SetAccNumbers(List<string> Account_No)
+        {
+            this.Account_No = Account_No;
+        }
+        public List<string> GetAccNumbers()
+        {
+            return this.Account_No;
+        }
+        public void SetSizeCount(int sizecount)
+        {
+            this.sizecount = sizecount;
+        }
+        public int GeTSizeCount()
+        {
+            return sizecount;
+        }
+        public void SetAccountForTag(List<string> AccountForTag)
+        {
+            this.AccountForTag = AccountForTag;
+        }
+        public List<string> GetAccountForTag()
+        {
+            return this.AccountForTag;
+        }
+        public void SetScrollText(string scroll_text)
+        {
+            this.scroll_text = scroll_text;
+        }
+        public string GetScrollText()
+        {
+            return scroll_text;
+        }
+        public void SetCustomerCNIC(string customer_cnic)
+        {
+            this.customer_cnic = customer_cnic;
+        }
+        public string GetCustomerCNIC()
+        {
+            return customer_cnic;
+        }
         public int Get_bene_count_inter_bank()
         {
             return bene_count_inter_bank;

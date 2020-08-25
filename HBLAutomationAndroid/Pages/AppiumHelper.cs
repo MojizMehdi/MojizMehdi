@@ -117,7 +117,24 @@ namespace HBLAutomationAndroid.Pages
             tc.LongPress(Control).Perform();
 
         }
-
+        //For Counting Elements
+        public int SizeCountElements(string locator,string locator_type)
+        {
+            var size_count = 0;
+            if (locator_type == "id")
+            {
+                AndroidElement Control = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementIsVisible(By.Id(locator)));
+                var list_elements = driver.FindElements(By.Id(locator));
+                size_count = list_elements.Count;
+            }
+            else if (locator_type == "xpath")
+            {
+                AndroidElement Control = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
+                var list_elements = driver.FindElements(By.XPath(locator));
+                size_count = list_elements.Count;
+            }
+            return size_count;
+        }
         ////For returning the value inside of a text field of a keyword given
         //public string ReturnTextBoxValue(string locator)
         //{
@@ -535,14 +552,14 @@ namespace HBLAutomationAndroid.Pages
 
 
         //Method For Scroll Down
-        public void scroll_down()
+        public void scroll_down(double height_start_dimension, double height_end_dimension)
         {
             try
             {
                 Size dimension = driver.Manage().Window.Size;
                 int x = dimension.Width / 2;
-                int start_y = (int)(dimension.Height * 0.65);
-                int end_y = (int)(dimension.Height * 0.30);
+                int start_y = (int)(dimension.Height * height_start_dimension);
+                int end_y = (int)(dimension.Height * height_end_dimension);
                 ITouchAction tc = new TouchAction(driver);
                 Thread.Sleep(2000);
                 tc.Press(x, start_y).Wait(1000).MoveTo(x, end_y).Release().Perform();
@@ -554,9 +571,10 @@ namespace HBLAutomationAndroid.Pages
             }
         }
 
-        //Method For Scroll Down
+        //Method For Scroll Right
         public void scroll_right(double height_dimension, double width_start_dimension, double width_end_dimension)
         {
+            //string platformVersion = Configuration.GetInstance().GetByKey("platformVersion");
             try
             {
                 Size dimension = driver.Manage().Window.Size;
@@ -627,18 +645,24 @@ namespace HBLAutomationAndroid.Pages
             string schema = "DIGITAL_CHANNEL_SEC";
             string Key = "cf345ae2xz40yfc8";
             string IV = "abcaqwerabcaqwer";
+            string query2 = "";
+            if (context.Get_signup_check() == true)
+            {
+                query2 = "Select I.OTP from DC_OTP_HISTORY I where I.CNIC='{CNIC}' AND I.TRANSACTION_TYPE_ID = '247' ORDER BY I.GENERATED_ON DESC";
+                query2 = query2.Replace("{CNIC}", context.GetCustomerCNIC());
+            }
+            else
+            {
+                string query3 = "Select CUSTOMER_INFO_ID from dc_customer_info i where I.CUSTOMER_NAME='{usernmae}'";
+                query3 = query3.Replace("{usernmae}", context.GetUsername());
 
+                DataAccessComponent.DataAccessLink dLink3 = new DataAccessComponent.DataAccessLink();
+                DataTable SourceDataTable3 = dLink3.GetDataTable(query3, schema);
+                string customer_info_id = SourceDataTable3.Rows[0][0].ToString();
 
-            string query3 = "Select CUSTOMER_INFO_ID from dc_customer_info i where I.CUSTOMER_NAME='{usernmae}'";
-            query3 = query3.Replace("{usernmae}", context.GetUsername());
-
-            DataAccessComponent.DataAccessLink dLink3 = new DataAccessComponent.DataAccessLink();
-            DataTable SourceDataTable3 = dLink3.GetDataTable(query3, schema);
-            string customer_info_id = SourceDataTable3.Rows[0][0].ToString();
-
-            string query2 = "Select I.OTP from DC_OTP_HISTORY I where I.CUSTOMER_INFO_ID='{customer_info_id}' ORDER BY I.GENERATED_ON DESC";
-            query2 = query2.Replace("{customer_info_id}", customer_info_id);
-
+                query2 = "Select I.OTP from DC_OTP_HISTORY I where I.CUSTOMER_INFO_ID='{customer_info_id}' ORDER BY I.GENERATED_ON DESC";
+                query2 = query2.Replace("{customer_info_id}", customer_info_id);
+            }
             DataAccessComponent.DataAccessLink dLink2 = new DataAccessComponent.DataAccessLink();
             DataTable SourceDataTable2 = dLink2.GetDataTable(query2, schema);
             otp = SourceDataTable2.Rows[0][0].ToString();

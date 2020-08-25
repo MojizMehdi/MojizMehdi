@@ -9,12 +9,36 @@
     <Element keyword="Login_Password" locator="com.hbl.android.hblmobilebanking:id/l_password_field"/>
     <Element keyword="Login_SignIn_Button" locator="com.hbl.android.hblmobilebanking:id/login_button"/>
     <Element keyword="Login_OTP_field" locator="com.hbl.android.hblmobilebanking:id/txt_pin_entry"/>
-    <Element keyword="Login_OTP_Verify_Button" locator="com.hbl.android.hblmobilebanking:id/registerDeviceOkBtn"/>-->
-
-
+    <Element keyword="Login_OTP_Verify_Button" locator="com.hbl.android.hblmobilebanking:id/registerDeviceOkBtn"/>
+    
     <!--<Element keyword="Login_Dashboard" locator="//img[@class='desk-logo']"/>-->
   </Module>
+  <Module name="Registration">
+    <Element keyword="Registration_HomeBtn" locator="com.hbl.android.hblmobilebanking:id/signup_button"/>
+    <Element keyword="Registration_Cnic" locator="com.hbl.android.hblmobilebanking:id/cnic_field"/>
+    <Element keyword="Registration_NextBtn" locator="com.hbl.android.hblmobilebanking:id/submitRequestLay"/>
+    <Element keyword="Registration_AgreeBtn" locator="com.hbl.android.hblmobilebanking:id/accept_btn"/>
+    <Element keyword="Registration_CardNo" locator="com.hbl.android.hblmobilebanking:id/card_number_field"/>
+    <Element keyword="Registration_CardPin" locator="com.hbl.android.hblmobilebanking:id/card_pin_field"/>
+    <Element keyword="Registration_LoginId" locator="com.hbl.android.hblmobilebanking:id/login_id_field1"/>
+    <Element keyword="Registration_AccountNo_Marking" locator="//android.widget.Switch[@resource-id='com.hbl.android.hblmobilebanking:id/account_preview_switch' and contains(@text,'{AccountNo}')]"/>
+    <Element keyword="Registration_AccMark_NextBtn" locator="com.hbl.android.hblmobilebanking:id/continue_btn"/>
+    <Element keyword="Registration_AccountNo_Size" locator="(//android.widget.Switch[@resource-id='com.hbl.android.hblmobilebanking:id/account_preview_switch'])"/>
+    <Element keyword="Registration_SuccessMessage1" locator="com.hbl.android.hblmobilebanking:id/hblmobile_txt"/>
+    <Element keyword="Registration_Password_Policy" locator="com.hbl.android.hblmobilebanking:id/uname_policy_txt"/>
+    <Element keyword="Registration_Password" locator="com.hbl.android.hblmobilebanking:id/new_login_pwd_input"/>
+    <Element keyword="Registration_Confirm_Password" locator="com.hbl.android.hblmobilebanking:id/confirm_login_pwd_input"/>
+    <Element keyword="Registration_Tran_Password" locator="com.hbl.android.hblmobilebanking:id/new_trans_pwd_input"/>
+    <Element keyword="Registration_Confirm_Tran_Password" locator="com.hbl.android.hblmobilebanking:id/confirm_trans_pwd_input"/>
+    <Element keyword="Registration_SuccessMessage" locator="com.hbl.android.hblmobilebanking:id/dialog_msg"/>
+    <Element keyword="Registration_SuccessMessage_OK_Btn" locator="com.hbl.android.hblmobilebanking:id/dialog_pos_btn"/>
 
+
+    
+
+
+
+  </Module>
   <Module name ="Dashboard">
     <Element keyword="Dashboard" locator="com.hbl.android.hblmobilebanking:id/homeClick"/>
     <Element keyword="Dashboard_Sidebar" locator="//android.widget.ImageButton"/>
@@ -106,7 +130,7 @@
     <Element keyword="SendMoney_TranAmount" locator="//android.widget.TextView[@text='Transaction Amount']/following-sibling::android.widget.TextView"/>
     <Element keyword="SendMoney_TranFromAcc" locator="//android.widget.TextView[@text='From Account']/following-sibling::android.widget.TextView"/>
     <Element keyword="SendMoney_TranSourceAcc" locator="//android.widget.TextView[@text='Source Account Number:']/following-sibling::android.widget.TextView"/>
-    <Element keyword="SendMoney_TranToAcc" locator="//android.widget.TextView[@text='To Account']/following-sibling::android.widget.TextView"/>
+    <Element keyword="SendMoney_TranToAcc" locator="//android.widget.TextView[@text='To Account Number/IBAN']/following-sibling::android.widget.TextView"/>
     <Element keyword="SendMoney_TranBeneName" locator="//android.widget.TextView[@text='Beneficiary Name']/following-sibling::android.widget.TextView"/>
     <Element keyword="SendMoney_TranToBank" locator="//android.widget.TextView[@text='To Bank']/following-sibling::android.widget.TextView"/>
     <Element keyword="SendMoney_TranPurpose" locator="//android.widget.TextView[@text='Purpose']/following-sibling::android.widget.TextView"/>
@@ -123,7 +147,7 @@
     <Element keyword="SendMoney_SchedulePayment_Frequency" locator="com.hbl.android.hblmobilebanking:id/spnTransFrequency"/>
     <Element keyword="SendMoney_SchedulePayment_StartDate" locator="(//android.widget.ImageView[@resource-id='com.hbl.android.hblmobilebanking:id/calenderImgBtn'])[1]"/>
     <Element keyword="SendMoney_SchedulePayment_EndDate" locator="(//android.widget.ImageView[@resource-id='com.hbl.android.hblmobilebanking:id/calenderImgBtn'])[2]"/>
-    <Element keyword="SendMoney_SchedulePayment_CalendarDateSelect" locator="//android.view.View[@text='{calendar_date}']"/>
+    <Element keyword="SendMoney_SchedulePayment_CalendarDateSelect" locator="//android.view.View[@content-desc='{calendar_date}']"/>
     <Element keyword="SendMoney_SchedulePayment_CalendarDateSelect_OK" locator="android:id/button1"/>
     <Element keyword="SendMoney_SchedulePayment_ViewSummary" locator="com.hbl.android.hblmobilebanking:id/btnTransViewSummary"/>
     <Element keyword="SendMoney_Btn_Summary_Iteration_Dates" locator="//android.widget.LinearLayout[@resource-id='com.hbl.android.hblmobilebanking:id/recyclerViewSIChild']//android.widget.TextView[@resource-id='com.hbl.android.hblmobilebanking:id/siChild_txtView_ExecutionDate' and @text='{Date}']"/>
