@@ -172,22 +172,22 @@ testRunner.Then("I generate query based on given data", ((string)(null)), ((Tech
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Transaction_Category", "Financial")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_of_Transaction", "5")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Tran_Type", "Payments")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_day", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_month", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_year", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_day", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_month", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_year", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Min_Amount", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Max_Amount", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Acc_no_or_mobile", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bill_company", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:payee_nick", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_day", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_month", "Feb")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_year", "2020")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_day", "4")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_month", "Mar")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_year", "2020")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Min_Amount", "100")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Max_Amount", "900")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Acc_no_or_mobile", "03432070527")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bill_company", "PESCO")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:payee_nick", "Abby")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank", "SAMBA")]
         public virtual void _2AsAUserIWantToVerifyMyTransactionActivities_WhenIAmVerifyingTransactionActivity()
         {
 #line 7
-this._2AsAUserIWantToVerifyMyTransactionActivities("When I am verifying transaction activity", "Financial", "5", "Payments", "", "", "", "", "", "", "", "", "", "", "", "", new string[] {
+this._2AsAUserIWantToVerifyMyTransactionActivities("When I am verifying transaction activity", "Financial", "5", "Payments", "2", "Feb", "2020", "4", "Mar", "2020", "100", "900", "03432070527", "PESCO", "Abby", "SAMBA", new string[] {
                         "source:Data/TransactionActivity.xlsx"});
 #line hidden
         }
@@ -195,3 +195,4 @@ this._2AsAUserIWantToVerifyMyTransactionActivities("When I am verifying transact
 }
 #pragma warning restore
 #endregion
+

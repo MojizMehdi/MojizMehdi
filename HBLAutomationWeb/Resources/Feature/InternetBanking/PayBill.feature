@@ -4,10 +4,10 @@
 	I want to be told the sum of two numbers
 
 @BillPayment
-Scenario Outline: 2 As a user i want to Verify Bill Payment through PAY
+Scenario Outline: As a user i want to Verify Bill Payment through PAY
 	Given the test case title is "<Case>"
 	And I set value in context from data "<Pay_BillPayment_ConsumerNo_Value>" as "ConsumerNo"
-	And I set value in context from data "<expiry_date>" as "Customer_Account_Type"
+	And I set value in context from data "<expiry_date>" as "Credit_Card_check"
 	And update the data by query "<status_query>" on QAT_BPS
 	And update the data by query "<status_query2>" on DIGITAL_CHANNEL_SEC
 	And the user is arrive to Internet Banking home page 
@@ -78,10 +78,10 @@ Scenario Outline: 2 As a user i want to Verify Bill Payment through PAY
 
 
 @BillPayment
-Scenario Outline: 3 As a user i want to Verify Bill Payment through PAY with Bene
+Scenario Outline: As a user i want to Verify Bill Payment through PAY with Bene
 	Given the test case title is "<Case>"
 	And I set value in context from data "<Pay_BillPayment_ConsumerNo_Value>" as "ConsumerNo"
-	And I set value in context from data "<expiry_date>" as "Customer_Account_Type"
+	And I set value in context from data "<expiry_date>" as "Credit_Card_check"
 	And update the data by query "<status_query>" on QAT_BPS
 	And update the data by query "<status_query2>" on DIGITAL_CHANNEL_SEC
 	And the user is arrive to Internet Banking home page 
@@ -143,10 +143,10 @@ Scenario Outline: 3 As a user i want to Verify Bill Payment through PAY with Ben
 
 
 @BillPayment
-Scenario Outline: 4 As a user i want to Verify MULTI Bill Payment through PAY
+Scenario Outline: As a user i want to Verify MULTI Bill Payment through PAY
 	Given the test case title is "<Case>" 
 	And I set value in context from data "BillPayment" as "Transaction_Type"
-	And I set value in context from data "<expiry_date>" as "Customer_Account_Type"
+	And I set value in context from data "<expiry_date>" as "Credit_Card_check"
 	#And update the data by query "<status_query>" on QAT_BPS
 	#And update the data by query "<status_query2>" on DIGITAL_CHANNEL_SEC
 	And the user is arrive to Internet Banking home page 

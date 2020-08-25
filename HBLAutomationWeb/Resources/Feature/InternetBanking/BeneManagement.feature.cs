@@ -129,17 +129,225 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify Already Added Beneficiaries")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify Already Added Beneficiaries")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:send_money_query", "Select NICK, ACCOUNT_TITLE from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_I" +
-            "NFO_ID= (Select customer_info_id from dc_customer_info k where k.customer_name =" +
-            " \'{customer_name}\') and L.ACCOUNT_NO=\'{account_no}\' and L.IS_DELETED=\'0\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pay_query", @"Select COMPANY_NAME, BILL_BENE_NICK, COMPANY_SUB_CATEGORY from DC_BILL_PAYMENT_BENEFICIARY  l where L.CUSTOMER_INFO_ID= (Select customer_info_id from dc_customer_info k where k.customer_name = '{customer_name}') and l.CONSUMER_NUMBER = '{consumer_no}' and L.IS_ACTIVE = '1' and L.COMPANY_NAME = '{company_name}'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:send_money_query", "select  ACCOUNT_NO, ACCOUNT_TITLE, NICK from DC_FUND_TRANSFER_BENEFICIARY b where" +
+            " B.IS_DELETED =0 and B.CUSTOMER_INFO_ID=(Select customer_info_id from dc_custome" +
+            "r_info k where k.customer_name = \'{customer_name}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pay_query", @"Select L.CONSUMER_NUMBER, COMPANY_NAME, BILL_BENE_NICK from DC_BILL_PAYMENT_BENEFICIARY  l where L.CUSTOMER_INFO_ID= (Select customer_info_id from dc_customer_info k where k.customer_name = '{customer_name}') and L.IS_ACTIVE = '1' and L.COMPANY_SUB_CATEGORY = '{company_sub_category}'")]
         public virtual void AsAUserIWantToVerifyBeneficiaries_AsAUserIWantToVerifyAlreadyAddedBeneficiaries()
         {
 #line 7
-this.AsAUserIWantToVerifyBeneficiaries("As a user I want to verify Already Added Beneficiaries", "DIGITAL_CHANNEL_SEC", "Select NICK, ACCOUNT_TITLE from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_I" +
-                    "NFO_ID= (Select customer_info_id from dc_customer_info k where k.customer_name =" +
-                    " \'{customer_name}\') and L.ACCOUNT_NO=\'{account_no}\' and L.IS_DELETED=\'0\'", @"Select COMPANY_NAME, BILL_BENE_NICK, COMPANY_SUB_CATEGORY from DC_BILL_PAYMENT_BENEFICIARY  l where L.CUSTOMER_INFO_ID= (Select customer_info_id from dc_customer_info k where k.customer_name = '{customer_name}') and l.CONSUMER_NUMBER = '{consumer_no}' and L.IS_ACTIVE = '1' and L.COMPANY_NAME = '{company_name}'", new string[] {
+this.AsAUserIWantToVerifyBeneficiaries("As a user I want to verify Already Added Beneficiaries", "DIGITAL_CHANNEL_SEC", "select  ACCOUNT_NO, ACCOUNT_TITLE, NICK from DC_FUND_TRANSFER_BENEFICIARY b where" +
+                    " B.IS_DELETED =0 and B.CUSTOMER_INFO_ID=(Select customer_info_id from dc_custome" +
+                    "r_info k where k.customer_name = \'{customer_name}\')", @"Select L.CONSUMER_NUMBER, COMPANY_NAME, BILL_BENE_NICK from DC_BILL_PAYMENT_BENEFICIARY  l where L.CUSTOMER_INFO_ID= (Select customer_info_id from dc_customer_info k where k.customer_name = '{customer_name}') and L.IS_ACTIVE = '1' and L.COMPANY_SUB_CATEGORY = '{company_sub_category}'", new string[] {
                         "source:Data/BeneVerification.xlsx"});
+#line hidden
+        }
+        
+        public virtual void AsAUserIWantToVerifyEditingBeneficiaries(string @case, string success_Message, string nick, string email, string mobile, string tran_Type_Query, string tran_Date_Query, string tran_Bene_Name_Query, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "BeneMng"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user I want to verify Editing Beneficiaries", @__tags);
+#line 25
+this.ScenarioSetup(scenarioInfo);
+#line 26
+ testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 27
+ testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 28
+ testRunner.And("I set value in context from data \"<account_no>\" as \"Bene_AccountNo\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 29
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 30
+ testRunner.When("I am clicking on \"BeneManage_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 31
+ testRunner.And("I am clicking on \"BeneManage_SendMoney_Tab\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 32
+ testRunner.Then("I am clicking on \"BeneManage_Edit\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 33
+ testRunner.And(string.Format("I have given \"{0}\" on \"BeneManage_Edit_Nick\"", nick), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 34
+ testRunner.And(string.Format("I have given \"{0}\" on \"BeneManage_Edit_Email\"", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 35
+ testRunner.And(string.Format("I have given \"{0}\" on \"BeneManage_Edit_Mobile\"", mobile), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 36
+ testRunner.And("I am performing \"OK\" alert operation on cross icon on \"BeneManage_Edit_UpdateBtn\"" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 37
+ testRunner.And(string.Format("verify through \"{0}\" on \"BeneManage_Delete_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 38
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_D" +
+                        "elete_TranType\"", tran_Type_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 39
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_D" +
+                        "elete_TranDate\"", tran_Date_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 40
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_D" +
+                        "elete_TranBene\"", tran_Bene_Name_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 41
+ testRunner.And("I am performing on \"MyAccount_TranPopUp_CloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 42
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 43
+ testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 44
+ testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 45
+ testRunner.And("I select \"Non Financial\" on \"Services_CategoryFilter\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 46
+ testRunner.And("I scroll to element \"Services_Clear_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 47
+ testRunner.And("I am performing on \"Services_Search_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 48
+ testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 49
+ testRunner.And("verify through \"Successful\" on \"MyAccount_Forgot_TranSuccessMessage\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 50
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_D" +
+                        "elete_TranType\"", tran_Type_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 51
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_D" +
+                        "elete_TranDate\"", tran_Date_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 52
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_D" +
+                        "elete_TranBene\"", tran_Bene_Name_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 53
+ testRunner.And("I am performing on \"Investment_TranActivityCloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Editing Beneficiaries: When user want to edit benefici" +
+            "ary")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneEditing.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user want to edit beneficiary")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user want to edit beneficiary")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Beneficiary details has been updated successfully.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        public virtual void AsAUserIWantToVerifyEditingBeneficiaries_WhenUserWantToEditBeneficiary()
+        {
+#line 25
+this.AsAUserIWantToVerifyEditingBeneficiaries("When user want to edit beneficiary", "Beneficiary details has been updated successfully.", "", "", "", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", new string[] {
+                        "source:Data/BeneEditing.xlsx"});
+#line hidden
+        }
+        
+        public virtual void AsAUserIWantToVerifyDeletingBeneficiaries(string @case, string account_No, string success_Message, string tran_Type_Query, string tran_Bene_Name_Query, string tran_Date_Query, string delete_Bene_Query, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "BeneMng"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user I want to verify Deleting Beneficiaries", @__tags);
+#line 62
+this.ScenarioSetup(scenarioInfo);
+#line 63
+ testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 64
+ testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 65
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"Bene_AccountNo\"", account_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 66
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 67
+ testRunner.When("I am clicking on \"BeneManage_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 68
+ testRunner.And("I am clicking on \"BeneManage_SendMoney_Tab\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 69
+ testRunner.Then("I am clicking on \"BeneManage_Delete\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 70
+ testRunner.And("I am performing \"OK\" alert operation on cross icon on \"Signup_CrossIcon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 71
+ testRunner.And(string.Format("verify through \"{0}\" on \"BeneManage_Delete_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 72
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_D" +
+                        "elete_TranType\"", tran_Type_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 73
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_D" +
+                        "elete_TranDate\"", tran_Date_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 74
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_D" +
+                        "elete_TranBene\"", tran_Bene_Name_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 75
+ testRunner.And("I am performing on \"BeneManage_Delete_TranCloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 76
+ testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"<db_val>\"", delete_Bene_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 77
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 78
+ testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 79
+ testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 80
+ testRunner.And("I select \"Non Financial\" on \"Services_CategoryFilter\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 81
+ testRunner.And("I scroll to element \"Services_Clear_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 82
+ testRunner.And("I am performing on \"Services_Search_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 83
+ testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 84
+ testRunner.And("verify through \"Successful\" on \"MyAccount_Forgot_TranSuccessMessage\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 85
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_D" +
+                        "elete_TranType\"", tran_Type_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 86
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_D" +
+                        "elete_TranDate\"", tran_Date_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 87
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_D" +
+                        "elete_TranBene\"", tran_Bene_Name_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 88
+ testRunner.And("I am performing on \"Investment_TranActivityCloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Deleting Beneficiaries: When user wants to add benefic" +
+            "iary")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneDeletion.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user wants to add beneficiary")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user wants to add beneficiary")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "03449557078")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Beneficiary has been removed successfully.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_bene_query", "select B.IS_DELETED from DC_FUND_TRANSFER_BENEFICIARY b where B.ACCOUNT_NO =  \'{b" +
+            "ene_account_no}\' and B.CUSTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from dc_custo" +
+            "mer_info I WHERE I.CUSTOMER_NAME=\'{customer_name}\')")]
+        public virtual void AsAUserIWantToVerifyDeletingBeneficiaries_WhenUserWantsToAddBeneficiary()
+        {
+#line 62
+this.AsAUserIWantToVerifyDeletingBeneficiaries("When user wants to add beneficiary", "03449557078", "Beneficiary has been removed successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "select B.IS_DELETED from DC_FUND_TRANSFER_BENEFICIARY b where B.ACCOUNT_NO =  \'{b" +
+                    "ene_account_no}\' and B.CUSTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from dc_custo" +
+                    "mer_info I WHERE I.CUSTOMER_NAME=\'{customer_name}\')", new string[] {
+                        "source:Data/BeneDeletion.xlsx"});
 #line hidden
         }
         
@@ -169,68 +377,96 @@ this.AsAUserIWantToVerifyBeneficiaries("As a user I want to verify Already Added
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user i want to Verify Beneficiary Addition for Send Money", @__tags);
-#line 25
+#line 96
 this.ScenarioSetup(scenarioInfo);
-#line 26
+#line 97
  testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 27
+#line 98
  testRunner.And(string.Format("I set value in context from data \"{0}\" as \"Bene_AccountNo\"", account_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 28
+#line 99
  testRunner.And(string.Format("update the data by query \"{0}\" on DIGITAL_CHANNEL_SEC", statusQuery), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 29
+#line 100
  testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 30
+#line 101
   testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 31
+#line 102
  testRunner.And("I am clicking on \"BeneManage_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 32
+#line 103
  testRunner.And("I am clicking on \"BeneManage_SendMoney_Tab\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 33
+#line 104
  testRunner.And("I am clicking on \"BeneManage_AddNewBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 34
+#line 105
  testRunner.When(string.Format("I select \"{0}\" on \"BeneManage_Bank\"", bank_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 35
+#line 106
  testRunner.And(string.Format("I have given \"{0}\" on \"BeneManage_AccountNo\"", account_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 36
+#line 107
  testRunner.And(string.Format("I have given \"{0}\" on \"BeneManage_BeneNick\"", beneNick_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 37
+#line 108
  testRunner.And(string.Format("I have given \"{0}\" on \"BeneManage_PayeeEmail\"", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 38
+#line 109
  testRunner.And(string.Format("I have given \"{0}\" on \"BeneManage_PayeeMobileNumber\"", mobile_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 39
+#line 110
  testRunner.Then("I am performing on \"BeneManage_Validate_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 40
+#line 111
  testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 41
+#line 112
  testRunner.And("I am performing on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 42
+#line 113
  testRunner.And("verify through \"Congratulations\" on \"BeneManage_TranCongrats\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 43
+#line 114
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_T" +
                         "ranResponseMsg\"", tran_Response_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 44
+#line 115
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_T" +
                         "ranType\"", tran_Type_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 45
+#line 116
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_T" +
                         "ranDate\"", tran_Date_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 46
+#line 117
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_T" +
                         "ranNick\"", tran_Bene_Name_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 47
+#line 118
  testRunner.And("I am performing on \"BeneManage_Tran_CloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 48
+#line 119
  testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"DIGITAL_CHANNEL_SEC" +
                         "\"", account_No, account_No_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 49
+#line 120
  testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"DIGITAL_CHANNEL_SEC" +
                         "\"", email, email_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 50
+#line 121
  testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"DIGITAL_CHANNEL_SEC" +
                         "\"", mobile_No, mobile_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 51
+#line 122
  testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"DIGITAL_CHANNEL_SEC" +
                         "\"", beneNick_Value, nick_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 123
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 124
+ testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 125
+ testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 126
+ testRunner.And("I select \"Non Financial\" on \"Services_CategoryFilter\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 127
+ testRunner.And("I scroll to element \"Services_Clear_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 128
+ testRunner.And("I am performing on \"Services_Search_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 129
+ testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 130
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_T" +
+                        "ranResponseMsg\"", tran_Response_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 131
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_T" +
+                        "ranType\"", tran_Type_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 132
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_T" +
+                        "ranDate\"", tran_Date_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 133
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_T" +
+                        "ranNick\"", tran_Bene_Name_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 134
+ testRunner.And("I am performing on \"Investment_TranActivityCloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -260,32 +496,32 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l  where L.CUSTOMER_INFO_ID= " +
             "( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cust" +
-            "omer_name}\') and L.ACCOUNT_NO=\'{account_numer}\'")]
+            "omer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l  where L.CUSTOMER_INFO_I" +
             "D= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{c" +
-            "ustomer_name}\') and L.ACCOUNT_NO=\'{account_numer}\'")]
+            "ustomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l  where L.CUSTOMER_INFO_ID= (" +
             " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
-            "mer_name}\') and L.ACCOUNT_NO=\'{account_numer}\'")]
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l  where L.CUSTOMER_INFO_ID= ( Sele" +
             "ct customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_n" +
-            "ame}\') and L.ACCOUNT_NO=\'{account_numer}\'")]
+            "ame}\') and L.ACCOUNT_NO=\'{account_number}\'")]
         public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_WhenUserWantsToAddBeneficiary()
         {
-#line 25
+#line 96
 this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("When user wants to add beneficiary", "07867917196701", "BEGIN DELETE FROM DC_FUND_TRANSFER_BENEFICIARY TF WHERE TF.ACCOUNT_NO = \'{account" +
                     "_number}\' AND TF.CUSTOMER_INFO_ID = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_IN" +
                     "FO DCI WHERE DCI.CUSTOMER_NAME = \'{customer_name}\');COMMIT;END;", "HBL / Konnect", "Ali", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l  where L.CUSTOMER_INFO_ID= " +
                     "( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cust" +
-                    "omer_name}\') and L.ACCOUNT_NO=\'{account_numer}\'", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l  where L.CUSTOMER_INFO_I" +
+                    "omer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l  where L.CUSTOMER_INFO_I" +
                     "D= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{c" +
-                    "ustomer_name}\') and L.ACCOUNT_NO=\'{account_numer}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l  where L.CUSTOMER_INFO_ID= (" +
+                    "ustomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l  where L.CUSTOMER_INFO_ID= (" +
                     " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
-                    "mer_name}\') and L.ACCOUNT_NO=\'{account_numer}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l  where L.CUSTOMER_INFO_ID= ( Sele" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l  where L.CUSTOMER_INFO_ID= ( Sele" +
                     "ct customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_n" +
-                    "ame}\') and L.ACCOUNT_NO=\'{account_numer}\'", new string[] {
+                    "ame}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
                         "source:Data/BeneficiaryAddition.xlsx"});
 #line hidden
         }
