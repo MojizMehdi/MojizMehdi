@@ -17,6 +17,7 @@ using System.Windows.Forms;
 using System.Threading;
 using Tamir.SharpSsh;
 using System.Data;
+using OpenQA.Selenium.Interactions;
 
 namespace HBLAutomationWeb.Pages
 {
@@ -51,7 +52,7 @@ namespace HBLAutomationWeb.Pages
                 {
                     //button.SendKeys(OpenQA.Selenium.Keys.Enter);
                     button.Click();
-                }
+                    }
                 // js.executeScript("arguments[0].scrollIntoView();", locator);
 
             }
@@ -272,7 +273,7 @@ namespace HBLAutomationWeb.Pages
                         {
                             IWebElement Button = waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
 
-                            ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].scrollIntoView(true);", Button);
+                            //((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].scrollIntoView(true);", Button);
                             Button.Click();
                         }
                     }
@@ -305,14 +306,14 @@ namespace HBLAutomationWeb.Pages
 
 
                 //Home Page Locator
-                if (locator.Equals("Home Page Locator"))
+                if (locator.Equals("Login_Dashboard"))
                 {
                     driver.Navigate().GoToUrl(Configuration.GetInstance().GetByKey("redirectionURL"));
                     Thread.Sleep(2000);
 
-                    IWebElement link = waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
+                    //IWebElement link = waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
 
-                    link.Click();
+                    //link.Click();
                 }
                 else
                 {
@@ -618,7 +619,12 @@ namespace HBLAutomationWeb.Pages
         public void RangeSlider(int count, string ArrowOption, string locator)
         {
             IWebElement slider = waitDriver.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
-            slider.Click();
+            //IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            //js.ExecuteScript("arguments[0].scrollIntoView();", slider);
+            var location = slider.Size;
+            Actions act = new Actions(driver);
+            act.MoveToElement(slider).MoveByOffset((location.Width / 2) - 2, 0).Click().Perform();
+            //slider.Click();
 
 
 

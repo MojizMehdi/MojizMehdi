@@ -22,6 +22,77 @@ Scenario Outline: As a user I want to verify Beneficiaries
 
 
 @BeneMng
+Scenario Outline: As a user I want to verify Editing Beneficiaries
+	Given the test case title is "<Case>" 
+	And the user is arrive to Internet Banking home page
+	And I set value in context from data "<account_no>" as "Bene_AccountNo"
+	And I am clicking on "Login_Dashboard"
+	When I am clicking on "BeneManage_Link"
+	And I am clicking on "BeneManage_SendMoney_Tab"
+	Then I am clicking on "BeneManage_Edit"
+	And I have given "<nick>" on "BeneManage_Edit_Nick"
+	And I have given "<email>" on "BeneManage_Edit_Email"
+	And I have given "<mobile>" on "BeneManage_Edit_Mobile"
+	And I am performing "OK" alert operation on cross icon on "BeneManage_Edit_UpdateBtn"
+	And verify through "<success_message>" on "BeneManage_Delete_TranSuccessMessage"
+	And verify through database on "<tran_type_query>" on Schema "DIGITAL_CHANNEL_SEC" on "BeneManage_Delete_TranType"
+	And verify through database on "<tran_date_query>" on Schema "DIGITAL_CHANNEL_SEC" on "BeneManage_Delete_TranDate"
+	And verify through database on "<tran_bene_name_query>" on Schema "DIGITAL_CHANNEL_SEC" on "BeneManage_Delete_TranBene"
+	And I am performing on "MyAccount_TranPopUp_CloseBtn"
+	And I am clicking on "Login_Dashboard"
+	And I am clicking on "Services_Link"
+	And I am clicking on "Services_Transaction_Activity"
+	And I select "Non Financial" on "Services_CategoryFilter"
+	And I scroll to element "Services_Clear_Btn"
+	And I am performing on "Services_Search_Btn"
+	And I am clicking on "Services_Last_Transaction"
+	And verify through "Successful" on "MyAccount_Forgot_TranSuccessMessage"
+	And verify through database on "<tran_type_query>" on Schema "DIGITAL_CHANNEL_SEC" on "BeneManage_Delete_TranType"
+	And verify through database on "<tran_date_query>" on Schema "DIGITAL_CHANNEL_SEC" on "BeneManage_Delete_TranDate"
+	And verify through database on "<tran_bene_name_query>" on Schema "DIGITAL_CHANNEL_SEC" on "BeneManage_Delete_TranBene"
+	And I am performing on "Investment_TranActivityCloseBtn"
+
+	@source:Data/BeneEditing.xlsx
+	Examples: 
+	|Case|success_message|nick|email|mobile|tran_type_query|tran_date_query|tran_bene_name_query|
+
+
+
+@BeneMng
+Scenario Outline: As a user I want to verify Deleting Beneficiaries
+	Given the test case title is "<Case>" 
+	And the user is arrive to Internet Banking home page
+	And I set value in context from data "<account_no>" as "Bene_AccountNo"
+	And I am clicking on "Login_Dashboard"
+	When I am clicking on "BeneManage_Link"
+	And I am clicking on "BeneManage_SendMoney_Tab"
+	Then I am clicking on "BeneManage_Delete"
+	And I am performing "OK" alert operation on cross icon on "Signup_CrossIcon"
+	And verify through "<success_message>" on "BeneManage_Delete_TranSuccessMessage"
+	And verify through database on "<tran_type_query>" on Schema "DIGITAL_CHANNEL_SEC" on "BeneManage_Delete_TranType"
+	And verify through database on "<tran_date_query>" on Schema "DIGITAL_CHANNEL_SEC" on "BeneManage_Delete_TranDate"
+	And verify through database on "<tran_bene_name_query>" on Schema "DIGITAL_CHANNEL_SEC" on "BeneManage_Delete_TranBene"
+	And I am performing on "BeneManage_Delete_TranCloseBtn"
+	And verify the result from "<delete_bene_query>" on Schema "<db_val>"
+	And I am clicking on "Login_Dashboard"
+	And I am clicking on "Services_Link"
+	And I am clicking on "Services_Transaction_Activity"
+	And I select "Non Financial" on "Services_CategoryFilter"
+	And I scroll to element "Services_Clear_Btn"
+	And I am performing on "Services_Search_Btn"
+	And I am clicking on "Services_Last_Transaction"
+	And verify through "Successful" on "MyAccount_Forgot_TranSuccessMessage"
+	And verify through database on "<tran_type_query>" on Schema "DIGITAL_CHANNEL_SEC" on "BeneManage_Delete_TranType"
+	And verify through database on "<tran_date_query>" on Schema "DIGITAL_CHANNEL_SEC" on "BeneManage_Delete_TranDate"
+	And verify through database on "<tran_bene_name_query>" on Schema "DIGITAL_CHANNEL_SEC" on "BeneManage_Delete_TranBene"
+	And I am performing on "Investment_TranActivityCloseBtn"
+
+	@source:Data/BeneDeletion.xlsx
+	Examples: 
+	|Case|account_no|success_message|tran_type_query|tran_bene_name_query|tran_date_query|delete_bene_query|
+
+
+@BeneMng
 Scenario Outline: As a user i want to Verify Beneficiary Addition for Send Money
 	Given the test case title is "<Case>"
 	And I set value in context from data "<account_no>" as "Bene_AccountNo"
@@ -49,6 +120,18 @@ Scenario Outline: As a user i want to Verify Beneficiary Addition for Send Money
 	And verify the message "<Email>" through database on "<email_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	And verify the message "<Mobile_No>" through database on "<mobile_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	And verify the message "<BeneNick_Value>" through database on "<nick_query>" on Schema "DIGITAL_CHANNEL_SEC"
+	And I am clicking on "Login_Dashboard"
+	And I am clicking on "Services_Link"
+	And I am clicking on "Services_Transaction_Activity"
+	And I select "Non Financial" on "Services_CategoryFilter"
+	And I scroll to element "Services_Clear_Btn"
+	And I am performing on "Services_Search_Btn"
+	And I am clicking on "Services_Last_Transaction"
+	And verify through database on "<tran_response_query>" on Schema "DIGITAL_CHANNEL_SEC" on "BeneManage_TranResponseMsg"
+	And verify through database on "<tran_type_query>" on Schema "DIGITAL_CHANNEL_SEC" on "BeneManage_TranType"
+	And verify through database on "<tran_date_query>" on Schema "DIGITAL_CHANNEL_SEC" on "BeneManage_TranDate"
+	And verify through database on "<tran_bene_name_query>" on Schema "DIGITAL_CHANNEL_SEC" on "BeneManage_TranNick"
+	And I am performing on "Investment_TranActivityCloseBtn"
 
 	@source:Data/BeneficiaryAddition.xlsx
 	Examples: 

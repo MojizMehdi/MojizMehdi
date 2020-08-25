@@ -43,6 +43,7 @@ namespace HBLAutomationWeb.Common
         string consumerno;
         Dictionary<string, string> acc_info;
         Dictionary<string, string> tran_info;
+        Dictionary<string, Tuple<string, string>> cust_limit_detail;
         List<string> Account_No;
         List<string> AccountForTag;
         int sizecount;
@@ -75,12 +76,68 @@ namespace HBLAutomationWeb.Common
         string avail_limit_cc;
         string is_paid_req;
         string home_branch_del_flag;
-
+        string TermDepositYears;
+        int term_deposit_check;
+        decimal term_deposit_balance;
+        string customer_profile_id;
+        string invest_fund_name;
         string[] multi_bill_consumers;
+        string product_id;
+        string limit_type_id;
+        string old_limit;
+        string fund_disclaimer_popup;
 
         public string CutOvertime = null;
         public string Date = null;
 
+        public void SetFundDisclaimerPopup(string fund_disclaimer_popup)
+        {
+            this.fund_disclaimer_popup = fund_disclaimer_popup;
+        }
+        public string GetFundDisclaimerPopup()
+        {
+            return fund_disclaimer_popup;
+        }
+        public void SetLimitTypeID(string limit_type_id)
+        {
+            this.limit_type_id = limit_type_id;
+        }
+        public string GetLimitTypeID()
+        {
+            return limit_type_id;
+        }
+        public void SetOldLimit(string old_limit)
+        {
+            this.old_limit = old_limit;
+        }
+        public string GetOldLimit()
+        {
+            return old_limit;
+        }
+        public void SetProductID(string product_id)
+        {
+            this.product_id = product_id;
+        }
+        public string GetProductID()
+        {
+            return product_id;
+        }
+        public void SetInvestFundName(string invest_fund_name)
+        {
+            this.invest_fund_name = invest_fund_name;
+        }
+        public string GetInvestFundName()
+        {
+            return invest_fund_name;
+        }
+        public void SetCustomerProfileID(string customer_profile_id)
+        {
+            this.customer_profile_id = customer_profile_id;
+        }
+        public string GetCustomerProfileID()
+        {
+            return customer_profile_id;
+        }
         public void SetIsPaidReq(string is_paid_req)
         {
             this.is_paid_req = is_paid_req;
@@ -97,11 +154,11 @@ namespace HBLAutomationWeb.Common
         {
             return home_branch_del_flag;
         }
-        public void SetCustomerAccType(string Customer_Account_Type)
+        public void SetCredit_Card_Check(string Customer_Account_Type)
         {
             this.Customer_Account_Type = Customer_Account_Type;
         }
-        public string GetCustomerAccType()
+        public string GetCredit_Card_Check()
         {
             return Customer_Account_Type;
         }
@@ -153,6 +210,7 @@ namespace HBLAutomationWeb.Common
         {
             this.multi_payment_amount = multi_payment_amount;
         }
+    
         //public void SetCreatedOnFlag(bool created_on_flag) 
         //{   
         //    this.created_on_flag = created_on_flag;
@@ -307,6 +365,14 @@ namespace HBLAutomationWeb.Common
         {
             return this.acc_info;
 
+        }
+        public void SetCustLimitDetail(Dictionary<string, Tuple<string, string>> cust_limit_detail)
+        {
+            this.cust_limit_detail = cust_limit_detail;
+        }
+        public Dictionary<string, Tuple<string, string>> GetCustLimitDetail()
+        {
+            return this.cust_limit_detail;
         }
 
         public void Set_tran_balances(Dictionary<string, string> tran_info)
@@ -557,7 +623,30 @@ namespace HBLAutomationWeb.Common
         {
             return avail_limit_cc;
         }
-
+        public void Set_TermDepositYears(string TermDepositYears)
+        {
+            this.TermDepositYears = TermDepositYears;
+        }
+        public string Get_TermDepositYears()
+        {
+            return TermDepositYears;
+        }
+        public int Get_term_deposit_check()
+        {
+            return term_deposit_check;
+        }
+        public void Set_term_deposit_check(int term_deposit_check)
+        {
+            this.term_deposit_check = term_deposit_check;
+        }
+        public decimal Get_term_deposit_balance()
+        {
+            return term_deposit_balance;
+        }
+        public void Set_term_deposit_balance(decimal term_deposit_balance)
+        {
+            this.term_deposit_balance += term_deposit_balance;
+        }
         //public string this[string key]    
 
         //{

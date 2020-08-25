@@ -42,6 +42,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net, Version=0.1.4141.31969, Culture=neutral, PublicKeyToken=f3bc8f8c31beeb49, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.Net.0.1.0\lib\net35\BCrypt.Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="ClosedXML, Version=0.86.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
       <HintPath>..\packages\SpecFlow.Plus.Excel.2-3-0.1.7.3\lib\ClosedXML.dll</HintPath>
       <Private>True</Private>
@@ -234,6 +238,7 @@
     <Compile Include="Core\IBWebSteps.cs" />
     <Compile Include="Pages\AESEncryptorDecryptor.cs" />
     <Compile Include="Pages\DriverFactory.cs" />
+    <Compile Include="Pages\HashPassword.cs" />
     <Compile Include="Pages\SeleniumHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Feature\InternetBanking\AccountsStatement.feature.cs">
@@ -250,6 +255,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ForgetChange.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Feature\InternetBanking\Investments.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Investments.feature</DependentUpon>
     </Compile>
     <Compile Include="Resources\Feature\InternetBanking\Login.feature.cs">
       <AutoGen>True</AutoGen>
@@ -300,6 +310,7 @@
       <LastGenOutput>BeneManagement.feature.cs</LastGenOutput>
     </None>
     <None Include="Resources\Feature\InternetBanking\Data\AccountsStatement.xlsx" />
+    <None Include="Resources\Feature\InternetBanking\Data\BeneDeletion.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\BeneficiaryAddition.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\BeneVerification.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\ChangeLoginID.xlsx" />
@@ -308,6 +319,7 @@
     <None Include="Resources\Feature\InternetBanking\Data\ChequeBook.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\CreditRegistration.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\DebitRegistration.xlsx" />
+    <None Include="Resources\Feature\InternetBanking\Data\ETDR.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\ForgetLoginID.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\ForgetPassword.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\ForgotTransactionPassword.xlsx" />
@@ -315,6 +327,7 @@
     <None Include="Resources\Feature\InternetBanking\Data\IBLogin.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\LimitManagement.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\MultiBillPayment.xlsx" />
+    <None Include="Resources\Feature\InternetBanking\Data\MutualFund.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\MyAccount.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\PayOrder.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\SendMoney.xlsx" />
@@ -327,6 +340,10 @@
     <None Include="Resources\Feature\InternetBanking\ForgetChange.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ForgetChange.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\Feature\InternetBanking\Investments.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Investments.feature.cs</LastGenOutput>
     </None>
     <None Include="Resources\Feature\InternetBanking\Login.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

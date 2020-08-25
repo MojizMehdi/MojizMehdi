@@ -83,7 +83,7 @@ namespace HBLAutomationWeb.Resources.Feature.InternetBanking
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void _2AsAUserIWantToVerifyBillPaymentThroughPAY(
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughPAY(
                     string @case, 
                     string status_Query, 
                     string status_Query2, 
@@ -119,7 +119,7 @@ namespace HBLAutomationWeb.Resources.Feature.InternetBanking
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2 As a user i want to Verify Bill Payment through PAY", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user i want to Verify Bill Payment through PAY", @__tags);
 #line 7
 this.ScenarioSetup(scenarioInfo);
 #line 8
@@ -127,7 +127,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 9
  testRunner.And(string.Format("I set value in context from data \"{0}\" as \"ConsumerNo\"", pay_BillPayment_ConsumerNo_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
- testRunner.And(string.Format("I set value in context from data \"{0}\" as \"Customer_Account_Type\"", expiry_Date), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"Credit_Card_check\"", expiry_Date), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
  testRunner.And(string.Format("update the data by query \"{0}\" on QAT_BPS", status_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
@@ -261,8 +261,8 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to Verify Bill Payment through PAY: When valid bill details ar" +
-            "e provided 0400005777052")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through PAY: When valid bill details are " +
+            "provided 0400005777052")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "PayBill")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/IBBillPayment.xlsx")]
@@ -303,10 +303,10 @@ this.ScenarioSetup(scenarioInfo);
             "METER_ID=\'906\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_verify", "Select FIRST_EXECUTION_DATE, LAST_EXECUTION_DATE from DC_SCHEDULED_TRAN_MASTER i " +
             "where I.CUSTOMER_INFO_ID=\'{customer_info_id}\'")]
-        public virtual void _2AsAUserIWantToVerifyBillPaymentThroughPAY_WhenValidBillDetailsAreProvided0400005777052()
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughPAY_WhenValidBillDetailsAreProvided0400005777052()
         {
 #line 7
-this._2AsAUserIWantToVerifyBillPaymentThroughPAY("When valid bill details are provided 0400005777052", "UPDATE LP_BILLS L SET L.BILL_STATUS_ID=1 , L.DUE_DATE=TRUNC(SYSDATE) WHERE L.CONS" +
+this.AsAUserIWantToVerifyBillPaymentThroughPAY("When valid bill details are provided 0400005777052", "UPDATE LP_BILLS L SET L.BILL_STATUS_ID=1 , L.DUE_DATE=TRUNC(SYSDATE) WHERE L.CONS" +
                     "UMER_NO=\'{ConsumerNo}\'", @"BEGIN UPDATE DC_SCHEDULED_TRAN_MASTER STM SET STM.STATE = 46 , STM.IS_DELETED = 1 WHERE STM.BILL_BENEFICIARY_ID = (SELECT BPB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY BPB WHERE BPB.CONSUMER_NUMBER = '{ConsumerNo}' AND BPB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND BPB.IS_ACTIVE = 1);UPDATE DC_BILL_PAYMENT_BENEFICIARY DPB SET DPB.IS_SI_SCHEDULED = 0,DPB.IS_ACTIVE = 0 WHERE DPB.CONSUMER_NUMBER = '{ConsumerNo}' AND DPB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND DPB.IS_ACTIVE = 1;COMMIT;END;", "Electricity Bill Payment", "MEPCO", "0400005777052", "SELECT LB.BILL_AMOUNT, LB.COMPANY_CODE, LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CON" +
                     "SUMER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "MEPCO001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
@@ -321,8 +321,8 @@ this._2AsAUserIWantToVerifyBillPaymentThroughPAY("When valid bill details are pr
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to Verify Bill Payment through PAY: When valid bill details ar" +
-            "e provided 05151110478600")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through PAY: When valid bill details are " +
+            "provided 05151110478600")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "PayBill")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/IBBillPayment.xlsx")]
@@ -363,10 +363,10 @@ this._2AsAUserIWantToVerifyBillPaymentThroughPAY("When valid bill details are pr
             "METER_ID=\'906\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_verify", "Select FIRST_EXECUTION_DATE, LAST_EXECUTION_DATE from DC_SCHEDULED_TRAN_MASTER i " +
             "where I.CUSTOMER_INFO_ID=\'{customer_info_id}\'")]
-        public virtual void _2AsAUserIWantToVerifyBillPaymentThroughPAY_WhenValidBillDetailsAreProvided05151110478600()
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughPAY_WhenValidBillDetailsAreProvided05151110478600()
         {
 #line 7
-this._2AsAUserIWantToVerifyBillPaymentThroughPAY("When valid bill details are provided 05151110478600", "UPDATE LP_BILLS L SET L.BILL_STATUS_ID=1 , L.DUE_DATE=TRUNC(SYSDATE) WHERE L.CONS" +
+this.AsAUserIWantToVerifyBillPaymentThroughPAY("When valid bill details are provided 05151110478600", "UPDATE LP_BILLS L SET L.BILL_STATUS_ID=1 , L.DUE_DATE=TRUNC(SYSDATE) WHERE L.CONS" +
                     "UMER_NO=\'{ConsumerNo}\'", @"BEGIN UPDATE DC_SCHEDULED_TRAN_MASTER STM SET STM.STATE = 46 , STM.IS_DELETED = 1 WHERE STM.BILL_BENEFICIARY_ID = (SELECT BPB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY BPB WHERE BPB.CONSUMER_NUMBER = '{ConsumerNo}' AND BPB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND BPB.IS_ACTIVE = 1);UPDATE DC_BILL_PAYMENT_BENEFICIARY DPB SET DPB.IS_SI_SCHEDULED = 0,DPB.IS_ACTIVE = 0 WHERE DPB.CONSUMER_NUMBER = '{ConsumerNo}' AND DPB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND DPB.IS_ACTIVE = 1;COMMIT;END;", "Electricity Bill Payment", "MEPCO", "05151110478600", "SELECT LB.BILL_AMOUNT, LB.COMPANY_CODE, LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CON" +
                     "SUMER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "MEPCO001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
@@ -381,8 +381,8 @@ this._2AsAUserIWantToVerifyBillPaymentThroughPAY("When valid bill details are pr
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to Verify Bill Payment through PAY: When valid bill details ar" +
-            "e provided 05151110478601")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through PAY: When valid bill details are " +
+            "provided 05151110478601")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "PayBill")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/IBBillPayment.xlsx")]
@@ -423,10 +423,10 @@ this._2AsAUserIWantToVerifyBillPaymentThroughPAY("When valid bill details are pr
             "METER_ID=\'906\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_verify", "Select FIRST_EXECUTION_DATE, LAST_EXECUTION_DATE from DC_SCHEDULED_TRAN_MASTER i " +
             "where I.CUSTOMER_INFO_ID=\'{customer_info_id}\'")]
-        public virtual void _2AsAUserIWantToVerifyBillPaymentThroughPAY_WhenValidBillDetailsAreProvided05151110478601()
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughPAY_WhenValidBillDetailsAreProvided05151110478601()
         {
 #line 7
-this._2AsAUserIWantToVerifyBillPaymentThroughPAY("When valid bill details are provided 05151110478601", "UPDATE LP_BILLS L SET L.BILL_STATUS_ID=1 , L.DUE_DATE=TRUNC(SYSDATE) WHERE L.CONS" +
+this.AsAUserIWantToVerifyBillPaymentThroughPAY("When valid bill details are provided 05151110478601", "UPDATE LP_BILLS L SET L.BILL_STATUS_ID=1 , L.DUE_DATE=TRUNC(SYSDATE) WHERE L.CONS" +
                     "UMER_NO=\'{ConsumerNo}\'", @"BEGIN UPDATE DC_SCHEDULED_TRAN_MASTER STM SET STM.STATE = 46 , STM.IS_DELETED = 1 WHERE STM.BILL_BENEFICIARY_ID = (SELECT BPB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY BPB WHERE BPB.CONSUMER_NUMBER = '{ConsumerNo}' AND BPB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND BPB.IS_ACTIVE = 1);UPDATE DC_BILL_PAYMENT_BENEFICIARY DPB SET DPB.IS_SI_SCHEDULED = 0,DPB.IS_ACTIVE = 0 WHERE DPB.CONSUMER_NUMBER = '{ConsumerNo}' AND DPB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND DPB.IS_ACTIVE = 1;COMMIT;END;", "Electricity Bill Payment", "MEPCO", "05151110478601", "SELECT LB.BILL_AMOUNT, LB.COMPANY_CODE, LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CON" +
                     "SUMER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "MEPCO001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
@@ -441,8 +441,8 @@ this._2AsAUserIWantToVerifyBillPaymentThroughPAY("When valid bill details are pr
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to Verify Bill Payment through PAY: When valid bill details ar" +
-            "e provided 01266110067304")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through PAY: When valid bill details are " +
+            "provided 01266110067304")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "PayBill")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/IBBillPayment.xlsx")]
@@ -483,10 +483,10 @@ this._2AsAUserIWantToVerifyBillPaymentThroughPAY("When valid bill details are pr
             "METER_ID=\'906\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_verify", "Select FIRST_EXECUTION_DATE, LAST_EXECUTION_DATE from DC_SCHEDULED_TRAN_MASTER i " +
             "where I.CUSTOMER_INFO_ID=\'{customer_info_id}\'")]
-        public virtual void _2AsAUserIWantToVerifyBillPaymentThroughPAY_WhenValidBillDetailsAreProvided01266110067304()
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughPAY_WhenValidBillDetailsAreProvided01266110067304()
         {
 #line 7
-this._2AsAUserIWantToVerifyBillPaymentThroughPAY("When valid bill details are provided 01266110067304", "UPDATE LP_BILLS L SET L.BILL_STATUS_ID=1 , L.DUE_DATE=TRUNC(SYSDATE) WHERE L.CONS" +
+this.AsAUserIWantToVerifyBillPaymentThroughPAY("When valid bill details are provided 01266110067304", "UPDATE LP_BILLS L SET L.BILL_STATUS_ID=1 , L.DUE_DATE=TRUNC(SYSDATE) WHERE L.CONS" +
                     "UMER_NO=\'{ConsumerNo}\'", @"BEGIN UPDATE DC_SCHEDULED_TRAN_MASTER STM SET STM.STATE = 46 , STM.IS_DELETED = 1 WHERE STM.BILL_BENEFICIARY_ID = (SELECT BPB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY BPB WHERE BPB.CONSUMER_NUMBER = '{ConsumerNo}' AND BPB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND BPB.IS_ACTIVE = 1);UPDATE DC_BILL_PAYMENT_BENEFICIARY DPB SET DPB.IS_SI_SCHEDULED = 0,DPB.IS_ACTIVE = 0 WHERE DPB.CONSUMER_NUMBER = '{ConsumerNo}' AND DPB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND DPB.IS_ACTIVE = 1;COMMIT;END;", "Electricity Bill Payment", "PESCO", "01266110067304", "SELECT LB.BILL_AMOUNT, LB.COMPANY_CODE, LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CON" +
                     "SUMER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "PESCO001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
@@ -500,7 +500,7 @@ this._2AsAUserIWantToVerifyBillPaymentThroughPAY("When valid bill details are pr
 #line hidden
         }
         
-        public virtual void _3AsAUserIWantToVerifyBillPaymentThroughPAYWithBene(
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughPAYWithBene(
                     string @case, 
                     string status_Query, 
                     string status_Query2, 
@@ -536,7 +536,7 @@ this._2AsAUserIWantToVerifyBillPaymentThroughPAY("When valid bill details are pr
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3 As a user i want to Verify Bill Payment through PAY with Bene", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user i want to Verify Bill Payment through PAY with Bene", @__tags);
 #line 81
 this.ScenarioSetup(scenarioInfo);
 #line 82
@@ -544,7 +544,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 83
  testRunner.And(string.Format("I set value in context from data \"{0}\" as \"ConsumerNo\"", pay_BillPayment_ConsumerNo_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 84
- testRunner.And(string.Format("I set value in context from data \"{0}\" as \"Customer_Account_Type\"", expiry_Date), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"Credit_Card_check\"", expiry_Date), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 85
  testRunner.And(string.Format("update the data by query \"{0}\" on QAT_BPS", status_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 86
@@ -656,8 +656,8 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("3 As a user i want to Verify Bill Payment through PAY with Bene: When valid bill " +
-            "details are provided 0400005777052")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through PAY with Bene: When valid bill de" +
+            "tails are provided 0400005777052")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "PayBill")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/IBBillPayment.xlsx")]
@@ -698,10 +698,10 @@ this.ScenarioSetup(scenarioInfo);
             "METER_ID=\'906\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_verify", "Select FIRST_EXECUTION_DATE, LAST_EXECUTION_DATE from DC_SCHEDULED_TRAN_MASTER i " +
             "where I.CUSTOMER_INFO_ID=\'{customer_info_id}\'")]
-        public virtual void _3AsAUserIWantToVerifyBillPaymentThroughPAYWithBene_WhenValidBillDetailsAreProvided0400005777052()
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughPAYWithBene_WhenValidBillDetailsAreProvided0400005777052()
         {
 #line 81
-this._3AsAUserIWantToVerifyBillPaymentThroughPAYWithBene("When valid bill details are provided 0400005777052", "UPDATE LP_BILLS L SET L.BILL_STATUS_ID=1 , L.DUE_DATE=TRUNC(SYSDATE) WHERE L.CONS" +
+this.AsAUserIWantToVerifyBillPaymentThroughPAYWithBene("When valid bill details are provided 0400005777052", "UPDATE LP_BILLS L SET L.BILL_STATUS_ID=1 , L.DUE_DATE=TRUNC(SYSDATE) WHERE L.CONS" +
                     "UMER_NO=\'{ConsumerNo}\'", @"BEGIN UPDATE DC_SCHEDULED_TRAN_MASTER STM SET STM.STATE = 46 , STM.IS_DELETED = 1 WHERE STM.BILL_BENEFICIARY_ID = (SELECT BPB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY BPB WHERE BPB.CONSUMER_NUMBER = '{ConsumerNo}' AND BPB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND BPB.IS_ACTIVE = 1);UPDATE DC_BILL_PAYMENT_BENEFICIARY DPB SET DPB.IS_SI_SCHEDULED = 0,DPB.IS_ACTIVE = 0 WHERE DPB.CONSUMER_NUMBER = '{ConsumerNo}' AND DPB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND DPB.IS_ACTIVE = 1;COMMIT;END;", "Electricity Bill Payment", "MEPCO", "0400005777052", "SELECT LB.BILL_AMOUNT, LB.COMPANY_CODE, LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CON" +
                     "SUMER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "MEPCO001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
@@ -716,8 +716,8 @@ this._3AsAUserIWantToVerifyBillPaymentThroughPAYWithBene("When valid bill detail
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("3 As a user i want to Verify Bill Payment through PAY with Bene: When valid bill " +
-            "details are provided 05151110478600")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through PAY with Bene: When valid bill de" +
+            "tails are provided 05151110478600")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "PayBill")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/IBBillPayment.xlsx")]
@@ -758,10 +758,10 @@ this._3AsAUserIWantToVerifyBillPaymentThroughPAYWithBene("When valid bill detail
             "METER_ID=\'906\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_verify", "Select FIRST_EXECUTION_DATE, LAST_EXECUTION_DATE from DC_SCHEDULED_TRAN_MASTER i " +
             "where I.CUSTOMER_INFO_ID=\'{customer_info_id}\'")]
-        public virtual void _3AsAUserIWantToVerifyBillPaymentThroughPAYWithBene_WhenValidBillDetailsAreProvided05151110478600()
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughPAYWithBene_WhenValidBillDetailsAreProvided05151110478600()
         {
 #line 81
-this._3AsAUserIWantToVerifyBillPaymentThroughPAYWithBene("When valid bill details are provided 05151110478600", "UPDATE LP_BILLS L SET L.BILL_STATUS_ID=1 , L.DUE_DATE=TRUNC(SYSDATE) WHERE L.CONS" +
+this.AsAUserIWantToVerifyBillPaymentThroughPAYWithBene("When valid bill details are provided 05151110478600", "UPDATE LP_BILLS L SET L.BILL_STATUS_ID=1 , L.DUE_DATE=TRUNC(SYSDATE) WHERE L.CONS" +
                     "UMER_NO=\'{ConsumerNo}\'", @"BEGIN UPDATE DC_SCHEDULED_TRAN_MASTER STM SET STM.STATE = 46 , STM.IS_DELETED = 1 WHERE STM.BILL_BENEFICIARY_ID = (SELECT BPB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY BPB WHERE BPB.CONSUMER_NUMBER = '{ConsumerNo}' AND BPB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND BPB.IS_ACTIVE = 1);UPDATE DC_BILL_PAYMENT_BENEFICIARY DPB SET DPB.IS_SI_SCHEDULED = 0,DPB.IS_ACTIVE = 0 WHERE DPB.CONSUMER_NUMBER = '{ConsumerNo}' AND DPB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND DPB.IS_ACTIVE = 1;COMMIT;END;", "Electricity Bill Payment", "MEPCO", "05151110478600", "SELECT LB.BILL_AMOUNT, LB.COMPANY_CODE, LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CON" +
                     "SUMER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "MEPCO001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
@@ -776,8 +776,8 @@ this._3AsAUserIWantToVerifyBillPaymentThroughPAYWithBene("When valid bill detail
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("3 As a user i want to Verify Bill Payment through PAY with Bene: When valid bill " +
-            "details are provided 05151110478601")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through PAY with Bene: When valid bill de" +
+            "tails are provided 05151110478601")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "PayBill")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/IBBillPayment.xlsx")]
@@ -818,10 +818,10 @@ this._3AsAUserIWantToVerifyBillPaymentThroughPAYWithBene("When valid bill detail
             "METER_ID=\'906\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_verify", "Select FIRST_EXECUTION_DATE, LAST_EXECUTION_DATE from DC_SCHEDULED_TRAN_MASTER i " +
             "where I.CUSTOMER_INFO_ID=\'{customer_info_id}\'")]
-        public virtual void _3AsAUserIWantToVerifyBillPaymentThroughPAYWithBene_WhenValidBillDetailsAreProvided05151110478601()
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughPAYWithBene_WhenValidBillDetailsAreProvided05151110478601()
         {
 #line 81
-this._3AsAUserIWantToVerifyBillPaymentThroughPAYWithBene("When valid bill details are provided 05151110478601", "UPDATE LP_BILLS L SET L.BILL_STATUS_ID=1 , L.DUE_DATE=TRUNC(SYSDATE) WHERE L.CONS" +
+this.AsAUserIWantToVerifyBillPaymentThroughPAYWithBene("When valid bill details are provided 05151110478601", "UPDATE LP_BILLS L SET L.BILL_STATUS_ID=1 , L.DUE_DATE=TRUNC(SYSDATE) WHERE L.CONS" +
                     "UMER_NO=\'{ConsumerNo}\'", @"BEGIN UPDATE DC_SCHEDULED_TRAN_MASTER STM SET STM.STATE = 46 , STM.IS_DELETED = 1 WHERE STM.BILL_BENEFICIARY_ID = (SELECT BPB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY BPB WHERE BPB.CONSUMER_NUMBER = '{ConsumerNo}' AND BPB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND BPB.IS_ACTIVE = 1);UPDATE DC_BILL_PAYMENT_BENEFICIARY DPB SET DPB.IS_SI_SCHEDULED = 0,DPB.IS_ACTIVE = 0 WHERE DPB.CONSUMER_NUMBER = '{ConsumerNo}' AND DPB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND DPB.IS_ACTIVE = 1;COMMIT;END;", "Electricity Bill Payment", "MEPCO", "05151110478601", "SELECT LB.BILL_AMOUNT, LB.COMPANY_CODE, LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CON" +
                     "SUMER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "MEPCO001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
@@ -836,8 +836,8 @@ this._3AsAUserIWantToVerifyBillPaymentThroughPAYWithBene("When valid bill detail
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("3 As a user i want to Verify Bill Payment through PAY with Bene: When valid bill " +
-            "details are provided 01266110067304")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through PAY with Bene: When valid bill de" +
+            "tails are provided 01266110067304")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "PayBill")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/IBBillPayment.xlsx")]
@@ -878,10 +878,10 @@ this._3AsAUserIWantToVerifyBillPaymentThroughPAYWithBene("When valid bill detail
             "METER_ID=\'906\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_verify", "Select FIRST_EXECUTION_DATE, LAST_EXECUTION_DATE from DC_SCHEDULED_TRAN_MASTER i " +
             "where I.CUSTOMER_INFO_ID=\'{customer_info_id}\'")]
-        public virtual void _3AsAUserIWantToVerifyBillPaymentThroughPAYWithBene_WhenValidBillDetailsAreProvided01266110067304()
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughPAYWithBene_WhenValidBillDetailsAreProvided01266110067304()
         {
 #line 81
-this._3AsAUserIWantToVerifyBillPaymentThroughPAYWithBene("When valid bill details are provided 01266110067304", "UPDATE LP_BILLS L SET L.BILL_STATUS_ID=1 , L.DUE_DATE=TRUNC(SYSDATE) WHERE L.CONS" +
+this.AsAUserIWantToVerifyBillPaymentThroughPAYWithBene("When valid bill details are provided 01266110067304", "UPDATE LP_BILLS L SET L.BILL_STATUS_ID=1 , L.DUE_DATE=TRUNC(SYSDATE) WHERE L.CONS" +
                     "UMER_NO=\'{ConsumerNo}\'", @"BEGIN UPDATE DC_SCHEDULED_TRAN_MASTER STM SET STM.STATE = 46 , STM.IS_DELETED = 1 WHERE STM.BILL_BENEFICIARY_ID = (SELECT BPB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY BPB WHERE BPB.CONSUMER_NUMBER = '{ConsumerNo}' AND BPB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND BPB.IS_ACTIVE = 1);UPDATE DC_BILL_PAYMENT_BENEFICIARY DPB SET DPB.IS_SI_SCHEDULED = 0,DPB.IS_ACTIVE = 0 WHERE DPB.CONSUMER_NUMBER = '{ConsumerNo}' AND DPB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND DPB.IS_ACTIVE = 1;COMMIT;END;", "Electricity Bill Payment", "PESCO", "01266110067304", "SELECT LB.BILL_AMOUNT, LB.COMPANY_CODE, LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CON" +
                     "SUMER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "PESCO001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
@@ -895,7 +895,7 @@ this._3AsAUserIWantToVerifyBillPaymentThroughPAYWithBene("When valid bill detail
 #line hidden
         }
         
-        public virtual void _4AsAUserIWantToVerifyMULTIBillPaymentThroughPAY(string @case, string consumer_No_List, string tran_Type_Query, string tran_Amount_Query, string from_Account_Query, string company_Name_Query, string consumer_No_Query, string db_Val, string db_Val2, string account_No, string account_Type, string expiry_Date, string[] exampleTags)
+        public virtual void AsAUserIWantToVerifyMULTIBillPaymentThroughPAY(string @case, string consumer_No_List, string tran_Type_Query, string tran_Amount_Query, string from_Account_Query, string company_Name_Query, string consumer_No_Query, string db_Val, string db_Val2, string account_No, string account_Type, string expiry_Date, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "BillPayment"};
@@ -903,7 +903,7 @@ this._3AsAUserIWantToVerifyBillPaymentThroughPAYWithBene("When valid bill detail
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4 As a user i want to Verify MULTI Bill Payment through PAY", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user i want to Verify MULTI Bill Payment through PAY", @__tags);
 #line 146
 this.ScenarioSetup(scenarioInfo);
 #line 147
@@ -911,7 +911,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 148
  testRunner.And("I set value in context from data \"BillPayment\" as \"Transaction_Type\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 149
- testRunner.And(string.Format("I set value in context from data \"{0}\" as \"Customer_Account_Type\"", expiry_Date), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"Credit_Card_check\"", expiry_Date), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 152
  testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 153
@@ -963,8 +963,8 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("4 As a user i want to Verify MULTI Bill Payment through PAY: When valid bill deta" +
-            "ils are provided for MultiBill Payment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify MULTI Bill Payment through PAY: When valid bill detail" +
+            "s are provided for MultiBill Payment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "PayBill")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MultiBillPayment.xlsx")]
@@ -984,10 +984,10 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "02197900643103")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_type", "RETAIL")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expiry_date", "")]
-        public virtual void _4AsAUserIWantToVerifyMULTIBillPaymentThroughPAY_WhenValidBillDetailsAreProvidedForMultiBillPayment()
+        public virtual void AsAUserIWantToVerifyMULTIBillPaymentThroughPAY_WhenValidBillDetailsAreProvidedForMultiBillPayment()
         {
 #line 146
-this._4AsAUserIWantToVerifyMULTIBillPaymentThroughPAY("When valid bill details are provided for MultiBill Payment", "0400005777052,0400033016199", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+this.AsAUserIWantToVerifyMULTIBillPaymentThroughPAY("When valid bill details are provided for MultiBill Payment", "0400005777052,0400033016199", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
                     "", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "02197900643103", "RETAIL", "", new string[] {
