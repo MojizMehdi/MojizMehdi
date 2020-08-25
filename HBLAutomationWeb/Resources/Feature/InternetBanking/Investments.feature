@@ -35,7 +35,7 @@ Scenario Outline: When user try to term deposit thorugh Investments
 	And I save Transaction Info
 	And I am performing on "Investment_TranCloseBtn"
 	And I am clicking on "Pay_Transaction_PayBill_Rating"
-	And I am clicking on "Investment_TermDep_RatingOkBtn"
+	And I am clicking on "Investment_TermDep_RatingOkBtn" 
 	And I am clicking on "Login_Dashboard"
 	And I verify Account Balance
 	And I am clicking on "Services_Link"
