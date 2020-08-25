@@ -579,8 +579,8 @@ this.WhenUserTryToSendMoneyMobile("When valid Account Details are provided with 
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Mobile_No", "03121223345")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Email", "aliabb111@gmail.com")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Frequency_Value", "Daily")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "07/29/2020")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "08/25/2020")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "08/29/2020")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "09/27/2020")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Tran_Pass_Value", "pakistan2")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "Your transaction has been processed successfully.")]
@@ -603,7 +603,7 @@ this.WhenUserTryToSendMoneyMobile("When valid Account Details are provided with 
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
-                    "username}\') AND CA.IS_DELETED = 0 AND CA.FUND_TRANSFER_TYPE = \'INTER_BRANCH\'", "02197900643103", "HBL / Konnect", "12757900758503", "10", "Courier Services", "AliAbbas1", "03121223345", "aliabb111@gmail.com", "Daily", "07/29/2020", "08/25/2020", "12345678", "pakistan2", "Your transaction has been processed successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "username}\') AND CA.IS_DELETED = 0 AND CA.FUND_TRANSFER_TYPE = \'INTER_BRANCH\'", "02197900643103", "HBL / Konnect", "12757900758503", "10", "Courier Services", "AliAbbas1", "03121223345", "aliabb111@gmail.com", "Daily", "08/29/2020", "09/27/2020", "12345678", "pakistan2", "Your transaction has been processed successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BENEFICIARY_NAME FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "", new string[] {
@@ -888,8 +888,8 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("When valid Account Detai
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "10")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PurposeOfPayment_Value", "Courier Services")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Frequency_Value", "Daily")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "07/22/2020")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "08/20/2020")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "08/28/2020")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "09/26/2020")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Tran_Pass_Value", "pakistan2")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "Transaction is successful. ")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
@@ -902,7 +902,7 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("When valid Account Detai
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment_WhenValidAccountNo_AndScheduleDatesAreProvided()
         {
 #line 255
- this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When valid account no. and Schedule Dates are provided", "", "AliAbbas1", "02197900643103", "10", "Courier Services", "Daily", "07/22/2020", "08/20/2020", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When valid account no. and Schedule Dates are provided", "", "AliAbbas1", "02197900643103", "10", "Courier Services", "Daily", "08/28/2020", "09/26/2020", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", new string[] {
                         "source:Data/SendMoney_Schedule_Beneficiary.xlsx"});

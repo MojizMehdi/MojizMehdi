@@ -10,6 +10,7 @@ using System.Threading;
 using TechTalk.SpecFlow;
 using System.Data;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace HBLAutomationAndroid.Core
 {
@@ -83,6 +84,200 @@ namespace HBLAutomationAndroid.Core
             }
         }
 
+       
+
+        [When(@"verify the message ""(.*)"" through database on ""(.*)"" on Schema ""(.*)""")]
+        [Given(@"verify the message ""(.*)"" through database on ""(.*)"" on Schema ""(.*)""")]
+        [Then(@"verify the message ""(.*)"" through database on ""(.*)"" on Schema ""(.*)""")]
+        public void WhenVerifyTheMessageThroughDatabaseOnOn(string value, string query, string schema)
+        {
+            if (query.Contains("{account_number}"))
+            {
+                query = query.Replace("{account_number}", context.GetBeneAccountNo());
+            }
+            if (query.Contains("{customer_name}"))
+            {
+                query = query.Replace("{customer_name}", context.GetUsername());
+            }
+            if (query.Contains("{customer_cnic}"))
+            {
+                query = query.Replace("{customer_cnic}", context.GetCustomerCNIC());
+            }
+            try
+            {
+                if (query.Contains("K.IS_ACTIVE"))
+                {
+                    DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
+                    DataTable SourceDataTable = dlink.GetDataTable(query, schema);
+
+                    List<string> account_list = new List<string>();
+                    account_list = context.GetAccNumbers();
+                    int count = account_list.Count;
+
+                    List<string> db_account_list = new List<string>();
+
+                    for (int i = 0; i < count; i++)
+                    {
+                        string message = SourceDataTable.Rows[i][0].ToString();
+                        db_account_list.Add(message);
+                    }
+                    if (db_account_list.Count != account_list.Count)
+                    {
+                        throw new AssertFailedException(string.Format("Account Numbers during Sign up:{0} are not the same as in Database:{1}", account_list, db_account_list));
+                    }
+                }
+
+                else if (query.Contains("K.IS_ACCOUNT_LINK"))
+                {
+                    DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
+                    DataTable SourceDataTable = dlink.GetDataTable(query, schema);
+
+                    List<string> db_account_list = new List<string>();
+
+                    List<string> account_list = new List<string>();
+                    account_list = context.GetAccountForTag();
+                    int count = account_list.Count;
+
+                    for (int i = 0; i < SourceDataTable.Rows.Count; i++)
+                    {
+                        string message = SourceDataTable.Rows[i][0].ToString();
+                        db_account_list.Add(message);
+                    }
+                    if (db_account_list.Count != account_list.Count)
+                    {
+                        throw new AssertFailedException(string.Format("Account Numbers which were tagged during Sign up:{0} are not the same as in Database:{1}", account_list, db_account_list));
+                    }
+                }
+                else
+                {
+                    DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
+                    DataTable SourceDataTable = dlink.GetDataTable(query, schema);
+                    string message = SourceDataTable.Rows[0][0].ToString();
+
+                    Assert.AreEqual(message, value);
+                }
+
+            }
+            catch (Exception exception)
+            {
+
+                throw new AssertFailedException(exception.Message);
+            }
+        }
+        [When(@"verify the message using element ""(.*)"" through database on ""(.*)"" on Schema ""(.*)""")]
+        [Then(@"verify the message using element ""(.*)"" through database on ""(.*)"" on Schema ""(.*)""")]
+        public void ThenVerifyTheMessageUsingElementThroughDatabaseOnOnSchema(string Keyword, string query, string schema)
+        {
+            string locator_type = "id";
+            DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
+            DataTable SourceDataTable = dlink.GetDataTable(query, schema);
+            string message = SourceDataTable.Rows[0][0].ToString();
+            AppiumHelper apmhelper = new AppiumHelper();
+            //apmhelper.checkPageIsReady();
+            Element keyword = ContextPage.GetInstance().GetElement(Keyword);
+            //keyword.Locator used instead od locator
+            if (keyword.Locator.StartsWith("/"))
+            {
+                locator_type = "xpath";
+            }
+            string value = apmhelper.ReturnKeywordValue(keyword.Locator, locator_type);
+            Assert.AreEqual(message, value);
+        }
+
+        //[Given(@"verify through ""(.*)"" on ""(.*)""")]
+        //[Then(@"verify through ""(.*)"" on ""(.*)""")]
+        //[When(@"verify through ""(.*)"" on ""(.*)""")]
+        //public void ThenVerifyThroughOn(string message, string Keyword)
+        //{
+        //    try
+        //    {
+        //        string locator_type = "id";
+        //        AppiumHelper apmhelper = new AppiumHelper();
+        //        //selhelper.checkPageIsReady();
+        //        Thread.Sleep(3000);
+        //        Element keyword = ContextPage.GetInstance().GetElement(Keyword);
+        //        if (keyword.Locator.StartsWith("/"))
+        //        {
+        //            locator_type = "xpath";
+        //        }
+        //        //selhelper.Scroll(keyword.Locator);
+        //        if (message == "ConsumerNoContextVal")
+        //        {
+        //            message = context.GetConsumer_No();
+        //        }
+        //        //if (message == "Signup_PassPolicy")
+        //        //{
+        //        //    for (int i = 1; i <= 3; i++)
+        //        //    {
+        //        //        string temp = "";
+        //        //        if (i == 1)
+        //        //        {
+        //        //            temp = context.GetPassPolicy1();
+        //        //        }
+        //        //        else if (i == 2)
+        //        //        {
+        //        //            temp = context.GetPassPolicy2();
+        //        //        }
+        //        //        else if (i == 3)
+        //        //        {
+        //        //            temp = context.GetPassPolicy3();
+        //        //        }
+        //        //        string loc = keyword.Locator.Replace("[i]", "[" + (i) + "]");
+        //        //        selhelper.verification(temp, keyword.Locator);
+        //        //    }
+        //        //    return;
+        //        //}
+        //        //if (message == "MyAccount_PassPolicy")
+        //        //{
+        //        //    selhelper.verification(context.GetPassPolicy1(), keyword.Locator);
+        //        //    for (int i = 2; i <= 3; i++)
+        //        //    {
+        //        //        string temp = "";
+        //        //        if (i == 2)
+        //        //        {
+        //        //            temp = context.GetPassPolicy2();
+        //        //        }
+        //        //        else if (i == 3)
+        //        //        {
+        //        //            temp = context.GetPassPolicy3();
+        //        //        }
+        //        //        if (Keyword.Equals("MyAccount_Forgot_UserPassPolicy1"))
+        //        //        {
+        //        //            Element keyword2 = ContextPage.GetInstance().GetElement("MyAccount_Forgot_UserPassPolicy2");
+        //        //            string temp_loc = keyword2.Locator.Replace("[i]", "[" + (i) + "]");
+        //        //            selhelper.verification(temp, temp_loc);
+        //        //            temp_loc = null;
+        //        //        }
+        //        //        else if (Keyword.Equals("MyAccount_Forgot_TranPassPolicy1"))
+        //        //        {
+        //        //            Element keyword2 = ContextPage.GetInstance().GetElement("MyAccount_Forgot_TranPassPolicy2");
+        //        //            string temp_loc = keyword2.Locator.Replace("[i]", "[" + (i) + "]");
+        //        //            selhelper.verification(temp, temp_loc);
+        //        //            temp_loc = null;
+        //        //        }
+
+        //        //    }
+        //        //}
+        //        //else
+        //        //{
+        //        apmhelper.verification(message, keyword.Locator, locator_type);
+        //        //}
+        //        //if (Keyword.Contains("Pay_Transaction_Success") || Keyword.Contains("SendMoney_TranSuccessMessage") || Keyword.Contains("MyAccount_Forgot_Status") || Keyword.Contains("MyAccount_PayOrder_Success") || Keyword.Contains("BeneManage_TranCongrats") || Keyword.Contains("MyAccount_CheqBook_TranMsg"))
+        //        //{
+        //        //    keyword = null;
+        //        //    string tranid_keyword = "Pay_Transaction_ID";
+        //        //    keyword = ContextPage.GetInstance().GetElement(tranid_keyword);
+        //        //    string tran_id = selhelper.ReturnKeywordValue(keyword.Locator);
+        //        //    context.SetTransaction_Id(tran_id);
+        //        //}
+
+        //    }
+        //    catch (Exception exception)
+        //    {
+        //        AppiumHelper.TakeScreenshot();
+        //        throw new AssertFailedException(exception.Message);
+        //    }
+        //}
         [When(@"Set parameter in context class ""(.*)""")]
         public void WhenSetParameterInContextClass(string Keyword)
         {
@@ -257,13 +452,29 @@ namespace HBLAutomationAndroid.Core
         public void WhenIAmClickingOn(string Keyword)
         {
             string locator_type = "id";
+            AppiumHelper apmhelper = new AppiumHelper();
+            Element keyword = ContextPage.GetInstance().GetElement(Keyword);
             try
             {
                 if (Keyword == "SendMoney_Rating" || Keyword == "SendMoney_RatingOkBtn" || Keyword == "SendMoney_Rating_Feedback_OkBtn")
                 {
-                    AppiumHelper apmhelper = new AppiumHelper();
-                    Element keyword = ContextPage.GetInstance().GetElement(Keyword);
+                    
+                    //Element keyword = ContextPage.GetInstance().GetElement(Keyword);
                     apmhelper.rating(keyword.Locator);
+                }
+                else if (Keyword == "Registration_AccountNo_Marking")
+                {
+                    if (keyword.Locator.StartsWith("/") || keyword.Locator.StartsWith("("))
+                    {
+                        locator_type = "xpath";
+                    }
+                    List<string> AccList = new List<string>();
+                    AccList = context.GetAccountForTag();
+                    foreach (var acc_no in AccList)
+                    {
+                         string locator = keyword.Locator.Replace("{AccountNo}", acc_no);
+                         apmhelper.links(locator,locator_type);
+                    }
                 }
                 else if (!String.IsNullOrEmpty(Keyword))
                 {
@@ -316,9 +527,9 @@ namespace HBLAutomationAndroid.Core
                     //    }
                     //}
 
-                    AppiumHelper apmhelper = new AppiumHelper();
+                    //AppiumHelper apmhelper = new AppiumHelper();
                     //apmhelper.checkPageIsReady();
-                    Element keyword = ContextPage.GetInstance().GetElement(Keyword);
+                    
                     if (Keyword.Contains("TermDeposit_NoOfYears"))
                     {
                         string temp = keyword.Locator.Replace("{Years}", context.Get_TermDepositYears());
@@ -341,6 +552,30 @@ namespace HBLAutomationAndroid.Core
             }
         }
 
+        [When(@"I save Account Numbers")]
+        public void WhenISaveAccountNumbers()
+        {
+            AppiumHelper apmhelper = new AppiumHelper();
+            Element keyword = ContextPage.GetInstance().GetElement("Registration_AccountNo_Size");
+            string locator_type = "id";
+            if (keyword.Locator.StartsWith("/") || keyword.Locator.StartsWith("("))
+            {
+                locator_type = "xpath";
+            }
+            int count = apmhelper.SizeCountElements(keyword.Locator, locator_type);
+            List<string> lst = new List<string>();
+            string acc_no = "";
+
+            for (int i = 1; i <= count; i++)
+            {
+                string temp = keyword.Locator.Replace(")", ")[" + i + "]");
+                acc_no = apmhelper.ReturnKeywordValue(temp,"xpath");
+                acc_no = Regex.Replace(acc_no, "[A-Za-z ]", "").TrimEnd();
+                lst.Add(acc_no.ToString());
+            }
+
+            context.SetAccNumbers(lst);
+        }
 
         [Given(@"update the data by query ""(.*)"" on Schema ""(.*)""")]
         public void GivenUpdateTheDataByQueryOnSchema(string query, string schema)
@@ -474,20 +709,175 @@ namespace HBLAutomationAndroid.Core
             }
         }
 
+        [Then(@"verify the data using ""(.*)"" on Schema ""(.*)""")]
+        public void ThenVerifyTheDataUsingOnSchema(string query, string schema)
+        {
+            string message = "";
+            string db_result = "";
+            if (query != "")
+            {
+                if (query.Contains("{account_number}"))
+                {
+                    query = query.Replace("{account_number}", context.GetBeneAccountNo());
+                }
+                if (query.Contains("{customer_name}"))
+                {
+                    query = query.Replace("{customer_name}", context.GetUsername());
+                }
+                if (query.Contains("{customer_cnic}"))
+                {
+                    query = query.Replace("{customer_cnic}", context.GetCustomerCNIC());
+                }
+                if (query.Contains("Company_Code"))
+                {
+                    query = query.Replace("{Company_Code}", context.GetCompany_Code());
+                }
+                Thread.Sleep(2000);
+                DataAccessComponent.DataAccessLink dLink = new DataAccessComponent.DataAccessLink();
+                DataTable SourceDataTable = dLink.GetDataTable(query, schema);
+                db_result = SourceDataTable.Rows[0][0].ToString();
+                if (query.Contains("created_on") || (query.Contains("updated_on")) || (query.Contains("LAST_PASSWORD_CHANGED")) || (query.Contains("LAST_TRANS_PASSWORD_CHANGED")))
+                {
+                    DateTime dt = Convert.ToDateTime(db_result);
+                    db_result = dt.ToString("MM/dd/yyyy");
+                    message = DateTime.Today.ToString("MM/dd/yyyy");
+                }
+                if (query.Contains("IVR_REQUIRED"))
+                {
+                    context.SetIVRReq(db_result);
+                }
+                if (query.Contains("IS_IVR_ENABLED"))
+                {
+                    if ((context.GetIVRReq() == "1" && db_result == "0"))
+                    {
+                        return;
+                    }
+                    else if (context.GetIVRReq() == "0" && db_result == "1")
+                    {
+                        return;
+                    }
+                    //if ((context.GetIVRReq() != "1" && inst_type != "0") || (context.GetIVRReq() != "0" && inst_type != "1"))
+                    //{
+                    //    throw new AssertFailedException("IS_IVR_ENABLED setting is not correct");
+                    //}
+                }
+                if (query.Contains("ENABLE_PSD_BIOMETRIC"))
+                {
+                    context.SetEnablePSD(db_result);
+                }
+                if (query.Contains("Z.ENABLE_PSD "))
+                {
+                    if ((context.GetEnablePSD() != "1" && db_result != "1") || (context.GetEnablePSD() != "0" && db_result != "0"))
+                    {
+                        throw new AssertFailedException("ENABLE_PSD setting is not correct");
+                    }
+                }
+                if (query.Contains("CUSTOMER_TYPE"))
+                {
+                    context.SetCustomerType(db_result);
+                }
+                if (query.Contains("IS_PASSWORD_CHANGED_REQUIRED") || (query.Contains("IS_PASSWORD_RESET_REQUIRED") || query.Contains("LGN_PWD_CHANGED_POPUP_COUNT")))
+                {
+                    if (db_result != "0")
+                    {
+                        throw new AssertFailedException("The value is not equal to 0");
+                    }
+                }
+                if (query.Contains("TRANSACTION_PASSWORD"))
+                {
+                    if (db_result == "")
+                    {
+                        if (context.GetTranPassFlag() == true)
+                        {
+                            throw new AssertFailedException("Transaction Password is not updated in data base");
+                        }
+                        else
+                        {
+                            return;
+                        }
+                    }
+                    if (db_result != "")
+                    {
+                        if (context.GetTranPassFlag() == false)
+                        {
+                            throw new AssertFailedException("Transaction Password is not updated in data base");
+                        }
+                        else
+                        {
+                            return;
+                        }
+                    }
+                }
+
+                if (query.Contains("last_login"))
+                {
+                    if (db_result == "")
+                    {
+                        if (context.GetLastLoginFlag() == true)
+                        {
+                            throw new AssertFailedException("Last Login is not updated in data base");
+                        }
+                        else
+                        {
+                            return;
+                        }
+                    }
+                    if (db_result != "")
+                    {
+                        if (context.GetLastLoginFlag() == false)
+                        {
+                            throw new AssertFailedException("Transaction Password is not updated in data base");
+                        }
+                        else
+                        {
+                            DateTime lastlogin = Convert.ToDateTime(db_result);
+                            db_result = lastlogin.ToString("MM/dd/yyyy");
+                            string today_date = DateTime.Today.ToString("MM/dd/yyyy");
+                            Assert.AreEqual(db_result, today_date);
+                        }
+                    }
+                    if (query.Contains("PARAM_CHANNEL_ID"))
+                    {
+                        if (db_result != "2")
+                        {
+                            throw new AssertFailedException(string.Format("The PARAM_CHANNEL_ID :{0} is not valid for HBL Web Internet Banking", db_result));
+                        }
+                    }
+                    if (message != db_result)
+                    {
+                        throw new AssertFailedException(string.Format("The Value of code is {0} and value of db is", message, db_result));
+                    }
+
+
+
+                }
+            }
+        }
+
+
         [When(@"I select from date ""(.*)""")]
         public void WhenISelectFromDate(string date)
         {
             AppiumHelper apmhelper = new AppiumHelper();
             DateTime current_date = DateTime.Today;
             DateTime given_date = Convert.ToDateTime(date);
+            string xpath_date = given_date.ToString("dd MMMM yyyy");
             int monthsApart = 12 * (current_date.Year - given_date.Year) + current_date.Month - given_date.Month;
             monthsApart = Math.Abs(monthsApart);
             for (int i = 0; i < monthsApart; i++)
             {
-                apmhelper.scroll_right(0.6, 0.8, 0.2);
+                if (Convert.ToDouble(Configuration.GetInstance().GetByKey("platformVersion")) <= 5.0)
+                {
+                    apmhelper.scroll_down(0.65, 0.30);
+                }
+                else
+                {
+                    apmhelper.scroll_right(0.6, 0.8, 0.2);
+                }
             }
             Element keyword = ContextPage.GetInstance().GetElement("SendMoney_SchedulePayment_CalendarDateSelect");
-            string temp = keyword.Locator.Replace("{calendar_date}", date.Split('/')[1].TrimStart(new Char[] { '0' }).ToString());
+            //string temp = keyword.Locator.Replace("{calendar_date}", date.Split('/')[1].TrimStart(new Char[] { '0' }).ToString());
+            string temp = keyword.Locator.Replace("{calendar_date}", xpath_date);
             //keyword.Locator = temp;
             apmhelper.links(temp, "xpath");
             context.Setcalendar_fromdate(given_date);
@@ -500,14 +890,24 @@ namespace HBLAutomationAndroid.Core
             AppiumHelper apmhelper = new AppiumHelper();
             DateTime current_date = DateTime.Today;
             DateTime given_date = Convert.ToDateTime(date);
+            string xpath_date = given_date.ToString("dd MMMM yyyy");
             int monthsApart = 12 * (current_date.Year - given_date.Year) + current_date.Month - given_date.Month;
             monthsApart = Math.Abs(monthsApart);
             for (int i = 0; i < monthsApart; i++)
             {
-                apmhelper.scroll_right(0.6, 0.8, 0.2);
+                string platformVersion = Configuration.GetInstance().GetByKey("platformVersion");
+                double pv = Convert.ToDouble(platformVersion);
+                if (pv <= 5.1)
+                {
+                    apmhelper.scroll_down(0.65, 0.30);
+                }
+                else
+                {
+                    apmhelper.scroll_right(0.6, 0.8, 0.2);
+                }
             }
             Element keyword = ContextPage.GetInstance().GetElement("SendMoney_SchedulePayment_CalendarDateSelect");
-            string temp = keyword.Locator.Replace("{calendar_date}", date.Split('/')[1].TrimStart(new Char[] { '0' }).ToString());
+            string temp = keyword.Locator.Replace("{calendar_date}", xpath_date);
             //keyword.Locator = temp;
             apmhelper.links(temp, "xpath");
             context.Setcalendar_todate(given_date);
@@ -566,7 +966,7 @@ namespace HBLAutomationAndroid.Core
                 }
                 if(counter != 0 && counter % 8 == 0)
                 {
-                    apmhelper.scroll_down();
+                    apmhelper.scroll_down(0.65,0.30);
                 }
                 counter++;
             }
@@ -576,10 +976,11 @@ namespace HBLAutomationAndroid.Core
         [When(@"I scroll down")]
         public void WhenIScrollDown()
         {
+            Thread.Sleep(2000);
             try
             {
                 AppiumHelper apmhelper = new AppiumHelper();
-                apmhelper.scroll_down();
+                apmhelper.scroll_down(0.65, 0.30);
             }
             catch (Exception exception)
             {
@@ -595,6 +996,7 @@ namespace HBLAutomationAndroid.Core
             Thread.Sleep(p0);
         }
 
+        [When(@"verify through ""(.*)"" on ""(.*)""")]
         [Then(@"verify through ""(.*)"" on ""(.*)""")]
         public void ThenVerifyThroughOn(string message, string Keyword)
         {
@@ -617,6 +1019,28 @@ namespace HBLAutomationAndroid.Core
                 {
                     message = context.GetToAccount_No();
                 }
+                //if (message == "Signup_PassPolicy")
+                //{
+                //    for (int i = 1; i <= 3; i++)
+                //    {
+                //        string temp = "";
+                //        if (i == 1)
+                //        {
+                //            temp = context.GetPassPolicy1();
+                //        }
+                //        else if (i == 2)
+                //        {
+                //            temp = context.GetPassPolicy2();
+                //        }
+                //        else if (i == 3)
+                //        {
+                //            temp = context.GetPassPolicy3();
+                //        }
+                //        string loc = keyword.Locator.Replace("[i]", "[" + (i) + "]");
+                //        apmhelper.verification(temp, keyword.Locator,locator_type);
+                //    }
+                //    return;
+                //}
                 apmhelper.verification(message, keyword.Locator,locator_type);
                 if (Keyword.Contains("BillPayment_TranSuccess") || Keyword.Contains("SendMoney_TranSuccessMessage"))
                 {
@@ -709,6 +1133,18 @@ namespace HBLAutomationAndroid.Core
         [Then(@"I set value in context from data ""(.*)"" as ""(.*)""")]
         public void WhenISetValueInContextFromDataAs(string value, string attribute)
         {
+            if (attribute == "customer_cnic")
+            {
+                context.SetCustomerCNIC(value);
+            }
+            if(attribute == "SignupCheck")
+            {
+                context.Set_signup_check(Convert.ToBoolean(value));
+            }
+            if (attribute == "scroll_text")
+            {
+                context.SetScrollText(value);
+            }
             if(attribute == "TranTypeBene")
             {
                 context.SetTranTypeBene(value);
@@ -751,6 +1187,20 @@ namespace HBLAutomationAndroid.Core
                 {
                     context.Set_term_deposit_check(Convert.ToInt32(value));
                 }
+            }
+            if (attribute == "AccountForTag")
+            {
+                List<string> lst = new List<string>();
+                if (value.Contains(","))
+                {
+                    string[] pieces = value.Split(',');
+                    lst.AddRange(pieces);
+                }
+                else
+                {
+                    lst.Add(value.ToString());
+                }
+                context.SetAccountForTag(lst);
             }
         }
 
