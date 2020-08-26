@@ -16,6 +16,7 @@ Scenario Outline: When user try to term deposit thorugh Investments
 	And I am clicking on "Investment_Icon"
 	And I am clicking on "Investment_TermDeposit_Icon"
 	And I set value in context from data "<Deposit_Years_Value>" as "TermDepositYears"
+	And I wait 5000
 	And I select "<term_deposit_type>" on "Investment_ETDRTYpe_List"
 	And I am clicking on "Investment_TermDep_Tenure"
 	And I select "<account_no>" on "Investment_FromAcc_List"

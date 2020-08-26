@@ -55,7 +55,7 @@ namespace HBLAutomationWeb.Common
         string is_tran_req;
         string is_otp_req;
         string Transaction_Category; string No_of_Transaction; string Tran_Type;
-        string From_Date; string To_Date; 
+        string From_Date; string To_Date;
         string Min_Amount; string Max_Amount; string Acc_no_or_mobile;
         string bill_company; string payee_nick; string to_bank;
         bool tran_from_date_flag = false;
@@ -86,6 +86,7 @@ namespace HBLAutomationWeb.Common
         string limit_type_id;
         string old_limit;
         string fund_disclaimer_popup;
+        bool signup_check;
 
         public string CutOvertime = null;
         public string Date = null;
@@ -137,6 +138,14 @@ namespace HBLAutomationWeb.Common
         public string GetCustomerProfileID()
         {
             return customer_profile_id;
+        }
+        public void Set_signup_check(bool signup_check)
+        {
+            this.signup_check = signup_check;
+        }
+        public bool Get_signup_check()
+        {
+            return this.signup_check;
         }
         public void SetIsPaidReq(string is_paid_req)
         {
@@ -210,7 +219,7 @@ namespace HBLAutomationWeb.Common
         {
             this.multi_payment_amount = multi_payment_amount;
         }
-    
+
         //public void SetCreatedOnFlag(bool created_on_flag) 
         //{   
         //    this.created_on_flag = created_on_flag;
@@ -345,7 +354,7 @@ namespace HBLAutomationWeb.Common
         {
             this.Account_No = Account_No;
         }
-        public List <string> GetAccNumbers()
+        public List<string> GetAccNumbers()
         {
             return this.Account_No;
         }
@@ -361,7 +370,7 @@ namespace HBLAutomationWeb.Common
         {
             this.acc_info = acc_info;
         }
-        public Dictionary<string,string> Get_acc_balance()
+        public Dictionary<string, string> Get_acc_balance()
         {
             return this.acc_info;
 
@@ -667,7 +676,7 @@ namespace HBLAutomationWeb.Common
 
 
 
-       
+
 
         ExcelRecord excelRecord { get; set; }
 
@@ -682,7 +691,7 @@ namespace HBLAutomationWeb.Common
             excelRecord = record;
         }
 
-        
+
         public string GetDate()
         {
             Date = DateTime.Today.AddDays(-1).ToString();

@@ -179,12 +179,12 @@ namespace HBLAutomationWeb.Core
                     }
                 }
 
-                if (Keyword == "Pay_Transaction_PayBill_Rating" || Keyword == "Pay_Transaction_PayBill_RatingOkBtn")
+                else if (Keyword == "Pay_Transaction_PayBill_Rating" || Keyword == "Pay_Transaction_PayBill_RatingOkBtn")
                 {
                     selhelper.rating(keyword.Locator);
                     if (context.GetRatingCheck() == true)
                     {
-                        string query = "Select PARAM_ANSWER_ID from DC_CUSTOMER_REG_FEEDBACK  i where I.CUSTOMER_INFO_ID='1{customer_info_id}'";
+                        string query = "Select PARAM_ANSWER_ID from DC_CUSTOMER_REG_FEEDBACK  i where I.CUSTOMER_INFO_ID= (Select CUSTOMER_INFO_ID from dc_customer_info '{customer_info_id}'";
                         query = query.Replace("{customer_info_id}", context.GetCustomerInfoID());
                         DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
                         DataTable SourceDataTable = dlink.GetDataTable(query, "DIGITAL_CHANNEL_SEC");
@@ -197,7 +197,7 @@ namespace HBLAutomationWeb.Core
                         }
                     }
                 }
-                if (Keyword.Equals("Signup_AccountToggle"))
+                else if (Keyword.Equals("Registration_AccountToggle"))
                 {
                     List<string> AccList = new List<string>();
                     AccList = context.GetAccountForTag();
@@ -207,7 +207,7 @@ namespace HBLAutomationWeb.Core
                         selhelper.links(locator);
                     }
                 }
-                if (Keyword.Equals("MyAccount_CheqBook_BranchCheck"))
+                else if (Keyword.Equals("MyAccount_CheqBook_BranchCheck"))
                 {
                     if (context.GetHomeBranchDelFlag() != "")
                     {
@@ -245,7 +245,7 @@ namespace HBLAutomationWeb.Core
                 {
 
                     SeleniumHelper.TakeScreenshot();
-                    throw new AssertFailedException(exception.Message); 
+                    throw new AssertFailedException(exception.Message);
                 }
             }
 
@@ -448,6 +448,10 @@ namespace HBLAutomationWeb.Core
         [Then(@"I set value in context from data ""(.*)"" as ""(.*)""")]
         public void GivenISetValueInContextFromDataAs(string value, string attribute)
         {
+            if (attribute == "SignupCheck")
+            {
+                context.Set_signup_check(Convert.ToBoolean(value));
+            }
             if (attribute == "invest_fund_name")
             {
                 context.SetInvestFundName(value);
@@ -559,7 +563,6 @@ namespace HBLAutomationWeb.Core
                 {
                     query = query.Replace("{customer_cnic}", context.GetCustomerCNIC());
                 }
-
                 if (query.Contains("Company_Code"))
                 {
                     query = query.Replace("{Company_Code}", context.GetCompany_Code());
@@ -575,7 +578,7 @@ namespace HBLAutomationWeb.Core
             DataTable SourceDataTable = dLink.GetDataTable(query, db_value);
             string inst_type = SourceDataTable.Rows[0][0].ToString();
 
-                if (query.Contains("CUSTOMER_PROFILE_ID"))
+            if (query.Contains("CUSTOMER_PROFILE_ID"))
             {
                 context.SetCustomerProfileID(inst_type);
             }
@@ -585,14 +588,11 @@ namespace HBLAutomationWeb.Core
             }
             if (query.Contains("IS_IVR_ENABLED"))
             {
-                if ((context.GetIVRReq() == "1" && inst_type == "0"))
+                if ((context.GetIVRReq() == inst_type))
                 {
-                    return;
+                    throw new AssertFailedException("IVR setting is not correct");
                 }
-                else if (context.GetIVRReq() == "0" && inst_type == "1")
-                {
-                    return;
-                }
+
                 //if ((context.GetIVRReq() != "1" && inst_type != "0") || (context.GetIVRReq() != "0" && inst_type != "1"))
                 //{
                 //    throw new AssertFailedException("IS_IVR_ENABLED setting is not correct");
@@ -604,7 +604,7 @@ namespace HBLAutomationWeb.Core
             }
             if (query.Contains("Z.ENABLE_PSD "))
             {
-                if ((context.GetEnablePSD() != "1" && inst_type != "1") || (context.GetEnablePSD() != "0" && inst_type != "0"))
+                if ((context.GetEnablePSD() != inst_type))
                 {
                     throw new AssertFailedException("ENABLE_PSD setting is not correct");
                 }
@@ -902,13 +902,16 @@ namespace HBLAutomationWeb.Core
                         string message = SourceDataTable.Rows[i][0].ToString();
                         db_account_list.Add(message);
                     }
-                    if (db_account_list.Count != account_list.Count)
+
+                    var areEquivalent = (account_list.Count == db_account_list.Count) && !account_list.Except(db_account_list).Any();
+
+                    if (areEquivalent == false)
                     {
                         throw new AssertFailedException(string.Format("Account Numbers during Sign up:{0} are not the same as in Database:{1}", account_list, db_account_list));
                     }
                 }
 
-                if (query.Contains("K.IS_ACCOUNT_LINK"))
+                else if (query.Contains("K.IS_ACCOUNT_LINK"))
                 {
                     DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
                     DataTable SourceDataTable = dlink.GetDataTable(query, schema);
@@ -924,7 +927,10 @@ namespace HBLAutomationWeb.Core
                         string message = SourceDataTable.Rows[i][0].ToString();
                         db_account_list.Add(message);
                     }
-                    if (db_account_list.Count != account_list.Count)
+
+                    var areEquivalent = (account_list.Count == db_account_list.Count) && !account_list.Except(db_account_list).Any();
+
+                    if (areEquivalent == false)
                     {
                         throw new AssertFailedException(string.Format("Account Numbers which were tagged during Sign up:{0} are not the same as in Database:{1}", account_list, db_account_list));
                     }
@@ -1079,7 +1085,7 @@ namespace HBLAutomationWeb.Core
             //selhelper.checkPageIsReady();
             Thread.Sleep(3000);
             Element keyword = ContextPage.GetInstance().GetElement(Keyword);
-            if (Keyword.Contains("Signup_Scroll"))
+            if (Keyword.Contains("Registration_Scroll"))
             {
                 keyword.Locator = keyword.Locator.Replace("{K}", context.GetScrollText());
             }
@@ -1419,8 +1425,9 @@ namespace HBLAutomationWeb.Core
                 dict.Add(acc_no, acc_bal);
             }
 
-            //Element temp_keyword = ContextPage.GetInstance().GetElement("Pay_Acc_No_Investment");
-            if (context.Get_term_deposit_check() == 1)
+            Element temp_keyword = ContextPage.GetInstance().GetElement("Investment_AccountInfo");
+            string acc_text = selhelper.ReturnKeywordValue(temp_keyword.Locator);
+            if (acc_text.Contains("Term Deposit") && context.Get_term_deposit_check() == 1)
             {
                 context.Set_term_deposit_check(2);
                 Element temp_keyword1 = ContextPage.GetInstance().GetElement("Investment_TermDep_Balance");
@@ -1428,14 +1435,20 @@ namespace HBLAutomationWeb.Core
 
                 dict.Add(selhelper.ReturnKeywordValue(temp_keyword2.Locator), selhelper.ReturnKeywordValue(temp_keyword1.Locator));
             }
-            if (context.GetInvestFundName() != null)
+            else if (context.Get_term_deposit_check() == 1)
             {
-            Element temp_keyword3 = ContextPage.GetInstance().GetElement("Investment_MutualFund_AccName");
-            Element temp_keyword4 = ContextPage.GetInstance().GetElement("Investment_MutualFund_Balance");
+                context.Set_term_deposit_check(2);
+                dict.Add("Term Deposit", "0.00");
+            }
 
-            string acc_name = selhelper.ReturnKeywordValue(temp_keyword3.Locator);
-            string acc_balance = selhelper.ReturnKeywordValue(temp_keyword4.Locator);
-            dict.Add(acc_name, acc_balance);
+            if (context.GetInvestFundName() != null && acc_text.Contains("HBL Mutual Funds"))
+            {
+                Element temp_keyword3 = ContextPage.GetInstance().GetElement("Investment_MutualFund_AccName");
+                Element temp_keyword4 = ContextPage.GetInstance().GetElement("Investment_MutualFund_Balance");
+
+                string acc_name = selhelper.ReturnKeywordValue(temp_keyword3.Locator);
+                string acc_balance = selhelper.ReturnKeywordValue(temp_keyword4.Locator);
+                dict.Add(acc_name, acc_balance);
             }
 
             context.Set_acc_balances(dict);
@@ -1853,12 +1866,15 @@ namespace HBLAutomationWeb.Core
         public void WhenISaveAccountNumbers()
         {
             SeleniumHelper selhelper = new SeleniumHelper();
-            Element keyword = ContextPage.GetInstance().GetElement("Signup_TagAccountNo");
+            Element keyword = ContextPage.GetInstance().GetElement("Registration_AccountSize");
 
             List<string> lst = new List<string>();
-            int count = 0;
-            int x = context.GeTSizeCount();
+            int x = selhelper.SizeCountElements(keyword.Locator);
             string acc_no = "";
+            int count = 0;
+
+            keyword = null;
+            keyword = ContextPage.GetInstance().GetElement("Registration_TagAccountNo");
 
             for (int i = 0; i < x; i++)
             {
@@ -2572,7 +2588,7 @@ namespace HBLAutomationWeb.Core
                         per_tran_UI = per_tran_UI.Remove(per_tran_UI.Length - 3);
                         per_tran_UI = per_tran_UI.Replace(",", "");
                     }
-                    
+
                     if (per_transaction != per_tran_UI)
                     {
                         throw new Exception(String.Format("Per Transaction Amount in Database :{0} is not equal with per transaction amount on website :{1}", per_transaction, per_tran_UI));
@@ -2610,7 +2626,7 @@ namespace HBLAutomationWeb.Core
                     customer_limit_detail_dict.Add(limit_type, Tuple.Create(old_limit, limit_type_id));
 
                     Keyword = null;
-                    limit_rules_id = temp = daily_limit = old_limit = per_tran_UI = per_transaction = min_amount_check  = is_client_view = limit_type = temp_keyword = String.Empty;
+                    limit_rules_id = temp = daily_limit = old_limit = per_tran_UI = per_transaction = min_amount_check = is_client_view = limit_type = temp_keyword = String.Empty;
                 }
                 context.SetCustLimitDetail(customer_limit_detail_dict);
             }
@@ -2670,7 +2686,7 @@ namespace HBLAutomationWeb.Core
                 int step_limit = result / Convert.ToInt32(step);
 
                 selhelper.PressEnter(locator);
-               // selhelper.ScrollToElement(slider_locator);
+                // selhelper.ScrollToElement(slider_locator);
                 selhelper.RangeSlider(step_limit, "LEFT", slider_locator);
 
                 dlink = new DataAccessComponent.DataAccessLink();
@@ -3265,7 +3281,7 @@ namespace HBLAutomationWeb.Core
                         for (int j = 0; j < array_mutual_fund_db.GetLength(0); j++)
                             if (array_mutual_fund_db[i, j] != array_mutual_fund_ui[i, j])
                             {
-                                throw new Exception(string.Format("The value on Website :{0} is not equal with value on database :{1}", array_mutual_fund_db[i,j], array_mutual_fund_ui[i, j]));
+                                throw new Exception(string.Format("The value on Website :{0} is not equal with value on database :{1}", array_mutual_fund_db[i, j], array_mutual_fund_ui[i, j]));
                             }
 
                     if (amount_db != amount_ui)
