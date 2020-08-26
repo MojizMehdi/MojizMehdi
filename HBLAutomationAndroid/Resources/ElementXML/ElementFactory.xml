@@ -19,8 +19,10 @@
     <Element keyword="Registration_NextBtn" locator="com.hbl.android.hblmobilebanking:id/submitRequestLay"/>
     <Element keyword="Registration_AgreeBtn" locator="com.hbl.android.hblmobilebanking:id/accept_btn"/>
     <Element keyword="Registration_CardNo" locator="com.hbl.android.hblmobilebanking:id/card_number_field"/>
+    <Element keyword="Registration_Email" locator="com.hbl.android.hblmobilebanking:id/email_field"/>
     <Element keyword="Registration_CardPin" locator="com.hbl.android.hblmobilebanking:id/card_pin_field"/>
     <Element keyword="Registration_LoginId" locator="com.hbl.android.hblmobilebanking:id/login_id_field1"/>
+    <Element keyword="Registration_LoginIdCC" locator="com.hbl.android.hblmobilebanking:id/login_id_field"/>
     <Element keyword="Registration_AccountNo_Marking" locator="//android.widget.Switch[@resource-id='com.hbl.android.hblmobilebanking:id/account_preview_switch' and contains(@text,'{AccountNo}')]"/>
     <Element keyword="Registration_AccMark_NextBtn" locator="com.hbl.android.hblmobilebanking:id/continue_btn"/>
     <Element keyword="Registration_AccountNo_Size" locator="(//android.widget.Switch[@resource-id='com.hbl.android.hblmobilebanking:id/account_preview_switch'])"/>
@@ -32,12 +34,10 @@
     <Element keyword="Registration_Confirm_Tran_Password" locator="com.hbl.android.hblmobilebanking:id/confirm_trans_pwd_input"/>
     <Element keyword="Registration_SuccessMessage" locator="com.hbl.android.hblmobilebanking:id/dialog_msg"/>
     <Element keyword="Registration_SuccessMessage_OK_Btn" locator="com.hbl.android.hblmobilebanking:id/dialog_pos_btn"/>
-
-
+    <Element keyword="Registration_Facebook" locator="//android.widget.RadioButton[@text='Facebook']"/>
+    <Element keyword="Registration_Facebook_Submit" locator="//android.widget.Button[@text='Submit']"/>
+    <Element keyword="Registration_Facebook_Submit_OK" locator="com.hbl.android.hblmobilebanking:id/dialog_pos_btn"/>
     
-
-
-
   </Module>
   <Module name ="Dashboard">
     <Element keyword="Dashboard" locator="com.hbl.android.hblmobilebanking:id/homeClick"/>

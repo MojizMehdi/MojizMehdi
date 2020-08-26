@@ -268,6 +268,14 @@ namespace HBLAutomationAndroid.Pages
         }
 
 
+        public void set_attribute(string locator)
+        {
+            IWebElement Control = null;
+            //IJavaScriptExecutor js = IJavaScriptExecutor(driver)
+            Control = waitDriver.Until(ExpectedConditions.ElementIsVisible(By.Id(locator)));
+            //Control.Enabled = true;
+        }
+
         //Method For Message Verification
         public void verification(string message, string locator,string locator_type)
         {

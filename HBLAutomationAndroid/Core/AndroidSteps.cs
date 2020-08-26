@@ -41,6 +41,16 @@ namespace HBLAutomationAndroid.Core
             }
         }
 
+        [When(@"I change screen attribute value on ""(.*)""")]
+        public void WhenIChangeScreenAttributeValueOn(string Keyword)
+        {
+            AppiumHelper apmhelper = new AppiumHelper();
+            //apmhelper.checkPageIsReady();
+            Element keyword = ContextPage.GetInstance().GetElement(Keyword);
+            apmhelper.set_attribute(keyword.Locator);
+        }
+
+
         [When(@"I have given ""(.*)"" on ""(.*)""")]
         [Then(@"I have given ""(.*)"" on ""(.*)""")]
         public void WhenIHaveGivenOn(string textboxvalue, string Keyword)
@@ -709,6 +719,8 @@ namespace HBLAutomationAndroid.Core
             }
         }
 
+        [Given(@"verify the data using ""(.*)"" on Schema ""(.*)""")]
+        [When(@"verify the data using ""(.*)"" on Schema ""(.*)""")]
         [Then(@"verify the data using ""(.*)"" on Schema ""(.*)""")]
         public void ThenVerifyTheDataUsingOnSchema(string query, string schema)
         {
@@ -767,7 +779,7 @@ namespace HBLAutomationAndroid.Core
                 }
                 if (query.Contains("Z.ENABLE_PSD "))
                 {
-                    if ((context.GetEnablePSD() != "1" && db_result != "1") || (context.GetEnablePSD() != "0" && db_result != "0"))
+                    if ((context.GetEnablePSD() == "0" && db_result == "1") || (context.GetEnablePSD() == "1" && db_result == "0") || (context.GetEnablePSD() == "" && db_result == ""))
                     {
                         throw new AssertFailedException("ENABLE_PSD setting is not correct");
                     }
@@ -776,38 +788,38 @@ namespace HBLAutomationAndroid.Core
                 {
                     context.SetCustomerType(db_result);
                 }
-                if (query.Contains("IS_PASSWORD_CHANGED_REQUIRED") || (query.Contains("IS_PASSWORD_RESET_REQUIRED") || query.Contains("LGN_PWD_CHANGED_POPUP_COUNT")))
-                {
-                    if (db_result != "0")
-                    {
-                        throw new AssertFailedException("The value is not equal to 0");
-                    }
-                }
-                if (query.Contains("TRANSACTION_PASSWORD"))
-                {
-                    if (db_result == "")
-                    {
-                        if (context.GetTranPassFlag() == true)
-                        {
-                            throw new AssertFailedException("Transaction Password is not updated in data base");
-                        }
-                        else
-                        {
-                            return;
-                        }
-                    }
-                    if (db_result != "")
-                    {
-                        if (context.GetTranPassFlag() == false)
-                        {
-                            throw new AssertFailedException("Transaction Password is not updated in data base");
-                        }
-                        else
-                        {
-                            return;
-                        }
-                    }
-                }
+                //if (query.Contains("IS_PASSWORD_CHANGED_REQUIRED") || (query.Contains("IS_PASSWORD_RESET_REQUIRED") || query.Contains("LGN_PWD_CHANGED_POPUP_COUNT")))
+                //{
+                //    if (db_result != "0")
+                //    {
+                //        throw new AssertFailedException("The value is not equal to 0");
+                //    }
+                //}
+                //if (query.Contains("TRANSACTION_PASSWORD"))
+                //{
+                //    if (db_result == "")
+                //    {
+                //        if (context.GetTranPassFlag() == true)
+                //        {
+                //            throw new AssertFailedException("Transaction Password is not updated in data base");
+                //        }
+                //        else
+                //        {
+                //            return;
+                //        }
+                //    }
+                //    if (db_result != "")
+                //    {
+                //        if (context.GetTranPassFlag() == false)
+                //        {
+                //            throw new AssertFailedException("Transaction Password is not updated in data base");
+                //        }
+                //        else
+                //        {
+                //            return;
+                //        }
+                //    }
+                //}
 
                 if (query.Contains("last_login"))
                 {
@@ -838,7 +850,7 @@ namespace HBLAutomationAndroid.Core
                     }
                     if (query.Contains("PARAM_CHANNEL_ID"))
                     {
-                        if (db_result != "2")
+                        if (db_result != "1")
                         {
                             throw new AssertFailedException(string.Format("The PARAM_CHANNEL_ID :{0} is not valid for HBL Web Internet Banking", db_result));
                         }
