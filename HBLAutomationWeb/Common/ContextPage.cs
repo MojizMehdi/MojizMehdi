@@ -87,6 +87,8 @@ namespace HBLAutomationWeb.Common
         string old_limit;
         string fund_disclaimer_popup;
         bool signup_check;
+        string offered_rate;
+        string ref_no;
 
         public string CutOvertime = null;
         public string Date = null;
@@ -98,6 +100,22 @@ namespace HBLAutomationWeb.Common
         public string GetFundDisclaimerPopup()
         {
             return fund_disclaimer_popup;
+        }
+        public void SetOfferedRate(string offered_rate)
+        {
+            this.offered_rate = offered_rate;
+        }
+        public string GetOfferedRate()
+        {
+            return offered_rate;
+        }
+        public void SetTermRefNo(string ref_no)
+        {
+            this.ref_no = ref_no;
+        }
+        public string GetTermRefNo()
+        {
+            return ref_no;
         }
         public void SetLimitTypeID(string limit_type_id)
         {

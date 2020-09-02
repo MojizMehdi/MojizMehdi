@@ -26,6 +26,7 @@ Scenario Outline: When user try to term deposit thorugh Investments
 	And I scroll to element "Investment_TermDep_ScrollText"
 	And I am performing on "Investment_TermDep_AcceptBtn"
 	And I have given "<Tran_Pass_Value>" on "Signup_TransactionPassword"
+	And I scroll to element "Investment_TermDep_ReqBtn"
 	And I am performing on "Investment_TermDep_ReqBtn"
 	Then verify through "<Success_Message>" on "Investment_TranSuccessMessage"
 	And verify through database on "<tran_type_query>" on Schema "<db_val>" on "Investment_TranType"
@@ -39,6 +40,15 @@ Scenario Outline: When user try to term deposit thorugh Investments
 	And I am clicking on "Investment_TermDep_RatingOkBtn" 
 	And I am clicking on "Login_Dashboard"
 	And I verify Account Balance
+	And I am clicking on "Investment_TermDepost_DetailBtn"
+	And I set value in context from database "<reference_no_query>" as "term_dep_ref_no" on Schema "<db_val>"
+	And verify through "" on "Investment_TermDetTotalAmount"
+	And I scroll to element "Investment_TermRefNo"
+	And verify through database on "<reference_no_query>" on Schema "<db_val>" on "Investment_TermRefNo"
+	And verify through "<Amount_Value>" on "Investment_TermDetAmount"
+	And verify through "<Deposit_Years_Value>" on "Investment_TermDetPeriod"
+	And verify through "OfferedRateContextVal" on "Investment_TermDetRate"
+	And I am clicking on "Login_Dashboard"
 	And I am clicking on "Services_Link"
 	And I am clicking on "Services_Transaction_Activity"
 	And I am clicking on "Services_Last_Transaction"
@@ -52,7 +62,7 @@ Scenario Outline: When user try to term deposit thorugh Investments
 
 @source:Data/ETDR.xlsx
 	Examples: 
-	|Case|status_query|status_query2|Category_Value|Deposit_Years_Value|account_no|profit_account|Amount_Value|Tran_Pass_Value|Success_Message|tran_type_query|tran_amount_query|from_account_query|to_account_query|db_val|term_deposit_type|date_query|
+	|Case|status_query|status_query2|Category_Value|Deposit_Years_Value|account_no|profit_account|Amount_Value|Tran_Pass_Value|Success_Message|tran_type_query|tran_amount_query|from_account_query|to_account_query|db_val|term_deposit_type|date_query|reference_no_query|
 
 
 
@@ -67,7 +77,7 @@ Scenario Outline: When user try to verify Mutual Fund
 	When I save Account Balances
 	And I am clicking on "Investment_Icon"
 	And I am clicking on "Investment_MutualFund_Icon"
-	And verify the result from "<cust_profile_id_query>" on Schema "QAT_AMC"
+	And I set value in context from database "<cust_profile_id_query>" as "cust_profile_id" on Schema "QAT_AMC"
 	And I verify user Mutual Fund status on schema "<db_val3>"
 	Then I am clicking on "Investment_MutualFund_InvestTab"
 	And I am clicking on "Investment_MutualFund_InvestBtn"

@@ -8,17 +8,17 @@ Scenario Outline: As a user I want to verify Account Linking & De-Linking from M
 	Given the test case title is "<Case>" 
 	And the user is arrive to Internet Banking home page
 	And I count Number of Account
-	And I save Account Balances
+	When I save Account Balances
 	And I am clicking on "MyAccount_Icon"
 	#And I am clicking on "MyAccount_AccLinkOption"
-	And I select "<De_Linking_Account>" for Account linking or de-linking "<operation_type>" with success message as "<Success_message>"
+	Then I select "<De_Linking_Account>" for Account linking or de-linking "<operation_type>" with success message as "<Success_message>"
 	When I am clicking on "Services_Link"
 	And I am clicking on "Services_Transaction_Activity"
 	And I select "<Transaction_Category>" on "Services_CategoryFilter"
 	And I scroll to element "Services_Clear_Btn"
 	And I am performing on "Services_Search_Btn"
 	And I am clicking on "Services_Last_Transaction"
-	Then verify through database on "Successful" on Schema "<db_val>" on "Pay_MultiBill_SRV_TranStatus"
+	And verify through database on "Successful" on Schema "<db_val>" on "Pay_MultiBill_SRV_TranStatus"
 	And verify through database on "<tran_type_query>" on Schema "<db_val>" on "Pay_MultiBill_SRV_TranType"
 	And I am clicking on "MyAccount_Services_CloseBtn"
 
@@ -44,7 +44,7 @@ Scenario Outline: As a user I want to verify Limit Management from My Account
 	And I am performing on "Services_Search_Btn"
 	And I am clicking on "Services_Last_Transaction"
 	And verify through "Successful" on "MyAccount_Forgot_TranSuccessMessage"
-	And verify through database on "<tran_type_query>" on Schema "DIGITAL_CHANNEL_SEC" on "MyAccount_TranPopup_TranType"
+	#And verify through database on "<tran_type_query>" on Schema "DIGITAL_CHANNEL_SEC" on "MyAccount_TranPopup_TranType"
 	And verify through database on "<tran_date_query>" on Schema "DIGITAL_CHANNEL_SEC" on "MyAccount_TranPopup_TranDate"
 	And verify through database on "<old_limit_tran_query>" on Schema "DIGITAL_CHANNEL_SEC" on "Investment_MutualFund_TranOld"
 	And verify through database on "<new_limit_tran_query>" on Schema "DIGITAL_CHANNEL_SEC" on "Investment_MutualFund_TranNew"
@@ -83,6 +83,7 @@ Scenario Outline: As a user i want to verify change user login password
 	And verify the result from "<IS_PASSWORD_RESET_REQUIRED>" on Schema "<db_val>"
 	And verify the result from "<LAST_PASSWORD_CHANGED>" on Schema "<db_val>"
 	And verify the result from "<LGN_PWD_CHANGED_POPUP_COUNT>" on Schema "<db_val>"
+	And verify the message "1" through database on "<customer_password_query>" on Schema "<db_val>"
 	And I have given "<Login_UserId_Value>" on "Login_UserId"
 	And I have given "<Login_New_Password>" on "Login_Password"
 	And I am performing on "Login_SignIn_Button"
@@ -100,7 +101,7 @@ Scenario Outline: As a user i want to verify change user login password
 
 	@source:Data/ChangeLoginPassword.xlsx
 	Examples:
-	|Case|Login_UserId_Value|Login_Password_Value|confirm_password_value|OTP_Value|Login_New_Password|Update_Password_query|password_change_req_query|IS_PASSWORD_RESET_REQUIRED|password_policy_query|success_message|LAST_PASSWORD_CHANGED|LGN_PWD_CHANGED_POPUP_COUNT|tran_type_query|success_message_query|tran_date_query|db_val|
+	|Case|Login_UserId_Value|Login_Password_Value|confirm_password_value|OTP_Value|Login_New_Password|Update_Password_query|password_change_req_query|IS_PASSWORD_RESET_REQUIRED|password_policy_query|success_message|LAST_PASSWORD_CHANGED|LGN_PWD_CHANGED_POPUP_COUNT|tran_type_query|success_message_query|tran_date_query|db_val|customer_password_query|
 
 
 
@@ -126,8 +127,9 @@ Scenario Outline: As a user i want to verify change user Transaction password
 	And I have given "<tran_confirm_password>" on "MyAccount_TranConfirmPass"
 	And I am performing on "MyAccount_TranChangeBtn"
 	Then verify through "<success_message>" on "MyAccount_TranPopup_TranSuccessMessage"
-	And verify through database on "<tran_type_query>" on Schema "<db_val>" on "MyAccount_TranPopup_TranType"
+	#And verify through database on "<tran_type_query>" on Schema "<db_val>" on "MyAccount_TranPopup_TranType"
 	And verify through database on "<tran_date_query>" on Schema "<db_val>" on "MyAccount_TranPopup_TranDate"
+	And verify the message "1" through database on "<customer_password_query>" on Schema "<db_val>"
 	And I am performing on "MyAccount_TranPopupClose"
 	And verify the result from "<LAST_TRANS_PASSWORD_CHANGED>" on Schema "<db_val>"
 	And I am clicking on "Login_Dashboard"
@@ -145,7 +147,7 @@ Scenario Outline: As a user i want to verify change user Transaction password
 
 	@source:Data/ChangeTransactionPassword.xlsx
 	Examples: 
-	|Case|Login_UserId_Value|Login_Password_Value|OTP_Value|tran_old_password|tran_new_password|Update_Password_query|password_policy_query|success_message|db_val|LAST_TRANS_PASSWORD_CHANGED|tran_type_query|tran_date_query|tran_confirm_password|
+	|Case|Login_UserId_Value|Login_Password_Value|OTP_Value|tran_old_password|tran_new_password|Update_Password_query|password_policy_query|success_message|db_val|LAST_TRANS_PASSWORD_CHANGED|tran_type_query|tran_date_query|tran_confirm_password|customer_password_query|
 
 
 @MyAccount
@@ -174,6 +176,7 @@ Scenario Outline: As a user i want to verify Forgot Transaction password
 	And I have given "<tran_confirm_password>" on "MyAccount_Forgot_Tran_CnfrmPass"
 	Then I am performing on "MyAccount_Forgot_Tran_ChangeBtn"
 	And verify through "<success_message>" on "MyAccount_Forgot_Tran_Success"
+	And verify the message "1" through database on "<customer_password_query>" on Schema "<db_val>"
 	And I am performing on "MyAccount_Forgot_Tran_OkBtn"
 	And I am clicking on "Services_Link"
 	And I am clicking on "Services_Transaction_Activity"
@@ -193,7 +196,7 @@ Scenario Outline: As a user i want to verify Forgot Transaction password
 
 	@source:Data/ForgotTransactionPassword.xlsx
 	Examples: 
-	|Case|Login_UserId_Value|Login_Password_Value|OTP_Value|tran_new_password|Update_Password_query|password_policy_query|success_message|tran_type_query|tran_date_query|db_val|cnic|dob|cardNo|pin|LAST_TRANS_PASSWORD_CHANGED|tran_confirm_password|
+	|Case|Login_UserId_Value|Login_Password_Value|OTP_Value|tran_new_password|Update_Password_query|password_policy_query|success_message|tran_type_query|tran_date_query|db_val|cnic|dob|cardNo|pin|LAST_TRANS_PASSWORD_CHANGED|tran_confirm_password|customer_password_query|
 
 
 

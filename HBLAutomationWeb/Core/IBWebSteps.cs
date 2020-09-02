@@ -81,6 +81,7 @@ namespace HBLAutomationWeb.Core
                 SeleniumHelper selhelper = new SeleniumHelper();
                 selhelper.checkPageIsReady();
                 Element keyword = ContextPage.GetInstance().GetElement(Keyword);
+                Thread.Sleep(5000);
                 //keyword.Locator used instead od locator
                 selhelper.SetTextBoxValue(textboxvalue, keyword.Locator);
 
@@ -179,13 +180,19 @@ namespace HBLAutomationWeb.Core
                     }
                 }
 
-                else if (Keyword == "Pay_Transaction_PayBill_Rating" || Keyword == "Pay_Transaction_PayBill_RatingOkBtn")
+                else if (Keyword == "Pay_Transaction_PayBill_Rating")
                 {
                     selhelper.rating(keyword.Locator);
+                }
+
+                else if (Keyword.Contains("RatingOkBtn"))
+                {
                     if (context.GetRatingCheck() == true)
                     {
-                        string query = "Select PARAM_ANSWER_ID from DC_CUSTOMER_REG_FEEDBACK  i where I.CUSTOMER_INFO_ID= (Select CUSTOMER_INFO_ID from dc_customer_info '{customer_info_id}'";
-                        query = query.Replace("{customer_info_id}", context.GetCustomerInfoID());
+                        selhelper.links(keyword.Locator);
+
+                        string query = "Select PARAM_ANSWER_ID from DC_CUSTOMER_REG_FEEDBACK i where I.CUSTOMER_INFO_ID= (Select CUSTOMER_INFO_ID from dc_customer_info k where k.customer_name = '{customer_name}')";
+                        query = query.Replace("{customer_name}", context.GetUsername());
                         DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
                         DataTable SourceDataTable = dlink.GetDataTable(query, "DIGITAL_CHANNEL_SEC");
                         string rating_ans = SourceDataTable.Rows[0][0].ToString();
@@ -193,7 +200,6 @@ namespace HBLAutomationWeb.Core
                         if (rating_ans != "5")
                         {
                             throw new AssertFailedException("Rating verification Failed, Given and DB Value is not equal");
-
                         }
                     }
                 }
@@ -223,6 +229,10 @@ namespace HBLAutomationWeb.Core
                     if (Keyword.Contains("Investment_TermDep_Tenure"))
                     {
                         keyword.Locator = keyword.Locator.Replace("{Year}", context.Get_TermDepositYears());
+
+                        string Keyword2 = keyword.Locator + "//parent::div//b[contains(text(),'Offered')]//following-sibling::span";
+                        string off_rate = selhelper.ReturnKeywordValue(Keyword2);
+                        context.SetOfferedRate(off_rate);
                     }
                     if (Keyword.Equals("BeneManage_Edit"))
                     {
@@ -578,10 +588,6 @@ namespace HBLAutomationWeb.Core
             DataTable SourceDataTable = dLink.GetDataTable(query, db_value);
             string inst_type = SourceDataTable.Rows[0][0].ToString();
 
-            if (query.Contains("CUSTOMER_PROFILE_ID"))
-            {
-                context.SetCustomerProfileID(inst_type);
-            }
             if (query.Contains("IVR_REQUIRED"))
             {
                 context.SetIVRReq(inst_type);
@@ -689,11 +695,6 @@ namespace HBLAutomationWeb.Core
                 }
             }
 
-            if (query.Contains("APPLICATION_PARAMETER_ID='906'"))
-            {
-                context.SetScheduleConfig(inst_type);
-            }
-
             if (SourceDataTable.Rows.Count == 0)
             {
                 throw new AssertFailedException(string.Format("there exists no record in database against query: {0}", query));
@@ -788,7 +789,25 @@ namespace HBLAutomationWeb.Core
                 {
                     message = context.GetConsumer_No();
                 }
-                if (message == "Signup_PassPolicy")
+                else if (message == "OfferedRateContextVal")
+                {
+                    message = context.GetOfferedRate();
+                }
+                else if (Keyword.Equals("Investment_TermDetAmount"))
+                {
+                    int temp = Convert.ToInt32(message);
+                    message = temp.ToString("N0");
+                }
+                else if (Keyword.Equals("Investment_TermDetPeriod"))
+                {
+                    if (message.Contains("One")) { message.Replace("One", "1"); }
+                    if (message.Contains("Two")) { message.Replace("Two", "2"); }
+                    if (message.Contains("Three")) { message.Replace("Three", "3"); }
+                    if (message.Contains("Five")) { message.Replace("Five", "5"); }
+                    if (message.Contains("Ten")) { message.Replace("Ten", "10"); }
+
+                }
+                else if (message == "Signup_PassPolicy")
                 {
                     for (int i = 1; i <= 3; i++)
                     {
@@ -810,7 +829,7 @@ namespace HBLAutomationWeb.Core
                     }
                     return;
                 }
-                if (message == "MyAccount_PassPolicy")
+                else if (message == "MyAccount_PassPolicy")
                 {
                     string temp_1 = context.GetPassPolicy1().Trim();
                     selhelper.verification(temp_1, keyword.Locator);
@@ -842,11 +861,26 @@ namespace HBLAutomationWeb.Core
 
                     }
                 }
+                else if (Keyword.Equals("Investment_TermDetTotalAmount"))
+                {
+                    string amount = selhelper.ReturnKeywordValue(keyword.Locator);
+                    amount = amount.Replace("Consolidated Amount (PKR)", "").Trim();
+                    amount = amount.Replace(",", "");
+
+                    message = Convert.ToString(context.Get_term_deposit_balance());
+
+                    Assert.AreEqual(message, amount);
+                
+                }
                 else
                 {
                     if (Keyword.Equals("Investment_MutualFund_DisPopup") && context.GetFundDisclaimerPopup() == null)
                     {
                         return;
+                    }
+                    if (Keyword.Contains("Investment_TermDetAmount") || Keyword.Contains("Investment_TermDetPeriod") || Keyword.Contains("Investment_TermDetRate"))
+                    {
+                        keyword.Locator = keyword.Locator.Replace("{x}", context.GetTermRefNo());
                     }
 
                     selhelper.verification(message, keyword.Locator);
@@ -883,6 +917,10 @@ namespace HBLAutomationWeb.Core
             if (query.Contains("{customer_cnic}"))
             {
                 query = query.Replace("{customer_cnic}", context.GetCustomerCNIC());
+            }
+            if (query.Contains("{TRANSACTION_ID}"))
+            {
+                query = query.Replace("{TRANSACTION_ID}", context.GetTransaction_Id());
             }
             try
             {
@@ -964,6 +1002,10 @@ namespace HBLAutomationWeb.Core
             {
                 query = query.Replace("{customer_cnic}", context.GetCustomerCNIC());
             }
+            if (query.Contains("{customer_name}"))
+            {
+                query = query.Replace("{customer_name}", context.GetUsername());
+            }
             if (query.Contains("DC_TRANSACTION"))
             {
                 if (Keyword.Contains("SendMoney_TranToBank") || Keyword.Contains("TranType"))
@@ -1039,7 +1081,14 @@ namespace HBLAutomationWeb.Core
                         Assert.AreEqual(message, today_date);
                         return;
                     }
-
+                    if (Keyword.Equals("Investment_TermRefNo"));
+                    {
+                        keyword.Locator = keyword.Locator.Replace("{x}", context.GetTermRefNo());
+                        string ref_no = selhelper.ReturnKeywordValue(keyword.Locator);
+                        ref_no = ref_no.Replace("Reference #", "").Trim();
+                        Assert.AreEqual(message, ref_no);
+                        return;
+                    }
                 }
                 //selhelper.Scroll(keyword.Locator);
 
@@ -1089,7 +1138,11 @@ namespace HBLAutomationWeb.Core
             {
                 keyword.Locator = keyword.Locator.Replace("{K}", context.GetScrollText());
             }
-            selhelper.ScrollToElement(keyword.Locator);
+            if (Keyword.Equals("Investment_TermRefNo")) ;
+            {
+                keyword.Locator = keyword.Locator.Replace("{x}", context.GetTermRefNo());
+            }
+                selhelper.ScrollToElement(keyword.Locator);
         }
 
         [When(@"I have otp check and given (.*) on ""(.*)""")]
@@ -1609,15 +1662,14 @@ namespace HBLAutomationWeb.Core
         [Then(@"verify the schedule config ""(.*)"" on Schema ""(.*)""")]
         public void ThenVerifyTheScheduleConfigOnSchema(string query, string db_value)
         {
-            string query3 = "Select CUSTOMER_INFO_ID from dc_customer_info i where I.CUSTOMER_NAME='{usernmae}'";
-            query3 = query3.Replace("{usernmae}", context.GetUsername());
-
-            DataAccessComponent.DataAccessLink dLink3 = new DataAccessComponent.DataAccessLink();
-            DataTable SourceDataTable3 = dLink3.GetDataTable(query3, db_value);
-            string customer_info_id = SourceDataTable3.Rows[0][0].ToString();
-            context.SetCustomerInfoID(customer_info_id);
-
-            query = query.Replace("{customer_info_id}", customer_info_id);
+            if (query.Contains("{customer_name}"))
+            {
+                query = query.Replace("{customer_name}", context.GetUsername());
+            }
+            if (query.Contains("{ConsumerNo}"))
+            {
+                query = query.Replace("{ConsumerNo}", context.GetConsumer_No());
+            }
 
             DataAccessComponent.DataAccessLink dLink = new DataAccessComponent.DataAccessLink();
             DataTable SourceDataTable = dLink.GetDataTable(query, db_value);
@@ -2321,6 +2373,8 @@ namespace HBLAutomationWeb.Core
 
         //For linking or de-linking accounts from profile. 
         [Given(@"I select ""(.*)"" for Account linking or de-linking ""(.*)"" with success message as ""(.*)""")]
+        [When(@"I select ""(.*)"" for Account linking or de-linking ""(.*)"" with success message as ""(.*)""")]
+        [Then(@"I select ""(.*)"" for Account linking or de-linking ""(.*)"" with success message as ""(.*)""")]
         public void GivenISelectForAccountLinkingOrDe_LinkingWithSuccessMessageAs(string accounts_no, string acc_operation_type, string success_message)
         {
             string username = context.GetUsername();
@@ -2682,12 +2736,29 @@ namespace HBLAutomationWeb.Core
                 string locator = Keyword.Locator.Replace("{x}", limit_type);
                 string slider_locator = Keyword2.Locator.Replace("{x}", limit_type);
 
-                int result = Convert.ToInt32(old_limit) - new_limit;
-                int step_limit = result / Convert.ToInt32(step);
-
                 selhelper.PressEnter(locator);
-                // selhelper.ScrollToElement(slider_locator);
-                selhelper.RangeSlider(step_limit, "LEFT", slider_locator);
+
+                Keyword = null;
+                Keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_Edit_Max");
+                Keyword.Locator = Keyword.Locator.Replace("{x}", limit_type);
+                selhelper.ScrollToElement(Keyword.Locator);
+                string max_value_ui = selhelper.ReturnKeywordValue(Keyword.Locator);
+                max_value_ui = max_value_ui.Remove(max_value_ui.Length - 3);
+                max_value_ui = max_value_ui.Replace(",", "");
+
+                Keyword = null;
+                Keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_Edit_NewLimit");
+                string slider_limit_ui = Keyword.Locator.Replace("{x}", limit_type);
+
+                //int temp_count = Convert.ToInt32(max_value_ui) - Convert.ToInt32(old_limit);
+                //temp_count = temp_count / Convert.ToInt32(step);
+
+                //int result = Convert.ToInt32(old_limit) - new_limit;
+                //int step_limit = result / Convert.ToInt32(step);
+
+                //int step_limit_count = step_limit + temp_count;
+
+                selhelper.RangeSlider(slider_locator, new_limit, Convert.ToInt32(step), slider_limit_ui, Convert.ToInt32(max_value_ui));
 
                 dlink = new DataAccessComponent.DataAccessLink();
                 SourceDataTable = dlink.GetDataTable("Select A.MIN_EDITABLE_AMOUNT from dc_Tran_Type_limit_group_rules a where A.CLIENT_DESCRIPTION='" + limit_type + "' and A.LIMIT_TYPE_ID='" + limit_type_id + "'", "DIGITAL_CHANNEL_SEC");
@@ -2713,13 +2784,6 @@ namespace HBLAutomationWeb.Core
                 dlink = null;
                 SourceDataTable = null;
 
-                Keyword = null;
-                Keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_Edit_Max");
-                Keyword.Locator = Keyword.Locator.Replace("{x}", limit_type);
-                selhelper.ScrollToElement(Keyword.Locator);
-                string max_value_ui = selhelper.ReturnKeywordValue(Keyword.Locator);
-                max_value_ui = max_value_ui.Remove(max_value_ui.Length - 3);
-                max_value_ui = max_value_ui.Replace(",", "");
                 if (max_value != max_value_ui)
                 {
                     throw new Exception(String.Format("Maximum Editable Aount in Database :{0} is not equal with Maximum Editable amount on website :{1}", max_value, max_value_ui));
@@ -3205,12 +3269,29 @@ namespace HBLAutomationWeb.Core
 
                     for (int i = 1; i <= size; i++)
                     {
-                        string fund_name_loc = Keyword.Locator + "[" + Convert.ToString(i) + "]//td[@class='ng-binding'][1]";
-                        string folio_loc = Keyword.Locator + "[" + Convert.ToString(i) + "]//td[@class='amount ng-binding'][1]";
-                        string balance_loc = Keyword.Locator + "[" + Convert.ToString(i) + "]//td[@class='amount ng-binding'][2]";
-                        string unit_loc = Keyword.Locator + "[" + Convert.ToString(i) + "]//td[@class='amount ng-binding'][3]";
-                        string nav_loc = Keyword.Locator + "[" + Convert.ToString(i) + "]//td[@class='amount ng-binding'][4]";
-                        string nav_date_loc = Keyword.Locator + "[" + Convert.ToString(i) + "]//td[@class='ng-binding'][2]";
+                        Keyword = null;
+                        Keyword = ContextPage.GetInstance().GetElement("Investment_MutualFund_Fund_NameLoc");
+                        string fund_name_loc = Keyword.Locator.Replace("{i}", Convert.ToString(i));
+
+                        Keyword = null;
+                        Keyword = ContextPage.GetInstance().GetElement("Investment_MutualFund_FolioLoc");
+                        string folio_loc = Keyword.Locator.Replace("{i}", Convert.ToString(i));
+
+                        Keyword = null;
+                        Keyword = ContextPage.GetInstance().GetElement("Investment_MutualFund_BalanceLoc");
+                        string balance_loc = Keyword.Locator.Replace("{i}", Convert.ToString(i));
+
+                        Keyword = null;
+                        Keyword = ContextPage.GetInstance().GetElement("Investment_MutualFund_unit_loc");
+                        string unit_loc = Keyword.Locator.Replace("{i}", Convert.ToString(i));
+
+                        Keyword = null;
+                        Keyword = ContextPage.GetInstance().GetElement("Investment_MutualFund_nav_loc");
+                        string nav_loc = Keyword.Locator.Replace("{i}", Convert.ToString(i));
+
+                        Keyword = null;
+                        Keyword = ContextPage.GetInstance().GetElement("Investment_MutualFund_nav_date_loc");
+                        string nav_date_loc = Keyword.Locator.Replace("{i}", Convert.ToString(i));
 
                         string fund_name = selhelper.ReturnKeywordValue(fund_name_loc).Trim();
                         string folio_no = selhelper.ReturnKeywordValue(folio_loc).Trim();
@@ -3316,13 +3397,32 @@ namespace HBLAutomationWeb.Core
                 {
                     query = query.Replace("{invest_fund_name}", context.GetInvestFundName());
                 }
-
+                if (query.Contains("DC_TRANSACTION"))
+                {
+                    query = query + context.GetTransaction_Id() + "'";
+                }
+                if (query.Contains("{customer_cnic}"))
+                {
+                    query = query.Replace("{customer_cnic}", context.GetCustomerCNIC());
+                }
                 DataAccessComponent.DataAccessLink dLink = new DataAccessComponent.DataAccessLink();
                 DataTable SourceDataTable = dLink.GetDataTable(query, schema);
                 string db_value = SourceDataTable.Rows[0][0].ToString();
                 if (attribute == "fund_disclaimer_popup")
                 {
                     context.SetFundDisclaimerPopup(db_value);
+                }
+                if (attribute == "term_dep_ref_no")
+                {
+                    context.SetTermRefNo(db_value);
+                }
+                if (attribute == "schedule_config")
+                {
+                    context.SetScheduleConfig(db_value);
+                }
+                if (attribute == "cust_profile_id")
+                {
+                    context.SetCustomerProfileID(db_value);
                 }
             }
             catch (Exception exception)

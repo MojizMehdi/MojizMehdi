@@ -114,6 +114,7 @@
 
   <Module name ="Pay">
     <Element keyword="Pay_Link" locator="//*[contains(text(),'Pay ')]"/>
+    <Element keyword="Pay_LinkHomeIcon" locator="//a[@class='widget_item' and text()='Bill Payment']"/>
     <Element keyword="Pay_AddNewBtn" locator="//a[contains(text(),'Add New') and @class='btn add float-right']"/>
     <Element keyword="Pay_BillPaymentCategory" locator="//li[contains(text(),'{BillPaymentCategory}')]"/>
     <Element keyword="Pay_BillPaymentCategory_Company" locator="//h2[@class='head ng-binding ng-scope' and contains(text(),'{Pay_BillPaymentCategory_Company}')]"/>
@@ -126,7 +127,7 @@
     <Element keyword="Pay_Transaction_Success_FromAccount" locator="//h2[@class='ng-binding' and contains(text(),'From')]//following-sibling::p"/>
     <Element keyword="Pay_Transaction_Success_CompanyName" locator="//h2[@class='ng-binding' and text()='Billing Company Name']//following-sibling::p"/>
     <Element keyword="Pay_Transaction_Success_ConsumerNo" locator="//h2[@class='ng-binding' and text()='Consumer Number']//following-sibling::p"/>
-    <Element keyword="Pay_Transaction_ID" locator="//*[contains(text(),'Transaction ID')]//following-sibling::p"/>
+    <Element keyword="Pay_Transaction_ID" locator="//*[contains(text(),'Receipt ID')]//following-sibling::p"/>
     <Element keyword="Pay_Transaction_Scroll_AmountLabel" locator="//label[@for='Amount']"/>
     <Element keyword="Pay_Transaction_ToggleAutoPay" locator="//label[@class='auto-pay']"/>
     <Element keyword="Pay_Transaction_PayBillAmount_RadioBtn" locator="//label[@class='custom-control-label' and contains(text(),'Pay Bill Amount')]"/>
@@ -291,7 +292,7 @@
     <Element keyword="MyAccount_Services_CloseBtn" locator="//div[@class='modal-footer']//a[text()='Close']"/>
     <Element keyword="MyAccount_LimitMngOption" locator="//a[@ng-click='GetLimitsListData()']" />
     <Element keyword="MyAccount_Limit_Edit_Icon" locator="//div[contains(text(),'{x}')]/parent::div/parent::div/parent::div/parent::div//div[@class='limit-grey-sec']//p//button" />
-    <Element keyword="MyAccount_Limit_Slider" locator="//div[contains(text(),'{x}')]/parent::div/parent::*/parent::*/parent::div[@class='limit-count-update']//div[@class='col-12']" />
+    <Element keyword="MyAccount_Limit_Slider" locator="//div[contains(text(),'{x}')]/parent::div/parent::*/parent::*/parent::div[@class='limit-count-update']//div[@class='col-12']//input" />
     <Element keyword="MyAccount_Limit_NewPrice" locator="//div[contains(text(),'{x}')]/parent::div/parent::*/parent::*/parent::div[@class='limit-count-update']//div//div//div[@ng-if='onrangeclick']//div" />
     <Element keyword="MyAccount_Limit_Edit_Save_Btn" locator="//div[contains(text(),'{x}')]/parent::div/parent::*/parent::*/parent::div[@class='limit-count-update']//div[@class='limit-grey-sec text-right']//button[text()='Save']"/>
     <Element keyword="MyAccount_Limit_Type_count" locator="(//div[@class='limit-cont']//div[@class='limit-label ng-binding'])" />
@@ -299,6 +300,7 @@
     <Element keyword="MyAccount_Limit_daily_limit" locator="//div[contains(text(),'{x}')]/parent::*//following-sibling::div[@class='col-6 col-md-6 col-lg-6 col-xl-4']//div" />
     <Element keyword="MyAccount_Limit_Edit_Min" locator="//div[contains(text(),'{x}')]/parent::*/parent::*/parent::*/parent::*//following-sibling::div[@class='limit-count-update']//div//div[@class='row mt-2'][2]//div[@class='col-6 col-md-6 col-lg-6 col-xl-8']//div" />
     <Element keyword="MyAccount_Limit_Edit_Max" locator="//div[contains(text(),'{x}')]/parent::*/parent::*/parent::*/parent::*//following-sibling::div[@class='limit-count-update']//div//div[@class='row mt-2'][2]//div[@class='col-6 col-md-6 col-lg-6 col-xl-4']//div" />
+    <Element keyword="MyAccount_Limit_Edit_NewLimit" locator="//div[contains(text(),'{x}')]/parent::*/parent::*/parent::*/parent::*[@class='limit-count-update']//div//div//div//div[@class='limit-amt ng-binding']" />
     <Element keyword="MyAccount_Limit_Edit_Succ_Txt" locator="//div[@id='ViewLimitsPopup']//div[@class='display-table']//p" />
     <Element keyword="MyAccount_Limit_Edit_Succ_Btn" locator="//div[@id='ViewLimitsPopup']//div[@class='modal-footer']//a" />
     <Element keyword="MyAccount_Limit_Old_Amount" locator="//div[contains(text(),'{x}')]/parent::*/parent::*/parent::*/parent::*[@class='limit-cont']//div//div//div//div[@class='limit-amt ng-binding']" />
@@ -480,7 +482,19 @@
     <Element keyword="Investment_MutualFund_TranCloseBtn" locator="//div[@id='transactionActivity']//a" />
     <Element keyword="Investment_MutualFund_PopupBtn" locator="//button[@class='btn' and text()='Next']" />
     <Element keyword="Investment_TermDep_RatingOkBtn" locator="//div[@id='successPopupGen2']//button[contains(text(),'Ok')]" />
-
+    <Element keyword="Investment_TermDep_RatingCancel" locator="//div[@id='successPopupGen2']//a" />
+    <Element keyword="Investment_TermDepost_DetailBtn" locator="//div[@class='available limit' and contains(text(),'Term')]//parent::div//following-sibling::div//button" />
+    <Element keyword="Investment_TermRefNo" locator="//div[@class= 'acc-no ng-binding' and contains(text(),'{x}')]" />
+    <Element keyword="Investment_TermDetAmount" locator="//div[@class= 'acc-no ng-binding' and contains(text(),'{x}')]//parent::div//parent::div//following-sibling::div//div[@class='deposit-title' and text()='Amount']//following-sibling::div" />
+    <Element keyword="Investment_TermDetPeriod" locator="//div[@class= 'acc-no ng-binding' and contains(text(),'{x}')]//parent::div//parent::div//following-sibling::div//div[@class='deposit-title' and text()='Period']//following-sibling::div" />
+    <Element keyword="Investment_TermDetRate" locator="//div[@class= 'acc-no ng-binding' and contains(text(),'{x}')]//parent::div//parent::div//following-sibling::div//div[@class='deposit-title' and text()='Offered Rate']//following-sibling::div" />
+    <Element keyword="Investment_TermDetTotalAmount" locator="//span[@class='consolid-title ng-binding']"/>
+    <Element keyword="Investment_MutualFund_Fund_NameLoc" locator="//tr[@class='credit ng-scope'][{i}]//td[@class='ng-binding'][1]" />
+    <Element keyword="Investment_MutualFund_FolioLoc" locator="//tr[@class='credit ng-scope'][{i}]//td[@class='amount ng-binding'][1]" />
+    <Element keyword="Investment_MutualFund_BalanceLoc" locator="//tr[@class='credit ng-scope'][{i}]//td[@class='amount ng-binding'][2]" />
+    <Element keyword="Investment_MutualFund_unit_loc" locator="//tr[@class='credit ng-scope'][{i}]//td[@class='amount ng-binding'][3]" />
+    <Element keyword="Investment_MutualFund_nav_loc" locator="//tr[@class='credit ng-scope'][{i}]//td[@class='amount ng-binding'][4]" />
+    <Element keyword="Investment_MutualFund_nav_date_loc" locator="//tr[@class='credit ng-scope'][{i}]//td[@class='ng-binding'][2]" />
 
   </Module>
 </ElementFactory>

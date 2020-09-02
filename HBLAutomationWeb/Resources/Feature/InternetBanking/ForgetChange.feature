@@ -18,7 +18,7 @@ Scenario Outline: 2 As a user i want to verify forget password
 	And verify through database on "<tran_id_query>" on Schema "DIGITAL_CHANNEL_SEC" on "Forget_PasswordTranID"
 	And verify through database on "<tran_date_query>" on Schema "DIGITAL_CHANNEL_SEC" on "Forget_PasswordTranDate"
 	And verify through database on "<tran_debit_query>" on Schema "DIGITAL_CHANNEL_SEC" on "Forget_PasswordTranDebit"
-	And verify through database on "<tran_type_query>" on Schema "DIGITAL_CHANNEL_SEC" on "Forget_PasswordTranType"
+	#And verify through database on "<tran_type_query>" on Schema "DIGITAL_CHANNEL_SEC" on "Forget_PasswordTranType"
 	And I am performing on "Forget_PasswordTranSubmitBtn"
 	And update the data by query "<password_query>" on DIGITAL_CHANNEL_SEC
 	Then I have given "<login_id>" on "Login_UserId"
@@ -30,7 +30,7 @@ Scenario Outline: 2 As a user i want to verify forget password
 	And verify through database on "<tran_message_qeury>" on Schema "DIGITAL_CHANNEL_SEC" on "Forget_PasswordResponseMsg"
 	And verify through database on "<tran_id_query>" on Schema "DIGITAL_CHANNEL_SEC" on "Forget_PasswordTranID"
 	And verify through database on "<tran_date_query>" on Schema "DIGITAL_CHANNEL_SEC" on "Forget_PasswordTranDate"
-	And verify through database on "<tran_type_query>" on Schema "DIGITAL_CHANNEL_SEC" on "Forget_PasswordTranType"
+	#And verify through database on "<tran_type_query>" on Schema "DIGITAL_CHANNEL_SEC" on "Forget_PasswordTranType"
 	And I am performing on "Forget_PasswordTranSubmitBtn"
 	And verify the result from "<password_change_req_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	Then I have given "<login_id>" on "Login_UserId"
@@ -108,7 +108,7 @@ Scenario Outline: 2 As a user i want to verify forget Login ID
 	And verify through database on "<tran_message_qeury>" on Schema "DIGITAL_CHANNEL_SEC" on "Forget_PasswordResponseMsg"
 	And verify through database on "<tran_id_query>" on Schema "DIGITAL_CHANNEL_SEC" on "Forget_PasswordTranID"
 	And verify through database on "<tran_date_query>" on Schema "DIGITAL_CHANNEL_SEC" on "Forget_PasswordTranDate"
-	And verify through database on "<tran_type_query>" on Schema "DIGITAL_CHANNEL_SEC" on "Forget_PasswordTranType"
+	#And verify through database on "<tran_type_query>" on Schema "DIGITAL_CHANNEL_SEC" on "Forget_PasswordTranType"
 	And I am performing on "Forget_PasswordTranSubmitBtn"
 
 	@source:Data/ForgetLoginID.xlsx

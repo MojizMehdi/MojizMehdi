@@ -616,32 +616,64 @@ namespace HBLAutomationWeb.Pages
         }
 
         // For Range Slider with count and option for Left and Right arrow Key
-        public void RangeSlider(int count, string ArrowOption, string locator)
+        public void RangeSlider(string locator, int new_limit, int step, string slider_limit_loc, int orignal_edit_limit)
         {
             IWebElement slider = waitDriver.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
-            //IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
-            //js.ExecuteScript("arguments[0].scrollIntoView();", slider);
-            var location = slider.Size;
-            Actions act = new Actions(driver);
-            act.MoveToElement(slider).MoveByOffset((location.Width / 2) - 2, 0).Click().Perform();
+
+            //string abc = ReturnKeywordValue(locator);
+            int count = 0;
+
+            var dimensions = slider.Size;
+            Actions actions = new Actions(driver);
+            actions.MoveToElement(slider, (dimensions.Width / 2), 1).Click().Perform();
+
+            string temp_var = ReturnKeywordValue(slider_limit_loc);
+            temp_var = temp_var.Remove(temp_var.Length - 3);
+            temp_var = temp_var.Replace(",", "");
+
+            int after_click_bal = Convert.ToInt32(temp_var);
+
+            if (after_click_bal > new_limit)
+            {
+                int amount = after_click_bal - new_limit;
+                if (amount < orignal_edit_limit)
+                {
+                    count = amount / step;
+                    for (int i = 1; i <= count; i++)
+                    {
+                        slider.SendKeys(OpenQA.Selenium.Keys.ArrowLeft);
+                    }
+                }
+            }
+            else if(after_click_bal < new_limit)
+            {
+                int amount = new_limit - after_click_bal;
+                if (amount < orignal_edit_limit)
+                {
+                    count = amount / step;
+                    for (int i = 1; i <= count; i++)
+                    {
+                        slider.SendKeys(OpenQA.Selenium.Keys.ArrowRight);
+                    }
+                }      
+            }
+            //actions.MoveToElement(slider).MoveByOffset((location.Width / 2) - 2, 0).Click().Perform();
             //slider.Click();
 
-
-
-            if (ArrowOption == "LEFT")
-            {
-                for (int i = 1; i <= count; i++)
-                {
-                    slider.SendKeys(OpenQA.Selenium.Keys.ArrowLeft);
-                }
-            }
-            else if (ArrowOption == "RIGHT")
-            {
-                for (int i = 1; i <= count; i++)
-                {
-                    slider.SendKeys("{RIGHT}");
-                }
-            }
+            //if (ArrowOption == "LEFT")
+            //{
+            //    for (int i = 1; i <= count; i++)
+            //    {
+            //        slider.SendKeys(OpenQA.Selenium.Keys.ArrowLeft);
+            //    }
+            //}
+            //else if (ArrowOption == "RIGHT")
+            //{
+            //    for (int i = 1; i <= count; i++)
+            //    {
+            //        slider.SendKeys("{RIGHT}");
+            //    }
+            //}
         }
     }
 }
