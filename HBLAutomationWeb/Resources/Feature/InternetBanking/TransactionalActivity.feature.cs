@@ -129,11 +129,11 @@ testRunner.And(string.Format("I select \"{0}\" on \"Services_NoOfTransaction\"",
 #line 16
 testRunner.And(string.Format("I select \"{0}\" on \"Services_Transaction_Type\"", tran_Type), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
-testRunner.When("I am clicking on \"Services_Date_From\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.And("I am clicking on \"Services_Date_From\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
 testRunner.And(string.Format("I select date \"{0}\" on month \"{1}\" on year \"{2}\"", from_Day, from_Month, from_Year), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 19
-testRunner.When("I am clicking on \"Services_Date_To\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.And("I am clicking on \"Services_Date_To\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 20
 testRunner.And(string.Format("I select date \"{0}\" on month \"{1}\" on year \"{2}\"", to_Day, to_Month, to_Year), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 21
@@ -143,7 +143,7 @@ testRunner.And(string.Format("I have given \"{0}\" on \"Services_MAX_TRAN_AMOUNT
 #line 23
 testRunner.And(string.Format("I have given \"{0}\" on \"Services_FROM_ACCOUNT\"", acc_No_Or_Mobile), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 24
-testRunner.When("I scroll to element \"Services_Clear_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.And("I scroll to element \"Services_Clear_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 25
 testRunner.And(string.Format("I select on dropdown search \"Services_BILL_COMPANY\" to select \"{0}\" on \"Services_" +
                         "BILL_COMPANY_List\"", bill_Company), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

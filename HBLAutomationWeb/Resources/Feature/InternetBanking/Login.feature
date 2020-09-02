@@ -11,7 +11,7 @@ Scenario Outline: 1 As a user i want to Verify login for HBL Web
 	And I have given "<Login_UserId_Value>" on "Login_UserId"
 	And I have given "<Login_Password_Value>" on "Login_Password"
 	When I am performing on "Login_SignIn_Button"
-	And I wait 3000
+	And I wait 5000
 	And I have given "<OTP_Value>" on "Login_OTP_field"
 	And I am performing on "Login_OTP_Verify_Button"
 	Then verify through "Welcome" on "Login_Success_Text"

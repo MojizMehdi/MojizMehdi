@@ -52,7 +52,7 @@ namespace HBLAutomationWeb.Pages
                 {
                     //button.SendKeys(OpenQA.Selenium.Keys.Enter);
                     button.Click();
-                    }
+                }
                 // js.executeScript("arguments[0].scrollIntoView();", locator);
 
             }
@@ -563,22 +563,22 @@ namespace HBLAutomationWeb.Pages
             string schema = "DIGITAL_CHANNEL_SEC";
             string Key = "cf345ae2xz40yfc8";
             string IV = "abcaqwerabcaqwer";
+            string query = "";
 
-
-            string query3 = "Select CUSTOMER_INFO_ID from dc_customer_info i where I.CUSTOMER_NAME='{usernmae}'";
-            query3 = query3.Replace("{usernmae}", context.GetUsername());
-
-            DataAccessComponent.DataAccessLink dLink3 = new DataAccessComponent.DataAccessLink();
-            DataTable SourceDataTable3 = dLink3.GetDataTable(query3, schema);
-            string customer_info_id = SourceDataTable3.Rows[0][0].ToString();
-
-            string query2 = "Select I.OTP from DC_OTP_HISTORY I where I.CUSTOMER_INFO_ID='{customer_info_id}' ORDER BY I.GENERATED_ON DESC";
-            query2 = query2.Replace("{customer_info_id}", customer_info_id);
+            if (context.Get_signup_check() == true)
+            {
+                query = "Select I.OTP from DC_OTP_HISTORY I where I.CNIC='{CNIC}' AND I.TRANSACTION_TYPE_ID = '247' ORDER BY I.GENERATED_ON DESC";
+                query = query.Replace("{CNIC}", context.GetCustomerCNIC());
+            }
+            else
+            {
+                query = "Select I.OTP from DC_OTP_HISTORY I where I.CUSTOMER_INFO_ID=(Select CUSTOMER_INFO_ID from dc_customer_info i where I.CUSTOMER_NAME='{usernmae}') ORDER BY I.GENERATED_ON DESC";
+                query = query.Replace("{usernmae}", context.GetUsername());
+            }
 
             DataAccessComponent.DataAccessLink dLink2 = new DataAccessComponent.DataAccessLink();
-            DataTable SourceDataTable2 = dLink2.GetDataTable(query2, schema);
+            DataTable SourceDataTable2 = dLink2.GetDataTable(query, schema);
             otp = SourceDataTable2.Rows[0][0].ToString();
-
 
             string chk_encrypt_query = "Select PARAMTER_VALUE  from DC_APPLICATION_PARAM_DETAIL i where I.PARAMETER_NAME='OTP_HISTORY_ENCRYPTED'";
             DataAccessComponent.DataAccessLink dLink = new DataAccessComponent.DataAccessLink();
@@ -616,32 +616,64 @@ namespace HBLAutomationWeb.Pages
         }
 
         // For Range Slider with count and option for Left and Right arrow Key
-        public void RangeSlider(int count, string ArrowOption, string locator)
+        public void RangeSlider(string locator, int new_limit, int step, string slider_limit_loc, int orignal_edit_limit)
         {
             IWebElement slider = waitDriver.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
-            //IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
-            //js.ExecuteScript("arguments[0].scrollIntoView();", slider);
-            var location = slider.Size;
-            Actions act = new Actions(driver);
-            act.MoveToElement(slider).MoveByOffset((location.Width / 2) - 2, 0).Click().Perform();
+
+            //string abc = ReturnKeywordValue(locator);
+            int count = 0;
+
+            var dimensions = slider.Size;
+            Actions actions = new Actions(driver);
+            actions.MoveToElement(slider, (dimensions.Width / 2), 1).Click().Perform();
+
+            string temp_var = ReturnKeywordValue(slider_limit_loc);
+            temp_var = temp_var.Remove(temp_var.Length - 3);
+            temp_var = temp_var.Replace(",", "");
+
+            int after_click_bal = Convert.ToInt32(temp_var);
+
+            if (after_click_bal > new_limit)
+            {
+                int amount = after_click_bal - new_limit;
+                if (amount < orignal_edit_limit)
+                {
+                    count = amount / step;
+                    for (int i = 1; i <= count; i++)
+                    {
+                        slider.SendKeys(OpenQA.Selenium.Keys.ArrowLeft);
+                    }
+                }
+            }
+            else if(after_click_bal < new_limit)
+            {
+                int amount = new_limit - after_click_bal;
+                if (amount < orignal_edit_limit)
+                {
+                    count = amount / step;
+                    for (int i = 1; i <= count; i++)
+                    {
+                        slider.SendKeys(OpenQA.Selenium.Keys.ArrowRight);
+                    }
+                }      
+            }
+            //actions.MoveToElement(slider).MoveByOffset((location.Width / 2) - 2, 0).Click().Perform();
             //slider.Click();
 
-
-
-            if (ArrowOption == "LEFT")
-            {
-                for (int i = 1; i <= count; i++)
-                {
-                    slider.SendKeys(OpenQA.Selenium.Keys.ArrowLeft);
-                }
-            }
-            else if (ArrowOption == "RIGHT")
-            {
-                for (int i = 1; i <= count; i++)
-                {
-                    slider.SendKeys("{RIGHT}");
-                }
-            }
+            //if (ArrowOption == "LEFT")
+            //{
+            //    for (int i = 1; i <= count; i++)
+            //    {
+            //        slider.SendKeys(OpenQA.Selenium.Keys.ArrowLeft);
+            //    }
+            //}
+            //else if (ArrowOption == "RIGHT")
+            //{
+            //    for (int i = 1; i <= count; i++)
+            //    {
+            //        slider.SendKeys("{RIGHT}");
+            //    }
+            //}
         }
     }
 }

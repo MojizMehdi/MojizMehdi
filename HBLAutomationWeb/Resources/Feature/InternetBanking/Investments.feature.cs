@@ -101,6 +101,7 @@ namespace HBLAutomationWeb.Resources.Feature.InternetBanking
                     string db_Val, 
                     string term_Deposit_Type, 
                     string date_Query, 
+                    string reference_No_Query, 
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -131,68 +132,90 @@ this.ScenarioSetup(scenarioInfo);
 #line 18
  testRunner.And(string.Format("I set value in context from data \"{0}\" as \"TermDepositYears\"", deposit_Years_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 19
- testRunner.And(string.Format("I select \"{0}\" on \"Investment_ETDRTYpe_List\"", term_Deposit_Type), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 20
- testRunner.And("I am clicking on \"Investment_TermDep_Tenure\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I select \"{0}\" on \"Investment_ETDRTYpe_List\"", term_Deposit_Type), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 21
- testRunner.And(string.Format("I select \"{0}\" on \"Investment_FromAcc_List\"", account_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Investment_TermDep_Tenure\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 22
- testRunner.And(string.Format("I select \"{0}\" on \"Investment_ProfitAcc_List\"", profit_Account), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I select \"{0}\" on \"Investment_FromAcc_List\"", account_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 23
- testRunner.And(string.Format("I have given \"{0}\" on \"Investment_Amount\"", amount_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I select \"{0}\" on \"Investment_ProfitAcc_List\"", profit_Account), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 24
- testRunner.And("I am performing on \"Investment_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Investment_Amount\"", amount_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 25
- testRunner.And("I scroll to element \"Investment_TermDep_ScrollText\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am performing on \"Investment_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 26
- testRunner.And("I am performing on \"Investment_TermDep_AcceptBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I scroll to element \"Investment_TermDep_ScrollText\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 27
- testRunner.And(string.Format("I have given \"{0}\" on \"Signup_TransactionPassword\"", tran_Pass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am performing on \"Investment_TermDep_AcceptBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 28
- testRunner.And("I am performing on \"Investment_TermDep_ReqBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Signup_TransactionPassword\"", tran_Pass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 29
- testRunner.Then(string.Format("verify through \"{0}\" on \"Investment_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I scroll to element \"Investment_TermDep_ReqBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 30
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Investment_TranType\"", tran_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am performing on \"Investment_TermDep_ReqBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 31
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Investment_TranAmount\"", tran_Amount_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then(string.Format("verify through \"{0}\" on \"Investment_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 32
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Investment_TranFromAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 33
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Investment_TranToAcc\"", to_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 34
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Investment_TranDate\"", date_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 35
- testRunner.And("I save Transaction Info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 36
- testRunner.And("I am performing on \"Investment_TranCloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 37
- testRunner.And("I am clicking on \"Pay_Transaction_PayBill_Rating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 38
- testRunner.And("I am clicking on \"Investment_TermDep_RatingOkBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 39
- testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 40
- testRunner.And("I verify Account Balance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 41
- testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 42
- testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 43
- testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 44
- testRunner.And("verify through \"Successful\" on \"MyAccount_Forgot_TranSuccessMessage\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 45
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Investment_TranType\"", tran_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 46
+#line 33
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Investment_TranAmount\"", tran_Amount_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 47
+#line 34
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Investment_TranFromAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 48
+#line 35
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Investment_TranToAcc\"", to_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 49
+#line 36
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Investment_TranDate\"", date_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 37
+ testRunner.And("I save Transaction Info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 38
+ testRunner.And("I am performing on \"Investment_TranCloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 39
+ testRunner.And("I am clicking on \"Pay_Transaction_PayBill_Rating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 40
+ testRunner.And("I am clicking on \"Investment_TermDep_RatingOkBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 41
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 42
+ testRunner.And("I verify Account Balance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 43
+ testRunner.And("I am clicking on \"Investment_TermDepost_DetailBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 44
+ testRunner.And(string.Format("I set value in context from database \"{0}\" as \"term_dep_ref_no\" on Schema \"{1}\"", reference_No_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 45
+ testRunner.And("verify through \"\" on \"Investment_TermDetTotalAmount\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 46
+ testRunner.And("I scroll to element \"Investment_TermRefNo\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 47
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Investment_TermRefNo\"", reference_No_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 48
+ testRunner.And(string.Format("verify through \"{0}\" on \"Investment_TermDetAmount\"", amount_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 49
+ testRunner.And(string.Format("verify through \"{0}\" on \"Investment_TermDetPeriod\"", deposit_Years_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 50
+ testRunner.And("verify through \"OfferedRateContextVal\" on \"Investment_TermDetRate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 51
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 52
+ testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 53
+ testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 54
+ testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 55
+ testRunner.And("verify through \"Successful\" on \"MyAccount_Forgot_TranSuccessMessage\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 56
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Investment_TranType\"", tran_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 57
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Investment_TranAmount\"", tran_Amount_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 58
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Investment_TranFromAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 59
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Investment_TranToAcc\"", to_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 60
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Investment_TranDate\"", date_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 61
  testRunner.And("I am performing on \"Investment_TranActivityCloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -224,12 +247,13 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:term_deposit_type", "HBL Advantage Plus")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:reference_no_query", "SELECT DT.LEAD_FIELD5 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void WhenUserTryToTermDepositThorughInvestments_AsAUserIWantToVerifyTermDeposit()
         {
 #line 9
 this.WhenUserTryToTermDepositThorughInvestments("As a user I want to verify Term Deposit", "", "", "Term Deposit", "One Year", "12757900256303", "02197900643103", "25500", "pakistan2", "Your transaction has been processed successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
-                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "HBL Advantage Plus", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "HBL Advantage Plus", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.LEAD_FIELD5 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
                         "source:Data/ETDR.xlsx"});
 #line hidden
         }
@@ -263,103 +287,104 @@ this.WhenUserTryToTermDepositThorughInvestments("As a user I want to verify Term
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When user try to verify Mutual Fund", @__tags);
-#line 59
+#line 70
 this.ScenarioSetup(scenarioInfo);
-#line 60
+#line 71
  testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 61
+#line 72
  testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 62
+#line 73
  testRunner.And(string.Format("I set value in context from data \"{0}\" as \"invest_fund_name\"", invest_Option), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 63
+#line 74
     testRunner.And(string.Format("I set value in context from database \"{0}\" as \"fund_disclaimer_popup\" on Schema \"" +
                         "QAT_AMC\"", disclaimer_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 64
- testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 65
- testRunner.And("I count Number of Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 66
- testRunner.When("I save Account Balances", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 67
- testRunner.And("I am clicking on \"Investment_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 68
- testRunner.And("I am clicking on \"Investment_MutualFund_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 69
- testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"QAT_AMC\"", cust_Profile_Id_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 70
- testRunner.And(string.Format("I verify user Mutual Fund status on schema \"{0}\"", db_Val3), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 71
- testRunner.Then("I am clicking on \"Investment_MutualFund_InvestTab\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 72
- testRunner.And("I am clicking on \"Investment_MutualFund_InvestBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 73
- testRunner.And(string.Format("verify through \"{0}\" on \"Investment_MutualFund_DisPopup\"", disclaimer_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 74
- testRunner.And("I am performing on \"Investment_MutualFund_PopupBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 75
- testRunner.And(string.Format("I select \"{0}\" on \"Investment_MutualFund_FromAcc\"", from_Acc), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 76
- testRunner.And(string.Format("verify through \"{0}\" on \"Investment_MutualFund_FUndName\"", invest_Option), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I count Number of Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 77
+ testRunner.When("I save Account Balances", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 78
+ testRunner.And("I am clicking on \"Investment_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 79
+ testRunner.And("I am clicking on \"Investment_MutualFund_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 80
+ testRunner.And(string.Format("I set value in context from database \"{0}\" as \"cust_profile_id\" on Schema \"QAT_AM" +
+                        "C\"", cust_Profile_Id_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 81
+ testRunner.And(string.Format("I verify user Mutual Fund status on schema \"{0}\"", db_Val3), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 82
+ testRunner.Then("I am clicking on \"Investment_MutualFund_InvestTab\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 83
+ testRunner.And("I am clicking on \"Investment_MutualFund_InvestBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 84
+ testRunner.And(string.Format("verify through \"{0}\" on \"Investment_MutualFund_DisPopup\"", disclaimer_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 85
+ testRunner.And("I am performing on \"Investment_MutualFund_PopupBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 86
+ testRunner.And(string.Format("I select \"{0}\" on \"Investment_MutualFund_FromAcc\"", from_Acc), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 87
+ testRunner.And(string.Format("verify through \"{0}\" on \"Investment_MutualFund_FUndName\"", invest_Option), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 88
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Investment_MutualFund_FundAc" +
                         "cNo\"", gl_Account_Query, db_Val3), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 78
+#line 89
  testRunner.And(string.Format("I have given \"{0}\" on \"Investment_MutualFund_Amount\"", amount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 79
+#line 90
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Investment_MutualFund_TranTi" +
                         "ming\"", tran_Timing_Query, db_Val3), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 80
- testRunner.And("I am performing on \"Investment_MutualFund_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 81
- testRunner.And("I scroll to element \"Investment_MutualFund_ScrollTxt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 82
- testRunner.And("I am performing on \"Investment_MutualFund_AgreeBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 83
- testRunner.And("I scroll to element \"Investment_MutualFund_TranPass\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 84
- testRunner.And(string.Format("I have given \"{0}\" on \"Investment_MutualFund_TranPass\"", tran_Pass), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 85
- testRunner.And("I am performing on \"Investment_MutualFund_InvestBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 86
- testRunner.And("I wait 6000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 87
- testRunner.And(string.Format("verify through \"{0}\" on \"Investment_MutualFund_TranSuccessMessage\"", success_Msg), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 88
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"<db_val>\" on \"\"", tran_Type_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 89
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"<db_val>\" on \"\"", tran_Date_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 90
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"<db_val>\" on \"\"", tran_Amount_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 91
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"<db_val>\" on \"\"", from_Acc_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am performing on \"Investment_MutualFund_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 92
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"<db_val>\" on \"\"", to_Acc_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I scroll to element \"Investment_MutualFund_ScrollTxt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 93
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"<db_val>\" on \"\"", fund_Name_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am performing on \"Investment_MutualFund_AgreeBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 94
+ testRunner.And("I scroll to element \"Investment_MutualFund_TranPass\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 95
+ testRunner.And(string.Format("I have given \"{0}\" on \"Investment_MutualFund_TranPass\"", tran_Pass), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 96
+ testRunner.And("I am performing on \"Investment_MutualFund_InvestBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 97
+ testRunner.And("I wait 6000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 98
+ testRunner.And(string.Format("verify through \"{0}\" on \"Investment_MutualFund_TranSuccessMessage\"", success_Msg), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 99
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"<db_val>\" on \"\"", tran_Type_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 100
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"<db_val>\" on \"\"", tran_Date_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 101
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"<db_val>\" on \"\"", tran_Amount_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 102
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"<db_val>\" on \"\"", from_Acc_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 103
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"<db_val>\" on \"\"", to_Acc_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 104
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"<db_val>\" on \"\"", fund_Name_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 105
     testRunner.And(string.Format("I set value in context from database \"{0}\" as \"fund_disclaimer_popup\" on Schema \"" +
                         "QAT_AMC\"", disclaimer_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 95
+#line 106
  testRunner.And("I am performing on \"\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 96
+#line 107
  testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 97
+#line 108
  testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 98
+#line 109
  testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 99
+#line 110
  testRunner.And("verify through \"Successful\" on \"MyAccount_Forgot_TranSuccessMessage\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 100
+#line 111
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"<db_val>\" on \"Investment_TranType\"", tran_Type_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 101
+#line 112
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"<db_val>\" on \"Investment_TranDate\"", tran_Date_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 102
+#line 113
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"<db_val>\" on \"Investment_TranAmount\"", tran_Amount_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 103
+#line 114
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"<db_val>\" on \"Investment_TranToAcc\"", from_Acc_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 104
+#line 115
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"<db_val>\" on \"Investment_TranToAcc\"", to_Acc_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 105
+#line 116
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"<db_val>\" on \"Investment_TranFundName" +
                         "\"", fund_Name_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -405,7 +430,7 @@ this.ScenarioSetup(scenarioInfo);
             "TION_ID = \'")]
         public virtual void WhenUserTryToVerifyMutualFund_WhenUserTryToVerifyMutualFundProcess()
         {
-#line 59
+#line 70
 this.WhenUserTryToVerifyMutualFund("When user try to verify Mutual Fund Process", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
                     "ic}\'", "", "", "1000", "QAT_AMC", "HBL Equity Fund", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "SELECT GL_ACCOUNT_NO FROM AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUCT_PROFILE C" +
                     "P ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND = \'{invest_fund_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{invest_" +

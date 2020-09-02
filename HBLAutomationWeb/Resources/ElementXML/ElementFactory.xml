@@ -44,13 +44,37 @@
     <Element keyword="Forget_ChangeLogin_SubmitBtnCC" locator="//div[@ng-show='showcreditcardstep']//button" />
     <Element keyword="Forget_ChangeSuccessMsg" locator="//p[@class='label msg col-12 ng-binding']" />
     <Element keyword="Forget_ChangeOkBtn" locator ="//div[@class='form-group button-center text-right']/a" />
+  </Module>
 
+  <Module name="Registration">
+    <Element keyword="Registration_registerBtn" locator="//a[@class='btn']"/>
+    <Element keyword="Registration_CNIC" locator="//input[@name='CNIC']"/>
+    <Element keyword="Registration_CardNo" locator="//input[@name='CardNo']"/>
+    <Element keyword="Registration_CardPin" locator="//input[@name='PIN']"/>
+    <Element keyword="Registration_LoginId" locator="//input[@name='UseName']"/>
+    <Element keyword="Registration_NextBtn" locator="//div[@ng-form='FormCNIC']//button[text()='Next' and @class='btn submit-btn']" />
+    <Element keyword="Registration_Scroll" locator="//span[contains(text(),'{K}')]" />
+    <Element keyword="Registration_AcceptBtn" locator="//button[@class='btn accept']"/>
+    <Element keyword="Registration_FormNextBtn" locator="//div[@ng-form='FormStep1']//button[text()='Next']"/>
+    <Element keyword="Registration_TagAccountNo" locator="(//label[@class='account-number ng-binding'])[{i}]"/>
+    <Element keyword="Registration_AccountSize" locator=" //label[@class='account-number ng-binding']"/>
+    <Element keyword="Registration_AccountToggle" locator="//input[@id='{i}']//following-sibling::label"/>
+    <Element keyword="Registration_AccNextBtn" locator="//div[@ng-form='FirstStep']//button[text()='Next']"/>
+    <Element keyword="Registration_OtpNextBtn" locator="//div[@ng-form='FormOTP']//button[text()='Next']" />
+    <Element keyword="Registration_LoginID" locator="//input[@name='LoginPassword']" />
+    <Element keyword="Registration_ReLoginID" locator="//input[@name='ReLoginPassword']" />
+    <Element keyword="Registration_TranPass" locator="//input[@name='TransactionPassword']" />
+    <Element keyword="Registration_ReTranPass" locator="//input[@name='ReTransactionPassword']" />
+    <Element keyword="Registration_FinishBtn" locator="//button[text() = 'Finish']" />
+    <Element keyword="Registration_PassPolicyText" locator="//div[@class='user-policy']//h2[text()='Password Policy']//following-sibling::small" />
+    <Element keyword="Registration_PaswwordText" locator="//div[@id = 'popup']//p"/>
+    <Element keyword="Registration_PaswwordOkBtn" locator="//a[@class='btn' and text()='OK']"/>
+    <Element keyword="Registration_Email" locator="//input[@name='EmailAddress']"/>
 
   </Module>
 
   <Module name="Signup">
-    <Element keyword="Signup_registerBtn" locator="//a[@class='btn']"/>
-    <Element keyword="Signup_DebitCardNav" locator="//a[@class='nav-link active forDebit']" />
+
     <Element keyword="Signup_DebitReqText1" locator="//div[@id='forDebit']//ul//li[contains(text(), 'CNIC')]"/>
     <Element keyword="Signup_DebitReqText2" locator="//div[@id='forDebit']//ul//li[contains(text(), 'Debit')]"/>
     <Element keyword="Signup_CreditReqText1" locator="//div[@id='forCredit']//ul//li[contains(text(), 'CNIC')]"/>
@@ -61,18 +85,11 @@
     <Element keyword="Signup_Credit_NextBtn" locator="//div[@id='forCredit']//div//button"/>
     <Element keyword="Signup_LngTextBtn" locator="//button[@class='urdu btn toggleTncBtn']" />
     <Element keyword="Signup_UrduText" locator="//div[@class='urdu_terms']//p[contains(text(), 'ڈیجیٹل بینکاری')]" />
-    <Element keyword="Signup_Scroll" locator="//span[contains(text(),'{K}')]" />
-    <Element keyword="Signup_AcceptBtn" locator="//button[@class='btn accept']"/>
-    <Element keyword="Signup_DOB" locator="//input[@name='DateOfBirth']" />
-    <Element keyword="Signup_CNIC" locator="//input[@name='CNIC']"/>
-    <Element keyword="Signup_CardNo" locator="//input[@name='CardNo']"/>
-    <Element keyword="Signup_CardPin" locator="//input[@name='PIN']"/>
-    <Element keyword="Signup_LoginId" locator="//input[@name='UseName']"/>
-    <Element keyword="Signup_Email" locator="//input[@name='EmailAddress']"/>
+
+
+    
     <Element keyword="Signup_ContinueBtn" locator="//div[@ng-form='FormStep1']//button[@class='btn submit-btn']"/>
     <Element keyword="Signup_LastRegisterBtn" locator="//div[@ng-form='FirstStep']//div[@class='col-10 enable-ent']//button[@class='btn submit-btn']"/>
-    <Element keyword="Signup_AccountToggle" locator="//input[@id='{i}']//following-sibling::label"/>
-    <Element keyword="Signup_TagAccountNo" locator="(//label[@class='account-number ng-binding'])[{i}]"/>
     <Element keyword="Signup_LoginIdTextVerf" locator="//p[@class='value col-6 ng-binding']"/>
     <Element keyword="Signup_LoginPassword" locator="//input[@name='LoginPassword']" />
     <Element keyword="Signup_ReLoginPassword" locator="//input[@name='ReLoginPassword']" />
@@ -80,14 +97,13 @@
     <Element keyword="Signup_ReTransactionPassword" locator="//input[@name='ReTransactionPassword']" />
     <Element keyword="Signup_SubmitBtn" locator="//button[@class='btn submit-btn']" />
     <Element keyword="Signup_SuccessNextBtn" locator="//div[@class='form-group button-center reg-complete']//button[@class='btn' and text()='Next']"/>
-    <Element keyword="Signup_PaswwordText" locator="//p[@class='ng-binding']"/>
-    <Element keyword="Signup_FeedbackOptionHBL" locator="//input[@name='153']"/>
+
+    <Element keyword="Signup_FeedbackOptionHBL" locator="//input[@name='137']"/>
     <Element keyword="Signup_FeedbackText" locator="//input[@name='Employeeid']"/>"/>
     <Element keyword="Signup_FeedbackSubmit" locator="//button[@class='btn btn submit-btn' and text()='Submit']"/>
     <Element keyword="Signup_FeedbackMessage" locator="//div[@id='FeedbackSuccessPopup']//div//div//div//h2"/>
     <Element keyword="Signup_FeedbackOkBtn" locator="//div[@id='FeedbackSuccessPopup']//div//div//a"/>
     <Element keyword="Signup_SkipBtn" locator="//button[@class='btn btn submit-btn' and text()='Skip']" />
-    <Element keyword="Signup_PaswwordOkBtn" locator="//a[@class='btn' and text()='OK']"/>
     <Element keyword="Signup_SuccessMessage1" locator="//h4"/>
     <Element keyword="Signup_SuccessMessage2" locator="//p[@class='label msg col-12 ng-binding']"/>
     <Element keyword="Signup_SuccessMessage3" locator="//p[@class='label msg col-12']"/>
@@ -98,6 +114,7 @@
 
   <Module name ="Pay">
     <Element keyword="Pay_Link" locator="//*[contains(text(),'Pay ')]"/>
+    <Element keyword="Pay_LinkHomeIcon" locator="//a[@class='widget_item' and text()='Bill Payment']"/>
     <Element keyword="Pay_AddNewBtn" locator="//a[contains(text(),'Add New') and @class='btn add float-right']"/>
     <Element keyword="Pay_BillPaymentCategory" locator="//li[contains(text(),'{BillPaymentCategory}')]"/>
     <Element keyword="Pay_BillPaymentCategory_Company" locator="//h2[@class='head ng-binding ng-scope' and contains(text(),'{Pay_BillPaymentCategory_Company}')]"/>
@@ -110,7 +127,7 @@
     <Element keyword="Pay_Transaction_Success_FromAccount" locator="//h2[@class='ng-binding' and contains(text(),'From')]//following-sibling::p"/>
     <Element keyword="Pay_Transaction_Success_CompanyName" locator="//h2[@class='ng-binding' and text()='Billing Company Name']//following-sibling::p"/>
     <Element keyword="Pay_Transaction_Success_ConsumerNo" locator="//h2[@class='ng-binding' and text()='Consumer Number']//following-sibling::p"/>
-    <Element keyword="Pay_Transaction_ID" locator="//*[contains(text(),'Transaction ID')]//following-sibling::p"/>
+    <Element keyword="Pay_Transaction_ID" locator="//*[contains(text(),'Receipt ID')]//following-sibling::p"/>
     <Element keyword="Pay_Transaction_Scroll_AmountLabel" locator="//label[@for='Amount']"/>
     <Element keyword="Pay_Transaction_ToggleAutoPay" locator="//label[@class='auto-pay']"/>
     <Element keyword="Pay_Transaction_PayBillAmount_RadioBtn" locator="//label[@class='custom-control-label' and contains(text(),'Pay Bill Amount')]"/>
@@ -275,7 +292,7 @@
     <Element keyword="MyAccount_Services_CloseBtn" locator="//div[@class='modal-footer']//a[text()='Close']"/>
     <Element keyword="MyAccount_LimitMngOption" locator="//a[@ng-click='GetLimitsListData()']" />
     <Element keyword="MyAccount_Limit_Edit_Icon" locator="//div[contains(text(),'{x}')]/parent::div/parent::div/parent::div/parent::div//div[@class='limit-grey-sec']//p//button" />
-    <Element keyword="MyAccount_Limit_Slider" locator="//div[contains(text(),'{x}')]/parent::div/parent::*/parent::*/parent::div[@class='limit-count-update']//div[@class='col-12']" />
+    <Element keyword="MyAccount_Limit_Slider" locator="//div[contains(text(),'{x}')]/parent::div/parent::*/parent::*/parent::div[@class='limit-count-update']//div[@class='col-12']//input" />
     <Element keyword="MyAccount_Limit_NewPrice" locator="//div[contains(text(),'{x}')]/parent::div/parent::*/parent::*/parent::div[@class='limit-count-update']//div//div//div[@ng-if='onrangeclick']//div" />
     <Element keyword="MyAccount_Limit_Edit_Save_Btn" locator="//div[contains(text(),'{x}')]/parent::div/parent::*/parent::*/parent::div[@class='limit-count-update']//div[@class='limit-grey-sec text-right']//button[text()='Save']"/>
     <Element keyword="MyAccount_Limit_Type_count" locator="(//div[@class='limit-cont']//div[@class='limit-label ng-binding'])" />
@@ -283,6 +300,7 @@
     <Element keyword="MyAccount_Limit_daily_limit" locator="//div[contains(text(),'{x}')]/parent::*//following-sibling::div[@class='col-6 col-md-6 col-lg-6 col-xl-4']//div" />
     <Element keyword="MyAccount_Limit_Edit_Min" locator="//div[contains(text(),'{x}')]/parent::*/parent::*/parent::*/parent::*//following-sibling::div[@class='limit-count-update']//div//div[@class='row mt-2'][2]//div[@class='col-6 col-md-6 col-lg-6 col-xl-8']//div" />
     <Element keyword="MyAccount_Limit_Edit_Max" locator="//div[contains(text(),'{x}')]/parent::*/parent::*/parent::*/parent::*//following-sibling::div[@class='limit-count-update']//div//div[@class='row mt-2'][2]//div[@class='col-6 col-md-6 col-lg-6 col-xl-4']//div" />
+    <Element keyword="MyAccount_Limit_Edit_NewLimit" locator="//div[contains(text(),'{x}')]/parent::*/parent::*/parent::*/parent::*[@class='limit-count-update']//div//div//div//div[@class='limit-amt ng-binding']" />
     <Element keyword="MyAccount_Limit_Edit_Succ_Txt" locator="//div[@id='ViewLimitsPopup']//div[@class='display-table']//p" />
     <Element keyword="MyAccount_Limit_Edit_Succ_Btn" locator="//div[@id='ViewLimitsPopup']//div[@class='modal-footer']//a" />
     <Element keyword="MyAccount_Limit_Old_Amount" locator="//div[contains(text(),'{x}')]/parent::*/parent::*/parent::*/parent::*[@class='limit-cont']//div//div//div//div[@class='limit-amt ng-binding']" />
@@ -413,6 +431,7 @@
 
   <Module name="Investment">
     <Element keyword="Investment_Icon" locator="//a[text()='Investments ']" />
+    <Element keyword="Investment_AccountInfo" locator="//div[@class='account-wrap']" />
     <Element keyword="Investment_TermDeposit_Icon" locator="//a[text()='Investments ']//following-sibling::ul//li//a[text()='Term Deposit  ']" />
     <Element keyword="Investment_ETDRTYpe_List" locator="//select[@ng-model='postObj.EdtrList']" />
     <Element keyword="Investment_Detail_Tab" locator="//a[@ng-click='GetAccountDetail();']" />
@@ -426,7 +445,7 @@
     <Element keyword="Investment_TermDep_ScrollText" locator ="//strong[text()= '13. ']" />
     <Element keyword="Investment_TermDep_AcceptBtn" locator ="//button[@class='btn accept']" />
     <Element keyword="Investment_TermDep_ReqBtn" locator="//button[@class='btn submit-btn' and text()='Request']" />
-    <Element keyword="Investment_TranSuccessMessage" locator="//div[@class='congrats-div ng-scope']//div[@class='display-table']//p" />
+    <Element keyword="Investment_TranSuccessMessage" locator="//div[@id='successPopupGen2']//div[@class='display-table']//p" />
     <Element keyword="Investment_TranType" locator="//h2[text()='Transaction Type']//following-sibling::p" />
     <Element keyword="Investment_TranDate" locator="//*[contains(text(), 'Transaction Date')]//following-sibling::p" />
     <Element keyword="Investment_TranAmount" locator="//h2[text()='Transaction Amount']//following-sibling::p" />
@@ -463,7 +482,19 @@
     <Element keyword="Investment_MutualFund_TranCloseBtn" locator="//div[@id='transactionActivity']//a" />
     <Element keyword="Investment_MutualFund_PopupBtn" locator="//button[@class='btn' and text()='Next']" />
     <Element keyword="Investment_TermDep_RatingOkBtn" locator="//div[@id='successPopupGen2']//button[contains(text(),'Ok')]" />
+    <Element keyword="Investment_TermDep_RatingCancel" locator="//div[@id='successPopupGen2']//a" />
+    <Element keyword="Investment_TermDepost_DetailBtn" locator="//div[@class='available limit' and contains(text(),'Term')]//parent::div//following-sibling::div//button" />
+    <Element keyword="Investment_TermRefNo" locator="//div[@class= 'acc-no ng-binding' and contains(text(),'{x}')]" />
+    <Element keyword="Investment_TermDetAmount" locator="//div[@class= 'acc-no ng-binding' and contains(text(),'{x}')]//parent::div//parent::div//following-sibling::div//div[@class='deposit-title' and text()='Amount']//following-sibling::div" />
+    <Element keyword="Investment_TermDetPeriod" locator="//div[@class= 'acc-no ng-binding' and contains(text(),'{x}')]//parent::div//parent::div//following-sibling::div//div[@class='deposit-title' and text()='Period']//following-sibling::div" />
+    <Element keyword="Investment_TermDetRate" locator="//div[@class= 'acc-no ng-binding' and contains(text(),'{x}')]//parent::div//parent::div//following-sibling::div//div[@class='deposit-title' and text()='Offered Rate']//following-sibling::div" />
+    <Element keyword="Investment_TermDetTotalAmount" locator="//span[@class='consolid-title ng-binding']"/>
+    <Element keyword="Investment_MutualFund_Fund_NameLoc" locator="//tr[@class='credit ng-scope'][{i}]//td[@class='ng-binding'][1]" />
+    <Element keyword="Investment_MutualFund_FolioLoc" locator="//tr[@class='credit ng-scope'][{i}]//td[@class='amount ng-binding'][1]" />
+    <Element keyword="Investment_MutualFund_BalanceLoc" locator="//tr[@class='credit ng-scope'][{i}]//td[@class='amount ng-binding'][2]" />
+    <Element keyword="Investment_MutualFund_unit_loc" locator="//tr[@class='credit ng-scope'][{i}]//td[@class='amount ng-binding'][3]" />
+    <Element keyword="Investment_MutualFund_nav_loc" locator="//tr[@class='credit ng-scope'][{i}]//td[@class='amount ng-binding'][4]" />
+    <Element keyword="Investment_MutualFund_nav_date_loc" locator="//tr[@class='credit ng-scope'][{i}]//td[@class='ng-binding'][2]" />
 
-    
   </Module>
 </ElementFactory>
