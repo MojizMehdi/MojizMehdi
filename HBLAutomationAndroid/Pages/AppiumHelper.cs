@@ -24,6 +24,7 @@ using OpenQA.Selenium.Remote;
 using DocumentFormat.OpenXml.Spreadsheet;
 using OpenQA.Selenium.Appium.MultiTouch;
 using System.Data;
+using OpenQA.Selenium.Appium.Windows.Enums;
 
 namespace HBLAutomationAndroid.Pages
 {
@@ -135,6 +136,32 @@ namespace HBLAutomationAndroid.Pages
             }
             return size_count;
         }
+
+        //For Returning Elements
+        public List<string> Return_Keyword_Elements_List(string locator, string locator_type)
+        {
+            List<string> lst = new List<string>();
+            if (locator_type == "id")
+            {
+                AndroidElement Control = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementIsVisible(By.Id(locator)));
+                var list_elements = driver.FindElements(By.Id(locator));
+                foreach (var item in list_elements)
+                {
+                    lst.Add(item.Text);
+                }
+                //return lst;
+            }
+            else if (locator_type == "xpath")
+            {
+                var list_elements = driver.FindElements(By.Id(locator));
+                foreach (var item in list_elements)
+                {
+                    lst.Add(item.Text);
+                }
+                //return lst;
+            }
+            return lst;
+        }
         ////For returning the value inside of a text field of a keyword given
         //public string ReturnTextBoxValue(string locator)
         //{
@@ -223,6 +250,7 @@ namespace HBLAutomationAndroid.Pages
             {
                 if (locator_type == "id")
                 {
+                    
 
                     waitDriver.Until(ExpectedConditions.ElementIsVisible(By.Id(locator)));
                     {
@@ -231,7 +259,22 @@ namespace HBLAutomationAndroid.Pages
                         Value.Click();
                         Value.Clear();
                         Value.SendKeys(textboxvalue);
+                        //if (locator == "com.hbl.android.hblmobilebanking:id/s_hbpsBillCompanies")
+                        //{
+                        //    Value = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id("com.hbl.android.hblmobilebanking:id/withoutMargin_Lay")));
+                        //    Size size = Value.Size;
+                        //    var location = Value.Location;
+                        //    //Size dimension = driver.Manage().Window.Size;
+                        //    int x = location.X / 2;
+                        //    //int start_y = (int)(dimension.Height * height_start_dimension);
+                        //    //int end_y = (int)(dimension.Height * height_end_dimension);
+                        //    ITouchAction tc = new TouchAction(driver);
+                        //    Thread.Sleep(2000);
+                        //    tc.Press(x + 100, location.Y).Wait(1000).Release().Perform();
+
+                        //}
                         driver.HideKeyboard();
+
                     }
                 }
                 else if (locator_type == "xpath")
@@ -558,6 +601,19 @@ namespace HBLAutomationAndroid.Pages
 
         //}
 
+        //For Scroll to Element using Text
+        public void scroll_to_element_text(string text)
+        {
+
+            Thread.Sleep(3000);
+            var temp = driver.FindElements(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"" + text + "\"));"));
+            if(temp.Count == 0)
+            {
+                throw new Exception(string.Format("Element with the given text not found on screen"));
+            }          
+            //var elements = driver.FindElements(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView("+ "new UiSelector().text(\"" + text + "\"));"));
+        }
+
 
         //Method For Scroll Down
         public void scroll_down(double height_start_dimension, double height_end_dimension)
@@ -598,6 +654,69 @@ namespace HBLAutomationAndroid.Pages
 
             }
         }
+
+
+
+        //Method For Returning Combobox Values
+        public List<string> return_combobox_values(string locator,string list_locator, string locator_type)
+        {
+            try
+            {
+                List<string> elements = new List<string>();
+                if (locator_type == "id")
+                {
+                    AndroidElement Combobox = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
+                    Thread.Sleep(1000);
+                    Combobox.Click();
+                    Thread.Sleep(2000);
+                    var temp = driver.FindElementsById(list_locator);
+                    for (int i = 0; i < temp.Count; i++)
+                    {
+                        if (temp[i].Text.ToString().ToLower().Contains("select"))
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            elements.Add(temp[i].Text.ToString());
+                        }
+                    }
+                }
+                else if (locator_type == "xpath")
+                {
+                    AndroidElement Combobox = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
+                    Thread.Sleep(1000);
+                    Combobox.Click();
+                    Thread.Sleep(2000);
+                    var temp = driver.FindElementsById(list_locator);
+                    for (int i = 0; i < elements.Count; i++)
+                    {
+                        elements.Add(temp.ToString());
+                    }
+                }
+                driver.FindElementByXPath("//*").Click();
+                return elements;
+            }
+
+            catch (ElementNotVisibleException)
+            {
+
+                throw new AssertFailedException(string.Format("The element provided {0} is not on screen", locator));
+            }
+            catch (StaleElementReferenceException)
+            {
+
+                throw new AssertFailedException(string.Format("The element provided {0} is Stale", locator));
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("ex message: " + ex.Message);
+
+            }
+
+        }
+
 
         //Method For Combobox
         public void combobox(string value, string locator,string locator_type)

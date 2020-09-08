@@ -47,6 +47,60 @@
     <Element keyword="Dashboard_BillPayment" locator="com.hbl.android.hblmobilebanking:id/pay_Btn"/>
   </Module>
 
+  <Module name ="MutualFund">
+    <Element keyword="MutualFund_InvestBtn" locator="//android.widget.TextView[@text='{Fund_Name}']/following-sibling::android.widget.Button"/>
+    <Element keyword="MutualFund_FromAccount" locator="com.hbl.android.hblmobilebanking:id/spnFromAccount"/>
+    <Element keyword="MutualFund_FundName" locator="com.hbl.android.hblmobilebanking:id/eTextFundProduct"/>
+    <Element keyword="MutualFund_FolioNumber" locator="com.hbl.android.hblmobilebanking:id/spnFolioNumber"/>
+    <Element keyword="MutualFund_FolioNumber_List_Locator" locator="android:id/text1"/>
+    <Element keyword="MutualFund_FundAccNo" locator="com.hbl.android.hblmobilebanking:id/eTextFundAccountNumber"/>
+    <Element keyword="MutualFund_FundAmount" locator="com.hbl.android.hblmobilebanking:id/eTextAmount"/>
+    <Element keyword="MutualFund_FundName" locator="com.hbl.android.hblmobilebanking:id/eTextFundProduct"/>
+    <Element keyword="MutualFund_NextBtn" locator="com.hbl.android.hblmobilebanking:id/btnTransNext"/>
+    <Element keyword="MutualFund_AgreeBtn" locator="com.hbl.android.hblmobilebanking:id/dialog_pos_btn"/>
+    <Element keyword="MutualFund_Tran_FundName" locator="//android.widget.TextView[@text='Fund Name']/following-sibling::android.widget.TextView"/>
+    <Element keyword="MutualFund_TranToAcc" locator="//android.widget.TextView[@text='To Account']/following-sibling::android.widget.TextView"/>
+    <Element keyword="MutualFund_ReceiptID" locator="//android.widget.TextView[@text='Receipt ID']/following-sibling::android.widget.TextView"/>
+    <Element keyword="MutualFund_DisPopup" locator="com.hbl.android.hblmobilebanking:id/dialog_msg"/>
+    <Element keyword="MutualFund_PopupBtn" locator="com.hbl.android.hblmobilebanking:id/dialog_pos_btn"/>
+    <Element keyword="MutualFund_CutOff_Timings" locator="com.hbl.android.hblmobilebanking:id/eTextTransCutoffTimings"/>
+    <Element keyword="MutualFund_Investment_Tab" locator="com.hbl.android.hblmobilebanking:id/txtViewInvestment"/>
+    <Element keyword="MutualFund_Statement_Tab" locator="com.hbl.android.hblmobilebanking:id/txtViewStatement"/>
+    <Element keyword="MutualFund_Statement_Table" locator="com.hbl.android.hblmobilebanking:id/recyclerView_AMCDetailsList"/>
+    <Element keyword="MutualFund_Statement_FundName" locator="com.hbl.android.hblmobilebanking:id/eTextAMCFullName"/>
+    <Element keyword="MutualFund_Statement_FolioNumber" locator="com.hbl.android.hblmobilebanking:id/eTextAMCFolioNumber"/>
+    <Element keyword="MutualFund_Statement_Balance" locator="com.hbl.android.hblmobilebanking:id/eTextAMCBalance"/>
+    <Element keyword="MutualFund_Statement_Units" locator="com.hbl.android.hblmobilebanking:id/eTextAMCUnits"/>
+    <Element keyword="MutualFund_Statement_Nav" locator="com.hbl.android.hblmobilebanking:id/eTextAMCNAV"/>
+    <Element keyword="MutualFund_Statement_NavDate" locator="com.hbl.android.hblmobilebanking:id/eTextAMCDate"/>
+    <Element keyword="MutualFund_Statement_TabRow" locator="(//android.widget.LinearLayout[@resource-id='com.hbl.android.hblmobilebanking:id/recyclerView_AMCDetailsList'][rownum])"/>
+    
+    <Element keyword="MutualFund_List_FundName" locator="com.hbl.android.hblmobilebanking:id/txtAMCFundName"/>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </Module>
+
 
   <!--<Module name ="BeneficiaryManagement">
      <Element keyword="BeneficiaryManagement_Link" locator="//*[contains(text(),'Beneficiary Management ')]"/>
@@ -106,6 +160,13 @@
     <Element keyword="BillPayment_Inquiry_NextArrow" locator="com.hbl.android.hblmobilebanking:id/img_next"/>
     <Element keyword="BillPayment_multipayment_totalamount" locator="com.hbl.android.hblmobilebanking:id/amount_V"/>
     <Element keyword="BillPayment_MultiPayment_PayBtn" locator="com.hbl.android.hblmobilebanking:id/btnPay"/>
+    <Element keyword="BillPayment_MultiPayment_Schedule_Toggle" locator="com.hbl.android.hblmobilebanking:id/auto_pay_switch"/>
+    <Element keyword="BillPayment_MultiPayment_MaxBill" locator="com.hbl.android.hblmobilebanking:id/max_bill_rb"/>
+    <Element keyword="BillPayment_MultiPayment_SpecificAmount" locator="com.hbl.android.hblmobilebanking:id/bill_amount_rb"/>
+    <Element keyword="BillPayment_MultiPayment_SpecificAmount_Field" locator="com.hbl.android.hblmobilebanking:id/bill_max_amount_edtxt"/>
+    <Element keyword="BillPayment_MultiPayment_Schedule_Next" locator="com.hbl.android.hblmobilebanking:id/submitRequestLay"/>
+    <Element keyword="BillPayment_MultiPayment_Schedule_Agree" locator="com.hbl.android.hblmobilebanking:id/dialog_pos_btn"/>
+    <Element keyword="BillPayment_MultiPayment_Schedule_Close" locator="com.hbl.android.hblmobilebanking:id/onCloseClicked"/>
   </Module>-->
   <Module name ="SendMoney">
     <Element keyword="SendMoney_Link" locator="com.hbl.android.hblmobilebanking:id/sendMoney_Btn"/>

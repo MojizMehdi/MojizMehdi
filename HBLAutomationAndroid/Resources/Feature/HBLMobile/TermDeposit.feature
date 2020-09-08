@@ -31,8 +31,8 @@ Scenario Outline: When user try to term deposit
 	And the user is arrive to Mobile Banking home page
 	And I am clicking on "Dashboard"
 	And I wait 4000
-	When I save Account Balances
 	And I set value in context from data "1" as "term_deposit_flag" 
+	When I save Account Balances
 	And I am clicking on "Dashboard_More"
 	And I have given "<Category_Value>" on "SendMoney_SearchBeneField"
 	And I am clicking on "BillPayment_CategoryLink"

@@ -34,7 +34,8 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 	And I have given "<Category_Value>" on "SendMoney_SearchBeneField"
 	And I am clicking on "BillPayment_CategoryLink"
 	And I am clicking on "BillPayment_AddNewBtn"
-	And I select "<Company_Value>" on "BillPayment_Category_Company"
+	And I have given "<Company_Value>" on "BillPayment_Category_Company"
+	#And I select "<Company_Value>" on "BillPayment_Category_Company"
 	And I set value in context from data "BillPayment" as "Transaction_Type"
 	And I set value in context from data "<company_code_value>" as "Company_Code"
 	And I set value in context from data "<account_type>" as "Account_Type"
@@ -93,6 +94,86 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 	And verify through database on "<consumer_no_query>" on Schema "<db_val>" on "BillPayment_TranSucess_ConsumerNo"
 
 	@source:Data/BillPayment.xlsx
+	Examples: 
+	|Case|status_query|status_query2|Category_Value|Company_Value|BillPayment_ConsumerNo_Value|Bill_Amount_query|company_code_value|OTP_Value|tran_pass_value|tran_type_query|tran_amount_query|from_account_query|company_name_query|consumer_no_query|db_val|db_val2|account_no|account_type|expiry_date|bene_name|bene_query|instrument_type|
+
+	@BillPayment
+Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make new payment schedule
+	Given the test case title is "<Case>"
+	And I set value in context from data "<BillPayment_ConsumerNo_Value>" as "ConsumerNo"
+	And update the data by query "<status_query>" on QAT_BPS
+	And update the data by query "<status_query2>" on DIGITAL_CHANNEL_SEC
+	And the user is arrive to Mobile Banking home page
+	And I am clicking on "Dashboard"
+	When I save Account Balances 
+	And I am clicking on "Dashboard_More"
+	And I have given "<Category_Value>" on "SendMoney_SearchBeneField"
+	And I am clicking on "BillPayment_CategoryLink"
+	And I am clicking on "BillPayment_AddNewBtn"
+	And I have given "<Company_Value>" on "BillPayment_Category_Company"
+	#And I select "<Company_Value>" on "BillPayment_Category_Company"
+	And I set value in context from data "BillPayment" as "Transaction_Type"
+	And I set value in context from data "<company_code_value>" as "Company_Code"
+	And I set value in context from data "<account_type>" as "Account_Type"
+	And I set value in context from data "<BillPayment_ConsumerNo_Value>" as "ConsumerNo"
+	And verify the result from "<instrument_type>" on Schema "<db_val2>"
+	And I have given "<BillPayment_ConsumerNo_Value>" on "BillPayment_ConsumerNo"
+	And I am clicking on "BillPayment_NextBtn"
+	And I wait 8000
+	And I select "<account_no>" on "BillPayment_FromAccount"
+	#And I have given "<expiry_date>" on "Pay_Card_Expiry_Date"
+	And I wait 5000
+	And Set parameter in context class "BillPayment_Bill_Status"
+	#And verify color of element "<Bill_Status_Background>" on "Pay_Bill_Status_Color"
+	#And verify color of bill status on "Pay_Bill_Status_Color"
+	And I want value from textview "BillPayment_Transaction_Unpaid_Amount" on database "<db_val2>" as "<Bill_Amount_query>"
+	And verify through database on "<Bill_Amount_query>" on Schema "<db_val2>" on "BillPayment_Transaction_Unpaid_Amount"
+	And I am verifying OTP and Transaction pass check on company code "<company_code_value>"
+	And I am clicking on "BillPayment_NextBtn"
+	And I have otp check and given <OTP_Value> on "Login_OTP_field"
+	And I am clicking on "BillPayment_CheckNextBtn"
+	And I have transaction pass check and given <tran_pass_value> on "BillPayment_TransactionPassword"
+	And I am clicking on "BillPayment_PayBtn"
+	And I wait 10000
+	And I am clicking on "SendMoney_Rating"
+	And I am clicking on "SendMoney_RatingOkBtn"
+	And I wait 2000
+	And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
+	And I save Transaction Info
+	Then verify through "Transaction is successful. " on "BillPayment_TranSuccess"
+	And verify through database on "<tran_type_query>" on Schema "<db_val>" on "BillPayment_TranType"
+	And verify through database on "<tran_amount_query>" on Schema "<db_val>" on "BillPayment_TranAmount"
+	And verify through database on "<from_account_query>" on Schema "<db_val>" on "BillPayment_TranFromAcc"
+	And verify through database on "<company_name_query>" on Schema "<db_val>" on "BillPayment_CompanyName"
+	And verify through database on "<consumer_no_query>" on Schema "<db_val>" on "BillPayment_TranSucess_ConsumerNo"
+	And I am clicking on "BillPayment_TranInfoClose"
+	And I set value in context from data "<bene_name>" as "bene_name"
+	And verify bene status from <bene_query> on Schema "<db_val2>"
+	And I set value in context from database "<schedule_config>" as "schedule_configuration" on Schema "<db_val>"
+	And I am clicking on "BillPayment_MultiPayment_Schedule_Toggle"
+	And I am clicking on "<schedule_type>"
+	And I have given "<maximum_amount>" on "BillPayment_MultiPayment_SpecificAmount_Field"
+	And I am clicking on "BillPayment_MultiPayment_Schedule_Next"
+	And I am clicking on "BillPayment_MultiPayment_Schedule_Agree"
+	And I wait 3000
+	And verify the schedule config "<schedule_verify>" on Schema "<db_val>"
+	And I am clicking on "BillPayment_MultiPayment_Schedule_Close"
+	And I wait 2000
+	And I have given "<BillPayment_ConsumerNo_Value>" on "BillPayment_SearchBeneField"
+	Then verify through "ConsumerNoContextVal" on "BillPayment_SearchBeneConsumerNo"
+	And I am clicking on "Dashboard"
+	And I verify Account Balance
+	And I am clicking on "Dashboard_Sidebar"
+	And I am clicking on "Dashboard_Sidebar_TranActivity"
+	And I am clicking on "TransactionActivity_Financial"
+	And I am clicking on "TransactionActivity_LatestTranLink"
+	And verify through database on "<tran_type_query>" on Schema "<db_val>" on "BillPayment_TranType"
+	And verify through database on "<tran_amount_query>" on Schema "<db_val>" on "BillPayment_TranAmount"
+	And verify through database on "<from_account_query>" on Schema "<db_val>" on "BillPayment_TranFromAcc"
+	And verify through database on "<company_name_query>" on Schema "<db_val>" on "BillPayment_CompanyName"
+	And verify through database on "<consumer_no_query>" on Schema "<db_val>" on "BillPayment_TranSucess_ConsumerNo"
+
+	@source:Data/BillPayment(Schedule).xlsx
 	Examples: 
 	|Case|status_query|status_query2|Category_Value|Company_Value|BillPayment_ConsumerNo_Value|Bill_Amount_query|company_code_value|OTP_Value|tran_pass_value|tran_type_query|tran_amount_query|from_account_query|company_name_query|consumer_no_query|db_val|db_val2|account_no|account_type|expiry_date|schedule_type|maximum_amount|bene_name|bene_query|instrument_type|schedule_config|schedule_verify|
 
