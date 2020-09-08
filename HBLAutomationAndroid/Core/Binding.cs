@@ -84,6 +84,20 @@ namespace HBLAutomationAndroid.Core
                     config.Save();
                     ConfigurationManager.RefreshSection("connectionStrings");
                 }
+                if (Common.Configuration.GetInstance().GetByKey("ConnectionString_QAT_AMC") != null && Common.Configuration.GetInstance().GetByKey("ProviderName") != null)
+                {
+                    connectionStringsSection.ConnectionStrings["QAT_AMC"].ConnectionString = Common.Configuration.GetInstance().GetByKey("ConnectionString_QAT_BPS");
+                    connectionStringsSection.ConnectionStrings["QAT_AMC"].ProviderName = Common.Configuration.GetInstance().GetByKey("ProviderName");
+                    config.Save();
+                    ConfigurationManager.RefreshSection("connectionStrings");
+                }
+                if (Common.Configuration.GetInstance().GetByKey("ConnectionString_QAT_TPE") != null && Common.Configuration.GetInstance().GetByKey("ProviderName") != null)
+                {
+                    connectionStringsSection.ConnectionStrings["QAT_TPE"].ConnectionString = Common.Configuration.GetInstance().GetByKey("ConnectionString_QAT_TPE");
+                    connectionStringsSection.ConnectionStrings["QAT_TPE"].ProviderName = Common.Configuration.GetInstance().GetByKey("ProviderName");
+                    config.Save();
+                    ConfigurationManager.RefreshSection("connectionStrings");
+                }
 
             }
             catch (Exception ex)

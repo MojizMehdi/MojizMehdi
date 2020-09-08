@@ -62,7 +62,9 @@ namespace HBLAutomationAndroid.Common
         List<string> iteration_dates_schedule;
         string TermDepositYears;
         int term_deposit_check = 0;
+        int mutual_fund_check = 0;
         decimal term_deposit_balance = 0;
+        decimal mutual_fund_balance = 0;
         int no_of_accounts;
         int bene_count_inter_branch;
         int bene_count_inter_bank;
@@ -70,6 +72,7 @@ namespace HBLAutomationAndroid.Common
         string customer_cnic;
         List<string> AccountForTag;
         List<string> Account_No;
+        List<string> IsnotLinkedAccNumbers;
         int sizecount;
         bool signup_check;
         string ivr_req;
@@ -77,8 +80,70 @@ namespace HBLAutomationAndroid.Common
         bool tran_pass_flag = false;
         bool last_login_flag = false;
         string customer_type;
+        string mutual_fund_name;
+        string MutualFundDisclaimerPopup;
+        string cust_profile_id;
+        string BP_schedule_config;
+        List<string> scroll_items_list;
+        string GUID;
+        string HostReferenceNo;
 
-
+        public void Set_HostReferenceNo(string HostReferenceNo)
+        {
+            this.HostReferenceNo = HostReferenceNo;
+        }
+        public string Get_HostReferenceNo()
+        {
+            return HostReferenceNo;
+        }
+        public void Set_GUID(string GUID)
+        {
+            this.GUID = GUID;
+        }
+        public string Get_GUID()
+        {
+            return GUID;
+        }
+        public void Set_scroll_items_list(List<string> scroll_items_list)
+        {
+            this.scroll_items_list = scroll_items_list;
+        }
+        public List<string> Get_scroll_items_list()
+        {
+            return scroll_items_list;
+        }
+        public void Set_BP_schedule_config(string BP_schedule_config)
+        {
+            this.BP_schedule_config = BP_schedule_config;
+        }
+        public string Get_BP_schedule_config()
+        {
+            return BP_schedule_config;
+        }
+        public void Set_cust_profile_id(string cust_profile_id)
+        {
+            this.cust_profile_id = cust_profile_id;
+        }
+        public string Get_cust_profile_id()
+        {
+            return cust_profile_id;
+        }
+        public void Set_MutualFundDisclaimerPopup(string MutualFundDisclaimerPopup)
+        {
+            this.MutualFundDisclaimerPopup = MutualFundDisclaimerPopup;
+        }
+        public string Get_MutualFundDisclaimerPopup()
+        {
+            return MutualFundDisclaimerPopup;
+        }
+        public void Set_mutual_fund_name(string mutual_fund_name)
+        {
+            this.mutual_fund_name = mutual_fund_name;
+        }
+        public string Get_mutual_fund_name()
+        {
+            return mutual_fund_name;
+        }
         public void SetCustomerType(string customer_type)
         {
             this.customer_type = customer_type;
@@ -154,6 +219,14 @@ namespace HBLAutomationAndroid.Common
         {
             return this.Account_No;
         }
+        public void SetIsnotLinkedAccNumbers(List<string> IsnotLinkedAccNumbers)
+        {
+            this.IsnotLinkedAccNumbers = IsnotLinkedAccNumbers;
+        }
+        public List<string> GetIsnotLinkedAccNumbers()
+        {
+            return this.IsnotLinkedAccNumbers;
+        }
         public void SetSizeCount(int sizecount)
         {
             this.sizecount = sizecount;
@@ -217,6 +290,22 @@ namespace HBLAutomationAndroid.Common
         public void Set_term_deposit_check(int term_deposit_check)
         {
             this.term_deposit_check = term_deposit_check;
+        }
+        public int Get_mutual_fund_check()
+        {
+            return mutual_fund_check;
+        }
+        public void Set_mutual_fund_check(int mutual_fund_check)
+        {
+            this.mutual_fund_check = mutual_fund_check;
+        }
+        public decimal Get_mutual_fund_balance()
+        {
+            return mutual_fund_balance;
+        }
+        public void Set_mutual_fund_balance(decimal mutual_fund_balance)
+        {
+            this.mutual_fund_balance += mutual_fund_balance;
         }
         public decimal Get_term_deposit_balance()
         {
