@@ -119,7 +119,7 @@ namespace HBLAutomationAndroid.Pages
 
         }
         //For Counting Elements
-        public int SizeCountElements(string locator,string locator_type)
+        public int SizeCountElements(string locator, string locator_type)
         {
             var size_count = 0;
             if (locator_type == "id")
@@ -212,7 +212,7 @@ namespace HBLAutomationAndroid.Pages
         {
             try
             {
-                
+
                 string FeatureName = ContextPage.GetInstance().GetExcelRecord().FeatureName;
                 string savelocation = Configuration.GetInstance().GetByKey("ScreenshotFolderPath") + FeatureName + DateTime.Now.ToString("yyyyMMdd") + "/";
                 if (!Directory.Exists(savelocation))
@@ -223,7 +223,7 @@ namespace HBLAutomationAndroid.Pages
                 //Screenshot screenshot = ssdriver.GetScreenshot();
                 //string fileName = ContextPage.GetInstance().GetExcelRecord().ScenarioName + ".png";
                 //screenshot.SaveAsFile(savelocation + fileName, ScreenshotImageFormat.Png);
-                
+
                 Rectangle bounds = Screen.GetBounds(Point.Empty);
 
                 using (Bitmap bitmap = new Bitmap(bounds.Width, bounds.Height))
@@ -244,14 +244,12 @@ namespace HBLAutomationAndroid.Pages
 
 
         // Method For TextBox
-        public void SetTextBoxValue(string textboxvalue, string locator,string locator_type)
+        public void SetTextBoxValue(string textboxvalue, string locator, string locator_type)
         {
             try
             {
                 if (locator_type == "id")
                 {
-                    
-
                     waitDriver.Until(ExpectedConditions.ElementIsVisible(By.Id(locator)));
                     {
                         AndroidElement Value = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
@@ -259,6 +257,11 @@ namespace HBLAutomationAndroid.Pages
                         Value.Click();
                         Value.Clear();
                         Value.SendKeys(textboxvalue);
+                        if (locator == "com.hbl.android.hblmobilebanking:id/s_hbpsBillCompanies")
+                        {
+                            return;
+                        }
+                        driver.HideKeyboard();
                         //if (locator == "com.hbl.android.hblmobilebanking:id/s_hbpsBillCompanies")
                         //{
                         //    Value = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id("com.hbl.android.hblmobilebanking:id/withoutMargin_Lay")));
@@ -273,8 +276,6 @@ namespace HBLAutomationAndroid.Pages
                         //    tc.Press(x + 100, location.Y).Wait(1000).Release().Perform();
 
                         //}
-                        driver.HideKeyboard();
-
                     }
                 }
                 else if (locator_type == "xpath")
@@ -320,7 +321,7 @@ namespace HBLAutomationAndroid.Pages
         }
 
         //Method For Message Verification
-        public void verification(string message, string locator,string locator_type)
+        public void verification(string message, string locator, string locator_type)
         {
             try
             {
@@ -359,7 +360,7 @@ namespace HBLAutomationAndroid.Pages
 
 
         //Method For Button
-        public void Button(string locator,string locator_type)
+        public void Button(string locator, string locator_type)
         {
             if (locator != "")
             {
@@ -377,7 +378,7 @@ namespace HBLAutomationAndroid.Pages
                                 // var js = ((IJavaScriptExecutor)driver);
                                 // js.ExecuteScript("arguments[0].scrollIntoView(true);", Button);
                                 Button.Click();
-                                
+
                             }
                         }
                     }
@@ -420,20 +421,18 @@ namespace HBLAutomationAndroid.Pages
         {
             try
             {
-                    Thread.Sleep(3000);
+                Thread.Sleep(3000);
 
-                    if (locator_type == "id")
-                    {
+                if (locator_type == "id")
+                {
 
-                        AndroidElement link = driver.FindElementById(locator);
-                        //link.Click();
-                    }
-                    else if (locator_type == "xpath")
-                    {
-                         AndroidElement link = driver.FindElementByXPath(locator);
-                        // link.Click();
-                    }
-                
+                    AndroidElement link = driver.FindElementById(locator);
+                }
+                else if (locator_type == "xpath")
+                {
+                    AndroidElement link = driver.FindElementByXPath(locator);
+                }
+
             }
             catch (ElementNotVisibleException)
             {
@@ -456,7 +455,7 @@ namespace HBLAutomationAndroid.Pages
 
 
         //Method For Link
-        public void links(string locator,string locator_type)
+        public void links(string locator, string locator_type)
         {
             try
             {
@@ -533,7 +532,7 @@ namespace HBLAutomationAndroid.Pages
         }
 
         //For returning the value from the mobile of the keyword given
-        public string ReturnKeywordValue(string locator,string locator_type)
+        public string ReturnKeywordValue(string locator, string locator_type)
         {
             IWebElement Control = null;
             if (locator_type == "id")
@@ -551,25 +550,25 @@ namespace HBLAutomationAndroid.Pages
         {
             try
             {
-                    Thread.Sleep(3000);
-                    Boolean a = driver.FindElements(By.Id(locator)).Count != 0;
-                    if (a == true)
+                Thread.Sleep(3000);
+                Boolean a = driver.FindElements(By.Id(locator)).Count != 0;
+                if (a == true)
+                {
+                    waitDriver.Until(ExpectedConditions.ElementIsVisible(By.Id(locator)));
                     {
-                        waitDriver.Until(ExpectedConditions.ElementIsVisible(By.Id(locator)));
+                        waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
                         {
-                            waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
-                            {
-                                IWebElement link = waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
+                            IWebElement link = waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
 
-                                link.Click();
-                            }
+                            link.Click();
                         }
                     }
-                    else
-                    {
-                        //do nothing
-                    }
-                
+                }
+                else
+                {
+                    //do nothing
+                }
+
             }
             catch (ElementNotVisibleException)
             {
@@ -607,10 +606,10 @@ namespace HBLAutomationAndroid.Pages
 
             Thread.Sleep(3000);
             var temp = driver.FindElements(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"" + text + "\"));"));
-            if(temp.Count == 0)
+            if (temp.Count == 0)
             {
                 throw new Exception(string.Format("Element with the given text not found on screen"));
-            }          
+            }
             //var elements = driver.FindElements(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView("+ "new UiSelector().text(\"" + text + "\"));"));
         }
 
@@ -658,7 +657,7 @@ namespace HBLAutomationAndroid.Pages
 
 
         //Method For Returning Combobox Values
-        public List<string> return_combobox_values(string locator,string list_locator, string locator_type)
+        public List<string> return_combobox_values(string locator, string list_locator, string locator_type)
         {
             try
             {
@@ -719,7 +718,7 @@ namespace HBLAutomationAndroid.Pages
 
 
         //Method For Combobox
-        public void combobox(string value, string locator,string locator_type)
+        public void combobox(string value, string locator, string locator_type)
         {
             try
             {
@@ -733,7 +732,7 @@ namespace HBLAutomationAndroid.Pages
                     ComboboxValue.Click();
                     Thread.Sleep(3000);
                 }
-                else if(locator_type == "xpath")
+                else if (locator_type == "xpath")
                 {
                     AndroidElement Combobox = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
                     Thread.Sleep(1000);
