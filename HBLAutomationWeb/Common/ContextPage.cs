@@ -43,7 +43,7 @@ namespace HBLAutomationWeb.Common
         string consumerno;
         Dictionary<string, string> acc_info;
         Dictionary<string, string> tran_info;
-        Dictionary<string, Tuple<string, string>> cust_limit_detail;
+        Dictionary<string, Tuple<string, string, string>> cust_limit_detail;
         List<string> Account_No;
         List<string> AccountForTag;
         int sizecount;
@@ -83,16 +83,24 @@ namespace HBLAutomationWeb.Common
         string invest_fund_name;
         string[] multi_bill_consumers;
         string product_id;
-        string limit_type_id;
         string old_limit;
         string fund_disclaimer_popup;
         bool signup_check;
         string offered_rate;
         string ref_no;
-
+        int user_schedule_count;
         public string CutOvertime = null;
         public string Date = null;
 
+
+        public void SetUserScheduleCount(int user_schedule_count)
+        {
+            this.user_schedule_count = user_schedule_count;
+        }
+        public int GetUserScheduleCount()
+        {
+            return user_schedule_count;
+        }
         public void SetFundDisclaimerPopup(string fund_disclaimer_popup)
         {
             this.fund_disclaimer_popup = fund_disclaimer_popup;
@@ -116,14 +124,6 @@ namespace HBLAutomationWeb.Common
         public string GetTermRefNo()
         {
             return ref_no;
-        }
-        public void SetLimitTypeID(string limit_type_id)
-        {
-            this.limit_type_id = limit_type_id;
-        }
-        public string GetLimitTypeID()
-        {
-            return limit_type_id;
         }
         public void SetOldLimit(string old_limit)
         {
@@ -393,11 +393,11 @@ namespace HBLAutomationWeb.Common
             return this.acc_info;
 
         }
-        public void SetCustLimitDetail(Dictionary<string, Tuple<string, string>> cust_limit_detail)
+        public void SetCustLimitDetail(Dictionary<string, Tuple<string, string, string>> cust_limit_detail)
         {
             this.cust_limit_detail = cust_limit_detail;
         }
-        public Dictionary<string, Tuple<string, string>> GetCustLimitDetail()
+        public Dictionary<string, Tuple<string, string, string>> GetCustLimitDetail()
         {
             return this.cust_limit_detail;
         }

@@ -37,19 +37,19 @@ Scenario Outline: As a user I want to verify Limit Management from My Account
 	And I am clicking on "MyAccount_LimitMngOption"
 	Then i am performing Limit verification operation with "MyAccount_Limit_Type_count"
 	And I am performing limit reduction operation on "MyAccount_Limit_Edit_Icon" of slider "MyAccount_Limit_Slider" of "<limit_type>" with new limit as "<new_limit>"
-	And I am clicking on "Services_Link"
-	And I am clicking on "Services_Transaction_Activity"
-	And I select "<Transaction_Category>" on "Services_CategoryFilter"
-	And I scroll to element "Services_Clear_Btn"
-	And I am performing on "Services_Search_Btn"
-	And I am clicking on "Services_Last_Transaction"
-	And verify through "Successful" on "MyAccount_Forgot_TranSuccessMessage"
+	#And I am clicking on "Services_Link"
+	#And I am clicking on "Services_Transaction_Activity"
+	#And I select "<Transaction_Category>" on "Services_CategoryFilter"
+	#And I scroll to element "Services_Clear_Btn"
+	#And I am performing on "Services_Search_Btn"
+	#And I am clicking on "Services_Last_Transaction"
+	#And verify through "Successful" on "MyAccount_Forgot_TranSuccessMessage"
 	#And verify through database on "<tran_type_query>" on Schema "DIGITAL_CHANNEL_SEC" on "MyAccount_TranPopup_TranType"
-	And verify through database on "<tran_date_query>" on Schema "DIGITAL_CHANNEL_SEC" on "MyAccount_TranPopup_TranDate"
-	And verify through database on "<old_limit_tran_query>" on Schema "DIGITAL_CHANNEL_SEC" on "Investment_MutualFund_TranOld"
-	And verify through database on "<new_limit_tran_query>" on Schema "DIGITAL_CHANNEL_SEC" on "Investment_MutualFund_TranNew"
-	And verify through database on "<limit_name_tran_query>" on Schema "DIGITAL_CHANNEL_SEC" on "Investment_MutualFund_TranFundName"
-	And I am performing on "Investment_MutualFund_TranCloseBtn"
+	#And verify through database on "<tran_date_query>" on Schema "DIGITAL_CHANNEL_SEC" on "MyAccount_TranPopup_TranDate"
+	#And verify through database on "<old_limit_tran_query>" on Schema "DIGITAL_CHANNEL_SEC" on "Investment_MutualFund_TranOld"
+	#And verify through database on "<new_limit_tran_query>" on Schema "DIGITAL_CHANNEL_SEC" on "Investment_MutualFund_TranNew"
+	#And verify through database on "<limit_name_tran_query>" on Schema "DIGITAL_CHANNEL_SEC" on "Investment_MutualFund_TranFundName"
+	#And I am performing on "Investment_MutualFund_TranCloseBtn"
 
 
 	@source:Data/LimitManagement.xlsx
@@ -326,7 +326,7 @@ Scenario Outline: As a user I want to verify Withholding Tax Certificate Request
 	And I am clicking on "Services_Last_Transaction"
 	And I am performing on "Investment_TranActivityCloseBtn"
 
-
 	@source:Data/WithHoldingTaxCertifcate.xlsx
 	Examples: 
 	|Case|for_account|from_day|from_month|from_year|from_date|to_day|to_month|to_year|to_date|tran_status_query|from_account_tran_query|from_date_tran_query|to_date_tran_query|
+

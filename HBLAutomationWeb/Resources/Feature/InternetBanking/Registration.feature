@@ -182,7 +182,7 @@ Scenario Outline: As a user i want to Signup using Credit Card Web
 	And verify the result from "<ENABLE_PSD_check_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	And I have given "<Login_id>" on "Login_UserId"
 	And I have given "<login_pass>" on "Login_Password"
-	#And  I am performing on "Login_SignIn_Button"
+	And  I am performing on "Login_SignIn_Button"
 	#And I am clicking on keyword "Signup_FeedbackOptionHBL" with value "<feedback_type>"
 	#And I have given "<feedback_option>" on "Signup_FeedbackText"
 	#And I am performing on "Signup_FeedbackSubmit"
