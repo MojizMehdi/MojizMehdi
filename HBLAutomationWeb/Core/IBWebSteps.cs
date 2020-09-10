@@ -52,9 +52,7 @@ namespace HBLAutomationWeb.Core
             if (Keyword.Contains("Login_OTP_field"))
             {
                 SeleniumHelper selhelper = new SeleniumHelper();
-
                 textboxvalue = selhelper.GetOTP();
-
             }
             if (Keyword.Contains("Pay_Card_Expiry_Date"))
             {
@@ -81,7 +79,6 @@ namespace HBLAutomationWeb.Core
                 SeleniumHelper selhelper = new SeleniumHelper();
                 selhelper.checkPageIsReady();
                 Element keyword = ContextPage.GetInstance().GetElement(Keyword);
-                Thread.Sleep(5000);
                 //keyword.Locator used instead od locator
                 selhelper.SetTextBoxValue(textboxvalue, keyword.Locator);
 
@@ -139,7 +136,6 @@ namespace HBLAutomationWeb.Core
                 }
                 else
                 {
-
                     if (Keyword.Equals("Investment_MutualFund_PopupBtn") && context.GetFundDisclaimerPopup() == null)
                     {
                         return;
@@ -424,7 +420,7 @@ namespace HBLAutomationWeb.Core
                     throw new AssertFailedException(e.Message);
 
                 }
-                if (query.Contains("LOGIN_PASSWORD")) ;
+                if (query.Contains("LOGIN_PASSWORD"))
                 {
                     context.SetLastLoginPassFlag(true);
                 }
@@ -554,9 +550,9 @@ namespace HBLAutomationWeb.Core
             Thread.Sleep(p0);
         }
 
+        [Given(@"verify the result from ""(.*)"" on Schema ""(.*)""")]
         [When(@"verify the result from ""(.*)"" on Schema ""(.*)""")]
         [Then(@"verify the result from ""(.*)"" on Schema ""(.*)""")]
-        [Given(@"verify the result from ""(.*)"" on Schema ""(.*)""")]
         public void WhenVerifyTheResultFromOnSchema(string query, string db_value)
         {
             if (query != "")
@@ -734,7 +730,7 @@ namespace HBLAutomationWeb.Core
 
 
 
-
+        [Given(@"verify bene status from (.*) on Schema ""(.*)""")]
         [When(@"verify bene status from (.*) on Schema ""(.*)""")]
         [Then(@"verify bene status from (.*) on Schema ""(.*)""")]
         public void WhenVerifyBeneStatusFromOnSchema(string query, string db_value)
@@ -806,28 +802,6 @@ namespace HBLAutomationWeb.Core
                     if (message.Contains("Five")) { message.Replace("Five", "5"); }
                     if (message.Contains("Ten")) { message.Replace("Ten", "10"); }
 
-                }
-                else if (message == "Signup_PassPolicy")
-                {
-                    for (int i = 1; i <= 3; i++)
-                    {
-                        string temp = "";
-                        if (i == 1)
-                        {
-                            temp = context.GetPassPolicy1();
-                        }
-                        else if (i == 2)
-                        {
-                            temp = context.GetPassPolicy2();
-                        }
-                        else if (i == 3)
-                        {
-                            temp = context.GetPassPolicy3();
-                        }
-                        string loc = keyword.Locator.Replace("[i]", "[" + (i) + "]");
-                        selhelper.verification(temp, keyword.Locator);
-                    }
-                    return;
                 }
                 else if (message == "MyAccount_PassPolicy")
                 {
@@ -978,8 +952,7 @@ namespace HBLAutomationWeb.Core
                     DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
                     DataTable SourceDataTable = dlink.GetDataTable(query, schema);
                     string message = SourceDataTable.Rows[0][0].ToString();
-
-                    Assert.AreEqual(message, value);
+                    Assert.AreEqual(message.ToUpper(), value.ToUpper());
                 }
 
             }
@@ -990,7 +963,7 @@ namespace HBLAutomationWeb.Core
             }
         }
 
-
+        [Given(@"verify through database on ""(.*)"" on Schema ""(.*)"" on ""(.*)""")]
         [When(@"verify through database on ""(.*)"" on Schema ""(.*)"" on ""(.*)""")]
         [Then(@"verify through database on ""(.*)"" on Schema ""(.*)"" on ""(.*)""")]
         public void ThenVerifyThroughDatabaseOnOnSchemaOn(string query, string schema, string Keyword)
@@ -1060,7 +1033,32 @@ namespace HBLAutomationWeb.Core
                             message = amount_after_dd;
                         }
                     }
-
+                    if (query.Contains("LOGIN_AND_T_PWRD_DESC_BEFORE_LOGIN"))
+                    {
+                        string[] delimiters = { "<br>" };
+                        string[] pieces = message.Split(delimiters, StringSplitOptions.None);
+                        message = pieces[0] + " " + pieces[1];
+                    }
+                    if (Keyword.Equals("Registration_PassPolicyText"))
+                    {
+                        string temp1 = "";
+                        string temp2 = "";
+                        for (int i = 1; i <= 2; i++)
+                        {
+                            string loc = keyword.Locator.Replace("{i}", Convert.ToString(i));
+                            if (i == 1)
+                            {
+                                temp1 = selhelper.ReturnKeywordValue(loc);
+                            }
+                            if (i == 2)
+                            {
+                                temp2 = selhelper.ReturnKeywordValue(loc);
+                            }
+                        }
+                        string keyword_text = temp1 + " " + temp2;
+                        Assert.AreEqual(message, keyword_text);
+                        return;
+                    }
                     if (Keyword.Equals("Forget_PasswordTranID"))
                     {
                         context.SetTransaction_Id(message);
@@ -1081,7 +1079,7 @@ namespace HBLAutomationWeb.Core
                         Assert.AreEqual(message, today_date);
                         return;
                     }
-                    if (Keyword.Equals("Investment_TermRefNo"));
+                    if (Keyword.Contains("Investment_TermRefNo"))
                     {
                         keyword.Locator = keyword.Locator.Replace("{x}", context.GetTermRefNo());
                         string ref_no = selhelper.ReturnKeywordValue(keyword.Locator);
@@ -1138,14 +1136,15 @@ namespace HBLAutomationWeb.Core
             {
                 keyword.Locator = keyword.Locator.Replace("{K}", context.GetScrollText());
             }
-            if (Keyword.Equals("Investment_TermRefNo")) ;
+            if (Keyword.Equals("Investment_TermRefNo"))
             {
                 keyword.Locator = keyword.Locator.Replace("{x}", context.GetTermRefNo());
             }
                 selhelper.ScrollToElement(keyword.Locator);
         }
-
+        [Given(@"I have otp check and given (.*) on ""(.*)""")]
         [When(@"I have otp check and given (.*) on ""(.*)""")]
+        [Then(@"I have otp check and given (.*) on ""(.*)""")]
         public void WhenIHaveOtpCheckAndGivenOnOnCompanyCode(string otp_value, string Keyword)
         {
 
@@ -1191,8 +1190,9 @@ namespace HBLAutomationWeb.Core
             context.SetOTPReq(is_otp_req);
         }
 
-
+        [Given(@"I want value from textbox ""(.*)"" on database ""(.*)"" as ""(.*)""")]
         [When(@"I want value from textbox ""(.*)"" on database ""(.*)"" as ""(.*)""")]
+        [Then(@"I want value from textbox ""(.*)"" on database ""(.*)"" as ""(.*)""")]
         public void WhenIWantValueFromTextboxOnDatabaseAs(string Keyword, string db_value, string query)
         {
             //bool due_date = false;
@@ -1256,8 +1256,9 @@ namespace HBLAutomationWeb.Core
                 throw new AssertFailedException(string.Format("The Value against keyword is: {0} and value against db is:", keyword_value, value));
             }
         }
-
+        [Given(@"I select date ""(.*)"" on month ""(.*)"" on year ""(.*)""")]
         [When(@"I select date ""(.*)"" on month ""(.*)"" on year ""(.*)""")]
+        [Then(@"I select date ""(.*)"" on month ""(.*)"" on year ""(.*)""")]
         public void WhenISelectDateOnMonthOnYear(string date, string month, string year)
         {
             if (date == "" && month == "" && year == "")
@@ -1360,8 +1361,9 @@ namespace HBLAutomationWeb.Core
                 throw new AssertFailedException(string.Format("The Color Code against keyword is: {0} and color code given by user is {1}", color_code_web, color_code));
             }
         }
-
+        [Given(@"I am verifying list of execution iterations on ""(.*)""")]
         [When(@"I am verifying list of execution iterations on ""(.*)""")]
+        [Then(@"I am verifying list of execution iterations on ""(.*)""")]
         public void WhenIAmVerifyingListOfExecutionIterationsOn(string Keyword)
         {
             Element keyword = ContextPage.GetInstance().GetElement(Keyword);
@@ -1422,6 +1424,7 @@ namespace HBLAutomationWeb.Core
 
         [Given(@"I save Account Balances")]
         [When(@"I save Account Balances")]
+        [Then(@"I save Account Balances")]
         public void GivenISaveAccountBalances()
         {
             SeleniumHelper selhelper = new SeleniumHelper();
@@ -1503,11 +1506,11 @@ namespace HBLAutomationWeb.Core
                 string acc_balance = selhelper.ReturnKeywordValue(temp_keyword4.Locator);
                 dict.Add(acc_name, acc_balance);
             }
-
             context.Set_acc_balances(dict);
-
-
         }
+
+
+        [Given(@"I save Transaction Info")]
         [When(@"I save Transaction Info")]
         [Then(@"I save Transaction Info")]
         public void WhenISaveTransactionInfo()
@@ -2526,11 +2529,12 @@ namespace HBLAutomationWeb.Core
         {
             try
             {
-                Dictionary<string, Tuple<string, string>> customer_limit_detail_dict = new Dictionary<string, Tuple<string, string>>();
+                Dictionary<string, Tuple<string, string, string>> customer_limit_detail_dict = new Dictionary<string, Tuple<string, string, string>>();
 
                 string limit_type_id = "";
                 string config_value = "";
-                string config_value2 = "";
+                string daily_consume_limit = "";
+                string daily_rem_limit = "";
 
                 SeleniumHelper selhelper = new SeleniumHelper();
                 selhelper.checkPageIsReady();
@@ -2553,34 +2557,98 @@ namespace HBLAutomationWeb.Core
                 dlink = null;
                 SourceDataTable = null;
 
+
                 dlink = new DataAccessComponent.DataAccessLink();
                 SourceDataTable = dlink.GetDataTable("select CONFIG_VALUE from dc_customer_info_config k where K.CUSTOMER_INFO_ID= (Select CUSTOMER_INFO_ID from dc_customer_info l where L.CUSTOMER_NAME='" + context.GetUsername() + "') and K.CONFIG_NAME = 'CUSTOMER_NATURE'", "DIGITAL_CHANNEL_SEC");
                 if (SourceDataTable.Rows.Count != 0)
                 {
-                    config_value2 = SourceDataTable.Rows[0][0].ToString();
+                    config_value = SourceDataTable.Rows[0][0].ToString();
                 }
                 dlink = null;
                 SourceDataTable = null;
 
-                if (enable_psd == "0")
+                dlink = new DataAccessComponent.DataAccessLink();
+                SourceDataTable = dlink.GetDataTable("select CUSTOMER_TYPE from dc_customer_info k where K.CUSTOMER_NAME='" + context.GetUsername() + "'", "DIGITAL_CHANNEL_SEC");
+                string customer_type = SourceDataTable.Rows[0][0].ToString();
+                dlink = null;
+                SourceDataTable = null;
+
+                dlink = new DataAccessComponent.DataAccessLink();
+                SourceDataTable = dlink.GetDataTable("select LIMIT_TYPE_ID from dc_customer_info k where K.CUSTOMER_NAME='" + context.GetUsername() + "'", "DIGITAL_CHANNEL_SEC");
+                string limit_type_id_DB = SourceDataTable.Rows[0][0].ToString();
+                dlink = null;
+                SourceDataTable = null;
+
+                if (customer_type == "D")
                 {
-                    limit_type_id = "1";
+                    if (enable_psd == "0")
+                    {
+                        if (config_value == "NRP")
+                        {
+                            limit_type_id = "5";
+                        }
+                        else if (config_value == "P")
+                        {
+                            limit_type_id = "8";
+                        }
+                        else
+                        {
+                            limit_type_id = "1";
+                        }
+                    }
+                    else if(enable_psd == "1")
+                    {
+                        limit_type_id = "4";
+                        //if (config_value == "P")
+                    }
                 }
-                else if (enable_psd == "1")
+                else if(customer_type == "A")
                 {
-                    limit_type_id = "4";
+                    if (enable_psd == "0" && limit_type_id_DB == "6")
+                    {
+                        limit_type_id = "6";
+                    }
+                    else if (enable_psd == "1")
+                    {
+                        limit_type_id = "7";
+                    }
                 }
 
-                else if (config_value == "NRP")
-                {
-                    limit_type_id = "5";
-                }
+                //if (!(customer_type == "A" && enable_psd == "0" && limit_type_id_DB == "6"))
+                //{
+                //    throw new Exception(string.Format("The values setting in data base is not correct for CUSTOMER_TYPE :{0}, ENABLE_PSD :{1} and LIMIT_TYPE_iD", customer_type, enable_psd, limit_type_id_DB));
+                //}
 
-                else if (config_value2 == "P")
+                //if (enable_psd == "0")
+                //{
+                //    limit_type_id = "1";
+                //}
+                //else if (enable_psd == "1")
+                //{
+                //    limit_type_id = "4";
+                //}
+
+                //else if (config_value == "NRP")
+                //{
+                //    limit_type_id = "5";
+                //}
+
+                //else if (config_value == "P")
+                //{
+                //    limit_type_id = "8";
+                //}
+                //context.SetLimitTypeID(limit_type_id);
+
+                dlink = new DataAccessComponent.DataAccessLink();
+                SourceDataTable = dlink.GetDataTable("Select COUNT(*) from dc_Tran_Type_limit_group_rules a where A.LIMIT_TYPE_ID='" + limit_type_id + "' and A.IS_CLIENT_VIEW = 1 and A.IS_ACTIVE = '1' and trunc(A.EFFECTIVE_FROM_DATE) <= sysdate and A.EFFECTIVE_TO_DATE >= sysdate ", "DIGITAL_CHANNEL_SEC");
+                int is_client_view = Convert.ToInt32(SourceDataTable.Rows[0][0].ToString());
+                dlink = null;
+                SourceDataTable = null;
+
+                if (is_client_view != limit_type_count)
                 {
-                    limit_type_id = "8";
+                    throw new Exception(string.Format("The required limit count against Limit Type id :{0} in Database :{1} is not equal with UI :{2}", limit_type_id, is_client_view, limit_type_count));
                 }
-                context.SetLimitTypeID(limit_type_id);
 
                 for (int i = 1; i <= limit_type_count; i++)
                 {
@@ -2589,17 +2657,6 @@ namespace HBLAutomationWeb.Core
                     string temp = Keyword_main.Locator + "[" + Convert.ToString(i) + "]";
                     selhelper.ScrollToElement(temp);
                     string limit_type = selhelper.ReturnKeywordValue(temp);
-
-                    dlink = new DataAccessComponent.DataAccessLink();
-                    SourceDataTable = dlink.GetDataTable("Select A.IS_CLIENT_VIEW from dc_Tran_Type_limit_group_rules a where A.CLIENT_DESCRIPTION='" + limit_type + "' and A.LIMIT_TYPE_ID='" + limit_type_id + "' and A.IS_ACTIVE = '1' and A.EFFECTIVE_FROM_DATE <= sysdate and A.EFFECTIVE_TO_DATE > sysdate ", "DIGITAL_CHANNEL_SEC");
-                    string is_client_view = SourceDataTable.Rows[0][0].ToString();
-                    dlink = null;
-                    SourceDataTable = null;
-
-                    if (is_client_view != "1")
-                    {
-                        throw new Exception(string.Format("The required Limit Type :{0} is not allowed to view", limit_type));
-                    }
 
                     dlink = new DataAccessComponent.DataAccessLink();
                     SourceDataTable = dlink.GetDataTable("Select A.MIN_AMOUNT, A.MAX_AMOUNT, LIMIT_RULES_ID from dc_Tran_Type_limit_group_rules a where A.CLIENT_DESCRIPTION='" + limit_type + "' and A.LIMIT_TYPE_ID='" + limit_type_id + "'", "DIGITAL_CHANNEL_SEC");
@@ -2617,7 +2674,7 @@ namespace HBLAutomationWeb.Core
                     SourceDataTable = null;
 
                     dlink = new DataAccessComponent.DataAccessLink();
-                    SourceDataTable = dlink.GetDataTable("Select A.MIN_LIMIT, A.MAX_LIMIT from dc_custom_limit_rules a where A.LIMIT_RULE_ID = '" + limit_rules_id + "' and A.CUSTOMER_INFO_ID=(Select CUSTOMER_INFO_ID from dc_customer_info L where L.customer_name ='" + context.GetUsername() + "') and A.IS_ACTIVE = '1' and A.EFFECTIVE_FROM_DATE <= sysdate and A.EFFECTIVE_TO_DATE > sysdate ", "DIGITAL_CHANNEL_SEC");
+                    SourceDataTable = dlink.GetDataTable("Select A.MIN_LIMIT, A.MAX_LIMIT from dc_custom_limit_rules a where A.LIMIT_RULE_ID = '" + limit_rules_id + "' and A.CUSTOMER_INFO_ID=(Select CUSTOMER_INFO_ID from dc_customer_info L where L.customer_name ='" + context.GetUsername() + "') and A.IS_ACTIVE = '1' and trunc(A.EFFECTIVE_FROM_DATE) <= sysdate and A.EFFECTIVE_TO_DATE > sysdate ", "DIGITAL_CHANNEL_SEC");
                     if (SourceDataTable.Rows.Count != 0)
                     {
                         min_amount_check = SourceDataTable.Rows[0][0].ToString();
@@ -2645,7 +2702,7 @@ namespace HBLAutomationWeb.Core
 
                     if (per_transaction != per_tran_UI)
                     {
-                        throw new Exception(String.Format("Per Transaction Amount in Database :{0} is not equal with per transaction amount on website :{1}", per_transaction, per_tran_UI));
+                        throw new Exception(String.Format("Per Transaction Amount in Database :{0} is not equal with per transaction amount on website :{1} for limit type :{2}", per_transaction, per_tran_UI, limit_type));
                     }
 
                     dlink = new DataAccessComponent.DataAccessLink();
@@ -2656,7 +2713,7 @@ namespace HBLAutomationWeb.Core
                     SourceDataTable = null;
 
                     dlink = new DataAccessComponent.DataAccessLink();
-                    SourceDataTable = dlink.GetDataTable("Select DAILY_DEBIT_LIMIT from dc_custom_limit_rules a where A.LIMIT_RULE_ID = '" + limit_rules_id + "' and A.CUSTOMER_INFO_ID=(Select CUSTOMER_INFO_ID from dc_customer_info L where L.customer_name ='" + context.GetUsername() + "') and A.IS_ACTIVE = '1' and A.EFFECTIVE_FROM_DATE <= sysdate and A.EFFECTIVE_TO_DATE > sysdate ", "DIGITAL_CHANNEL_SEC");
+                    SourceDataTable = dlink.GetDataTable("Select DAILY_DEBIT_LIMIT from dc_custom_limit_rules a where A.LIMIT_RULE_ID = '" + limit_rules_id + "' and A.CUSTOMER_INFO_ID=(Select CUSTOMER_INFO_ID from dc_customer_info L where L.customer_name ='" + context.GetUsername() + "') and A.IS_ACTIVE = '1' and trunc(A.EFFECTIVE_FROM_DATE) <= sysdate and A.EFFECTIVE_TO_DATE > sysdate ", "DIGITAL_CHANNEL_SEC");
                     if (SourceDataTable.Rows.Count != 0)
                     {
                         old_limit = SourceDataTable.Rows[0][0].ToString();
@@ -2675,12 +2732,52 @@ namespace HBLAutomationWeb.Core
                     daily_limit = daily_limit.Replace(",", "");
                     if (old_limit != daily_limit)
                     {
-                        throw new Exception(String.Format("Daily Debit Amount in Database :{0} is not equal with daily debit amount on website :{1}", old_limit, daily_limit));
+                        throw new Exception(String.Format("Daily Debit Amount in Database :{0} is not equal with daily debit amount on website :{1} for limit type :{2}", old_limit, daily_limit, limit_type));
                     }
-                    customer_limit_detail_dict.Add(limit_type, Tuple.Create(old_limit, limit_type_id));
+
+                    dlink = new DataAccessComponent.DataAccessLink();
+                    SourceDataTable = dlink.GetDataTable("Select DAILY_DEBIT_AMOUNT from DC_LIMIT_CONSUMED I WHERE I.CUSTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from dc_customer_info L where L.customer_name = '" + context.GetUsername() + "') and TRUNC(I.LAST_TXN_DATE) = Trunc(SYSDATE) and I.LIMIT_RULES_ID = '" + limit_rules_id + "'", "DIGITAL_CHANNEL_SEC");
+                    if (SourceDataTable.Rows.Count != 0)
+                    {
+                        daily_consume_limit = SourceDataTable.Rows[0][0].ToString();
+                    }
+                    else
+                    {
+                        daily_consume_limit = "0";
+                    }
+                    dlink = null;
+                    SourceDataTable = null;
 
                     Keyword = null;
-                    limit_rules_id = temp = daily_limit = old_limit = per_tran_UI = per_transaction = min_amount_check = is_client_view = limit_type = temp_keyword = String.Empty;
+                    temp_keyword = null;
+                    Keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_Availed");
+                    temp_keyword = Keyword.Locator.Replace("{x}", limit_type);
+                    string daily_consume_limit_ui = selhelper.ReturnKeywordValue(temp_keyword);
+                    daily_consume_limit_ui = daily_consume_limit_ui.Remove(daily_consume_limit_ui.Length - 3);
+                    daily_consume_limit_ui = daily_consume_limit_ui.Replace(",", "");
+                    if (daily_consume_limit != daily_consume_limit_ui)
+                    {
+                        throw new Exception(String.Format("Database Availed limit :{0} is not equal with Availed limit on Website :{1} for limit type :{2}", daily_consume_limit, daily_consume_limit_ui, limit_type));
+                    }
+
+                    temp_keyword = null;
+                    Keyword = null;
+                    Keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_Remaining");
+                    temp_keyword = Keyword.Locator.Replace("{x}", limit_type);
+                    daily_rem_limit = selhelper.ReturnKeywordValue(temp_keyword);
+                    daily_rem_limit = daily_rem_limit.Remove(daily_rem_limit.Length - 3);
+                    daily_rem_limit = daily_rem_limit.Replace(",", "");
+
+                    if (Convert.ToInt32(daily_rem_limit) != (Convert.ToInt32(old_limit) - Convert.ToInt32(daily_consume_limit_ui)))
+                    {
+                        throw new Exception(String.Format("Website Remaining limit :{0} is not equal with Calculated Remaining amount from Availed Limit :{1} for limit type :{2}", daily_rem_limit, (Convert.ToInt32(old_limit) - Convert.ToInt32(daily_consume_limit_ui)), limit_type));
+                    }
+
+                    customer_limit_detail_dict.Add(limit_type, Tuple.Create(old_limit, limit_type_id, limit_rules_id));
+
+                    Keyword = null;
+                    temp_keyword = null;
+                    limit_rules_id = temp = daily_limit = old_limit = per_tran_UI = per_transaction = min_amount_check  = limit_type = temp_keyword = String.Empty;
                 }
                 context.SetCustLimitDetail(customer_limit_detail_dict);
             }
@@ -2702,6 +2799,10 @@ namespace HBLAutomationWeb.Core
                 string max_value = "";
                 string old_limit = "";
                 string limit_type_id = "";
+                string limit_rules_id = "";
+                string daily_consume_limit = "";
+                string daily_rem_limit = "";
+                string temp_keyword = "";
 
                 foreach (var item in cust_limit_dict)
                 {
@@ -2709,6 +2810,7 @@ namespace HBLAutomationWeb.Core
                     {
                         old_limit = item.Value.Item1;
                         limit_type_id = item.Value.Item2;
+                        limit_rules_id = item.Value.Item3;
                         break;
                     }
                 }
@@ -2720,7 +2822,7 @@ namespace HBLAutomationWeb.Core
                 SourceDataTable = null;
 
                 dlink = new DataAccessComponent.DataAccessLink();
-                SourceDataTable = dlink.GetDataTable("Select A.IS_EDITABLE from dc_Tran_Type_limit_group_rules a where A.CLIENT_DESCRIPTION='" + limit_type + "' and A.LIMIT_TYPE_ID='" + limit_type_id + "' and A.IS_ACTIVE = '1' and A.EFFECTIVE_FROM_DATE <= sysdate and A.EFFECTIVE_TO_DATE > sysdate ", "DIGITAL_CHANNEL_SEC");
+                SourceDataTable = dlink.GetDataTable("Select A.IS_EDITABLE from dc_Tran_Type_limit_group_rules a where A.CLIENT_DESCRIPTION='" + limit_type + "' and A.LIMIT_TYPE_ID='" + limit_type_id + "' and A.IS_ACTIVE = '1' and trunc(A.EFFECTIVE_FROM_DATE) <= sysdate and A.EFFECTIVE_TO_DATE > sysdate ", "DIGITAL_CHANNEL_SEC");
                 string is_editable = SourceDataTable.Rows[0][0].ToString();
                 dlink = null;
                 SourceDataTable = null;
@@ -2730,23 +2832,62 @@ namespace HBLAutomationWeb.Core
                     throw new Exception(string.Format("The required Limit Type :{0} is not allowed to edit", limit_type));
                 }
 
-                Element Keyword = ContextPage.GetInstance().GetElement(keyword);
+                dlink = new DataAccessComponent.DataAccessLink();
+                SourceDataTable = dlink.GetDataTable("Select DAILY_DEBIT_AMOUNT from DC_LIMIT_CONSUMED I WHERE I.CUSTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from dc_customer_info L where L.customer_name = '" + context.GetUsername() +"') and TRUNC(I.LAST_TXN_DATE) = Trunc(SYSDATE) and I.LIMIT_RULES_ID = '" + limit_rules_id + "'", "DIGITAL_CHANNEL_SEC");
+                if (SourceDataTable.Rows.Count != 0)
+                {
+                    daily_consume_limit = SourceDataTable.Rows[0][0].ToString();
+                }
+                else
+                {
+                    daily_consume_limit = "0";
+                }
+                dlink = null;
+                SourceDataTable = null;
+
+                Element Keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_Availed");
+                temp_keyword = Keyword.Locator.Replace("{x}", limit_type);
+                string daily_consume_limit_ui = selhelper.ReturnKeywordValue(temp_keyword);
+                daily_consume_limit_ui = daily_consume_limit_ui.Remove(daily_consume_limit_ui.Length - 3);
+                daily_consume_limit_ui = daily_consume_limit_ui.Replace(",", "");
+                if (daily_consume_limit != daily_consume_limit_ui)
+                {
+                    throw new Exception(String.Format("Database Availed limit :{0} is not equal with Availed limit on Website :{1} for limit type :{2}", daily_consume_limit, daily_consume_limit_ui, limit_type));
+                }
+                Keyword = null;
+                temp_keyword = null;
+                Keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_Remaining");
+                temp_keyword = Keyword.Locator.Replace("{x}", limit_type);
+                daily_rem_limit = selhelper.ReturnKeywordValue(temp_keyword);
+                daily_rem_limit = daily_rem_limit.Remove(daily_rem_limit.Length - 3);
+                daily_rem_limit = daily_rem_limit.Replace(",", "");
+
+                if (Convert.ToInt32(daily_rem_limit) != (Convert.ToInt32(old_limit) - Convert.ToInt32(daily_consume_limit_ui)))
+                {
+                    throw new Exception(String.Format("Website Remaining limit :{0} is not equal with Calculated Remaining amount from Availed Limit :{1} for limit type :{2}", daily_rem_limit, (Convert.ToInt32(old_limit) - Convert.ToInt32(daily_consume_limit_ui)), limit_type));
+                }
+                
+                Keyword = null;
+                temp_keyword = null;
+                Keyword = ContextPage.GetInstance().GetElement(keyword);
                 Element Keyword2 = ContextPage.GetInstance().GetElement(slider_keyword);
 
                 string locator = Keyword.Locator.Replace("{x}", limit_type);
                 string slider_locator = Keyword2.Locator.Replace("{x}", limit_type);
 
+                selhelper.ScrollToElement(locator);
                 selhelper.PressEnter(locator);
 
                 Keyword = null;
                 Keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_Edit_Max");
-                Keyword.Locator = Keyword.Locator.Replace("{x}", limit_type);
-                selhelper.ScrollToElement(Keyword.Locator);
-                string max_value_ui = selhelper.ReturnKeywordValue(Keyword.Locator);
+                temp_keyword = Keyword.Locator.Replace("{x}", limit_type);
+                selhelper.ScrollToElement(temp_keyword);
+                string max_value_ui = selhelper.ReturnKeywordValue(temp_keyword);
                 max_value_ui = max_value_ui.Remove(max_value_ui.Length - 3);
                 max_value_ui = max_value_ui.Replace(",", "");
 
                 Keyword = null;
+                temp_keyword = null;
                 Keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_Edit_NewLimit");
                 string slider_limit_ui = Keyword.Locator.Replace("{x}", limit_type);
 
@@ -2768,14 +2909,14 @@ namespace HBLAutomationWeb.Core
 
                 Keyword = null;
                 Keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_Edit_Min");
-                Keyword.Locator = Keyword.Locator.Replace("{x}", limit_type);
-                selhelper.ScrollToElement(Keyword.Locator);
-                string min_value_ui = selhelper.ReturnKeywordValue(Keyword.Locator);
+                temp_keyword = Keyword.Locator.Replace("{x}", limit_type);
+                selhelper.ScrollToElement(temp_keyword);
+                string min_value_ui = selhelper.ReturnKeywordValue(temp_keyword);
                 min_value_ui = min_value_ui.Remove(min_value_ui.Length - 3);
                 min_value_ui = min_value_ui.Replace(",", "");
                 if (min_value != min_value_ui)
                 {
-                    throw new Exception(String.Format("Minimum Editable Aount in Database :{0} is not equal with Minimum Editable amount on website :{1}", min_value, min_value_ui));
+                    throw new Exception(String.Format("Minimum Editable Aount in Database :{0} is not equal with Minimum Editable amount on website :{1} for limit type :{2}", min_value, min_value_ui, limit_type));
                 }
 
                 dlink = new DataAccessComponent.DataAccessLink();
@@ -2786,25 +2927,27 @@ namespace HBLAutomationWeb.Core
 
                 if (max_value != max_value_ui)
                 {
-                    throw new Exception(String.Format("Maximum Editable Aount in Database :{0} is not equal with Maximum Editable amount on website :{1}", max_value, max_value_ui));
+                    throw new Exception(String.Format("Maximum Editable Aount in Database :{0} is not equal with Maximum Editable amount on website :{1} for limit type :{2}", max_value, max_value_ui, limit_type));
                 }
 
                 keyword = null;
+                temp_keyword = null;
                 Keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_NewPrice");
-                Keyword.Locator = Keyword.Locator.Replace("{x}", limit_type);
-                selhelper.ScrollToElement(Keyword.Locator);
-                string new_edit_limit = selhelper.ReturnKeywordValue(Keyword.Locator);
+                temp_keyword = Keyword.Locator.Replace("{x}", limit_type);
+                selhelper.ScrollToElement(temp_keyword);
+                string new_edit_limit = selhelper.ReturnKeywordValue(temp_keyword);
                 new_edit_limit = new_edit_limit.Remove(new_edit_limit.Length - 3);
                 new_edit_limit = new_edit_limit.Replace(",", "");
                 if (new_edit_limit != Convert.ToString(new_limit))
                 {
-                    throw new Exception(String.Format("New Limit Aount in Database :{0} is not equal with New Limit amount on website :{1}", new_edit_limit, new_limit));
+                    throw new Exception(String.Format("New Given Limit Amount :{0} is not equal with New Limit amount on website :{1} for limit type :{2}", new_limit, new_edit_limit, limit_type));
                 }
 
                 keyword = null;
+                temp_keyword = null;
                 Keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_Edit_Save_Btn");
-                Keyword.Locator = Keyword.Locator.Replace("{x}", limit_type);
-                selhelper.Button(Keyword.Locator);
+                temp_keyword = Keyword.Locator.Replace("{x}", limit_type);
+                selhelper.Button(temp_keyword);
 
                 keyword = null;
                 Keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_Edit_Succ_Txt");
@@ -2818,7 +2961,7 @@ namespace HBLAutomationWeb.Core
 
                 if (edit_success_msg != success_message)
                 {
-                    throw new Exception(String.Format("Success Message in Database :{0} is not equal with Success Message on website :{1}", edit_success_msg, success_message));
+                    throw new Exception(String.Format("Success Message in Database :{0} is not equal with Success Message on website :{1} for limit type :{2}", edit_success_msg, success_message, limit_type));
                 }
 
                 keyword = null;
@@ -2836,29 +2979,47 @@ namespace HBLAutomationWeb.Core
                 SourceDataTable = null;
 
                 Keyword = null;
+                temp_keyword = null;
+                Keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_Remaining");
+                temp_keyword = Keyword.Locator.Replace("{x}", limit_type);
+                string daily_rem_after_edit = selhelper.ReturnKeywordValue(temp_keyword);
+                daily_rem_after_edit = daily_rem_after_edit.Remove(daily_rem_after_edit.Length - 3);
+                daily_rem_after_edit = daily_rem_after_edit.Replace(",", "");
+
+                if (Convert.ToInt32(daily_rem_after_edit) != (Convert.ToInt32(old_limit) - Convert.ToInt32(daily_consume_limit_ui)) - (Convert.ToInt32(old_limit) - new_limit))
+                {
+                    throw new Exception(String.Format("Website Remaining limit :{0} is not equal with Calculated Remaining amount after edit :{1} for limit type :{2}", daily_rem_limit, ((Convert.ToInt32(old_limit) - Convert.ToInt32(daily_consume_limit_ui)) - (new_limit)), limit_type));
+                }
+
+                Keyword = null;
+                temp_keyword = null;
                 Keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_daily_limit");
-                Keyword.Locator = Keyword.Locator.Replace("{x}", limit_type);
-                selhelper.ScrollToElement(Keyword.Locator);
-                string daily_new_limit = selhelper.ReturnKeywordValue(Keyword.Locator);
+                temp_keyword = Keyword.Locator.Replace("{x}", limit_type);
+                selhelper.ScrollToElement(temp_keyword);
+                string daily_new_limit = selhelper.ReturnKeywordValue(temp_keyword);
                 daily_new_limit = daily_new_limit.Remove(daily_new_limit.Length - 3);
                 daily_new_limit = daily_new_limit.Replace(",", "");
                 if (new_edited_limit != daily_new_limit)
                 {
-                    throw new Exception(String.Format("New Daily Limit in Database :{0} is not equal with New Daily Debit Limit on website :{1}", new_edited_limit, daily_new_limit));
+                    throw new Exception(String.Format("New Daily Limit in Database :{0} is not equal with New Daily Debit Limit on website :{1} for limit type :{2}", new_edited_limit, daily_new_limit, limit_type));
                 }
-
+                if (new_edited_limit != Convert.ToString(new_limit))
+                {
+                    throw new Exception(String.Format("New Daily Limit from Excel :{0} is not equal with New Daily Debit Limit on website :{1} for limit type :{2}", new_edited_limit, new_limit, limit_type));
+                }
                 dlink = new DataAccessComponent.DataAccessLink();
                 SourceDataTable = dlink.GetDataTable("Select UPDATED_ON from DC_CUSTOM_LIMIT_RULES a where A.CUSTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from dc_customer_info l where L.CUSTOMER_NAME = '" + context.GetUsername() + "') and A.CHANNEL_ID='2'  order by A.UPDATED_ON desc", "DIGITAL_CHANNEL_SEC");
                 string updated_on = SourceDataTable.Rows[0][0].ToString();
                 dlink = null;
                 SourceDataTable = null;
+                temp_keyword = null;
 
                 DateTime lastupdate = Convert.ToDateTime(updated_on);
                 updated_on = lastupdate.ToString("MM/dd/yyyy");
                 string today_date = DateTime.Today.ToString("MM/dd/yyyy");
                 if (updated_on != today_date)
                 {
-                    throw new Exception(String.Format("Updated on Date in Database :{0} does not match with today's date :{1}", updated_on, today_date));
+                    throw new Exception(String.Format("Updated on Date in Database :{0} does not match with today's date :{1} for limit type :{2}", updated_on, today_date, limit_type));
                 }
 
                 dlink = new DataAccessComponent.DataAccessLink();
@@ -2871,7 +3032,7 @@ namespace HBLAutomationWeb.Core
                 effective_from = lastupdate.ToString("MM/dd/yyyy");
                 if (updated_on != today_date)
                 {
-                    throw new Exception(String.Format("Effective From Date in Database :{0} does not match with today's date :{1}", effective_from, today_date));
+                    throw new Exception(String.Format("Effective From Date in Database :{0} does not match with today's date :{1} for limit type :{2}", effective_from, today_date, limit_type));
                 }
 
                 dlink = new DataAccessComponent.DataAccessLink();
@@ -2885,7 +3046,7 @@ namespace HBLAutomationWeb.Core
                 string todayDate = Convert.ToString(DateTime.Today.AddYears(30).ToString("MM/dd/yyyy"));
                 if (effective_to != todayDate)
                 {
-                    throw new Exception(String.Format("Effective to Date in Database :{0} does not match with the 10 years later date :{1}", effective_from, todayDate));
+                    throw new Exception(String.Format("Effective to Date in Database :{0} does not match with the 10 years later date :{1} for limit type :{2}", effective_from, todayDate, limit_type));
                 }
 
                 dlink = new DataAccessComponent.DataAccessLink();
@@ -2902,29 +3063,29 @@ namespace HBLAutomationWeb.Core
                 dc_updated_on = lastupdate.ToString("MM/dd/yyyy");
                 if (dc_updated_on != today_date)
                 {
-                    throw new Exception(String.Format("Updated on Date in DC_Transaction table in Database :{0} does not match with today's date :{1}", dc_updated_on, today_date));
+                    throw new Exception(String.Format("Updated on Date in DC_Transaction table in Database :{0} does not match with today's date :{1} for limit type :{2}", dc_updated_on, today_date, limit_type));
                 }
 
                 lastupdate = Convert.ToDateTime(dc_created_on);
                 dc_created_on = lastupdate.ToString("MM/dd/yyyy");
                 if (dc_created_on != today_date)
                 {
-                    throw new Exception(String.Format("Created on Date in DC_Transaction table in Database :{0} does not match with today's date :{1}", dc_created_on, today_date));
+                    throw new Exception(String.Format("Created on Date in DC_Transaction table in Database :{0} does not match with today's date :{1} for limit type :{2}", dc_created_on, today_date, limit_type));
                 }
 
                 if (status != "Success")
                 {
-                    throw new Exception(String.Format("Status in DC_Transaction table in Database :{0} is not Success", dc_created_on));
+                    throw new Exception(String.Format("Status in DC_Transaction table in Database :{0} is not Success for limit type :{1}", dc_created_on, limit_type));
                 }
 
                 if (dc_ivr1 != old_limit)
                 {
-                    throw new Exception(String.Format("Old Limit in DC_Transaction table in Database :{0} does not match with the on website :{1}", dc_ivr1, old_limit));
+                    throw new Exception(String.Format("Old Limit in DC_Transaction table in Database :{0} does not match with the on website :{1} for limit type :{2}", dc_ivr1, old_limit, limit_type));
                 }
 
                 if (dc_ivr2 != Convert.ToString(new_limit))
                 {
-                    throw new Exception(String.Format("New Limit on in DC_Transaction table in Database :{0} does not match with the on website :{1}", dc_ivr2, Convert.ToString(new_limit)));
+                    throw new Exception(String.Format("New Limit on in DC_Transaction table in Database :{0} does not match with the on website :{1} for limit type :{2}", dc_ivr2, Convert.ToString(new_limit), limit_type));
                 }
             }
             catch (Exception exception)
@@ -3389,9 +3550,9 @@ namespace HBLAutomationWeb.Core
             }
             try
             {
-                if (query.Contains("{username}"))
+                if (query.Contains("{customer_name}"))
                 {
-                    query = query.Replace("{username}", context.GetUsername());
+                    query = query.Replace("{customer_name}", context.GetUsername());
                 }
                 if (query.Contains("{invest_fund_name}"))
                 {
@@ -3424,11 +3585,205 @@ namespace HBLAutomationWeb.Core
                 {
                     context.SetCustomerProfileID(db_value);
                 }
+                if(attribute == "user_schedule_count")
+                {
+                    context.SetUserScheduleCount(Convert.ToInt32(db_value));
+                }
             }
             catch (Exception exception)
             {
                 throw new AssertFailedException(exception.Message);
             }
+        }
+        [Given(@"I am verifying schedule payments from My Account")]
+        [When(@"I am verifying schedule payments from My Account")]
+        [Then(@"I am verifying schedule payments from My Account")]
+        public void WhenIAmVerifyingSchedulePaymentsFromMyAccount()
+        {
+            string fund_transfer_id = ""; string ui_nick = "" ; Double ui_amount = 0.00;
+            string schedule_id = ""; string ui_purpose = ""; string ui_acc_detail = "";
+            Double schedule_amount = 0.00; string temp_loc = ""; string acc_detail = "";
+            string nick = ""; string branch_name = ""; string acc_title = "";
+            string acc_no = ""; string purpose_db = ""; string frequency_type = "";
+            string from_acc_db = ""; string first_date_db = ""; string last_date_db = "";
+
+            SeleniumHelper selhelper = new SeleniumHelper();
+            Element Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_SendMoneyCount");
+            int send_money_count = selhelper.SizeCountElements(Keyword.Locator);
+
+            DataAccessComponent.DataAccessLink dLink = new DataAccessComponent.DataAccessLink();
+            DataTable SourceDataTable = dLink.GetDataTable("SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '" + context.GetUsername() + "') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0 and TM.BILL_BENEFICIARY_ID = 0", "DIGITAL_CHANNEL_SEC");
+            int db_send_count = Convert.ToInt32(SourceDataTable.Rows[0][0].ToString());
+            dLink = null;
+            SourceDataTable = null;
+
+            string[,] arr_sch_sendmoney_db = new string[db_send_count, 4];
+            string[,] arr_sch_sendmoney_ui = new string[send_money_count, 4];
+
+            if (db_send_count != send_money_count)
+            {
+                throw new Exception(string.Format("User Schedule count in database :{0} is not equal with schedule count on website :{1}", db_send_count, send_money_count));
+            }
+
+            if (db_send_count == 0 || send_money_count == 0)
+            {
+                throw new Exception(string.Format("User Schedule count in database :{0} or schedule count on website :{1} is equal to zero", db_send_count, send_money_count));
+            }
+
+            for (int i = 1; i <= send_money_count; i++)
+            {
+                dLink = new DataAccessComponent.DataAccessLink();
+                SourceDataTable = dLink.GetDataTable("SELECT TM.FUND_TRANSFER_BENEFICIARY_ID, TM.SCHEDULED_TRAN_MASTER_ID, TM.SCHEDULED_AMOUNT, PK.PARAMETER_NAME, LM.PARAMETER_NAME, SOURCE_ACCOUNT_TITLE ,TM.SOURCE_ACCOUNT, SOURCE_ACCOUNT_BRANCH_NAME , FIRST_EXECUTION_DATE , LAST_EXECUTION_DATE FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_APPLICATION_PARAM_DETAIL PK on PK.APPLICATION_PARAMETER_ID = TM.PARAM_PURPOSE_OF_PAYMENT_ID INNER JOIN DC_APPLICATION_PARAM_DETAIL LM ON LM.APPLICATION_PARAMETER_ID = TM.PARAM_FREQUENCY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '" + context.GetUsername() + "') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0 and TM.BILL_BENEFICIARY_ID = 0", "DIGITAL_CHANNEL_SEC");
+                fund_transfer_id = SourceDataTable.Rows[i - 1][0].ToString();
+                schedule_id = SourceDataTable.Rows[i - 1][1].ToString();
+                schedule_amount = Convert.ToDouble(SourceDataTable.Rows[i - 1][2].ToString());
+                purpose_db = SourceDataTable.Rows[i - 1][3].ToString();
+                frequency_type = SourceDataTable.Rows[i - 1][4].ToString();
+                from_acc_db = SourceDataTable.Rows[i - 1][5].ToString() + " | " + SourceDataTable.Rows[i - 1][6].ToString() + " | " + SourceDataTable.Rows[i - 1][7].ToString();
+                first_date_db = SourceDataTable.Rows[i - 1][8].ToString();
+                last_date_db = SourceDataTable.Rows[i - 1][9].ToString();
+
+                DateTime temp_date = Convert.ToDateTime(first_date_db);
+                first_date_db = temp_date.ToString("dd/MM/yyyy");
+
+                temp_date = Convert.ToDateTime(last_date_db);
+                last_date_db = temp_date.ToString("dd/MM/yyyy");
+
+                arr_sch_sendmoney_db[i - 1, 1] = Convert.ToString(schedule_amount);
+                arr_sch_sendmoney_db[i - 1, 3] = purpose_db;
+
+                dLink = new DataAccessComponent.DataAccessLink();
+                SourceDataTable = dLink.GetDataTable("Select NICK, ACCOUNT_TITLE, ACCOUNT_NO, BRANCH_NAME from DC_FUND_TRANSFER_BENEFICIARY LL where LL.FUND_TRANSFER_BENEFICIARY_ID ='" + fund_transfer_id +"'" , "DIGITAL_CHANNEL_SEC");
+                nick = SourceDataTable.Rows[0][0].ToString();
+                acc_title = SourceDataTable.Rows[0][1].ToString();
+                acc_no = SourceDataTable.Rows[0][2].ToString();
+                branch_name = SourceDataTable.Rows[0][3].ToString();
+                acc_detail = acc_title + " " + acc_no + " " + branch_name;
+
+                arr_sch_sendmoney_db[i - 1, 0] = nick;
+                arr_sch_sendmoney_db[i - 1, 2] = acc_detail;
+
+                Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_RowTitle");
+                temp_loc = Keyword.Locator.Replace("{i}", Convert.ToString(i));
+                ui_nick = selhelper.ReturnKeywordValue(temp_loc);
+                ui_nick = ui_nick.Trim();
+
+                Keyword = null;
+                temp_loc = null;
+
+                Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_RowAmount");
+                temp_loc = Keyword.Locator.Replace("{i}", Convert.ToString(i));
+                ui_amount = Convert.ToDouble((selhelper.ReturnKeywordValue(temp_loc)).Trim());                
+
+                Keyword = null;
+                temp_loc = null;
+
+                Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_RowPurpose");
+                temp_loc = Keyword.Locator.Replace("{i}", Convert.ToString(i));
+                ui_purpose = selhelper.ReturnKeywordValue(temp_loc);
+                ui_purpose = ui_purpose.Trim();
+
+                Keyword = null;
+                temp_loc = null;
+
+                Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_RowDetail");
+                temp_loc = Keyword.Locator.Replace("{i}", Convert.ToString(i));
+                ui_acc_detail = selhelper.ReturnKeywordValue(temp_loc);
+                ui_acc_detail = ui_acc_detail.Replace("\r\n", " ");
+
+                Keyword = null;
+                temp_loc = null;
+
+                arr_sch_sendmoney_ui[i - 1, 0] = ui_nick;
+                arr_sch_sendmoney_ui[i - 1, 1] = Convert.ToString(ui_amount);
+                arr_sch_sendmoney_ui[i - 1, 2] = ui_acc_detail;
+                arr_sch_sendmoney_ui[i - 1, 3] = ui_purpose;
+
+                Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_RowClick");
+                temp_loc = Keyword.Locator.Replace("{i}", Convert.ToString(i));
+                selhelper.links(temp_loc);
+
+                Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_FromVal");
+                string from_value_ui = selhelper.ReturnTextBoxValue(Keyword.Locator);
+                Keyword = null;
+
+                if (from_acc_db != from_value_ui)
+                {
+                    throw new Exception(string.Format("From Account value in Database :{0} is not equal with From Account value on website :{1}", from_acc_db, from_value_ui));
+                }
+
+                Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_TOVal");
+                string to_value_ui = selhelper.ReturnTextBoxValue(Keyword.Locator);
+                Keyword = null;
+
+                Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_FreqVal");
+                string frequency_value_ui = selhelper.ReturnTextBoxValue(Keyword.Locator);
+                Keyword = null;
+
+                if (frequency_value_ui != frequency_type)
+                {
+                    throw new Exception(string.Format("Frequency Type in Database :{0} is not equal with frequency type on website :{1}", frequency_type, frequency_value_ui));
+                }
+
+                Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_PurposeVal");
+                string purpose_value_ui = selhelper.ReturnTextBoxValue(Keyword.Locator);
+                Keyword = null;
+
+                if (purpose_db != purpose_value_ui)
+                {
+                    throw new Exception(string.Format("Purpose of Payment in Database :{0} is not equal with Purpose of Payment on website :{1}", purpose_db , purpose_value_ui));
+                }
+
+                Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_TypeVal");
+                string type_value_ui = selhelper.ReturnTextBoxValue(Keyword.Locator);
+                Keyword = null;
+
+
+                Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_AmountVal");
+                string amount_value_ui = selhelper.ReturnTextBoxValue(Keyword.Locator);
+                Keyword = null;
+
+                if (Convert.ToString(schedule_amount) != amount_value_ui)
+                {
+                    throw new Exception(string.Format("Schedule Amount in Database :{0} is not equal with shcedule amount on website :{1}", schedule_amount, amount_value_ui));
+                }
+
+                Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_FirstDateVal");
+                string first_date_ui = selhelper.ReturnTextBoxValue(Keyword.Locator);
+                Keyword = null;
+
+                if (first_date_db != first_date_ui)
+                {
+                    throw new Exception(string.Format("First Executaion Date in Database :{0} is not equal with First Executaion Date on website :{1}", first_date_db, first_date_ui));
+                }
+
+                Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_LastDateVal");
+                string last_date_ui = selhelper.ReturnTextBoxValue(Keyword.Locator);
+                Keyword = null;
+
+                if (last_date_db != last_date_ui)
+                {
+                    throw new Exception(string.Format("Last Executaion Date in Database :{0} is not equal with Last Executaion Date on website :{1}", last_date_db, last_date_ui));
+                }
+
+                Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_LastDateVal");
+                selhelper.Button(Keyword.Locator);
+                Keyword = null;
+
+
+
+                schedule_amount = 0.00;
+                ui_amount = 0.00;
+
+                ui_nick = ui_purpose = ui_acc_detail = temp_loc = acc_detail = nick = branch_name = 
+                acc_title = acc_no = purpose_db  = String.Empty;
+            }
+            for (int i = 0; i < arr_sch_sendmoney_db.GetLength(0); i++)
+                for (int j = 0; j < arr_sch_sendmoney_ui.GetLength(0); j++)
+                    if (arr_sch_sendmoney_db[i, j] != arr_sch_sendmoney_ui[i, j])
+                    {
+                        throw new Exception(string.Format("The value on Website :{0} is not equal with value on database :{1}", arr_sch_sendmoney_db[i, j], arr_sch_sendmoney_ui[i, j]));
+                    }
         }
 
     }

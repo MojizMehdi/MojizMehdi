@@ -266,6 +266,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Login.feature</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Feature\InternetBanking\ManageSchedulePayment.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ManageSchedulePayment.feature</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Feature\InternetBanking\MyAccount.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -326,6 +331,7 @@
     <None Include="Resources\Feature\InternetBanking\Data\IBBillPayment.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\IBLogin.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\LimitManagement.xlsx" />
+    <None Include="Resources\Feature\InternetBanking\Data\ManageScheduleVerify.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\MultiBillPayment.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\MutualFund.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\MyAccount.xlsx" />
@@ -348,6 +354,10 @@
     <None Include="Resources\Feature\InternetBanking\Login.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Login.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\Feature\InternetBanking\ManageSchedulePayment.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ManageSchedulePayment.feature.cs</LastGenOutput>
     </None>
     <None Include="Resources\Feature\InternetBanking\MyAccount.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

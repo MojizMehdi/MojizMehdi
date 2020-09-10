@@ -406,6 +406,8 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.And(string.Format("I have given \"{0}\" on \"Login_UserId\"", login_Id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 184
  testRunner.And(string.Format("I have given \"{0}\" on \"Login_Password\"", login_Pass), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 185
+ testRunner.And("I am performing on \"Login_SignIn_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 191
  testRunner.And("I am clicking on \"Signup_SkipBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 192

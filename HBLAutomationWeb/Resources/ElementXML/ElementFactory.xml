@@ -66,7 +66,7 @@
     <Element keyword="Registration_TranPass" locator="//input[@name='TransactionPassword']" />
     <Element keyword="Registration_ReTranPass" locator="//input[@name='ReTransactionPassword']" />
     <Element keyword="Registration_FinishBtn" locator="//button[text() = 'Finish']" />
-    <Element keyword="Registration_PassPolicyText" locator="//div[@class='user-policy']//h2[text()='Password Policy']//following-sibling::small" />
+    <Element keyword="Registration_PassPolicyText" locator="//div[@class='user-policy']//h2[text()='Password Policy']//following-sibling::small[{i}]" />
     <Element keyword="Registration_PaswwordText" locator="//div[@id = 'popup']//p"/>
     <Element keyword="Registration_PaswwordOkBtn" locator="//a[@class='btn' and text()='OK']"/>
     <Element keyword="Registration_Email" locator="//input[@name='EmailAddress']"/>
@@ -303,6 +303,8 @@
     <Element keyword="MyAccount_Limit_Edit_NewLimit" locator="//div[contains(text(),'{x}')]/parent::*/parent::*/parent::*/parent::*[@class='limit-count-update']//div//div//div//div[@class='limit-amt ng-binding']" />
     <Element keyword="MyAccount_Limit_Edit_Succ_Txt" locator="//div[@id='ViewLimitsPopup']//div[@class='display-table']//p" />
     <Element keyword="MyAccount_Limit_Edit_Succ_Btn" locator="//div[@id='ViewLimitsPopup']//div[@class='modal-footer']//a" />
+    <Element keyword="MyAccount_Limit_Availed" locator="//div[contains(text(),'{x}')]/parent::*//following-sibling::div/parent::*//following-sibling::div//div[@class='limit-availed' and text()='Availed']/parent::*/parent::*//following-sibling::div//div[@class='limit-av-amt ng-binding']" />
+    <Element keyword="MyAccount_Limit_Remaining" locator="//div[contains(text(),'{x}')]/parent::*//following-sibling::div/parent::*//following-sibling::div//div[@class='limit-remain' and text()='Remaining']/parent::*/parent::*//following-sibling::div//div[@class='limit-rem-amt ng-binding']" />
     <Element keyword="MyAccount_Limit_Old_Amount" locator="//div[contains(text(),'{x}')]/parent::*/parent::*/parent::*/parent::*[@class='limit-cont']//div//div//div//div[@class='limit-amt ng-binding']" />
     <Element keyword="MyAccount_ChangePassOptn" locator="//a[@href = '#changepassword']" />
     <Element keyword="MyAccount_ChangePassOKBtn" locator="//div[@class='modal-dialog']//a[@class='btn' and text()='OK']" />
@@ -380,6 +382,24 @@
     <Element keyword="MyAccount_WithHoldTax_FromDate" locator="//input[@name='fromDate']" />
     <Element keyword="MyAccount_WithHoldTax_ToDate" locator="//input[@name='ToDate']" />
     <Element keyword="MyAccount_WithHoldTax_ReqBtn" locator="//button[@class='btn submit-btn' and text()='Request']" />
+    <Element keyword="MyAccount_MngSch_Icon" locator="//a[@ng-click='GetAllStandingInstructions();']" />
+    <Element keyword="MyAccount_MngSch_SendMoneyCount" locator="(//h2[@class='head' and contains(text(),'Send Money')]/following-sibling::ul)[1]//li" />
+    <Element keyword="MyAccount_MngSch_BillPayCount" locator="(//h2[@class='head' and contains(text(),'Bill Payment')]/following-sibling::ul)[1]//li" />
+    <Element keyword="MyAccount_MngSch_RowClick" locator="(//h2[@class='head' and contains(text(),'Send Money')]/following-sibling::ul)[1]//li[{i}]//div[@class='row align-items-center p-0 m-0']" />
+    <Element keyword="MyAccount_MngSch_RowAmount" locator="(//h2[@class='head' and contains(text(),'Send Money')]/following-sibling::ul)[1]//li[{i}]//div//p[@class='BillAmountSI ng-binding']" />
+    <Element keyword="MyAccount_MngSch_RowTitle" locator="(//h2[@class='head' and contains(text(),'Send Money')]/following-sibling::ul)[1]//li[{i}]//div//p[@class='nick ng-binding']" />
+    <Element keyword="MyAccount_MngSch_RowPurpose" locator="(//h2[@class='head' and contains(text(),'Send Money')]/following-sibling::ul)[1]//li[{i}]//div[@class='payee-acc si-details-items col-md-3 col-lg-3 col-xl-3 col-sm-12 col-xs-12 text-center']//p" />
+    <Element keyword="MyAccount_MngSch_RowDetail" locator="(//h2[@class='head' and contains(text(),'Send Money')]/following-sibling::ul)[1]//li[{i}]//div[@class='to-and-title payee-acc si-details-items col-md-4 col-lg-4 col-xl-4 col-sm-12 col-xs-12']//p" />
+    <Element keyword="MyAccount_MngSch_FromVal" locator="//label[text ()= 'From']//following-sibling::input" />
+    <Element keyword="MyAccount_MngSch_TOVal" locator="//label[text ()= 'To']//following-sibling::input" />
+    <Element keyword="MyAccount_MngSch_FreqVal" locator="//label[text ()= 'Frequency']//following-sibling::input" />
+    <Element keyword="MyAccount_MngSch_PurposeVal" locator="//label[text ()= 'Purpose of Payment']//following-sibling::input" />
+    <Element keyword="MyAccount_MngSch_TypeVal" locator="//label[text ()= 'Payment Type']//following-sibling::input" />
+    <Element keyword="MyAccount_MngSch_AmountVal" locator="//label[text ()= 'Amount']//following-sibling::input" />
+    <Element keyword="MyAccount_MngSch_FirstDateVal" locator="//label[text ()= 'First Execution Date']//following-sibling::input" />
+    <Element keyword="MyAccount_MngSch_LastDateVal" locator="//label[text ()= 'Last Execution Date']//following-sibling::input" />
+    <Element keyword="MyAccount_MngSch_CloseBtnVal" locator="//button[@ng-click='CloseButton();']" />
+    <Element keyword="MyAccount_MngSch_" locator="" />
 
 
   </Module>

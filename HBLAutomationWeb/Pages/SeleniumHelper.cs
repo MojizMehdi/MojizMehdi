@@ -639,6 +639,10 @@ namespace HBLAutomationWeb.Pages
                 if (amount < orignal_edit_limit)
                 {
                     count = amount / step;
+                    if (new_limit == 1)
+                    {
+                        count = count + 1;
+                    }
                     for (int i = 1; i <= count; i++)
                     {
                         slider.SendKeys(OpenQA.Selenium.Keys.ArrowLeft);
