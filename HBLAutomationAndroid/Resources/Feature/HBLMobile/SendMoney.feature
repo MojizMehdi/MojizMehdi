@@ -63,8 +63,8 @@ Scenario Outline: When user try to send money mobile
 	And I am performing on "SendMoney_NextBtn"
 	And I wait 3000
 	And I am clicking on "SendMoney_Rating"
-	And I am clicking on "SendMoney_RatingOkBtn"
-	And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
+	#And I am clicking on "SendMoney_RatingOkBtn"
+	#And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
 	And I save Transaction Info
 	Then verify through "<Success_Message>" on "SendMoney_TranSuccessMessage"
 	And verify through database on "<tran_type_query>" on Schema "<db_val>" on "SendMoney_TranType"
@@ -147,8 +147,8 @@ Scenario Outline: When user try to send money mobile
 	And I am performing on "SendMoney_NextBtn"
 	And I wait 3000
 	And I am clicking on "SendMoney_Rating"
-	And I am clicking on "SendMoney_RatingOkBtn"
-	And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
+	#And I am clicking on "SendMoney_RatingOkBtn"
+	#And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
 	And I save Transaction Info
 	Then verify through "<Success_Message>" on "SendMoney_TranSuccessMessage"
 	And verify through database on "<tran_type_query>" on Schema "<db_val>" on "SendMoney_TranType"
@@ -218,8 +218,8 @@ Scenario Outline: When user try to send money mobile using already added bene
 	And I am performing on "SendMoney_NextBtn"
 	And I wait 3000
 	And I am clicking on "SendMoney_Rating"
-	And I am clicking on "SendMoney_RatingOkBtn"
-	And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
+	#And I am clicking on "SendMoney_RatingOkBtn"
+	#And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
 	And I save Transaction Info
 	Then verify through "<Success_Message>" on "SendMoney_TranSuccessMessage"
 	And verify through database on "<tran_type_query>" on Schema "<db_val>" on "SendMoney_TranType"
@@ -282,8 +282,8 @@ Scenario Outline: When user try to send money mobile using already added bene
 	And I am performing on "SendMoney_NextBtn"
 	And I wait 3000
 	And I am clicking on "SendMoney_Rating"
-	And I am clicking on "SendMoney_RatingOkBtn"
-	And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
+	#And I am clicking on "SendMoney_RatingOkBtn"
+	#And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
 	Then verify through "<Success_Message>" on "SendMoney_TranSuccessMessage"
 	And verify through database on "<tran_type_query>" on Schema "<db_val>" on "SendMoney_TranType"
 	And verify through database on "<from_account_query>" on Schema "<db_val>" on "SendMoney_TranSourceAcc"

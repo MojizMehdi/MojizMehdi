@@ -10,7 +10,9 @@
     <Element keyword="Login_SignIn_Button" locator="com.hbl.android.hblmobilebanking:id/login_button"/>
     <Element keyword="Login_OTP_field" locator="com.hbl.android.hblmobilebanking:id/txt_pin_entry"/>
     <Element keyword="Login_OTP_Verify_Button" locator="com.hbl.android.hblmobilebanking:id/registerDeviceOkBtn"/>
-    
+    <Element keyword="Login_permission_allow_btn" locator="com.android.permissioncontroller:id/permission_allow_button"/>
+    <Element keyword="Login_permission_allow_btn2" locator="com.android.permissioncontroller:id/permission_allow_foreground_only_button"/>
+
     <!--<Element keyword="Login_Dashboard" locator="//img[@class='desk-logo']"/>-->
   </Module>
   <Module name="Registration">
@@ -37,7 +39,7 @@
     <Element keyword="Registration_Facebook" locator="//android.widget.RadioButton[@text='Facebook']"/>
     <Element keyword="Registration_Facebook_Submit" locator="//android.widget.Button[@text='Submit']"/>
     <Element keyword="Registration_Facebook_Submit_OK" locator="com.hbl.android.hblmobilebanking:id/dialog_pos_btn"/>
-    
+
   </Module>
   <Module name ="Dashboard">
     <Element keyword="Dashboard" locator="com.hbl.android.hblmobilebanking:id/homeClick"/>
@@ -74,31 +76,7 @@
     <Element keyword="MutualFund_Statement_Nav" locator="com.hbl.android.hblmobilebanking:id/eTextAMCNAV"/>
     <Element keyword="MutualFund_Statement_NavDate" locator="com.hbl.android.hblmobilebanking:id/eTextAMCDate"/>
     <Element keyword="MutualFund_Statement_TabRow" locator="(//android.widget.LinearLayout[@resource-id='com.hbl.android.hblmobilebanking:id/recyclerView_AMCDetailsList'][rownum])"/>
-    
     <Element keyword="MutualFund_List_FundName" locator="com.hbl.android.hblmobilebanking:id/txtAMCFundName"/>
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   </Module>
 
 
@@ -119,8 +97,10 @@
     <Element keyword="BillPayment_FromAccount" locator="com.hbl.android.hblmobilebanking:id/accountSpinner"/>
     <Element keyword="BillPayment_FromAccount_Bene" locator="com.hbl.android.hblmobilebanking:id/acc_Spinner"/>
     <Element keyword="BillPayment_Category_Company" locator="com.hbl.android.hblmobilebanking:id/s_hbpsBillCompanies"/>
+    <Element keyword="BillPayment_Category_Company_Select" locator="com.hbl.android.hblmobilebanking:id/withoutMargin_Lay"/>
     <Element keyword="BillPayment_ConsumerNo" locator="com.hbl.android.hblmobilebanking:id/consumerText"/>
     <Element keyword="BillPayment_NextBtn" locator="com.hbl.android.hblmobilebanking:id/submitRequestLay"/>
+    <Element keyword="BillPayment_CheckNextBtn" locator="com.hbl.android.hblmobilebanking:id/submitRequestLay"/>
     <!--<Element keyword="BillPayment_BeneNickOkBtn" locator="com.hbl.android.hblmobilebanking:id/submitRequestLay"/>-->
     <Element keyword="BillPayment_PayNextBtn" locator="com.hbl.android.hblmobilebanking:id/submitRequestLay"/>
     <Element keyword="BillPayment_PayBtn" locator="com.hbl.android.hblmobilebanking:id/submitRequestLay"/>
@@ -139,9 +119,9 @@
     <Element keyword="BillPayment_TranInfoClose_Bene" locator="com.hbl.android.hblmobilebanking:id/onCloseClicked"/>
     <Element keyword="BillPayment_SearchBeneField" locator="com.hbl.android.hblmobilebanking:id/txtView_Search"/>
     <Element keyword="BillPayment_SearchBeneConsumerNo" locator="com.hbl.android.hblmobilebanking:id/companyName"/>
-    <Element keyword="BillPayment_Rating" locator="com.hbl.android.hblmobilebanking:id/rating"/>
-    <Element keyword="BillPayment_RatingOkBtn" locator="com.hbl.android.hblmobilebanking:id/dialog_pos_btn"/>
-    <Element keyword="BillPayment_Rating_Feedback_OkBtn" locator="com.hbl.android.hblmobilebanking:id/dialog_pos_btn"/>
+    <Element keyword="BillPayment_Rating" locator="com.hbl.android.hblmobilebanking:id/dialog_neg_btn"/>
+    <!--<Element keyword="BillPayment_RatingOkBtn" locator="com.hbl.android.hblmobilebanking:id/dialog_pos_btn"/>
+    <Element keyword="BillPayment_Rating_Feedback_OkBtn" locator="com.hbl.android.hblmobilebanking:id/dialog_pos_btn"/>-->
     <Element keyword="BillPayment_BeneNickText" locator="com.hbl.android.hblmobilebanking:id/myNick_Field"/>
     <Element keyword="BillPayment_BeneNickOkBtn" locator="com.hbl.android.hblmobilebanking:id/dialog_pos_btn"/>
     <Element keyword="BillPayment_BeneNickCancelBtn" locator="com.hbl.android.hblmobilebanking:id/dialog_neg_btn"/>

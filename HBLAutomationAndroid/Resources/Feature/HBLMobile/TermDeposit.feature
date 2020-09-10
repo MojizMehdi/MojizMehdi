@@ -61,8 +61,8 @@ Scenario Outline: When user try to term deposit
 	And I am clicking on "TermDeposit_CloseBtn"
 	And I wait 3000
 	And I am clicking on "SendMoney_Rating"
-	And I am clicking on "SendMoney_RatingOkBtn"
-	And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
+	#And I am clicking on "SendMoney_RatingOkBtn"
+	#And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
 	And I am clicking on "Dashboard"
 	And I wait 2000
 	And I verify Account Balance

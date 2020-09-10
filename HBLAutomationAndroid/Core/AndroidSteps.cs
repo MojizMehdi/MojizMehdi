@@ -86,7 +86,7 @@ namespace HBLAutomationAndroid.Core
                 {
                     locator_type = "xpath";
                 }
-                apmhelper.SetTextBoxValue(textboxvalue, keyword.Locator,locator_type);
+                apmhelper.SetTextBoxValue(textboxvalue, keyword.Locator, locator_type);
 
             }
             catch (Exception exception)
@@ -96,7 +96,7 @@ namespace HBLAutomationAndroid.Core
             }
         }
 
-       
+
 
         [When(@"verify the message ""(.*)"" through database on ""(.*)"" on Schema ""(.*)""")]
         [Given(@"verify the message ""(.*)"" through database on ""(.*)"" on Schema ""(.*)""")]
@@ -230,7 +230,7 @@ namespace HBLAutomationAndroid.Core
                 locator_type = "xpath";
             }
             string value = apmhelper.ReturnKeywordValue(keyword.Locator, locator_type);
-            if(value.Contains("\r") || value.Contains("\n"))
+            if (value.Contains("\r") || value.Contains("\n"))
             {
                 value = value.Replace("\r", string.Empty).Replace("\n", string.Empty);
             }
@@ -341,7 +341,7 @@ namespace HBLAutomationAndroid.Core
             {
                 locator_type = "xpath";
             }
-            string temp = apmhelper.ReturnKeywordValue(keyword.Locator,locator_type);
+            string temp = apmhelper.ReturnKeywordValue(keyword.Locator, locator_type);
             if (Keyword.Equals("BillPayment_Bill_Status"))
             {
                 context.SetBill_Status(temp);
@@ -403,7 +403,7 @@ namespace HBLAutomationAndroid.Core
             {
                 locator_type = "xpath";
             }
-            string keyword_value = apmhelper.ReturnKeywordValue(keyword.Locator,locator_type);
+            string keyword_value = apmhelper.ReturnKeywordValue(keyword.Locator, locator_type);
             if (context.GetBill_Status() != "UNPAID")
             {
                 value = "";
@@ -428,7 +428,7 @@ namespace HBLAutomationAndroid.Core
                 {
                     locator_type = "xpath";
                 }
-                apmhelper.Button(keyword.Locator,locator_type);
+                apmhelper.Button(keyword.Locator, locator_type);
             }
             catch (Exception exception)
             {
@@ -474,7 +474,7 @@ namespace HBLAutomationAndroid.Core
                 {
                     locator_type = "xpath";
                 }
-                apmhelper.SetTextBoxValue(otp_value, keyword.Locator,locator_type);
+                apmhelper.SetTextBoxValue(otp_value, keyword.Locator, locator_type);
             }
         }
 
@@ -494,7 +494,7 @@ namespace HBLAutomationAndroid.Core
                 {
                     locator_type = "xpath";
                 }
-                apmhelper.SetTextBoxValue(tran_pass_value, keyword.Locator,locator_type);
+                apmhelper.SetTextBoxValue(tran_pass_value, keyword.Locator, locator_type);
             }
         }
 
@@ -509,11 +509,21 @@ namespace HBLAutomationAndroid.Core
             Element keyword = ContextPage.GetInstance().GetElement(Keyword);
             try
             {
+                if (Keyword.Equals("Login_permission_allow_btn") || Keyword.Equals("Login_permission_allow_btn2"))
+                {
+                    apmhelper.rating(keyword.Locator);
+                    return;
+                }
                 if (Keyword == "SendMoney_Rating" || Keyword == "SendMoney_RatingOkBtn" || Keyword == "SendMoney_Rating_Feedback_OkBtn")
                 {
-                    
+
                     //Element keyword = ContextPage.GetInstance().GetElement(Keyword);
                     apmhelper.rating(keyword.Locator);
+                    return;
+                }
+                if (Keyword.Equals("MutualFund_PopupBtn") && context.Get_MutualFundDisclaimerPopup() == "")
+                {
+                    return;
                 }
                 else if (Keyword == "Registration_AccountNo_Marking")
                 {
@@ -525,8 +535,8 @@ namespace HBLAutomationAndroid.Core
                     AccList = context.GetAccountForTag();
                     foreach (var acc_no in AccList)
                     {
-                         string locator = keyword.Locator.Replace("{AccountNo}", acc_no);
-                         apmhelper.links(locator,locator_type);
+                        string locator = keyword.Locator.Replace("{AccountNo}", acc_no);
+                        apmhelper.links(locator, locator_type);
                     }
                 }
                 else if (!String.IsNullOrEmpty(Keyword))
@@ -551,7 +561,7 @@ namespace HBLAutomationAndroid.Core
                     }
                     if (Keyword.Contains("SendMoney_AddNewBtn_interbranch"))
                     {
-                        if((context.Get_no_of_accounts() + context.Get_bene_count_inter_branch()) <= 1)
+                        if ((context.Get_no_of_accounts() + context.Get_bene_count_inter_branch()) <= 1)
                         {
                             return;
                         }
@@ -587,7 +597,7 @@ namespace HBLAutomationAndroid.Core
 
                     //AppiumHelper apmhelper = new AppiumHelper();
                     //apmhelper.checkPageIsReady();
-                    
+
                     if (Keyword.Contains("TermDeposit_NoOfYears"))
                     {
                         string temp = keyword.Locator.Replace("{Years}", context.Get_TermDepositYears());
@@ -597,7 +607,7 @@ namespace HBLAutomationAndroid.Core
                     {
                         locator_type = "xpath";
                     }
-                    apmhelper.links(keyword.Locator,locator_type);
+                    apmhelper.links(keyword.Locator, locator_type);
                 }
 
 
@@ -660,7 +670,7 @@ namespace HBLAutomationAndroid.Core
             for (int i = 1; i <= count; i++)
             {
                 string temp = keyword.Locator.Replace(")", ")[" + i + "]");
-                acc_no = apmhelper.ReturnKeywordValue(temp,"xpath");
+                acc_no = apmhelper.ReturnKeywordValue(temp, "xpath");
                 if (acc_no.Contains("ON"))
                 {
                     acc_no = Regex.Replace(acc_no, "[A-Za-z ]", "").TrimEnd();
@@ -765,7 +775,7 @@ namespace HBLAutomationAndroid.Core
                 {
                     locator_type = "xpath";
                 }
-                apmhelper.combobox(value, keyword.Locator,locator_type);
+                apmhelper.combobox(value, keyword.Locator, locator_type);
                 if (Keyword.Equals("SendMoney_SchedulePayment_Frequency"))
                 {
                     context.Setfrequency(value);
@@ -797,11 +807,12 @@ namespace HBLAutomationAndroid.Core
                 locator_type = "xpath";
             }
             ui_list = apmhelper.return_combobox_values(keyword.Locator, lst_keyword.Locator, locator_type);
-            if(ui_list.Count == SourceDataTable.Rows.Count)
+            if (ui_list.Count == SourceDataTable.Rows.Count)
             {
                 for (int i = 0; i < SourceDataTable.Rows.Count; i++)
                 {
-                    if(ui_list[i] != SourceDataTable.Rows[i][0].ToString())
+                    //count bhi lgalo and is deleted update krna
+                    if (ui_list[i] != SourceDataTable.Rows[i][0].ToString())
                     {
                         throw new AssertFailedException(string.Format("The record on UI is {0} and record in database is {1}", ui_list[i], SourceDataTable.Rows[i][0].ToString()));
                     }
@@ -873,7 +884,7 @@ namespace HBLAutomationAndroid.Core
                 {
                     query = query.Replace("{Company_Code}", context.GetCompany_Code());
                 }
-                if(query.Contains("SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE"))
+                if (query.Contains("SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE"))
                 {
                     message = context.Get_scroll_items_list();
                 }
@@ -884,6 +895,8 @@ namespace HBLAutomationAndroid.Core
                 {
                     if (message[i] != SourceDataTable.Rows[i][0].ToString())
                     {
+                        //string ali = SourceDataTable.Rows[i][0].ToString();
+
                         throw new AssertFailedException(string.Format("The Value of code is {0} and value of db is", message[i], SourceDataTable.Rows[i][0]));
                     }
                     //db_result.Add(SourceDataTable.Rows[i][0].ToString());
@@ -970,7 +983,7 @@ namespace HBLAutomationAndroid.Core
                     {
                         return;
                     }
-                    
+
                 }
                 if (query.Contains("ENABLE_PSD_BIOMETRIC"))
                 {
@@ -1141,9 +1154,9 @@ namespace HBLAutomationAndroid.Core
                 {
                     throw new AssertFailedException(string.Format("The Iteration Date against keyword is: {0} and Iteration Date calculated by code is {1}", lstui[counter], lst[counter]));
                 }
-                if(counter != 0 && counter % 8 == 0)
+                if (counter != 0 && counter % 8 == 0)
                 {
-                    apmhelper.scroll_down(0.65,0.30);
+                    apmhelper.scroll_down(0.65, 0.30);
                 }
                 counter++;
             }
@@ -1168,7 +1181,7 @@ namespace HBLAutomationAndroid.Core
         [When(@"I scroll to save the elements of list on ""(.*)""")]
         public void WhenIScrollToSaveTheElementsOfListOn(string scroll_text)
         {
-            
+
         }
 
         [When(@"I scroll to element text as ""(.*)""")]
@@ -1194,7 +1207,7 @@ namespace HBLAutomationAndroid.Core
             List<string> lst = new List<string>();
             List<string> lst_ui = new List<string>();
             string locator_type = "id";
-            if (keyword.Locator.StartsWith("/")|| keyword.Locator.StartsWith("("))
+            if (keyword.Locator.StartsWith("/") || keyword.Locator.StartsWith("("))
             {
                 locator_type = "xpath";
             }
@@ -1202,11 +1215,11 @@ namespace HBLAutomationAndroid.Core
             {
                 for (int i = 0; i < count; i++)
                 {
-                    if(i != 0)
+                    if (i != 0)
                     {
                         apmhelper.scroll_down(0.65, 0.20);
                     }
-                    
+
                     lst_ui = apmhelper.Return_Keyword_Elements_List(keyword.Locator, locator_type);
                     string[] other_elements = lst_ui.Except(lst).ToArray();
                     for (int j = 0; j < other_elements.Length; j++)
@@ -1215,12 +1228,12 @@ namespace HBLAutomationAndroid.Core
                     }
                     lst_ui = null;
                 }
-                if(Keyword == "MutualFund_List_FundName")
+                if (Keyword == "MutualFund_List_FundName")
                 {
                     lst.RemoveAt(0);
                 }
                 context.Set_scroll_items_list(lst);
-               
+
             }
             catch (Exception exception)
             {
@@ -1263,7 +1276,7 @@ namespace HBLAutomationAndroid.Core
                 {
                     message = context.GetToAccount_No();
                 }
-                if (Keyword.Equals("MutualFund_DisPopup") && context.Get_MutualFundDisclaimerPopup() == null)
+                if (Keyword.Equals("MutualFund_DisPopup") && context.Get_MutualFundDisclaimerPopup() == "")
                 {
                     return;
                 }
@@ -1294,7 +1307,7 @@ namespace HBLAutomationAndroid.Core
                 {
                     locator_type = "xpath";
                 }
-                apmhelper.verification(message, keyword.Locator,locator_type);
+                apmhelper.verification(message, keyword.Locator, locator_type);
                 if (Keyword.Contains("BillPayment_TranSuccess") || Keyword.Contains("SendMoney_TranSuccessMessage"))
                 {
                     keyword = null;
@@ -1306,10 +1319,10 @@ namespace HBLAutomationAndroid.Core
                     //}
                     //else
                     //{
-                        tranid_keyword = "MutualFund_ReceiptID";
+                    tranid_keyword = "MutualFund_ReceiptID";
                     //}
                     keyword = ContextPage.GetInstance().GetElement(tranid_keyword);
-                    string tran_id = apmhelper.ReturnKeywordValue(keyword.Locator,locator_type);
+                    string tran_id = apmhelper.ReturnKeywordValue(keyword.Locator, locator_type);
                     context.SetTransaction_Id(tran_id);
                 }
             }
@@ -1358,15 +1371,15 @@ namespace HBLAutomationAndroid.Core
                     DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
                     DataTable SourceDataTable = dlink.GetDataTable(query, schema);
                     message = SourceDataTable.Rows[0][0].ToString();
-                    if(Keyword == "SendMoney_TranBeneName")
+                    if (Keyword == "SendMoney_TranBeneName")
                     {
-                        if(message == "")
+                        if (message == "")
                         {
                             string temp = query.Replace("DT.BENEFICIARY_NAME", "DT.FT_TO_ACCOUNT_TITLE");
                             query = temp;
                         }
                     }
-                    if (Keyword.Equals("SendMoney_TranAmount")|| Keyword.Equals("TermDeposit_TranAmount") || Keyword.Equals("BillPayment_TranAmount"))
+                    if (Keyword.Equals("SendMoney_TranAmount") || Keyword.Equals("TermDeposit_TranAmount") || Keyword.Equals("BillPayment_TranAmount"))
                     {
                         message = Convert.ToDecimal(message).ToString("0.00");
                     }
@@ -1375,7 +1388,7 @@ namespace HBLAutomationAndroid.Core
                     //    context.SetConsumer_No(message);
                     //}
                 }
-                apmhelper.verification(message, keyword.Locator,locator_type);
+                apmhelper.verification(message, keyword.Locator, locator_type);
             }
             catch (Exception exception)
             {
@@ -1402,7 +1415,7 @@ namespace HBLAutomationAndroid.Core
             {
                 context.SetCustomerCNIC(value);
             }
-            if(attribute == "SignupCheck")
+            if (attribute == "SignupCheck")
             {
                 context.Set_signup_check(Convert.ToBoolean(value));
             }
@@ -1410,7 +1423,7 @@ namespace HBLAutomationAndroid.Core
             {
                 context.SetScrollText(value);
             }
-            if(attribute == "TranTypeBene")
+            if (attribute == "TranTypeBene")
             {
                 context.SetTranTypeBene(value);
             }
@@ -1442,15 +1455,15 @@ namespace HBLAutomationAndroid.Core
                 string message = SourceDataTable.Rows[0][0].ToString();
                 context.SetCustomerCNIC(message);
             }
-            if(attribute == "Transaction_Type")
+            if (attribute == "Transaction_Type")
             {
                 context.SetTranType(value);
             }
-            if(attribute == "TermDepositYears")
+            if (attribute == "TermDepositYears")
             {
                 context.Set_TermDepositYears(value);
             }
-            if(attribute == "term_deposit_flag")
+            if (attribute == "term_deposit_flag")
             {
                 if (context.Get_term_deposit_check() == 0)
                 {
@@ -1482,7 +1495,7 @@ namespace HBLAutomationAndroid.Core
             {
                 context.Set_mutual_fund_name(value);
             }
-            if(attribute == "Last_login_flag")
+            if (attribute == "Last_login_flag")
             {
                 context.SetLastLoginFlag(Convert.ToBoolean(value));
             }
@@ -1526,7 +1539,7 @@ namespace HBLAutomationAndroid.Core
                 {
                     context.Set_no_of_accounts(Convert.ToInt32(db_value));
                 }
-                if(attribute == "Beneficiary_Count_Inter_Branch")
+                if (attribute == "Beneficiary_Count_Inter_Branch")
                 {
                     context.Set_bene_count_inter_branch(Convert.ToInt32(db_value));
                 }
@@ -1534,11 +1547,11 @@ namespace HBLAutomationAndroid.Core
                 {
                     context.Set_bene_count_inter_bank(Convert.ToInt32(db_value));
                 }
-                if(attribute == "mutual_fund_disclaimer_popup")
+                if (attribute == "mutual_fund_disclaimer_popup")
                 {
                     context.Set_MutualFundDisclaimerPopup(db_value);
                 }
-                if(attribute == "customer_profile_id")
+                if (attribute == "customer_profile_id")
                 {
                     context.Set_cust_profile_id(db_value);
                 }
@@ -1546,11 +1559,11 @@ namespace HBLAutomationAndroid.Core
                 {
                     context.SetCustomerCNIC(db_value);
                 }
-                if(attribute == "schedule_configuration")
+                if (attribute == "schedule_configuration")
                 {
                     context.Set_BP_schedule_config(db_value);
                 }
-                if(attribute == "GUID")
+                if (attribute == "GUID")
                 {
                     context.Set_HostReferenceNo(db_value);
                 }
@@ -1596,7 +1609,7 @@ namespace HBLAutomationAndroid.Core
                     Keyword = null;
                     Keyword = ContextPage.GetInstance().GetElement("MutualFund_Statement_Table");
                     size = apmhelper.SizeCountElements(Keyword.Locator, locator_type) - 1;
-                    if(counter.ToLower() != "all")
+                    if (counter.ToLower() != "all")
                     {
                         size = Convert.ToInt32(counter);
                     }
@@ -1624,8 +1637,39 @@ namespace HBLAutomationAndroid.Core
                     Keyword = ContextPage.GetInstance().GetElement("MutualFund_Statement_NavDate");
                     nav_date_loc = Keyword.Locator;
 
-                    string[,] array_mutual_fund_ui = new string[size, 6];
-                    string[,] array_mutual_fund_db = new string[size, 6];
+
+                    string[,] array_mutual_fund_ui;
+                    string[,] array_mutual_fund_db;
+                    string new_query = "SELECT PP.NAME_OF_FUND, L.FOLIO_NO, CP.BALANCE, CP.UNITS, PP.NAV_PRICE, PP.NAV_DATE FROM AMC_CUSTOMER_PROFILE L INNER JOIN AMC_CUSTOMER_PORTFOLIO CP ON L.CUSTOMER_PROFILE_ID = CP.CUSTOMER_PROFILE_ID INNER JOIN AMC_PRODUCT_PROFILE PP ON CP.PRODUCT_ID = PP.PRODUCT_ID WHERE L.CNIC = '" + context.GetCustomerCNIC() + "' AND CP.AMOUNT <> 0 order by PP.NAME_OF_FUND";
+                    DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
+                    DataTable SourceDataTable = dlink.GetDataTable(new_query, schema);
+                    array_mutual_fund_ui = new string[size, 6];
+                    array_mutual_fund_db = new string[SourceDataTable.Rows.Count, 6];
+                    int zero_count = 0;
+                    for (int i = 0; i < SourceDataTable.Rows.Count; i++)
+                    {
+                        string fund_name_db = SourceDataTable.Rows[i][0].ToString();
+                        string folio_no_db = SourceDataTable.Rows[i][1].ToString();
+                        double balance_d = Convert.ToDouble(SourceDataTable.Rows[i][2].ToString());
+                        balance_d = Math.Round(balance_d, 2);
+                        amount_db += balance_d;
+                        string balance_db = string.Format("{0:0.00}", balance_d);
+                        string units_db = SourceDataTable.Rows[i][3].ToString();
+                        string nav_db = SourceDataTable.Rows[i][4].ToString();
+                        nav_db = Convert.ToString(Math.Round(Convert.ToDecimal(nav_db), 3));
+
+                        string nav_date_db = SourceDataTable.Rows[0][5].ToString();
+                        DateTime temp = Convert.ToDateTime(nav_date_db);
+                        nav_date_db = temp.ToString("dd/MM/yyyy");
+
+                        array_mutual_fund_db[i, 0] = fund_name_db;
+                        array_mutual_fund_db[i, 1] = folio_no_db;
+                        array_mutual_fund_db[i, 2] = balance_db;
+                        array_mutual_fund_db[i, 3] = units_db;
+                        array_mutual_fund_db[i, 4] = nav_db;
+                        array_mutual_fund_db[i, 5] = nav_date_db;
+                        fund_name_db = folio_no_db = balance_db = units_db = nav_db = nav_date_db = string.Empty;
+                    }
 
                     Element Keyword_rownum = ContextPage.GetInstance().GetElement("MutualFund_Statement_TabRow");
 
@@ -1662,46 +1706,27 @@ namespace HBLAutomationAndroid.Core
                         Keyword = ContextPage.GetInstance().GetElement("MutualFund_PopupBtn");
                         apmhelper.links(Keyword.Locator, locator_type);
                     }
-                    string new_query = "SELECT PP.NAME_OF_FUND, L.FOLIO_NO, CP.BALANCE, CP.UNITS, PP.NAV_PRICE, PP.NAV_DATE FROM AMC_CUSTOMER_PROFILE L INNER JOIN AMC_CUSTOMER_PORTFOLIO CP ON L.CUSTOMER_PROFILE_ID = CP.CUSTOMER_PROFILE_ID INNER JOIN AMC_PRODUCT_PROFILE PP ON CP.PRODUCT_ID = PP.PRODUCT_ID WHERE L.CNIC = '" + context.GetCustomerCNIC() + "' order by PP.NAME_OF_FUND";
-                    DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
-                    DataTable SourceDataTable = dlink.GetDataTable(new_query, schema);
-                    for (int i = 0; i < size; i++)
-                    {
-                        string fund_name_db = SourceDataTable.Rows[i][0].ToString();
-                        string folio_no_db = SourceDataTable.Rows[i][1].ToString();
-                        double balance_d = Convert.ToDouble(SourceDataTable.Rows[i][2].ToString());
-                        balance_d = Math.Round(balance_d, 2);
-                        amount_db += balance_d;
-                        string balance_db = string.Format("{0:0.00}", balance_d);
-                        string units_db = SourceDataTable.Rows[i][3].ToString();
-                        string nav_db = SourceDataTable.Rows[i][4].ToString();
-                        nav_db = Convert.ToString(Math.Round(Convert.ToDecimal(nav_db), 3));
 
-                        string nav_date_db = SourceDataTable.Rows[0][5].ToString();
-                        DateTime temp = Convert.ToDateTime(nav_date_db);
-                        nav_date_db = temp.ToString("dd/MM/yyyy");
-
-                        array_mutual_fund_db[i, 0] = fund_name_db;
-                        array_mutual_fund_db[i, 1] = folio_no_db;
-                        array_mutual_fund_db[i, 2] = balance_db;
-                        array_mutual_fund_db[i, 3] = units_db;
-                        array_mutual_fund_db[i, 4] = nav_db;
-                        array_mutual_fund_db[i, 5] = nav_date_db;
-
-                        fund_name_db = folio_no_db = balance_db = units_db = nav_db = nav_date_db = string.Empty;
-                    }
                     if (array_mutual_fund_db.GetLength(0) != array_mutual_fund_ui.GetLength(0))
                     {
                         throw new Exception(string.Format("The size of customer mutual fund records are not equal with database :{0} and website :{1}", array_mutual_fund_db.GetLength(0), array_mutual_fund_ui.GetLength(0)));
                     }
 
                     for (int i = 0; i < array_mutual_fund_db.GetLength(0); i++)
+                    {
                         for (int j = 0; j < array_mutual_fund_db.GetLength(0); j++)
+                        {
+                            //if (array_mutual_fund_db[i,2] == "0.00")
+                            //{
+                            //    break;
+                            //}
+
                             if (array_mutual_fund_db[i, j] != array_mutual_fund_ui[i, j])
                             {
                                 throw new Exception(string.Format("The value on UI :{0} is not equal with value on database :{1}", array_mutual_fund_db[i, j], array_mutual_fund_ui[i, j]));
                             }
-
+                        }
+                    }
                     if (amount_db != amount_ui)
                     {
                         throw new Exception(string.Format("Total Mutual fund amount in database :{0} is not equal with toal Mutual fund amount on UI :{1}", amount_db, amount_ui));
@@ -1723,7 +1748,7 @@ namespace HBLAutomationAndroid.Core
             bool loop_end_check = true;
             string locator_type = "id";
             //int counter = 0;
-            while(loop_end_check == true)
+            while (loop_end_check == true)
             {
                 try
                 {
@@ -1733,7 +1758,7 @@ namespace HBLAutomationAndroid.Core
                         locator_type = "xpath";
                     }
                     string account_no = apmhelper.ReturnKeywordValue(keyword.Locator, locator_type);
-                    if(account_no == "Term Deposit")
+                    if (account_no == "Term Deposit")
                     {
                         context.Set_term_deposit_check(2);
                     }
@@ -1821,7 +1846,7 @@ namespace HBLAutomationAndroid.Core
             {
                 keyword = ContextPage.GetInstance().GetElement("SendMoney_TranFromAcc");
             }
-            else if(context.GetTranType() == "BillPayment")
+            else if (context.GetTranType() == "BillPayment")
             {
                 keyword = ContextPage.GetInstance().GetElement("BillPayment_TranFromAcc");
             }
@@ -1833,14 +1858,14 @@ namespace HBLAutomationAndroid.Core
             {
                 locator_type = "xpath";
             }
-            string tran_account = apmhelper.ReturnKeywordValue(keyword.Locator,locator_type);
+            string tran_account = apmhelper.ReturnKeywordValue(keyword.Locator, locator_type);
             context.SetTran_Account(tran_account);
             keyword = ContextPage.GetInstance().GetElement("SendMoney_TranAmount");
             if (keyword.Locator.StartsWith("/"))
             {
                 locator_type = "xpath";
             }
-            string tran_balance = apmhelper.ReturnKeywordValue(keyword.Locator,locator_type);
+            string tran_balance = apmhelper.ReturnKeywordValue(keyword.Locator, locator_type);
             tran_dict = context.Get_acc_balances();
 
             foreach (var item in tran_dict)
@@ -1938,7 +1963,7 @@ namespace HBLAutomationAndroid.Core
                     }
                     string balance = apmhelper.ReturnKeywordValue(keyword.Locator, locator_type);
                     string tAccountNo = context.GeTran_Account();
-                    if(tAccountNo == account_no || account_no == "Term Deposit") //||account_no == "HBL Mutual Funds")
+                    if (tAccountNo == account_no || account_no == "Term Deposit") //||account_no == "HBL Mutual Funds")
                     {
                         if (context.Get_term_deposit_check() == 1 && account_no == "Term Deposit")
                         {
@@ -1982,7 +2007,7 @@ namespace HBLAutomationAndroid.Core
                             {
                                 continue;
                             }
-                            
+
                         }
                         //else if (context.Get_mutual_fund_check() == 1 && account_no == "HBL Mutual Funds")
                         //{
@@ -2028,7 +2053,7 @@ namespace HBLAutomationAndroid.Core
                         //    }
 
                         //}
-                        
+
                         else if (tAccountNo == account_no)
                         {
                             old_account_bal = context.GetTran_Balance();
@@ -2050,9 +2075,9 @@ namespace HBLAutomationAndroid.Core
                                 continue;
                             }
                         }
-                        
+
                     }
-                    if(term_deposit_checker == true && account_bal_checker == true)
+                    if (term_deposit_checker == true && account_bal_checker == true)
                     {
                         break;
                     }
@@ -2103,16 +2128,16 @@ namespace HBLAutomationAndroid.Core
                 if (bene_name == "1" && context.GetBeneName() != "")
                 {
                     Element keyword = ContextPage.GetInstance().GetElement("BillPayment_BeneNickText");
-                    apmhelper.SetTextBoxValue(textboxvalue, keyword.Locator,"id");
+                    apmhelper.SetTextBoxValue(textboxvalue, keyword.Locator, "id");
                     keyword = null;
                     Thread.Sleep(1000);
                     keyword = ContextPage.GetInstance().GetElement("BillPayment_BeneNickOkBtn");
-                    apmhelper.Button(keyword.Locator,"id");
+                    apmhelper.Button(keyword.Locator, "id");
                 }
                 else if (bene_name == "1" && context.GetBeneName() == "")
                 {
-                   Element  keyword = ContextPage.GetInstance().GetElement("BillPayment_BeneNickCancelBtn");
-                   apmhelper.Button(keyword.Locator, "id");
+                    Element keyword = ContextPage.GetInstance().GetElement("BillPayment_BeneNickCancelBtn");
+                    apmhelper.Button(keyword.Locator, "id");
                 }
                 else if (bene_name != "1")
                 {
@@ -2144,7 +2169,7 @@ namespace HBLAutomationAndroid.Core
                 BILL_BENE_NICK = SourceDataTable.Rows[0][0].ToString();
                 BILL_STATUS = SourceDataTable.Rows[0][1].ToString();
                 DUE_DATE_FORMAT = (Convert.ToDateTime(SourceDataTable.Rows[0][2]));
-                if(DUE_DATE_FORMAT < DateTime.Today)
+                if (DUE_DATE_FORMAT < DateTime.Today)
                 {
                     amount = SourceDataTable.Rows[0][4].ToString();
                 }
@@ -2154,14 +2179,14 @@ namespace HBLAutomationAndroid.Core
                 }
                 DUE_DATE = DUE_DATE_FORMAT.ToString("dd-MMM-yyyy");
                 Element Temp_keyword = ContextPage.GetInstance().GetElement("BillPayment_BeneNick_ViewScreen");
-                ui_bene_nick = apmhelper.ReturnKeywordValue(Temp_keyword.Locator,"id");
-                if(ui_bene_nick != BILL_BENE_NICK)
+                ui_bene_nick = apmhelper.ReturnKeywordValue(Temp_keyword.Locator, "id");
+                if (ui_bene_nick != BILL_BENE_NICK)
                 {
                     throw new AssertFailedException(string.Format("The Bene Nick in database {0} is not equal to Bene Nick On Screen {1}", BILL_BENE_NICK, ui_bene_nick));
                 }
                 Temp_keyword = null;
                 Temp_keyword = ContextPage.GetInstance().GetElement("BillPayment_BillAmount_ViewScreen");
-                ui_amount = apmhelper.ReturnKeywordValue(Temp_keyword.Locator,"id");
+                ui_amount = apmhelper.ReturnKeywordValue(Temp_keyword.Locator, "id");
                 ui_amount = ui_amount.Replace(@",", string.Empty);
                 if (ui_amount != amount)
                 {
@@ -2169,7 +2194,7 @@ namespace HBLAutomationAndroid.Core
                 }
                 Temp_keyword = null;
                 Temp_keyword = ContextPage.GetInstance().GetElement("BillPayment_DueDate_ViewScreen");
-                ui_duedate = apmhelper.ReturnKeywordValue(Temp_keyword.Locator,"id");
+                ui_duedate = apmhelper.ReturnKeywordValue(Temp_keyword.Locator, "id");
                 ui_duedate = ui_duedate.Replace(@"Due Date: ", string.Empty);
                 if (ui_duedate != DUE_DATE)
                 {
@@ -2232,7 +2257,7 @@ namespace HBLAutomationAndroid.Core
                 SourceDataTable = null;
                 SourceDataTable = dLink.GetDataTable(query, "QAT_BPS");
                 string tran_pass_req = SourceDataTable.Rows[0][0].ToString();
-                if(tran_pass_req == "1")
+                if (tran_pass_req == "1")
                 {
                     context.Set_is_tranpass_req(tran_pass_req);
                 }
@@ -2284,7 +2309,7 @@ namespace HBLAutomationAndroid.Core
                     Temp_keyword = ContextPage.GetInstance().GetElement("BillPayment_Inquiry_NextArrow");
                     apmhelper.links(Temp_keyword.Locator, "id");
                 }
-                
+
             }
             Temp_keyword = null;
             Temp_keyword = ContextPage.GetInstance().GetElement("BillPayment_multipayment_totalamount");
@@ -2334,7 +2359,7 @@ namespace HBLAutomationAndroid.Core
                     }
                 }
                 context.Set_multi_tran_ids(tran_id_arr);
-                
+
             }
             catch (Exception exception)
             {
@@ -2344,7 +2369,7 @@ namespace HBLAutomationAndroid.Core
         }
 
         [Then(@"verify multiple payments summary ""(.*)"" on ""(.*)"" and ""(.*)"" on ""(.*)"" and ""(.*)"" on ""(.*)"" and ""(.*)"" on ""(.*)"" and ""(.*)"" on ""(.*)"" and ""(.*)"" on ""(.*)"" on Schema ""(.*)""")]
-        public void ThenVerifyMultiplePaymentsSummaryOnAndOnAndOnAndOnAndOnAndOnOnSchema(string TranSuccessMessage, string Keyword1, string tran_type_query, string Keyword2, string tran_amount_query, string Keyword3, string from_account_query, string Keyword4, string company_name_query, string Keyword5, string consumer_no_query, string Keyword6,string schema)
+        public void ThenVerifyMultiplePaymentsSummaryOnAndOnAndOnAndOnAndOnAndOnOnSchema(string TranSuccessMessage, string Keyword1, string tran_type_query, string Keyword2, string tran_amount_query, string Keyword3, string from_account_query, string Keyword4, string company_name_query, string Keyword5, string consumer_no_query, string Keyword6, string schema)
         {
             //string[] tran_id_arr = context.Get_multi_tran_ids();
             string[] consumer_no_arr = context.Get_multi_bill_consumers();
@@ -2478,7 +2503,7 @@ namespace HBLAutomationAndroid.Core
             {
                 TranSuccessMessage = context.GetToAccount_No();
             }
-            
+
             string[] queries = new string[5];
             string[] keywords = new string[5];
             queries[0] = tran_type_query;
@@ -2648,7 +2673,7 @@ namespace HBLAutomationAndroid.Core
         public void ThenVerifyTheResultOfSchedulePaymentFromDatabase()
         {
             string tran_master_id = "";
-            string query = "SELECT TM.STATE,TM.SCHEDULED_AMOUNT,TM.SCHEDULED_TRAN_TYPE,TM.SCHEDULED_TRAN_MASTER_ID FROM DC_SCHEDULED_TRAN_MASTER TM WHERE TM.FUND_TRANSFER_BENEFICIARY_ID =  (SELECT FT.FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY FT WHERE FT.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '" + context.GetUsername() +"') AND FT.IS_DELETED = 0 AND FT.NICK = '" + context.GetCategory_value() + "') AND TM.IS_DELETED = 0";
+            string query = "SELECT TM.STATE,TM.SCHEDULED_AMOUNT,TM.SCHEDULED_TRAN_TYPE,TM.SCHEDULED_TRAN_MASTER_ID FROM DC_SCHEDULED_TRAN_MASTER TM WHERE TM.FUND_TRANSFER_BENEFICIARY_ID =  (SELECT FT.FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY FT WHERE FT.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '" + context.GetUsername() + "') AND FT.IS_DELETED = 0 AND FT.NICK = '" + context.GetCategory_value() + "') AND TM.IS_DELETED = 0";
             DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
             DataTable SourceDataTable = dlink.GetDataTable(query, "DIGITAL_CHANNEL_SEC");
             string state = SourceDataTable.Rows[0][0].ToString();

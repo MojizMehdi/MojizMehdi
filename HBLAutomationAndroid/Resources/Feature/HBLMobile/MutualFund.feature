@@ -59,8 +59,8 @@ Scenario Outline: When user try to mutual fund
 	And I am clicking on "MutualFund_NextBtn"
 	And I wait 5000
 	And I am clicking on "SendMoney_Rating"
-	And I am clicking on "SendMoney_RatingOkBtn"
-	And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
+	#And I am clicking on "SendMoney_RatingOkBtn"
+	#And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
 	Then verify through "<Success_Message>" on "SendMoney_TranSuccessMessage"
 	#And I set value in context from database "<HostReferenceNo_query>" as "HostReferenceNo" on Schema "<db_val4>"
 	And I set value in context from database "<GUID_query>" as "GUID" on Schema "<db_val>"
@@ -72,14 +72,14 @@ Scenario Outline: When user try to mutual fund
 	And verify the message "<folio_no>" through database on "<folio_no_verify_query>" on Schema "<db_val3>"
 	#And verify the data using "<customer_name_verify_query>" on Schema "<db_val3>"
 	And verify the data using "<customer_cnic_verify_query>" on Schema "<db_val3>"
-	And verify the data using "<customer_mobile_no_query>" on Schema "<db_val3>"
+	#And verify the data using "<customer_mobile_no_query>" on Schema "<db_val3>"
 	And verify the message "<amount_value>" through database on "<tran_amount_verify_query>" on Schema "<db_val3>"
 	And I save Transaction Info
 	And I am clicking on "TermDeposit_CloseBtn"
 	And I wait 3000
 	And I am clicking on "Dashboard"
 	And I wait 2000
-	And I verify Account Balance
+	#And I verify Account Balance
 	
 	@source:Data/MutualFund.xlsx
 	Examples: 

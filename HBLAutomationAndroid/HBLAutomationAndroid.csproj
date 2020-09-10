@@ -306,6 +306,7 @@
     <None Include="Resources\Feature\HBLMobile\Data\HBLMobileLogin.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\HBLMobileMutualFundLogin.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\HBLMobileTermDepositLogin.xlsx" />
+    <None Include="Resources\Feature\HBLMobile\Data\MultiBillPayment.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\MutualFund.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\SendMoney%28ViaBene%29.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\SendMoney%28ViaBene%29_Interbank.xlsx" />

@@ -8,6 +8,8 @@ Scenario Outline: When user try to login mobile banking for bill payment
 	Given the test case title is "<Case>"
 	And update the data by query "<Status_query>" on DIGITAL_CHANNEL_SEC
 	And the user is arrive to Mobile Banking home page 
+	And I am clicking on "Login_permission_allow_btn"
+	And I am clicking on "Login_permission_allow_btn2"
 	When I have given "<Login_UserId_Value>" on "Login_UserId"
 	And I have given "<Login_Password_Value>" on "Login_Password"
 	And I wait 2000
@@ -35,6 +37,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 	And I am clicking on "BillPayment_CategoryLink"
 	And I am clicking on "BillPayment_AddNewBtn"
 	And I have given "<Company_Value>" on "BillPayment_Category_Company"
+	And I am clicking on "BillPayment_Category_Company_Select"
 	#And I select "<Company_Value>" on "BillPayment_Category_Company"
 	And I set value in context from data "BillPayment" as "Transaction_Type"
 	And I set value in context from data "<company_code_value>" as "Company_Code"
@@ -59,12 +62,12 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 	And I am clicking on "BillPayment_PayBtn"
 	And I wait 10000
 	And I am clicking on "SendMoney_Rating"
-	And I am clicking on "SendMoney_RatingOkBtn"
+	#And I am clicking on "SendMoney_RatingOkBtn"
 	And I wait 2000
-	And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
+	#And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
 	And I save Transaction Info
 	Then verify through "Transaction is successful. " on "BillPayment_TranSuccess"
-	And verify through database on "<tran_type_query>" on Schema "<db_val>" on "BillPayment_TranType"
+	#And verify through database on "<tran_type_query>" on Schema "<db_val>" on "BillPayment_TranType"
 	And verify through database on "<tran_amount_query>" on Schema "<db_val>" on "BillPayment_TranAmount"
 	And verify through database on "<from_account_query>" on Schema "<db_val>" on "BillPayment_TranFromAcc"
 	And verify through database on "<company_name_query>" on Schema "<db_val>" on "BillPayment_CompanyName"
@@ -111,6 +114,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 	And I am clicking on "BillPayment_CategoryLink"
 	And I am clicking on "BillPayment_AddNewBtn"
 	And I have given "<Company_Value>" on "BillPayment_Category_Company"
+	And I am clicking on "BillPayment_Category_Company_Select"
 	#And I select "<Company_Value>" on "BillPayment_Category_Company"
 	And I set value in context from data "BillPayment" as "Transaction_Type"
 	And I set value in context from data "<company_code_value>" as "Company_Code"
@@ -136,9 +140,9 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 	And I am clicking on "BillPayment_PayBtn"
 	And I wait 10000
 	And I am clicking on "SendMoney_Rating"
-	And I am clicking on "SendMoney_RatingOkBtn"
+	#And I am clicking on "SendMoney_RatingOkBtn"
 	And I wait 2000
-	And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
+	#And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
 	And I save Transaction Info
 	Then verify through "Transaction is successful. " on "BillPayment_TranSuccess"
 	And verify through database on "<tran_type_query>" on Schema "<db_val>" on "BillPayment_TranType"
@@ -211,9 +215,9 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by alre
 	And I am clicking on "BillPayment_PayBtn"
 	And I wait 10000
 	And I am clicking on "SendMoney_Rating"
-	And I am clicking on "SendMoney_RatingOkBtn"
+	#And I am clicking on "SendMoney_RatingOkBtn"
 	And I wait 2000
-	And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
+	#And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
 	And I wait 2000
 	And I save Transaction Info
 	Then verify through "Transaction is successful. " on "BillPayment_TranSuccess"
@@ -280,9 +284,9 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by alre
 	And I am clicking on "BillPayment_PayBtn"
 	And I wait 10000
 	And I am clicking on "SendMoney_Rating"
-	And I am clicking on "SendMoney_RatingOkBtn"
+	#And I am clicking on "SendMoney_RatingOkBtn"
 	And I wait 2000
-	And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
+	#And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
 	And I save Transaction Info
 	Then verify through "Transaction is successful. " on "BillPayment_TranSuccess"
 	And verify through database on "<tran_type_query>" on Schema "<db_val>" on "BillPayment_TranType"
@@ -325,18 +329,18 @@ Scenario Outline: As a user i want to Verify Multiple Bill Payment through Mobil
 	And I am clicking on "Dashboard"
 	When I save Account Balances 
 	And I am clicking on "Dashboard_BillPayment"
-	And I select consumers for multi bill payment as "19154110419400,19154110419401,19154110419404" on "BillPayment_SearchBeneField"
+	And I select consumers for multi bill payment as "<Consumer_Numbers>" on "BillPayment_SearchBeneField"
 	And I am clicking on "BillPayment_MultiBillSelect_Next"
 	And I set value in context from data "BillPayment" as "Transaction_Type"
 	And I verify bill details of consumer numbers for bill payment
 	And I am clicking on "BillPayment_NextBtn"
-	And I have transaction pass check and given "pakistan2" on "BillPayment_TransactionPassword"
+	And I have transaction pass check and given "<tran_pass_value>" on "BillPayment_TransactionPassword"
 	And I am clicking on "BillPayment_MultiPayment_PayBtn"
 	And I wait 15000
 	And I am clicking on "SendMoney_Rating"
-	And I am clicking on "SendMoney_RatingOkBtn"
+	#And I am clicking on "SendMoney_RatingOkBtn"
 	And I wait 2000
-	And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
+	#And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
 	And I save Transaction Info for MultiPayment
 	Then verify multiple payments summary "Transaction is successful. " on "BillPayment_TranSuccess_MultiBill" and "<tran_type_query>" on "BillPayment_TranType" and "<tran_amount_query>" on "BillPayment_TranAmount" and "<from_account_query>" on "BillPayment_TranFromAcc" and "<company_name_query>" on "BillPayment_CompanyName" and "<consumer_no_query>" on "BillPayment_TranSucess_ConsumerNo" on Schema "<db_val>"
 	#Then verify multiple payments through "Transaction is successful. " on "BillPayment_TranSuccess_MultiBill"
@@ -355,6 +359,6 @@ Scenario Outline: As a user i want to Verify Multiple Bill Payment through Mobil
 	And I am clicking on "TransactionActivity_LatestTranLink"
 	#Then verify multiple payments summary "Transaction is successful. " on "BillPayment_TranSuccess_MultiBill" and "<tran_type_query>" on "BillPayment_TranType" and "<tran_amount_query>" on "BillPayment_TranAmount" and "<from_account_query>" on "BillPayment_TranFromAcc" and "<company_name_query>" on "BillPayment_CompanyName" and "<consumer_no_query>" on "BillPayment_TranSucess_ConsumerNo" on Schema "<db_val>"
 	And verify transaction activity multiple payments "Successful" on "BillPayment_TranSuccess_MultiBill_TranActivity" and "<tran_type_query>" on "BillPayment_TranType" and "<tran_amount_query>" on "BillPayment_TranAmount" and "<from_account_query>" on "BillPayment_TranFromAcc" and "<company_name_query>" on "BillPayment_CompanyName" and "<consumer_no_query>" on "BillPayment_TranSucess_ConsumerNo" on Schema "<db_val>"
-	@source:Data/BillPayment(ExistingBene)ViaHome.xlsx
+	@source:Data/MultiBillPayment.xlsx
 	Examples: 
-	|Case|status_query|Category_Value|Company_Value|BillPayment_ConsumerNo_Value|Bill_Amount_query|company_code_value|OTP_Value|tran_pass_value|tran_type_query|tran_amount_query|from_account_query|company_name_query|consumer_no_query|db_val|db_val2|account_no|account_type|expiry_date|schedule_type|maximum_amount|bene_name|bene_query|instrument_type|schedule_config|schedule_verify|
+	|Case|status_query|Consumer_Numbers|tran_pass_value|tran_type_query|tran_amount_query|from_account_query|company_name_query|consumer_no_query|db_val|db_val2|
