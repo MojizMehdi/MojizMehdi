@@ -85,7 +85,7 @@ namespace HBLAutomationWeb.Pages
                             //chromeOptions.AddArgument("--disable-notifications");
                             chromeOptions.AddExcludedArgument("enable-automation");
                            // chromeOptions.AddAdditionalCapability("useAutomationExtension", false);
-                            //  chromeOptions.BinaryLocation = "D:\\Projects\\IRISSuiteAutomation\\IRISSuiteAutomation\\IRISSuiteAutomation\\chromedriver.exe";
+                            //chromeOptions.BinaryLocation = "C:\\Program Files\\Google\\Chrome\\Application";
                             driver = new ChromeDriver(chromeOptions);
                             //driver = new ChromeDriver("D:\\Automation\\", chromeOptions);
                             //driver.Manage().Window.Maximize();
