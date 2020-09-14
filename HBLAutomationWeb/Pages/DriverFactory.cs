@@ -85,8 +85,8 @@ namespace HBLAutomationWeb.Pages
                             //chromeOptions.AddArgument("--disable-notifications");
                             chromeOptions.AddExcludedArgument("enable-automation");
                            // chromeOptions.AddAdditionalCapability("useAutomationExtension", false);
-                            //  chromeOptions.BinaryLocation = "D:\\Projects\\IRISSuiteAutomation\\IRISSuiteAutomation\\IRISSuiteAutomation\\chromedriver.exe";
-                            driver = new ChromeDriver("D:\\Automation\\",chromeOptions);
+                            //chromeOptions.BinaryLocation = "C:\\Program Files\\Google\\Chrome\\Application";
+                            driver = new ChromeDriver(chromeOptions);
                             //driver = new ChromeDriver("D:\\Automation\\", chromeOptions);
                             //driver.Manage().Window.Maximize();
                             //driver.Navigate.chromeOptions;
@@ -103,9 +103,17 @@ namespace HBLAutomationWeb.Pages
                             //driver = new FirefoxDriver(firefoxbinary, firefoxprofile);
                             //  ((IJavaScriptExecutor)driver).ExecuteScript(@"window.resizeTo(screen.width-100,screen.height-100);");
                             //FirefoxDriverService service = FirefoxDriverService.CreateDefaultService(@"D:\CMSAutomation\Demo-Automation\1LinkCertification\IRISSuiteAutomation\bin\Debug");
-                            FirefoxDriverService service = FirefoxDriverService.CreateDefaultService(@"D:\Automation");
-                            // service.FirefoxBinaryPath = @"C:\Program Files (x86)\Mozilla Firefox\firefox.exe";                           
-                            driver = new FirefoxDriver(service);
+                            //File pathToBinary = new File("C:\user\App\Firefox\firefox.exe");
+                            //FirefoxBinary ffBinary = new FirefoxBinary(pathToBinary);
+                            //FirefoxProfile firefoxProfile = new FirefoxProfile();
+                            //driver = new FirefoxDriver(ffBinary, firefoxProfile);
+                            //System.setProperty("webdriver.gecko.driver", driverPath);
+                            //Environment.SetEnvironmentVariable("webdriver.gecko.driver", "D:\\Automation\\geckodriver.exe");
+                            //DesiredCapabilities capabilities = DesiredCapabilities.Firefox();
+                            //FirefoxOptions foptions = new FirefoxOptions();
+                            //foptions.AddAdditionalCapability("acceptInsecureCerts", true);
+                            //capabilities.SetCapability("acceptInsecureCerts", true);
+                            driver = new FirefoxDriver();
                             driver.Manage().Window.Maximize();
                             break;
 
