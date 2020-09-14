@@ -9,6 +9,7 @@ using HBLAutomationWeb.XML.ElementFactory;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -47,6 +48,14 @@ namespace HBLAutomationWeb.Core
         [BeforeTestRun]
         public static void beforeTestRun()
         {
+            foreach (var process in Process.GetProcessesByName("geckodriver"))
+            {
+                process.Kill();
+            }
+            foreach (var process in Process.GetProcessesByName("chromedriver"))
+            {
+                process.Kill();
+            }
             var htmlReporter = new ExtentHtmlReporter(@"D:\Automation\Automation_Report-" + DateTime.Now.ToString("yyyy-dd-M-HH-mm-ss") + ".html");
             htmlReporter.Configuration().Theme = AventStack.ExtentReports.Reporter.Configuration.Theme.Dark;
 
@@ -186,6 +195,15 @@ namespace HBLAutomationWeb.Core
             }
             ExcelWriter.GetInstance().WriteOutputFile();
             extent.Flush();
+            foreach (var process in Process.GetProcessesByName("geckodriver"))
+            {
+                process.Kill();
+            }
+            foreach (var process in Process.GetProcessesByName("chromedriver"))
+            {
+                process.Kill();
+            }
+            ContextPage.driver.Quit();
         }
 
         [AfterStep]
