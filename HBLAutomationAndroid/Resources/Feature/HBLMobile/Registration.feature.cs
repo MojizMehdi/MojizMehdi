@@ -517,37 +517,45 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_id_query", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_query", "select P.created_on from dc_customer_info P where P.CNIC =\'{customer_cnic}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_query", "select P.updated_on from dc_customer_info P where P.CNIC =\'{customer_cnic}\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_pass_change_query", "select P.last_login from dc_customer_info P where P.CNIC =\'{customer_cnic}\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_tran_pass_change_query", "$2a$31$33GicMJLAlIuV0UQKrwtNu/SYwpsYsVkGR4DDNJEN9iSUwWoZtETu")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_value", "select TRANSACTION_PASSWORD from dc_customer_info P where P.CNIC =\'{customer_cnic" +
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_pass_change_query", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+            "nic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_tran_pass_change_query", "select P.LAST_TRANS_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{cust" +
+            "omer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_query", "SELECT P.IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{cus" +
+            "tomer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_query", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Last_login_query", "select P.last_login from dc_customer_info P where P.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_encrypted_value", "$2a$31$33GicMJLAlIuV0UQKrwtNu/SYwpsYsVkGR4DDNJEN9iSUwWoZtETu")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:transaction_password_query", "select TRANSACTION_PASSWORD from dc_customer_info P where P.CNIC =\'{customer_cnic" +
             "}\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_query", "C")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_value", "select P.CUSTOMER_TYPE from dc_customer_info P where P.CNIC =\'{customer_cnic}\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL P where P.PARAMETER_NAME=\'" +
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type", "C")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "select P.CUSTOMER_TYPE from dc_customer_info P where P.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:IVR_require_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL P where P.PARAMETER_NAME=\'" +
             "IVR_REQUIRED\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Last_login_query", "select P.IS_IVR_ENABLED from dc_customer_info P where P.CNIC =\'{customer_cnic}\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_encrypted_value", "Select P.PARAM_CHANNEL_ID from dc_customer_info P where P.CNIC =\'{customer_cnic}\'" +
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:IVR_check_query", "select P.IS_IVR_ENABLED from dc_customer_info P where P.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PARAM_CHANNEL_ID_query", "Select P.PARAM_CHANNEL_ID from dc_customer_info P where P.CNIC =\'{customer_cnic}\'" +
             "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:transaction_password_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL P where P.PARAMETER_NAME =" +
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ENABLE_PSD_require_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL P where P.PARAMETER_NAME =" +
             "\'ENABLE_PSD_BIOMETRIC\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type", "Select Z.ENABLE_PSD from dc_customer_info Z where Z.CNIC =\'{customer_cnic}\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:IVR_require_query", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:IVR_check_query", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PARAM_CHANNEL_ID_query", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ENABLE_PSD_require_query", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ENABLE_PSD_check_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ENABLE_PSD_check_query", "Select Z.ENABLE_PSD from dc_customer_info Z where Z.CNIC =\'{customer_cnic}\'")]
         public virtual void _2AsAUserIWantToSignupUsingCreditCardMobile_WhenIAmVerifyingDebitSignUpProcessMojizabidi98()
         {
 #line 77
 this._2AsAUserIWantToSignupUsingCreditCardMobile("When I am verifying Debit Sign up process mojizabidi98", "3520229025957", "4902870005771602", "usman.safder@hbl.com", "MOJIZABIDI99", "Select P.PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL P where P.PARAMETER_NAME" +
                     " = \'USER_NAME_POLICY_DESCRIPTION\'", "12345678", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL P where P.PARAMETER_NAME =" +
                     "\'LOGIN_AND_T_PWRD_DESC_BEFORE_LOGIN\'", "pakistan1", "pakistan2", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
-                    "r new password to login.", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "select P.created_on from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "select P.updated_on from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "select P.last_login from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "$2a$31$33GicMJLAlIuV0UQKrwtNu/SYwpsYsVkGR4DDNJEN9iSUwWoZtETu", "select TRANSACTION_PASSWORD from dc_customer_info P where P.CNIC =\'{customer_cnic" +
+                    "r new password to login.", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "select P.created_on from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "select P.updated_on from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+                    "nic}\'", "select P.LAST_TRANS_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{cust" +
+                    "omer_cnic}\'", "0", "SELECT P.IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{cus" +
+                    "tomer_cnic}\'", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "select P.last_login from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "$2a$31$33GicMJLAlIuV0UQKrwtNu/SYwpsYsVkGR4DDNJEN9iSUwWoZtETu", "select TRANSACTION_PASSWORD from dc_customer_info P where P.CNIC =\'{customer_cnic" +
                     "}\'", "C", "select P.CUSTOMER_TYPE from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL P where P.PARAMETER_NAME=\'" +
                     "IVR_REQUIRED\'", "select P.IS_IVR_ENABLED from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "Select P.PARAM_CHANNEL_ID from dc_customer_info P where P.CNIC =\'{customer_cnic}\'" +
                     "", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL P where P.PARAMETER_NAME =" +
-                    "\'ENABLE_PSD_BIOMETRIC\'", "Select Z.ENABLE_PSD from dc_customer_info Z where Z.CNIC =\'{customer_cnic}\'", "", "", "", "", "", "", new string[] {
+                    "\'ENABLE_PSD_BIOMETRIC\'", "Select Z.ENABLE_PSD from dc_customer_info Z where Z.CNIC =\'{customer_cnic}\'", new string[] {
                         "source:Data/CreditRegistration.xlsx"});
 #line hidden
         }
