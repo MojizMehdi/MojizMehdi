@@ -45,14 +45,40 @@ namespace HBLAutomationWeb.Pages
             {
                 IWebElement elementbutton = waitDriver.Until(ExpectedConditions.ElementExists(By.XPath(locator)));
                 IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
-                js.ExecuteScript("arguments[0].scrollIntoView();", elementbutton);
-                // var elmnt = document.getElementById("content");
-                //  elmnt.scrollIntoView();
-                IWebElement button = waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
+                try
                 {
-                    //button.SendKeys(OpenQA.Selenium.Keys.Enter);
-                    button.Click();
+                    try
+                    {
+                        js.ExecuteScript("arguments[0].scrollIntoView(true);", elementbutton);
+                        // var elmnt = document.getElementById("content");
+                        //  elmnt.scrollIntoView();
+                        IWebElement button = waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
+                        {
+                            //button.SendKeys(OpenQA.Selenium.Keys.Enter);
+                            button.Click();
+                        }
+                    }
+                    catch
+                    {
+                        js.ExecuteScript("arguments[0].scrollIntoView(false);", elementbutton);
+                        // var elmnt = document.getElementById("content");
+                        //  elmnt.scrollIntoView();
+                        IWebElement button = waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
+                        {
+                            //button.SendKeys(OpenQA.Selenium.Keys.Enter);
+                            button.Click();
+                        }
+                    }
                 }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+
+                //catch (Exception ex)
+                //{
+                //    throw new Exception(ex.Message);
+                //}
                 // js.executeScript("arguments[0].scrollIntoView();", locator);
 
             }
@@ -678,6 +704,14 @@ namespace HBLAutomationWeb.Pages
             //        slider.SendKeys("{RIGHT}");
             //    }
             //}
+        }
+
+        // Method for getting attribute value from xpath by giving property name
+        public string ReturnAttributeValue(string property, string locator)
+        {
+
+            IWebElement Control = waitDriver.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
+            return Control.GetAttribute(property);
         }
     }
 }
