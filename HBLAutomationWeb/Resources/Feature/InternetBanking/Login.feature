@@ -6,7 +6,7 @@
 @Login
 Scenario Outline: 1 As a user i want to Verify login for HBL Web
 	Given the test case title is "<Case>"
-	#And I set value in context from data "<Login_UserId_Value>" as "username"
+	And I set value in context from data "<Login_UserId_Value>" as "username"
 	And the user is arrive to Internet Banking home page 
 	And I have given "<Login_UserId_Value>" on "Login_UserId"
 	And I have given "<Login_Password_Value>" on "Login_Password"
