@@ -29,7 +29,7 @@ Scenario Outline: As a user I want to verify Account Linking & De-Linking from M
 
 
 @MyAccount
-Scenario Outline: As a user I want to verify Limit Management from My Account
+Scenario Outline: As a user I want to veAs a user I want to verify Limit Management from My Accountrify Limit Management from My Account
 	Given the test case title is "<Case>" 
 	And the user is arrive to Internet Banking home page
 	When I am clicking on "MyAccount_Icon"

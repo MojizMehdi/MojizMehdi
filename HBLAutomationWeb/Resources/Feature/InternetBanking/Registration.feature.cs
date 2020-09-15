@@ -242,7 +242,7 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:CNIC_D", "3640211897773")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Debit_card_no", "4028052000002718")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pin", "1234")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_id", "mojizabidi98")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_id", "MOJIZABIDI98")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:scroll_text", "13.6 ")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL P where P.PARAMETER_NAME =" +
             "\'LOGIN_AND_T_PWRD_DESC_BEFORE_LOGIN\'")]
@@ -276,7 +276,7 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void AsAUserIWantToSignupUsingDebitCardWeb_WhenIAmVerifyingDebitSignUpProcessMojizabidi98()
         {
 #line 88
-this.AsAUserIWantToSignupUsingDebitCardWeb("When I am verifying Debit Sign up process mojizabidi98", "3640211897773", "4028052000002718", "1234", "mojizabidi98", "13.6 ", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL P where P.PARAMETER_NAME =" +
+this.AsAUserIWantToSignupUsingDebitCardWeb("When I am verifying Debit Sign up process mojizabidi98", "3640211897773", "4028052000002718", "1234", "MOJIZABIDI98", "13.6 ", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL P where P.PARAMETER_NAME =" +
                     "\'LOGIN_AND_T_PWRD_DESC_BEFORE_LOGIN\'", "pakistan1", "pakistan2", "02047901469503,01477900092601,01477900202701", "select ACCOUNT_NO  from dc_customer_account k where K.CUSTOMER_INFO_ID= ( Select " +
                     "customer_info_id from dc_customer_info i where I.CNIC=\'{customer_cnic}\') AND K.I" +
                     "S_ACTIVE=\'1\'", "select ACCOUNT_NO  from dc_customer_account k where K.CUSTOMER_INFO_ID= ( Select " +

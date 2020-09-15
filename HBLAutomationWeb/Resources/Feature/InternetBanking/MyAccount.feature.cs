@@ -159,7 +159,7 @@ this.AsAUserIWantToVerifyAccountLinkingDe_LinkingFromMyAccount("As a user I want
 #line hidden
         }
         
-        public virtual void AsAUserIWantToVerifyLimitManagementFromMyAccount(string @case, string limit_Type, string new_Limit, string transaction_Category, string tran_Type_Query, string tran_Date_Query, string old_Limit_Tran_Query, string new_Limit_Tran_Query, string limit_Name_Tran_Query, string[] exampleTags)
+        public virtual void AsAUserIWantToVeAsAUserIWantToVerifyLimitManagementFromMyAccountrifyLimitManagementFromMyAccount(string @case, string limit_Type, string new_Limit, string transaction_Category, string tran_Type_Query, string tran_Date_Query, string old_Limit_Tran_Query, string new_Limit_Tran_Query, string limit_Name_Tran_Query, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "MyAccount"};
@@ -167,7 +167,8 @@ this.AsAUserIWantToVerifyAccountLinkingDe_LinkingFromMyAccount("As a user I want
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user I want to verify Limit Management from My Account", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user I want to veAs a user I want to verify Limit Management from My Account" +
+                    "rify Limit Management from My Account", @__tags);
 #line 32
 this.ScenarioSetup(scenarioInfo);
 #line 33
@@ -190,14 +191,16 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Limit Management from My Account: Variant 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to veAs a user I want to verify Limit Management from My Account" +
+            "rify Limit Management from My Account: As A user I want to verify Limit Reductio" +
+            "n")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As A user I want to verify Limit Reduction")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As A user I want to verify Limit Reduction")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Utility Bills and Other Payments")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "23000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "QR Payments")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "90000")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Transaction_Category", "Non Financial")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
             "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
@@ -206,64 +209,10 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:old_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_name_tran_query", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
-        public virtual void AsAUserIWantToVerifyLimitManagementFromMyAccount_Variant0()
+        public virtual void AsAUserIWantToVeAsAUserIWantToVerifyLimitManagementFromMyAccountrifyLimitManagementFromMyAccount_AsAUserIWantToVerifyLimitReduction()
         {
 #line 32
-this.AsAUserIWantToVerifyLimitManagementFromMyAccount("As A user I want to verify Limit Reduction", "Utility Bills and Other Payments", "23000", "Non Financial", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
-                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
-                    "TION_ID = \'", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
-                        "source:Data/LimitManagement.xlsx"});
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Limit Management from My Account: Variant 1")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 1")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As A user I want to verify Limit Reduction")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Funds Transfer to HBL Account")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "1000")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Transaction_Category", "Non Financial")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
-            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
-            "TION_ID = \'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:old_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_name_tran_query", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
-        public virtual void AsAUserIWantToVerifyLimitManagementFromMyAccount_Variant1()
-        {
-#line 32
-this.AsAUserIWantToVerifyLimitManagementFromMyAccount("As A user I want to verify Limit Reduction", "Funds Transfer to HBL Account", "1000", "Non Financial", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
-                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
-                    "TION_ID = \'", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
-                        "source:Data/LimitManagement.xlsx"});
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Limit Management from My Account: Variant 2")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 2")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As A user I want to verify Limit Reduction")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Funds Transfer to Other Banks Account")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "1")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Transaction_Category", "Non Financial")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
-            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
-            "TION_ID = \'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:old_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_name_tran_query", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
-        public virtual void AsAUserIWantToVerifyLimitManagementFromMyAccount_Variant2()
-        {
-#line 32
-this.AsAUserIWantToVerifyLimitManagementFromMyAccount("As A user I want to verify Limit Reduction", "Funds Transfer to Other Banks Account", "1", "Non Financial", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+this.AsAUserIWantToVeAsAUserIWantToVerifyLimitManagementFromMyAccountrifyLimitManagementFromMyAccount("As A user I want to verify Limit Reduction", "QR Payments", "90000", "Non Financial", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
                         "source:Data/LimitManagement.xlsx"});

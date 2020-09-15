@@ -2847,6 +2847,7 @@ namespace HBLAutomationWeb.Core
 
                 Element Keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_Availed");
                 temp_keyword = Keyword.Locator.Replace("{x}", limit_type);
+                selhelper.ScrollToElement(temp_keyword);
                 string daily_consume_limit_ui = selhelper.ReturnKeywordValue(temp_keyword);
                 daily_consume_limit_ui = daily_consume_limit_ui.Remove(daily_consume_limit_ui.Length - 3);
                 daily_consume_limit_ui = daily_consume_limit_ui.Replace(",", "");
@@ -2858,6 +2859,7 @@ namespace HBLAutomationWeb.Core
                 temp_keyword = null;
                 Keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_Remaining");
                 temp_keyword = Keyword.Locator.Replace("{x}", limit_type);
+                selhelper.ScrollToElement(temp_keyword);
                 daily_rem_limit = selhelper.ReturnKeywordValue(temp_keyword);
                 daily_rem_limit = daily_rem_limit.Remove(daily_rem_limit.Length - 3);
                 daily_rem_limit = daily_rem_limit.Replace(",", "");
@@ -2982,6 +2984,7 @@ namespace HBLAutomationWeb.Core
                 temp_keyword = null;
                 Keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_Remaining");
                 temp_keyword = Keyword.Locator.Replace("{x}", limit_type);
+                selhelper.ScrollToElement(temp_keyword);
                 string daily_rem_after_edit = selhelper.ReturnKeywordValue(temp_keyword);
                 daily_rem_after_edit = daily_rem_after_edit.Remove(daily_rem_after_edit.Length - 3);
                 daily_rem_after_edit = daily_rem_after_edit.Replace(",", "");
@@ -3600,12 +3603,14 @@ namespace HBLAutomationWeb.Core
         [Then(@"I am verifying schedule payments from My Account")]
         public void WhenIAmVerifyingSchedulePaymentsFromMyAccount()
         {
-            string fund_transfer_id = ""; string ui_nick = "" ; Double ui_amount = 0.00;
+            string fund_transfer_id = ""; string ui_nick = "" ; string ui_amount = "";
             string schedule_id = ""; string ui_purpose = ""; string ui_acc_detail = "";
-            Double schedule_amount = 0.00; string temp_loc = ""; string acc_detail = "";
+            string schedule_amount = ""; string temp_loc = ""; string acc_detail = "";
             string nick = ""; string branch_name = ""; string acc_title = "";
             string acc_no = ""; string purpose_db = ""; string frequency_type = "";
             string from_acc_db = ""; string first_date_db = ""; string last_date_db = "";
+            string schedule_img = ""; string failed_img = ""; string cancelled_img = "";
+            string successful_img = "";
 
             SeleniumHelper selhelper = new SeleniumHelper();
             Element Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_SendMoneyCount");
@@ -3636,18 +3641,23 @@ namespace HBLAutomationWeb.Core
                 SourceDataTable = dLink.GetDataTable("SELECT TM.FUND_TRANSFER_BENEFICIARY_ID, TM.SCHEDULED_TRAN_MASTER_ID, TM.SCHEDULED_AMOUNT, PK.PARAMETER_NAME, LM.PARAMETER_NAME, SOURCE_ACCOUNT_TITLE ,TM.SOURCE_ACCOUNT, SOURCE_ACCOUNT_BRANCH_NAME , FIRST_EXECUTION_DATE , LAST_EXECUTION_DATE FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_APPLICATION_PARAM_DETAIL PK on PK.APPLICATION_PARAMETER_ID = TM.PARAM_PURPOSE_OF_PAYMENT_ID INNER JOIN DC_APPLICATION_PARAM_DETAIL LM ON LM.APPLICATION_PARAMETER_ID = TM.PARAM_FREQUENCY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '" + context.GetUsername() + "') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0 and TM.BILL_BENEFICIARY_ID = 0", "DIGITAL_CHANNEL_SEC");
                 fund_transfer_id = SourceDataTable.Rows[i - 1][0].ToString();
                 schedule_id = SourceDataTable.Rows[i - 1][1].ToString();
-                schedule_amount = Convert.ToDouble(SourceDataTable.Rows[i - 1][2].ToString());
+                schedule_amount = SourceDataTable.Rows[i - 1][2].ToString();
                 purpose_db = SourceDataTable.Rows[i - 1][3].ToString();
                 frequency_type = SourceDataTable.Rows[i - 1][4].ToString();
                 from_acc_db = SourceDataTable.Rows[i - 1][5].ToString() + " | " + SourceDataTable.Rows[i - 1][6].ToString() + " | " + SourceDataTable.Rows[i - 1][7].ToString();
                 first_date_db = SourceDataTable.Rows[i - 1][8].ToString();
                 last_date_db = SourceDataTable.Rows[i - 1][9].ToString();
 
+                if (!(schedule_amount.Contains(".")))
+                {
+                    schedule_amount = schedule_amount + ".00";
+                }
+
                 DateTime temp_date = Convert.ToDateTime(first_date_db);
-                first_date_db = temp_date.ToString("dd/MM/yyyy");
+                first_date_db = temp_date.ToString("dd-MM-yyyy");
 
                 temp_date = Convert.ToDateTime(last_date_db);
-                last_date_db = temp_date.ToString("dd/MM/yyyy");
+                last_date_db = temp_date.ToString("dd-MM-yyyy");
 
                 arr_sch_sendmoney_db[i - 1, 1] = Convert.ToString(schedule_amount);
                 arr_sch_sendmoney_db[i - 1, 3] = purpose_db;
@@ -3673,7 +3683,7 @@ namespace HBLAutomationWeb.Core
 
                 Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_RowAmount");
                 temp_loc = Keyword.Locator.Replace("{i}", Convert.ToString(i));
-                ui_amount = Convert.ToDouble((selhelper.ReturnKeywordValue(temp_loc)).Trim());                
+                ui_amount = (selhelper.ReturnKeywordValue(temp_loc)).Trim();                
 
                 Keyword = null;
                 temp_loc = null;
@@ -3715,6 +3725,8 @@ namespace HBLAutomationWeb.Core
                 Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_TOVal");
                 string to_value_ui = selhelper.ReturnTextBoxValue(Keyword.Locator);
                 Keyword = null;
+
+
 
                 Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_FreqVal");
                 string frequency_value_ui = selhelper.ReturnTextBoxValue(Keyword.Locator);
@@ -3766,16 +3778,40 @@ namespace HBLAutomationWeb.Core
                     throw new Exception(string.Format("Last Executaion Date in Database :{0} is not equal with Last Executaion Date on website :{1}", last_date_db, last_date_ui));
                 }
 
-                Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_LastDateVal");
+                Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_SummaryClick");
+                selhelper.links(Keyword.Locator);
+                Keyword = null;
+
+                for (int j = 1; j <= 4; j++)
+                {
+                    Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_Summ_TypeImg");
+                    string temp_keyword = Keyword.Locator.Replace("{i}", Convert.ToString(j));
+                    if (j == 1)
+                    {
+                        schedule_img = selhelper.ReturnAttributeValue("src" ,temp_keyword);
+                    }
+                    else if (j == 2)
+                    {
+                        failed_img = selhelper.ReturnAttributeValue("src", temp_keyword);
+                    }
+                    else if (j == 3)
+                    {
+                        cancelled_img = selhelper.ReturnAttributeValue("src", temp_keyword);
+                    }
+                    else
+                    {
+                        successful_img = selhelper.ReturnAttributeValue("src", temp_keyword);
+                    }
+                    Keyword = null;
+                    temp_keyword = null;
+                }
+
+                Keyword = ContextPage.GetInstance().GetElement("");
                 selhelper.Button(Keyword.Locator);
                 Keyword = null;
 
 
-
-                schedule_amount = 0.00;
-                ui_amount = 0.00;
-
-                ui_nick = ui_purpose = ui_acc_detail = temp_loc = acc_detail = nick = branch_name = 
+                schedule_amount = ui_amount = ui_nick = ui_purpose = ui_acc_detail = temp_loc = acc_detail = nick = branch_name = 
                 acc_title = acc_no = purpose_db  = String.Empty;
             }
             for (int i = 0; i < arr_sch_sendmoney_db.GetLength(0); i++)
