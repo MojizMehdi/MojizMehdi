@@ -10,6 +10,7 @@ Scenario Outline: When user try to send money mobile HBL or Konnect Account usin
 	And the user is arrive to Mobile Banking home page 
 	And I am clicking on "Dashboard"
 	When I save Account Balances
+	And I set value in context from data "0" as "term_deposit_flag" 
 	And I set value in context from database "<No_Of_Acconts_query>" as "No_Of_Accounts" on Schema "<db_val>" 
 	And I set value in context from database "<Bene_Count_Query>" as "Beneficiary_Count_Inter_Branch" on Schema "<db_val>" 
 	And I am clicking on "Dashboard_More"
@@ -40,12 +41,12 @@ Scenario Outline: When user try to send money mobile HBL or Konnect Account usin
 	And I wait 2000
 	And I am performing on "SendMoney_NextBtn"
 	And I wait 3000
-	And I am clicking on "SendMoney_Rating"
-	#And I am clicking on "SendMoney_RatingOkBtn"
-	#And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
+	And I am clicking on "BillPayment_Rating"
+	#And I am clicking on "BillPayment_RatingOkBtn"
+	#And I am clicking on "BillPayment_Rating_Feedback_OkBtn"
 	And I save Transaction Info
 	Then verify through "<Success_Message>" on "SendMoney_TranSuccessMessage"
-	And verify through database on "<tran_type_query>" on Schema "<db_val>" on "SendMoney_TranType"
+	#And verify through database on "<tran_type_query>" on Schema "<db_val>" on "SendMoney_TranType"
 	And verify through database on "<tran_amount_query>" on Schema "<db_val>" on "SendMoney_TranAmount"
 	And verify through database on "<from_account_query>" on Schema "<db_val>" on "SendMoney_TranFromAcc"
 	And verify through database on "<to_account_query>" on Schema "<db_val>" on "SendMoney_TranToAcc"
@@ -80,6 +81,7 @@ Scenario Outline: When user try to send money mobile Other Bank Account using mo
 	And the user is arrive to Mobile Banking home page 
 	And I am clicking on "Dashboard"
 	When I save Account Balances
+	And I set value in context from data "0" as "term_deposit_flag" 
 	#And I set value in context from database "<No_Of_Acconts_query>" as "No_Of_Accounts" on Schema "<db_val>" 
 	And I set value in context from database "<Bene_Count_Query>" as "Beneficiary_Count_Inter_Bank" on Schema "<db_val>" 
 	And I am clicking on "Dashboard_More"
@@ -110,12 +112,12 @@ Scenario Outline: When user try to send money mobile Other Bank Account using mo
 	And I wait 2000
 	And I am performing on "SendMoney_NextBtn"
 	And I wait 3000
-	And I am clicking on "SendMoney_Rating"
-	#And I am clicking on "SendMoney_RatingOkBtn"
-	#And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
+	And I am clicking on "BillPayment_Rating"
+	#And I am clicking on "BillPayment_RatingOkBtn"
+	#And I am clicking on "BillPayment_Rating_Feedback_OkBtn"
 	And I save Transaction Info
 	Then verify through "<Success_Message>" on "SendMoney_TranSuccessMessage"
-	And verify through database on "<tran_type_query>" on Schema "<db_val>" on "SendMoney_TranType"
+	#And verify through database on "<tran_type_query>" on Schema "<db_val>" on "SendMoney_TranType"
 	And verify through database on "<tran_amount_query>" on Schema "<db_val>" on "SendMoney_TranAmount"
 	And verify through database on "<from_account_query>" on Schema "<db_val>" on "SendMoney_TranFromAcc"
 	And verify through database on "<to_account_query>" on Schema "<db_val>" on "SendMoney_TranToAcc"
@@ -150,6 +152,7 @@ Scenario Outline: When user try to send money mobile Schedule HBL or Konnect Acc
 	And the user is arrive to Mobile Banking home page 
 	And I am clicking on "Dashboard"
 	When I save Account Balances
+	And I set value in context from data "0" as "term_deposit_flag" 
 	And I set value in context from database "<No_Of_Acconts_query>" as "No_Of_Accounts" on Schema "<db_val>" 
 	And I set value in context from database "<Bene_Count_Query>" as "Beneficiary_Count_Inter_Branch" on Schema "<db_val>" 
 	And I am clicking on "Dashboard_More"
@@ -195,12 +198,12 @@ Scenario Outline: When user try to send money mobile Schedule HBL or Konnect Acc
 	And I wait 2000
 	And I am performing on "SendMoney_NextBtn"
 	And I wait 3000
-	And I am clicking on "SendMoney_Rating"
-	#And I am clicking on "SendMoney_RatingOkBtn"
-	#And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
+	And I am clicking on "BillPayment_Rating"
+	#And I am clicking on "BillPayment_RatingOkBtn"
+	#And I am clicking on "BillPayment_Rating_Feedback_OkBtn"
 	And I save Transaction Info
 	Then verify through "<Success_Message>" on "SendMoney_TranSuccessMessage"
-	And verify through database on "<tran_type_query>" on Schema "<db_val>" on "SendMoney_TranType"
+	#And verify through database on "<tran_type_query>" on Schema "<db_val>" on "SendMoney_TranType"
 	And verify through database on "<tran_amount_query>" on Schema "<db_val>" on "SendMoney_TranAmount"
 	And verify through database on "<from_account_query>" on Schema "<db_val>" on "SendMoney_TranFromAcc"
 	And verify through database on "<to_account_query>" on Schema "<db_val>" on "SendMoney_TranToAcc"
@@ -236,6 +239,7 @@ Scenario Outline: When user try to send money mobile Schedule Other Bank Account
 	And the user is arrive to Mobile Banking home page 
 	And I am clicking on "Dashboard"
 	When I save Account Balances
+	And I set value in context from data "0" as "term_deposit_flag" 
 	#And I set value in context from database "<No_Of_Acconts_query>" as "No_Of_Accounts" on Schema "<db_val>" 
 	And I set value in context from database "<Bene_Count_Query>" as "Beneficiary_Count_Inter_Bank" on Schema "<db_val>" 
 	And I am clicking on "Dashboard_More"
@@ -281,12 +285,12 @@ Scenario Outline: When user try to send money mobile Schedule Other Bank Account
 	And I wait 2000
 	And I am performing on "SendMoney_NextBtn"
 	And I wait 3000
-	And I am clicking on "SendMoney_Rating"
-	#And I am clicking on "SendMoney_RatingOkBtn"
-	#And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
+	And I am clicking on "BillPayment_Rating"
+	#And I am clicking on "BillPayment_RatingOkBtn"
+	#And I am clicking on "BillPayment_Rating_Feedback_OkBtn"
 	And I save Transaction Info
 	Then verify through "<Success_Message>" on "SendMoney_TranSuccessMessage"
-	And verify through database on "<tran_type_query>" on Schema "<db_val>" on "SendMoney_TranType"
+	#And verify through database on "<tran_type_query>" on Schema "<db_val>" on "SendMoney_TranType"
 	And verify through database on "<tran_amount_query>" on Schema "<db_val>" on "SendMoney_TranAmount"
 	And verify through database on "<from_account_query>" on Schema "<db_val>" on "SendMoney_TranFromAcc"
 	And verify through database on "<to_account_query>" on Schema "<db_val>" on "SendMoney_TranToAcc"
@@ -321,6 +325,7 @@ Scenario Outline: When user try to send money mobile Schedule HBL Or Konnect usi
 	And the user is arrive to Mobile Banking home page 
 	And I am clicking on "Dashboard"
 	When I save Account Balances
+	And I set value in context from data "0" as "term_deposit_flag" 
 	#And I set value in context from database "<No_Of_Acconts_query>" as "No_Of_Accounts" on Schema "<db_val>" 
 	#And I set value in context from database "<Bene_Count_Query>" as "Beneficiary_Count_Inter_Bank" on Schema "<db_val>" 
 	And I am clicking on "Dashboard_More"
@@ -354,12 +359,12 @@ Scenario Outline: When user try to send money mobile Schedule HBL Or Konnect usi
 	And I wait 2000
 	And I am performing on "SendMoney_NextBtn"
 	And I wait 3000
-	And I am clicking on "SendMoney_Rating"
-	#And I am clicking on "SendMoney_RatingOkBtn"
-	#And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
+	And I am clicking on "BillPayment_Rating"
+	#And I am clicking on "BillPayment_RatingOkBtn"
+	#And I am clicking on "BillPayment_Rating_Feedback_OkBtn"
 	And I save Transaction Info
 	Then verify through "<Success_Message>" on "SendMoney_TranSuccessMessage"
-	And verify through database on "<tran_type_query>" on Schema "<db_val>" on "SendMoney_TranType"
+	#And verify through database on "<tran_type_query>" on Schema "<db_val>" on "SendMoney_TranType"
 	And verify through database on "<tran_amount_query>" on Schema "<db_val>" on "SendMoney_TranAmount"
 	And verify through database on "<from_account_query>" on Schema "<db_val>" on "SendMoney_TranFromAcc"
 	And verify through database on "<to_account_query>" on Schema "<db_val>" on "SendMoney_TranToAcc"
@@ -396,6 +401,7 @@ Scenario Outline: When user try to send money mobile interbranch using already a
 	And the user is arrive to Mobile Banking home page 
 	And I am clicking on "Dashboard"
 	When I save Account Balances
+	And I set value in context from data "0" as "term_deposit_flag" 
 	#And I set value in context from database "<No_Of_Acconts_query>" as "No_Of_Accounts" on Schema "<db_val>" 
 	#And I set value in context from database "<Bene_Count_Query>" as "Beneficiary_Count_Inter_Bank" on Schema "<db_val>" 
 	And I am clicking on "Dashboard_More"
@@ -429,12 +435,12 @@ Scenario Outline: When user try to send money mobile interbranch using already a
 	And I wait 2000
 	And I am performing on "SendMoney_NextBtn"
 	And I wait 3000
-	And I am clicking on "SendMoney_Rating"
-	#And I am clicking on "SendMoney_RatingOkBtn"
-	#And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
+	And I am clicking on "BillPayment_Rating"
+	#And I am clicking on "BillPayment_RatingOkBtn"
+	#And I am clicking on "BillPayment_Rating_Feedback_OkBtn"
 	And I save Transaction Info
 	Then verify through "<Success_Message>" on "SendMoney_TranSuccessMessage"
-	And verify through database on "<tran_type_query>" on Schema "<db_val>" on "SendMoney_TranType"
+	#And verify through database on "<tran_type_query>" on Schema "<db_val>" on "SendMoney_TranType"
 	And verify through database on "<tran_amount_query>" on Schema "<db_val>" on "SendMoney_TranAmount"
 	And verify through database on "<from_account_query>" on Schema "<db_val>" on "SendMoney_TranFromAcc"
 	And verify through database on "<to_account_query>" on Schema "<db_val>" on "SendMoney_TranToAcc"
@@ -471,6 +477,7 @@ Scenario Outline: When user try to send money mobile interbank using already add
 	And the user is arrive to Mobile Banking home page 
 	And I am clicking on "Dashboard"
 	When I save Account Balances
+	And I set value in context from data "0" as "term_deposit_flag" 
 	#And I set value in context from database "<No_Of_Acconts_query>" as "No_Of_Accounts" on Schema "<db_val>" 
 	#And I set value in context from database "<Bene_Count_Query>" as "Beneficiary_Count_Inter_Bank" on Schema "<db_val>" 
 	And I am clicking on "Dashboard_More"
@@ -504,12 +511,12 @@ Scenario Outline: When user try to send money mobile interbank using already add
 	And I wait 2000
 	And I am performing on "SendMoney_NextBtn"
 	And I wait 3000
-	And I am clicking on "SendMoney_Rating"
-	#And I am clicking on "SendMoney_RatingOkBtn"
-	#And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
+	And I am clicking on "BillPayment_Rating"
+	#And I am clicking on "BillPayment_RatingOkBtn"
+	#And I am clicking on "BillPayment_Rating_Feedback_OkBtn"
 	And I save Transaction Info
 	Then verify through "<Success_Message>" on "SendMoney_TranSuccessMessage"
-	And verify through database on "<tran_type_query>" on Schema "<db_val>" on "SendMoney_TranType"
+	#And verify through database on "<tran_type_query>" on Schema "<db_val>" on "SendMoney_TranType"
 	And verify through database on "<tran_amount_query>" on Schema "<db_val>" on "SendMoney_TranAmount"
 	And verify through database on "<from_account_query>" on Schema "<db_val>" on "SendMoney_TranFromAcc"
 	And verify through database on "<to_account_query>" on Schema "<db_val>" on "SendMoney_TranToAcc"
@@ -546,6 +553,7 @@ Scenario Outline: When user try to send money mobile schedule interbranch using 
 	And the user is arrive to Mobile Banking home page 
 	And I am clicking on "Dashboard"
 	When I save Account Balances
+	And I set value in context from data "0" as "term_deposit_flag" 
 	#And I set value in context from database "<No_Of_Acconts_query>" as "No_Of_Accounts" on Schema "<db_val>" 
 	#And I set value in context from database "<Bene_Count_Query>" as "Beneficiary_Count_Inter_Bank" on Schema "<db_val>" 
 	And I am clicking on "Dashboard_More"
@@ -574,11 +582,11 @@ Scenario Outline: When user try to send money mobile schedule interbranch using 
 	And I wait 2000
 	And I am performing on "SendMoney_NextBtn"
 	And I wait 3000
-	And I am clicking on "SendMoney_Rating"
-	#And I am clicking on "SendMoney_RatingOkBtn"
-	#And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
+	And I am clicking on "BillPayment_Rating"
+	#And I am clicking on "BillPayment_RatingOkBtn"
+	#And I am clicking on "BillPayment_Rating_Feedback_OkBtn"
 	Then verify through "<Success_Message>" on "SendMoney_TranSuccessMessage"
-	And verify through database on "<tran_type_query>" on Schema "<db_val>" on "SendMoney_TranType"
+	#And verify through database on "<tran_type_query>" on Schema "<db_val>" on "SendMoney_TranType"
 	And verify through database on "<from_account_query>" on Schema "<db_val>" on "SendMoney_TranSourceAcc"
 	And verify through database on "<frequency_query>" on Schema "<db_val>" on "SendMoney_TranFrequency"
 	And verify through database on "<purpose_query>" on Schema "<db_val>" on "SendMoney_TranPurpose"
@@ -596,6 +604,7 @@ Scenario Outline: When user try to send money mobile schedule interbank using al
 	And the user is arrive to Mobile Banking home page 
 	And I am clicking on "Dashboard"
 	When I save Account Balances
+	And I set value in context from data "0" as "term_deposit_flag" 
 	#And I set value in context from database "<No_Of_Acconts_query>" as "No_Of_Accounts" on Schema "<db_val>" 
 	#And I set value in context from database "<Bene_Count_Query>" as "Beneficiary_Count_Inter_Bank" on Schema "<db_val>" 
 	And I am clicking on "Dashboard_More"
@@ -624,11 +633,11 @@ Scenario Outline: When user try to send money mobile schedule interbank using al
 	And I wait 2000
 	And I am performing on "SendMoney_NextBtn"
 	And I wait 3000
-	And I am clicking on "SendMoney_Rating"
-	#And I am clicking on "SendMoney_RatingOkBtn"
-	#And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
+	And I am clicking on "BillPayment_Rating"
+	#And I am clicking on "BillPayment_RatingOkBtn"
+	#And I am clicking on "BillPayment_Rating_Feedback_OkBtn"
 	Then verify through "<Success_Message>" on "SendMoney_TranSuccessMessage"
-	And verify through database on "<tran_type_query>" on Schema "<db_val>" on "SendMoney_TranType"
+	#And verify through database on "<tran_type_query>" on Schema "<db_val>" on "SendMoney_TranType"
 	And verify through database on "<from_account_query>" on Schema "<db_val>" on "SendMoney_TranSourceAcc"
 	And verify through database on "<frequency_query>" on Schema "<db_val>" on "SendMoney_TranFrequency"
 	And verify through database on "<purpose_query>" on Schema "<db_val>" on "SendMoney_TranPurpose"

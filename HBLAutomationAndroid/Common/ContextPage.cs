@@ -35,6 +35,7 @@ namespace HBLAutomationAndroid.Common
         string Consumer_No;
         string Acc_Statement_Days;
         string Bill_Status;
+        string Billing_Month;
         string Company_Code;
         string frequency;
         bool from_to_date_flag = false;
@@ -61,11 +62,12 @@ namespace HBLAutomationAndroid.Common
         int tran_amount;
         List<string> iteration_dates_schedule;
         string TermDepositYears;
-        int term_deposit_check = 0;
+        int term_deposit_check;
         int mutual_fund_check = 0;
         decimal term_deposit_balance = 0;
         decimal mutual_fund_balance = 0;
         int no_of_accounts;
+        string Is_Paid_Marking_Req;
         int bene_count_inter_branch;
         int bene_count_inter_bank;
         string scroll_text;
@@ -87,7 +89,17 @@ namespace HBLAutomationAndroid.Common
         List<string> scroll_items_list;
         string GUID;
         string HostReferenceNo;
+        string BillPaymentCategory;
+        string Is_Partial_Payment_Allowed;
 
+        public void Set_Is_Partial_Payment_Allowed(string Is_Partial_Payment_Allowed)
+        {
+            this.Is_Partial_Payment_Allowed = Is_Partial_Payment_Allowed;
+        }
+        public string Get_Is_Partial_Payment_Allowed()
+        {
+            return Is_Partial_Payment_Allowed;
+        }
         public void Set_HostReferenceNo(string HostReferenceNo)
         {
             this.HostReferenceNo = HostReferenceNo;
@@ -283,6 +295,14 @@ namespace HBLAutomationAndroid.Common
         {
             this.no_of_accounts = no_of_accounts;
         }
+        public string Get_Is_Paid_Marking_Req()
+        {
+            return Is_Paid_Marking_Req;
+        }
+        public void Set_Is_Paid_Marking_Req(string Is_Paid_Marking_Req)
+        {
+            this.Is_Paid_Marking_Req = Is_Paid_Marking_Req;
+        }
         public int Get_term_deposit_check()
         {
             return term_deposit_check;
@@ -358,7 +378,7 @@ namespace HBLAutomationAndroid.Common
         }
         public void SetTranTypeBene(string TranTypeBene)
         {
-            if(TranTypeBene == "0")
+            if (TranTypeBene == "0")
             {
                 this.TranTypeBene = false;
             }
@@ -439,7 +459,14 @@ namespace HBLAutomationAndroid.Common
             return this.acc_info;
 
         }
-
+        public void Set_BillPaymentCategory(string BillPaymentCategory)
+        {
+            this.BillPaymentCategory = BillPaymentCategory;
+        }
+        public string Get_BillPaymentCategory()
+        {
+            return BillPaymentCategory;
+        }
 
         public void SetTranType(string Tran_Type)
         {
@@ -530,6 +557,14 @@ namespace HBLAutomationAndroid.Common
         {
             this.Bill_Status = Bill_Status;
         }
+        public string GetBilling_Month()
+        {
+            return Billing_Month;
+        }
+        public void SetBilling_Month(string Billing_Month)
+        {
+            this.Billing_Month = Billing_Month;
+        }
         public string GetBill_Status()
         {
             return Bill_Status;
@@ -574,7 +609,7 @@ namespace HBLAutomationAndroid.Common
 
 
 
-       
+
 
         ExcelRecord excelRecord { get; set; }
 
@@ -589,7 +624,7 @@ namespace HBLAutomationAndroid.Common
             excelRecord = record;
         }
 
-        
+
         public string GetDate()
         {
             Date = DateTime.Today.AddDays(-1).ToString();
@@ -756,7 +791,7 @@ namespace HBLAutomationAndroid.Common
         //    return productCode;
         //}
 
-       // public static IWebDriver Driver
+        // public static IWebDriver Driver
 
         public static AppiumDriver<AndroidElement> Driver
         {

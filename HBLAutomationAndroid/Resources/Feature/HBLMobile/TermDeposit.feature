@@ -17,6 +17,7 @@ Scenario Outline: When user try to login mobile banking term deposit
 	And I have given "<OTP_Value>" on "Login_OTP_field"
 	And I am clicking on "Login_OTP_Verify_Button"
 	And I wait 5000 
+	Then verify through "Welcome, " on "Login_Success_Text"
 	@source:Data/HBLMobileTermDepositLogin.xlsx
 	Examples: 
 	|Case|Status_query|Login_UserId_Value|Login_Password_Value|OTP_Value|
@@ -31,8 +32,8 @@ Scenario Outline: When user try to term deposit
 	And the user is arrive to Mobile Banking home page
 	And I am clicking on "Dashboard"
 	And I wait 4000
-	And I set value in context from data "1" as "term_deposit_flag" 
 	When I save Account Balances
+	And I set value in context from data "1" as "term_deposit_flag" 
 	And I am clicking on "Dashboard_More"
 	And I have given "<Category_Value>" on "SendMoney_SearchBeneField"
 	And I am clicking on "BillPayment_CategoryLink"
@@ -60,9 +61,9 @@ Scenario Outline: When user try to term deposit
 	And I save Transaction Info
 	And I am clicking on "TermDeposit_CloseBtn"
 	And I wait 3000
-	And I am clicking on "SendMoney_Rating"
-	#And I am clicking on "SendMoney_RatingOkBtn"
-	#And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
+	And I am clicking on "BillPayment_Rating"
+	#And I am clicking on "BillPayment_RatingOkBtn"
+	#And I am clicking on "BillPayment_Rating_Feedback_OkBtn"
 	And I am clicking on "Dashboard"
 	And I wait 2000
 	And I verify Account Balance
