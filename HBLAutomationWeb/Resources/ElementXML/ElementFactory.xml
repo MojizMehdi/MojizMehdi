@@ -28,7 +28,7 @@
     <Element keyword="Forget_PasswordSubmitBtn" locator="//div[@ng-form='FormStep']//following-sibling::div//button" />
     <Element keyword="Forget_PasswordSubmitBtnCC" locator="//div[@ng-form='FormStep2CC']//following-sibling::div//button" />
     <Element keyword="Forget_PasswordResponseMsg" locator="//div[@class='congrats-div']//p" />
-    <Element keyword="Forget_PasswordTranID" locator="//h2[@class='ng-binding' and text()='Transaction ID']//following-sibling::p" />
+    <Element keyword="Forget_PasswordTranID" locator="//h2[@class='ng-binding' and text()='Receipt ID']//following-sibling::p" />
     <Element keyword="Forget_PasswordTranType" locator="//h2[@class='ng-binding' and text()='Transaction Type']//following-sibling::p" />
     <Element keyword="Forget_PasswordTranDate" locator="//h2[@class='ng-binding' and contains(text(), 'Date')]//following-sibling::p" />
     <Element keyword="Forget_PasswordTranDebit" locator="//h2[@class='ng-binding' and contains(text(), 'Debit Card')]//following-sibling::p" />
@@ -135,7 +135,7 @@
     <Element keyword="Pay_Transaction_PayBillAmount_NextBtn" locator="//div[@class='ng-scope']//button[@class='btn submit-btn' and contains(text(),'Next')]"/>
     <Element keyword="Pay_Transaction_PayBillAmount_AgreeBtn" locator="//button[@class='btn ng-scope' and contains(text(),'Agree')]"/>
     <Element keyword="Pay_Transaction_PayBillAmount_CloseBtn" locator="//div[@class='ng-scope']//a[contains(text(),'Close')]"/>
-    <Element keyword="Pay_Transaction_PayBill_BeneSearchTextbox" locator="//input[@type='search']/following-sibling::input"/>
+    <Element keyword="Pay_Transaction_PayBill_BeneSearchTextbox" locator="//input[@type='search']"/>
     <Element keyword="Pay_Transaction_PayBill_BeneSearchConsumerNo" locator="//p[@class='text-right ng-binding']"/>
     <Element keyword="Pay_Transaction_PayBill_RatingCloseBtn" locator="//div[@class='text-right ng-scope']//button[contains(text(),'Close')]"/>
     <Element keyword="Pay_Transaction_PayBill_RatingOkBtn" locator="//div[@class='text-right ng-scope']//button[contains(text(),'Ok')]"/>
@@ -150,7 +150,7 @@
     <Element keyword="Pay_Acc_No" locator="//div[@ng-repeat='accountList in CustomerAccountInfo.customerAccountDetails.customerGeneralAccounts']{i}//div[@class='acc-num ng-binding']" />
     <Element keyword="Pay_Acc_No_Investment" locator="//div[@class='account-wrap']//h5[text()='Investment']" />
     <Element keyword="Pay_Acc_Balance" locator="//div[@ng-repeat='accountList in CustomerAccountInfo.customerAccountDetails.customerGeneralAccounts']{j}//span[@class='balance ng-binding']" />
-    <Element keyword="Pay_Bene_checkbox" locator ="//input[@type='checkbox']" />
+    <Element keyword="Pay_Bene_checkbox" locator ="//span[@class='custom-control-description']" />
     <Element keyword="Pay_Bene_text" locator ="//input[@name='Nick']" />
     <Element keyword="Pay_Bene_button" locator ="//button[@class='btn btn']" />
     <Element keyword="Pay_Bene_message" locator ="//label[@class='form-check-label col-12  Issuccessclass']" />
@@ -175,13 +175,13 @@
     <Element keyword="Pay_MultiBill_NextBtn_Icon" locator="//li[@data-target='#carousel-example-2' and @data-slide-to='{a}']" />
     <Element keyword="Pay_MultiBill_Success_Msg" locator="//div[@class='ng-scope carousel-item active']//div[@class='indivisual-bill-status success-bill']" />
     <Element keyword="Pay_MultiBill_Tran_Ok_Btn" locator="//div[@class='ng-scope']//a[@class='btn']" />
-    <Element keyword="Pay_MultiBill_Success_TranID" locator=" //div[@class='ng-scope carousel-item active']//label[@class='multi-label-popup ng-binding' and text() = 'Transaction ID']//following-sibling::span" />
+    <Element keyword="Pay_MultiBill_Success_TranID" locator="//div[@class='ng-scope carousel-item active']//label[@class='multi-label-popup ng-binding' and text() = 'Receipt ID']//following-sibling::span" />
     <Element keyword="Pay_MultiBill_TranType" locator="//div[@class='ng-scope carousel-item active']//label[@class='multi-label-popup ng-binding' and text() = 'Transaction Type']//following-sibling::span" />
     <Element keyword="Pay_MultiBill_TranAmount" locator="//div[@class='ng-scope carousel-item active']//label[@class='multi-label-popup ng-binding' and text() = 'Transaction Amount']//following-sibling::span" />
     <Element keyword="Pay_MultiBill_FromAccount" locator="//div[@class='ng-scope carousel-item active']//label[@class='multi-label-popup ng-binding' and text() = 'From']//following-sibling::span" />
     <Element keyword="Pay_MultiBill_CompanyName" locator="//div[@class='ng-scope carousel-item active']//label[@class='multi-label-popup ng-binding' and text() = 'Billing Company Name']//following-sibling::span" />
     <Element keyword="Pay_MultiBill_ConsumerNo" locator="//div[@class='ng-scope carousel-item active']//label[@class='multi-label-popup ng-binding' and text() = 'Consumer Number']//following-sibling::span" />
-    <Element keyword="Pay_MultiBill_NextArrow" locator="//a[@class='carousel-control-next']//span[@class='carousel-control-next-icon']" />
+    <Element keyword="Pay_MultiBill_BackArrow" locator="//a[@class='carousel-control-prev']//span[@class='carousel-control-prev-icon']" />
     <Element keyword="Pay_MultiBill_RatingOKBtn" locator="//div[@class='ng-scope']//button[contains(text(),'Ok')]" />
     <Element keyword="Pay_MultiBill_RatingCloseBtn" locator="//div[@class='ng-scope']//a" />
     <Element keyword="Pay_MultiBill_Services_row" locator="//tr[@ng-repeat='x in GetDataTransactions.historyList'][{k}]" />
@@ -194,8 +194,9 @@
     <Element keyword="Pay_MultiBill_SRV_ConsumerNo" locator="//h2[@class='ng-binding' and text()= 'Consumer Number']//following-sibling::p" />
     <Element keyword="Pay_MultiBill_SRV_CloseBtn" locator=" //a[@class='btn' and text()= 'Close']" />
     <Element keyword="Pay_MultiBill_PayBtn" locator="//button[@class='btn btn submit-btn' and text()='Pay']" />
+    <Element keyword="Pay_ConsumerLabel_Check" locator="//label[@class='ng-binding']" />
 
-
+    
   </Module>
   <Module name ="SendMoney">
     <Element keyword="SendMoney_Link" locator="//*[contains(text(),'Send Money ')]"/>
@@ -214,7 +215,7 @@
     <Element keyword="SendMoney_TranAmount" locator="//h2[@class='ng-binding' and text()='Transaction Amount']//following-sibling::p"/>
     <Element keyword="SendMoney_TranFromAcc" locator="//h2[@class='ng-binding' and text()='From Account']//following-sibling::p"/>
     <Element keyword="SendMoney_TranSourceAcc" locator="//h2[@class='ng-binding' and text()='Source Account Number:']//following-sibling::p" />
-    <Element keyword="SendMoney_TranToAcc" locator="//h2[@class='ng-binding' and text()='To Account']//following-sibling::p"/>
+    <Element keyword="SendMoney_TranToAcc" locator="//h2[@class='ng-binding' and contains(text(),'To Account')]//following-sibling::p"/>
     <Element keyword="SendMoney_TranToBank" locator="//h2[@class='ng-binding' and text()='To Bank']//following-sibling::p"/>
     <Element keyword="SendMoney_TranBeneName" locator="//h2[@class='ng-binding' and text()='Beneficiary Name']//following-sibling::p"/>
     <Element keyword="SendMoney_TranPurpose" locator="//h2[@class='ng-binding' and text()='Purpose']//following-sibling::p"/>
@@ -401,8 +402,9 @@
     <Element keyword="MyAccount_MngSch_CloseBtnVal" locator="//button[@ng-click='CloseButton();']" />
     <Element keyword="MyAccount_MngSch_SummaryClick" locator="//a[@class = 'nav-link' and contains(text(), 'Summary')]" />
     <Element keyword="MyAccount_MngSch_Summ_TypeImg" locator="(//div[@class = 'col-3 col-md-3 col-lg-3 col-xl-3 text-center p-0'])[{i}]//img" />
+    <Element keyword="MyAccount_MngSch_Schedule_Img" locator="(//tr[@class='ng-scope']//img)" />
+    <Element keyword="MyAccount_MngSch_Schedule_Date" locator="(//tr[@class='ng-scope']//td[@class='ng-binding'])" />
 
-    
   </Module>
 
   <Module name="BeneManage">
@@ -495,11 +497,11 @@
     <Element keyword="Investment_MutualFund_ScrollTxt" locator="//li//span[contains(text(),'risk')]" />
     <Element keyword="Investment_MutualFund_AgreeBtn" locator="//button[@ng-click='postObj.IsAccepted=true']" />
     <Element keyword="Investment_MutualFund_TranPass" locator="//input[@name='TransactionPassword']" />
-    <Element keyword="Investment_MutualFund_InvestBtn" locator="//button[@class='btn submit-btn' and text()='Invest']" />
+    <Element keyword="Investment_MutualFund_InvestBtnFinal" locator="//button[@class='btn submit-btn' and text()='Invest']" />
     <Element keyword="Investment_MutualFund_TranSuccessMessage" locator="//div[@id='successPopupGen']//div[@class='modal-content ng-pristine ng-valid ng-scope']//div[@class='display-table']//p" />
     <Element keyword="Investment_MutualFund_TranOld" locator="//h2[text()='Previous Limits']//following-sibling::p" />
     <Element keyword="Investment_MutualFund_TranNew" locator="//h2[text()='New Limits']//following-sibling::p" />
-    <Element keyword="Investment_MutualFund_TranFundName" locator="//h2[text()='Limit Name']//following-sibling::p" />
+    <Element keyword="Investment_MutualFund_TranFundName" locator="(//h2[@class='ng-binding' and text()='Fund Name']//following-sibling::p)[1]" />
     <Element keyword="Investment_MutualFund_TranCloseBtn" locator="//div[@id='transactionActivity']//a" />
     <Element keyword="Investment_MutualFund_PopupBtn" locator="//button[@class='btn' and text()='Next']" />
     <Element keyword="Investment_TermDep_RatingOkBtn" locator="//div[@id='successPopupGen2']//button[contains(text(),'Ok')]" />
@@ -516,6 +518,16 @@
     <Element keyword="Investment_MutualFund_unit_loc" locator="//tr[@class='credit ng-scope'][{i}]//td[@class='amount ng-binding'][3]" />
     <Element keyword="Investment_MutualFund_nav_loc" locator="//tr[@class='credit ng-scope'][{i}]//td[@class='amount ng-binding'][4]" />
     <Element keyword="Investment_MutualFund_nav_date_loc" locator="//tr[@class='credit ng-scope'][{i}]//td[@class='ng-binding'][2]" />
+    <Element keyword="Investment_MutualFund_TranDate" locator="//h2[@class='ng-binding' and contains(text(), 'Date')]//following-sibling::p" />
+    <Element keyword="Investment_MutualFund_TranAmount" locator="//h2[@class='ng-binding' and text()='Transaction Amount']//following-sibling::p" />
+    <Element keyword="Investment_MutualFund_TranFromAcc" locator="//h2[@class='ng-binding' and text()='From Account']//following-sibling::p" />
+    <Element keyword="Investment_MutualFund_TranToAcc" locator="//h2[@class='ng-binding' and text()='To Account']//following-sibling::p" />
+    <Element keyword="Investment_MutualFund_TranFundName" locator="//h2[@class='ng-binding' and text()='Fund Name']//following-sibling::p" />
+    <Element keyword="Investment_MutualFund_TranCloseBtn" locator="//div[@class='invest request-cont']//following-sibling::div[@id='successPopupGen']//a" />
+    <Element keyword="Investment_MutualFund_FolioNumber" locator="//select[@name='folioNo']" />
+    <Element keyword="Investment_MutualFund_FolioNumberList" locator="//select[@name='folioNo']//option[@class='ng-binding ng-scope']" />
+    <Element keyword="Investment_MutualFund_FundList" locator="//div[@class='invest-option-cont']//li[@class='ng-scope']//div[@class='col-6 col-md-6 col-lg-6 col-xl-6 ng-binding']" />
+
 
   </Module>
 </ElementFactory>

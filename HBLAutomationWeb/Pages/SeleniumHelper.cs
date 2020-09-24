@@ -49,7 +49,9 @@ namespace HBLAutomationWeb.Pages
                 {
                     try
                     {
+                        
                         js.ExecuteScript("arguments[0].scrollIntoView(true);", elementbutton);
+                        
                         // var elmnt = document.getElementById("content");
                         //  elmnt.scrollIntoView();
                         IWebElement button = waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
@@ -60,7 +62,9 @@ namespace HBLAutomationWeb.Pages
                     }
                     catch
                     {
+
                         js.ExecuteScript("arguments[0].scrollIntoView(false);", elementbutton);
+                        
                         // var elmnt = document.getElementById("content");
                         //  elmnt.scrollIntoView();
                         IWebElement button = waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
@@ -99,7 +103,6 @@ namespace HBLAutomationWeb.Pages
                 //    button.Click();
                 //}
                 // js.executeScript("arguments[0].scrollIntoView();", locator);
-
             }
         }
 
@@ -618,10 +621,28 @@ namespace HBLAutomationWeb.Pages
             return otp;
         }
 
-        //Only for scrolling down without locator
+        //Only for scrolling down without locator until page finish
         public void ScrollDownOnly(int count)
         {
-            Keyboard.SendKeys("{DOWN}");
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            for (int i = 1; i <= count; i++)
+            {
+                js.ExecuteScript("window.scrollTo(0,document.body.scrollHeight);");
+            }
+            //Keyboard.SendKeys("{DOWN}");
+
+            //IWebElement temp = waitDriver.Until(ExpectedConditions.ElementExists(By.TagName("body")));
+            //IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            //int initialHeight = temp.Size.Height;
+            //int currentHeight = 0;
+
+            //while (initialHeight != currentHeight)
+            //{
+            //    initialHeight = temp.Size.Height;
+            //    js.ExecuteScript("scroll(0," + initialHeight + ");");
+
+            //    currentHeight = temp.Size.Height;
+            //}
         }
 
         // For Alert Operation click
@@ -675,7 +696,7 @@ namespace HBLAutomationWeb.Pages
                     }
                 }
             }
-            else if(after_click_bal < new_limit)
+            else if (after_click_bal < new_limit)
             {
                 int amount = new_limit - after_click_bal;
                 if (amount < orignal_edit_limit)
@@ -685,7 +706,7 @@ namespace HBLAutomationWeb.Pages
                     {
                         slider.SendKeys(OpenQA.Selenium.Keys.ArrowRight);
                     }
-                }      
+                }
             }
             //actions.MoveToElement(slider).MoveByOffset((location.Width / 2) - 2, 0).Click().Perform();
             //slider.Click();
@@ -712,6 +733,44 @@ namespace HBLAutomationWeb.Pages
 
             IWebElement Control = waitDriver.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
             return Control.GetAttribute(property);
+        }
+        //Method For Returning Combobox Values
+        public List<string> return_combobox_values(string locator, string list_locator)
+        {
+            try
+            {
+                List<string> elements = new List<string>();
+                IWebElement Combobox = waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
+                Thread.Sleep(1000);
+                Combobox.Click();
+                Thread.Sleep(2000);
+                var temp = driver.FindElements(By.XPath(list_locator));
+                for (int i = 0; i < temp.Count; i++)
+                {
+                    elements.Add(temp[i].Text.ToString());
+                }
+
+                driver.FindElement(By.XPath(locator)).Click();
+                return elements;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("ex message: " + ex.Message);
+
+            }
+        }
+        //For Returning Elements
+        public List<string> Return_Keyword_Elements_List(string locator)
+        {
+            List<string> lst = new List<string>();
+
+            IWebElement Control = waitDriver.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
+            var list_elements = driver.FindElements(By.XPath(locator));
+            foreach (var item in list_elements)
+            {
+                lst.Add(item.Text.Trim());
+            }
+            return lst;
         }
     }
 }

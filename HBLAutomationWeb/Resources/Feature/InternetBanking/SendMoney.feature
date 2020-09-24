@@ -31,7 +31,7 @@ Scenario Outline: As a user i want to Verify Send Money by adding Beneficiary
 	And verify through database on "<from_account_query>" on Schema "<db_val>" on "SendMoney_TranFromAcc"
 	And verify through database on "<to_account_query>" on Schema "<db_val>" on "SendMoney_TranToAcc"
 	And verify through database on "<to_bank_query>" on Schema "<db_val>" on "SendMoney_TranToBank"
-	#And verify through database on "<bene_name_query>" on Schema "<db_val>" on "SendMoney_TranBeneName"
+	And verify through database on "<bene_name_query>" on Schema "<db_val>" on "SendMoney_TranBeneName"
 	And verify through database on "<purpose_query>" on Schema "<db_val>" on "SendMoney_TranPurpose"
 	And I am performing on "SendMoney_CloseBtn"
 	And I am clicking on "Login_Dashboard"
@@ -49,7 +49,6 @@ Scenario Outline: As a user i want to Verify Send Money by adding Beneficiary
 	@source:Data/SendMoney.xlsx
 	Examples: 
 	|Case|status_query|From_Account_Value|Bank_Value|Account_Number_Value|Amount_Value|PurposeOfPayment_Value|Bene_Nick|Bene_Mobile_No|Bene_Email|OTP_Value|Tran_Pass_Value|Success_Message|tran_type_query|tran_amount_query|from_account_query|to_account_query|to_bank_query|bene_name_query|purpose_query|db_val|
-
 
 @SendMoney
 Scenario Outline: As a user i want to Verify Send Money by adding Beneficiary schedule payment

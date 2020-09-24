@@ -79,7 +79,10 @@ Scenario Outline: When user try to verify Mutual Fund
 	And I am clicking on "Investment_MutualFund_Icon"
 	And I set value in context from database "<cust_profile_id_query>" as "cust_profile_id" on Schema "QAT_AMC"
 	And I verify user Mutual Fund status on schema "<db_val3>"
-	Then I am clicking on "Investment_MutualFund_InvestTab"
+	And I am clicking on "Investment_MutualFund_InvestTab"
+	Then I set list of elements from scroll view on "Investment_MutualFund_FundList"
+	And verify the list using "<Fund_Names_query>" on Schema "QAT_AMC"
+	#And I am clicking on "Investment_MutualFund_Icon"
 	And I am clicking on "Investment_MutualFund_InvestBtn"
 	And verify through "<disclaimer_message>" on "Investment_MutualFund_DisPopup"
 	And I am performing on "Investment_MutualFund_PopupBtn"
@@ -87,23 +90,26 @@ Scenario Outline: When user try to verify Mutual Fund
 	And verify through "<invest_option>" on "Investment_MutualFund_FUndName"
 	And verify through database on "<gl_account_query>" on Schema "<db_val3>" on "Investment_MutualFund_FundAccNo"
 	And I have given "<amount>" on "Investment_MutualFund_Amount"
+	And I check values of combobox using database from "<folio_no_query>" on schema <db_val3> on combobox "Investment_MutualFund_FolioNumber" of list "Investment_MutualFund_FolioNumberList"
+	And I select "<folio_no>" on "Investment_MutualFund_FolioNumber"
 	And verify through database on "<tran_timing_query>" on Schema "<db_val3>" on "Investment_MutualFund_TranTiming"
 	And I am performing on "Investment_MutualFund_NextBtn"
 	And I scroll to element "Investment_MutualFund_ScrollTxt"
 	And I am performing on "Investment_MutualFund_AgreeBtn"
 	And I scroll to element "Investment_MutualFund_TranPass"
 	And I have given "<tran_pass>" on "Investment_MutualFund_TranPass"
-	And I am performing on "Investment_MutualFund_InvestBtn"
+	And I am performing on "Investment_MutualFund_InvestBtnFinal"
 	And I wait 6000
 	And verify through "<success_msg>" on "Investment_MutualFund_TranSuccessMessage"
-	And verify through database on "<tran_type_query>" on Schema "<db_val>" on ""
-	And verify through database on "<tran_date_query>" on Schema "<db_val>" on ""
-	And verify through database on "<tran_amount_query>" on Schema "<db_val>" on ""
-	And verify through database on "<from_acc_query>" on Schema "<db_val>" on ""
-	And verify through database on "<to_acc_query>" on Schema "<db_val>" on ""
-	And verify through database on "<fund_name_query>" on Schema "<db_val>" on ""
-    And I set value in context from database "<disclaimer_query>" as "fund_disclaimer_popup" on Schema "QAT_AMC"
-	And I am performing on ""
+	And I set value in context from database "<GUID_query>" as "GUID" on Schema "<db_val>"
+	And verify through database on "<tran_date_query>" on Schema "<db_val>" on "Investment_MutualFund_TranDate"
+	And verify through database on "<tran_amount_query>" on Schema "<db_val>" on "Investment_MutualFund_TranAmount"
+	And verify through database on "<from_acc_query>" on Schema "<db_val>" on "Investment_MutualFund_TranFromAcc"
+	And verify through database on "<to_acc_query>" on Schema "<db_val>" on "Investment_MutualFund_TranToAcc"
+	And verify through database on "<fund_name_query>" on Schema "<db_val>" on "Investment_MutualFund_TranFundName"
+    And verify the message "<amount>" through database on "<tran_amount_verify_query>" on Schema "<db_val3>"
+	And I am performing on "Investment_MutualFund_TranCloseBtn"
+	And I verify Account Balance
 	And I am clicking on "Services_Link"
 	And I am clicking on "Services_Transaction_Activity"
 	And I am clicking on "Services_Last_Transaction"
@@ -118,5 +124,5 @@ Scenario Outline: When user try to verify Mutual Fund
 
 @source:Data/MutualFund.xlsx
 	Examples: 
-	|Case|cust_profile_id_query|fund_name|from_acc|amount|db_val3|invest_option|disclaimer_message|gl_account_query|tran_timing_query|tran_pass|success_msg|disclaimer_query|tran_type_query|tran_date_query|tran_amount_query|from_acc_query|to_acc_query|fund_name_query|
+	|Case|cust_profile_id_query|fund_name|from_acc|amount|db_val3|invest_option|disclaimer_message|gl_account_query|tran_timing_query|tran_pass|success_msg|disclaimer_query|tran_type_query|tran_date_query|tran_amount_query|from_acc_query|to_acc_query|fund_name_query|GUID_query|tran_amount_verify_query|folio_no_query|folio_no|Fund_Names_query|db_val|
 
