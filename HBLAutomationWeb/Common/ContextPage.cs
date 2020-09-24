@@ -91,8 +91,53 @@ namespace HBLAutomationWeb.Common
         int user_schedule_count;
         public string CutOvertime = null;
         public string Date = null;
+        string HostReferenceNo;
+        List<string> scroll_items_list;
+        string is_si_allowed = "";
+        string is_partial = "";
+        decimal mutual_fund_bal;
 
 
+        public decimal Get_mutual_fund_balance()
+        {
+            return mutual_fund_bal;
+        }
+        public void Set_mutual_fund_balance(decimal mutual_fund_bal)
+        {
+            this.mutual_fund_bal += mutual_fund_bal;
+        }
+        public void Set_Is_Partial_Allow(string is_partial)
+        {
+            this.is_partial = is_partial;
+        }
+        public string Get_Is_Partial_Allow()
+        {
+            return is_partial;
+        }
+        public void Set_IS_SI_Allowed(string is_si_allowed)
+        {
+            this.is_si_allowed = is_si_allowed;
+        }
+        public string Get_IS_SI_Allowed()
+        {
+            return is_si_allowed;
+        }
+        public void Set_scroll_items_list(List<string> scroll_items_list)
+        {
+            this.scroll_items_list = scroll_items_list;
+        }
+        public List<string> Get_scroll_items_list()
+        {
+            return scroll_items_list;
+        }
+        public void Set_HostReferenceNo(string HostReferenceNo)
+        {
+            this.HostReferenceNo = HostReferenceNo;
+        }
+        public string Get_HostReferenceNo()
+        {
+            return HostReferenceNo;
+        }
         public void SetUserScheduleCount(int user_schedule_count)
         {
             this.user_schedule_count = user_schedule_count;
