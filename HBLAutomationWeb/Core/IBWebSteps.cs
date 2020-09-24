@@ -1369,16 +1369,25 @@ namespace HBLAutomationWeb.Core
         {
             context.Setcalendar_todate(context.Gettempdate());
         }
+        [Given(@"Set parameter in context class ""(.*)""")]
         [When(@"Set parameter in context class ""(.*)""")]
+        [Then(@"Set parameter in context class ""(.*)""")]
         public void WhenSetParameterInContextClass(string Keyword)
         {
+            Element keyword = ContextPage.GetInstance().GetElement(Keyword);
+            SeleniumHelper selhelper = new SeleniumHelper();
+            selhelper.checkPageIsReady();
+            string temp = selhelper.ReturnKeywordValue(keyword.Locator);
+
             if (Keyword.Equals("Pay_Bill_Status"))
             {
-                Element keyword = ContextPage.GetInstance().GetElement(Keyword);
-                SeleniumHelper selhelper = new SeleniumHelper();
-                selhelper.checkPageIsReady();
-                string bill_status = selhelper.ReturnKeywordValue(keyword.Locator);
-                context.SetBill_Status(bill_status);
+                context.SetBill_Status(temp);
+            }
+            if (Keyword.Equals("Pay_BillPayment_BillingMonth"))
+            {
+                DateTime temp_var = Convert.ToDateTime(temp);
+                temp = temp_var.ToString("dd/MM/yyyy");
+                context.SetBilling_Month(temp);
             }
         }
 
@@ -3634,6 +3643,11 @@ namespace HBLAutomationWeb.Core
                 {
                     query = query.Replace("{customer_cnic}", context.GetCustomerCNIC());
                 }
+                if (query.Contains("Company_Code"))
+                {
+                    query = query.Replace("{Company_Code}", context.GetCompany_Code());
+                }
+
                 DataAccessComponent.DataAccessLink dLink = new DataAccessComponent.DataAccessLink();
                 DataTable SourceDataTable = dLink.GetDataTable(query, schema);
                 string db_value = SourceDataTable.Rows[0][0].ToString();
@@ -4200,6 +4214,92 @@ namespace HBLAutomationWeb.Core
             {
                 SeleniumHelper.TakeScreenshot();
                 throw new AssertFailedException(exception.Message);
+            }
+        }
+        [When(@"I verify bill payment inquiry for Web")]
+        public void WhenIVerifyBillPaymentInquiryForWeb()
+        {
+            SeleniumHelper selhelper = new SeleniumHelper();
+            string consumer_template_query = "SELECT CH.CONSUMER_NAME_TEMPLATE,CH.COMPANY_CODE FROM BPS_COMPANY_CHANNEL CH WHERE CH.IS_PARTIAL_PAYMENT_ALLOWED = 0 AND CH.CHANNEL_CODE = 'MB' AND CH.COMPANY_CODE = '" + context.GetCompany_Code() + "'";
+            DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
+            DataTable SourceDataTable = dlink.GetDataTable(consumer_template_query, "QAT_BPS");
+            string consumer_template = SourceDataTable.Rows[0][0].ToString();
+            char[] char_spearator = new char[2];
+            char_spearator[0] = '|';
+            char_spearator[1] = ';';
+            string[] consumer_template_arr = consumer_template.Split(char_spearator);
+            Element keyword = ContextPage.GetInstance().GetElement("Pay_BillPayment_InquiryFields");
+            string temp = "";
+            string ui_value = "";
+            string db_value = "";
+            string[] date_fromat_arr;
+            //string date_format;
+            for (int i = 0; i < consumer_template_arr.Length; i++)
+            {
+
+                if (i % 2 == 0)
+                {
+                    temp = keyword.Locator.Replace("{Field_Name}", consumer_template_arr[i]);
+                    ui_value = selhelper.ReturnKeywordValue(temp);
+                }
+                if (i % 2 != 0)
+                {
+                    consumer_template_arr[i] = consumer_template_arr[i].Replace("<FS_01:", string.Empty);
+                    date_fromat_arr = consumer_template_arr[i].Split('>');
+                    consumer_template_arr[i] = date_fromat_arr[0];
+                    if (consumer_template_arr[i - 1] == "Bill Status")
+                    {
+                        consumer_template_arr[i] = "BILL_STATUS_ID";
+                    }
+                    string query = "SELECT LP." + consumer_template_arr[i] + " FROM LP_BILLS LP WHERE LP.CONSUMER_NO = '" + context.GetConsumer_No() + "' AND LP.BILLING_MONTH = To_DATE('" + context.GetBilling_Month() + "', 'dd/MM/YYYY')";
+                    if (query.Contains("COMPANY_NAME"))
+                    {
+                        query = "SELECT CO.COMPANY_NAME FROM BPS_COMPANY CO WHERE CO.COMPANY_CODE = '" + context.GetCompany_Code() + "'";
+                    }
+
+                    if (query.Contains("ATTRIBUTE"))
+                    {
+                        query = query.Replace("ATTRIBUTE", "ATTRIBUTE_");
+                    }
+                    SourceDataTable = null;
+                    SourceDataTable = dlink.GetDataTable(query, "QAT_BPS");
+                    db_value = SourceDataTable.Rows[0][0].ToString();
+                    if (consumer_template_arr[i] == "BILL_STATUS_ID")
+                    {
+                        if (db_value == "1")
+                        {
+                            db_value = "UNPAID";
+                        }
+                        else if (db_value == "2")
+                        {
+                            db_value = "PAID";
+                        }
+                        else if (db_value == "3")
+                        {
+                            db_value = "You cannot pay this bill because the grace period after due date has passed";
+                        }
+                    }
+                    //if(query.Contains("SELECT LP.BILLING_MONTH"))
+                    //{
+                    //    DateTime dt = Convert.ToDateTime(db_value);
+                    //    db_value = dt.ToString("MMM-yyyy");
+                    //}
+                    if (query.Contains("CONSUMER_NAME"))
+                    {
+                        ui_value = ui_value.Replace(" ", string.Empty);
+                        db_value = db_value.Replace(" ", string.Empty);
+                    }
+                    if (date_fromat_arr[1] != "")
+                    {
+                        date_fromat_arr[1] = date_fromat_arr[1].Replace("^", string.Empty);
+                        DateTime dt = Convert.ToDateTime(db_value);
+                        db_value = dt.ToString(date_fromat_arr[1]);
+                    }
+                    if (ui_value != db_value)
+                    {
+                        throw new Exception(string.Format("The UI value is {0} and the databse value is {1}", ui_value, db_value));
+                    }
+                }
             }
         }
 

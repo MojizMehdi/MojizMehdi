@@ -195,8 +195,9 @@
     <Element keyword="Pay_MultiBill_SRV_CloseBtn" locator=" //a[@class='btn' and text()= 'Close']" />
     <Element keyword="Pay_MultiBill_PayBtn" locator="//button[@class='btn btn submit-btn' and text()='Pay']" />
     <Element keyword="Pay_ConsumerLabel_Check" locator="//label[@class='ng-binding']" />
+    <Element keyword="Pay_BillPayment_BillingMonth" locator="//p[@class='label ng-binding' and text()='Billing Month']//following-sibling::p"/>
+    <Element keyword="Pay_BillPayment_InquiryFields" locator="//p[@class='label ng-binding' and text()='{Field_Name}']//following-sibling::p"/>
 
-    
   </Module>
   <Module name ="SendMoney">
     <Element keyword="SendMoney_Link" locator="//*[contains(text(),'Send Money ')]"/>
