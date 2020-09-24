@@ -115,7 +115,7 @@ namespace HBLAutomationAndroid.Core
                         }
                         else if (db_value == "3")
                         {
-                            db_value = "BLOCKED";
+                            db_value = "You cannot pay this bill because the grace period after due date has passed";
                         }
                     }
                     //if(query.Contains("SELECT LP.BILLING_MONTH"))
