@@ -96,7 +96,7 @@ namespace HBLAutomationWeb.Common
         string is_si_allowed = "";
         string is_partial = "";
         decimal mutual_fund_bal;
-
+        string Billing_Month;
 
         public decimal Get_mutual_fund_balance()
         {
@@ -516,6 +516,14 @@ namespace HBLAutomationWeb.Common
         public string GetBill_Status()
         {
             return Bill_Status;
+        }
+        public string GetBilling_Month()
+        {
+            return Billing_Month;
+        }
+        public void SetBilling_Month(string Billing_Month)
+        {
+            this.Billing_Month = Billing_Month;
         }
         public void SetTransaction_Id(string Transaction_Id)
         {
