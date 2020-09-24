@@ -18,6 +18,7 @@ Scenario Outline: When user try to login mobile banking
 	And I have given "<OTP_Value>" on "Login_OTP_field"
 	And I am clicking on "Login_OTP_Verify_Button"
 	And I wait 5000 
+	Then verify through "Welcome, " on "Login_Success_Text"
 	@source:Data/HBLMobileLogin.xlsx
 	Examples: 
 	|Case|Status_query|Login_UserId_Value|Login_Password_Value|OTP_Value|
@@ -31,8 +32,9 @@ Scenario Outline: When user try to send money mobile
 	And the user is arrive to Mobile Banking home page 
 	And I am clicking on "Dashboard"
 	When I save Account Balances
+	And I set value in context from data "0" as "term_deposit_flag" 
 	And I am clicking on "SendMoney_Link"
-	#And I am clicking on "SendMoney_SkipBtn"
+	And I am clicking on "SendMoney_SkipBtn"
 	And I set value in context from database "<No_Of_Acconts_query>" as "No_Of_Accounts" on Schema "<db_val>" 
 	And I set value in context from database "<Bene_Count_Query>" as "Beneficiary_Count_Inter_Branch" on Schema "<db_val>" 
 	And I set value in context from database "<Bene_Count_Query>" as "Beneficiary_Count_Inter_Bank" on Schema "<db_val>" 
@@ -62,17 +64,17 @@ Scenario Outline: When user try to send money mobile
 	And I wait 2000
 	And I am performing on "SendMoney_NextBtn"
 	And I wait 3000
-	And I am clicking on "SendMoney_Rating"
-	#And I am clicking on "SendMoney_RatingOkBtn"
-	#And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
+	And I am clicking on "BillPayment_Rating"
+	#And I am clicking on "BillPayment_RatingOkBtn"
+	#And I am clicking on "BillPayment_Rating_Feedback_OkBtn"
 	And I save Transaction Info
 	Then verify through "<Success_Message>" on "SendMoney_TranSuccessMessage"
-	And verify through database on "<tran_type_query>" on Schema "<db_val>" on "SendMoney_TranType"
+	#And verify through database on "<tran_type_query>" on Schema "<db_val>" on "SendMoney_TranType"
 	And verify through database on "<tran_amount_query>" on Schema "<db_val>" on "SendMoney_TranAmount"
 	And verify through database on "<from_account_query>" on Schema "<db_val>" on "SendMoney_TranFromAcc"
 	And verify through database on "<to_account_query>" on Schema "<db_val>" on "SendMoney_TranToAcc"
 	And verify through database on "<to_bank_query>" on Schema "<db_val>" on "SendMoney_TranToBank"
-	#And verify through database on "<bene_name_query>" on Schema "<db_val>" on "SendMoney_TranBeneName"
+	And verify through database on "<bene_name_query>" on Schema "<db_val>" on "SendMoney_TranBeneName"
 	And verify through database on "<purpose_query>" on Schema "<db_val>" on "SendMoney_TranPurpose"
 	And I am clicking on "SendMoney_TranInfoClose"
 	And I have given "<Account_Number_Value>" on "SendMoney_SearchBeneField"
@@ -101,8 +103,9 @@ Scenario Outline: When user try to send money mobile
 	And the user is arrive to Mobile Banking home page 
 	And I am clicking on "Dashboard"
 	When I save Account Balances
+	And I set value in context from data "0" as "term_deposit_flag" 
 	When I am clicking on "SendMoney_Link"
-	#And I am clicking on "SendMoney_SkipBtn"
+	And I am clicking on "SendMoney_SkipBtn"
 	And I set value in context from database "<No_Of_Acconts_query>" as "No_Of_Accounts" on Schema "<db_val>" 
 	And I set value in context from database "<Bene_Count_Query>" as "Beneficiary_Count_Inter_Branch" on Schema "<db_val>" 
 	And I set value in context from database "<Bene_Count_Query>" as "Beneficiary_Count_Inter_Bank" on Schema "<db_val>" 
@@ -146,17 +149,17 @@ Scenario Outline: When user try to send money mobile
 	And I wait 2000
 	And I am performing on "SendMoney_NextBtn"
 	And I wait 3000
-	And I am clicking on "SendMoney_Rating"
-	#And I am clicking on "SendMoney_RatingOkBtn"
-	#And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
+	And I am clicking on "BillPayment_Rating"
+	#And I am clicking on "BillPayment_RatingOkBtn"
+	#And I am clicking on "BillPayment_Rating_Feedback_OkBtn"
 	And I save Transaction Info
 	Then verify through "<Success_Message>" on "SendMoney_TranSuccessMessage"
-	And verify through database on "<tran_type_query>" on Schema "<db_val>" on "SendMoney_TranType"
+	#And verify through database on "<tran_type_query>" on Schema "<db_val>" on "SendMoney_TranType"
 	And verify through database on "<tran_amount_query>" on Schema "<db_val>" on "SendMoney_TranAmount"
 	And verify through database on "<from_account_query>" on Schema "<db_val>" on "SendMoney_TranFromAcc"
 	And verify through database on "<to_account_query>" on Schema "<db_val>" on "SendMoney_TranToAcc"
 	And verify through database on "<to_bank_query>" on Schema "<db_val>" on "SendMoney_TranToBank"
-	#And verify through database on "<bene_name_query>" on Schema "<db_val>" on "SendMoney_TranBeneName"
+	And verify through database on "<bene_name_query>" on Schema "<db_val>" on "SendMoney_TranBeneName"
 	And verify through database on "<purpose_query>" on Schema "<db_val>" on "SendMoney_TranPurpose"
 	And I am clicking on "SendMoney_TranInfoClose"
 	And I have given "<Account_Number_Value>" on "SendMoney_SearchBeneField"
@@ -186,8 +189,9 @@ Scenario Outline: When user try to send money mobile using already added bene
 	And the user is arrive to Mobile Banking home page 
 	And I am clicking on "Dashboard"
 	When I save Account Balances
+	And I set value in context from data "0" as "term_deposit_flag" 
 	And I am clicking on "SendMoney_Link"
-	#And I am clicking on "SendMoney_SkipBtn"
+	And I am clicking on "SendMoney_SkipBtn"
 	#And I am clicking on "SendMoney_AddNewBtn"
 	And I wait 2000
 	And I have given "<BeneName>" on "BillPayment_SearchBeneField"
@@ -217,12 +221,12 @@ Scenario Outline: When user try to send money mobile using already added bene
 	And I wait 2000
 	And I am performing on "SendMoney_NextBtn"
 	And I wait 3000
-	And I am clicking on "SendMoney_Rating"
-	#And I am clicking on "SendMoney_RatingOkBtn"
-	#And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
+	And I am clicking on "BillPayment_Rating"
+	#And I am clicking on "BillPayment_RatingOkBtn"
+	#And I am clicking on "BillPayment_Rating_Feedback_OkBtn"
 	And I save Transaction Info
 	Then verify through "<Success_Message>" on "SendMoney_TranSuccessMessage"
-	And verify through database on "<tran_type_query>" on Schema "<db_val>" on "SendMoney_TranType"
+	#And verify through database on "<tran_type_query>" on Schema "<db_val>" on "SendMoney_TranType"
 	And verify through database on "<tran_amount_query>" on Schema "<db_val>" on "SendMoney_TranAmount"
 	And verify through database on "<from_account_query>" on Schema "<db_val>" on "SendMoney_TranFromAcc"
 	And verify through database on "<to_account_query>" on Schema "<db_val>" on "SendMoney_TranToAcc"
@@ -259,6 +263,7 @@ Scenario Outline: When user try to send money mobile using already added bene
 	And I am clicking on "Dashboard"
 	When I am clicking on "SendMoney_Link"
 	And I wait 2000
+	And I am clicking on "SendMoney_SkipBtn"
 	And I have given "<BeneName>" on "BillPayment_SearchBeneField"
 	And I am clicking on "SendMoney_SearchBeneConsumerNo"
 	And I select "<From_Account_Value>" on "SendMoney_FromAccount"
@@ -281,9 +286,9 @@ Scenario Outline: When user try to send money mobile using already added bene
 	And I wait 2000
 	And I am performing on "SendMoney_NextBtn"
 	And I wait 3000
-	And I am clicking on "SendMoney_Rating"
-	#And I am clicking on "SendMoney_RatingOkBtn"
-	#And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
+	And I am clicking on "BillPayment_Rating"
+	#And I am clicking on "BillPayment_RatingOkBtn"
+	#And I am clicking on "BillPayment_Rating_Feedback_OkBtn"
 	Then verify through "<Success_Message>" on "SendMoney_TranSuccessMessage"
 	And verify through database on "<tran_type_query>" on Schema "<db_val>" on "SendMoney_TranType"
 	And verify through database on "<from_account_query>" on Schema "<db_val>" on "SendMoney_TranSourceAcc"

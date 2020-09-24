@@ -17,6 +17,7 @@ Scenario Outline: When user try to login mobile banking for mutual fund
 	And I have given "<OTP_Value>" on "Login_OTP_field"
 	And I am clicking on "Login_OTP_Verify_Button"
 	And I wait 5000 
+	Then verify through "Welcome, " on "Login_Success_Text"
 	@source:Data/HBLMobileMutualFundLogin.xlsx
 	Examples: 
 	|Case|Status_query|Login_UserId_Value|Login_Password_Value|Cnic_query|OTP_Value|
@@ -58,9 +59,9 @@ Scenario Outline: When user try to mutual fund
 	And I have given "<tran_pass_value>" on "SendMoney_TranPass"
 	And I am clicking on "MutualFund_NextBtn"
 	And I wait 5000
-	And I am clicking on "SendMoney_Rating"
-	#And I am clicking on "SendMoney_RatingOkBtn"
-	#And I am clicking on "SendMoney_Rating_Feedback_OkBtn"
+	And I am clicking on "BillPayment_Rating"
+	#And I am clicking on "BillPayment_RatingOkBtn"
+	#And I am clicking on "BillPayment_Rating_Feedback_OkBtn"
 	Then verify through "<Success_Message>" on "SendMoney_TranSuccessMessage"
 	#And I set value in context from database "<HostReferenceNo_query>" as "HostReferenceNo" on Schema "<db_val4>"
 	And I set value in context from database "<GUID_query>" as "GUID" on Schema "<db_val>"

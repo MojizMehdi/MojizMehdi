@@ -255,6 +255,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BillPayment.feature</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Feature\HBLMobile\ForgetChange.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ForgetChange.feature</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Feature\HBLMobile\MutualFund.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -301,8 +306,12 @@
     <None Include="Resources\Feature\HBLMobile\Data\BillPayment%28ExistingBene%29ViaHome.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\BillPayment%28Schedule%29.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\BillPayment.xlsx" />
+    <None Include="Resources\Feature\HBLMobile\Data\BillPaymentViaHome.xlsx" />
+    <None Include="Resources\Feature\HBLMobile\Data\ChangeLoginId.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\CreditRegistration.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\DebitRegistration.xlsx" />
+    <None Include="Resources\Feature\HBLMobile\Data\ForgetLoginId.xlsx" />
+    <None Include="Resources\Feature\HBLMobile\Data\ForgetPassword.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\HBLMobileLogin.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\HBLMobileMutualFundLogin.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\HBLMobileTermDepositLogin.xlsx" />
@@ -321,6 +330,10 @@
     <None Include="Resources\Feature\HBLMobile\Data\SendMoney_Schedule.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\SendMoney_Schedule_Beneficiary.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\TermDeposit.xlsx" />
+    <None Include="Resources\Feature\HBLMobile\ForgetChange.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ForgetChange.feature.cs</LastGenOutput>
+    </None>
     <None Include="Resources\Feature\HBLMobile\MutualFund.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>MutualFund.feature.cs</LastGenOutput>
