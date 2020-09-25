@@ -16,15 +16,15 @@ Scenario Outline: When user try to login mobile banking for bill payment
 	And I have given "<Login_Password_Value>" on "Login_Password"
 	And I wait 2000
 	And I am performing on "Login_SignIn_Button"
-	#And I wait 30000
-	#And I have given "<OTP_Value>" on "Login_OTP_field"
-	#And I am clicking on "Login_OTP_Verify_Button"
+	And I wait 30000
+	And I have given "<OTP_Value>" on "Login_OTP_field"
+	And I am clicking on "Login_OTP_Verify_Button"
 	And I wait 5000
 	And I am clicking on "BillPayment_Rating"
 	And I am clicking on "SendMoney_SkipBtn"
 	And I am clicking on "BillPayment_Rating"
 	And I am clicking on "BillPayment_RatingOkBtn"
-	#Then verify through "Welcome" on "Login_Success_Text"
+	Then verify through "Welcome, " on "Login_Success_Text"
 	@source:Data/HBLMobileLogin.xlsx
 	Examples: 
 	|Case|Status_query|Login_UserId_Value|Login_Password_Value|OTP_Value|
