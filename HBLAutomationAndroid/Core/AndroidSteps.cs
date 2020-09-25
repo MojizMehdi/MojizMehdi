@@ -90,7 +90,7 @@ namespace HBLAutomationAndroid.Core
                     {
                         consumer_template_arr[i] = "BILL_STATUS_ID";
                     }
-                    string query = "SELECT LP." + consumer_template_arr[i] + " FROM LP_BILLS LP WHERE LP.CONSUMER_NO = '" + context.GetConsumer_No() + "' AND LP.BILLING_MONTH = To_DATE('" + context.GetBilling_Month() + "', 'dd/MM/YYYY')";
+                    string query = "SELECT LP." + consumer_template_arr[i] + " FROM LP_BILLS LP WHERE LP.CONSUMER_NO = '" + context.GetConsumer_No() + "' TO_CHAR(LP.BILLING_MONTH,'MM/YYYY') = '" + context.GetBilling_Month() + "'";
                     if (query.Contains("COMPANY_NAME"))
                     {
                         query = "SELECT CO.COMPANY_NAME FROM BPS_COMPANY CO WHERE CO.COMPANY_CODE = '" + context.GetCompany_Code() + "'";
@@ -115,7 +115,7 @@ namespace HBLAutomationAndroid.Core
                         }
                         else if (db_value == "3")
                         {
-                            db_value = "BLOCKED";
+                            db_value = "You cannot pay this bill because the grace period after due date has passed";
                         }
                     }
                     //if(query.Contains("SELECT LP.BILLING_MONTH"))
@@ -493,7 +493,7 @@ namespace HBLAutomationAndroid.Core
                 if (Keyword.Equals("BillPayment_Inquiry_BillingMonth"))
                 {
                     DateTime temp_var = Convert.ToDateTime(temp);
-                    temp = temp_var.ToString("dd/MM/yyyy");
+                    temp = temp_var.ToString("MM/yyyy");
                     context.SetBilling_Month(temp);
                 }
             }
@@ -556,7 +556,7 @@ namespace HBLAutomationAndroid.Core
                             SourceDataTable = dLink.GetDataTable(query, db_value);
                             value = SourceDataTable.Rows[0][0].ToString();
                         }
-                        value = Convert.ToDecimal(value).ToString("0.00");
+                        //value = Convert.ToDecimal(value).ToString("0.00");
                     }
 
 
@@ -1853,7 +1853,7 @@ namespace HBLAutomationAndroid.Core
                             DataTable SourceDataTable2 = dLink2.GetDataTable(temp_query, schema);
                             SURCHARGE_ATTRIBUTE = SourceDataTable2.Rows[0][0].ToString();
 
-                            string query2 = "Select " + SURCHARGE_ATTRIBUTE + " from LP_BILLS L WHERE L.CONSUMER_NO = '" + context.GetConsumer_No() + "'";
+                            string query2 = "Select " + SURCHARGE_ATTRIBUTE + " from LP_BILLS L WHERE L.CONSUMER_NO = '" + context.GetConsumer_No() + "' AND TO_CHAR(LP.BILLING_MONTH,'MM/YYYY') = '" + context.GetBilling_Month() + "'";
 
                             dLink2 = null;
                             dLink2 = new DataAccessComponent.DataAccessLink();
@@ -1871,7 +1871,7 @@ namespace HBLAutomationAndroid.Core
                             query = temp;
                         }
                     }
-                    if (Keyword.Equals("SendMoney_TranAmount") || Keyword.Equals("TermDeposit_TranAmount") || Keyword.Equals("BillPayment_TranAmount"))
+                    if (Keyword.Equals("SendMoney_TranAmount") || Keyword.Equals("TermDeposit_TranAmount")) //|| Keyword.Equals("BillPayment_TranAmount"))
                     {
                         message = Convert.ToDecimal(message).ToString("0.00");
                     }
@@ -2798,9 +2798,9 @@ namespace HBLAutomationAndroid.Core
                     Temp_keyword = ContextPage.GetInstance().GetElement("BillPayment_Inquiry_BillingMonth");
                     string billing_month = apmhelper.ReturnKeywordValue(Temp_keyword.Locator, "xpath");
                     DateTime temp_var = Convert.ToDateTime(billing_month);
-                    billing_month = temp_var.ToString("dd/MM/yyyy");
+                    billing_month = temp_var.ToString("MM/yyyy");
 
-                    string query = "Select L.COMPANY_CODE, L.DUE_DATE, l.BILL_AMOUNT, l.CONSUMER_NAME, L.BILL_STATUS_ID  FROM LP_BILLS L WHERE L.CONSUMER_NO ='" + consumer_no_arr[i] + "' and L.BILLING_MONTH = To_DATE('" + billing_month + "', 'dd/MM/YYYY')";
+                    string query = "Select L.COMPANY_CODE, L.DUE_DATE, l.BILL_AMOUNT, l.CONSUMER_NAME, L.BILL_STATUS_ID  FROM LP_BILLS L WHERE L.CONSUMER_NO ='" + consumer_no_arr[i] + "' and TO_CHAR(LP.BILLING_MONTH,'MM/YYYY') = '" + billing_month + "'";
                     DataAccessComponent.DataAccessLink dLink = new DataAccessComponent.DataAccessLink();
                     DataTable SourceDataTable = dLink.GetDataTable(query, "QAT_BPS");
                     COMPANY_CODE = SourceDataTable.Rows[0][0].ToString();
@@ -2831,7 +2831,7 @@ namespace HBLAutomationAndroid.Core
                     company_name = SourceDataTable.Rows[0][0].ToString();
                     company_name = company_name.Replace("\r\n", "");
                     SURCHARGE_ATTRIBUTE = SourceDataTable.Rows[0][1].ToString();
-                    query = "Select " + SURCHARGE_ATTRIBUTE + " from LP_BILLS L WHERE L.CONSUMER_NO = '" + consumer_no_arr[i] + "'";
+                    query = "Select " + SURCHARGE_ATTRIBUTE + " from LP_BILLS L WHERE L.CONSUMER_NO = '" + consumer_no_arr[i] + "' AND TO_CHAR(LP.BILLING_MONTH,'MM/YYYY') = '" + context.GetBilling_Month() + "'";
 
                     dLink = null;
                     dLink = new DataAccessComponent.DataAccessLink();
@@ -3102,7 +3102,7 @@ namespace HBLAutomationAndroid.Core
                                     queries[j] = temp;
                                 }
                             }
-                            if (queries[j].Equals("SendMoney_TranAmount") || keywords[j].Equals("BillPayment_TranAmount"))
+                            if (queries[j].Equals("SendMoney_TranAmount")) //|| keywords[j].Equals("BillPayment_TranAmount"))
                             {
                                 message = Convert.ToDecimal(message).ToString("0.00");
                             }
@@ -3217,7 +3217,7 @@ namespace HBLAutomationAndroid.Core
                                     queries[j] = temp;
                                 }
                             }
-                            if (queries[j].Equals("SendMoney_TranAmount") || keywords[j].Equals("BillPayment_TranAmount"))
+                            if (queries[j].Equals("SendMoney_TranAmount")) //|| keywords[j].Equals("BillPayment_TranAmount"))
                             {
                                 message = Convert.ToDecimal(message).ToString("0.00");
                             }
@@ -3296,7 +3296,7 @@ namespace HBLAutomationAndroid.Core
                                 query = temp;
                             }
                         }
-                        if (Keyword.Equals("SendMoney_TranAmount") || Keyword.Equals("BillPayment_TranAmount"))
+                        if (Keyword.Equals("SendMoney_TranAmount")) //|| Keyword.Equals("BillPayment_TranAmount"))
                         {
                             message = Convert.ToDecimal(message).ToString("0.00");
                         }
