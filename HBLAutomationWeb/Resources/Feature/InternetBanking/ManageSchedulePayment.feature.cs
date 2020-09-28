@@ -136,4 +136,3 @@ this.AsAUserIWantToVerifyScheduleManagementFromMyAccount("As a user I want to ve
 }
 #pragma warning restore
 #endregion
-
