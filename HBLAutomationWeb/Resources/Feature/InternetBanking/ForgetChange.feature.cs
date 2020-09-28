@@ -400,23 +400,21 @@ this.ScenarioSetup(scenarioInfo);
 #line 103
  testRunner.And("I am clicking on \"Forget_btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 104
- testRunner.And("I am clicking on \"Forget_ChangeLink\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 105
  testRunner.And(string.Format("I have given \"{0}\" on \"Forget_CNIC\"", cnic), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 106
+#line 105
  testRunner.And(string.Format("I have given \"{0}\" on \"Forget_MobileNo\"", mobile_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 107
+#line 106
  testRunner.When("I am performing on \"Forget_SubmitBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 108
+#line 107
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"Forget_Passw" +
                         "ordResponseMsg\"", tran_Message_Qeury), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 109
+#line 108
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"Forget_Passw" +
                         "ordTranID\"", tran_Id_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 110
+#line 109
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"Forget_Passw" +
                         "ordTranDate\"", tran_Date_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 112
+#line 111
  testRunner.And("I am performing on \"Forget_PasswordTranSubmitBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -430,8 +428,8 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetLoginID.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When I am verifying Forget Login ID scenario")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When I am verifying Forget Login ID scenario")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic", "1350314051455")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no", "03110204994")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic", "3640211897773")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no", "03006943677")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_message_qeury", "Select O.RESPONSE_MESSAGE from dc_transaction o where O.CNIC =\'{customer_cnic}\' o" +
             "rder by CREATED_ON desc")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_id_query", "Select O.TRANSACTION_ID from dc_transaction o where O.CNIC =\'{customer_cnic}\' ord" +
@@ -444,7 +442,7 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void _2AsAUserIWantToVerifyForgetLoginID_WhenIAmVerifyingForgetLoginIDScenario()
         {
 #line 99
-this._2AsAUserIWantToVerifyForgetLoginID("When I am verifying Forget Login ID scenario", "1350314051455", "03110204994", "Select O.RESPONSE_MESSAGE from dc_transaction o where O.CNIC =\'{customer_cnic}\' o" +
+this._2AsAUserIWantToVerifyForgetLoginID("When I am verifying Forget Login ID scenario", "3640211897773", "03006943677", "Select O.RESPONSE_MESSAGE from dc_transaction o where O.CNIC =\'{customer_cnic}\' o" +
                     "rder by CREATED_ON desc", "Select O.TRANSACTION_ID from dc_transaction o where O.CNIC =\'{customer_cnic}\' ord" +
                     "er by CREATED_ON desc", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +

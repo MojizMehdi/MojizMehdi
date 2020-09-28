@@ -107,6 +107,7 @@ Scenario Outline: As a user i want to Signup using Debit Card Web
 	And I have given "<OTP_Value>" on "Login_OTP_field"
 	And I scroll to element "Registration_OtpNextBtn"
 	And I am performing on "Registration_OtpNextBtn"
+	And I wait 3000
 	And verify the message "<account_tag1>" through database on "<account_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	And verify the message "<account_tag1>" through database on "<account_tag_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	And verify through database on "<password_policy_query>" on Schema "DIGITAL_CHANNEL_SEC" on "Registration_PassPolicyText"
@@ -130,17 +131,19 @@ Scenario Outline: As a user i want to Signup using Debit Card Web
 	And I have given "<Login_id>" on "Login_UserId"
 	And I have given "<login_pass>" on "Login_Password"
 	And  I am performing on "Login_SignIn_Button"
-	And I am clicking on keyword "Signup_FeedbackOptionHBL" with value "<feedback_type>"
-	And I have given "<feedback_option>" on "Signup_FeedbackText"
-	And I am performing on "Signup_FeedbackSubmit"
-	And verify through "Thank you for letting us know." on "Signup_FeedbackMessage"
-	And I am performing on "Signup_FeedbackOkBtn"
+	And I set value in context from data "true" as "Last_login_flag"
+	#And I am clicking on keyword "Signup_FeedbackOptionHBL" with value "<feedback_type>"
+	#And I have given "<feedback_option>" on "Signup_FeedbackText"
+	#And I am performing on "Signup_FeedbackSubmit"
+	#And verify through "Thank you for letting us know." on "Signup_FeedbackMessage"
+	#And I am performing on "Signup_FeedbackOkBtn"
+	And I am clicking on "Signup_SkipBtn"
 	And verify through "Welcome" on "Login_Success_Text"
 	And verify the result from "<Last_login_query>" on Schema "DIGITAL_CHANNEL_SEC"
 
 @source:Data/DebitRegistration.xlsx
 	Examples:
-	|Case|CNIC_D|Debit_card_no|pin|Login_id|scroll_text|password_policy_query|login_pass|tran_pass|account_tag1|account_query|account_tag_query|success_message|login_id_query|created_on_query|updated_on_query|Last_login_query|transaction_password_query|customer_type|customer_type_query|IVR_require_query|IVR_check_query|PARAM_CHANNEL_ID_query|feedback_type|feedback_option|
+	|Case|CNIC_D|Debit_card_no|pin|Login_id|scroll_text|password_policy_query|login_pass|tran_pass|account_tag1|account_query|account_tag_query|success_message|login_id_query|created_on_query|updated_on_query|Last_login_query|transaction_password_query|customer_type|customer_type_query|IVR_require_query|IVR_check_query|ENABLE_PSD_require_query|ENABLE_PSD_check_query|PARAM_CHANNEL_ID_query|feedback_type|feedback_option|
 
 
 @Registration
@@ -195,7 +198,8 @@ Scenario Outline: As a user i want to Signup using Credit Card Web
 
 	@source:Data/CreditRegistration.xlsx
 	Examples:
-	|Case|CNIC_D|Credit_card_no|Customer_Email|Login_id|scroll_text|OTP_Value|password_policy_query|login_pass|tran_pass|success_message|login_id_query|created_on_query|updated_on_query|Last_login_query|tran_pass_encrypted_value|transaction_password_query|customer_type|customer_type_query|IVR_require_query|IVR_check_query|PARAM_CHANNEL_ID_query|ENABLE_PSD_require_query|ENABLE_PSD_check_query|feedback_type|feedback_option|
+	|Case|CNIC_D|Credit_card_no|Customer_Email|Login_id|scroll_text|OTP_Value|password_policy_query|login_pass|tran_pass|success_message|login_id_query|created_on_query|updated_on_query|Last_login_query|tran_pass_encrypted_value|transaction_password_query|customer_type|customer_type_query|IVR_require_query|IVR_check_query|PARAM_CHANNEL_ID_query|ENABLE_PSD_check_query|feedback_type|feedback_option|
+
 
 
 #

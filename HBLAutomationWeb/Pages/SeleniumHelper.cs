@@ -335,7 +335,7 @@ namespace HBLAutomationWeb.Pages
 
 
                 //Home Page Locator
-                if (locator.Equals("Login_Dashboard"))
+                if (locator.Equals("//img[@class='desk-logo']"))
                 {
                     driver.Navigate().GoToUrl(Configuration.GetInstance().GetByKey("redirectionURL"));
                     Thread.Sleep(2000);

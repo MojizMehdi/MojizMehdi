@@ -145,4 +145,3 @@ namespace HBLAutomationWeb.Resources.Feature.InternetBanking
 }
 #pragma warning restore
 #endregion
-

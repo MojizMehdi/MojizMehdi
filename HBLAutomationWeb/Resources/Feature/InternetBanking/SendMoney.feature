@@ -8,6 +8,7 @@ Scenario Outline: As a user i want to Verify Send Money by adding Beneficiary
 	Given the test case title is "<Case>"
 	And the user is arrive to Internet Banking home page
 	And I am clicking on "Login_Dashboard"
+	And I set value in context from data "<Account_Number_Value>" as "<Bene_AccountNo>"
 	And update the data by query "<status_query>" on DIGITAL_CHANNEL_SEC
 	When I am clicking on "SendMoney_Link"
 	And I am clicking on "SendMoney_AddNewBtn"
@@ -55,6 +56,7 @@ Scenario Outline: As a user i want to Verify Send Money by adding Beneficiary sc
 	Given the test case title is "<Case>"
 	And the user is arrive to Internet Banking home page 
 	And I am clicking on "Login_Dashboard"
+	And I set value in context from data "<Account_Number_Value>" as "<Bene_AccountNo>"
 	And update the data by query "<status_query>" on DIGITAL_CHANNEL_SEC
 	When I am clicking on "SendMoney_Link"
 	And I am clicking on "SendMoney_AddNewBtn"
@@ -109,6 +111,7 @@ Scenario Outline: As a user i want to Verify Send Money by using Beneficiary
 	Given the test case title is "<Case>"
 	And the user is arrive to Internet Banking home page 
 	And I am clicking on "Login_Dashboard"
+	And I set value in context from data "<Account_Number_Value>" as "<Bene_AccountNo>"
 	And update the data by query "<status_query>" on DIGITAL_CHANNEL_SEC
 	When I am clicking on "SendMoney_Link"
 	And I wait 3000
@@ -153,6 +156,7 @@ Scenario Outline: As a user i want to Verify Send Money by using Beneficiary sch
 	Given the test case title is "<Case>"
 	And the user is arrive to Internet Banking home page 
 	And I am clicking on "Login_Dashboard"
+	And I set value in context from data "<Account_Number_Value>" as "<Bene_AccountNo>"
 	And update the data by query "<status_query>" on DIGITAL_CHANNEL_SEC
 	When I am clicking on "SendMoney_Link"
 	And I wait 3000

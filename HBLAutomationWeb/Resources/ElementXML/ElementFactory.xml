@@ -20,7 +20,7 @@
     <Element keyword="Forget_ChangeLink" locator="//button[@class='btn btn forgot']" />
     <Element keyword="Forget_LoginIdNav" locator="//a[@id='link-forgot-ID']" />
     <Element keyword="Forget_ChangeLoginNav" locator="//a[@id='link-change-ID']" />
-    <Element keyword="Forget_CNIC" locator="//input[@ng-model='ForgotUserName.customerCNIC']" />
+    <Element keyword="Forget_CNIC" locator="//input[@ng-model='ForgotUserName.CNIC'] " />
     <Element keyword="Forget_MobileNo" locator="//input[@ng-model='ForgotUserName.mobileNumber']" />
     <Element keyword="Forget_ChangeCNIC" locator="//input[@ng-model='CustomerAccountType.customerCNIC']"/>
     <Element keyword="Forget_SubmitBtn" locator="//div[@id='fogot-ID']//button" />
@@ -74,7 +74,6 @@
   </Module>
 
   <Module name="Signup">
-
     <Element keyword="Signup_DebitReqText1" locator="//div[@id='forDebit']//ul//li[contains(text(), 'CNIC')]"/>
     <Element keyword="Signup_DebitReqText2" locator="//div[@id='forDebit']//ul//li[contains(text(), 'Debit')]"/>
     <Element keyword="Signup_CreditReqText1" locator="//div[@id='forCredit']//ul//li[contains(text(), 'CNIC')]"/>
@@ -85,9 +84,6 @@
     <Element keyword="Signup_Credit_NextBtn" locator="//div[@id='forCredit']//div//button"/>
     <Element keyword="Signup_LngTextBtn" locator="//button[@class='urdu btn toggleTncBtn']" />
     <Element keyword="Signup_UrduText" locator="//div[@class='urdu_terms']//p[contains(text(), 'ڈیجیٹل بینکاری')]" />
-
-
-    
     <Element keyword="Signup_ContinueBtn" locator="//div[@ng-form='FormStep1']//button[@class='btn submit-btn']"/>
     <Element keyword="Signup_LastRegisterBtn" locator="//div[@ng-form='FirstStep']//div[@class='col-10 enable-ent']//button[@class='btn submit-btn']"/>
     <Element keyword="Signup_LoginIdTextVerf" locator="//p[@class='value col-6 ng-binding']"/>
@@ -97,7 +93,6 @@
     <Element keyword="Signup_ReTransactionPassword" locator="//input[@name='ReTransactionPassword']" />
     <Element keyword="Signup_SubmitBtn" locator="//button[@class='btn submit-btn']" />
     <Element keyword="Signup_SuccessNextBtn" locator="//div[@class='form-group button-center reg-complete']//button[@class='btn' and text()='Next']"/>
-
     <Element keyword="Signup_FeedbackOptionHBL" locator="//input[@name='137']"/>
     <Element keyword="Signup_FeedbackText" locator="//input[@name='Employeeid']"/>"/>
     <Element keyword="Signup_FeedbackSubmit" locator="//button[@class='btn btn submit-btn' and text()='Submit']"/>

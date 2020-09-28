@@ -109,10 +109,10 @@ namespace HBLAutomationWeb.Core
             {
                 context.SetTranPassFlag(true);
             }
-            if (context.GetLastLoginPassFlag() == true)
-            {
-                context.SetLastLoginFlag(true);
-            }
+            //if (context.GetLastLoginPassFlag() == true)
+            //{
+            //    context.SetLastLoginFlag(true);
+            //}
         }
         [Given(@"I am performing on ""(.*)""")]
         [When(@"I am performing on ""(.*)""")]
@@ -431,10 +431,10 @@ namespace HBLAutomationWeb.Core
                     throw new AssertFailedException(e.Message);
 
                 }
-                if (query.Contains("LOGIN_PASSWORD"))
-                {
-                    context.SetLastLoginPassFlag(true);
-                }
+                //if (query.Contains("LOGIN_PASSWORD"))
+                //{
+                //    context.SetLastLoginPassFlag(true);
+                //}
             }
         }
         [Given(@"update the data by query ""(.*)"" on QAT_BPS")]
@@ -544,6 +544,10 @@ namespace HBLAutomationWeb.Core
                     lst.Add(value.ToString());
                 }
                 context.SetAccountForTag(lst);
+            }
+            if (attribute == "Last_login_flag")
+            {
+                context.SetLastLoginFlag(Convert.ToBoolean(value));
             }
         }
 
@@ -688,7 +692,7 @@ namespace HBLAutomationWeb.Core
                 {
                     if (context.GetLastLoginFlag() == false)
                     {
-                        throw new AssertFailedException("Transaction Password is not updated in data base");
+                        throw new AssertFailedException("Last login is not updated in data base");
                     }
                     else
                     {
@@ -1970,7 +1974,7 @@ namespace HBLAutomationWeb.Core
         [Then(@"I am clicking on keyword ""(.*)"" with value ""(.*)""")]
         [Given(@"I am clicking on keyword """"(.*)""value""")]
         [When(@"I am clicking on keyword """"(.*)""value""")]
-        public void ThenIAmClickingOnKeywordWithValue(string value, string keyword)
+        public void ThenIAmClickingOnKeywordWithValue(string keyword, string value)
         {
             SeleniumHelper selhelper = new SeleniumHelper();
             Element Keyword = ContextPage.GetInstance().GetElement(keyword);

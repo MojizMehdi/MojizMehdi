@@ -101,7 +101,6 @@ Scenario Outline: 2 As a user i want to verify forget Login ID
 	And I set value in context from data "<cnic>" as "customer_cnic"
 	And the user is arrive to Internet Banking home page 	
 	And I am clicking on "Forget_btn"
-	And I am clicking on "Forget_ChangeLink"
 	And I have given "<cnic>" on "Forget_CNIC"
 	And I have given "<mobile_no>" on "Forget_MobileNo"
 	When I am performing on "Forget_SubmitBtn"
