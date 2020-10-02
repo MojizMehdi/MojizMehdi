@@ -58,8 +58,8 @@ namespace HBLAutomationAndroid.Common
         public string Date = null;
         string[] multi_bill_consumers;
         string[] multi_tran_ids;
-        int multi_payment_amount;
-        int tran_amount;
+        double multi_payment_amount;
+        double tran_amount;
         List<string> iteration_dates_schedule;
         string TermDepositYears;
         int term_deposit_check;
@@ -91,7 +91,35 @@ namespace HBLAutomationAndroid.Common
         string HostReferenceNo;
         string BillPaymentCategory;
         string Is_Partial_Payment_Allowed;
+        int account_count = 0;
+        string old_limit;
+        Dictionary<string, Tuple<string, string, string>> cust_limit_detail;
 
+
+        public void SetCustLimitDetail(Dictionary<string, Tuple<string, string, string>> cust_limit_detail)
+        {
+            this.cust_limit_detail = cust_limit_detail;
+        }
+        public Dictionary<string, Tuple<string, string, string>> GetCustLimitDetail()
+        {
+            return this.cust_limit_detail;
+        }
+        public void SetOldLimit(string old_limit)
+        {
+            this.old_limit = old_limit;
+        }
+        public string GetOldLimit()
+        {
+            return old_limit;
+        }
+        public void Set_account_count(int account_count)
+        {
+            this.account_count = account_count;
+        }
+        public int Get_account_count()
+        {
+            return account_count;
+        }
         public void Set_Is_Partial_Payment_Allowed(string Is_Partial_Payment_Allowed)
         {
             this.Is_Partial_Payment_Allowed = Is_Partial_Payment_Allowed;
@@ -335,11 +363,11 @@ namespace HBLAutomationAndroid.Common
         {
             this.term_deposit_balance += term_deposit_balance;
         }
-        public int Get_tran_amount()
+        public double Get_tran_amount()
         {
             return tran_amount;
         }
-        public void Set_tran_amount(int tran_amount)
+        public void Set_tran_amount(double tran_amount)
         {
             this.tran_amount = tran_amount;
         }
@@ -351,11 +379,11 @@ namespace HBLAutomationAndroid.Common
         {
             this.iteration_dates_schedule = iteration_dates_schedule;
         }
-        public int Get_multi_payment_amount()
+        public double Get_multi_payment_amount()
         {
             return multi_payment_amount;
         }
-        public void Set_multi_payment_amount(int multi_payment_amount)
+        public void Set_multi_payment_amount(double multi_payment_amount)
         {
             this.multi_payment_amount = multi_payment_amount;
         }

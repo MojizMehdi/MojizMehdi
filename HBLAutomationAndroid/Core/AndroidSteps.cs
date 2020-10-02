@@ -90,7 +90,7 @@ namespace HBLAutomationAndroid.Core
                     {
                         consumer_template_arr[i] = "BILL_STATUS_ID";
                     }
-                    string query = "SELECT LP." + consumer_template_arr[i] + " FROM LP_BILLS LP WHERE LP.CONSUMER_NO = '" + context.GetConsumer_No() + "' TO_CHAR(LP.BILLING_MONTH,'MM/YYYY') = '" + context.GetBilling_Month() + "'";
+                    string query = "SELECT LP." + consumer_template_arr[i] + " FROM LP_BILLS LP WHERE LP.CONSUMER_NO = '" + context.GetConsumer_No() + "' AND TO_CHAR(LP.BILLING_MONTH,'MM/YYYY') = '" + context.GetBilling_Month() + "'";
                     if (query.Contains("COMPANY_NAME"))
                     {
                         query = "SELECT CO.COMPANY_NAME FROM BPS_COMPANY CO WHERE CO.COMPANY_CODE = '" + context.GetCompany_Code() + "'";
@@ -174,7 +174,7 @@ namespace HBLAutomationAndroid.Core
             }
             if (Keyword.Contains("SendMoney_Amount"))
             {
-                context.Set_tran_amount(Convert.ToInt32(textboxvalue));
+                context.Set_tran_amount(Convert.ToDouble(textboxvalue));
             }
             if (Keyword.Contains("SendMoney_SearchBeneField") || Keyword.Contains("BillPayment_SearchBeneField"))
             {
@@ -748,7 +748,7 @@ namespace HBLAutomationAndroid.Core
                     {
                         string query = "SELECT CH.IS_SI_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_CODE = '" + context.GetCompany_Code() + "' AND CH.CHANNEL_CODE = 'MB'";
                         DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
-                        DataTable SourceDataTable = dlink.GetDataTable(query, "DIGITAL_CHANNEL_SEC");
+                        DataTable SourceDataTable = dlink.GetDataTable(query, "QAT_BPS");
                         string is_si_allowed = SourceDataTable.Rows[0][0].ToString();
                         if (is_si_allowed != "1")
                         {
@@ -834,11 +834,11 @@ namespace HBLAutomationAndroid.Core
             {
                 if (query.Contains("{Username}"))
                 {
-                    query.Replace("{Username}", context.GetUsername());
+                    query = query.Replace("{Username}", context.GetUsername());
                 }
                 if (query.Contains("{ConsumerNo}"))
                 {
-                    query.Replace("{ConsumerNo}", context.GetConsumer_No());
+                    query = query.Replace("{ConsumerNo}", context.GetConsumer_No());
                 }
                 DataAccessComponent.DataAccessLink dLink = new DataAccessComponent.DataAccessLink();
                 DataTable SourceDataTable = dLink.GetDataTable(query, db_value);
@@ -1871,7 +1871,7 @@ namespace HBLAutomationAndroid.Core
                             query = temp;
                         }
                     }
-                    if (Keyword.Equals("SendMoney_TranAmount") || Keyword.Equals("TermDeposit_TranAmount")) //|| Keyword.Equals("BillPayment_TranAmount"))
+                    if (Keyword.Equals("SendMoney_TranAmount") || Keyword.Equals("TermDeposit_TranAmount") || Keyword.Equals("BillPayment_TranAmount"))
                     {
                         message = Convert.ToDecimal(message).ToString("0.00");
                     }
@@ -2092,6 +2092,10 @@ namespace HBLAutomationAndroid.Core
                 {
                     context.Set_Is_Partial_Payment_Allowed(db_value);
                 }
+                if(attribute == "account_count")
+                {
+                    context.Set_account_count(Convert.ToInt32(db_value));
+                }
                 //Clob 
             }
             catch (Exception exception)
@@ -2100,6 +2104,588 @@ namespace HBLAutomationAndroid.Core
                 throw new AssertFailedException(exception.Message);
             }
         }
+        [Then(@"I am performing Limit verification operation")]
+        public void ThenIAmPerformingLimitVerificationOperation()
+        {
+            try
+            {
+                Dictionary<string, Tuple<string, string, string>> customer_limit_detail_dict = new Dictionary<string, Tuple<string, string, string>>();
+
+                string limit_type_id = "";
+                string config_value = "";
+                string daily_consume_limit = "";
+                string daily_rem_limit = "";
+
+                AppiumHelper apmhelper = new AppiumHelper();
+                //selhelper.checkPageIsReady();
+
+                //Element Keyword_main = ContextPage.GetInstance().GetElement(Keyword);
+                List<string> limit_management_elements = context.Get_scroll_items_list();
+                int limit_type_count = limit_management_elements.Count;
+
+                DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
+                DataTable SourceDataTable = dlink.GetDataTable("select enable_psd from dc_customer_info k where K.CUSTOMER_NAME='" + context.GetUsername() + "'", "DIGITAL_CHANNEL_SEC");
+                string enable_psd = SourceDataTable.Rows[0][0].ToString();
+                dlink = null;
+                SourceDataTable = null;
+
+                dlink = new DataAccessComponent.DataAccessLink();
+                SourceDataTable = dlink.GetDataTable("select CONFIG_VALUE from dc_customer_info_config k where K.CUSTOMER_INFO_ID= (Select CUSTOMER_INFO_ID from dc_customer_info l where L.CUSTOMER_NAME='" + context.GetUsername() + "') and K.CONFIG_NAME = 'CUSTOMER_REGISTRATION_PROCESS'", "DIGITAL_CHANNEL_SEC");
+                if (SourceDataTable.Rows.Count != 0)
+                {
+                    config_value = SourceDataTable.Rows[0][0].ToString();
+                }
+                dlink = null;
+                SourceDataTable = null;
+
+
+                dlink = new DataAccessComponent.DataAccessLink();
+                SourceDataTable = dlink.GetDataTable("select CONFIG_VALUE from dc_customer_info_config k where K.CUSTOMER_INFO_ID= (Select CUSTOMER_INFO_ID from dc_customer_info l where L.CUSTOMER_NAME='" + context.GetUsername() + "') and K.CONFIG_NAME = 'CUSTOMER_NATURE'", "DIGITAL_CHANNEL_SEC");
+                if (SourceDataTable.Rows.Count != 0)
+                {
+                    config_value = SourceDataTable.Rows[0][0].ToString();
+                }
+                dlink = null;
+                SourceDataTable = null;
+
+                dlink = new DataAccessComponent.DataAccessLink();
+                SourceDataTable = dlink.GetDataTable("select CUSTOMER_TYPE from dc_customer_info k where K.CUSTOMER_NAME='" + context.GetUsername() + "'", "DIGITAL_CHANNEL_SEC");
+                string customer_type = SourceDataTable.Rows[0][0].ToString();
+                dlink = null;
+                SourceDataTable = null;
+
+                dlink = new DataAccessComponent.DataAccessLink();
+                SourceDataTable = dlink.GetDataTable("select LIMIT_TYPE_ID from dc_customer_info k where K.CUSTOMER_NAME='" + context.GetUsername() + "'", "DIGITAL_CHANNEL_SEC");
+                string limit_type_id_DB = SourceDataTable.Rows[0][0].ToString();
+                dlink = null;
+                SourceDataTable = null;
+
+                if (customer_type == "D")
+                {
+                    if (enable_psd == "0")
+                    {
+                        if (config_value == "NRP")
+                        {
+                            limit_type_id = "5";
+                        }
+                        else if (config_value == "P")
+                        {
+                            limit_type_id = "8";
+                        }
+                        else
+                        {
+                            limit_type_id = "1";
+                        }
+                    }
+                    else if (enable_psd == "1")
+                    {
+                        limit_type_id = "4";
+                    }
+                }
+                else if (customer_type == "A")
+                {
+                    if (enable_psd == "0" && limit_type_id_DB == "6")
+                    {
+                        limit_type_id = "6";
+                    }
+                    else if (enable_psd == "1")
+                    {
+                        limit_type_id = "7";
+                    }
+                }
+                dlink = new DataAccessComponent.DataAccessLink();
+                SourceDataTable = dlink.GetDataTable("Select COUNT(*) from dc_Tran_Type_limit_group_rules a where A.LIMIT_TYPE_ID='" + limit_type_id + "' and A.IS_CLIENT_VIEW = 1 and A.IS_ACTIVE = '1' and trunc(A.EFFECTIVE_FROM_DATE) <= sysdate and A.EFFECTIVE_TO_DATE >= sysdate ", "DIGITAL_CHANNEL_SEC");
+                int is_client_view = Convert.ToInt32(SourceDataTable.Rows[0][0].ToString());
+                dlink = null;
+                SourceDataTable = null;
+
+                if (is_client_view != limit_type_count)
+                {
+                    throw new Exception(string.Format("The required limit count against Limit Type id :{0} in Database :{1} is not equal with UI :{2}", limit_type_id, is_client_view, limit_type_count));
+                }
+
+                for (int i = 0; i < limit_type_count; i++)
+                {
+                    Element keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_Type");
+                    string per_transaction = "";
+                    string limit_text = limit_management_elements[i];
+                    apmhelper.scroll_to_element_text(limit_text);
+                    apmhelper.scroll_to_element_text_by_index("Per Transaction -", i);
+                    string temp = keyword.Locator.Replace("{Limit_Type}", limit_text);
+                    string limit_type = apmhelper.ReturnKeywordValue(temp,"xpath");
+                    dlink = new DataAccessComponent.DataAccessLink();
+                    SourceDataTable = dlink.GetDataTable("Select A.MIN_AMOUNT, A.MAX_AMOUNT, LIMIT_RULES_ID from dc_Tran_Type_limit_group_rules a where A.CLIENT_DESCRIPTION='" + limit_type + "' and A.LIMIT_TYPE_ID='" + limit_type_id + "'", "DIGITAL_CHANNEL_SEC");
+                    string min_amount_check = SourceDataTable.Rows[0][0].ToString();
+                    if (min_amount_check == "0")
+                    {
+                        per_transaction = "No Limit";
+                    }
+                    else
+                    {
+                        per_transaction = SourceDataTable.Rows[0][1].ToString();
+                    }
+                    string limit_rules_id = SourceDataTable.Rows[0][2].ToString();
+                    dlink = null;
+                    SourceDataTable = null;
+
+                    dlink = new DataAccessComponent.DataAccessLink();
+                    SourceDataTable = dlink.GetDataTable("Select A.MIN_LIMIT, A.MAX_LIMIT from dc_custom_limit_rules a where A.LIMIT_RULE_ID = '" + limit_rules_id + "' and A.CUSTOMER_INFO_ID=(Select CUSTOMER_INFO_ID from dc_customer_info L where L.customer_name ='" + context.GetUsername() + "') and A.IS_ACTIVE = '1' and trunc(A.EFFECTIVE_FROM_DATE) <= sysdate and A.EFFECTIVE_TO_DATE > sysdate ", "DIGITAL_CHANNEL_SEC");
+                    if (SourceDataTable.Rows.Count != 0)
+                    {
+                        min_amount_check = SourceDataTable.Rows[0][0].ToString();
+                        if (min_amount_check == "0")
+                        {
+                            per_transaction = "No Limit";
+                        }
+                        else
+                        {
+                            per_transaction = SourceDataTable.Rows[0][1].ToString();
+                        }
+                    }
+                    dlink = null;
+                    SourceDataTable = null;
+
+                    Element Keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_Per_Tran");
+                    string temp_keyword = Keyword.Locator.Replace("{Limit_Type}", limit_text);
+                    //apmhelper.scroll_to_element_text_by_index(limit_text,i);
+                    string per_tran_UI = apmhelper.ReturnKeywordValue(temp_keyword,"xpath");
+                    if (per_tran_UI != "No Limit")
+                    {
+                        per_tran_UI = per_tran_UI.Remove(per_tran_UI.Length - 3);
+                        per_tran_UI = per_tran_UI.Replace(",", "");
+                    }
+
+                    if (per_transaction != per_tran_UI)
+                    {
+                        throw new Exception(String.Format("Per Transaction Amount in Database :{0} is not equal with per transaction amount on website :{1} for limit type :{2}", per_transaction, per_tran_UI, limit_type));
+                    }
+
+
+                    dlink = new DataAccessComponent.DataAccessLink();
+                    SourceDataTable = dlink.GetDataTable("Select DAILY_DEBIT_AMOUNT from dc_Tran_Type_limit_group_rules a where a.CLIENT_DESCRIPTION = '" + limit_type + "' and a.limit_type_id = '" + limit_type_id + "'", "DIGITAL_CHANNEL_SEC");
+                    string old_limit = SourceDataTable.Rows[0][0].ToString();
+                    context.SetOldLimit(old_limit);
+                    dlink = null;
+                    SourceDataTable = null;
+
+
+                    dlink = new DataAccessComponent.DataAccessLink();
+                    SourceDataTable = dlink.GetDataTable("Select DAILY_DEBIT_LIMIT from dc_custom_limit_rules a where A.LIMIT_RULE_ID = '" + limit_rules_id + "' and A.CUSTOMER_INFO_ID=(Select CUSTOMER_INFO_ID from dc_customer_info L where L.customer_name ='" + context.GetUsername() + "') and A.IS_ACTIVE = '1' and trunc(A.EFFECTIVE_FROM_DATE) <= sysdate and A.EFFECTIVE_TO_DATE > sysdate ", "DIGITAL_CHANNEL_SEC");
+                    if (SourceDataTable.Rows.Count != 0)
+                    {
+                        old_limit = SourceDataTable.Rows[0][0].ToString();
+                        context.SetOldLimit(old_limit);
+                    }
+                    dlink = null;
+                    SourceDataTable = null;
+                    Keyword = null;
+                    temp_keyword = null;
+                    Keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_daily_limit");
+                    temp_keyword = Keyword.Locator.Replace("{Limit_Type}", limit_text);
+                    //apmhelper.scroll_to_element_text_by_index(limit_text, i);
+                    string daily_limit = apmhelper.ReturnKeywordValue(temp_keyword,"xpath");
+                    daily_limit = daily_limit.Remove(daily_limit.Length - 3);
+                    daily_limit = daily_limit.Replace(",", "");
+                    if (old_limit != daily_limit)
+                    {
+                        throw new Exception(String.Format("Daily Debit Amount in Database :{0} is not equal with daily debit amount on website :{1} for limit type :{2}", old_limit, daily_limit, limit_type));
+                    }
+
+
+
+
+                    dlink = new DataAccessComponent.DataAccessLink();
+                    SourceDataTable = dlink.GetDataTable("Select DAILY_DEBIT_AMOUNT from DC_LIMIT_CONSUMED I WHERE I.CUSTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from dc_customer_info L where L.customer_name = '" + context.GetUsername() + "') and TRUNC(I.LAST_TXN_DATE) = Trunc(SYSDATE) and I.LIMIT_RULES_ID = '" + limit_rules_id + "'", "DIGITAL_CHANNEL_SEC");
+                    if (SourceDataTable.Rows.Count != 0)
+                    {
+                        daily_consume_limit = SourceDataTable.Rows[0][0].ToString();
+                    }
+                    else
+                    {
+                        daily_consume_limit = "0";
+                    }
+                    dlink = null;
+                    SourceDataTable = null;
+
+                    Keyword = null;
+                    temp_keyword = null;
+                    Keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_Availed");
+                    temp_keyword = Keyword.Locator.Replace("{Limit_Type}", limit_text);
+                    //apmhelper.scroll_to_element_text_by_index(limit_text, i);
+                    string daily_consume_limit_ui = apmhelper.ReturnKeywordValue(temp_keyword,"xpath");
+                    daily_consume_limit_ui = daily_consume_limit_ui.Remove(daily_consume_limit_ui.Length - 3);
+                    daily_consume_limit_ui = daily_consume_limit_ui.Replace(",", "");
+                    if (daily_consume_limit != daily_consume_limit_ui)
+                    {
+                        throw new Exception(String.Format("Database Availed limit :{0} is not equal with Availed limit on Website :{1} for limit type :{2}", daily_consume_limit, daily_consume_limit_ui, limit_type));
+                    }
+
+
+
+                    temp_keyword = null;
+                    Keyword = null;
+                    Keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_Remaining");
+                    temp_keyword = Keyword.Locator.Replace("{Limit_Type}", limit_type);
+                    daily_rem_limit = apmhelper.ReturnKeywordValue(temp_keyword,"xpath");
+                    daily_rem_limit = daily_rem_limit.Remove(daily_rem_limit.Length - 3);
+                    daily_rem_limit = daily_rem_limit.Replace(",", "");
+
+                    if (Convert.ToInt32(daily_rem_limit) != (Convert.ToInt32(old_limit) - Convert.ToInt32(daily_consume_limit_ui)))
+                    {
+                        throw new Exception(String.Format("Website Remaining limit :{0} is not equal with Calculated Remaining amount from Availed Limit :{1} for limit type :{2}", daily_rem_limit, (Convert.ToInt32(old_limit) - Convert.ToInt32(daily_consume_limit_ui)), limit_type));
+                    }
+
+                    customer_limit_detail_dict.Add(limit_type, Tuple.Create(old_limit, limit_type_id, limit_rules_id));
+
+                    Keyword = null;
+                    temp_keyword = null;
+                    limit_rules_id = temp = daily_limit = old_limit = per_tran_UI = per_transaction = min_amount_check = limit_type = temp_keyword = String.Empty;
+
+                    context.SetCustLimitDetail(customer_limit_detail_dict);
+
+                }
+            }
+            catch (Exception exception)
+            {
+                AppiumHelper.TakeScreenshot();
+                throw new Exception(exception.Message);
+            }
+        }
+        [Then(@"I am performing limit reduction operation on ""(.*)"" of slider ""(.*)"" of ""(.*)"" with new limit as ""(.*)""")]
+        public void ThenIAmPerformingLimitReductionOperationOnOfSliderOfWithNewLimitAs(string keyword, string slider_keyword, string limit_type, int new_limit)
+        {
+            try
+            {
+                AppiumHelper apmhelper = new AppiumHelper();
+                var cust_limit_dict = context.GetCustLimitDetail();
+                string min_value = "";
+                string max_value = "";
+                string old_limit = "";
+                string limit_type_id = "";
+                string limit_rules_id = "";
+                string daily_consume_limit = "";
+                string daily_rem_limit = "";
+                string temp_keyword = "";
+                int counter = 0;
+
+                foreach (var item in cust_limit_dict)
+                {
+                    if (item.Key == limit_type)
+                    {
+                        old_limit = item.Value.Item1;
+                        limit_type_id = item.Value.Item2;
+                        limit_rules_id = item.Value.Item3;
+                        break;
+                    }
+                    counter++;
+                }
+
+                DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
+                DataTable SourceDataTable = dlink.GetDataTable("Select A.CLIENT_LIMIT_INTERVAL from dc_Tran_Type_limit_group_rules a where a.CLIENT_DESCRIPTION = '" + limit_type + "' and a.limit_type_id = '" + limit_type_id + "'", "DIGITAL_CHANNEL_SEC");
+                string step = SourceDataTable.Rows[0][0].ToString();
+                dlink = null;
+                SourceDataTable = null;
+
+                dlink = new DataAccessComponent.DataAccessLink();
+                SourceDataTable = dlink.GetDataTable("Select A.IS_EDITABLE from dc_Tran_Type_limit_group_rules a where A.CLIENT_DESCRIPTION='" + limit_type + "' and A.LIMIT_TYPE_ID='" + limit_type_id + "' and A.IS_ACTIVE = '1' and trunc(A.EFFECTIVE_FROM_DATE) <= sysdate and A.EFFECTIVE_TO_DATE > sysdate ", "DIGITAL_CHANNEL_SEC");
+                string is_editable = SourceDataTable.Rows[0][0].ToString();
+                dlink = null;
+                SourceDataTable = null;
+
+                if (is_editable != "1")
+                {
+                    throw new Exception(string.Format("The required Limit Type :{0} is not allowed to edit", limit_type));
+                }
+
+                dlink = new DataAccessComponent.DataAccessLink();
+                SourceDataTable = dlink.GetDataTable("Select DAILY_DEBIT_AMOUNT from DC_LIMIT_CONSUMED I WHERE I.CUSTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from dc_customer_info L where L.customer_name = '" + context.GetUsername() + "') and TRUNC(I.LAST_TXN_DATE) = Trunc(SYSDATE) and I.LIMIT_RULES_ID = '" + limit_rules_id + "'", "DIGITAL_CHANNEL_SEC");
+                if (SourceDataTable.Rows.Count != 0)
+                {
+                    daily_consume_limit = SourceDataTable.Rows[0][0].ToString();
+                }
+                else
+                {
+                    daily_consume_limit = "0";
+                }
+                dlink = null;
+                SourceDataTable = null;
+
+                Element Keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_Availed");
+                temp_keyword = Keyword.Locator.Replace("{Limit_Type}", limit_type);
+                apmhelper.scroll_to_element_text(limit_type);
+                apmhelper.scroll_to_element_text_by_index("Per Transaction - ",counter);
+                string daily_consume_limit_ui = apmhelper.ReturnKeywordValue(temp_keyword,"xpath");
+                daily_consume_limit_ui = daily_consume_limit_ui.Remove(daily_consume_limit_ui.Length - 3);
+                daily_consume_limit_ui = daily_consume_limit_ui.Replace(",", "");
+                if (daily_consume_limit != daily_consume_limit_ui)
+                {
+                    throw new Exception(String.Format("Database Availed limit :{0} is not equal with Availed limit on Website :{1} for limit type :{2}", daily_consume_limit, daily_consume_limit_ui, limit_type));
+                }
+                Keyword = null;
+                temp_keyword = null;
+                Keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_Remaining");
+                temp_keyword = Keyword.Locator.Replace("{Limit_Type}", limit_type);
+                //apmhelper.ScrollToElement(temp_keyword,"xpath");
+                daily_rem_limit = apmhelper.ReturnKeywordValue(temp_keyword,"xpath");
+                daily_rem_limit = daily_rem_limit.Remove(daily_rem_limit.Length - 3);
+                daily_rem_limit = daily_rem_limit.Replace(",", "");
+
+                if (Convert.ToInt32(daily_rem_limit) != (Convert.ToInt32(old_limit) - Convert.ToInt32(daily_consume_limit_ui)))
+                {
+                    throw new Exception(String.Format("UI Remaining limit :{0} is not equal with Calculated Remaining amount from Availed Limit :{1} for limit type :{2}", daily_rem_limit, (Convert.ToInt32(old_limit) - Convert.ToInt32(daily_consume_limit_ui)), limit_type));
+                }
+
+                Keyword = null;
+                temp_keyword = null;
+                Keyword = ContextPage.GetInstance().GetElement(keyword);
+                Element Keyword2 = ContextPage.GetInstance().GetElement("MyAccount_Limit_Slider");
+                string locator = Keyword.Locator.Replace("{Limit_Type}", limit_type);
+                //string slider_locator = Keyword2.Locator.Replace("{Limit_Type}", limit_type);
+                apmhelper.links(locator, "xpath");
+                apmhelper.PressKey("Tab");
+                apmhelper.PressKey("Tab");
+                Keyword = null;
+                Keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_Edit_Max");
+                string max_value_ui = apmhelper.ReturnKeywordValue(Keyword.Locator,"id");
+                max_value_ui = max_value_ui.Remove(max_value_ui.Length - 3);
+                max_value_ui = max_value_ui.Replace(",", "");
+
+                Keyword = null;
+                temp_keyword = null;
+                Keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_Edit_NewLimit");
+                
+                //string slider_limit_ui = Keyword.Locator.Replace("{x}", limit_type);
+
+                //int temp_count = Convert.ToInt32(max_value_ui) - Convert.ToInt32(old_limit);
+                //temp_count = temp_count / Convert.ToInt32(step);
+
+                //int result = Convert.ToInt32(old_limit) - new_limit;
+                //int step_limit = result / Convert.ToInt32(step);
+
+                //int step_limit_count = step_limit + temp_count;
+
+                apmhelper.RangeSlider(Keyword2.Locator, "id",new_limit);
+
+                keyword = null;
+                temp_keyword = null;
+                Keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_Slider_Next");
+                apmhelper.Button(Keyword.Locator, "id");
+
+                dlink = new DataAccessComponent.DataAccessLink();
+                SourceDataTable = dlink.GetDataTable("Select A.MIN_EDITABLE_AMOUNT from dc_Tran_Type_limit_group_rules a where A.CLIENT_DESCRIPTION='" + limit_type + "' and A.LIMIT_TYPE_ID='" + limit_type_id + "'", "DIGITAL_CHANNEL_SEC");
+                min_value = SourceDataTable.Rows[0][0].ToString();
+                dlink = null;
+                SourceDataTable = null;
+
+                Keyword = null;
+                Keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_Edit_Min");
+                apmhelper.scroll_to_element_by_id(Keyword.Locator);
+                string min_value_ui = apmhelper.ReturnKeywordValue(Keyword.Locator,"id");
+                min_value_ui = min_value_ui.Remove(min_value_ui.Length - 3);
+                min_value_ui = min_value_ui.Replace(",", "");
+                if (min_value != min_value_ui)
+                {
+                    throw new Exception(String.Format("Minimum Editable Aount in Database :{0} is not equal with Minimum Editable amount on website :{1} for limit type :{2}", min_value, min_value_ui, limit_type));
+                }
+
+                dlink = new DataAccessComponent.DataAccessLink();
+                SourceDataTable = dlink.GetDataTable("Select A.MAX_EDITABLE_AMOUNT from dc_Tran_Type_limit_group_rules a where A.CLIENT_DESCRIPTION='" + limit_type + "' and A.LIMIT_TYPE_ID='" + limit_type_id + "'", "DIGITAL_CHANNEL_SEC");
+                max_value = SourceDataTable.Rows[0][0].ToString();
+                dlink = null;
+                SourceDataTable = null;
+
+                if (max_value != max_value_ui)
+                {
+                    throw new Exception(String.Format("Maximum Editable Aount in Database :{0} is not equal with Maximum Editable amount on website :{1} for limit type :{2}", max_value, max_value_ui, limit_type));
+                }
+
+                keyword = null;
+                temp_keyword = null;
+                Keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_Edit_NewLimit");
+                //temp_keyword = Keyword.Locator.Replace("{x}", limit_type);
+                apmhelper.scroll_to_element_by_id(Keyword.Locator);
+                string new_edit_limit = apmhelper.ReturnKeywordValue(Keyword.Locator,"id");
+                new_edit_limit = new_edit_limit.Remove(new_edit_limit.Length - 3);
+                new_edit_limit = new_edit_limit.Replace(",", "");
+                if (new_edit_limit != Convert.ToString(new_limit))
+                {
+                    throw new Exception(String.Format("New Given Limit Amount :{0} is not equal with New Limit amount on website :{1} for limit type :{2}", new_limit, new_edit_limit, limit_type));
+                }
+
+                keyword = null;
+                temp_keyword = null;
+                Keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_Slider_Next_Save");
+                apmhelper.Button(Keyword.Locator,"id");
+
+                keyword = null;
+                Keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_Slider_SucessMessage");
+                string success_message = apmhelper.ReturnKeywordValue(Keyword.Locator,"id");
+
+                dlink = new DataAccessComponent.DataAccessLink();
+                if(Convert.ToInt32(old_limit) < new_limit)
+                {
+                    SourceDataTable = dlink.GetDataTable("Select C.RESULT_CODE_DESCRIPTION from dc_Response_code c where C.ERROR_CODE = 'IVR_CALL_INITIATION_SUCCESS'", "DIGITAL_CHANNEL_SEC");
+                }
+                
+                else if (Convert.ToInt32(old_limit) >= new_limit)
+                {
+                    SourceDataTable = dlink.GetDataTable(" Select C.RESULT_CODE_DESCRIPTION from dc_Response_code c where C.ERROR_CODE = 'LIMIT_CHANGE_SUCCESSFULLY'", "DIGITAL_CHANNEL_SEC");
+                }
+
+                string edit_success_msg = SourceDataTable.Rows[0][0].ToString();
+                dlink = null;
+                SourceDataTable = null;
+
+                if (edit_success_msg != success_message)
+                {
+                    throw new Exception(String.Format("Success Message in Database :{0} is not equal with Success Message on website :{1} for limit type :{2}", edit_success_msg, success_message, limit_type));
+                }
+
+                keyword = null;
+                Keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_Slider_CloseBtn");
+                apmhelper.Button(Keyword.Locator,"id");
+
+                keyword = null;
+                Keyword = ContextPage.GetInstance().GetElement("Dashboard_Sidebar");
+                apmhelper.Button(Keyword.Locator, "xpath");
+
+                keyword = null;
+                Keyword = ContextPage.GetInstance().GetElement("Dashboard_Sidebar_MyAccount");
+                apmhelper.Button(Keyword.Locator, "xpath");
+
+                keyword = null;
+                Keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_Management_Icon");
+                apmhelper.Button(Keyword.Locator, "xpath");
+
+                //keyword = null;
+                //Keyword = ContextPage.GetInstance().GetElement("MyAccount_LimitMngOption");
+                //selhelper.links(Keyword.Locator);
+
+                dlink = new DataAccessComponent.DataAccessLink();
+                SourceDataTable = dlink.GetDataTable("Select DAILY_DEBIT_LIMIT from DC_CUSTOM_LIMIT_RULES a where A.CUSTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from dc_customer_info l where L.CUSTOMER_NAME = '" + context.GetUsername() + "') and A.CHANNEL_ID='1'  order by A.UPDATED_ON desc", "DIGITAL_CHANNEL_SEC");
+                string new_edited_limit = SourceDataTable.Rows[0][0].ToString();
+                dlink = null;
+                SourceDataTable = null;
+
+                Keyword = null;
+                temp_keyword = null;
+                Keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_Remaining");
+                temp_keyword = Keyword.Locator.Replace("{Limit_Type}", limit_type);
+                apmhelper.scroll_to_element_text(limit_type);
+                apmhelper.scroll_to_element_text_by_index("Per Transaction - ", counter);
+                string daily_rem_after_edit = apmhelper.ReturnKeywordValue(temp_keyword, "xpath");
+                daily_rem_after_edit = daily_rem_after_edit.Remove(daily_rem_after_edit.Length - 3);
+                daily_rem_after_edit = daily_rem_after_edit.Replace(",", "");
+
+                if (Convert.ToInt32(daily_rem_after_edit) != (Convert.ToInt32(old_limit) - Convert.ToInt32(daily_consume_limit_ui)) - (Convert.ToInt32(old_limit) - new_limit))
+                {
+                    throw new Exception(String.Format("UI Remaining limit :{0} is not equal with Calculated Remaining amount after edit :{1} for limit type :{2}", daily_rem_limit, ((Convert.ToInt32(old_limit) - Convert.ToInt32(daily_consume_limit_ui)) - (new_limit)), limit_type));
+                }
+
+                Keyword = null;
+                temp_keyword = null;
+                Keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_daily_limit");
+                temp_keyword = Keyword.Locator.Replace("{Limit_Type}", limit_type);
+                //selhelper.ScrollToElement(temp_keyword);
+                string daily_new_limit = apmhelper.ReturnKeywordValue(temp_keyword,"xpath");
+                daily_new_limit = daily_new_limit.Remove(daily_new_limit.Length - 3);
+                daily_new_limit = daily_new_limit.Replace(",", "");
+                if (new_edited_limit != daily_new_limit)
+                {
+                    throw new Exception(String.Format("New Daily Limit in Database :{0} is not equal with New Daily Debit Limit on website :{1} for limit type :{2}", new_edited_limit, daily_new_limit, limit_type));
+                }
+                if (new_edited_limit != Convert.ToString(new_limit))
+                {
+                    throw new Exception(String.Format("New Daily Limit from Excel :{0} is not equal with New Daily Debit Limit on website :{1} for limit type :{2}", new_edited_limit, new_limit, limit_type));
+                }
+                dlink = new DataAccessComponent.DataAccessLink();
+                SourceDataTable = dlink.GetDataTable("Select UPDATED_ON from DC_CUSTOM_LIMIT_RULES a where A.CUSTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from dc_customer_info l where L.CUSTOMER_NAME = '" + context.GetUsername() + "') and A.CHANNEL_ID='1'  order by A.UPDATED_ON desc", "DIGITAL_CHANNEL_SEC");
+                string updated_on = SourceDataTable.Rows[0][0].ToString();
+                dlink = null;
+                SourceDataTable = null;
+                temp_keyword = null;
+
+                DateTime lastupdate = Convert.ToDateTime(updated_on);
+                updated_on = lastupdate.ToString("MM/dd/yyyy");
+                string today_date = DateTime.Today.ToString("MM/dd/yyyy");
+                if (updated_on != today_date)
+                {
+                    throw new Exception(String.Format("Updated on Date in Database :{0} does not match with today's date :{1} for limit type :{2}", updated_on, today_date, limit_type));
+                }
+
+                dlink = new DataAccessComponent.DataAccessLink();
+                SourceDataTable = dlink.GetDataTable("Select EFFECTIVE_FROM_DATE from DC_CUSTOM_LIMIT_RULES a where A.CUSTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from dc_customer_info l where L.CUSTOMER_NAME = '" + context.GetUsername() + "') and A.CHANNEL_ID='1'  order by A.UPDATED_ON desc", "DIGITAL_CHANNEL_SEC");
+                string effective_from = SourceDataTable.Rows[0][0].ToString();
+                dlink = null;
+                SourceDataTable = null;
+
+                lastupdate = Convert.ToDateTime(effective_from);
+                effective_from = lastupdate.ToString("MM/dd/yyyy");
+                if (updated_on != today_date)
+                {
+                    throw new Exception(String.Format("Effective From Date in Database :{0} does not match with today's date :{1} for limit type :{2}", effective_from, today_date, limit_type));
+                }
+
+                dlink = new DataAccessComponent.DataAccessLink();
+                SourceDataTable = dlink.GetDataTable("Select EFFECTIVE_TO_DATE from DC_CUSTOM_LIMIT_RULES a where A.CUSTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from dc_customer_info l where L.CUSTOMER_NAME = '" + context.GetUsername() + "') and A.CHANNEL_ID='1'  order by A.UPDATED_ON desc", "DIGITAL_CHANNEL_SEC");
+                string effective_to = SourceDataTable.Rows[0][0].ToString();
+                dlink = null;
+                SourceDataTable = null;
+
+                lastupdate = Convert.ToDateTime(effective_to);
+                effective_to = lastupdate.ToString("MM/dd/yyyy");
+                string todayDate = Convert.ToString(DateTime.Today.AddYears(30).ToString("MM/dd/yyyy"));
+                if (effective_to != todayDate)
+                {
+                    throw new Exception(String.Format("Effective to Date in Database :{0} does not match with the 10 years later date :{1} for limit type :{2}", effective_from, todayDate, limit_type));
+                }
+
+                dlink = new DataAccessComponent.DataAccessLink();
+                SourceDataTable = dlink.GetDataTable("Select UPDATED_ON, CREATED_ON, STATUS, IVR_ATTRIBUTE2, IVR_ATTRIBUTE3 from dc_transaction q where Q.CNIC= (Select CNIC from dc_customer_info a where A.CUSTOMER_NAME ='" + context.GetUsername() + "') and Q.LEAD_FIELD1='" + limit_type + "' and Q.CHANNEL_ID='1' order by Q.UPDATED_ON desc", "DIGITAL_CHANNEL_SEC");
+                string dc_updated_on = SourceDataTable.Rows[0][0].ToString();
+                string dc_created_on = SourceDataTable.Rows[0][1].ToString();
+                string status = SourceDataTable.Rows[0][2].ToString();
+                string dc_ivr1 = SourceDataTable.Rows[0][3].ToString();
+                string dc_ivr2 = SourceDataTable.Rows[0][4].ToString();
+                dlink = null;
+                SourceDataTable = null;
+
+                lastupdate = Convert.ToDateTime(dc_updated_on);
+                dc_updated_on = lastupdate.ToString("MM/dd/yyyy");
+                if (dc_updated_on != today_date)
+                {
+                    throw new Exception(String.Format("Updated on Date in DC_Transaction table in Database :{0} does not match with today's date :{1} for limit type :{2}", dc_updated_on, today_date, limit_type));
+                }
+
+                lastupdate = Convert.ToDateTime(dc_created_on);
+                dc_created_on = lastupdate.ToString("MM/dd/yyyy");
+                if (dc_created_on != today_date)
+                {
+                    throw new Exception(String.Format("Created on Date in DC_Transaction table in Database :{0} does not match with today's date :{1} for limit type :{2}", dc_created_on, today_date, limit_type));
+                }
+
+                if (status != "Success")
+                {
+                    throw new Exception(String.Format("Status in DC_Transaction table in Database :{0} is not Success for limit type :{1}", dc_created_on, limit_type));
+                }
+
+                if (dc_ivr1 != old_limit + ".0")
+                {
+                    throw new Exception(String.Format("Old Limit in DC_Transaction table in Database :{0} does not match with the on website :{1} for limit type :{2}", dc_ivr1, old_limit, limit_type));
+                }
+
+                if (dc_ivr2 != Convert.ToString(new_limit))
+                {
+                    throw new Exception(String.Format("New Limit on in DC_Transaction table in Database :{0} does not match with the on website :{1} for limit type :{2}", dc_ivr2, Convert.ToString(new_limit), limit_type));
+                }
+            }
+            catch (Exception exception)
+            {
+                AppiumHelper.TakeScreenshot();
+                throw new AssertFailedException(exception.Message);
+            }
+        }
+
 
         [When(@"I verify user Mutual Fund status on schema ""(.*)"" as ""(.*)""")]
         public void WhenIVerifyUserMutualFundStatusOnSchemaAs(string schema, string counter)
@@ -2248,7 +2834,7 @@ namespace HBLAutomationAndroid.Core
                             //    break;
                             //}
 
-                            if (array_mutual_fund_db[i, j] != array_mutual_fund_ui[i, j])
+                            if (array_mutual_fund_db[i, j].CompareTo(array_mutual_fund_ui[i, j]) != 0)
                             {
                                 throw new Exception(string.Format("The value on UI :{0} is not equal with value on database :{1}", array_mutual_fund_db[i, j], array_mutual_fund_ui[i, j]));
                             }
@@ -2775,7 +3361,7 @@ namespace HBLAutomationAndroid.Core
                 string ui_BILL_STATUS = "";
                 string DUE_DATE;
                 DateTime DUE_DATE_FORMAT;
-                int amount = 0;
+                double amount = 0;
                 string amount_within_dd;
                 string ui_amount_within_dd = "";
                 string amount_after_dd;
@@ -3217,7 +3803,7 @@ namespace HBLAutomationAndroid.Core
                                     queries[j] = temp;
                                 }
                             }
-                            if (queries[j].Equals("SendMoney_TranAmount")) //|| keywords[j].Equals("BillPayment_TranAmount"))
+                            if (queries[j].Equals("SendMoney_TranAmount") || keywords[j].Equals("BillPayment_TranAmount"))
                             {
                                 message = Convert.ToDecimal(message).ToString("0.00");
                             }
