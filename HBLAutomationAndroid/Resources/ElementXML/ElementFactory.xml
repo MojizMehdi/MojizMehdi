@@ -16,7 +16,26 @@
 
     <!--<Element keyword="Login_Dashboard" locator="//img[@class='desk-logo']"/>-->
   </Module>
+  <Module name ="MyAccount">
+    <Element keyword="MyAccount_Limit_Management_Icon" locator="//android.widget.TextView[@resource-id='com.hbl.android.hblmobilebanking:id/subcat_title_txtview' and @text='Limit Management']"/>
+    <Element keyword="MyAccount_Limit_Type_count" locator="com.hbl.android.hblmobilebanking:id/limit_title"/>
+    <Element keyword="MyAccount_Limit_Type" locator="//android.widget.TextView[@resource-id='com.hbl.android.hblmobilebanking:id/limit_title' and @text='{Limit_Type}']"/>
+    <Element keyword="MyAccount_Limit_Per_Tran" locator="//android.widget.TextView[@resource-id='com.hbl.android.hblmobilebanking:id/limit_title' and @text='{Limit_Type}']//following-sibling::android.widget.TextView[@resource-id='com.hbl.android.hblmobilebanking:id/txn_limit']"/>
+    <Element keyword="MyAccount_Limit_daily_limit" locator="//android.widget.TextView[@resource-id='com.hbl.android.hblmobilebanking:id/limit_title' and @text='{Limit_Type}']//following-sibling::android.widget.TextView[@resource-id='com.hbl.android.hblmobilebanking:id/limit_total_amount']"/>
+    <Element keyword="MyAccount_Limit_Availed" locator="//android.widget.TextView[@resource-id='com.hbl.android.hblmobilebanking:id/limit_title' and @text='{Limit_Type}']//following-sibling::android.widget.RelativeLayout[@resource-id='com.hbl.android.hblmobilebanking:id/limit_amounts']//android.widget.TextView[@resource-id='com.hbl.android.hblmobilebanking:id/limit_availed_amount']"/>
+    <Element keyword="MyAccount_Limit_Remaining" locator="//android.widget.TextView[@resource-id='com.hbl.android.hblmobilebanking:id/limit_title' and @text='{Limit_Type}']//following-sibling::android.widget.RelativeLayout[@resource-id='com.hbl.android.hblmobilebanking:id/limit_amounts']//android.widget.TextView[@resource-id='com.hbl.android.hblmobilebanking:id/limit_remaining_amount']"/>
+    <Element keyword="MyAccount_Limit_Edit_Icon" locator="//android.widget.TextView[@resource-id='com.hbl.android.hblmobilebanking:id/limit_title' and @text='{Limit_Type}']//following-sibling::android.widget.ImageButton[@resource-id='com.hbl.android.hblmobilebanking:id/edit_limit_btn']"/>
+    <Element keyword="MyAccount_Limit_Edit_Max" locator="com.hbl.android.hblmobilebanking:id/limit_max_amount"/>
+    <Element keyword="MyAccount_Limit_Edit_NewLimit" locator="com.hbl.android.hblmobilebanking:id/limit_amount"/>
+    <Element keyword="MyAccount_Limit_Edit_Min" locator="com.hbl.android.hblmobilebanking:id/limit_min_amount"/>
+    <Element keyword="MyAccount_Limit_Slider" locator="com.hbl.android.hblmobilebanking:id/limit_progress"/>
+    <Element keyword="MyAccount_Limit_Slider_Next" locator="com.hbl.android.hblmobilebanking:id/next_limit_otp"/>
+    <Element keyword="MyAccount_Limit_Slider_SucessMessage" locator="com.hbl.android.hblmobilebanking:id/successMessageTxt"/>
+    <Element keyword="MyAccount_Limit_Slider_CloseBtn" locator="com.hbl.android.hblmobilebanking:id/close_btn"/>
+    <Element keyword="MyAccount_Limit_Slider_Next_Save" locator="com.hbl.android.hblmobilebanking:id/next_limit_save"/>
 
+    
+  </Module>
   <Module name ="Forget">
     <Element keyword="Forget_PassowrdBtn" locator="com.hbl.android.hblmobilebanking:id/forgot_id_pwd_btn"/>
     <Element keyword="Forget_PssowrdLoginId" locator="com.hbl.android.hblmobilebanking:id/login_id_field"/>
@@ -74,6 +93,7 @@
   <Module name ="Dashboard">
     <Element keyword="Dashboard" locator="com.hbl.android.hblmobilebanking:id/homeClick"/>
     <Element keyword="Dashboard_Sidebar" locator="//android.widget.ImageButton"/>
+    <Element keyword="Dashboard_Sidebar_MyAccount" locator="//android.widget.TextView[@resource-id='com.hbl.android.hblmobilebanking:id/menuTitle' and @text='My Account']"/>
     <Element keyword="Dashboard_Sidebar_TranActivity" locator="//android.widget.TextView[@resource-id='com.hbl.android.hblmobilebanking:id/menuTitle' and @text='Transaction Activity']"/>
     <Element keyword="Dashboard_More" locator="com.hbl.android.hblmobilebanking:id/more_icon"/>
     <Element keyword="Dashboard_BillPayment" locator="com.hbl.android.hblmobilebanking:id/pay_Btn"/>

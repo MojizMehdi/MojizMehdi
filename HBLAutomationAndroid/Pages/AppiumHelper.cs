@@ -242,6 +242,66 @@ namespace HBLAutomationAndroid.Pages
             }
         }
 
+        // For Range Slider with count and option for Left and Right arrow Key
+        public void RangeSlider(string range_slider_loc,string locator_type,int new_limit)
+        {
+            AndroidElement seekBar = null;
+            if (locator_type == "id")
+            {
+                seekBar = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementIsVisible(By.Id(range_slider_loc)));
+            }
+            else if(locator_type == "xpath")
+            {
+                seekBar = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementIsVisible(By.XPath(range_slider_loc)));
+            }
+            seekBar.SendKeys((new_limit - 1).ToString() + ".0");
+        }
+
+
+        // Method For TextBox
+        public void PressKey(string key)
+        {
+            try
+            {
+                //if (locator_type == "id")
+                //{
+                //    waitDriver.Until(ExpectedConditions.ElementIsVisible(By.Id(locator)));
+                //    {
+                        //AndroidElement Value = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
+                        //Thread.Sleep(100);
+                        Actions a = new Actions(driver);
+                        if (key == "Tab")
+                        {
+                            a.SendKeys(OpenQA.Selenium.Keys.Tab);
+                            a.Perform();
+                        }
+                        driver.HideKeyboard();
+                //    }
+               // }
+                //else if (locator_type == "xpath")
+                //{
+                //    waitDriver.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
+                //    {
+                //        AndroidElement Value = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
+                //        Thread.Sleep(100);
+                //        if (key == "Tab")
+                //        {
+                //            Actions a = new Actions(driver);
+                //            a.SendKeys(OpenQA.Selenium.Keys.Tab);
+                //            a.Perform();
+                //            //driver.Keyboard.SendKeys(OpenQA.Selenium.Keys.Tab);
+                //        }
+                //        driver.HideKeyboard();
+                //    }
+                //}
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("ex message: " + ex.Message);
+                //throw new AssertFailedException(string.Format("The element provided {0} is invalid", locator));
+            }
+
+        }
 
         // Method For TextBox
         public void SetTextBoxValue(string textboxvalue, string locator, string locator_type)
@@ -466,6 +526,13 @@ namespace HBLAutomationAndroid.Pages
                 {
                     try
                     {
+                        Boolean a = driver.FindElements(By.Id("com.hbl.android.hblmobilebanking:id/dialog_pos_btn")).Count != 0;
+                        if(a == true)
+                        {
+                            AndroidElement link_err = (AndroidElement)driver.FindElementById("com.hbl.android.hblmobilebanking:id/dialog_pos_btn");
+                            link_err.Click();
+                        }
+                        
                         AndroidElement link = (AndroidElement)driver.FindElementById(locator);
                         link.Click();
                     }
@@ -608,7 +675,29 @@ namespace HBLAutomationAndroid.Pages
             var temp = driver.FindElements(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"" + text + "\"));"));
             if (temp.Count == 0)
             {
-                throw new Exception(string.Format("Element with the given text not found on screen"));
+                throw new Exception(string.Format("Element with the given text: {0} not found on screen",text));
+            }
+            //var elements = driver.FindElements(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView("+ "new UiSelector().text(\"" + text + "\"));"));
+        }
+        public void scroll_to_element_text_by_index(string text,int index)
+        {
+
+            Thread.Sleep(3000);
+            var temp = driver.FindElements(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"" + text + "\").instance(" + index.ToString() + "));"));
+            if (temp.Count == 0)
+            {
+                throw new Exception(string.Format("Element with the given text: {0} and index: {1} not found on screen",text,index));
+            }
+            //var elements = driver.FindElements(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView("+ "new UiSelector().text(\"" + text + "\"));"));
+        }
+        public void scroll_to_element_by_id(string resource_id)
+        {
+
+            Thread.Sleep(3000);
+            var temp = driver.FindElements(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().resourceId(\"" + resource_id + "\"));"));
+            if (temp.Count == 0)
+            {
+                throw new Exception(string.Format("Element with the given Resource-Id: {0} not found on screen", resource_id));
             }
             //var elements = driver.FindElements(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView("+ "new UiSelector().text(\"" + text + "\"));"));
         }

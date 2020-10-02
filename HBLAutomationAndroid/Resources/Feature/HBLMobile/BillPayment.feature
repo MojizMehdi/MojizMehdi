@@ -37,6 +37,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 	And update the data by query "<status_query2>" on DIGITAL_CHANNEL_SEC
 	And the user is arrive to Mobile Banking home page
 	And I am clicking on "Dashboard"
+	And I set value in context from database "<account_count_query>" as "account_count" on Schema "<db_val>"
 	When I save Account Balances 
 	When I set value in context from data "0" as "term_deposit_flag" 
 	And I am clicking on "Dashboard_More"
@@ -127,8 +128,8 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 	And update the data by query "<status_query2>" on DIGITAL_CHANNEL_SEC
 	And the user is arrive to Mobile Banking home page
 	And I am clicking on "Dashboard"
-	When I save Account Balances
-	And I set value in context from data "0" as "term_deposit_flag"  
+	#When I save Account Balances
+	When I set value in context from data "0" as "term_deposit_flag"  
 	And I am clicking on "Dashboard_More"
 	And I have given "<Category_Value>" on "SendMoney_SearchBeneField"
 	And I am clicking on "BillPayment_CategoryLink"
@@ -173,17 +174,14 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 	#And I am clicking on "BillPayment_RatingOkBtn"
 	And I wait 2000
 	#And I am clicking on "BillPayment_Rating_Feedback_OkBtn"
-	And I save Transaction Info
+	#And I save Transaction Info
 	Then verify through "Transaction is successful. " on "BillPayment_TranSuccess"
-	And verify through database on "<tran_type_query>" on Schema "<db_val>" on "BillPayment_TranType"
+	#And verify through database on "<tran_type_query>" on Schema "<db_val>" on "BillPayment_TranType"
 	And verify through database on "<tran_amount_query>" on Schema "<db_val>" on "BillPayment_TranAmount"
 	And verify through database on "<from_account_query>" on Schema "<db_val>" on "BillPayment_TranFromAcc"
 	And verify through database on "<company_name_query>" on Schema "<db_val>" on "BillPayment_CompanyName"
 	And verify through database on "<consumer_no_query>" on Schema "<db_val>" on "BillPayment_TranSucess_ConsumerNo"
 	And verify the message "2" through database on "<LP_BillStatus_query>" on Schema "<db_val2>"
-	And I am clicking on "BillPayment_TranInfoClose"
-	And I set value in context from data "<bene_name>" as "bene_name"
-	And verify bene status from <bene_query> on Schema "<db_val2>"
 	And I set value in context from database "<schedule_config>" as "schedule_configuration" on Schema "<db_val>"
 	And I am clicking on "BillPayment_MultiPayment_Schedule_Toggle"
 	And I am clicking on "<schedule_type>"
@@ -194,10 +192,13 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 	And verify the schedule config "<schedule_verify>" on Schema "<db_val>"
 	And I am clicking on "BillPayment_MultiPayment_Schedule_Close"
 	And I wait 2000
+	#And I am clicking on "BillPayment_TranInfoClose"
+	And I set value in context from data "<bene_name>" as "bene_name"
+	And verify bene status from <bene_query> on Schema "<db_val2>"
 	And I have given "<BillPayment_ConsumerNo_Value>" on "BillPayment_SearchBeneField"
 	Then verify through "ConsumerNoContextVal" on "BillPayment_SearchBeneConsumerNo"
 	And I am clicking on "Dashboard"
-	And I verify Account Balance
+	#And I verify Account Balance
 	And I am clicking on "Dashboard_Sidebar"
 	And I am clicking on "Dashboard_Sidebar_TranActivity"
 	And I am clicking on "TransactionActivity_Financial"
