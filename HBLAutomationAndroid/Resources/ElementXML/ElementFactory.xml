@@ -4,7 +4,6 @@
     <!--<Element keyword="Login_UserId" locator="//android.widget.EditText[@resource-id='com.hbl.android.hblmobilebanking:id/l_username_field']"/>
     <Element keyword="Login_Password" locator="//android.widget.EditText[@resource-id='com.hbl.android.hblmobilebanking:id/l_password_field']"/>
     <Element keyword="Login_SignIn_Button" locator="//android.widget.Button[@resource-id='com.hbl.android.hblmobilebanking:id/login_button']"/>-->
-
     <Element keyword="Login_UserId" locator="com.hbl.android.hblmobilebanking:id/l_username_field"/>
     <Element keyword="Login_Password" locator="com.hbl.android.hblmobilebanking:id/l_password_field"/>
     <Element keyword="Login_SignIn_Button" locator="com.hbl.android.hblmobilebanking:id/login_button"/>
@@ -13,7 +12,13 @@
     <Element keyword="Login_permission_allow_btn" locator="com.android.permissioncontroller:id/permission_allow_button"/>
     <Element keyword="Login_permission_allow_btn2" locator="com.android.permissioncontroller:id/permission_allow_foreground_only_button"/>
     <Element keyword="Login_Success_Text" locator="//android.widget.TextView[contains(@text,'Welcome,')]"/>
-
+    <!--Konnect_Login-->
+    <Element keyword="Login_Tagging_Next" locator="com.hbl.bbcustomerapp:id/next"/>
+    <Element keyword="Login_Tagging_MobileNo" locator="com.hbl.bbcustomerapp:id/mobileNumberACTV"/>
+    <Element keyword="Login_K_UserId" locator="com.hbl.bbcustomerapp:id/login_usernameET"/>
+    <Element keyword="Login_K_Pin" locator="com.hbl.bbcustomerapp:id/login_passwordET"/>
+    <Element keyword="Login_K_SignInBtn" locator="com.hbl.bbcustomerapp:id/login_LoginBtnTV"/>
+    <Element keyword="Login_K_DisplayName" locator="//android.widget.TextView[@resource-id = 'com.hbl.bbcustomerapp:id/userName' and contains(@text,'HI')]"/>
     <!--<Element keyword="Login_Dashboard" locator="//img[@class='desk-logo']"/>-->
   </Module>
   <Module name ="MyAccount">
@@ -230,7 +235,7 @@
     <Element keyword="SendMoney_TranType" locator="//android.widget.TextView[@text='Transaction Type']/following-sibling::android.widget.TextView"/>
     <Element keyword="SendMoney_TranAmount" locator="//android.widget.TextView[@text='Transaction Amount']/following-sibling::android.widget.TextView"/>
     <Element keyword="SendMoney_TranFromAcc" locator="//android.widget.TextView[@text='From Account']/following-sibling::android.widget.TextView"/>
-    <Element keyword="SendMoney_TranSourceAcc" locator="//android.widget.TextView[@text='Source Account Number:']/following-sibling::android.widget.TextView"/>
+    <Element keyword="SendMoney_TranSourceAcc" locator="//android.widget.TextView[@text='Source Account Number']/following-sibling::android.widget.TextView"/>
     <Element keyword="SendMoney_TranToAcc" locator="//android.widget.TextView[@text='To Account Number/IBAN']/following-sibling::android.widget.TextView"/>
     <Element keyword="SendMoney_TranBeneName" locator="//android.widget.TextView[@text='Beneficiary Name']/following-sibling::android.widget.TextView"/>
     <Element keyword="SendMoney_TranToBank" locator="//android.widget.TextView[@text='To Bank']/following-sibling::android.widget.TextView"/>

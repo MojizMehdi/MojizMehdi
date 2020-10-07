@@ -191,123 +191,119 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.And("the user is arrive to Mobile Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 33
  testRunner.And("I am clicking on \"Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 34
- testRunner.When("I save Account Balances", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 35
- testRunner.And("I set value in context from data \"0\" as \"term_deposit_flag\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I set value in context from data \"0\" as \"term_deposit_flag\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 36
  testRunner.And("I am clicking on \"SendMoney_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 37
- testRunner.And("I am clicking on \"SendMoney_SkipBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 38
- testRunner.And(string.Format("I set value in context from database \"{0}\" as \"No_Of_Accounts\" on Schema \"{1}\"", no_Of_Acconts_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"SendMoney_SkipBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 39
+ testRunner.And(string.Format("I set value in context from database \"{0}\" as \"No_Of_Accounts\" on Schema \"{1}\"", no_Of_Acconts_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 40
  testRunner.And(string.Format("I set value in context from database \"{0}\" as \"Beneficiary_Count_Inter_Branch\" on" +
                         " Schema \"{1}\"", bene_Count_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 40
+#line 41
  testRunner.And(string.Format("I set value in context from database \"{0}\" as \"Beneficiary_Count_Inter_Bank\" on S" +
                         "chema \"{1}\"", bene_Count_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 41
- testRunner.And("I am clicking on \"SendMoney_AddNewBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 42
- testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_FromAccount\"", from_Account_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"SendMoney_AddNewBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 43
- testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_Bank\"", bank_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_FromAccount\"", from_Account_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 44
- testRunner.And(string.Format("I set value in context from data \"{0}\" as \"ToAccount\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_Bank\"", bank_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 45
- testRunner.And("I set value in context from data \"SendMoney\" as \"Transaction_Type\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"ToAccount\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 46
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_ToAccount\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I set value in context from data \"SendMoney\" as \"Transaction_Type\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 47
- testRunner.And("I scroll down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_ToAccount\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 48
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_Amount\"", amount_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I scroll down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 49
- testRunner.When(string.Format("I select \"{0}\" on \"SendMoney_PurposeOfPayment\"", purposeOfPayment_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_Amount\"", amount_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 50
- testRunner.And("I scroll down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When(string.Format("I select \"{0}\" on \"SendMoney_PurposeOfPayment\"", purposeOfPayment_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 51
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_BeneNick\"", bene_Nick), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 52
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_BeneMobileNo\"", bene_Mobile_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 53
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_BeneEmail\"", bene_Email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 54
- testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 55
- testRunner.And("I am performing on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 56
- testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 57
  testRunner.And("I scroll down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 52
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_BeneNick\"", bene_Nick), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 53
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_BeneMobileNo\"", bene_Mobile_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 54
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_BeneEmail\"", bene_Email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 55
+ testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 56
+ testRunner.And("I am performing on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 57
+ testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 58
- testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I scroll down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 59
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 60
- testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 61
- testRunner.And("I am performing on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 62
- testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 63
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_TranPass\"", tran_Pass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 64
  testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 65
+#line 62
  testRunner.And("I am performing on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 66
+#line 63
  testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 64
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_TranPass\"", tran_Pass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 65
+ testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 66
+ testRunner.And("I am performing on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 67
+ testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 68
  testRunner.And("I am clicking on \"BillPayment_Rating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 70
- testRunner.And("I save Transaction Info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 71
+#line 72
  testRunner.Then(string.Format("verify through \"{0}\" on \"SendMoney_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 73
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranAmount\"", tran_Amount_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 74
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFromAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 75
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToAcc\"", to_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 76
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToBank\"", to_Bank_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 77
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranBeneName\"", bene_Name_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 78
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranPurpose\"", purpose_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 79
- testRunner.And("I am clicking on \"SendMoney_TranInfoClose\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 80
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_SearchBeneField\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 81
- testRunner.Then("verify through \"ToAccountNoContextVal\" on \"SendMoney_SearchBeneAccountNo\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 82
- testRunner.And("I am clicking on \"Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 83
- testRunner.And("I verify Account Balance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 84
- testRunner.And("I am clicking on \"Dashboard_Sidebar\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 85
- testRunner.And("I am clicking on \"Dashboard_Sidebar_TranActivity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 86
- testRunner.And("I am clicking on \"TransactionActivity_Financial\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 87
- testRunner.And("I am clicking on \"TransactionActivity_LatestTranLink\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 88
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranType\"", tran_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 89
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranAmount\"", tran_Amount_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 90
+#line 75
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFromAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 91
+#line 76
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToAcc\"", to_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 92
+#line 77
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToBank\"", to_Bank_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 93
+#line 78
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranBeneName\"", bene_Name_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 79
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranPurpose\"", purpose_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 80
+ testRunner.And("I am clicking on \"SendMoney_TranInfoClose\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 81
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_SearchBeneField\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 82
+ testRunner.Then("verify through \"ToAccountNoContextVal\" on \"SendMoney_SearchBeneAccountNo\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 83
+ testRunner.And("I am clicking on \"Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 85
+ testRunner.And("I am clicking on \"Dashboard_Sidebar\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 86
+ testRunner.And("I am clicking on \"Dashboard_Sidebar_TranActivity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 87
+ testRunner.And("I am clicking on \"TransactionActivity_Financial\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 88
+ testRunner.And("I am clicking on \"TransactionActivity_LatestTranLink\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 89
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranType\"", tran_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 90
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranAmount\"", tran_Amount_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 91
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFromAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 92
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToAcc\"", to_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 93
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToBank\"", to_Bank_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 94
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranBeneName\"", bene_Name_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 95
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranPurpose\"", purpose_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -321,7 +317,7 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/SendMoney.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid Account Details are provided with adding new Bene")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid Account Details are provided with adding new Bene")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", @"BEGIN UPDATE  DC_FUND_TRANSFER_BENEFICIARY TF SET TF.IS_DELETED = 1 WHERE TF.ACCOUNT_NO = '12757900758503' AND TF.CUSTOMER_INFO_ID = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DCI WHERE DCI.CUSTOMER_NAME = 'ABBY');DELETE FROM DC_DATA_CACHE DC WHERE DC.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = 'ABBY');COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", @"BEGIN UPDATE  DC_FUND_TRANSFER_BENEFICIARY TF SET TF.IS_DELETED = 1 WHERE TF.ACCOUNT_NO = '12757900758503' AND TF.CUSTOMER_INFO_ID = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DCI WHERE DCI.CUSTOMER_NAME = '{username}');DELETE FROM DC_DATA_CACHE DC WHERE DC.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{username}');COMMIT;END;")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -333,7 +329,7 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Account_Number_Value", "12757900758503")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "10")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PurposeOfPayment_Value", "Courier Services")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "AliAbbas1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "AliAbbas")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Mobile_No", "03121223345")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Email", "aliabb111@gmail.com")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
@@ -347,21 +343,21 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name_query", "SELECT DT.BENEFICIARY_NAME FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name_query", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:count_query", "")]
         public virtual void WhenUserTryToSendMoneyMobile_WhenValidAccountDetailsAreProvidedWithAddingNewBene()
         {
 #line 29
-this.WhenUserTryToSendMoneyMobile("When valid Account Details are provided with adding new Bene", @"BEGIN UPDATE  DC_FUND_TRANSFER_BENEFICIARY TF SET TF.IS_DELETED = 1 WHERE TF.ACCOUNT_NO = '12757900758503' AND TF.CUSTOMER_INFO_ID = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DCI WHERE DCI.CUSTOMER_NAME = 'ABBY');DELETE FROM DC_DATA_CACHE DC WHERE DC.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = 'ABBY');COMMIT;END;", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+this.WhenUserTryToSendMoneyMobile("When valid Account Details are provided with adding new Bene", @"BEGIN UPDATE  DC_FUND_TRANSFER_BENEFICIARY TF SET TF.IS_DELETED = 1 WHERE TF.ACCOUNT_NO = '12757900758503' AND TF.CUSTOMER_INFO_ID = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DCI WHERE DCI.CUSTOMER_NAME = '{username}');DELETE FROM DC_DATA_CACHE DC WHERE DC.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{username}');COMMIT;END;", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
-                    "username}\') AND CA.IS_DELETED = 0 AND CA.FUND_TRANSFER_TYPE = \'INTER_BRANCH\'", "02197900643103", "HBL / Konnect", "12757900758503", "10", "Courier Services", "AliAbbas1", "03121223345", "aliabb111@gmail.com", "12345678", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "username}\') AND CA.IS_DELETED = 0 AND CA.FUND_TRANSFER_TYPE = \'INTER_BRANCH\'", "02197900643103", "HBL / Konnect", "12757900758503", "10", "Courier Services", "AliAbbas", "03121223345", "aliabb111@gmail.com", "12345678", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
-                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BENEFICIARY_NAME FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "", new string[] {
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -385,187 +381,144 @@ this.WhenUserTryToSendMoneyMobile("When valid Account Details are provided with 
                     string oTP_Value, 
                     string tran_Pass_Value, 
                     string success_Message, 
-                    string tran_Type_Query, 
-                    string tran_Amount_Query, 
                     string from_Account_Query, 
-                    string to_Account_Query, 
-                    string to_Bank_Query, 
-                    string bene_Name_Query, 
+                    string frequency_Query, 
                     string purpose_Query, 
                     string db_Val, 
-                    string count_Query, 
                     string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When user try to send money mobile add new schedule payment", exampleTags);
-#line 100
- this.ScenarioSetup(scenarioInfo);
 #line 101
- testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ this.ScenarioSetup(scenarioInfo);
 #line 102
- testRunner.And(string.Format("update the data by query \"{0}\" on DIGITAL_CHANNEL_SEC", status_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 103
- testRunner.And("the user is arrive to Mobile Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("update the data by query \"{0}\" on DIGITAL_CHANNEL_SEC", status_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 104
- testRunner.And("I am clicking on \"Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the user is arrive to Mobile Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 105
- testRunner.When("I save Account Balances", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 106
- testRunner.And("I set value in context from data \"0\" as \"term_deposit_flag\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 107
- testRunner.When("I am clicking on \"SendMoney_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I set value in context from data \"0\" as \"term_deposit_flag\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 108
- testRunner.And("I am clicking on \"SendMoney_SkipBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"SendMoney_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 109
- testRunner.And(string.Format("I set value in context from database \"{0}\" as \"No_Of_Accounts\" on Schema \"{1}\"", no_Of_Acconts_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 110
+ testRunner.And("I am clicking on \"SendMoney_SkipBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 111
+ testRunner.And(string.Format("I set value in context from database \"{0}\" as \"No_Of_Accounts\" on Schema \"{1}\"", no_Of_Acconts_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 112
  testRunner.And(string.Format("I set value in context from database \"{0}\" as \"Beneficiary_Count_Inter_Branch\" on" +
                         " Schema \"{1}\"", bene_Count_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 111
+#line 113
  testRunner.And(string.Format("I set value in context from database \"{0}\" as \"Beneficiary_Count_Inter_Bank\" on S" +
                         "chema \"{1}\"", bene_Count_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 112
- testRunner.And("I am clicking on \"SendMoney_AddNewBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 113
- testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_FromAccount\"", from_Account_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 114
- testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_Bank\"", bank_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"SendMoney_AddNewBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 115
- testRunner.And(string.Format("I set value in context from data \"{0}\" as \"ToAccount\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_FromAccount\"", from_Account_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 116
- testRunner.And("I set value in context from data \"SendMoney\" as \"Transaction_Type\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_Bank\"", bank_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 117
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_ToAccount\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"ToAccount\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 118
- testRunner.And("I scroll down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I set value in context from data \"SendMoney\" as \"Transaction_Type\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 119
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_Amount\"", amount_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_ToAccount\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 120
- testRunner.When(string.Format("I select \"{0}\" on \"SendMoney_PurposeOfPayment\"", purposeOfPayment_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I scroll down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 121
- testRunner.And("I scroll down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_Amount\"", amount_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 122
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_BeneNick\"", bene_Nick), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When(string.Format("I select \"{0}\" on \"SendMoney_PurposeOfPayment\"", purposeOfPayment_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 123
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_BeneMobileNo\"", bene_Mobile_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 124
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_BeneEmail\"", bene_Email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 125
- testRunner.And("I am clicking on \"SendMoney_SchedulePayment_Check\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 126
  testRunner.And("I scroll down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 124
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_BeneNick\"", bene_Nick), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 125
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_BeneMobileNo\"", bene_Mobile_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 126
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_BeneEmail\"", bene_Email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 127
- testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_SchedulePayment_Frequency\"", frequency_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"SendMoney_SchedulePayment_Check\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 128
- testRunner.And("I am clicking on \"SendMoney_SchedulePayment_StartDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I scroll down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 129
- testRunner.And(string.Format("I select from date \"{0}\"", from_Date_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_SchedulePayment_Frequency\"", frequency_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 130
+ testRunner.And("I am clicking on \"SendMoney_SchedulePayment_StartDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 131
- testRunner.And("I am clicking on \"SendMoney_SchedulePayment_EndDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 132
- testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I select from date \"{0}\"", from_Date_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 133
- testRunner.And(string.Format("I select to date \"{0}\"", to_Date_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"SendMoney_SchedulePayment_EndDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 134
- testRunner.And("I am clicking on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 135
- testRunner.And("I am clicking on \"SendMoney_SchedulePayment_ViewSummary\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I select to date \"{0}\"", to_Date_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 136
- testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 137
+ testRunner.And("I am clicking on \"SendMoney_SchedulePayment_ViewSummary\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 138
+ testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 139
  testRunner.And("I am verifying list of execution iterations on \"SendMoney_Btn_Summary_Iteration_D" +
                     "ates\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 138
- testRunner.And("I am clicking on \"SendMoney_Btn_Summary_OK\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 139
- testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 140
- testRunner.And("I am performing on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 141
- testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 142
- testRunner.And("I scroll down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"SendMoney_Btn_Summary_OK\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 143
- testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 144
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I scroll down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 145
  testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 146
- testRunner.And("I am performing on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 147
- testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 148
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_TranPass\"", tran_Pass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 149
  testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 150
+#line 148
  testRunner.And("I am performing on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 151
+#line 149
  testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 150
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_TranPass\"", tran_Pass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 151
+ testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 152
+ testRunner.And("I am performing on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 153
+ testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 154
  testRunner.And("I am clicking on \"BillPayment_Rating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 155
- testRunner.And("I save Transaction Info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 156
- testRunner.Then(string.Format("verify through \"{0}\" on \"SendMoney_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 158
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranAmount\"", tran_Amount_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 159
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFromAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 160
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToAcc\"", to_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then(string.Format("verify through \"{0}\" on \"SendMoney_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 161
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToBank\"", to_Bank_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 162
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranBeneName\"", bene_Name_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 163
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranPurpose\"", purpose_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 164
- testRunner.And("I am clicking on \"SendMoney_TranInfoClose\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranSourceAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 165
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_SearchBeneField\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFrequency\"", frequency_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 166
- testRunner.Then("verify through \"ToAccountNoContextVal\" on \"SendMoney_SearchBeneAccountNo\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 167
- testRunner.And("verify the result of schedule payment from database", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 168
- testRunner.And("I am clicking on \"Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 169
- testRunner.And("I verify Account Balance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 170
- testRunner.And("I am clicking on \"Dashboard_Sidebar\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 171
- testRunner.And("I am clicking on \"Dashboard_Sidebar_TranActivity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 172
- testRunner.And("I am clicking on \"TransactionActivity_Financial\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 173
- testRunner.And("I am clicking on \"TransactionActivity_LatestTranLink\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 174
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranType\"", tran_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 175
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranAmount\"", tran_Amount_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 176
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFromAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 177
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToAcc\"", to_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 178
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToBank\"", to_Bank_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 179
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranBeneName\"", bene_Name_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 180
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranPurpose\"", purpose_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 167
+ testRunner.And("I am clicking on \"SendMoney_TranInfoClose\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 168
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_SearchBeneField\"", bene_Nick), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 169
+ testRunner.Then("verify through \"ToAccountNoContextVal\" on \"SendMoney_SearchBeneAccountNo\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 170
+ testRunner.And("verify the result of schedule payment from database", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to send money mobile add new schedule payment: When valid Account D" +
-            "etails are provided with adding new Bene")]
+            "etails are provided with adding new Bene with schedule")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SendMoney")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/SendMoney_Schedule.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid Account Details are provided with adding new Bene")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid Account Details are provided with adding new Bene")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", @"BEGIN UPDATE  DC_FUND_TRANSFER_BENEFICIARY TF SET TF.IS_DELETED = 1 WHERE TF.ACCOUNT_NO = '06047900194203' AND TF.CUSTOMER_INFO_ID = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DCI WHERE DCI.CUSTOMER_NAME = 'ABBY');DELETE FROM DC_DATA_CACHE DC WHERE DC.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = 'ABBY');COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid Account Details are provided with adding new Bene with schedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid Account Details are provided with adding new Bene with schedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", @"BEGIN UPDATE  DC_FUND_TRANSFER_BENEFICIARY TF SET TF.IS_DELETED = 1 WHERE TF.ACCOUNT_NO = '00580052365603' AND TF.CUSTOMER_INFO_ID = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DCI WHERE DCI.CUSTOMER_NAME = '{username}');DELETE FROM DC_DATA_CACHE DC WHERE DC.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{username}');COMMIT;END;")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -574,41 +527,30 @@ this.WhenUserTryToSendMoneyMobile("When valid Account Details are provided with 
             "username}\') AND CA.IS_DELETED = 0 AND CA.FUND_TRANSFER_TYPE = \'INTER_BRANCH\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "02197900643103")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Account_Number_Value", "12757900758503")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Account_Number_Value", "00580052365603")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "10")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PurposeOfPayment_Value", "Courier Services")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "AliAbbas1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "AliSchedule")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Mobile_No", "03121223345")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Email", "aliabb111@gmail.com")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Frequency_Value", "Daily")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "08/29/2020")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "09/27/2020")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "10/29/2020")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "11/27/2020")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Tran_Pass_Value", "pakistan2")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "Money sent successfully.")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
-            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
-            "TION_ID = \'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "Transaction is successful. ")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
-            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name_query", "SELECT DT.BENEFICIARY_NAME FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:frequency_query", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:count_query", "")]
-        public virtual void WhenUserTryToSendMoneyMobileAddNewSchedulePayment_WhenValidAccountDetailsAreProvidedWithAddingNewBene()
+        public virtual void WhenUserTryToSendMoneyMobileAddNewSchedulePayment_WhenValidAccountDetailsAreProvidedWithAddingNewBeneWithSchedule()
         {
-#line 100
- this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid Account Details are provided with adding new Bene", @"BEGIN UPDATE  DC_FUND_TRANSFER_BENEFICIARY TF SET TF.IS_DELETED = 1 WHERE TF.ACCOUNT_NO = '06047900194203' AND TF.CUSTOMER_INFO_ID = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DCI WHERE DCI.CUSTOMER_NAME = 'ABBY');DELETE FROM DC_DATA_CACHE DC WHERE DC.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = 'ABBY');COMMIT;END;", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+#line 101
+ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid Account Details are provided with adding new Bene with schedule", @"BEGIN UPDATE  DC_FUND_TRANSFER_BENEFICIARY TF SET TF.IS_DELETED = 1 WHERE TF.ACCOUNT_NO = '00580052365603' AND TF.CUSTOMER_INFO_ID = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DCI WHERE DCI.CUSTOMER_NAME = '{username}');DELETE FROM DC_DATA_CACHE DC WHERE DC.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{username}');COMMIT;END;", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
-                    "username}\') AND CA.IS_DELETED = 0 AND CA.FUND_TRANSFER_TYPE = \'INTER_BRANCH\'", "02197900643103", "HBL / Konnect", "12757900758503", "10", "Courier Services", "AliAbbas1", "03121223345", "aliabb111@gmail.com", "Daily", "08/29/2020", "09/27/2020", "12345678", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
-                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
-                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
-                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BENEFICIARY_NAME FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "", new string[] {
+                    "username}\') AND CA.IS_DELETED = 0 AND CA.FUND_TRANSFER_TYPE = \'INTER_BRANCH\'", "02197900643103", "HBL / Konnect", "00580052365603", "10", "Courier Services", "AliSchedule", "03121223345", "aliabb111@gmail.com", "Daily", "10/29/2020", "11/27/2020", "12345678", "pakistan2", "Transaction is successful. ", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", new string[] {
                         "source:Data/SendMoney_Schedule.xlsx"});
 #line hidden
         }
@@ -640,97 +582,97 @@ this.WhenUserTryToSendMoneyMobile("When valid Account Details are provided with 
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When user try to send money mobile using already added bene", @__tags);
-#line 186
-this.ScenarioSetup(scenarioInfo);
-#line 187
- testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 188
- testRunner.And(string.Format("update the data by query \"{0}\" on DIGITAL_CHANNEL_SEC", status_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 189
- testRunner.And("the user is arrive to Mobile Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 190
- testRunner.And("I am clicking on \"Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 191
- testRunner.When("I save Account Balances", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And(string.Format("update the data by query \"{0}\" on DIGITAL_CHANNEL_SEC", status_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 192
- testRunner.And("I set value in context from data \"0\" as \"term_deposit_flag\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the user is arrive to Mobile Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 193
- testRunner.And("I am clicking on \"SendMoney_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 194
- testRunner.And("I am clicking on \"SendMoney_SkipBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 196
- testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 197
- testRunner.And(string.Format("I have given \"{0}\" on \"BillPayment_SearchBeneField\"", beneName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 198
- testRunner.And("I am clicking on \"SendMoney_SearchBeneConsumerNo\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 199
- testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_FromAccount\"", from_Account_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 201
- testRunner.And("I set value in context from data \"<Account_Number_Value>\" as \"ToAccount\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 202
- testRunner.And("I set value in context from data \"SendMoney\" as \"Transaction_Type\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 205
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_Amount\"", amount_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 206
- testRunner.When(string.Format("I select \"{0}\" on \"SendMoney_PurposeOfPayment\"", purposeOfPayment_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 212
- testRunner.And("I am performing on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 213
- testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 220
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_TranPass\"", tran_Pass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 221
- testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 222
- testRunner.And("I am performing on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 223
- testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 224
- testRunner.And("I am clicking on \"BillPayment_Rating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 227
- testRunner.And("I save Transaction Info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 228
- testRunner.Then(string.Format("verify through \"{0}\" on \"SendMoney_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 230
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranAmount\"", tran_Amount_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 231
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFromAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 232
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToAcc\"", to_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 233
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToBank\"", to_Bank_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 235
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranPurpose\"", purpose_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 236
- testRunner.And("I am clicking on \"SendMoney_TranInfoClose_Bene\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 237
- testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 240
  testRunner.And("I am clicking on \"Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 241
+#line 194
+ testRunner.When("I save Account Balances", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 195
+ testRunner.And("I set value in context from data \"0\" as \"term_deposit_flag\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 196
+ testRunner.And("I am clicking on \"SendMoney_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 197
+ testRunner.And("I am clicking on \"SendMoney_SkipBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 199
  testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 242
- testRunner.And("I verify Account Balance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 243
- testRunner.And("I am clicking on \"Dashboard_Sidebar\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 244
- testRunner.And("I am clicking on \"Dashboard_Sidebar_TranActivity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 245
- testRunner.And("I am clicking on \"TransactionActivity_Financial\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 246
- testRunner.And("I am clicking on \"TransactionActivity_LatestTranLink\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 247
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranType\"", tran_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 248
+#line 200
+ testRunner.And(string.Format("I have given \"{0}\" on \"BillPayment_SearchBeneField\"", beneName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 201
+ testRunner.And("I am clicking on \"SendMoney_SearchBeneConsumerNo\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 202
+ testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_FromAccount\"", from_Account_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 204
+ testRunner.And("I set value in context from data \"<Account_Number_Value>\" as \"ToAccount\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 205
+ testRunner.And("I set value in context from data \"SendMoney\" as \"Transaction_Type\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 208
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_Amount\"", amount_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 209
+ testRunner.When(string.Format("I select \"{0}\" on \"SendMoney_PurposeOfPayment\"", purposeOfPayment_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 215
+ testRunner.And("I am performing on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 216
+ testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 223
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_TranPass\"", tran_Pass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 224
+ testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 225
+ testRunner.And("I am performing on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 226
+ testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 227
+ testRunner.And("I am clicking on \"BillPayment_Rating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 230
+ testRunner.And("I save Transaction Info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 231
+ testRunner.Then(string.Format("verify through \"{0}\" on \"SendMoney_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 233
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranAmount\"", tran_Amount_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 249
+#line 234
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFromAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 250
+#line 235
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToAcc\"", to_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 251
+#line 236
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToBank\"", to_Bank_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 238
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranPurpose\"", purpose_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 239
+ testRunner.And("I am clicking on \"SendMoney_TranInfoClose_Bene\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 240
+ testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 243
+ testRunner.And("I am clicking on \"Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 244
+ testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 245
+ testRunner.And("I verify Account Balance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 246
+ testRunner.And("I am clicking on \"Dashboard_Sidebar\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 247
+ testRunner.And("I am clicking on \"Dashboard_Sidebar_TranActivity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 248
+ testRunner.And("I am clicking on \"TransactionActivity_Financial\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 249
+ testRunner.And("I am clicking on \"TransactionActivity_LatestTranLink\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 250
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranType\"", tran_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 251
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranAmount\"", tran_Amount_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 252
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFromAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 253
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToAcc\"", to_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 254
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToBank\"", to_Bank_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 256
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranPurpose\"", purpose_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -765,7 +707,7 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:count_query", "")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene_WhenValidAccountDetailsAreProvidedWithAddingNewBene()
         {
-#line 186
+#line 189
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("When valid Account Details are provided with adding new Bene", "", "AliAbbas1", "02197900643103", "10", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -794,80 +736,80 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("When valid Account Detai
                     string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When user try to send money mobile using already added bene schedule payment", exampleTags);
-#line 259
- this.ScenarioSetup(scenarioInfo);
-#line 260
- testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 261
- testRunner.And(string.Format("update the data by query \"{0}\" on DIGITAL_CHANNEL_SEC", status_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 262
- testRunner.And("the user is arrive to Mobile Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ this.ScenarioSetup(scenarioInfo);
 #line 263
- testRunner.And("I am clicking on \"Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 264
- testRunner.When("I am clicking on \"SendMoney_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And(string.Format("update the data by query \"{0}\" on DIGITAL_CHANNEL_SEC", status_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 265
- testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the user is arrive to Mobile Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 266
- testRunner.And("I am clicking on \"SendMoney_SkipBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 267
- testRunner.And(string.Format("I have given \"{0}\" on \"BillPayment_SearchBeneField\"", beneName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I am clicking on \"SendMoney_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 268
- testRunner.And("I am clicking on \"SendMoney_SearchBeneConsumerNo\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 269
- testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_FromAccount\"", from_Account_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 270
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_Amount\"", amount_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 271
- testRunner.When(string.Format("I select \"{0}\" on \"SendMoney_PurposeOfPayment\"", purposeOfPayment_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 272
- testRunner.And("I am clicking on \"SendMoney_SchedulePayment_Check\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 273
- testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_SchedulePayment_Frequency\"", frequency_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 274
- testRunner.And("I am clicking on \"SendMoney_SchedulePayment_StartDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 275
- testRunner.And(string.Format("I select from date \"{0}\"", from_Date_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 277
- testRunner.And("I am clicking on \"SendMoney_SchedulePayment_EndDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 278
  testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 279
- testRunner.And(string.Format("I select to date \"{0}\"", to_Date_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 269
+ testRunner.And("I am clicking on \"SendMoney_SkipBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 270
+ testRunner.And(string.Format("I have given \"{0}\" on \"BillPayment_SearchBeneField\"", beneName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 271
+ testRunner.And("I am clicking on \"SendMoney_SearchBeneConsumerNo\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 272
+ testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_FromAccount\"", from_Account_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 273
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_Amount\"", amount_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 274
+ testRunner.When(string.Format("I select \"{0}\" on \"SendMoney_PurposeOfPayment\"", purposeOfPayment_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 275
+ testRunner.And("I am clicking on \"SendMoney_SchedulePayment_Check\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 276
+ testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_SchedulePayment_Frequency\"", frequency_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 277
+ testRunner.And("I am clicking on \"SendMoney_SchedulePayment_StartDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 278
+ testRunner.And(string.Format("I select from date \"{0}\"", from_Date_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 280
- testRunner.And("I am clicking on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"SendMoney_SchedulePayment_EndDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 281
- testRunner.And("I am clicking on \"SendMoney_SchedulePayment_ViewSummary\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 282
- testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I select to date \"{0}\"", to_Date_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 283
+ testRunner.And("I am clicking on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 284
+ testRunner.And("I am clicking on \"SendMoney_SchedulePayment_ViewSummary\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 285
+ testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 286
  testRunner.And("I am verifying list of execution iterations on \"SendMoney_Btn_Summary_Iteration_D" +
                     "ates\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 284
- testRunner.And("I am clicking on \"SendMoney_Btn_Summary_OK\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 285
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_TranPass\"", tran_Pass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 286
- testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 287
- testRunner.And("I am performing on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"SendMoney_Btn_Summary_OK\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 288
- testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_TranPass\"", tran_Pass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 289
- testRunner.And("I am clicking on \"BillPayment_Rating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 290
+ testRunner.And("I am performing on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 291
+ testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 292
- testRunner.Then(string.Format("verify through \"{0}\" on \"SendMoney_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 293
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranType\"", tran_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 294
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranSourceAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"BillPayment_Rating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 295
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFrequency\"", frequency_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then(string.Format("verify through \"{0}\" on \"SendMoney_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 296
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranPurpose\"", purpose_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranType\"", tran_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 297
- testRunner.And("I am clicking on \"SendMoney_TranInfoClose_Bene\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranSourceAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 298
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFrequency\"", frequency_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 299
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranPurpose\"", purpose_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 300
+ testRunner.And("I am clicking on \"SendMoney_TranInfoClose_Bene\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 301
  testRunner.And("verify the result of schedule payment from database", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -899,7 +841,7 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("When valid Account Detai
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment_WhenValidAccountNo_AndScheduleDatesAreProvided()
         {
-#line 259
+#line 262
  this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When valid account no. and Schedule Dates are provided", "", "AliAbbas1", "02197900643103", "10", "Courier Services", "Daily", "08/28/2020", "09/26/2020", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", new string[] {

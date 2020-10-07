@@ -67,7 +67,8 @@ namespace HBLAutomationAndroid.Core
             }
             var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             var connectionStringsSection = (ConnectionStringsSection)config.GetSection("connectionStrings");
-
+            
+            
             try
             {
                 if (Common.Configuration.GetInstance().GetByKey("ConnectionString_DIGITAL_CHANNEL_SEC") != null && Common.Configuration.GetInstance().GetByKey("ProviderName") != null)
@@ -95,6 +96,20 @@ namespace HBLAutomationAndroid.Core
                 {
                     connectionStringsSection.ConnectionStrings["QAT_TPE"].ConnectionString = Common.Configuration.GetInstance().GetByKey("ConnectionString_QAT_TPE");
                     connectionStringsSection.ConnectionStrings["QAT_TPE"].ProviderName = Common.Configuration.GetInstance().GetByKey("ProviderName");
+                    config.Save();
+                    ConfigurationManager.RefreshSection("connectionStrings");
+                }
+                if (Common.Configuration.GetInstance().GetByKey("ConnectionString_TEST_SMS_BANKING") != null && Common.Configuration.GetInstance().GetByKey("ProviderName") != null)
+                {
+                    connectionStringsSection.ConnectionStrings["TEST_SMS_BANKING"].ConnectionString = Common.Configuration.GetInstance().GetByKey("ConnectionString_TEST_SMS_BANKING");
+                    connectionStringsSection.ConnectionStrings["TEST_SMS_BANKING"].ProviderName = Common.Configuration.GetInstance().GetByKey("ProviderName");
+                    config.Save();
+                    ConfigurationManager.RefreshSection("connectionStrings");
+                }
+                if (Common.Configuration.GetInstance().GetByKey("ConnectionString_QAT_BB_SYSTEM") != null && Common.Configuration.GetInstance().GetByKey("ProviderName") != null)
+                {
+                    connectionStringsSection.ConnectionStrings["QAT_BB_SYSTEM"].ConnectionString = Common.Configuration.GetInstance().GetByKey("ConnectionString_QAT_BB_SYSTEM");
+                    connectionStringsSection.ConnectionStrings["QAT_BB_SYSTEM"].ProviderName = Common.Configuration.GetInstance().GetByKey("ProviderName");
                     config.Save();
                     ConfigurationManager.RefreshSection("connectionStrings");
                 }

@@ -30,7 +30,8 @@ namespace HBLAutomationAndroid.Pages
 {
     class AppiumHelper
     {
-        AppiumDriver<AndroidElement> driver = ContextPage.Driver;
+        //AppiumDriver<AndroidElement> driver = ContextPage.Driver;
+        AndroidDriver<AndroidElement> driver = (AndroidDriver<AndroidElement>)ContextPage.Driver;
         //IWebDriver driver = ContextPage.Driver;
         private WebDriverWait waitDriver;
         string savelocation;
@@ -117,6 +118,30 @@ namespace HBLAutomationAndroid.Pages
             ITouchAction tc = new TouchAction(driver);
             tc.LongPress(Control).Perform();
 
+        }
+        //change_driver
+        public void swtich_activity(string activity_package, string activity_name)
+        {
+            try
+            {
+                string ali = driver.CurrentActivity;
+                driver.StartActivity(activity_package,activity_name, activity_package, activity_name,false);
+            }
+            catch (Exception exception)
+            {
+                throw new Exception(exception.Message);
+            }
+        }
+        public void reset_app()
+        {
+            try
+            {
+                driver.ResetApp();
+            }
+            catch (Exception exception)
+            {
+                throw new Exception(exception.Message);
+            }
         }
         //For Counting Elements
         public int SizeCountElements(string locator, string locator_type)
@@ -270,12 +295,16 @@ namespace HBLAutomationAndroid.Pages
                         //AndroidElement Value = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
                         //Thread.Sleep(100);
                         Actions a = new Actions(driver);
-                        if (key == "Tab")
-                        {
-                            a.SendKeys(OpenQA.Selenium.Keys.Tab);
-                            a.Perform();
-                        }
-                        driver.HideKeyboard();
+                if (key == "Tab")
+                {
+                    //AndroidDriver d = new AndroidDriver(; 
+                    //RemoteWebDriver adb = (AndroidDriver<AndroidElement>)driver;
+                    //driver.ActivateApp()
+                    //(AndroidDriver<driver>)
+                    a.SendKeys(OpenQA.Selenium.Keys.Tab);
+                    a.Perform();
+                }
+                driver.HideKeyboard();
                 //    }
                // }
                 //else if (locator_type == "xpath")
@@ -321,7 +350,16 @@ namespace HBLAutomationAndroid.Pages
                         {
                             return;
                         }
-                        driver.HideKeyboard();
+                        //try
+                        //{
+                            driver.HideKeyboard();
+                        //}
+                        //catch
+                        //{
+
+                        //}
+                        
+                        //driver.HideKeyboard();
                         //if (locator == "com.hbl.android.hblmobilebanking:id/s_hbpsBillCompanies")
                         //{
                         //    Value = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id("com.hbl.android.hblmobilebanking:id/withoutMargin_Lay")));
@@ -679,14 +717,18 @@ namespace HBLAutomationAndroid.Pages
             }
             //var elements = driver.FindElements(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView("+ "new UiSelector().text(\"" + text + "\"));"));
         }
-        public void scroll_to_element_text_by_index(string text,int index)
+        public void scroll_to_element_text_with_parent_sibling(string parent_text, string child)
         {
 
             Thread.Sleep(3000);
-            var temp = driver.FindElements(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"" + text + "\").instance(" + index.ToString() + "));"));
+            //string text2 = "Mobile Prepaid and Postpaid Payments";
+            var temp = driver.FindElements(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().textContains(\"" + parent_text + "\").fromParent(new UiSelector().textContains(\"" + child + "\")));"));
+            //var temp = driver.FindElements(MobileBy.AndroidUIAutomator("//android.widget.TextView[@resource-id='com.hbl.android.hblmobilebanking:id/limit_title' and @text='Mobile Prepaid and Postpaid Payments']//following-sibling::android.widget.TextView[@resource - id = 'com.hbl.android.hblmobilebanking:id/txn_limit_label']"));
+            //var temp = driver.FindElements(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0).resourceId(\"" + ali + "\")).scrollIntoView(new UiSelector().textContains(\"" + text + "\").instance(5));"));
+
             if (temp.Count == 0)
             {
-                throw new Exception(string.Format("Element with the given text: {0} and index: {1} not found on screen",text,index));
+                throw new Exception(string.Format("Element with the given text: {0} and index: {1} not found on screen", parent_text, child));
             }
             //var elements = driver.FindElements(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView("+ "new UiSelector().text(\"" + text + "\"));"));
         }

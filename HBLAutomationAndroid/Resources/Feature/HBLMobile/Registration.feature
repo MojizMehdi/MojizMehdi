@@ -6,8 +6,14 @@
 
 @Registration
 Scenario Outline: 2 As a user i want to Signup using Debit Card Mobile
-	Given the test case title is "<Case>"	
+	Given the test case title is "<Case>"
+	#And I am resetting app
 	And the user is arrive to Mobile Banking home page 
+	And I wait 2000
+	And I am clicking on "Login_permission_allow_btn"
+	And I wait 1000
+	And I am clicking on "Login_permission_allow_btn2"
+	And I am clicking on "SendMoney_SkipBtn"
 	And I set value in context from data "<CNIC_D>" as "customer_cnic"
 	And I set value in context from data "True" as "SignupCheck"
 	And I set value in context from data "<account_tag1>" as "AccountForTag" 
@@ -15,8 +21,9 @@ Scenario Outline: 2 As a user i want to Signup using Debit Card Mobile
 	When I have given "<CNIC_D>" on "Registration_Cnic"
 	And I am clicking on "Registration_NextBtn"
 	And I wait 15000
+	And I scroll to element text as "13. GENERAL PROVISIONS"
 	And I scroll down
-	And I scroll down
+	#And I scroll down
 	And I am clicking on "Registration_AgreeBtn"
 	And I have given "<Debit_card_no>" on "Registration_CardNo"
 	And I have given "<pin>" on "Registration_CardPin"
@@ -77,6 +84,11 @@ Scenario Outline: 2 As a user i want to Signup using Debit Card Mobile
 Scenario Outline: 2 As a user i want to Signup using Credit Card Mobile
 	Given the test case title is "<Case>"	
 	And the user is arrive to Mobile Banking home page 
+	And I wait 2000
+	And I am clicking on "Login_permission_allow_btn"
+	And I wait 1000
+	And I am clicking on "Login_permission_allow_btn2"
+	And I am clicking on "SendMoney_SkipBtn"
 	#And I set value in context from data "<CNIC_D>" as "username"
 	And I set value in context from data "<CNIC_D>" as "customer_cnic"
 	And I set value in context from data "True" as "SignupCheck"
@@ -85,8 +97,9 @@ Scenario Outline: 2 As a user i want to Signup using Credit Card Mobile
 	When I have given "<CNIC_D>" on "Registration_Cnic"
 	And I am clicking on "Registration_NextBtn"
 	And I wait 15000
+	And I scroll to element text as "13. GENERAL PROVISIONS"
 	And I scroll down
-	And I scroll down
+	#And I scroll down
 	And I am clicking on "Registration_AgreeBtn"
 	#And verify the message using element "Registration_Password_Policy" through database on "<login_id_policy_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	And I have given "<Credit_card_no>" on "Registration_CardNo"
