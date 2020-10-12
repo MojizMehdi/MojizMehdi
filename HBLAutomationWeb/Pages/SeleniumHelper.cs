@@ -18,6 +18,7 @@ using System.Threading;
 using Tamir.SharpSsh;
 using System.Data;
 using OpenQA.Selenium.Interactions;
+using HBLAutomationWeb.Beans;
 
 namespace HBLAutomationWeb.Pages
 {
@@ -212,6 +213,8 @@ namespace HBLAutomationWeb.Pages
                         g.CopyFromScreen(Point.Empty, Point.Empty, bounds.Size);
                     }
                     string fileName = ContextPage.GetInstance().GetExcelRecord().ScenarioName + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".png";
+                    ExcelRecord rec = ContextPage.GetInstance().GetExcelRecord();
+                    rec.ScreenshotPath = savelocation + fileName;
                     bitmap.Save(savelocation + fileName, ImageFormat.Png);
                 }
             }
