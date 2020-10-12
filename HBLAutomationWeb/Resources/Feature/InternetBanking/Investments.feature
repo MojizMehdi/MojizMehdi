@@ -29,8 +29,8 @@ Scenario Outline: When user try to term deposit thorugh Investments
 	And I scroll to element "Investment_TermDep_ReqBtn"
 	And I am performing on "Investment_TermDep_ReqBtn"
 	Then verify through "<Success_Message>" on "Investment_TranSuccessMessage"
-	And verify through database on "<tran_type_query>" on Schema "<db_val>" on "Investment_TranType"
-	And verify through database on "<tran_amount_query>" on Schema "<db_val>" on "Investment_TranAmount"
+	#And verify through database on "<tran_type_query>" on Schema "<db_val>" on "Investment_TranType"
+	#And verify through database on "<tran_amount_query>" on Schema "<db_val>" on "Investment_TranAmount"
 	And verify through database on "<from_account_query>" on Schema "<db_val>" on "Investment_TranFromAcc"
 	And verify through database on "<to_account_query>" on Schema "<db_val>" on "Investment_TranToAcc"
 	And verify through database on "<date_query>" on Schema "<db_val>" on "Investment_TranDate"
@@ -54,7 +54,7 @@ Scenario Outline: When user try to term deposit thorugh Investments
 	And I am clicking on "Services_Last_Transaction"
 	And verify through "Successful" on "MyAccount_Forgot_TranSuccessMessage"
 	And verify through database on "<tran_type_query>" on Schema "<db_val>" on "Investment_TranType"
-	And verify through database on "<tran_amount_query>" on Schema "<db_val>" on "Investment_TranAmount"
+	#And verify through database on "<tran_amount_query>" on Schema "<db_val>" on "Investment_TranAmount"
 	And verify through database on "<from_account_query>" on Schema "<db_val>" on "Investment_TranFromAcc"
 	And verify through database on "<to_account_query>" on Schema "<db_val>" on "Investment_TranToAcc"
 	And verify through database on "<date_query>" on Schema "<db_val>" on "Investment_TranDate"
@@ -103,7 +103,7 @@ Scenario Outline: When user try to verify Mutual Fund
 	And verify through "<success_msg>" on "Investment_MutualFund_TranSuccessMessage"
 	And I set value in context from database "<GUID_query>" as "GUID" on Schema "<db_val>"
 	And verify through database on "<tran_date_query>" on Schema "<db_val>" on "Investment_MutualFund_TranDate"
-	And verify through database on "<tran_amount_query>" on Schema "<db_val>" on "Investment_MutualFund_TranAmount"
+	#And verify through database on "<tran_amount_query>" on Schema "<db_val>" on "Investment_MutualFund_TranAmount"
 	And verify through database on "<from_acc_query>" on Schema "<db_val>" on "Investment_MutualFund_TranFromAcc"
 	And verify through database on "<to_acc_query>" on Schema "<db_val>" on "Investment_MutualFund_TranToAcc"
 	And verify through database on "<fund_name_query>" on Schema "<db_val>" on "Investment_MutualFund_TranFundName"
@@ -116,11 +116,11 @@ Scenario Outline: When user try to verify Mutual Fund
 	And verify through "Successful" on "MyAccount_Forgot_TranSuccessMessage"
 	And verify through database on "<tran_type_query>" on Schema "<db_val>" on "Investment_TranType"
 	And verify through database on "<tran_date_query>" on Schema "<db_val>" on "Investment_TranDate"
-	And verify through database on "<tran_amount_query>" on Schema "<db_val>" on "Investment_TranAmount"
+	#And verify through database on "<tran_amount_query>" on Schema "<db_val>" on "Investment_TranAmount"
 	And verify through database on "<from_acc_query>" on Schema "<db_val>" on "Investment_TranToAcc"
 	And verify through database on "<to_acc_query>" on Schema "<db_val>" on "Investment_TranToAcc"
 	And verify through database on "<fund_name_query>" on Schema "<db_val>" on "Investment_TranFundName"
-
+	And I am performing on "Investment_TranActivityCloseBtn"
 
 @source:Data/MutualFund.xlsx
 	Examples: 

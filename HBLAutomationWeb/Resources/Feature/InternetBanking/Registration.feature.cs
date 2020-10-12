@@ -101,7 +101,6 @@ namespace HBLAutomationWeb.Resources.Feature.InternetBanking
                     string created_On_Query, 
                     string updated_On_Query, 
                     string last_Login_Query, 
-                    string transaction_Password_Query, 
                     string customer_Type, 
                     string customer_Type_Query, 
                     string iVR_Require_Query, 
@@ -111,6 +110,14 @@ namespace HBLAutomationWeb.Resources.Feature.InternetBanking
                     string pARAM_CHANNEL_ID_Query, 
                     string feedback_Type, 
                     string feedback_Option, 
+                    string last_Pass_Change_Query, 
+                    string last_Tran_Pass_Change_Query, 
+                    string login_Confirm, 
+                    string tran_Confirm, 
+                    string is_Password_Change_Required_Value, 
+                    string is_Password_Change_Required_Query, 
+                    string is_Password_Reset_Required_Value, 
+                    string is_Password_Reset_Required_Query, 
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -178,11 +185,11 @@ this.ScenarioSetup(scenarioInfo);
 #line 114
  testRunner.And(string.Format("I have given \"{0}\" on \"Registration_LoginID\"", login_Pass), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 115
- testRunner.And(string.Format("I have given \"{0}\" on \"Registration_ReLoginID\"", login_Pass), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Registration_ReLoginID\"", login_Confirm), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 116
  testRunner.And(string.Format("I have given \"{0}\" on \"Registration_TranPass\"", tran_Pass), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 117
- testRunner.And(string.Format("I have given \"{0}\" on \"Registration_ReTranPass\"", tran_Pass), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Registration_ReTranPass\"", tran_Confirm), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 118
  testRunner.And("I am performing on \"Registration_FinishBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 119
@@ -196,32 +203,42 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", created_On_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 123
  testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", updated_On_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 124
+ testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", last_Tran_Pass_Change_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 125
+ testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", last_Pass_Change_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 126
+ testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"DIGITAL_CHANNEL_SEC" +
+                        "\"", is_Password_Change_Required_Value, is_Password_Change_Required_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 127
+ testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"DIGITAL_CHANNEL_SEC" +
+                        "\"", is_Password_Reset_Required_Value, is_Password_Reset_Required_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 128
  testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"DIGITAL_CHANNEL_SEC" +
                         "\"", customer_Type, customer_Type_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 126
- testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", iVR_Require_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 127
- testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", iVR_Check_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 128
- testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", pARAM_CHANNEL_ID_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 129
- testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", eNABLE_PSD_Require_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", iVR_Require_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 130
- testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", eNABLE_PSD_Check_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", iVR_Check_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 131
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_UserId\"", login_Id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", pARAM_CHANNEL_ID_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 132
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_Password\"", login_Pass), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", eNABLE_PSD_Require_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 133
- testRunner.And("I am performing on \"Login_SignIn_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", eNABLE_PSD_Check_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 134
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_UserId\"", login_Id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 135
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_Password\"", login_Pass), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 136
+ testRunner.And("I am performing on \"Login_SignIn_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 137
  testRunner.And("I set value in context from data \"true\" as \"Last_login_flag\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 140
+#line 143
  testRunner.And("I am clicking on \"Signup_SkipBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 141
+#line 144
  testRunner.And("verify through \"Welcome\" on \"Login_Success_Text\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 142
+#line 145
  testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", last_Login_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -257,8 +274,6 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_query", "select P.created_on from dc_customer_info P where P.CNIC =\'{customer_cnic}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_query", "select P.updated_on from dc_customer_info P where P.CNIC =\'{customer_cnic}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Last_login_query", "select P.last_login from dc_customer_info P where P.CNIC =\'{customer_cnic}\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:transaction_password_query", "select TRANSACTION_PASSWORD from dc_customer_info P where P.CNIC =\'{customer_cnic" +
-            "}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type", "D")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "select P.CUSTOMER_TYPE from dc_customer_info P where P.CNIC =\'{customer_cnic}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:IVR_require_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL P where P.PARAMETER_NAME=\'" +
@@ -271,6 +286,18 @@ this.ScenarioSetup(scenarioInfo);
             "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:feedback_type", "HBL Staff")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:feedback_option", "681168")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_pass_change_query", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+            "nic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_tran_pass_change_query", "select P.LAST_TRANS_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{cust" +
+            "omer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_confirm", "MOJIZABIDI98")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_confirm", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_query", "SELECT P.IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{cus" +
+            "tomer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_query", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
         public virtual void AsAUserIWantToSignupUsingDebitCardWeb_WhenIAmVerifyingDebitSignUpProcessMojizabidi98()
         {
 #line 88
@@ -280,11 +307,14 @@ this.AsAUserIWantToSignupUsingDebitCardWeb("When I am verifying Debit Sign up pr
                     "S_ACTIVE=\'1\'", "select ACCOUNT_NO  from dc_customer_account k where K.CUSTOMER_INFO_ID= ( Select " +
                     "customer_info_id from dc_customer_info i where I.CNIC=\'{customer_cnic}\') AND K.I" +
                     "S_ACCOUNT_LINK=\'1\'", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
-                    "r new password to login.", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "select P.created_on from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "select P.updated_on from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "select P.last_login from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "select TRANSACTION_PASSWORD from dc_customer_info P where P.CNIC =\'{customer_cnic" +
-                    "}\'", "D", "select P.CUSTOMER_TYPE from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL P where P.PARAMETER_NAME=\'" +
+                    "r new password to login.", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "select P.created_on from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "select P.updated_on from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "select P.last_login from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "D", "select P.CUSTOMER_TYPE from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL P where P.PARAMETER_NAME=\'" +
                     "IVR_REQUIRED\'", "select P.IS_IVR_ENABLED from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL P where P.PARAMETER_NAME =" +
                     "\'ENABLE_PSD_BIOMETRIC\'", "Select Z.ENABLE_PSD from dc_customer_info Z where Z.CNIC =\'{customer_cnic}\'", "Select P.PARAM_CHANNEL_ID from dc_customer_info P where P.CNIC =\'{customer_cnic}\'" +
-                    "", "HBL Staff", "681168", new string[] {
+                    "", "HBL Staff", "681168", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+                    "nic}\'", "select P.LAST_TRANS_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{cust" +
+                    "omer_cnic}\'", "MOJIZABIDI98", "pakistan2", "0", "SELECT P.IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{cus" +
+                    "tomer_cnic}\'", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", new string[] {
                         "source:Data/DebitRegistration.xlsx"});
 #line hidden
         }
@@ -306,7 +336,6 @@ this.AsAUserIWantToSignupUsingDebitCardWeb("When I am verifying Debit Sign up pr
                     string updated_On_Query, 
                     string last_Login_Query, 
                     string tran_Pass_Encrypted_Value, 
-                    string transaction_Password_Query, 
                     string customer_Type, 
                     string customer_Type_Query, 
                     string iVR_Require_Query, 
@@ -315,6 +344,14 @@ this.AsAUserIWantToSignupUsingDebitCardWeb("When I am verifying Debit Sign up pr
                     string eNABLE_PSD_Check_Query, 
                     string feedback_Type, 
                     string feedback_Option, 
+                    string last_Pass_Change_Query, 
+                    string last_Tran_Pass_Change_Query, 
+                    string login_Confirm, 
+                    string tran_Confirm, 
+                    string is_Password_Change_Required_Value, 
+                    string is_Password_Change_Required_Query, 
+                    string is_Password_Reset_Required_Value, 
+                    string is_Password_Reset_Required_Query, 
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -324,93 +361,103 @@ this.AsAUserIWantToSignupUsingDebitCardWeb("When I am verifying Debit Sign up pr
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user i want to Signup using Credit Card Web", @__tags);
-#line 150
-this.ScenarioSetup(scenarioInfo);
-#line 151
- testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 152
- testRunner.And(string.Format("I set value in context from data \"{0}\" as \"scroll_text\"", scroll_Text), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 153
- testRunner.And(string.Format("I set value in context from data \"{0}\" as \"customer_cnic\"", cNIC_D), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 154
- testRunner.And("I set value in context from data \"True\" as \"SignupCheck\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 155
- testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"scroll_text\"", scroll_Text), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 156
- testRunner.And("I am clicking on \"Registration_registerBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"customer_cnic\"", cNIC_D), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 157
- testRunner.When(string.Format("I have given \"{0}\" on \"Registration_CNIC\"", cNIC_D), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I set value in context from data \"True\" as \"SignupCheck\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 158
- testRunner.And("I am clicking on \"Registration_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 159
- testRunner.And("I scroll to element \"Registration_Scroll\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Registration_registerBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 160
- testRunner.And("I am performing on \"Registration_AcceptBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When(string.Format("I have given \"{0}\" on \"Registration_CNIC\"", cNIC_D), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 161
- testRunner.And(string.Format("I have given \"{0}\" on \"Registration_CardNo\"", credit_Card_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Registration_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 162
- testRunner.And(string.Format("I have given \"{0}\" on \"Registration_Email\"", customer_Email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I scroll to element \"Registration_Scroll\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 163
- testRunner.And(string.Format("I have given \"{0}\" on \"Registration_LoginId\"", login_Id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am performing on \"Registration_AcceptBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 164
- testRunner.And("I am clicking on \"Registration_FormNextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Registration_CardNo\"", credit_Card_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 165
- testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Registration_Email\"", customer_Email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 166
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Registration_LoginId\"", login_Id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 167
- testRunner.And("I scroll to element \"Registration_OtpNextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Registration_FormNextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 168
- testRunner.And("I am performing on \"Registration_OtpNextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 169
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 170
+ testRunner.And("I scroll to element \"Registration_OtpNextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 171
+ testRunner.And("I am performing on \"Registration_OtpNextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 172
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"Registration" +
                         "_PassPolicyText\"", password_Policy_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 170
- testRunner.And(string.Format("I have given \"{0}\" on \"Registration_LoginID\"", login_Pass), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 171
- testRunner.And(string.Format("I have given \"{0}\" on \"Registration_ReLoginID\"", login_Pass), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 172
- testRunner.And(string.Format("I have given \"{0}\" on \"Registration_TranPass\"", tran_Pass), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 173
- testRunner.And(string.Format("I have given \"{0}\" on \"Registration_ReTranPass\"", tran_Pass), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Registration_LoginID\"", login_Pass), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 174
- testRunner.And("I am performing on \"Registration_FinishBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Registration_ReLoginID\"", login_Confirm), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 175
- testRunner.Then(string.Format("verify through \"{0}\" on \"Registration_PaswwordText\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Registration_TranPass\"", tran_Pass), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 176
- testRunner.And("I am performing on \"Registration_PaswwordOkBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Registration_ReTranPass\"", tran_Confirm), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 177
- testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"DIGITAL_CHANNEL_SEC" +
-                        "\"", login_Id, login_Id_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am performing on \"Registration_FinishBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 178
- testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", created_On_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then(string.Format("verify through \"{0}\" on \"Registration_PaswwordText\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 179
- testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", updated_On_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am performing on \"Registration_PaswwordOkBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 180
  testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"DIGITAL_CHANNEL_SEC" +
-                        "\"", customer_Type, customer_Type_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                        "\"", login_Id, login_Id_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 181
- testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", iVR_Require_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", created_On_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 182
- testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", iVR_Check_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", updated_On_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 183
- testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", pARAM_CHANNEL_ID_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", last_Tran_Pass_Change_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 184
+ testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", last_Pass_Change_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 185
+ testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"DIGITAL_CHANNEL_SEC" +
+                        "\"", is_Password_Change_Required_Value, is_Password_Change_Required_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 186
+ testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"DIGITAL_CHANNEL_SEC" +
+                        "\"", is_Password_Reset_Required_Value, is_Password_Reset_Required_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 187
+ testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"DIGITAL_CHANNEL_SEC" +
+                        "\"", customer_Type, customer_Type_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 188
+ testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", iVR_Require_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 189
+ testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", iVR_Check_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 190
+ testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", pARAM_CHANNEL_ID_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 191
  testRunner.And("verify the result from \"<ENABLE_PSD_require_query>\" on Schema \"DIGITAL_CHANNEL_SE" +
                     "C\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 185
+#line 192
  testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", eNABLE_PSD_Check_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 186
+#line 193
  testRunner.And(string.Format("I have given \"{0}\" on \"Login_UserId\"", login_Id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 187
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_Password\"", login_Pass), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 188
- testRunner.And("I am performing on \"Login_SignIn_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 194
- testRunner.And("I am clicking on \"Signup_SkipBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_Password\"", login_Pass), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 195
+ testRunner.And("I am performing on \"Login_SignIn_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 201
+ testRunner.And("I am clicking on \"Signup_SkipBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 202
  testRunner.And("verify through \"Welcome\" on \"Login_Success_Text\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 196
+#line 203
  testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", last_Login_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -424,10 +471,10 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/CreditRegistration.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When I am verifying Credit Sign up process mojizabidi99")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When I am verifying Credit Sign up process mojizabidi99")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:CNIC_D", "3520229025957")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Credit_card_no", "4902870005771602")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Customer_Email", "usman.safder@hbl.com")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_id", "MOJIZABIDI99")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:CNIC_D", "1730111412953")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Credit_card_no", "4902880001916740")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Customer_Email", "aliwaqarazeem@hotmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_id", "MOJIZABIDI100")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:scroll_text", "13.6 ")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL P where P.PARAMETER_NAME =" +
@@ -441,8 +488,6 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_query", "select P.updated_on from dc_customer_info P where P.CNIC =\'{customer_cnic}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Last_login_query", "select P.last_login from dc_customer_info P where P.CNIC =\'{customer_cnic}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_encrypted_value", "$2a$31$33GicMJLAlIuV0UQKrwtNu/SYwpsYsVkGR4DDNJEN9iSUwWoZtETu")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:transaction_password_query", "select TRANSACTION_PASSWORD from dc_customer_info P where P.CNIC =\'{customer_cnic" +
-            "}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type", "C")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "select P.CUSTOMER_TYPE from dc_customer_info P where P.CNIC =\'{customer_cnic}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:IVR_require_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL P where P.PARAMETER_NAME=\'" +
@@ -454,16 +499,29 @@ this.ScenarioSetup(scenarioInfo);
             "\'ENABLE_PSD_BIOMETRIC\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:feedback_type", "Select Z.ENABLE_PSD from dc_customer_info Z where Z.CNIC =\'{customer_cnic}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:feedback_option", "HBL Staff")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_pass_change_query", "681168")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_tran_pass_change_query", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+            "nic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_confirm", "select P.LAST_TRANS_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{cust" +
+            "omer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_confirm", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_query", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_value", "SELECT P.IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{cus" +
+            "tomer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_query", "0")]
         public virtual void AsAUserIWantToSignupUsingCreditCardWeb_WhenIAmVerifyingCreditSignUpProcessMojizabidi99()
         {
-#line 150
-this.AsAUserIWantToSignupUsingCreditCardWeb("When I am verifying Credit Sign up process mojizabidi99", "3520229025957", "4902870005771602", "usman.safder@hbl.com", "MOJIZABIDI99", "13.6 ", "12345678", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL P where P.PARAMETER_NAME =" +
+#line 153
+this.AsAUserIWantToSignupUsingCreditCardWeb("When I am verifying Credit Sign up process mojizabidi99", "1730111412953", "4902880001916740", "aliwaqarazeem@hotmail.com", "MOJIZABIDI100", "13.6 ", "12345678", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL P where P.PARAMETER_NAME =" +
                     "\'LOGIN_AND_T_PWRD_DESC_BEFORE_LOGIN\'", "pakistan1", "pakistan2", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
-                    "r new password to login.", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "select P.created_on from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "select P.updated_on from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "select P.last_login from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "$2a$31$33GicMJLAlIuV0UQKrwtNu/SYwpsYsVkGR4DDNJEN9iSUwWoZtETu", "select TRANSACTION_PASSWORD from dc_customer_info P where P.CNIC =\'{customer_cnic" +
-                    "}\'", "C", "select P.CUSTOMER_TYPE from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL P where P.PARAMETER_NAME=\'" +
+                    "r new password to login.", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "select P.created_on from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "select P.updated_on from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "select P.last_login from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "$2a$31$33GicMJLAlIuV0UQKrwtNu/SYwpsYsVkGR4DDNJEN9iSUwWoZtETu", "C", "select P.CUSTOMER_TYPE from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL P where P.PARAMETER_NAME=\'" +
                     "IVR_REQUIRED\'", "select P.IS_IVR_ENABLED from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "Select P.PARAM_CHANNEL_ID from dc_customer_info P where P.CNIC =\'{customer_cnic}\'" +
                     "", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL P where P.PARAMETER_NAME =" +
-                    "\'ENABLE_PSD_BIOMETRIC\'", "Select Z.ENABLE_PSD from dc_customer_info Z where Z.CNIC =\'{customer_cnic}\'", "HBL Staff", new string[] {
+                    "\'ENABLE_PSD_BIOMETRIC\'", "Select Z.ENABLE_PSD from dc_customer_info Z where Z.CNIC =\'{customer_cnic}\'", "HBL Staff", "681168", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+                    "nic}\'", "select P.LAST_TRANS_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{cust" +
+                    "omer_cnic}\'", "pakistan1", "pakistan2", "0", "SELECT P.IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{cus" +
+                    "tomer_cnic}\'", "0", new string[] {
                         "source:Data/CreditRegistration.xlsx"});
 #line hidden
         }

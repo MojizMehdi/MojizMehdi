@@ -332,6 +332,12 @@
     <None Include="Resources\Feature\InternetBanking\Data\IBLogin.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\LimitManagement.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\ManageScheduleVerify.xlsx" />
+    <None Include="Resources\Feature\InternetBanking\Data\ManageSchedule_Bill_AddNewBene.xlsx" />
+    <None Include="Resources\Feature\InternetBanking\Data\ManageSchedule_Bill_WithBene.xlsx" />
+    <None Include="Resources\Feature\InternetBanking\Data\ManageSchedule_Delete_BillPayment.xlsx" />
+    <None Include="Resources\Feature\InternetBanking\Data\ManageSchedule_Delete_SendMoney.xlsx" />
+    <None Include="Resources\Feature\InternetBanking\Data\ManageSchedule_SendMoney_WithBene.xlsx" />
+    <None Include="Resources\Feature\InternetBanking\Data\MngSchedule_SendMoneyAddNew.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\MultiBillPayment.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\MutualFund.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\MyAccount.xlsx" />
@@ -388,6 +394,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Feature\AgentPortal\Data\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

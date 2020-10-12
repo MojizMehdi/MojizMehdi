@@ -186,6 +186,37 @@ this.ScenarioSetup(scenarioInfo);
 #line 39
  testRunner.And(string.Format("I am performing limit reduction operation on \"MyAccount_Limit_Edit_Icon\" of slide" +
                         "r \"MyAccount_Limit_Slider\" of \"{0}\" with new limit as \"{1}\"", limit_Type, new_Limit), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 40
+ testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 41
+ testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 42
+ testRunner.And(string.Format("I select \"{0}\" on \"Services_CategoryFilter\"", transaction_Category), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 43
+ testRunner.And("I scroll to element \"Services_Clear_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 44
+ testRunner.And("I am performing on \"Services_Search_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 45
+ testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 46
+ testRunner.And("verify through \"Successful\" on \"MyAccount_Forgot_TranSuccessMessage\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 47
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Tr" +
+                        "anPopup_TranType\"", tran_Type_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 48
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Tr" +
+                        "anPopup_TranDate\"", tran_Date_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 49
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"Investment_M" +
+                        "utualFund_TranOld\"", old_Limit_Tran_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 50
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"Investment_M" +
+                        "utualFund_TranNew\"", new_Limit_Tran_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 51
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"Investment_M" +
+                        "utualFund_TranFundName\"", limit_Name_Tran_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 52
+ testRunner.And("I am performing on \"Investment_MutualFund_TranCloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -738,11 +769,11 @@ this.ScenarioSetup(scenarioInfo);
 #line 215
  testRunner.And("I am clicking on \"MyAccount_CheqBook_BranchCheck\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 216
- testRunner.And("I select on dropdown search \"MyAccount_CheqBook_CityList\" to select \"<city>\" on \"" +
-                    "MyAccount_CheqBook_CityList_Search\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I select on dropdown search \"MyAccount_CheqBook_CityList\" to select \"{0}\" on \"MyA" +
+                        "ccount_CheqBook_CityList_Search\"", city), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 217
- testRunner.And("I select on dropdown search \"MyAccount_CheqBook_BranchList\" to select \"<branch>\" " +
-                    "on \"MyAccount_CheqBook_BranchList_Search\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I select on dropdown search \"MyAccount_CheqBook_BranchList\" to select \"{0}\" on \"M" +
+                        "yAccount_CheqBook_BranchList_Search\"", branch), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 218
  testRunner.And(string.Format("I have given \"{0}\" on \"MyAccount_CheqBook_TranPass\"", transaction_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 219
@@ -1120,3 +1151,4 @@ this.AsAUserIWantToVerifyWithholdingTaxCertificateRequestFromMyAccount("As a use
 }
 #pragma warning restore
 #endregion
+

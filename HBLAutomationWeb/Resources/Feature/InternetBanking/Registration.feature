@@ -112,16 +112,19 @@ Scenario Outline: As a user i want to Signup using Debit Card Web
 	And verify the message "<account_tag1>" through database on "<account_tag_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	And verify through database on "<password_policy_query>" on Schema "DIGITAL_CHANNEL_SEC" on "Registration_PassPolicyText"
 	And I have given "<login_pass>" on "Registration_LoginID"
-	And I have given "<login_pass>" on "Registration_ReLoginID"
+	And I have given "<login_confirm>" on "Registration_ReLoginID"
 	And I have given "<tran_pass>" on "Registration_TranPass"
-	And I have given "<tran_pass>" on "Registration_ReTranPass"
+	And I have given "<tran_confirm>" on "Registration_ReTranPass"
 	And I am performing on "Registration_FinishBtn"
 	Then verify through "<success_message>" on "Registration_PaswwordText"
 	And I am performing on "Registration_PaswwordOkBtn"
 	And verify the message "<Login_id>" through database on "<login_id_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	And verify the result from "<created_on_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	And verify the result from "<updated_on_query>" on Schema "DIGITAL_CHANNEL_SEC"
-	#And verify the result from "<transaction_password_query>" on Schema "DIGITAL_CHANNEL_SEC"
+	And verify the result from "<last_tran_pass_change_query>" on Schema "DIGITAL_CHANNEL_SEC"
+	And verify the result from "<last_pass_change_query>" on Schema "DIGITAL_CHANNEL_SEC"
+	And verify the message "<is_password_change_required_value>" through database on "<is_password_change_required_query>" on Schema "DIGITAL_CHANNEL_SEC"
+	And verify the message "<is_password_reset_required_value>" through database on "<is_password_reset_required_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	And verify the message "<customer_type>" through database on "<customer_type_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	And verify the result from "<IVR_require_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	And verify the result from "<IVR_check_query>" on Schema "DIGITAL_CHANNEL_SEC"
@@ -143,7 +146,7 @@ Scenario Outline: As a user i want to Signup using Debit Card Web
 
 @source:Data/DebitRegistration.xlsx
 	Examples:
-	|Case|CNIC_D|Debit_card_no|pin|Login_id|scroll_text|password_policy_query|login_pass|tran_pass|account_tag1|account_query|account_tag_query|success_message|login_id_query|created_on_query|updated_on_query|Last_login_query|transaction_password_query|customer_type|customer_type_query|IVR_require_query|IVR_check_query|ENABLE_PSD_require_query|ENABLE_PSD_check_query|PARAM_CHANNEL_ID_query|feedback_type|feedback_option|
+	|Case|CNIC_D|Debit_card_no|pin|Login_id|scroll_text|password_policy_query|login_pass|tran_pass|account_tag1|account_query|account_tag_query|success_message|login_id_query|created_on_query|updated_on_query|Last_login_query|customer_type|customer_type_query|IVR_require_query|IVR_check_query|ENABLE_PSD_require_query|ENABLE_PSD_check_query|PARAM_CHANNEL_ID_query|feedback_type|feedback_option|last_pass_change_query|last_tran_pass_change_query|login_confirm|tran_confirm|is_password_change_required_value|is_password_change_required_query|is_password_reset_required_value|is_password_reset_required_query|
 
 
 @Registration
@@ -168,15 +171,19 @@ Scenario Outline: As a user i want to Signup using Credit Card Web
 	And I am performing on "Registration_OtpNextBtn"
 	And verify through database on "<password_policy_query>" on Schema "DIGITAL_CHANNEL_SEC" on "Registration_PassPolicyText"
 	And I have given "<login_pass>" on "Registration_LoginID"
-	And I have given "<login_pass>" on "Registration_ReLoginID"
+	And I have given "<login_confirm>" on "Registration_ReLoginID"
 	And I have given "<tran_pass>" on "Registration_TranPass"
-	And I have given "<tran_pass>" on "Registration_ReTranPass"
+	And I have given "<tran_confirm>" on "Registration_ReTranPass"
 	And I am performing on "Registration_FinishBtn"
 	Then verify through "<success_message>" on "Registration_PaswwordText"
 	And I am performing on "Registration_PaswwordOkBtn"
 	And verify the message "<Login_id>" through database on "<login_id_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	And verify the result from "<created_on_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	And verify the result from "<updated_on_query>" on Schema "DIGITAL_CHANNEL_SEC"
+	And verify the result from "<last_tran_pass_change_query>" on Schema "DIGITAL_CHANNEL_SEC"
+	And verify the result from "<last_pass_change_query>" on Schema "DIGITAL_CHANNEL_SEC"
+	And verify the message "<is_password_change_required_value>" through database on "<is_password_change_required_query>" on Schema "DIGITAL_CHANNEL_SEC"
+	And verify the message "<is_password_reset_required_value>" through database on "<is_password_reset_required_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	And verify the message "<customer_type>" through database on "<customer_type_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	And verify the result from "<IVR_require_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	And verify the result from "<IVR_check_query>" on Schema "DIGITAL_CHANNEL_SEC"
@@ -194,11 +201,11 @@ Scenario Outline: As a user i want to Signup using Credit Card Web
 	And I am clicking on "Signup_SkipBtn"
 	And verify through "Welcome" on "Login_Success_Text"
 	And verify the result from "<Last_login_query>" on Schema "DIGITAL_CHANNEL_SEC"
-	#And verify through "<Credit_card_no>" on "Pay_Acc_No_CC"
+	#And verify through "<Credit_card_no>" on "Pay_Acc_No_CC."
 
 	@source:Data/CreditRegistration.xlsx
 	Examples:
-	|Case|CNIC_D|Credit_card_no|Customer_Email|Login_id|scroll_text|OTP_Value|password_policy_query|login_pass|tran_pass|success_message|login_id_query|created_on_query|updated_on_query|Last_login_query|tran_pass_encrypted_value|transaction_password_query|customer_type|customer_type_query|IVR_require_query|IVR_check_query|PARAM_CHANNEL_ID_query|ENABLE_PSD_check_query|feedback_type|feedback_option|
+	|Case|CNIC_D|Credit_card_no|Customer_Email|Login_id|scroll_text|OTP_Value|password_policy_query|login_pass|tran_pass|success_message|login_id_query|created_on_query|updated_on_query|Last_login_query|tran_pass_encrypted_value|customer_type|customer_type_query|IVR_require_query|IVR_check_query|PARAM_CHANNEL_ID_query|ENABLE_PSD_check_query|feedback_type|feedback_option|last_pass_change_query|last_tran_pass_change_query|login_confirm|tran_confirm|is_password_change_required_value|is_password_change_required_query|is_password_reset_required_value|is_password_reset_required_query|
 
 
 

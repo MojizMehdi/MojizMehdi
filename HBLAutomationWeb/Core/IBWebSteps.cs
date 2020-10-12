@@ -70,10 +70,6 @@ namespace HBLAutomationWeb.Core
             {
                 textboxvalue = context.GetBeneAccountNo();
             }
-            if (String.IsNullOrEmpty(textboxvalue))
-            {
-                return;
-            }
             if (Keyword.Contains("Pay_Transaction_MaxBillAmount_value") && context.Get_IS_SI_Allowed() == "0")
             {
                 return;
@@ -82,11 +78,45 @@ namespace HBLAutomationWeb.Core
             {
                 return;
             }
+            if ((Keyword.Equals("Forget_LoginID_DebitNo") || Keyword.Equals("Forget_LoginID_DebitPin") || Keyword.Equals("Forget_Change_DebitNo") || Keyword.Equals("Forget_Change_DebitPin") || Keyword.Equals("Forget_Password_DebitCardNo") || Keyword.Equals("Forget_Password_PIN")) && context.GetCustomerType() != "D")
+            {
+                return;
+            }
+            if ((Keyword.Equals("Forget_LoginID_CreditNo") || Keyword.Equals("Forget_LoginID_CreditEmail") || Keyword.Equals("Forget_Change_CreditNo") || Keyword.Equals("Forget_Change_CreditEmail") || Keyword.Equals("Forget_Password_CreditCardNo") || Keyword.Equals("Forget_Password_Email")) && context.GetCustomerType() != "C")
+            {
+                return;
+            }
+            if (String.IsNullOrEmpty(textboxvalue))
+            {
+                return;
+            }
             try
             {
                 SeleniumHelper selhelper = new SeleniumHelper();
                 selhelper.checkPageIsReady();
                 Element keyword = ContextPage.GetInstance().GetElement(Keyword);
+                if(Keyword.Equals("Forget_LoginID_Mobile") || Keyword.Equals("Forget_Change_NewLogin"))
+                {
+                    if(context.GetCustomerType() == "C")
+                    {
+                        keyword.Locator = keyword.Locator.Replace("{x}", "credit");
+                    }
+                    else if(context.GetCustomerType() == "D")
+                    {
+                        keyword.Locator = keyword.Locator.Replace("{x}", "debit");
+                    }
+                }
+                if (Keyword.Equals("Forget_Password_CNIC"))
+                {
+                    if (context.GetCustomerType() == "C")
+                    {
+                        keyword.Locator = keyword.Locator.Replace("{x}", "FormStep2CC");
+                    }
+                    else if (context.GetCustomerType() == "D")
+                    {
+                        keyword.Locator = keyword.Locator.Replace("{x}", "FormStep2");
+                    }
+                }
                 //keyword.Locator used instead od locator
                 selhelper.SetTextBoxValue(textboxvalue, keyword.Locator);
 
@@ -151,6 +181,17 @@ namespace HBLAutomationWeb.Core
                     SeleniumHelper selhelper = new SeleniumHelper();
                     selhelper.checkPageIsReady();
                     Element keyword = ContextPage.GetInstance().GetElement(Keyword);
+                    if (Keyword.Equals("Forget_LoginID_NextBtn") || Keyword.Equals("Forget_Change_NextBtn"))
+                    {
+                        if(context.GetCustomerType() == "C")
+                        {
+                            keyword.Locator = keyword.Locator.Replace("{x}", "credit");
+                        }
+                        else
+                        {
+                            keyword.Locator = keyword.Locator.Replace("{x}", "debit");
+                        }
+                    }
                     //selhelper.ScrollToElement(keyword.Locator);
                     selhelper.Button(keyword.Locator);
                 }
@@ -549,6 +590,12 @@ namespace HBLAutomationWeb.Core
             {
                 context.SetLastLoginFlag(Convert.ToBoolean(value));
             }
+            if (attribute == "mobile_number")
+            {
+                context.Set_Mobile_No(value);
+            }
+            if (attribute == "change_loginID_check")
+                context.Set_Change_LoginID_Check(Convert.ToBoolean(value));
         }
 
         [When(@"I sleep (.*)")]
@@ -638,6 +685,7 @@ namespace HBLAutomationWeb.Core
                     throw new AssertFailedException("ENABLE_PSD setting is not correct");
                 }
             }
+            //Need to remove below check after verficationn from feature files
             if (query.Contains("CUSTOMER_TYPE"))
             {
                 context.SetCustomerType(inst_type);
@@ -702,21 +750,22 @@ namespace HBLAutomationWeb.Core
                         Assert.AreEqual(inst_type, today_date);
                     }
                 }
-                if (query.Contains("created_on") || (query.Contains("updated_on")) || (query.Contains("LAST_PASSWORD_CHANGED")) || (query.Contains("LAST_TRANS_PASSWORD_CHANGED")))
+            }
+            if (query.Contains("created_on") || (query.Contains("updated_on")) || (query.Contains("LAST_PASSWORD_CHANGED")) || (query.Contains("LAST_TRANS_PASSWORD_CHANGED")))
+            {
+                if (inst_type != null)
                 {
-                    if (inst_type != null)
-                    {
-                        DateTime lastlogin = Convert.ToDateTime(inst_type);
-                        inst_type = lastlogin.ToString("MM/dd/yyyy");
-                        string today_date = DateTime.Today.ToString("MM/dd/yyyy");
-                        Assert.AreEqual(inst_type, today_date);
-                    }
-                    else
-                    {
-                        throw new AssertFailedException("Time is not updated in data base");
-                    }
+                    DateTime lastlogin = Convert.ToDateTime(inst_type);
+                    inst_type = lastlogin.ToString("MM/dd/yyyy");
+                    string today_date = DateTime.Today.ToString("MM/dd/yyyy");
+                    Assert.AreEqual(inst_type, today_date);
+                }
+                else
+                {
+                    throw new AssertFailedException("Time is not updated in data base");
                 }
             }
+            
 
             if (SourceDataTable.Rows.Count == 0)
             {
@@ -875,6 +924,27 @@ namespace HBLAutomationWeb.Core
                 }
                 else
                 {
+                    if (Keyword.Equals("Forget_ChangeLogin_PassPolicy1") || Keyword.Equals("Forget_ChangeLogin_PassPolicy2"))
+                    {
+                        if (context.GetCustomerType() == "C")
+                        {
+                            keyword.Locator = keyword.Locator.Replace("{x}", "credit");
+                        }
+                        else
+                        {
+                            keyword.Locator = keyword.Locator.Replace("{x}", "debit");
+                        }
+                    }
+                    if (Keyword.Equals("Forget_Success_LoginMsg") || Keyword.Equals("Forget_Change_OTPMsg"))
+                    {
+                        string message_ui = context.Get_Mobile_No();
+                        string mobile = message_ui.Substring(7, 4);
+                        if (message.Contains("xxxxxxx"))
+                        {
+                            message = message.Replace("xxxxxxx", "xxxxxxx" + mobile);
+                        }
+
+                    }
                     if (Keyword.Equals("Investment_MutualFund_DisPopup") && context.GetFundDisclaimerPopup() == "")
                     {
                         return;
@@ -1107,6 +1177,13 @@ namespace HBLAutomationWeb.Core
                     {
                         message = Convert.ToDecimal(message).ToString("0.00");
                     }
+                    if (Keyword.Equals("Investment_TranAmount"))
+                    {
+                        if (message.Contains(".00"))
+                        {
+                            message = message.Replace(".00", "");
+                        }
+                    }
                     if (Keyword.Equals("Pay_Transaction_Success_ConsumerNo"))
                     {
                         context.SetConsumer_No(message);
@@ -1129,8 +1206,6 @@ namespace HBLAutomationWeb.Core
                     }
                 }
                 //selhelper.Scroll(keyword.Locator);
-
-
                 selhelper.verification(message, keyword.Locator);
             }
             catch (Exception exception)
@@ -1733,6 +1808,7 @@ namespace HBLAutomationWeb.Core
         }
 
         //To verify the schedule configuration from Data base 
+        [When(@"verify the schedule config ""(.*)"" on Schema ""(.*)""")]
         [Then(@"verify the schedule config ""(.*)"" on Schema ""(.*)""")]
         public void ThenVerifyTheScheduleConfigOnSchema(string query, string db_value)
         {
@@ -1767,7 +1843,6 @@ namespace HBLAutomationWeb.Core
             if (res != Convert.ToInt32(context.GetScheduleConfig()))
             {
                 throw new AssertFailedException(string.Format("The scheduled config {0} is not equal to newly scheduled bill {1}", res, context.GetScheduleConfig()));
-
             }
         }
 
@@ -1887,41 +1962,41 @@ namespace HBLAutomationWeb.Core
 
         }
         // Forgot Password journey based on customer type
-        [When(@"I am giving user details based on customer type as ""(.*)"" and ""(.*)"" and ""(.*)"" and ""(.*)"" and ""(.*)"" on ""(.*)"" and ""(.*)"" and ""(.*)""")]
-        public void WhenIAmGivingUserDetailsBasedOnCustomerTypeAsAndAndAndAndOnAndAnd(string value1, string debit_card, string debit_pin, string credit_card, string email, string keyword1, string keyword2, string keyword3)
-        {
-            SeleniumHelper selhelper = new SeleniumHelper();
-            Element keyword_value1 = ContextPage.GetInstance().GetElement(keyword1);
-            Element keyword_debit_credit = ContextPage.GetInstance().GetElement(keyword2);
-            Element keyword_pin_email = ContextPage.GetInstance().GetElement(keyword3);
+        //[When(@"I am giving user details based on customer type as ""(.*)"" and ""(.*)"" and ""(.*)"" and ""(.*)"" and ""(.*)"" on ""(.*)"" and ""(.*)"" and ""(.*)""")]
+        //public void WhenIAmGivingUserDetailsBasedOnCustomerTypeAsAndAndAndAndOnAndAnd(string value1, string debit_card, string debit_pin, string credit_card, string email, string keyword1, string keyword2, string keyword3)
+        //{
+        //    SeleniumHelper selhelper = new SeleniumHelper();
+        //    Element keyword_value1 = ContextPage.GetInstance().GetElement(keyword1);
+        //    Element keyword_debit_credit = ContextPage.GetInstance().GetElement(keyword2);
+        //    Element keyword_pin_email = ContextPage.GetInstance().GetElement(keyword3);
 
-            string locator2 = keyword_debit_credit.Locator;
-            string locator3 = keyword_pin_email.Locator;
+        //    string locator2 = keyword_debit_credit.Locator;
+        //    string locator3 = keyword_pin_email.Locator;
 
-            if (context.GetCustomerType() == "C" && keyword1 == "Forget_Password_CNIC")
-            {
-                locator2 = keyword_debit_credit.Locator.Replace("ForgotTransactionPassword.cardNumber", "ForgotTransactionPasswordCC.cardnumber");
-                locator3 = keyword_pin_email.Locator.Replace("ForgotTransactionPassword.pin", "ForgotTransactionPasswordCC.email");
-                selhelper.SetTextBoxValue(value1, keyword_value1.Locator);
-                selhelper.SetTextBoxValue(credit_card, locator2);
-                selhelper.SetTextBoxValue(email, locator3);
-            }
-            if (context.GetCustomerType() == "C" && keyword1 == "Forget_ChangeLogin_NewLogin")
-            {
-                locator2 = keyword_debit_credit.Locator.Replace("CustomerAccountType.cardNumber", "CustomerAccountType.creditCardNumber");
-                locator3 = keyword_pin_email.Locator.Replace("CustomerAccountType.pin", "CustomerAccountType.email");
-                selhelper.SetTextBoxValue(value1, keyword_value1.Locator);
-                selhelper.SetTextBoxValue(credit_card, locator2);
-                selhelper.SetTextBoxValue(email, locator3);
-            }
-            else
-            {
-                selhelper.SetTextBoxValue(value1, keyword_value1.Locator);
-                selhelper.SetTextBoxValue(debit_card, keyword_debit_credit.Locator);
-                selhelper.SetTextBoxValue(debit_pin, keyword_pin_email.Locator);
-            }
+        //    if (context.GetCustomerType() == "C" && keyword1 == "Forget_Password_CNIC")
+        //    {
+        //        locator2 = keyword_debit_credit.Locator.Replace("ForgotTransactionPassword.cardNumber", "ForgotTransactionPasswordCC.cardnumber");
+        //        locator3 = keyword_pin_email.Locator.Replace("ForgotTransactionPassword.pin", "ForgotTransactionPasswordCC.email");
+        //        selhelper.SetTextBoxValue(value1, keyword_value1.Locator);
+        //        selhelper.SetTextBoxValue(credit_card, locator2);
+        //        selhelper.SetTextBoxValue(email, locator3);
+        //    }
+        //    if (context.GetCustomerType() == "C" && keyword1 == "Forget_ChangeLogin_NewLogin")
+        //    {
+        //        locator2 = keyword_debit_credit.Locator.Replace("CustomerAccountType.cardNumber", "CustomerAccountType.creditCardNumber");
+        //        locator3 = keyword_pin_email.Locator.Replace("CustomerAccountType.pin", "CustomerAccountType.email");
+        //        selhelper.SetTextBoxValue(value1, keyword_value1.Locator);
+        //        selhelper.SetTextBoxValue(credit_card, locator2);
+        //        selhelper.SetTextBoxValue(email, locator3);
+        //    }
+        //    else
+        //    {
+        //        selhelper.SetTextBoxValue(value1, keyword_value1.Locator);
+        //        selhelper.SetTextBoxValue(debit_card, keyword_debit_credit.Locator);
+        //        selhelper.SetTextBoxValue(debit_pin, keyword_pin_email.Locator);
+        //    }
 
-        }
+        //}
         [Given(@"I verify if text exist on webpage of ""(.*)""")]
         [When(@"I verify if text exist on webpage of ""(.*)""")]
         [Then(@"I verify if text exist on webpage of ""(.*)""")]
@@ -1941,17 +2016,20 @@ namespace HBLAutomationWeb.Core
         [Given(@"I am performing ""(.*)"" alert operation on cross icon on ""(.*)""")]
         [When(@"I am performing ""(.*)"" alert operation on cross icon on ""(.*)""")]
         [Then(@"I am performing ""(.*)"" alert operation on cross icon on ""(.*)""")]
-        public void GivenIAmPerformingAlertOperationOnCrossIconOn(string option, string keyword)
+        public void GivenIAmPerformingAlertOperationOnCrossIconOn(string option, string Keyword)
         {
             SeleniumHelper selhelper = new SeleniumHelper();
-            Element Keyword = ContextPage.GetInstance().GetElement(keyword);
+            Element keyword = ContextPage.GetInstance().GetElement(Keyword);
 
-            if (keyword.Equals("BeneManage_Delete"))
+            if (Keyword.Equals("BeneManage_Delete"))
             {
-                Keyword.Locator = Keyword.Locator.Replace("{x}", context.GetBeneAccountNo());
+                keyword.Locator = keyword.Locator.Replace("{x}", context.GetBeneAccountNo());
             }
-
-            selhelper.AlertOperation(option, Keyword.Locator);
+            if (Keyword.Equals("MyAccount_MngSch_Delete"))
+            {
+                keyword.Locator = keyword.Locator.Replace("{x}", context.GetBeneAccountNo());
+            }
+            selhelper.AlertOperation(option, keyword.Locator);
         }
 
 
@@ -3601,7 +3679,7 @@ namespace HBLAutomationWeb.Core
 
                     for (int i = 0; i < array_mutual_fund_db.GetLength(0); i++)
                         for (int j = 0; j < array_mutual_fund_db.GetLength(0); j++)
-                            if (array_mutual_fund_db[i, j] != array_mutual_fund_ui[i, j])
+                            if (array_mutual_fund_db[i, j].CompareTo(array_mutual_fund_ui[i, j]) != 0)
                             {
                                 throw new Exception(string.Format("The value on Website :{0} is not equal with value on database :{1}", array_mutual_fund_db[i, j], array_mutual_fund_ui[i, j]));
                             }
@@ -3639,7 +3717,7 @@ namespace HBLAutomationWeb.Core
                 {
                     query = query.Replace("{invest_fund_name}", context.GetInvestFundName());
                 }
-                if (query.Contains("DC_TRANSACTION"))
+                if (query.Contains("TT.HOST_REFERENCE_NO"))
                 {
                     query = query + context.GetTransaction_Id() + "'";
                 }
@@ -3691,303 +3769,615 @@ namespace HBLAutomationWeb.Core
                 {
                     context.Set_Is_Partial_Allow(db_value);
                 }
+                if (attribute == "customer_type")
+                {
+                    context.SetCustomerType(db_value);
+                }
+                if (attribute == "mobile_number")
+                {
+                    context.Set_Mobile_No(db_value);
+                }
+                if (attribute == "customer_info_id")
+                {
+                    context.SetCustomerInfoID(db_value);
+                }
             }
             catch (Exception exception)
             {
                 throw new AssertFailedException(exception.Message);
             }
         }
-        [Given(@"I am verifying schedule payments from My Account")]
-        [When(@"I am verifying schedule payments from My Account")]
-        [Then(@"I am verifying schedule payments from My Account")]
-        public void WhenIAmVerifyingSchedulePaymentsFromMyAccount()
+
+        [Then(@"I am verifying schedule payments of Bill Payment from My Account")]
+        public void ThenIAmVerifyingSchedulePaymentsOfBillPaymentFromMyAccount()
         {
-            string fund_transfer_id = ""; string ui_nick = "" ; string ui_amount = "";
-            string schedule_id = ""; string ui_purpose = ""; string ui_acc_detail = "";
-            string schedule_amount = ""; string temp_loc = ""; string acc_detail = "";
-            string nick = ""; string branch_name = ""; string acc_title = "";
-            string acc_no = ""; string purpose_db = ""; string frequency_type = "";
-            string from_acc_db = ""; string first_date_db = ""; string last_date_db = "";
-            string schedule_img = ""; string failed_img = ""; string cancelled_img = "";
-            string successful_img = "";
-
-            SeleniumHelper selhelper = new SeleniumHelper();
-            Element Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_SendMoneyCount");
-            int send_money_count = selhelper.SizeCountElements(Keyword.Locator);
-
-            Keyword = null;
-            Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_BillPayCount");
-            int bill_pay_count = selhelper.SizeCountElements(Keyword.Locator);
-
-            int schedular_count = send_money_count + bill_pay_count;
-
-            DataAccessComponent.DataAccessLink dLink = new DataAccessComponent.DataAccessLink();
-            DataTable SourceDataTable = dLink.GetDataTable("SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '" + context.GetUsername() + "') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0 and TM.BILL_BENEFICIARY_ID = 0", "DIGITAL_CHANNEL_SEC");
-            int db_send_count = Convert.ToInt32(SourceDataTable.Rows[0][0].ToString());
-            dLink = null;
-            SourceDataTable = null;
-
-            dLink = new DataAccessComponent.DataAccessLink();
-            SourceDataTable = dLink.GetDataTable("SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '" + context.GetUsername() + "') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0 and FUND_TRANSFER_BENEFICIARY_ID = 0", "DIGITAL_CHANNEL_SEC");
-            int db_bill_pay_count = Convert.ToInt32(SourceDataTable.Rows[0][0].ToString());
-            dLink = null;
-            SourceDataTable = null;
-
-            int db_schedular_count = db_bill_pay_count + db_send_count;
-
-            string[,] arr_sch_sendmoney_db = new string[db_send_count, 4];
-            string[,] arr_sch_sendmoney_ui = new string[send_money_count, 4];
-
-            if (db_send_count != send_money_count)
+            try
             {
-                throw new Exception(string.Format("User Schedule count in database :{0} is not equal with schedule count on website :{1}", db_send_count, send_money_count));
-            }
+                string bill_bene_id = ""; string ui_nick = ""; string ui_amount = "";
+                string schedule_id = ""; string ui_consumer_no = ""; string ui_company = "";
+                string schedule_amount = ""; string temp_loc = ""; string acc_detail = "";
+                string nick = ""; string frequency_type = "";
+                string from_acc_db = ""; string first_date_db = ""; string last_date_db = "";
+                string schedule_img = ""; string failed_img = ""; string cancelled_img = "";
+                string successful_img = ""; string tran_type = ""; string type_value_db = "Bill Payment";
+                string company_name = ""; string consumer_no = ""; string consumer_name = "";
 
-            if (db_schedular_count == 0 || schedular_count == 0)
-            {
-                throw new Exception(string.Format("User Schedule count in database :{0} and schedule count on website :{1} is equal to zero", db_send_count, send_money_count));
-            }
-
-            for (int i = 1; i <= send_money_count; i++)
-            {
-                dLink = new DataAccessComponent.DataAccessLink();
-                SourceDataTable = dLink.GetDataTable("SELECT TM.FUND_TRANSFER_BENEFICIARY_ID, TM.SCHEDULED_TRAN_MASTER_ID, TM.SCHEDULED_AMOUNT, PK.PARAMETER_NAME, LM.PARAMETER_NAME, SOURCE_ACCOUNT_TITLE ,TM.SOURCE_ACCOUNT, SOURCE_ACCOUNT_BRANCH_NAME , FIRST_EXECUTION_DATE , LAST_EXECUTION_DATE FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_APPLICATION_PARAM_DETAIL PK on PK.APPLICATION_PARAMETER_ID = TM.PARAM_PURPOSE_OF_PAYMENT_ID INNER JOIN DC_APPLICATION_PARAM_DETAIL LM ON LM.APPLICATION_PARAMETER_ID = TM.PARAM_FREQUENCY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '" + context.GetUsername() + "') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0 and TM.BILL_BENEFICIARY_ID = 0", "DIGITAL_CHANNEL_SEC");
-                fund_transfer_id = SourceDataTable.Rows[i - 1][0].ToString();
-                schedule_id = SourceDataTable.Rows[i - 1][1].ToString();
-                schedule_amount = SourceDataTable.Rows[i - 1][2].ToString();
-                purpose_db = SourceDataTable.Rows[i - 1][3].ToString();
-                frequency_type = SourceDataTable.Rows[i - 1][4].ToString();
-                from_acc_db = SourceDataTable.Rows[i - 1][5].ToString() + " | " + SourceDataTable.Rows[i - 1][6].ToString() + " | " + SourceDataTable.Rows[i - 1][7].ToString();
-                first_date_db = SourceDataTable.Rows[i - 1][8].ToString();
-                last_date_db = SourceDataTable.Rows[i - 1][9].ToString();
-
-                if (!(schedule_amount.Contains(".")))
+                if (context.GetUserScheduleCount() == 0)
                 {
-                    schedule_amount = schedule_amount + ".00";
+                    throw new Exception("User Schedule payment Count is zero");
                 }
 
-                DateTime temp_date = Convert.ToDateTime(first_date_db);
-                first_date_db = temp_date.ToString("dd-MM-yyyy");
-
-                temp_date = Convert.ToDateTime(last_date_db);
-                last_date_db = temp_date.ToString("dd-MM-yyyy");
-
-                arr_sch_sendmoney_db[i - 1, 1] = Convert.ToString(schedule_amount);
-                arr_sch_sendmoney_db[i - 1, 3] = purpose_db;
-
-                dLink = null;
-                SourceDataTable = null;
-                dLink = new DataAccessComponent.DataAccessLink();
-                SourceDataTable = dLink.GetDataTable("Select NICK, ACCOUNT_TITLE, ACCOUNT_NO, BRANCH_NAME from DC_FUND_TRANSFER_BENEFICIARY LL where LL.FUND_TRANSFER_BENEFICIARY_ID ='" + fund_transfer_id +"'" , "DIGITAL_CHANNEL_SEC");
-                nick = SourceDataTable.Rows[0][0].ToString();
-                acc_title = SourceDataTable.Rows[0][1].ToString();
-                acc_no = SourceDataTable.Rows[0][2].ToString();
-                branch_name = SourceDataTable.Rows[0][3].ToString();
-                acc_detail = acc_title + " " + acc_no + " " + branch_name;
-
-                arr_sch_sendmoney_db[i - 1, 0] = nick;
-                arr_sch_sendmoney_db[i - 1, 2] = acc_detail;
-
-                Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_RowTitle");
-                temp_loc = Keyword.Locator.Replace("{i}", Convert.ToString(i));
-                ui_nick = selhelper.ReturnKeywordValue(temp_loc);
-                ui_nick = ui_nick.Trim();
-
-                Keyword = null;
-                temp_loc = null;
+                DataAccessComponent.DataAccessLink dLink = new DataAccessComponent.DataAccessLink();
+                DataTable SourceDataTable = dLink.GetDataTable("SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '" + context.GetUsername() + "') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0 and FUND_TRANSFER_BENEFICIARY_ID = 0", "DIGITAL_CHANNEL_SEC");
+                int db_bill_pay_count = Convert.ToInt32(SourceDataTable.Rows[0][0].ToString());
                 dLink = null;
                 SourceDataTable = null;
 
-                Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_RowAmount");
-                temp_loc = Keyword.Locator.Replace("{i}", Convert.ToString(i));
-                ui_amount = (selhelper.ReturnKeywordValue(temp_loc)).Trim();                
+                SeleniumHelper selhelper = new SeleniumHelper();
+                Element Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_BillPayCount");
+                int bill_pay_count = selhelper.SizeCountElements(Keyword.Locator);
 
-                Keyword = null;
-                temp_loc = null;
+                string[,] arr_sch_billpayment_db = new string[db_bill_pay_count, 4];
+                string[,] arr_sch_billpayment_ui = new string[bill_pay_count, 4];
 
-                Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_RowPurpose");
-                temp_loc = Keyword.Locator.Replace("{i}", Convert.ToString(i));
-                ui_purpose = selhelper.ReturnKeywordValue(temp_loc);
-                ui_purpose = ui_purpose.Trim();
-
-                Keyword = null;
-                temp_loc = null;
-
-                Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_RowDetail");
-                temp_loc = Keyword.Locator.Replace("{i}", Convert.ToString(i));
-                ui_acc_detail = selhelper.ReturnKeywordValue(temp_loc);
-                ui_acc_detail = ui_acc_detail.Replace("\r\n", " ");
-
-                Keyword = null;
-                temp_loc = null;
-
-                arr_sch_sendmoney_ui[i - 1, 0] = ui_nick;
-                arr_sch_sendmoney_ui[i - 1, 1] = Convert.ToString(ui_amount);
-                arr_sch_sendmoney_ui[i - 1, 2] = ui_acc_detail;
-                arr_sch_sendmoney_ui[i - 1, 3] = ui_purpose;
-
-                Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_RowClick");
-                temp_loc = Keyword.Locator.Replace("{i}", Convert.ToString(i));
-                selhelper.links(temp_loc);
-
-                Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_FromVal");
-                string from_value_ui = selhelper.ReturnTextBoxValue(Keyword.Locator);
-                Keyword = null;
-
-                if (from_acc_db != from_value_ui)
+                if (db_bill_pay_count != bill_pay_count)
                 {
-                    throw new Exception(string.Format("From Account value in Database :{0} is not equal with From Account value on website :{1}", from_acc_db, from_value_ui));
+                    throw new Exception(string.Format("User Schedule count in database :{0} is not equal with schedule count on website :{1}", db_bill_pay_count, bill_pay_count));
                 }
 
-                Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_TOVal");
-                string to_value_ui = selhelper.ReturnTextBoxValue(Keyword.Locator);
-                Keyword = null;
-
-                if (acc_detail != to_value_ui)
+                for (int i = 1; i <= bill_pay_count; i++)
                 {
-                    throw new Exception(string.Format("To Account value in Database :{0} is not equal with To Account value on website :{1}", acc_detail, to_value_ui));
-                }
+                    dLink = new DataAccessComponent.DataAccessLink();
+                    SourceDataTable = dLink.GetDataTable("SELECT TM.BILL_BENEFICIARY_ID , TM.SCHEDULED_TRAN_MASTER_ID, LM.PARAMETER_NAME, SOURCE_ACCOUNT_TITLE , TM.SOURCE_ACCOUNT, SOURCE_ACCOUNT_BRANCH_NAME , FIRST_EXECUTION_DATE , LAST_EXECUTION_DATE, TM.SCHEDULED_TRAN_TYPE FROM DC_SCHEDULED_TRAN_MASTER TM  INNER JOIN DC_APPLICATION_PARAM_DETAIL LM ON LM.APPLICATION_PARAMETER_ID = TM.PARAM_FREQUENCY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '" + context.GetUsername() + "') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0 and TM.FUND_TRANSFER_BENEFICIARY_ID = 0", "DIGITAL_CHANNEL_SEC");
+                    bill_bene_id = SourceDataTable.Rows[i - 1][0].ToString();
+                    schedule_id = SourceDataTable.Rows[i - 1][1].ToString();
+                    frequency_type = SourceDataTable.Rows[i - 1][2].ToString();
+                    from_acc_db = SourceDataTable.Rows[i - 1][3].ToString() + " | " + SourceDataTable.Rows[i - 1][4].ToString() + " | " + SourceDataTable.Rows[i - 1][5].ToString();
+                    first_date_db = SourceDataTable.Rows[i - 1][6].ToString();
+                    last_date_db = SourceDataTable.Rows[i - 1][7].ToString();
+                    tran_type = SourceDataTable.Rows[i - 1][8].ToString();
 
-                Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_FreqVal");
-                string frequency_value_ui = selhelper.ReturnTextBoxValue(Keyword.Locator);
-                Keyword = null;
+                    DateTime temp_date = Convert.ToDateTime(first_date_db);
+                    first_date_db = temp_date.ToString("MMM yyyy");
 
-                if (frequency_value_ui != frequency_type)
-                {
-                    throw new Exception(string.Format("Frequency Type in Database :{0} is not equal with frequency type on website :{1}", frequency_type, frequency_value_ui));
-                }
-
-                Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_PurposeVal");
-                string purpose_value_ui = selhelper.ReturnTextBoxValue(Keyword.Locator);
-                Keyword = null;
-
-                if (purpose_db != purpose_value_ui)
-                {
-                    throw new Exception(string.Format("Purpose of Payment in Database :{0} is not equal with Purpose of Payment on website :{1}", purpose_db , purpose_value_ui));
-                }
-
-                Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_TypeVal");
-                string type_value_ui = selhelper.ReturnTextBoxValue(Keyword.Locator);
-                Keyword = null;
-
-
-                Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_AmountVal");
-                string amount_value_ui = selhelper.ReturnTextBoxValue(Keyword.Locator);
-                Keyword = null;
-
-                if (Convert.ToString(schedule_amount) != amount_value_ui)
-                {
-                    throw new Exception(string.Format("Schedule Amount in Database :{0} is not equal with shcedule amount on website :{1}", schedule_amount, amount_value_ui));
-                }
-
-                Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_FirstDateVal");
-                string first_date_ui = selhelper.ReturnTextBoxValue(Keyword.Locator);
-                Keyword = null;
-
-                if (first_date_db != first_date_ui)
-                {
-                    throw new Exception(string.Format("First Executaion Date in Database :{0} is not equal with First Executaion Date on website :{1}", first_date_db, first_date_ui));
-                }
-
-                Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_LastDateVal");
-                string last_date_ui = selhelper.ReturnTextBoxValue(Keyword.Locator);
-                Keyword = null;
-
-                if (last_date_db != last_date_ui)
-                {
-                    throw new Exception(string.Format("Last Executaion Date in Database :{0} is not equal with Last Executaion Date on website :{1}", last_date_db, last_date_ui));
-                }
-
-                Dictionary<string, string> schedule_img_ui_dict = new Dictionary<string, string>();
-
-                Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_SummaryClick");
-                selhelper.links(Keyword.Locator);
-                Keyword = null;
-
-                for (int j = 1; j <= 4; j++)
-                {
-                    Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_Summ_TypeImg");
-                    string temp_keyword = Keyword.Locator.Replace("{i}", Convert.ToString(j));
-                    if (j == 1)
-                    {
-                        schedule_img = selhelper.ReturnAttributeValue("src" ,temp_keyword);
-                        schedule_img_ui_dict.Add(schedule_img, "Scheduled");
-
-                    }
-                    else if (j == 2)
-                    {
-                        failed_img = selhelper.ReturnAttributeValue("src", temp_keyword);
-                        schedule_img_ui_dict.Add(failed_img, "Failed");
-                    }
-                    else if (j == 3)
-                    {
-                        cancelled_img = selhelper.ReturnAttributeValue("src", temp_keyword);
-                        schedule_img_ui_dict.Add(cancelled_img, "Disabled");
-                    }
-                    else
-                    {
-                        successful_img = selhelper.ReturnAttributeValue("src", temp_keyword);
-                        schedule_img_ui_dict.Add(successful_img, "Success");
-                    }
-                    Keyword = null;
-                    temp_keyword = null;
-                }
-
-                Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_Schedule_Img");
-                int temp_count = selhelper.SizeCountElements(Keyword.Locator);
-
-                Element Keyword2 = ContextPage.GetInstance().GetElement("MyAccount_MngSch_Schedule_Date");
-
-                dLink = new DataAccessComponent.DataAccessLink();
-                string query = "SELECT JK.PARAMETER_NAME, ZM.EXECUTION_DATE FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '" + schedule_id + "' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '" + context.GetUsername() + "')  ORDER BY ZM.EXECUTION_DATE asc";
-                SourceDataTable = dLink.GetDataTable(query, "DIGITAL_CHANNEL_SEC");
-
-                if (temp_count != SourceDataTable.Rows.Count)
-                {
-                    throw new Exception(String.Format("Number of scheduled entries in Database :{0} is not equal with Number of Scheduled entries on Wbesite :{1}", SourceDataTable.Rows.Count, temp_count));
-                }
-                for (int k = 0; k < SourceDataTable.Rows.Count; k++)
-                {
-                    string temp_keywod_img_status = Keyword.Locator + "[" + Convert.ToString(k + 1) + "]";
-                    string temp_keyword_date = Keyword2.Locator + "[" + Convert.ToString(k + 1) + "]";
-                    string ui_schedule_date = selhelper.ReturnKeywordValue(temp_keyword_date);
-                    string ui_schedule_img = selhelper.ReturnAttributeValue("src", temp_keywod_img_status);
-                    string ui_schedule_img_status = "";
-
-                    string db_schedule_status = SourceDataTable.Rows[k][0].ToString();
-                    string db_schedule_date = SourceDataTable.Rows[k][1].ToString();
                     temp_date = Convert.ToDateTime(last_date_db);
-                    db_schedule_date = temp_date.ToString("dd-MM-yyyy");
+                    last_date_db = temp_date.ToString("MMM yyyy");
 
-                    foreach(var item in schedule_img_ui_dict)
+
+                    dLink = null;
+                    SourceDataTable = null;
+                    dLink = new DataAccessComponent.DataAccessLink();
+                    SourceDataTable = dLink.GetDataTable("Select BILL_BENE_NICK, K.MAX_AMOUNT_SCHEDULE, COMPANY_NAME, CONSUMER_NUMBER, CONSUMER_NAME from DC_BILL_PAYMENT_BENEFICIARY K WHERE K.BENEFICIARY_ID = '" + bill_bene_id + "' and K.IS_SI_SCHEDULED = 1 and K.IS_ACTIVE = 1", "DIGITAL_CHANNEL_SEC");
+                    nick = SourceDataTable.Rows[0][0].ToString();
+                    schedule_amount = SourceDataTable.Rows[0][1].ToString();
+                    company_name = SourceDataTable.Rows[0][2].ToString();
+                    consumer_no = SourceDataTable.Rows[0][3].ToString();
+                    consumer_name = SourceDataTable.Rows[0][4].ToString();
+                    acc_detail = consumer_name + " | " + consumer_no + " | " + company_name;
+
+                    arr_sch_billpayment_db[i - 1, 0] = nick.ToUpper();
+                    arr_sch_billpayment_db[i - 1, 1] = schedule_amount;
+                    arr_sch_billpayment_db[i - 1, 2] = company_name;
+                    arr_sch_billpayment_db[i - 1, 3] = consumer_no;
+
+                    Keyword = null;
+                    Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_Bill_RowNick");
+                    temp_loc = Keyword.Locator.Replace("{i}", Convert.ToString(i));
+                    selhelper.ScrollToElement(temp_loc);
+                    ui_nick = selhelper.ReturnKeywordValue(temp_loc);
+                    ui_nick = ui_nick.Trim();
+
+                    Keyword = null;
+                    temp_loc = null;
+                    Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_Bill_RowAmount");
+                    temp_loc = Keyword.Locator.Replace("{i}", Convert.ToString(i));
+                    selhelper.ScrollToElement(temp_loc);
+                    ui_amount = selhelper.ReturnKeywordValue(temp_loc);
+                    ui_amount = ui_amount.Trim();
+                    if (ui_amount.Contains("---"))
                     {
-                        if (item.Key == ui_schedule_img)
+                        ui_amount = ui_amount.Replace("---", "");
+                    }
+
+                    Keyword = null;
+                    temp_loc = null;
+                    Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_Bill_RowCompany");
+                    temp_loc = Keyword.Locator.Replace("{i}", Convert.ToString(i));
+                    selhelper.ScrollToElement(temp_loc);
+                    ui_company = selhelper.ReturnKeywordValue(temp_loc);
+                    ui_consumer_no = ui_consumer_no.Trim();
+
+                    Keyword = null;
+                    temp_loc = null;
+                    Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_Bill_RowConsumerNo");
+                    temp_loc = Keyword.Locator.Replace("{i}", Convert.ToString(i));
+                    selhelper.ScrollToElement(temp_loc);
+                    ui_consumer_no = selhelper.ReturnKeywordValue(temp_loc);
+                    ui_consumer_no = ui_consumer_no.Trim();
+
+                    arr_sch_billpayment_ui[i - 1, 0] = ui_nick.ToUpper();
+                    arr_sch_billpayment_ui[i - 1, 1] = ui_amount;
+                    arr_sch_billpayment_ui[i - 1, 2] = ui_company;
+                    arr_sch_billpayment_ui[i - 1, 3] = ui_consumer_no;
+
+                    Keyword = null;
+                    temp_loc = null;
+                    Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_Bill_RowClick");
+                    temp_loc = Keyword.Locator.Replace("{i}", Convert.ToString(i));
+                    selhelper.links(temp_loc);
+
+                    Keyword = null;
+                    Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_FromVal");
+                    string from_value_ui = selhelper.ReturnTextBoxValue(Keyword.Locator);
+                    Keyword = null;
+
+                    if (from_acc_db != from_value_ui)
+                    {
+                        throw new Exception(string.Format("From Account value in Database :{0} is not equal with From Account value on website :{1}", from_acc_db, from_value_ui));
+                    }
+
+                    Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_TOVal");
+                    string to_value_ui = selhelper.ReturnTextBoxValue(Keyword.Locator);
+                    Keyword = null;
+
+                    if (acc_detail != to_value_ui)
+                    {
+                        throw new Exception(string.Format("To Account value in Database :{0} is not equal with To Account value on website :{1}", acc_detail, to_value_ui));
+                    }
+
+                    Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_FreqVal");
+                    string frequency_value_ui = selhelper.ReturnTextBoxValue(Keyword.Locator);
+                    Keyword = null;
+
+                    if (frequency_value_ui != frequency_type)
+                    {
+                        throw new Exception(string.Format("Frequency Type in Database :{0} is not equal with frequency type on website :{1}", frequency_type, frequency_value_ui));
+                    }
+
+                    Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_TypeVal");
+                    string type_value_ui = selhelper.ReturnTextBoxValue(Keyword.Locator);
+                    Keyword = null;
+
+                    if (type_value_db != type_value_ui)
+                    {
+                        throw new Exception(string.Format("Payment Type in Database :{0} is not equal with Payment Type on website :{1}", type_value_db, type_value_ui));
+                    }
+                    if (schedule_amount != "")
+                    {
+                        Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_AmountVal");
+                        string amount_value_ui = selhelper.ReturnTextBoxValue(Keyword.Locator);
+                        Keyword = null;
+
+                        if (!(schedule_amount.Contains(".")))
                         {
-                            ui_schedule_img_status = item.Value;
-                            break;
+                            schedule_amount = schedule_amount + ".00";
+                        }
+                        if (schedule_amount != amount_value_ui)
+                        {
+                            throw new Exception(string.Format("Schedule Amount in Database :{0} is not equal with shcedule amount on website :{1}", schedule_amount, amount_value_ui));
+                        }
+                    }
+                    Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_FirstDateVal");
+                    string first_date_ui = selhelper.ReturnTextBoxValue(Keyword.Locator);
+                    Keyword = null;
+
+                    if (first_date_db != first_date_ui)
+                    {
+                        throw new Exception(string.Format("First Executaion Date in Database :{0} is not equal with First Executaion Date on website :{1}", first_date_db, first_date_ui));
+                    }
+
+                    Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_LastDateVal");
+                    string last_date_ui = selhelper.ReturnTextBoxValue(Keyword.Locator);
+                    Keyword = null;
+
+                    if (last_date_db != last_date_ui)
+                    {
+                        throw new Exception(string.Format("Last Executaion Date in Database :{0} is not equal with Last Executaion Date on website :{1}", last_date_db, last_date_ui));
+                    }
+
+                    Dictionary<string, string> schedule_img_ui_dict = new Dictionary<string, string>();
+
+                    Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_SummaryClick");
+                    selhelper.links(Keyword.Locator);
+                    Keyword = null;
+
+                    for (int j = 1; j <= 4; j++)
+                    {
+                        Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_Summ_TypeImg");
+                        string temp_keyword = Keyword.Locator.Replace("{i}", Convert.ToString(j));
+                        if (j == 1)
+                        {
+                            schedule_img = selhelper.ReturnAttributeValue("src", temp_keyword);
+                            schedule_img_ui_dict.Add(schedule_img, "Scheduled");
+
+                        }
+                        else if (j == 2)
+                        {
+                            failed_img = selhelper.ReturnAttributeValue("src", temp_keyword);
+                            schedule_img_ui_dict.Add(failed_img, "Failed");
+                        }
+                        else if (j == 3)
+                        {
+                            cancelled_img = selhelper.ReturnAttributeValue("src", temp_keyword);
+                            schedule_img_ui_dict.Add(cancelled_img, "Disabled");
+                        }
+                        else
+                        {
+                            successful_img = selhelper.ReturnAttributeValue("src", temp_keyword);
+                            schedule_img_ui_dict.Add(successful_img, "Success");
+                        }
+                        Keyword = null;
+                        temp_keyword = null;
+                    }
+
+                    Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_Schedule_Img");
+                    int temp_count = selhelper.SizeCountElements(Keyword.Locator);
+
+                    Element Keyword2 = ContextPage.GetInstance().GetElement("MyAccount_MngSch_Schedule_Date");
+
+                    dLink = new DataAccessComponent.DataAccessLink();
+                    string query = "SELECT JK.PARAMETER_NAME, ZM.EXECUTION_DATE FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '" + schedule_id + "' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '" + context.GetUsername() + "')  ORDER BY ZM.EXECUTION_DATE asc";
+                    SourceDataTable = dLink.GetDataTable(query, "DIGITAL_CHANNEL_SEC");
+
+                    if (temp_count != SourceDataTable.Rows.Count)
+                    {
+                        throw new Exception(String.Format("Number of scheduled entries in Database :{0} is not equal with Number of Scheduled entries on Wbesite :{1}", SourceDataTable.Rows.Count, temp_count));
+                    }
+                    for (int k = 0; k < SourceDataTable.Rows.Count; k++)
+                    {
+                        string temp_keywod_img_status = Keyword.Locator + "[" + Convert.ToString(k + 1) + "]";
+                        string temp_keyword_date = Keyword2.Locator + "[" + Convert.ToString(k + 1) + "]";
+                        selhelper.ScrollToElement(temp_keyword_date);
+                        string ui_schedule_date = selhelper.ReturnKeywordValue(temp_keyword_date);
+                        string ui_schedule_img = selhelper.ReturnAttributeValue("src", temp_keywod_img_status);
+                        string ui_schedule_img_status = "";
+
+                        string db_schedule_status = SourceDataTable.Rows[k][0].ToString();
+                        string db_schedule_date = SourceDataTable.Rows[k][1].ToString();
+                        temp_date = Convert.ToDateTime(db_schedule_date);
+                        db_schedule_date = temp_date.ToString("MMM yyyy");
+
+                        foreach (var item in schedule_img_ui_dict)
+                        {
+                            if (item.Key == ui_schedule_img)
+                            {
+                                ui_schedule_img_status = item.Value;
+                                break;
+                            }
+                        }
+
+                        if (db_schedule_date != ui_schedule_date)
+                        {
+                            throw new Exception(String.Format("Schedule Date in Database :{0} is not equal with website :{1}", db_schedule_date, ui_schedule_date));
                         }
                     }
 
-                    if (db_schedule_date != ui_schedule_date)
-                    {
-                        throw new Exception(String.Format("Schedule Date in Database :{0} is not equal with website :{1}", db_schedule_date, ui_schedule_date));
-                    }
+                    Keyword = null;
+                    Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_Summary_CloseBtn");
+                    selhelper.Button(Keyword.Locator);
+                    
+                }
+                for (int i = 0; i < arr_sch_billpayment_db.GetLength(0); i++)
+                    for (int j = 0; j < arr_sch_billpayment_ui.GetLength(1); j++)
+                        if (arr_sch_billpayment_db[i, j].CompareTo(arr_sch_billpayment_ui[i, j]) != 0)
+                        {
+                            throw new Exception(string.Format("The value on Website :{0} is not equal with value on database :{1}", arr_sch_billpayment_db[i, j], arr_sch_billpayment_ui[i, j]));
+                        }
+            }
+            catch (Exception exception)
+            {
+                throw new AssertFailedException(exception.Message);
+            }
+        }
+
+
+        [Given(@"I am verifying schedule payments of Send Money from My Account")]
+        [When(@"I am verifying schedule payments of Send Money from My Account")]
+        [Then(@"I am verifying schedule payments of Send Money from My Account")]
+        public void ThenIAmVerifyingSchedulePaymentsOfSendMoneyFromMyAccount()
+        {
+            try
+            {
+                string fund_transfer_id = ""; string ui_nick = ""; string ui_amount = "";
+                string schedule_id = ""; string ui_purpose = ""; string ui_acc_detail = "";
+                string schedule_amount = ""; string temp_loc = ""; string acc_detail = "";
+                string nick = ""; string branch_name = ""; string acc_title = "";
+                string acc_no = ""; string purpose_db = ""; string frequency_type = "";
+                string from_acc_db = ""; string first_date_db = ""; string last_date_db = "";
+                string schedule_img = ""; string failed_img = ""; string cancelled_img = "";
+                string successful_img = ""; string tran_type = ""; string type_value_db = "";
+                string acc_detail_db = "";
+
+                if (context.GetUserScheduleCount() == 0)
+                {
+                    throw new Exception("User Schedule payment Count is zero");
                 }
 
-                Keyword = ContextPage.GetInstance().GetElement("");
-                selhelper.Button(Keyword.Locator);
-                Keyword = null;
+                DataAccessComponent.DataAccessLink dLink = new DataAccessComponent.DataAccessLink();
+                DataTable SourceDataTable = dLink.GetDataTable("SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '" + context.GetUsername() + "') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0 and TM.BILL_BENEFICIARY_ID = 0", "DIGITAL_CHANNEL_SEC");
+                int db_send_count = Convert.ToInt32(SourceDataTable.Rows[0][0].ToString());
+                dLink = null;
+                SourceDataTable = null;
 
-                schedule_amount = ui_amount = ui_nick = ui_purpose = ui_acc_detail = temp_loc = acc_detail = nick = branch_name = 
-                acc_title = acc_no = purpose_db  = String.Empty;
-                schedule_img_ui_dict.Clear();
-            }
-            for (int i = 0; i < arr_sch_sendmoney_db.GetLength(0); i++)
-                for (int j = 0; j < arr_sch_sendmoney_ui.GetLength(0); j++)
-                    if (arr_sch_sendmoney_db[i, j] != arr_sch_sendmoney_ui[i, j])
+                SeleniumHelper selhelper = new SeleniumHelper();
+                Element Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_SendMoneyCount");
+                int send_money_count = selhelper.SizeCountElements(Keyword.Locator);
+
+                string[,] arr_sch_sendmoney_db = new string[db_send_count, 4];
+                string[,] arr_sch_sendmoney_ui = new string[send_money_count, 4];
+
+                if (db_send_count != send_money_count)
+                {
+                    throw new Exception(string.Format("User Schedule count in database :{0} is not equal with schedule count on website :{1}", db_send_count, send_money_count));
+                }
+
+                for (int i = 1; i <= send_money_count; i++)
+                {
+                    dLink = new DataAccessComponent.DataAccessLink();
+                    SourceDataTable = dLink.GetDataTable("SELECT TM.FUND_TRANSFER_BENEFICIARY_ID, TM.SCHEDULED_TRAN_MASTER_ID, TM.SCHEDULED_AMOUNT, PK.PARAMETER_NAME, LM.PARAMETER_NAME, SOURCE_ACCOUNT_TITLE ,TM.SOURCE_ACCOUNT, SOURCE_ACCOUNT_BRANCH_NAME , FIRST_EXECUTION_DATE , LAST_EXECUTION_DATE, TM.SCHEDULED_TRAN_TYPE FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_APPLICATION_PARAM_DETAIL PK on PK.APPLICATION_PARAMETER_ID = TM.PARAM_PURPOSE_OF_PAYMENT_ID INNER JOIN DC_APPLICATION_PARAM_DETAIL LM ON LM.APPLICATION_PARAMETER_ID = TM.PARAM_FREQUENCY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '" + context.GetUsername() + "') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0 and TM.BILL_BENEFICIARY_ID = 0", "DIGITAL_CHANNEL_SEC");
+                    fund_transfer_id = SourceDataTable.Rows[i - 1][0].ToString();
+                    schedule_id = SourceDataTable.Rows[i - 1][1].ToString();
+                    schedule_amount = SourceDataTable.Rows[i - 1][2].ToString();
+                    purpose_db = SourceDataTable.Rows[i - 1][3].ToString();
+                    frequency_type = SourceDataTable.Rows[i - 1][4].ToString();
+                    from_acc_db = SourceDataTable.Rows[i - 1][5].ToString() + " | " + SourceDataTable.Rows[i - 1][6].ToString() + " | " + SourceDataTable.Rows[i - 1][7].ToString();
+                    first_date_db = SourceDataTable.Rows[i - 1][8].ToString();
+                    last_date_db = SourceDataTable.Rows[i - 1][9].ToString();
+                    tran_type = SourceDataTable.Rows[i - 1][10].ToString();
+
+                    if (!(schedule_amount.Contains(".")))
                     {
-                        throw new Exception(string.Format("The value on Website :{0} is not equal with value on database :{1}", arr_sch_sendmoney_db[i, j], arr_sch_sendmoney_ui[i, j]));
+                        schedule_amount = schedule_amount + ".00";
                     }
+
+                    DateTime temp_date = Convert.ToDateTime(first_date_db);
+                    first_date_db = temp_date.ToString("dd-MM-yyyy");
+
+                    temp_date = Convert.ToDateTime(last_date_db);
+                    last_date_db = temp_date.ToString("dd-MM-yyyy");
+
+                    arr_sch_sendmoney_db[i - 1, 1] = schedule_amount;
+                    arr_sch_sendmoney_db[i - 1, 3] = purpose_db;
+
+                    dLink = null;
+                    SourceDataTable = null;
+                    dLink = new DataAccessComponent.DataAccessLink();
+                    SourceDataTable = dLink.GetDataTable("Select NICK, ACCOUNT_TITLE, ACCOUNT_NO, BRANCH_NAME from DC_FUND_TRANSFER_BENEFICIARY LL where LL.FUND_TRANSFER_BENEFICIARY_ID ='" + fund_transfer_id + "'", "DIGITAL_CHANNEL_SEC");
+                    nick = SourceDataTable.Rows[0][0].ToString();
+                    acc_title = SourceDataTable.Rows[0][1].ToString();
+                    acc_no = SourceDataTable.Rows[0][2].ToString();
+                    branch_name = SourceDataTable.Rows[0][3].ToString();
+                    acc_detail = acc_title + " | " + acc_no + " | " + branch_name;
+                    acc_detail_db = acc_title + " " + acc_no + " " + branch_name;
+
+                    arr_sch_sendmoney_db[i - 1, 0] = nick;
+                    arr_sch_sendmoney_db[i - 1, 2] = acc_detail_db;
+
+                    Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_RowTitle");
+                    temp_loc = Keyword.Locator.Replace("{i}", Convert.ToString(i));
+                    selhelper.ScrollToElement(temp_loc);
+                    ui_nick = selhelper.ReturnKeywordValue(temp_loc);
+                    ui_nick = ui_nick.Trim();
+
+                    Keyword = null;
+                    temp_loc = null;
+                    dLink = null;
+                    SourceDataTable = null;
+
+                    Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_RowAmount");
+                    temp_loc = Keyword.Locator.Replace("{i}", Convert.ToString(i));
+                    selhelper.ScrollToElement(temp_loc);
+                    ui_amount = (selhelper.ReturnKeywordValue(temp_loc)).Trim();
+
+                    if (!(ui_amount.Contains(".")))
+                    {
+                        ui_amount = ui_amount + ".00";
+                    }
+
+                    Keyword = null;
+                    temp_loc = null;
+
+                    Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_RowPurpose");
+                    temp_loc = Keyword.Locator.Replace("{i}", Convert.ToString(i));
+                    selhelper.ScrollToElement(temp_loc);
+                    ui_purpose = selhelper.ReturnKeywordValue(temp_loc);
+                    ui_purpose = ui_purpose.Trim();
+
+                    Keyword = null;
+                    temp_loc = null;
+
+                    Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_RowDetail");
+                    temp_loc = Keyword.Locator.Replace("{i}", Convert.ToString(i));
+                    selhelper.ScrollToElement(temp_loc);
+                    ui_acc_detail = selhelper.ReturnKeywordValue(temp_loc);
+                    ui_acc_detail = ui_acc_detail.Replace("\r\n", " ");
+
+                    Keyword = null;
+                    temp_loc = null;
+
+                    arr_sch_sendmoney_ui[i - 1, 0] = ui_nick;
+                    arr_sch_sendmoney_ui[i - 1, 1] = ui_amount;
+                    arr_sch_sendmoney_ui[i - 1, 2] = ui_acc_detail;
+                    arr_sch_sendmoney_ui[i - 1, 3] = ui_purpose;
+
+                    Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_RowClick");
+                    temp_loc = Keyword.Locator.Replace("{i}", Convert.ToString(i));
+                    selhelper.links(temp_loc);
+
+                    Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_FromVal");
+                    string from_value_ui = selhelper.ReturnTextBoxValue(Keyword.Locator);
+                    Keyword = null;
+
+                    if (from_acc_db != from_value_ui)
+                    {
+                        throw new Exception(string.Format("From Account value in Database :{0} is not equal with From Account value on website :{1}", from_acc_db, from_value_ui));
+                    }
+
+                    Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_TOVal");
+                    string to_value_ui = selhelper.ReturnTextBoxValue(Keyword.Locator);
+                    Keyword = null;
+
+                    if (acc_detail != to_value_ui)
+                    {
+                        throw new Exception(string.Format("To Account value in Database :{0} is not equal with To Account value on website :{1}", acc_detail, to_value_ui));
+                    }
+
+                    Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_FreqVal");
+                    string frequency_value_ui = selhelper.ReturnTextBoxValue(Keyword.Locator);
+                    Keyword = null;
+
+                    if (frequency_value_ui != frequency_type)
+                    {
+                        throw new Exception(string.Format("Frequency Type in Database :{0} is not equal with frequency type on website :{1}", frequency_type, frequency_value_ui));
+                    }
+
+                    Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_PurposeVal");
+                    string purpose_value_ui = selhelper.ReturnTextBoxValue(Keyword.Locator);
+                    Keyword = null;
+
+                    if (purpose_db != purpose_value_ui)
+                    {
+                        throw new Exception(string.Format("Purpose of Payment in Database :{0} is not equal with Purpose of Payment on website :{1}", purpose_db, purpose_value_ui));
+                    }
+
+                    Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_TypeVal");
+                    string type_value_ui = selhelper.ReturnTextBoxValue(Keyword.Locator);
+                    Keyword = null;
+
+                    dLink = null;
+                    SourceDataTable = null;
+                    dLink = new DataAccessComponent.DataAccessLink();
+                    SourceDataTable = dLink.GetDataTable("Select CLIENT_DESCRIPTION from DC_TRAN_TYPE_LIMIT_GROUP_RULES K WHERE K.CLIENT_LIMIT_TYPE = '" + tran_type + "' and rownum= 1", "DIGITAL_CHANNEL_SEC");
+                    type_value_db = SourceDataTable.Rows[0][0].ToString();
+
+                    if (type_value_db != type_value_ui)
+                    {
+                        throw new Exception(string.Format("Payment Type in Database :{0} is not equal with Payment Type on website :{1}", type_value_db, type_value_ui));
+                    }
+
+                    Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_AmountVal");
+                    string amount_value_ui = selhelper.ReturnTextBoxValue(Keyword.Locator);
+                    Keyword = null;
+
+                    if (Convert.ToString(schedule_amount) != amount_value_ui)
+                    {
+                        throw new Exception(string.Format("Schedule Amount in Database :{0} is not equal with shcedule amount on website :{1}", schedule_amount, amount_value_ui));
+                    }
+
+                    Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_FirstDateVal");
+                    string first_date_ui = selhelper.ReturnTextBoxValue(Keyword.Locator);
+                    Keyword = null;
+
+                    if (first_date_db != first_date_ui)
+                    {
+                        throw new Exception(string.Format("First Executaion Date in Database :{0} is not equal with First Executaion Date on website :{1}", first_date_db, first_date_ui));
+                    }
+
+                    Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_LastDateVal");
+                    string last_date_ui = selhelper.ReturnTextBoxValue(Keyword.Locator);
+                    Keyword = null;
+
+                    if (last_date_db != last_date_ui)
+                    {
+                        throw new Exception(string.Format("Last Executaion Date in Database :{0} is not equal with Last Executaion Date on website :{1}", last_date_db, last_date_ui));
+                    }
+
+                    Dictionary<string, string> schedule_img_ui_dict = new Dictionary<string, string>();
+
+                    Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_SummaryClick");
+                    selhelper.links(Keyword.Locator);
+                    Keyword = null;
+
+                    for (int j = 1; j <= 4; j++)
+                    {
+                        Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_Summ_TypeImg");
+                        string temp_keyword = Keyword.Locator.Replace("{i}", Convert.ToString(j));
+                        if (j == 1)
+                        {
+                            schedule_img = selhelper.ReturnAttributeValue("src", temp_keyword);
+                            schedule_img_ui_dict.Add(schedule_img, "Scheduled");
+
+                        }
+                        else if (j == 2)
+                        {
+                            failed_img = selhelper.ReturnAttributeValue("src", temp_keyword);
+                            schedule_img_ui_dict.Add(failed_img, "Failed");
+                        }
+                        else if (j == 3)
+                        {
+                            cancelled_img = selhelper.ReturnAttributeValue("src", temp_keyword);
+                            schedule_img_ui_dict.Add(cancelled_img, "Disabled");
+                        }
+                        else
+                        {
+                            successful_img = selhelper.ReturnAttributeValue("src", temp_keyword);
+                            schedule_img_ui_dict.Add(successful_img, "Success");
+                        }
+                        Keyword = null;
+                        temp_keyword = null;
+                    }
+
+                    Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_Schedule_Img");
+                    int temp_count = selhelper.SizeCountElements(Keyword.Locator);
+
+                    Element Keyword2 = ContextPage.GetInstance().GetElement("MyAccount_MngSch_Schedule_Date");
+
+                    dLink = new DataAccessComponent.DataAccessLink();
+                    string query = "SELECT JK.PARAMETER_NAME, ZM.EXECUTION_DATE FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '" + schedule_id + "' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '" + context.GetUsername() + "')  ORDER BY ZM.EXECUTION_DATE asc";
+                    SourceDataTable = dLink.GetDataTable(query, "DIGITAL_CHANNEL_SEC");
+
+                    if (temp_count != SourceDataTable.Rows.Count)
+                    {
+                        throw new Exception(String.Format("Number of scheduled entries in Database :{0} is not equal with Number of Scheduled entries on Wbesite :{1}", SourceDataTable.Rows.Count, temp_count));
+                    }
+                    for (int k = 0; k < SourceDataTable.Rows.Count; k++)
+                    {
+                        string temp_keywod_img_status = Keyword.Locator + "[" + Convert.ToString(k + 1) + "]";
+                        string temp_keyword_date = Keyword2.Locator + "[" + Convert.ToString(k + 1) + "]";
+                        selhelper.ScrollToElement(temp_keyword_date);
+                        string ui_schedule_date = selhelper.ReturnKeywordValue(temp_keyword_date);
+                        string ui_schedule_img = selhelper.ReturnAttributeValue("src", temp_keywod_img_status);
+                        string ui_schedule_img_status = "";
+
+                        string db_schedule_status = SourceDataTable.Rows[k][0].ToString();
+                        string db_schedule_date = SourceDataTable.Rows[k][1].ToString();
+                        temp_date = Convert.ToDateTime(db_schedule_date);
+                        db_schedule_date = temp_date.ToString("dd-MM-yyyy");
+
+                        foreach (var item in schedule_img_ui_dict)
+                        {
+                            if (item.Key == ui_schedule_img)
+                            {
+                                ui_schedule_img_status = item.Value;
+                                break;
+                            }
+                        }
+
+                        if (db_schedule_date != ui_schedule_date)
+                        {
+                            throw new Exception(String.Format("Schedule Date in Database :{0} is not equal with website :{1}", db_schedule_date, ui_schedule_date));
+                        }
+                    }
+
+                    Keyword = ContextPage.GetInstance().GetElement("MyAccount_MngSch_Summary_CloseBtn");
+                    selhelper.Button(Keyword.Locator);
+                    Keyword = null;
+
+                    tran_type =  type_value_db = schedule_amount = ui_amount = ui_nick = ui_purpose = ui_acc_detail = temp_loc = acc_detail = nick = branch_name =
+                    acc_title = acc_no = purpose_db = String.Empty;
+                    schedule_img_ui_dict.Clear();
+                }
+                for (int i = 0; i < arr_sch_sendmoney_db.GetLength(0); i++)
+                    for (int j = 0; j < arr_sch_sendmoney_ui.GetLength(1); j++)
+                        if (arr_sch_sendmoney_db[i, j].CompareTo(arr_sch_sendmoney_ui[i, j]) != 0)
+                        {
+                            throw new Exception(string.Format("The value on Website :{0} is not equal with value on database :{1}", arr_sch_sendmoney_db[i, j], arr_sch_sendmoney_ui[i, j]));
+                        }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("ex message: " + ex.Message);
+            }
         }
         [Then(@"I verify multiple payment details in Transaction Activity ""(.*)"" on ""(.*)"" and ""(.*)"" on ""(.*)"" and ""(.*)"" on ""(.*)"" and ""(.*)"" on ""(.*)"" and ""(.*)"" on ""(.*)"" and ""(.*)"" on ""(.*)"" on Schema ""(.*)""")]
         public void ThenIVerifyMultiplePaymentDetailsInTransactionActivityOnAndOnAndOnAndOnAndOnAndOnOnSchema(string TranSuccessMessage, string Keyword1, string tran_type_query, string Keyword2, string tran_amount_query, string Keyword3, string from_account_query, string Keyword4, string company_name_query, string Keyword5, string consumer_no_query, string Keyword6, string schema)
@@ -4299,7 +4689,7 @@ namespace HBLAutomationWeb.Core
                         DateTime dt = Convert.ToDateTime(db_value);
                         db_value = dt.ToString(date_fromat_arr[1]);
                     }
-                    if (ui_value != db_value)
+                    if (ui_value.Trim() != db_value.Trim())
                     {
                         throw new Exception(string.Format("The UI value is {0} and the databse value is {1}", ui_value, db_value));
                     }
