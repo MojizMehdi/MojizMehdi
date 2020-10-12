@@ -25,6 +25,7 @@ using DocumentFormat.OpenXml.Spreadsheet;
 using OpenQA.Selenium.Appium.MultiTouch;
 using System.Data;
 using OpenQA.Selenium.Appium.Windows.Enums;
+using HBLAutomationAndroid.Beans;
 
 namespace HBLAutomationAndroid.Pages
 {
@@ -240,6 +241,10 @@ namespace HBLAutomationAndroid.Pages
 
                 string FeatureName = ContextPage.GetInstance().GetExcelRecord().FeatureName;
                 string savelocation = Configuration.GetInstance().GetByKey("ScreenshotFolderPath") + FeatureName + DateTime.Now.ToString("yyyyMMdd") + "/";
+                //Setting Screenshot Path
+                //ExcelRecord record = new ExcelRecord();
+                //record.ScreenshotPath = savelocation;
+                //ContextPage.GetInstance().SetExcelRecord(record);
                 if (!Directory.Exists(savelocation))
                 {
                     Directory.CreateDirectory(savelocation);
@@ -259,6 +264,9 @@ namespace HBLAutomationAndroid.Pages
                     }
                     string fileName = ContextPage.GetInstance().GetExcelRecord().ScenarioName + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".png";
                     bitmap.Save(savelocation + fileName, ImageFormat.Png);
+                    ExcelRecord record = ContextPage.GetInstance().GetExcelRecord();
+                    record.ScreenshotPath = savelocation + fileName;
+                    ContextPage.GetInstance().SetExcelRecord(record);
                 }
             }
             catch (Exception exception)

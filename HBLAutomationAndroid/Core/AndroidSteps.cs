@@ -162,6 +162,11 @@ namespace HBLAutomationAndroid.Core
             apmhelper.swtich_activity(app_package, app_activity);
         }
 
+        //[When(@"I deselect consumers for multi bill payment as ""(.*)"" on ""(.*)""")]
+        //public void WhenIDeselectConsumersForMultiBillPaymentAsOn(string p0, string p1)
+        //{
+        //    ScenarioContext.Current.Pending();
+        //}
 
 
         [When(@"I have given ""(.*)"" on ""(.*)""")]
@@ -3686,7 +3691,7 @@ namespace HBLAutomationAndroid.Core
             string temp_query = "";
             for (int i = 0; i < consumer_no_arr.Length; i++)
             {
-                //apmhelper.verification(TranSuccessMessage, keyword.Locator, locator_type);
+                apmhelper.verification(TranSuccessMessage, keyword.Locator, "xpath");
                 if (Keyword1.Contains("BillPayment_TranSuccess") || Keyword1.Contains("SendMoney_TranSuccessMessage") || Keyword1.Contains("BillPayment_TranSuccess_MultiBill"))
                 {
                     keyword = null;
@@ -3805,7 +3810,7 @@ namespace HBLAutomationAndroid.Core
             string temp_query = "";
             for (int i = 1; i <= consumer_no_arr.Length; i++)
             {
-                //apmhelper.verification(TranSuccessMessage, keyword.Locator, locator_type);
+                apmhelper.verification(TranSuccessMessage, keyword.Locator, "xpath");
                 if (Keyword1.Contains("BillPayment_TranSuccess") || Keyword1.Contains("SendMoney_TranSuccessMessage") || Keyword1.Contains("BillPayment_TranSuccess_MultiBill"))
                 {
                     keyword = null;

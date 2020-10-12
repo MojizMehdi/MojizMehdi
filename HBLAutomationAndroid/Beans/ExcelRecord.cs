@@ -15,5 +15,6 @@ namespace HBLAutomationAndroid.Beans
         public string Result { get; set; }
         public string ErrorMessage { get; set; }
         public string TestcaseName { get; set; }
+        public string ScreenshotPath { get; set; }
     }
 }

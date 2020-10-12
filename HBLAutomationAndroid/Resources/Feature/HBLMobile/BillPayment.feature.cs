@@ -86,7 +86,7 @@ namespace HBLAutomationAndroid.Resources.Feature.HBLMobile
         public virtual void WhenUserTryToLoginMobileBankingForBillPayment(string @case, string status_Query, string login_UserId_Value, string login_Password_Value, string oTP_Value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "mytag"};
+                    "Login_BillPayment"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -146,7 +146,7 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to login mobile banking for bill payment: When user id and password" +
             " are valid")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Login_BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/HBLMobileLogin.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid")]
@@ -199,6 +199,7 @@ this.WhenUserTryToLoginMobileBankingForBillPayment("When user id and password ar
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "AddNew_BillPayment",
                     "BillPayment"};
             if ((exampleTags != null))
             {
@@ -354,6 +355,7 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: When " +
             "valid bill details are provided 05151110478500")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid bill details are provided 05151110478500")]
@@ -424,6 +426,7 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When valid bi
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: When " +
             "valid bill details are provided 05151110478601")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid bill details are provided 05151110478601")]
@@ -494,6 +497,7 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When valid bi
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: When " +
             "valid bill details are provided 10154111067900")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid bill details are provided 10154111067900")]
@@ -564,6 +568,7 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When valid bi
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: When " +
             "valid bill details are provided 10154111065004")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid bill details are provided 10154111065004")]
@@ -628,6 +633,7 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When valid bi
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: When " +
             "valid bill details are provided 0001203337")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid bill details are provided 0001203337")]
@@ -692,6 +698,7 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When valid bi
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: When " +
             "valid bill details are provided 06124110094600")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid bill details are provided 06124110094600")]
@@ -756,6 +763,7 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When valid bi
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: When " +
             "valid bill details are provided 0017782242")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid bill details are provided 0017782242")]
@@ -820,6 +828,7 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When valid bi
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: When " +
             "valid bill details are provided 19481121248201")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid bill details are provided 19481121248201")]
@@ -2702,7 +2711,7 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPaymentViaHomeIcon("Wh
 #line hidden
         }
         
-        public virtual void AsAUserIWantToVerifyMultipleBillPaymentThroughMobileByBeneViaHomeIcon(string @case, string status_Query, string consumer_Numbers, string tran_Pass_Value, string tran_Type_Query, string tran_Amount_Query, string from_Account_Query, string company_Name_Query, string consumer_No_Query, string bene_Check_Query, string db_Val, string db_Val2, string[] exampleTags)
+        public virtual void AsAUserIWantToVerifyMultipleBillPaymentThroughMobileByBeneViaHomeIcon(string @case, string status_Query, string consumer_Numbers, string account_No, string tran_Pass_Value, string tran_Type_Query, string tran_Amount_Query, string from_Account_Query, string company_Name_Query, string consumer_No_Query, string bene_Check_Query, string db_Val, string db_Val2, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "BillPayment"};
@@ -2736,44 +2745,46 @@ this.ScenarioSetup(scenarioInfo);
 #line 491
  testRunner.And(string.Format("I select consumers for multi bill payment as \"{0}\" on \"BillPayment_SearchBeneFiel" +
                         "d\"", consumer_Numbers), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 492
- testRunner.And("I am clicking on \"BillPayment_MultiBillSelect_Next\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 493
- testRunner.And("I set value in context from data \"BillPayment\" as \"Transaction_Type\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"BillPayment_MultiBillSelect_Next\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 494
- testRunner.And("I verify bill details of consumer numbers for bill payment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I set value in context from data \"BillPayment\" as \"Transaction_Type\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 495
- testRunner.And("I am clicking on \"BillPayment_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I verify bill details of consumer numbers for bill payment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 496
+ testRunner.And(string.Format("I select \"{0}\" on \"BillPayment_FromAccount_Bene\"", account_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 497
+ testRunner.And("I am clicking on \"BillPayment_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 498
  testRunner.And(string.Format("I have transaction pass check and given \"{0}\" on \"BillPayment_TransactionPassword" +
                         "\"", tran_Pass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 497
- testRunner.And("I scroll to element text as \"Pay\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 498
- testRunner.And("I am clicking on \"BillPayment_MultiPayment_PayBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 499
- testRunner.And("I wait 20000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I scroll to element text as \"Pay\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 500
- testRunner.And("I am clicking on \"BillPayment_Rating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"BillPayment_MultiPayment_PayBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 501
+ testRunner.And("I wait 20000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 502
+ testRunner.And("I am clicking on \"BillPayment_Rating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 504
  testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 505
- testRunner.Then(string.Format(@"verify multiple payments summary ""Transaction is successful."" on ""BillPayment_TranSuccess_MultiBill"" and ""{0}"" on ""BillPayment_TranType"" and ""{1}"" on ""BillPayment_TranAmount"" and ""{2}"" on ""BillPayment_TranFromAcc"" and ""{3}"" on ""BillPayment_CompanyName"" and ""{4}"" on ""BillPayment_TranSucess_ConsumerNo"" on Schema ""{5}""", tran_Type_Query, tran_Amount_Query, from_Account_Query, company_Name_Query, consumer_No_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 512
- testRunner.And("I am clicking on \"BillPayment_TranInfoClose\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 513
- testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 507
+ testRunner.Then(string.Format(@"verify multiple payments summary ""Transaction is successful. "" on ""BillPayment_TranSuccess_MultiBill"" and ""{0}"" on ""BillPayment_TranType"" and ""{1}"" on ""BillPayment_TranAmount"" and ""{2}"" on ""BillPayment_TranFromAcc"" and ""{3}"" on ""BillPayment_CompanyName"" and ""{4}"" on ""BillPayment_TranSucess_ConsumerNo"" on Schema ""{5}""", tran_Type_Query, tran_Amount_Query, from_Account_Query, company_Name_Query, consumer_No_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 514
- testRunner.And("I am clicking on \"Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"BillPayment_TranInfoClose\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 515
+ testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 516
- testRunner.And("I am clicking on \"Dashboard_Sidebar\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 517
- testRunner.And("I am clicking on \"Dashboard_Sidebar_TranActivity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 518
- testRunner.And("I am clicking on \"TransactionActivity_Financial\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Dashboard_Sidebar\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 519
- testRunner.And("I am clicking on \"TransactionActivity_LatestTranLink\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Dashboard_Sidebar_TranActivity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 520
+ testRunner.And("I am clicking on \"TransactionActivity_Financial\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 521
+ testRunner.And("I am clicking on \"TransactionActivity_LatestTranLink\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 523
  testRunner.And(string.Format(@"verify transaction activity multiple payments ""Successful"" on ""BillPayment_TranSuccess_MultiBill_TranActivity"" and ""{0}"" on ""BillPayment_TranType"" and ""{1}"" on ""BillPayment_TranAmount"" and ""{2}"" on ""BillPayment_TranFromAcc"" and ""{3}"" on ""BillPayment_CompanyName"" and ""{4}"" on ""BillPayment_TranSucess_ConsumerNo"" on Schema ""{5}""", tran_Type_Query, tran_Amount_Query, from_Account_Query, company_Name_Query, consumer_No_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -2788,7 +2799,8 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid bill details and consumer numbers are provided")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid bill details and consumer numbers are provided")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Consumer_Numbers", "10154111086801,5733200000,79003144300086")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Consumer_Numbers", "10154111086801,5733200000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "02197900643103")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan2")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
             "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
@@ -2804,7 +2816,7 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void AsAUserIWantToVerifyMultipleBillPaymentThroughMobileByBeneViaHomeIcon_WhenValidBillDetailsAndConsumerNumbersAreProvided()
         {
 #line 479
-this.AsAUserIWantToVerifyMultipleBillPaymentThroughMobileByBeneViaHomeIcon("When valid bill details and consumer numbers are provided", "", "10154111086801,5733200000,79003144300086", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+this.AsAUserIWantToVerifyMultipleBillPaymentThroughMobileByBeneViaHomeIcon("When valid bill details and consumer numbers are provided", "", "10154111086801,5733200000", "02197900643103", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
                     "", @"SELECT PB.CONSUMER_NUMBER FROM DC_BILL_PAYMENT_BENEFICIARY PB WHERE PB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND PB.IS_ACTIVE = 1 AND PB.COMPANY_CATEGORY = 'BILL_BASED' AND PB.COMPANY_SUB_CATEGORY IN ('Electricity Bill Payment','Gas Bill Payment','Landline Bill Payment','Water / Sanitation Bill Payment') ORDER BY PB.CONSUMER_NUMBER", "DIGITAL_CHANNEL_SEC", "QAT_BPS", new string[] {

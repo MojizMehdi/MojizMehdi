@@ -3,7 +3,7 @@
 	As a math idiot
 	I want to be told the sum of two numbers
 
-@mytag
+@Login_BillPayment
 Scenario Outline: When user try to login mobile banking for bill payment
 	Given the test case title is "<Case>"
 	And the user is arrive to Mobile Banking home page 
@@ -32,7 +32,7 @@ Scenario Outline: When user try to login mobile banking for bill payment
 	Examples: 
 	|Case|Status_query|Login_UserId_Value|Login_Password_Value|OTP_Value|
 	
-@BillPayment
+@AddNew_BillPayment @BillPayment
 Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make new payment
 	Given the test case title is "<Case>"
 	And I set value in context from data "<BillPayment_ConsumerNo_Value>" as "ConsumerNo"
@@ -489,9 +489,11 @@ Scenario Outline: As a user i want to Verify Multiple Bill Payment through Mobil
 	And verify the list using "<bene_check_query>" on Schema "<db_val>"
 	#And I verify array of elements from scroll view on "<bene_check_keywords>" as "<bene_check_query>" on schema "<db_val>" of "2"
 	And I select consumers for multi bill payment as "<Consumer_Numbers>" on "BillPayment_SearchBeneField"
+	#And I select consumers for multi bill payment as "<Consumer_Numbers>" on "BillPayment_SearchBeneField"
 	And I am clicking on "BillPayment_MultiBillSelect_Next"
 	And I set value in context from data "BillPayment" as "Transaction_Type"
 	And I verify bill details of consumer numbers for bill payment
+	And I select "<account_no>" on "BillPayment_FromAccount_Bene"
 	And I am clicking on "BillPayment_NextBtn"
 	And I have transaction pass check and given "<tran_pass_value>" on "BillPayment_TransactionPassword"
 	And I scroll to element text as "Pay"
@@ -502,7 +504,7 @@ Scenario Outline: As a user i want to Verify Multiple Bill Payment through Mobil
 	And I wait 2000
 	#And I am clicking on "BillPayment_Rating_FeedbacBillPayment_TranSuccess_MultiBillk_OkBtn"
 	#And I save Transaction Info for MultiPayment
-	Then verify multiple payments summary "Transaction is successful." on "BillPayment_TranSuccess_MultiBill" and "<tran_type_query>" on "BillPayment_TranType" and "<tran_amount_query>" on "BillPayment_TranAmount" and "<from_account_query>" on "BillPayment_TranFromAcc" and "<company_name_query>" on "BillPayment_CompanyName" and "<consumer_no_query>" on "BillPayment_TranSucess_ConsumerNo" on Schema "<db_val>"
+	Then verify multiple payments summary "Transaction is successful. " on "BillPayment_TranSuccess_MultiBill" and "<tran_type_query>" on "BillPayment_TranType" and "<tran_amount_query>" on "BillPayment_TranAmount" and "<from_account_query>" on "BillPayment_TranFromAcc" and "<company_name_query>" on "BillPayment_CompanyName" and "<consumer_no_query>" on "BillPayment_TranSucess_ConsumerNo" on Schema "<db_val>"
 	#Then verify multiple payments through "Transaction is successful. " on "BillPayment_TranSuccess_MultiBill"
 	#And verify multiple payments through database on "<tran_type_query>" on Schema "<db_val>" on "BillPayment_TranType"
 	#And verify multiple payments through database on "<tran_amount_query>" on Schema "<db_val>" on "BillPayment_TranAmount"
@@ -521,4 +523,4 @@ Scenario Outline: As a user i want to Verify Multiple Bill Payment through Mobil
 	And verify transaction activity multiple payments "Successful" on "BillPayment_TranSuccess_MultiBill_TranActivity" and "<tran_type_query>" on "BillPayment_TranType" and "<tran_amount_query>" on "BillPayment_TranAmount" and "<from_account_query>" on "BillPayment_TranFromAcc" and "<company_name_query>" on "BillPayment_CompanyName" and "<consumer_no_query>" on "BillPayment_TranSucess_ConsumerNo" on Schema "<db_val>"
 	@source:Data/MultiBillPayment.xlsx
 	Examples: 
-	|Case|status_query|Consumer_Numbers|tran_pass_value|tran_type_query|tran_amount_query|from_account_query|company_name_query|consumer_no_query|bene_check_query|db_val|db_val2|
+	|Case|status_query|Consumer_Numbers|account_no|tran_pass_value|tran_type_query|tran_amount_query|from_account_query|company_name_query|consumer_no_query|bene_check_query|db_val|db_val2|
