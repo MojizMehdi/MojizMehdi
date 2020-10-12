@@ -97,7 +97,17 @@ namespace HBLAutomationWeb.Common
         string is_partial = "";
         decimal mutual_fund_bal;
         string Billing_Month;
+        string mobile;
+        bool change_loginID_check = false;
 
+        public string Get_Mobile_No()
+        {
+            return mobile;
+        }
+        public void Set_Mobile_No(string mobile)
+        {
+            this.mobile = mobile;
+        }
         public decimal Get_mutual_fund_balance()
         {
             return mutual_fund_bal;
@@ -209,6 +219,14 @@ namespace HBLAutomationWeb.Common
         public bool Get_signup_check()
         {
             return this.signup_check;
+        }
+        public void Set_Change_LoginID_Check(bool change_loginID_check)
+        {
+            this.change_loginID_check = change_loginID_check;
+        }
+        public bool Get_Change_LoginID_Check()
+        {
+            return this.change_loginID_check;
         }
         public void SetIsPaidReq(string is_paid_req)
         {

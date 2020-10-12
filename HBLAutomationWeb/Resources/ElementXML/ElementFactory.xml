@@ -8,15 +8,23 @@
     <Element keyword="Login_OTP_Verify_Button" locator="//button[@class='btn submit-btn']"/>
     <Element keyword="Login_Dashboard" locator="//img[@class='desk-logo']"/>
     <Element keyword="Login_Success_Text" locator="//h2[@class='over-lap']//span" />
+    
+    <!-- Agent Portal-->
+    
+    <!-- Agent Portal-->
+    
   </Module>
 
   <Module name="Forget">
-    <Element keyword="Forget_btn" locator="//a[@class='btn forgot']" />
+    <Element keyword="Forget_btn_Login" locator="//a[@class='btn forgot' and text()='Forgot Login ID?']" />
+    <Element keyword="Forget_btn_Password" locator="//a[@class='btn forgot' and text()='Forgot Password?']" />
     <Element keyword="Forget_Login_field" locator="//input[@name='UserName']" />
     <Element keyword="Forget_PasswordNextbtn" locator="//button[@class='btn submit-btn' and text()='Next']" />
-    <ELement keyword="Forget_Password_CNIC" locator ="//input[@ng-model='ForgotTransactionPassword.customerCNIC']"/>
-    <Element keyword="Forget_Password_Debit" locator ="//input[@ng-model='ForgotTransactionPassword.cardNumber']" />
-    <Element keyword="Forget_Password_PIN" locator ="//input[@ng-model='ForgotTransactionPassword.pin']" />
+    <Element keyword="Forget_Password_CNIC" locator ="//div[@ng-form='{x}']//input[@name='CNIC']"/>
+    <Element keyword="Forget_Password_DebitCardNo" locator ="//div[@ng-form='FormStep2']//input[@name='CardNo']" />
+    <Element keyword="Forget_Password_CreditCardNo" locator ="//div[@ng-form='FormStep2CC']//input[@name='CardNo']" />
+    <Element keyword="Forget_Password_PIN" locator ="//div[@ng-form='FormStep2']//input[@name='CardNoPin']" />
+    <Element keyword="Forget_Password_Email" locator ="//div[@ng-form='FormStep2CC']//input[@ng-model='ForgotTransactionPasswordCC.email']" />
     <Element keyword="Forget_ChangeLink" locator="//button[@class='btn btn forgot']" />
     <Element keyword="Forget_LoginIdNav" locator="//a[@id='link-forgot-ID']" />
     <Element keyword="Forget_ChangeLoginNav" locator="//a[@id='link-change-ID']" />
@@ -25,7 +33,7 @@
     <Element keyword="Forget_ChangeCNIC" locator="//input[@ng-model='CustomerAccountType.customerCNIC']"/>
     <Element keyword="Forget_SubmitBtn" locator="//div[@id='fogot-ID']//button" />
     <Element keyword="Forget_ChangeSubmitBtn" locator="//div[@id='change-ID']//button" />
-    <Element keyword="Forget_PasswordSubmitBtn" locator="//div[@ng-form='FormStep']//following-sibling::div//button" />
+    <Element keyword="Forget_PasswordSubmitBtn" locator="//div[@ng-form='FormStep2']//following-sibling::div//button" />
     <Element keyword="Forget_PasswordSubmitBtnCC" locator="//div[@ng-form='FormStep2CC']//following-sibling::div//button" />
     <Element keyword="Forget_PasswordResponseMsg" locator="//div[@class='congrats-div']//p" />
     <Element keyword="Forget_PasswordTranID" locator="//h2[@class='ng-binding' and text()='Receipt ID']//following-sibling::p" />
@@ -36,14 +44,45 @@
     <Element keyword="Forget_PasswordNew" locator="//input[@name='NewPassword']" />
     <Element keyword="Forget_PasswordNewConfirm" locator="//input[@name='ConfirmNewPassword']" />
     <Element keyword="Forget_ChangeCNIC" locator="//input[@ng-model='CustomerAccountType.customerCNIC']" />
-    <Element keyword="Forget_ChangeLoginSubmitBtn" locator="//div[@ng-show='loginidfirststep']//button"/>
+    <Element keyword="Forget_ChangeLoginNextBtn" locator="//div[@ng-show='loginidfirststepchangeID']//button"/>
     <Element keyword="Forget_ChangeLogin_DCard" locator="//input[@ng-model='CustomerAccountType.cardNumber']" />
     <Element keyword="Forget_ChangeLogin_PIN" locator="//input[@ng-model='CustomerAccountType.pin']" />
     <Element keyword="Forget_ChangeLogin_NewLogin" locator="//input[@ng-model='CustomerAccountType.UserName']" />
     <Element keyword="Forget_ChangeLogin_SubmitBtn" locator="//div[@ng-show='showdebitcardstep']//button" />
     <Element keyword="Forget_ChangeLogin_SubmitBtnCC" locator="//div[@ng-show='showcreditcardstep']//button" />
-    <Element keyword="Forget_ChangeSuccessMsg" locator="//p[@class='label msg col-12 ng-binding']" />
-    <Element keyword="Forget_ChangeOkBtn" locator ="//div[@class='form-group button-center text-right']/a" />
+    <Element keyword="Forget_SuccessMsg" locator="//div[@id='popup']//p[@class='ng-binding']" />
+    <Element keyword="Forget_OkBtn" locator ="//div[@id='popup']//a" />
+    <Element keyword="Forget_Success_LoginMsg" locator="//div[@ng-show='showsuccessloginidstep']//p" />
+    <Element keyword="Forget_Login_FinishBtn" locator="//button[@class='btn decline']" />
+    <Element keyword="Forget_Login_NextBtn" locator="//div[@ng-show='loginidfirststep']//button[@class='btn submit-btn' and text()='Next']" />
+    <Element keyword="Forget_LoginID_DebitNo" locator="//div[@ng-show='showdebitcardstep']//input[@ng-model='ForgotUserName.cardNumber']" />
+    <Element keyword="Forget_LoginID_DebitPin" locator="//div[@ng-show='showdebitcardstep']//input[@ng-model='ForgotUserName.pin']" />
+    <Element keyword="Forget_LoginID_NextBtn" locator="//div[@ng-show='show{x}cardstep']//button" />
+    <Element keyword="Forget_LoginID_Mobile" locator="//div[@ng-show='show{x}cardstep']//input[@ng-model='ForgotUserName.mobileNumber']" />
+    <Element keyword="Forget_LoginID_CreditNo" locator="//div[@ng-show='showcreditcardstep']//input[@ng-model='ForgotUserName.creditCardNumber']" />
+    <Element keyword="Forget_LoginID_CreditEmail" locator="//div[@ng-show='showcreditcardstep']//input[@ng-model='ForgotUserName.email']" />
+    <Element keyword="Forget_ChangeLogin_PassPolicy1" locator="(//div[@ng-show='show{x}cardstepchangeID']//p[@class='form-text ng-binding ng-scope'])[1]" />
+    <Element keyword="Forget_ChangeLogin_PassPolicy2" locator="(//div[@ng-show='show{x}cardstepchangeID']//p[@class='form-text ng-binding ng-scope'])[2]" />
+    <Element keyword="Forget_Change_NextBtn" locator="//div[@ng-show='show{x}cardstepchangeID']//button" />
+    <Element keyword="Forget_Change_DebitNo" locator="//div[@ng-show='showdebitcardstepchangeID']//input[@name='CardNo']" />
+    <Element keyword="Forget_Change_DebitPin" locator="//div[@ng-show='showdebitcardstepchangeID']//input[@name='CardNoPin']" />
+    <Element keyword="Forget_Change_CreditNo" locator="//div[@ng-show='showcreditcardstepchangeID']//input[@name='CardNo']" />
+    <Element keyword="Forget_Change_CreditEmail" locator="//div[@ng-show='showcreditcardstepchangeID']//input[@name='Email']" />
+    <Element keyword="Forget_Change_NewLogin" locator="//div[@ng-show='show{x}cardstepchangeID']//input[@name='CreateLoginId']" />
+    <Element keyword="Forget_Change_OTPMsg" locator="//p[@class='otp-p ng-binding']" />
+    <Element keyword="Forget_Change_OTPNextBtn" locator="//div[@ng-show='showOTPstep']//button[text()='Next']" />
+    <Element keyword="Forget_Policy1" locator="//div[@class='user-policy']//h2" />
+    <Element keyword="Forget_Policy2" locator="//div[@class='user-policy']//small[1]" />
+    <Element keyword="Forget_Policy3" locator="//div[@class='user-policy']//small[2]" />
+    <Element keyword="Forget_LoginPass" locator="//input[@name='LoginPassword']" />
+    <Element keyword="Forget_LoginRePass" locator="//input[@name='ReLoginPassword']" />
+    <Element keyword="Forget_Change_LoginTran" locator="//input[@name='TransactionPassword']" />
+    <Element keyword="Forget_Change_LoginReTran" locator="//input[@name='ReTransactionPassword']" />
+    <Element keyword="Forget_Change_FinishBtn" locator="//button[@class='btn submit-btn' and text()='Finish']" />
+    <Element keyword="Forget_Password_OTPNextBtn" locator="//div[@ng-form='FormOTP']//button[text()='Next']" />
+    <Element keyword="Forget_Password_NextBtn" locator="//div[@ng-form='FormPasswordValdiation']//button" />
+
+    
   </Module>
 
   <Module name="Registration">
@@ -130,7 +169,8 @@
     <Element keyword="Pay_Transaction_PayBillAmount_NextBtn" locator="//div[@class='ng-scope']//button[@class='btn submit-btn' and contains(text(),'Next')]"/>
     <Element keyword="Pay_Transaction_PayBillAmount_AgreeBtn" locator="//button[@class='btn ng-scope' and contains(text(),'Agree')]"/>
     <Element keyword="Pay_Transaction_PayBillAmount_CloseBtn" locator="//div[@class='ng-scope']//a[contains(text(),'Close')]"/>
-    <Element keyword="Pay_Transaction_PayBill_BeneSearchTextbox" locator="//input[@type='search']"/>
+    <!--<Element keyword="Pay_Transaction_PayBill_BeneSearchTextbox" locator="//input[@class='search-list ng-pristine ng-valid ng-empty ng-valid-maxlength ng-touched']"/>-->
+    <Element keyword="Pay_Transaction_PayBill_BeneSearchTextbox" locator="//input[contains(@ng-show,'pay')]"/>
     <Element keyword="Pay_Transaction_PayBill_BeneSearchConsumerNo" locator="//p[@class='text-right ng-binding']"/>
     <Element keyword="Pay_Transaction_PayBill_RatingCloseBtn" locator="//div[@class='text-right ng-scope']//button[contains(text(),'Close')]"/>
     <Element keyword="Pay_Transaction_PayBill_RatingOkBtn" locator="//div[@class='text-right ng-scope']//button[contains(text(),'Ok')]"/>
@@ -210,7 +250,7 @@
     <Element keyword="SendMoney_SendBtn" locator="//button[text()='Send']"/>
     <Element keyword="SendMoney_TranAmount" locator="//h2[@class='ng-binding' and text()='Transaction Amount']//following-sibling::p"/>
     <Element keyword="SendMoney_TranFromAcc" locator="//h2[@class='ng-binding' and text()='From Account']//following-sibling::p"/>
-    <Element keyword="SendMoney_TranSourceAcc" locator="//h2[@class='ng-binding' and text()='Source Account Number:']//following-sibling::p" />
+    <Element keyword="SendMoney_TranSourceAcc" locator="//h2[@class='ng-binding' and text()='Source Account Number']//following-sibling::p" />
     <Element keyword="SendMoney_TranToAcc" locator="//h2[@class='ng-binding' and contains(text(),'To Account')]//following-sibling::p"/>
     <Element keyword="SendMoney_TranToBank" locator="//h2[@class='ng-binding' and text()='To Bank']//following-sibling::p"/>
     <Element keyword="SendMoney_TranBeneName" locator="//h2[@class='ng-binding' and text()='Beneficiary Name']//following-sibling::p"/>
@@ -222,7 +262,7 @@
     <Element keyword="SendMoney_Frequency" locator="//select[@name='frequency']"/>
     <Element keyword="SendMoney_Schedule_FromDate" locator="//input[@name='FirstExecutionDate']"/>
     <Element keyword="SendMoney_Schedule_ToDate" locator="//input[@name='ExpiryDate']"/>
-    <Element keyword="SendMoney_Btn_ViewSummary" locator="//button[text()='View Summary']"/>
+    <Element keyword="SendMoney_Btn_ViewSummary" locator="//button[text()='Payment Schedule']"/>
     <Element keyword="SendMoney_Btn_Summary_OK" locator="//div[@class='modal-footer']//a[text()='OK' and @data-dismiss='modal']"/>
     <Element keyword="SendMoney_Btn_Summary_Iteration_Dates" locator="//tr[@class='ng-scope'][{Iteration_Number}]//td[@class='ng-binding']"/>
     <Element keyword="SendMoney_SearchBeneField" locator="//input[@type='search']"/>
@@ -342,7 +382,7 @@
     <Element keyword="MyAccount_CheqBook_CityList_Search" locator="//label[@for='City']//following-sibling::div//input" />
     <Element keyword="MyAccount_CheqBook_BranchList_Search" locator="//label[@for='Branch']//following-sibling::div//input" />
     <Element keyword="MyAccount_CheqBook_BranchList" locator="//label[@for='Branch']//following-sibling::div//a//span" />
-    <Element keyword="MyAccount_CheqBook_BranchCheck" locator="//input[@ng-model='BranchCheck']" />
+    <Element keyword="MyAccount_CheqBook_BranchCheck" locator="//span[@class='custom-control-indicator']" />
     <Element keyword="MyAccount_CheqBook_TranPass" locator="//input[@name='TransactionPassword']" />
     <Element keyword="MyAccount_CheqBook_ReqBtn" locator="//button[@class='btn submit-btn' and text()='Send Request']" />
     <Element keyword="MyAccount_CheqBook_TranSuccessMessage" locator="//h2[text()='Transaction ID']/parent::*/parent::*//preceding-sibling::div//p" />
@@ -383,6 +423,11 @@
     <Element keyword="MyAccount_MngSch_SendMoneyCount" locator="(//h2[@class='head' and contains(text(),'Send Money')]/following-sibling::ul)[1]//li" />
     <Element keyword="MyAccount_MngSch_BillPayCount" locator="(//h2[@class='head' and contains(text(),'Bill Payment')]/following-sibling::ul)[1]//li" />
     <Element keyword="MyAccount_MngSch_RowClick" locator="(//h2[@class='head' and contains(text(),'Send Money')]/following-sibling::ul)[1]//li[{i}]//div[@class='row align-items-center p-0 m-0']" />
+    <Element keyword="MyAccount_MngSch_Bill_RowClick" locator="(//h2[@class='head' and contains(text(),'Bill Payment')]//following-sibling::ul)[1]//li[{i}]//div[@class='row align-items-center p-0 m-0']" />
+    <Element keyword="MyAccount_MngSch_Bill_RowNick" locator="(//h2[@class='head' and contains(text(),'Bill Payment')]//following-sibling::ul)[1]//li[{i}]//p[@class='nick ng-binding']" />
+    <Element keyword="MyAccount_MngSch_Bill_RowCompany" locator="(//h2[@class='head' and contains(text(),'Bill Payment')]//following-sibling::ul)[1]//li[{i}]//div[@class='payee-acc si-details-items payee-action col-md-3 col-lg-3 col-xl-3 col-sm-12 col-xs-12']//p" />
+    <Element keyword="MyAccount_MngSch_Bill_RowConsumerNo" locator="(//h2[@class='head' and contains(text(),'Bill Payment')]//following-sibling::ul)[1]//li[{i}]//div[@class='to-and-title payee-acc si-details-items col-md-4 col-lg-4 col-xl-4 col-sm-12 col-xs-12']//p" />
+    <Element keyword="MyAccount_MngSch_Bill_RowAmount" locator="(//h2[@class='head' and contains(text(),'Bill Payment')]/following-sibling::ul)[1]//li[{i}]//div//p[@class='BillAmountSI ng-binding']" />
     <Element keyword="MyAccount_MngSch_RowAmount" locator="(//h2[@class='head' and contains(text(),'Send Money')]/following-sibling::ul)[1]//li[{i}]//div//p[@class='BillAmountSI ng-binding']" />
     <Element keyword="MyAccount_MngSch_RowTitle" locator="(//h2[@class='head' and contains(text(),'Send Money')]/following-sibling::ul)[1]//li[{i}]//div//p[@class='nick ng-binding']" />
     <Element keyword="MyAccount_MngSch_RowPurpose" locator="(//h2[@class='head' and contains(text(),'Send Money')]/following-sibling::ul)[1]//li[{i}]//div[@class='payee-acc si-details-items col-md-3 col-lg-3 col-xl-3 col-sm-12 col-xs-12 text-center']//p" />
@@ -392,14 +437,23 @@
     <Element keyword="MyAccount_MngSch_FreqVal" locator="//label[text ()= 'Frequency']//following-sibling::input" />
     <Element keyword="MyAccount_MngSch_PurposeVal" locator="//label[text ()= 'Purpose of Payment']//following-sibling::input" />
     <Element keyword="MyAccount_MngSch_TypeVal" locator="//label[text ()= 'Payment Type']//following-sibling::input" />
-    <Element keyword="MyAccount_MngSch_AmountVal" locator="//label[text ()= 'Amount']//following-sibling::input" />
-    <Element keyword="MyAccount_MngSch_FirstDateVal" locator="//label[text ()= 'First Execution Date']//following-sibling::input" />
-    <Element keyword="MyAccount_MngSch_LastDateVal" locator="//label[text ()= 'Last Execution Date']//following-sibling::input" />
+    <Element keyword="MyAccount_MngSch_AmountVal" locator="//label[contains(text(),'Amount')]//following-sibling::input" />
+    <Element keyword="MyAccount_MngSch_FirstDateVal" locator="//label[contains(text(),'First Execution')]//following-sibling::input" />
+    <Element keyword="MyAccount_MngSch_LastDateVal" locator="//label[contains(text(),'Last Execution')]//following-sibling::input" />
     <Element keyword="MyAccount_MngSch_CloseBtnVal" locator="//button[@ng-click='CloseButton();']" />
     <Element keyword="MyAccount_MngSch_SummaryClick" locator="//a[@class = 'nav-link' and contains(text(), 'Summary')]" />
     <Element keyword="MyAccount_MngSch_Summ_TypeImg" locator="(//div[@class = 'col-3 col-md-3 col-lg-3 col-xl-3 text-center p-0'])[{i}]//img" />
     <Element keyword="MyAccount_MngSch_Schedule_Img" locator="(//tr[@class='ng-scope']//img)" />
     <Element keyword="MyAccount_MngSch_Schedule_Date" locator="(//tr[@class='ng-scope']//td[@class='ng-binding'])" />
+    <Element keyword="MyAccount_MngSch_Summary_CloseBtn" locator="//button[@ng-click='CloseButton();']" />
+    <Element keyword="MyAccount_MngSch_Summary_CancelBtn" locator="//button[@ng-click='DisableStandingInstructions();']" />
+    <Element keyword="MyAccount_MngSch_AddNew" locator="//button[@data-toggle='dropdown']" />
+    <Element keyword="MyAccount_MngSch_AddNew_SendMoney" locator="//a[@class='dropdown-item'][1]" />
+    <Element keyword="MyAccount_MngSch_AddNew_Bill" locator="//a[@class='dropdown-item'][2]" />
+    <Element keyword="MyAccount_MngSch_Delete" locator="//p[@class='ng-binding' and contains(@title,'{x}')]/parent::*//following-sibling::div//i[@class='fa fa-trash-o']" />
+    <Element keyword="MyAccount_MngSch_DeleteMsg" locator="//div[@id='popup']//p" />
+    <Element keyword="MyAccount_MngSch_DeleteOkBtn" locator="//div[@id='popup']//a" />
+
 
   </Module>
 

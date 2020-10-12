@@ -18,6 +18,7 @@ using System.Threading;
 using Tamir.SharpSsh;
 using System.Data;
 using OpenQA.Selenium.Interactions;
+using HBLAutomationWeb.Beans;
 
 namespace HBLAutomationWeb.Pages
 {
@@ -212,6 +213,8 @@ namespace HBLAutomationWeb.Pages
                         g.CopyFromScreen(Point.Empty, Point.Empty, bounds.Size);
                     }
                     string fileName = ContextPage.GetInstance().GetExcelRecord().ScenarioName + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".png";
+                    ExcelRecord rec = ContextPage.GetInstance().GetExcelRecord();
+                    rec.ScreenshotPath = savelocation + fileName;
                     bitmap.Save(savelocation + fileName, ImageFormat.Png);
                 }
             }
@@ -572,8 +575,6 @@ namespace HBLAutomationWeb.Pages
                 throw new Exception("ex message: " + ex.Message);
 
             }
-
-
         }
 
         //For returning the values of keyword given
@@ -581,7 +582,6 @@ namespace HBLAutomationWeb.Pages
         {
             IWebElement Control = waitDriver.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
             var list_elements = driver.FindElements(By.XPath(locator));
-
             return list_elements.Count;
         }
 
@@ -598,6 +598,11 @@ namespace HBLAutomationWeb.Pages
             {
                 query = "Select I.OTP from DC_OTP_HISTORY I where I.CNIC='{CNIC}' AND I.TRANSACTION_TYPE_ID = '247' ORDER BY I.GENERATED_ON DESC";
                 query = query.Replace("{CNIC}", context.GetCustomerCNIC());
+            }
+            if (context.Get_Change_LoginID_Check() == true)
+            {
+                query = "Select I.OTP from DC_OTP_HISTORY I where I.CUSTOMER_INFO_ID='{CUSTOMER_INFO_ID}' ORDER BY I.GENERATED_ON DESC";
+                query = query.Replace("{CUSTOMER_INFO_ID}", context.GetCustomerInfoID());
             }
             else
             {

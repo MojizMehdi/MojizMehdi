@@ -157,10 +157,6 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.And("I am performing on \"Investment_TermDep_ReqBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 31
  testRunner.Then(string.Format("verify through \"{0}\" on \"Investment_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 32
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Investment_TranType\"", tran_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 33
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Investment_TranAmount\"", tran_Amount_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 34
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Investment_TranFromAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 35
@@ -207,8 +203,6 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.And("verify through \"Successful\" on \"MyAccount_Forgot_TranSuccessMessage\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 56
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Investment_TranType\"", tran_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 57
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Investment_TranAmount\"", tran_Amount_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 58
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Investment_TranFromAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 59
@@ -370,9 +364,6 @@ this.ScenarioSetup(scenarioInfo);
 #line 105
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Investment_MutualFund_TranDa" +
                         "te\"", tran_Date_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 106
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Investment_MutualFund_TranAm" +
-                        "ount\"", tran_Amount_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 107
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Investment_MutualFund_TranFr" +
                         "omAcc\"", from_Acc_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -400,14 +391,14 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Investment_TranType\"", tran_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 118
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Investment_TranDate\"", tran_Date_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 119
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Investment_TranAmount\"", tran_Amount_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 120
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Investment_TranToAcc\"", from_Acc_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 121
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Investment_TranToAcc\"", to_Acc_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 122
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Investment_TranFundName\"", fund_Name_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 123
+ testRunner.And("I am performing on \"Investment_TranActivityCloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -625,3 +616,4 @@ this.WhenUserTryToVerifyMutualFund("When user try to verify Mutual Fund Process 
 }
 #pragma warning restore
 #endregion
+

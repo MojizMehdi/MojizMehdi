@@ -107,17 +107,17 @@ namespace HBLAutomationWeb.Resources.Feature.InternetBanking
 #line 13
  testRunner.And("I am clicking on \"Accounts_ToDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 14
- testRunner.When("I select date \"11\" on month \"Mar\" on year \"2020\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I select date \"11\" on month \"Mar\" on year \"2020\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 15
- testRunner.When(string.Format("I want value from textbox \"Accounts_NoOfDays\" on database \"{0}\" as \"{1}\"", db_Value, query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And(string.Format("I want value from textbox \"Accounts_NoOfDays\" on database \"{0}\" as \"{1}\"", db_Value, query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 16
  testRunner.And("I have given \"100\" on \"Accounts_NoOfDays\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
  testRunner.And("I am performing on \"Accounts_Generate_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
- testRunner.When("I sleep 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I sleep 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 19
- testRunner.And("I am performing on \"Accounts_CSV_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("I am performing on \"Accounts_CSV_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -145,3 +145,4 @@ namespace HBLAutomationWeb.Resources.Feature.InternetBanking
 }
 #pragma warning restore
 #endregion
+
