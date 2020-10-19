@@ -103,76 +103,73 @@ namespace HBLAutomationWeb.Resources.Feature.InternetBanking
                     string db_Val, 
                     string lead_Field_Value, 
                     string lead_Field_Query, 
-                    string password_Policy, 
-                    string password_Policy2, 
-                    string password_Policy3, 
                     string last_Pass_Change_Query, 
                     string is_Password_Change_Required_Value, 
                     string is_Password_Reset_Required_Value, 
                     string is_Password_Reset_Required_Query, 
+                    string new_Password_Policy_Query, 
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "ForgetChange",
                     "ForgetPassword"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2 As a user i want to verify forget password", @__tags);
-#line 7
-this.ScenarioSetup(scenarioInfo);
 #line 8
- testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 9
- testRunner.And(string.Format("I set value in context from data \"{0}\" as \"customer_cnic\"", cnic_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 10
- testRunner.And(string.Format("I set value in context from database \"{0}\" as \"customer_type\" on Schema \"{1}\"", customer_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"customer_cnic\"", cnic_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.And(string.Format("I set value in context from database \"{0}\" as \"mobile_number\" on Schema \"{1}\"", mobile_No_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I set value in context from database \"{0}\" as \"customer_type\" on Schema \"{1}\"", customer_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
  testRunner.And(string.Format("I set value in context from database \"{0}\" as \"customer_info_id\" on Schema \"{1}\"", customer_Info_Id_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
  testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 14
- testRunner.And("I am clicking on \"Forget_btn_Password\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 15
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Login_field\"", login_Id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Forget_btn_Password\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 16
- testRunner.When("I am performing on \"Forget_PasswordNextbtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Login_field\"", login_Id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Password_CNIC\"", cnic_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I am performing on \"Forget_PasswordNextbtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 18
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Password_DebitCardNo\"", debit_Card), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Password_CNIC\"", cnic_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 19
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Password_PIN\"", card_Pin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Password_DebitCardNo\"", debit_Card), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 20
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Password_CreditCardNo\"", credit_Card), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Password_PIN\"", card_Pin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 21
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Password_Email\"", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Password_CreditCardNo\"", credit_Card), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 22
- testRunner.And("I am performing on \"Forget_PasswordSubmitBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Password_Email\"", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 23
- testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am performing on \"Forget_PasswordSubmitBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 24
- testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"{2}\"", lead_Field_Value, lead_Field_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I set value in context from database \"{0}\" as \"mobile_number\" on Schema \"{1}\"", mobile_No_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 25
- testRunner.And(string.Format("verify through \"{0}\" on \"Forget_Change_OTPMsg\"", oTP_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 26
- testRunner.And("I set value in context from data \"true\" as \"change_loginID_check\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"{2}\"", lead_Field_Value, lead_Field_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 27
- testRunner.And("I have given \"\" on \"Login_OTP_field\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify through \"{0}\" on \"Forget_Change_OTPMsg\"", oTP_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 28
- testRunner.And("I am performing on \"Forget_Password_OTPNextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I set value in context from data \"true\" as \"change_loginID_check\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 29
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_LoginPass\"", new_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I have given \"\" on \"Login_OTP_field\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 30
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_LoginRePass\"", new_Re_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am performing on \"Forget_Password_OTPNextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 31
- testRunner.And(string.Format("verify through \"{0}\" on \"Forget_Policy1\"", password_Policy), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_LoginPass\"", new_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 32
- testRunner.And(string.Format("verify through \"{0}\" on \"Forget_Policy2\"", password_Policy2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_LoginRePass\"", new_Re_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 33
- testRunner.And(string.Format("verify through \"{0}\" on \"Forget_Policy3\"", password_Policy3), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Forget_Policy\"", new_Password_Policy_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 34
  testRunner.And("I am performing on \"Forget_Password_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 35
@@ -204,17 +201,18 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify forget password: When I am verifying Forget Password" +
-            " for Debit Type Customer")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify forget password: To Verify that D-type customer can " +
+            "successfully perform Forgot Login Pasword")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetPassword")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetPassword.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When I am verifying Forget Password for Debit Type Customer")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When I am verifying Forget Password for Debit Type Customer")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_id", "RYANDIAS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To Verify that D-type customer can successfully perform Forgot Login Pasword")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To Verify that D-type customer can successfully perform Forgot Login Pasword")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_id", "AUTOMATIONUSER")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_no", "4200004790677")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card", "5366190017355427")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_no", "1210118382897")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card", "4028052000002445")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:card_pin", "1234")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Credit_card", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "")]
@@ -233,40 +231,378 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:lead_field_value", "FORGOT_PASSWORD True")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:lead_field_query", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_policy", "Password Policy")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_policy2", "Should be between 8 and 15 characters with at least 1 alphabet and 1 numeric digi" +
-            "t")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_policy3", "Special characters allowed are ! @ # $ . & *")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_pass_change_query", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
             "nic}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_value", "0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_value", "0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_query", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
             "mer_cnic}\'")]
-        public virtual void _2AsAUserIWantToVerifyForgetPassword_WhenIAmVerifyingForgetPasswordForDebitTypeCustomer()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+            "METER_ID = 1072")]
+        public virtual void _2AsAUserIWantToVerifyForgetPassword_ToVerifyThatD_TypeCustomerCanSuccessfullyPerformForgotLoginPasword()
         {
-#line 7
-this._2AsAUserIWantToVerifyForgetPassword("When I am verifying Forget Password for Debit Type Customer", "RYANDIAS", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "4200004790677", "5366190017355427", "1234", "", "", "pakistan3", "pakistan3", "Begin update dc_customer_info p set P.LOGIN_PASSWORD=\'$2a$10$fZ3EqVq2W9QWb2silU6s" +
+#line 8
+this._2AsAUserIWantToVerifyForgetPassword("To Verify that D-type customer can successfully perform Forgot Login Pasword", "AUTOMATIONUSER", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "1210118382897", "4028052000002445", "1234", "", "", "pakistan3", "pakistan3", "Begin update dc_customer_info p set P.LOGIN_PASSWORD=\'$2a$10$fZ3EqVq2W9QWb2silU6s" +
                     "VuDUr.2XrXNSHjU98hOuQsCE/Dr1oN6cy\' where P.CNIC=\'{customer_cnic}\';COMMIT;END;", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
                     "mer_cnic}\'", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
                     "ress registered with HBL.", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
-                    "", "Your login password has changed.", "DIGITAL_CHANNEL_SEC", "FORGOT_PASSWORD True", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1", "Password Policy", "Should be between 8 and 15 characters with at least 1 alphabet and 1 numeric digi" +
-                    "t", "Special characters allowed are ! @ # $ . & *", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+                    "", "Your login password has changed.", "DIGITAL_CHANNEL_SEC", "FORGOT_PASSWORD True", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
                     "nic}\'", "0", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
-                    "mer_cnic}\'", new string[] {
+                    "mer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+                    "METER_ID = 1072", new string[] {
                         "source:Data/ForgetPassword.xlsx"});
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify forget password: When I am verifying Forget Password" +
-            " for Credit Type Customer")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify forget password: To verify that D-type customer can " +
+            "not perform Forgot Login Password with incorrect Login ID")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetPassword")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetPassword.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When I am verifying Forget Password for Credit Type Customer")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When I am verifying Forget Password for Credit Type Customer")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_id", "MOJIZABIDI99")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that D-type customer can not perform Forgot Login Password with incorre" +
+            "ct Login ID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that D-type customer can not perform Forgot Login Password with incorre" +
+            "ct Login ID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_id", "RYANDIAS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_no", "1210118382897")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card", "4028052000002445")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:card_pin", "1234")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Credit_card", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password", "pakistan3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_re_password", "pakistan3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_query", "Begin update dc_customer_info p set P.LOGIN_PASSWORD=\'$2a$10$fZ3EqVq2W9QWb2silU6s" +
+            "VuDUr.2XrXNSHjU98hOuQsCE/Dr1oN6cy\' where P.CNIC=\'{customer_cnic}\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_change_req_query", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_query", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_message", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+            "ress registered with HBL.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_info_id_query", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message_password", "Your login password has changed.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:lead_field_value", "FORGOT_PASSWORD True")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:lead_field_query", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_pass_change_query", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+            "nic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_query", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+            "METER_ID = 1072")]
+        public virtual void _2AsAUserIWantToVerifyForgetPassword_ToVerifyThatD_TypeCustomerCanNotPerformForgotLoginPasswordWithIncorrectLoginID()
+        {
+#line 8
+this._2AsAUserIWantToVerifyForgetPassword("To verify that D-type customer can not perform Forgot Login Password with incorre" +
+                    "ct Login ID", "RYANDIAS", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "1210118382897", "4028052000002445", "1234", "", "", "pakistan3", "pakistan3", "Begin update dc_customer_info p set P.LOGIN_PASSWORD=\'$2a$10$fZ3EqVq2W9QWb2silU6s" +
+                    "VuDUr.2XrXNSHjU98hOuQsCE/Dr1oN6cy\' where P.CNIC=\'{customer_cnic}\';COMMIT;END;", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+                    "ress registered with HBL.", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+                    "", "Your login password has changed.", "DIGITAL_CHANNEL_SEC", "FORGOT_PASSWORD True", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+                    "nic}\'", "0", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+                    "METER_ID = 1072", new string[] {
+                        "source:Data/ForgetPassword.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify forget password: To verify that D-type customer can " +
+            "not perform Forgot Login ID with incorrect CNIC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetPassword")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetPassword.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that D-type customer can not perform Forgot Login ID with incorrect CNI" +
+            "C")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that D-type customer can not perform Forgot Login ID with incorrect CNI" +
+            "C")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_id", "AUTOMATIONUSER")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_no", "4220135775077")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card", "4028052000002445")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:card_pin", "1234")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Credit_card", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password", "pakistan3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_re_password", "pakistan3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_query", "Begin update dc_customer_info p set P.LOGIN_PASSWORD=\'$2a$10$fZ3EqVq2W9QWb2silU6s" +
+            "VuDUr.2XrXNSHjU98hOuQsCE/Dr1oN6cy\' where P.CNIC=\'{customer_cnic}\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_change_req_query", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_query", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_message", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+            "ress registered with HBL.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_info_id_query", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message_password", "Your login password has changed.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:lead_field_value", "FORGOT_PASSWORD True")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:lead_field_query", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_pass_change_query", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+            "nic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_query", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+            "METER_ID = 1072")]
+        public virtual void _2AsAUserIWantToVerifyForgetPassword_ToVerifyThatD_TypeCustomerCanNotPerformForgotLoginIDWithIncorrectCNIC()
+        {
+#line 8
+this._2AsAUserIWantToVerifyForgetPassword("To verify that D-type customer can not perform Forgot Login ID with incorrect CNI" +
+                    "C", "AUTOMATIONUSER", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "4220135775077", "4028052000002445", "1234", "", "", "pakistan3", "pakistan3", "Begin update dc_customer_info p set P.LOGIN_PASSWORD=\'$2a$10$fZ3EqVq2W9QWb2silU6s" +
+                    "VuDUr.2XrXNSHjU98hOuQsCE/Dr1oN6cy\' where P.CNIC=\'{customer_cnic}\';COMMIT;END;", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+                    "ress registered with HBL.", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+                    "", "Your login password has changed.", "DIGITAL_CHANNEL_SEC", "FORGOT_PASSWORD True", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+                    "nic}\'", "0", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+                    "METER_ID = 1072", new string[] {
+                        "source:Data/ForgetPassword.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify forget password: To verify that D-type customer can " +
+            "not perform Forgot Login ID with incorrect Debit Card Number")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetPassword")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetPassword.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that D-type customer can not perform Forgot Login ID with incorrect Deb" +
+            "it Card Number")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that D-type customer can not perform Forgot Login ID with incorrect Deb" +
+            "it Card Number")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_id", "AUTOMATIONUSER")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_no", "1210118382897")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card", "4028057778002445")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:card_pin", "1234")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Credit_card", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password", "pakistan3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_re_password", "pakistan3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_query", "Begin update dc_customer_info p set P.LOGIN_PASSWORD=\'$2a$10$fZ3EqVq2W9QWb2silU6s" +
+            "VuDUr.2XrXNSHjU98hOuQsCE/Dr1oN6cy\' where P.CNIC=\'{customer_cnic}\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_change_req_query", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_query", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_message", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+            "ress registered with HBL.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_info_id_query", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message_password", "Your login password has changed.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:lead_field_value", "FORGOT_PASSWORD True")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:lead_field_query", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_pass_change_query", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+            "nic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_query", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+            "METER_ID = 1072")]
+        public virtual void _2AsAUserIWantToVerifyForgetPassword_ToVerifyThatD_TypeCustomerCanNotPerformForgotLoginIDWithIncorrectDebitCardNumber()
+        {
+#line 8
+this._2AsAUserIWantToVerifyForgetPassword("To verify that D-type customer can not perform Forgot Login ID with incorrect Deb" +
+                    "it Card Number", "AUTOMATIONUSER", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "1210118382897", "4028057778002445", "1234", "", "", "pakistan3", "pakistan3", "Begin update dc_customer_info p set P.LOGIN_PASSWORD=\'$2a$10$fZ3EqVq2W9QWb2silU6s" +
+                    "VuDUr.2XrXNSHjU98hOuQsCE/Dr1oN6cy\' where P.CNIC=\'{customer_cnic}\';COMMIT;END;", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+                    "ress registered with HBL.", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+                    "", "Your login password has changed.", "DIGITAL_CHANNEL_SEC", "FORGOT_PASSWORD True", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+                    "nic}\'", "0", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+                    "METER_ID = 1072", new string[] {
+                        "source:Data/ForgetPassword.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify forget password: To Verify that D-type Locked custom" +
+            "er can successfully perform Forgot Login Pasword")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetPassword")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetPassword.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To Verify that D-type Locked customer can successfully perform Forgot Login Paswo" +
+            "rd")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To Verify that D-type Locked customer can successfully perform Forgot Login Paswo" +
+            "rd")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_id", "AUTOMATIONUSER")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_no", "4200028347788")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card", "5366190000137766")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:card_pin", "1234")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Credit_card", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password", "pakistan3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_re_password", "pakistan3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_query", "Begin update dc_customer_info p set P.LOGIN_PASSWORD=\'$2a$10$fZ3EqVq2W9QWb2silU6s" +
+            "VuDUr.2XrXNSHjU98hOuQsCE/Dr1oN6cy\' where P.CNIC=\'{customer_cnic}\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_change_req_query", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_query", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_message", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+            "ress registered with HBL.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_info_id_query", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message_password", "Your login password has changed.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:lead_field_value", "FORGOT_PASSWORD True")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:lead_field_query", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_pass_change_query", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+            "nic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_query", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+            "METER_ID = 1072")]
+        public virtual void _2AsAUserIWantToVerifyForgetPassword_ToVerifyThatD_TypeLockedCustomerCanSuccessfullyPerformForgotLoginPasword()
+        {
+#line 8
+this._2AsAUserIWantToVerifyForgetPassword("To Verify that D-type Locked customer can successfully perform Forgot Login Paswo" +
+                    "rd", "AUTOMATIONUSER", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "4200028347788", "5366190000137766", "1234", "", "", "pakistan3", "pakistan3", "Begin update dc_customer_info p set P.LOGIN_PASSWORD=\'$2a$10$fZ3EqVq2W9QWb2silU6s" +
+                    "VuDUr.2XrXNSHjU98hOuQsCE/Dr1oN6cy\' where P.CNIC=\'{customer_cnic}\';COMMIT;END;", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+                    "ress registered with HBL.", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+                    "", "Your login password has changed.", "DIGITAL_CHANNEL_SEC", "FORGOT_PASSWORD True", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+                    "nic}\'", "0", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+                    "METER_ID = 1072", new string[] {
+                        "source:Data/ForgetPassword.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify forget password: To Verify that D-type Blocked custo" +
+            "mer can not perform Forgot Login Pasword")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetPassword")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetPassword.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To Verify that D-type Blocked customer can not perform Forgot Login Pasword")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To Verify that D-type Blocked customer can not perform Forgot Login Pasword")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_id", "AUTOMATIONUSER")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_no", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:card_pin", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Credit_card", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_re_password", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_query", "Begin update dc_customer_info p set P.LOGIN_PASSWORD=\'$2a$10$fZ3EqVq2W9QWb2silU6s" +
+            "VuDUr.2XrXNSHjU98hOuQsCE/Dr1oN6cy\' where P.CNIC=\'{customer_cnic}\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_change_req_query", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_query", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_message", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+            "ress registered with HBL.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_info_id_query", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message_password", "Your login password has changed.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:lead_field_value", "FORGOT_PASSWORD True")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:lead_field_query", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_pass_change_query", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+            "nic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_query", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+            "METER_ID = 1072")]
+        public virtual void _2AsAUserIWantToVerifyForgetPassword_ToVerifyThatD_TypeBlockedCustomerCanNotPerformForgotLoginPasword()
+        {
+#line 8
+this._2AsAUserIWantToVerifyForgetPassword("To Verify that D-type Blocked customer can not perform Forgot Login Pasword", "AUTOMATIONUSER", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "", "", "", "", "", "", "", "Begin update dc_customer_info p set P.LOGIN_PASSWORD=\'$2a$10$fZ3EqVq2W9QWb2silU6s" +
+                    "VuDUr.2XrXNSHjU98hOuQsCE/Dr1oN6cy\' where P.CNIC=\'{customer_cnic}\';COMMIT;END;", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+                    "ress registered with HBL.", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+                    "", "Your login password has changed.", "DIGITAL_CHANNEL_SEC", "FORGOT_PASSWORD True", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+                    "nic}\'", "0", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+                    "METER_ID = 1072", new string[] {
+                        "source:Data/ForgetPassword.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify forget password: To Verify that D-type Partial Activ" +
+            "ated customer can not perform Forgot Login Pasword")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetPassword")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetPassword.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To Verify that D-type Partial Activated customer can not perform Forgot Login Pas" +
+            "word")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To Verify that D-type Partial Activated customer can not perform Forgot Login Pas" +
+            "word")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_id", "AUTOMATIONUSER")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_no", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:card_pin", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Credit_card", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_re_password", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_query", "Begin update dc_customer_info p set P.LOGIN_PASSWORD=\'$2a$10$fZ3EqVq2W9QWb2silU6s" +
+            "VuDUr.2XrXNSHjU98hOuQsCE/Dr1oN6cy\' where P.CNIC=\'{customer_cnic}\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_change_req_query", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_query", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_message", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+            "ress registered with HBL.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_info_id_query", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message_password", "Your login password has changed.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:lead_field_value", "FORGOT_PASSWORD True")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:lead_field_query", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_pass_change_query", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+            "nic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_query", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+            "METER_ID = 1072")]
+        public virtual void _2AsAUserIWantToVerifyForgetPassword_ToVerifyThatD_TypePartialActivatedCustomerCanNotPerformForgotLoginPasword()
+        {
+#line 8
+this._2AsAUserIWantToVerifyForgetPassword("To Verify that D-type Partial Activated customer can not perform Forgot Login Pas" +
+                    "word", "AUTOMATIONUSER", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "", "", "", "", "", "", "", "Begin update dc_customer_info p set P.LOGIN_PASSWORD=\'$2a$10$fZ3EqVq2W9QWb2silU6s" +
+                    "VuDUr.2XrXNSHjU98hOuQsCE/Dr1oN6cy\' where P.CNIC=\'{customer_cnic}\';COMMIT;END;", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+                    "ress registered with HBL.", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+                    "", "Your login password has changed.", "DIGITAL_CHANNEL_SEC", "FORGOT_PASSWORD True", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+                    "nic}\'", "0", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+                    "METER_ID = 1072", new string[] {
+                        "source:Data/ForgetPassword.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify forget password: To Verify that C-type customer can " +
+            "successfully perform Forgot Login Pasword")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetPassword")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetPassword.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To Verify that C-type customer can successfully perform Forgot Login Pasword")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To Verify that C-type customer can successfully perform Forgot Login Pasword")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_id", "CTYPE123")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_no", "3660178807169")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card", "")]
@@ -288,28 +624,791 @@ this._2AsAUserIWantToVerifyForgetPassword("When I am verifying Forget Password f
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:lead_field_value", "FORGOT_PASSWORD True")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:lead_field_query", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_policy", "Password Policy")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_policy2", "Should be between 8 and 15 characters with at least 1 alphabet and 1 numeric digi" +
-            "t")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_policy3", "Special characters allowed are ! @ # $ . & *")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_pass_change_query", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
             "nic}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_value", "0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_value", "0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_query", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
             "mer_cnic}\'")]
-        public virtual void _2AsAUserIWantToVerifyForgetPassword_WhenIAmVerifyingForgetPasswordForCreditTypeCustomer()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+            "METER_ID = 1072")]
+        public virtual void _2AsAUserIWantToVerifyForgetPassword_ToVerifyThatC_TypeCustomerCanSuccessfullyPerformForgotLoginPasword()
         {
-#line 7
-this._2AsAUserIWantToVerifyForgetPassword("When I am verifying Forget Password for Credit Type Customer", "MOJIZABIDI99", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "3660178807169", "", "", "4902870004884109", "farooq.leo@hotmail.com", "pakistan3", "pakistan3", "Begin update dc_customer_info p set P.LOGIN_PASSWORD=\'$2a$10$fZ3EqVq2W9QWb2silU6s" +
+#line 8
+this._2AsAUserIWantToVerifyForgetPassword("To Verify that C-type customer can successfully perform Forgot Login Pasword", "CTYPE123", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "3660178807169", "", "", "4902870004884109", "farooq.leo@hotmail.com", "pakistan3", "pakistan3", "Begin update dc_customer_info p set P.LOGIN_PASSWORD=\'$2a$10$fZ3EqVq2W9QWb2silU6s" +
                     "VuDUr.2XrXNSHjU98hOuQsCE/Dr1oN6cy\' where P.CNIC=\'{customer_cnic}\';COMMIT;END;", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
                     "mer_cnic}\'", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
                     "ress registered with HBL.", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
-                    "", "Your login password has changed.", "DIGITAL_CHANNEL_SEC", "FORGOT_PASSWORD True", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1", "Password Policy", "Should be between 8 and 15 characters with at least 1 alphabet and 1 numeric digi" +
-                    "t", "Special characters allowed are ! @ # $ . & *", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+                    "", "Your login password has changed.", "DIGITAL_CHANNEL_SEC", "FORGOT_PASSWORD True", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
                     "nic}\'", "0", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
-                    "mer_cnic}\'", new string[] {
+                    "mer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+                    "METER_ID = 1072", new string[] {
                         "source:Data/ForgetPassword.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify forget password: To verify that C-type customer can " +
+            "not perform Forgot Login Password with incorrect Login ID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetPassword")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetPassword.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that C-type customer can not perform Forgot Login Password with incorre" +
+            "ct Login ID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that C-type customer can not perform Forgot Login Password with incorre" +
+            "ct Login ID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_id", "ANYBODY123")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_no", "3660178807169")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:card_pin", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Credit_card", "4902870004884109")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "farooq.leo@hotmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password", "pakistan3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_re_password", "pakistan3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_query", "Begin update dc_customer_info p set P.LOGIN_PASSWORD=\'$2a$10$fZ3EqVq2W9QWb2silU6s" +
+            "VuDUr.2XrXNSHjU98hOuQsCE/Dr1oN6cy\' where P.CNIC=\'{customer_cnic}\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_change_req_query", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_query", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_message", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+            "ress registered with HBL.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_info_id_query", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message_password", "Your login password has changed.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:lead_field_value", "FORGOT_PASSWORD True")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:lead_field_query", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_pass_change_query", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+            "nic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_query", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+            "METER_ID = 1072")]
+        public virtual void _2AsAUserIWantToVerifyForgetPassword_ToVerifyThatC_TypeCustomerCanNotPerformForgotLoginPasswordWithIncorrectLoginID()
+        {
+#line 8
+this._2AsAUserIWantToVerifyForgetPassword("To verify that C-type customer can not perform Forgot Login Password with incorre" +
+                    "ct Login ID", "ANYBODY123", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "3660178807169", "", "", "4902870004884109", "farooq.leo@hotmail.com", "pakistan3", "pakistan3", "Begin update dc_customer_info p set P.LOGIN_PASSWORD=\'$2a$10$fZ3EqVq2W9QWb2silU6s" +
+                    "VuDUr.2XrXNSHjU98hOuQsCE/Dr1oN6cy\' where P.CNIC=\'{customer_cnic}\';COMMIT;END;", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+                    "ress registered with HBL.", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+                    "", "Your login password has changed.", "DIGITAL_CHANNEL_SEC", "FORGOT_PASSWORD True", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+                    "nic}\'", "0", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+                    "METER_ID = 1072", new string[] {
+                        "source:Data/ForgetPassword.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify forget password: To verify that C-type customer can " +
+            "not perform Forgot Login ID with incorrect CNIC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetPassword")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetPassword.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that C-type customer can not perform Forgot Login ID with incorrect CNI" +
+            "C")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that C-type customer can not perform Forgot Login ID with incorrect CNI" +
+            "C")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_id", "CTYPE123")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_no", "4220135775077")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:card_pin", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Credit_card", "4902870004884109")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "farooq.leo@hotmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password", "pakistan3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_re_password", "pakistan3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_query", "Begin update dc_customer_info p set P.LOGIN_PASSWORD=\'$2a$10$fZ3EqVq2W9QWb2silU6s" +
+            "VuDUr.2XrXNSHjU98hOuQsCE/Dr1oN6cy\' where P.CNIC=\'{customer_cnic}\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_change_req_query", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_query", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_message", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+            "ress registered with HBL.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_info_id_query", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message_password", "Your login password has changed.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:lead_field_value", "FORGOT_PASSWORD True")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:lead_field_query", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_pass_change_query", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+            "nic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_query", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+            "METER_ID = 1072")]
+        public virtual void _2AsAUserIWantToVerifyForgetPassword_ToVerifyThatC_TypeCustomerCanNotPerformForgotLoginIDWithIncorrectCNIC()
+        {
+#line 8
+this._2AsAUserIWantToVerifyForgetPassword("To verify that C-type customer can not perform Forgot Login ID with incorrect CNI" +
+                    "C", "CTYPE123", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "4220135775077", "", "", "4902870004884109", "farooq.leo@hotmail.com", "pakistan3", "pakistan3", "Begin update dc_customer_info p set P.LOGIN_PASSWORD=\'$2a$10$fZ3EqVq2W9QWb2silU6s" +
+                    "VuDUr.2XrXNSHjU98hOuQsCE/Dr1oN6cy\' where P.CNIC=\'{customer_cnic}\';COMMIT;END;", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+                    "ress registered with HBL.", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+                    "", "Your login password has changed.", "DIGITAL_CHANNEL_SEC", "FORGOT_PASSWORD True", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+                    "nic}\'", "0", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+                    "METER_ID = 1072", new string[] {
+                        "source:Data/ForgetPassword.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify forget password: To verify that C-type customer can " +
+            "not perform Forgot Login ID with incorrect Credit Card Number")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetPassword")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetPassword.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that C-type customer can not perform Forgot Login ID with incorrect Cre" +
+            "dit Card Number")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that C-type customer can not perform Forgot Login ID with incorrect Cre" +
+            "dit Card Number")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_id", "CTYPE123")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_no", "3660178807169")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:card_pin", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Credit_card", "4902874454884109")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "farooq.leo@hotmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password", "pakistan3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_re_password", "pakistan3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_query", "Begin update dc_customer_info p set P.LOGIN_PASSWORD=\'$2a$10$fZ3EqVq2W9QWb2silU6s" +
+            "VuDUr.2XrXNSHjU98hOuQsCE/Dr1oN6cy\' where P.CNIC=\'{customer_cnic}\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_change_req_query", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_query", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_message", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+            "ress registered with HBL.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_info_id_query", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message_password", "Your login password has changed.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:lead_field_value", "FORGOT_PASSWORD True")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:lead_field_query", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_pass_change_query", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+            "nic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_query", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+            "METER_ID = 1072")]
+        public virtual void _2AsAUserIWantToVerifyForgetPassword_ToVerifyThatC_TypeCustomerCanNotPerformForgotLoginIDWithIncorrectCreditCardNumber()
+        {
+#line 8
+this._2AsAUserIWantToVerifyForgetPassword("To verify that C-type customer can not perform Forgot Login ID with incorrect Cre" +
+                    "dit Card Number", "CTYPE123", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "3660178807169", "", "", "4902874454884109", "farooq.leo@hotmail.com", "pakistan3", "pakistan3", "Begin update dc_customer_info p set P.LOGIN_PASSWORD=\'$2a$10$fZ3EqVq2W9QWb2silU6s" +
+                    "VuDUr.2XrXNSHjU98hOuQsCE/Dr1oN6cy\' where P.CNIC=\'{customer_cnic}\';COMMIT;END;", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+                    "ress registered with HBL.", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+                    "", "Your login password has changed.", "DIGITAL_CHANNEL_SEC", "FORGOT_PASSWORD True", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+                    "nic}\'", "0", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+                    "METER_ID = 1072", new string[] {
+                        "source:Data/ForgetPassword.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify forget password: To Verify that C-type customer can " +
+            "not successfully perform Forgot Login Pasword with incorrect Email Address")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetPassword")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetPassword.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To Verify that C-type customer can not successfully perform Forgot Login Pasword " +
+            "with incorrect Email Address")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To Verify that C-type customer can not successfully perform Forgot Login Pasword " +
+            "with incorrect Email Address")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_id", "CTYPE123")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_no", "3660178807169")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:card_pin", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Credit_card", "4902870004884109")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "shoaib.qureshi@hotmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password", "pakistan3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_re_password", "pakistan3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_query", "Begin update dc_customer_info p set P.LOGIN_PASSWORD=\'$2a$10$fZ3EqVq2W9QWb2silU6s" +
+            "VuDUr.2XrXNSHjU98hOuQsCE/Dr1oN6cy\' where P.CNIC=\'{customer_cnic}\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_change_req_query", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_query", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_message", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+            "ress registered with HBL.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_info_id_query", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message_password", "Your login password has changed.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:lead_field_value", "FORGOT_PASSWORD True")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:lead_field_query", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_pass_change_query", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+            "nic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_query", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+            "METER_ID = 1072")]
+        public virtual void _2AsAUserIWantToVerifyForgetPassword_ToVerifyThatC_TypeCustomerCanNotSuccessfullyPerformForgotLoginPaswordWithIncorrectEmailAddress()
+        {
+#line 8
+this._2AsAUserIWantToVerifyForgetPassword("To Verify that C-type customer can not successfully perform Forgot Login Pasword " +
+                    "with incorrect Email Address", "CTYPE123", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "3660178807169", "", "", "4902870004884109", "shoaib.qureshi@hotmail.com", "pakistan3", "pakistan3", "Begin update dc_customer_info p set P.LOGIN_PASSWORD=\'$2a$10$fZ3EqVq2W9QWb2silU6s" +
+                    "VuDUr.2XrXNSHjU98hOuQsCE/Dr1oN6cy\' where P.CNIC=\'{customer_cnic}\';COMMIT;END;", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+                    "ress registered with HBL.", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+                    "", "Your login password has changed.", "DIGITAL_CHANNEL_SEC", "FORGOT_PASSWORD True", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+                    "nic}\'", "0", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+                    "METER_ID = 1072", new string[] {
+                        "source:Data/ForgetPassword.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify forget password: To Verify that C-type Locked custom" +
+            "er can successfully perform Forgot Login Pasword")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetPassword")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetPassword.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To Verify that C-type Locked customer can successfully perform Forgot Login Paswo" +
+            "rd")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To Verify that C-type Locked customer can successfully perform Forgot Login Paswo" +
+            "rd")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_id", "AUTOMATIONUSER")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_no", "3310034133615")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:card_pin", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Credit_card", "5428317034994765 ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "FAAILTHEONE@GMAIL.COM")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password", "pakistan3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_re_password", "pakistan3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_query", "Begin update dc_customer_info p set P.LOGIN_PASSWORD=\'$2a$10$fZ3EqVq2W9QWb2silU6s" +
+            "VuDUr.2XrXNSHjU98hOuQsCE/Dr1oN6cy\' where P.CNIC=\'{customer_cnic}\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_change_req_query", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_query", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_message", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+            "ress registered with HBL.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_info_id_query", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message_password", "Your login password has changed.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:lead_field_value", "FORGOT_PASSWORD True")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:lead_field_query", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_pass_change_query", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+            "nic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_query", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+            "METER_ID = 1072")]
+        public virtual void _2AsAUserIWantToVerifyForgetPassword_ToVerifyThatC_TypeLockedCustomerCanSuccessfullyPerformForgotLoginPasword()
+        {
+#line 8
+this._2AsAUserIWantToVerifyForgetPassword("To Verify that C-type Locked customer can successfully perform Forgot Login Paswo" +
+                    "rd", "AUTOMATIONUSER", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "3310034133615", "", "", "5428317034994765 ", "FAAILTHEONE@GMAIL.COM", "pakistan3", "pakistan3", "Begin update dc_customer_info p set P.LOGIN_PASSWORD=\'$2a$10$fZ3EqVq2W9QWb2silU6s" +
+                    "VuDUr.2XrXNSHjU98hOuQsCE/Dr1oN6cy\' where P.CNIC=\'{customer_cnic}\';COMMIT;END;", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+                    "ress registered with HBL.", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+                    "", "Your login password has changed.", "DIGITAL_CHANNEL_SEC", "FORGOT_PASSWORD True", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+                    "nic}\'", "0", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+                    "METER_ID = 1072", new string[] {
+                        "source:Data/ForgetPassword.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify forget password: To Verify that C-type Blocked custo" +
+            "mer can not perform Forgot Login Pasword")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetPassword")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetPassword.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To Verify that C-type Blocked customer can not perform Forgot Login Pasword")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To Verify that C-type Blocked customer can not perform Forgot Login Pasword")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_id", "AUTOMATIONUSER")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_no", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:card_pin", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Credit_card", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_re_password", "pakistan3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_query", "Begin update dc_customer_info p set P.LOGIN_PASSWORD=\'$2a$10$fZ3EqVq2W9QWb2silU6s" +
+            "VuDUr.2XrXNSHjU98hOuQsCE/Dr1oN6cy\' where P.CNIC=\'{customer_cnic}\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_change_req_query", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_query", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_message", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+            "ress registered with HBL.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_info_id_query", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message_password", "Your login password has changed.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:lead_field_value", "FORGOT_PASSWORD True")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:lead_field_query", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_pass_change_query", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+            "nic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_query", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+            "METER_ID = 1072")]
+        public virtual void _2AsAUserIWantToVerifyForgetPassword_ToVerifyThatC_TypeBlockedCustomerCanNotPerformForgotLoginPasword()
+        {
+#line 8
+this._2AsAUserIWantToVerifyForgetPassword("To Verify that C-type Blocked customer can not perform Forgot Login Pasword", "AUTOMATIONUSER", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "", "", "", "", "", "", "pakistan3", "Begin update dc_customer_info p set P.LOGIN_PASSWORD=\'$2a$10$fZ3EqVq2W9QWb2silU6s" +
+                    "VuDUr.2XrXNSHjU98hOuQsCE/Dr1oN6cy\' where P.CNIC=\'{customer_cnic}\';COMMIT;END;", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+                    "ress registered with HBL.", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+                    "", "Your login password has changed.", "DIGITAL_CHANNEL_SEC", "FORGOT_PASSWORD True", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+                    "nic}\'", "0", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+                    "METER_ID = 1072", new string[] {
+                        "source:Data/ForgetPassword.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify forget password: To Verify that C-type Partial Activ" +
+            "ated customer can not perform Forgot Login Pasword")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetPassword")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetPassword.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To Verify that C-type Partial Activated customer can not perform Forgot Login Pas" +
+            "word")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To Verify that C-type Partial Activated customer can not perform Forgot Login Pas" +
+            "word")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_id", "AUTOMATIONUSER")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_no", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:card_pin", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Credit_card", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_re_password", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_query", "Begin update dc_customer_info p set P.LOGIN_PASSWORD=\'$2a$10$fZ3EqVq2W9QWb2silU6s" +
+            "VuDUr.2XrXNSHjU98hOuQsCE/Dr1oN6cy\' where P.CNIC=\'{customer_cnic}\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_change_req_query", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_query", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_message", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+            "ress registered with HBL.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_info_id_query", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message_password", "Your login password has changed.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:lead_field_value", "FORGOT_PASSWORD True")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:lead_field_query", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_pass_change_query", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+            "nic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_query", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+            "METER_ID = 1072")]
+        public virtual void _2AsAUserIWantToVerifyForgetPassword_ToVerifyThatC_TypePartialActivatedCustomerCanNotPerformForgotLoginPasword()
+        {
+#line 8
+this._2AsAUserIWantToVerifyForgetPassword("To Verify that C-type Partial Activated customer can not perform Forgot Login Pas" +
+                    "word", "AUTOMATIONUSER", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "", "", "", "", "", "", "", "Begin update dc_customer_info p set P.LOGIN_PASSWORD=\'$2a$10$fZ3EqVq2W9QWb2silU6s" +
+                    "VuDUr.2XrXNSHjU98hOuQsCE/Dr1oN6cy\' where P.CNIC=\'{customer_cnic}\';COMMIT;END;", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+                    "ress registered with HBL.", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+                    "", "Your login password has changed.", "DIGITAL_CHANNEL_SEC", "FORGOT_PASSWORD True", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+                    "nic}\'", "0", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+                    "METER_ID = 1072", new string[] {
+                        "source:Data/ForgetPassword.xlsx"});
+#line hidden
+        }
+        
+        public virtual void _2AsAUserIWantToVerifyForgetLoginID(string @case, string customer_Type_Query, string cnic_No, string mobile_No, string debit_Card_No, string credit_Card_No, string email_Value, string pin, string success_Message, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "ForgetChange",
+                    "ForgetLoginID"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2 As a user i want to verify forget Login ID", @__tags);
+#line 56
+this.ScenarioSetup(scenarioInfo);
+#line 57
+ testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 58
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"customer_cnic\"", cnic_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 59
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"mobile_number\"", mobile_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 60
+ testRunner.And(string.Format("I set value in context from database \"{0}\" as \"customer_type\" on Schema \"DIGITAL_" +
+                        "CHANNEL_SEC\"", customer_Type_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 61
+ testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 62
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 63
+ testRunner.And("I am clicking on \"Forget_btn_Login\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 64
+ testRunner.When(string.Format("I have given \"{0}\" on \"Forget_CNIC\"", cnic_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 65
+ testRunner.And("I am performing on \"Forget_Login_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 66
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_LoginID_Mobile\"", mobile_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 67
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_LoginID_DebitNo\"", debit_Card_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 68
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_LoginID_CreditNo\"", credit_Card_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 69
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_LoginID_CreditEmail\"", email_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 70
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_LoginID_DebitPin\"", pin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 71
+ testRunner.And("I am performing on \"Forget_LoginID_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 72
+ testRunner.Then(string.Format("verify through \"{0}\" on \"Forget_Success_LoginMsg\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 73
+ testRunner.And("I am performing on \"Forget_Login_FinishBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify forget Login ID: To verify that D-type customer can " +
+            "successfully perform Forgot Login ID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetLoginID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetLoginID.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that D-type customer can successfully perform Forgot Login ID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that D-type customer can successfully perform Forgot Login ID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_no", "1350314051455")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no", "03110204994")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card_no", "2205430001256567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:credit_card_no", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_value", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pin", "1234")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
+            " with HBL.")]
+        public virtual void _2AsAUserIWantToVerifyForgetLoginID_ToVerifyThatD_TypeCustomerCanSuccessfullyPerformForgotLoginID()
+        {
+#line 56
+this._2AsAUserIWantToVerifyForgetLoginID("To verify that D-type customer can successfully perform Forgot Login ID", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "1350314051455", "03110204994", "2205430001256567", "", "", "1234", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
+                    " with HBL.", new string[] {
+                        "source:Data/ForgetLoginID.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify forget Login ID: To verify that D-type customer can " +
+            "not perform Forgot Login ID with incorrect CNIC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetLoginID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetLoginID.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that D-type customer can not perform Forgot Login ID with incorrect CNI" +
+            "C")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that D-type customer can not perform Forgot Login ID with incorrect CNI" +
+            "C")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_no", "4552102554255")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no", "03110204994")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card_no", "2205430001256567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:credit_card_no", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_value", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pin", "1234")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
+            " with HBL.")]
+        public virtual void _2AsAUserIWantToVerifyForgetLoginID_ToVerifyThatD_TypeCustomerCanNotPerformForgotLoginIDWithIncorrectCNIC()
+        {
+#line 56
+this._2AsAUserIWantToVerifyForgetLoginID("To verify that D-type customer can not perform Forgot Login ID with incorrect CNI" +
+                    "C", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "4552102554255", "03110204994", "2205430001256567", "", "", "1234", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
+                    " with HBL.", new string[] {
+                        "source:Data/ForgetLoginID.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify forget Login ID: To verify that D-type customer can " +
+            "not perform Forgot Login ID with incorrect Mobile Number")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetLoginID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetLoginID.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that D-type customer can not perform Forgot Login ID with incorrect Mob" +
+            "ile Number")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that D-type customer can not perform Forgot Login ID with incorrect Mob" +
+            "ile Number")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_no", "1350314051455")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no", "03425452587")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card_no", "2205430001256567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:credit_card_no", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_value", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pin", "1234")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
+            " with HBL.")]
+        public virtual void _2AsAUserIWantToVerifyForgetLoginID_ToVerifyThatD_TypeCustomerCanNotPerformForgotLoginIDWithIncorrectMobileNumber()
+        {
+#line 56
+this._2AsAUserIWantToVerifyForgetLoginID("To verify that D-type customer can not perform Forgot Login ID with incorrect Mob" +
+                    "ile Number", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "1350314051455", "03425452587", "2205430001256567", "", "", "1234", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
+                    " with HBL.", new string[] {
+                        "source:Data/ForgetLoginID.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify forget Login ID: To verify that D-type customer can " +
+            "successfully perform Forgot Login ID with incorrect Debit Card number")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetLoginID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetLoginID.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that D-type customer can successfully perform Forgot Login ID with inco" +
+            "rrect Debit Card number")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that D-type customer can successfully perform Forgot Login ID with inco" +
+            "rrect Debit Card number")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_no", "1350314051455")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no", "03110204994")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card_no", "2205430001251234")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:credit_card_no", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_value", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pin", "1234")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
+            " with HBL.")]
+        public virtual void _2AsAUserIWantToVerifyForgetLoginID_ToVerifyThatD_TypeCustomerCanSuccessfullyPerformForgotLoginIDWithIncorrectDebitCardNumber()
+        {
+#line 56
+this._2AsAUserIWantToVerifyForgetLoginID("To verify that D-type customer can successfully perform Forgot Login ID with inco" +
+                    "rrect Debit Card number", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "1350314051455", "03110204994", "2205430001251234", "", "", "1234", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
+                    " with HBL.", new string[] {
+                        "source:Data/ForgetLoginID.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify forget Login ID: To verify that C-type customer can " +
+            "successfully perform Forgot Login ID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetLoginID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetLoginID.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that C-type customer can successfully perform Forgot Login ID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that C-type customer can successfully perform Forgot Login ID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_no", "3660178807169")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no", "03008381621")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card_no", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:credit_card_no", "4902870004884109")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_value", "farooq.leo@hotmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pin", "1234")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
+            " with HBL.")]
+        public virtual void _2AsAUserIWantToVerifyForgetLoginID_ToVerifyThatC_TypeCustomerCanSuccessfullyPerformForgotLoginID()
+        {
+#line 56
+this._2AsAUserIWantToVerifyForgetLoginID("To verify that C-type customer can successfully perform Forgot Login ID", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "3660178807169", "03008381621", "", "4902870004884109", "farooq.leo@hotmail.com", "1234", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
+                    " with HBL.", new string[] {
+                        "source:Data/ForgetLoginID.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify forget Login ID: To verify that C-type customer can " +
+            "not perform Forgot Login ID with incorrect CNIC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetLoginID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetLoginID.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that C-type customer can not perform Forgot Login ID with incorrect CNI" +
+            "C")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that C-type customer can not perform Forgot Login ID with incorrect CNI" +
+            "C")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_no", "8445201335477")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no", "03008381621")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card_no", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:credit_card_no", "4902870004884109")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_value", "farooq.leo@hotmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pin", "1234")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
+            " with HBL.")]
+        public virtual void _2AsAUserIWantToVerifyForgetLoginID_ToVerifyThatC_TypeCustomerCanNotPerformForgotLoginIDWithIncorrectCNIC()
+        {
+#line 56
+this._2AsAUserIWantToVerifyForgetLoginID("To verify that C-type customer can not perform Forgot Login ID with incorrect CNI" +
+                    "C", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "8445201335477", "03008381621", "", "4902870004884109", "farooq.leo@hotmail.com", "1234", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
+                    " with HBL.", new string[] {
+                        "source:Data/ForgetLoginID.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify forget Login ID: To verify that C-type customer can " +
+            "not perform Forgot Login ID with incorrect Mobile Number")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetLoginID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetLoginID.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that C-type customer can not perform Forgot Login ID with incorrect Mob" +
+            "ile Number")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that C-type customer can not perform Forgot Login ID with incorrect Mob" +
+            "ile Number")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_no", "3660178807169")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no", "03564587547")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card_no", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:credit_card_no", "4902870004884109")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_value", "farooq.leo@hotmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pin", "1234")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
+            " with HBL.")]
+        public virtual void _2AsAUserIWantToVerifyForgetLoginID_ToVerifyThatC_TypeCustomerCanNotPerformForgotLoginIDWithIncorrectMobileNumber()
+        {
+#line 56
+this._2AsAUserIWantToVerifyForgetLoginID("To verify that C-type customer can not perform Forgot Login ID with incorrect Mob" +
+                    "ile Number", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "3660178807169", "03564587547", "", "4902870004884109", "farooq.leo@hotmail.com", "1234", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
+                    " with HBL.", new string[] {
+                        "source:Data/ForgetLoginID.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify forget Login ID: To verify that C-type customer can " +
+            "successfully perform Forgot Login ID with incorrect Credit Card number")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetLoginID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetLoginID.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that C-type customer can successfully perform Forgot Login ID with inco" +
+            "rrect Credit Card number")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that C-type customer can successfully perform Forgot Login ID with inco" +
+            "rrect Credit Card number")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_no", "3660178807169")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no", "03008381621")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card_no", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:credit_card_no", "4902845454884109")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_value", "farooq.leo@hotmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pin", "1234")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
+            " with HBL.")]
+        public virtual void _2AsAUserIWantToVerifyForgetLoginID_ToVerifyThatC_TypeCustomerCanSuccessfullyPerformForgotLoginIDWithIncorrectCreditCardNumber()
+        {
+#line 56
+this._2AsAUserIWantToVerifyForgetLoginID("To verify that C-type customer can successfully perform Forgot Login ID with inco" +
+                    "rrect Credit Card number", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "3660178807169", "03008381621", "", "4902845454884109", "farooq.leo@hotmail.com", "1234", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
+                    " with HBL.", new string[] {
+                        "source:Data/ForgetLoginID.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify forget Login ID: To verify that C-type customer can " +
+            "successfully perform Forgot Login ID with incorrect Email Address")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetLoginID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetLoginID.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that C-type customer can successfully perform Forgot Login ID with inco" +
+            "rrect Email Address")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that C-type customer can successfully perform Forgot Login ID with inco" +
+            "rrect Email Address")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_no", "3660178807169")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no", "03008381621")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card_no", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:credit_card_no", "4902870004884109")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_value", "shoaib.qureshi@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pin", "1234")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
+            " with HBL.")]
+        public virtual void _2AsAUserIWantToVerifyForgetLoginID_ToVerifyThatC_TypeCustomerCanSuccessfullyPerformForgotLoginIDWithIncorrectEmailAddress()
+        {
+#line 56
+this._2AsAUserIWantToVerifyForgetLoginID("To verify that C-type customer can successfully perform Forgot Login ID with inco" +
+                    "rrect Email Address", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "3660178807169", "03008381621", "", "4902870004884109", "shoaib.qureshi@hbl.com", "1234", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
+                    " with HBL.", new string[] {
+                        "source:Data/ForgetLoginID.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify forget Login ID: To verify that Blocked user can not" +
+            " perform Forgot Login ID journey")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetLoginID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetLoginID.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that Blocked user can not perform Forgot Login ID journey")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that Blocked user can not perform Forgot Login ID journey")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_no", "3630238205916")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card_no", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:credit_card_no", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_value", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pin", "1234")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
+            " with HBL.")]
+        public virtual void _2AsAUserIWantToVerifyForgetLoginID_ToVerifyThatBlockedUserCanNotPerformForgotLoginIDJourney()
+        {
+#line 56
+this._2AsAUserIWantToVerifyForgetLoginID("To verify that Blocked user can not perform Forgot Login ID journey", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "3630238205916", "", "", "", "", "1234", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
+                    " with HBL.", new string[] {
+                        "source:Data/ForgetLoginID.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify forget Login ID: To verify that Partial Activated us" +
+            "er can not perform Forgot Login ID journey")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetLoginID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetLoginID.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that Partial Activated user can not perform Forgot Login ID journey")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that Partial Activated user can not perform Forgot Login ID journey")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_no", "4250148850220")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card_no", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:credit_card_no", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_value", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pin", "1234")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
+            " with HBL.")]
+        public virtual void _2AsAUserIWantToVerifyForgetLoginID_ToVerifyThatPartialActivatedUserCanNotPerformForgotLoginIDJourney()
+        {
+#line 56
+this._2AsAUserIWantToVerifyForgetLoginID("To verify that Partial Activated user can not perform Forgot Login ID journey", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "4250148850220", "", "", "", "", "1234", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
+                    " with HBL.", new string[] {
+                        "source:Data/ForgetLoginID.xlsx"});
 #line hidden
         }
         
@@ -329,11 +1428,7 @@ this._2AsAUserIWantToVerifyForgetPassword("When I am verifying Forget Password f
                     string success_Message_Password, 
                     string password_Change_Req_Query, 
                     string new_Login_Id_Query, 
-                    string password_Policy, 
-                    string password_Policy2, 
-                    string password_Policy3, 
-                    string change_Pass_Policy1, 
-                    string change_Pass_Policy2, 
+                    string change_Pass_Policy_Query, 
                     string mobile_No_Query, 
                     string oTP_Message, 
                     string db_Val, 
@@ -345,127 +1440,136 @@ this._2AsAUserIWantToVerifyForgetPassword("When I am verifying Forget Password f
                     string is_Password_Reset_Required_Query, 
                     string name_Update_Query, 
                     string customer_Info_Id_Query, 
+                    string new_Password_Policy_Query, 
+                    string is_Account_Blocked_Query, 
+                    string is_Account_Locked_Query, 
+                    string is_Tran_Password_Locked_Query, 
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "ForgetChange",
                     "ChangeLoginID"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2 As a user i want to verify Change Login ID", @__tags);
-#line 55
-this.ScenarioSetup(scenarioInfo);
-#line 56
- testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 57
- testRunner.And(string.Format("I set value in context from data \"{0}\" as \"customer_cnic\"", cnic), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 58
- testRunner.And(string.Format("I set value in context from database \"{0}\" as \"customer_type\" on Schema \"{1}\"", customer_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 59
- testRunner.And(string.Format("I set value in context from database \"{0}\" as \"mobile_number\" on Schema \"{1}\"", mobile_No_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 60
- testRunner.And(string.Format("I set value in context from database \"{0}\" as \"customer_info_id\" on Schema \"{1}\"", customer_Info_Id_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 61
- testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 62
- testRunner.And("I am clicking on \"Forget_btn_Login\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 63
- testRunner.And("I am clicking on \"Forget_ChangeLoginNav\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 64
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_ChangeCNIC\"", cnic), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 65
- testRunner.When("I am performing on \"Forget_ChangeLoginNextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 66
- testRunner.And(string.Format("verify through \"{0}\" on \"Forget_ChangeLogin_PassPolicy1\"", change_Pass_Policy1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 67
- testRunner.And(string.Format("verify through \"{0}\" on \"Forget_ChangeLogin_PassPolicy2\"", change_Pass_Policy2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 68
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Change_DebitNo\"", debit_Card), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 69
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Change_DebitPin\"", card_Pin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 70
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Change_CreditNo\"", credit_Card), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 71
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Change_CreditEmail\"", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 72
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Change_NewLogin\"", new_Login_Id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 73
- testRunner.And("I am performing on \"Forget_Change_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 74
- testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 75
- testRunner.And(string.Format("verify through \"{0}\" on \"Forget_Change_OTPMsg\"", oTP_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 76
- testRunner.And("I set value in context from data \"true\" as \"change_loginID_check\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 77
- testRunner.And("I have given \"\" on \"Login_OTP_field\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 78
- testRunner.And("I am performing on \"Forget_Change_OTPNextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 79
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_LoginPass\"", new_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 80
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_LoginRePass\"", new_Re_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 81
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Change_LoginTran\"", tran_Pass), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 82
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Change_LoginReTran\"", new_Tran_Re_Pass), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 83
- testRunner.And(string.Format("verify through \"{0}\" on \"Forget_Policy1\"", password_Policy), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 84
- testRunner.And(string.Format("verify through \"{0}\" on \"Forget_Policy2\"", password_Policy2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"customer_cnic\"", cnic), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 85
- testRunner.And(string.Format("verify through \"{0}\" on \"Forget_Policy3\"", password_Policy3), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 86
- testRunner.And("I am performing on \"Forget_Change_FinishBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 87
- testRunner.Then(string.Format("verify through \"{0}\" on \"Forget_SuccessMsg\"", success_Message_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I am clicking on \"Forget_btn_Login\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 88
- testRunner.And("I am performing on \"Forget_OkBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Forget_ChangeLoginNav\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 89
- testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"{2}\"", new_Login_Id, new_Login_Id_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_ChangeCNIC\"", cnic), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 90
- testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"{1}\"", last_Tran_Pass_Change_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I am performing on \"Forget_ChangeLoginNextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 91
- testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"{1}\"", last_Pass_Change_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I set value in context from database \"{0}\" as \"customer_type\" on Schema \"{1}\"", customer_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 92
+ testRunner.And(string.Format("I set value in context from database \"{0}\" as \"customer_info_id\" on Schema \"{1}\"", customer_Info_Id_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 93
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Forget_ChangeLogin_PassPolic" +
+                        "y\"", change_Pass_Policy_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 94
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Change_DebitNo\"", debit_Card), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 95
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Change_DebitPin\"", card_Pin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 96
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Change_CreditNo\"", credit_Card), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 97
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Change_CreditEmail\"", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 98
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Change_NewLogin\"", new_Login_Id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 99
+ testRunner.And("I am performing on \"Forget_Change_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 100
+ testRunner.And(string.Format("I set value in context from database \"{0}\" as \"mobile_number\" on Schema \"{1}\"", mobile_No_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 101
+ testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 102
+ testRunner.And(string.Format("verify through \"{0}\" on \"Forget_Change_OTPMsg\"", oTP_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 103
+ testRunner.And("I set value in context from data \"true\" as \"change_loginID_check\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 104
+ testRunner.And("I have given \"\" on \"Login_OTP_field\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 105
+ testRunner.And("I am performing on \"Forget_Change_OTPNextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 106
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_LoginPass\"", new_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 107
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_LoginRePass\"", new_Re_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 108
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Change_LoginTran\"", tran_Pass), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 109
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Change_LoginReTran\"", new_Tran_Re_Pass), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 110
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Forget_Policy\"", new_Password_Policy_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 111
+ testRunner.And("I am performing on \"Forget_Change_FinishBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 112
+ testRunner.Then(string.Format("verify through \"{0}\" on \"Forget_SuccessMsg\"", success_Message_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 113
+ testRunner.And("I am performing on \"Forget_OkBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 114
+ testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"{2}\"", new_Login_Id, new_Login_Id_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 115
+ testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"{1}\"", last_Tran_Pass_Change_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 116
+ testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"{1}\"", last_Pass_Change_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 117
  testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"DIGITAL_CHANNEL_SEC" +
                         "\"", is_Password_Change_Required_Value, is_Password_Change_Required_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 93
+#line 118
  testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"DIGITAL_CHANNEL_SEC" +
                         "\"", is_Password_Reset_Required_Value, is_Password_Reset_Required_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 94
+#line 119
+ testRunner.And(string.Format("verify the message \"0\" through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", is_Account_Blocked_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 120
+ testRunner.And(string.Format("verify the message \"0\" through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", is_Account_Locked_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 121
+ testRunner.And(string.Format("verify the message \"0\" through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", is_Tran_Password_Locked_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 122
  testRunner.And(string.Format("I have given \"{0}\" on \"Login_UserId\"", new_Login_Id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 95
+#line 123
  testRunner.And(string.Format("I have given \"{0}\" on \"Login_Password\"", new_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 96
+#line 124
  testRunner.And("I am performing on \"Login_SignIn_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 97
+#line 125
  testRunner.And("I have given \"\" on \"Login_OTP_field\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 98
+#line 126
  testRunner.And("I am performing on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 99
+#line 127
  testRunner.And("verify through \"Welcome\" on \"Login_Success_Text\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 100
+#line 128
  testRunner.And(string.Format("update the data by query \"{0}\" on DIGITAL_CHANNEL_SEC", name_Update_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify Change Login ID: When I am verifying Change Login ID" +
-            " Scenario for DEBIT Customer")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify Change Login ID: To check that if Entered Debit Card" +
+            " Number is not tagged with Entered CNIC")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeLoginID")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ChangeLoginID.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When I am verifying Change Login ID Scenario for DEBIT Customer")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When I am verifying Change Login ID Scenario for DEBIT Customer")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic", "4200004790677")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card", "5366190017355427")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To check that if Entered Debit Card Number is not tagged with Entered CNIC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To check that if Entered Debit Card Number is not tagged with Entered CNIC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic", "4220169001163")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card", "2205430001256567")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:card_pin", "1234")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Credit_card", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id", "abbzabbz12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id", "autom555")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass", "pakistan2")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password", "pakistan1")]
@@ -476,12 +1580,8 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_change_req_query", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
             "mer_cnic}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id_query", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_policy", "Password Policy")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_policy2", "Should be between 8 and 15 characters with at least 1 alphabet and 1 numeric digi" +
-            "t")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_policy3", "Special characters allowed are ! @ # $ . & *")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:change_pass_policy1", "Should be between 8 and 30 characters with at least 1 alphabet")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:change_pass_policy2", "Special characters are not allowed")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:change_pass_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+            "METER_ID = 563")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_query", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_message", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
             "ress registered with HBL.")]
@@ -500,119 +1600,1098 @@ this.ScenarioSetup(scenarioInfo);
             "customer_cnic}\';COMMIT;END;")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_info_id_query", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
             "")]
-        public virtual void _2AsAUserIWantToVerifyChangeLoginID_WhenIAmVerifyingChangeLoginIDScenarioForDEBITCustomer()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", " Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PAR" +
+            "AMETER_ID = 1702")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_account_blocked_query", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_account_locked_query", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+            "\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_tran_password_locked_query", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+            "\'")]
+        public virtual void _2AsAUserIWantToVerifyChangeLoginID_ToCheckThatIfEnteredDebitCardNumberIsNotTaggedWithEnteredCNIC()
         {
-#line 55
-this._2AsAUserIWantToVerifyChangeLoginID("When I am verifying Change Login ID Scenario for DEBIT Customer", "4200004790677", "5366190017355427", "1234", "", "", "abbzabbz12", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "pakistan2", "pakistan1", "pakistan1", "pakistan2", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
+#line 82
+this._2AsAUserIWantToVerifyChangeLoginID("To check that if Entered Debit Card Number is not tagged with Entered CNIC", "4220169001163", "2205430001256567", "1234", "", "", "autom555", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "pakistan2", "pakistan1", "pakistan1", "pakistan2", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
                     "r new password to login.", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
-                    "mer_cnic}\'", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "Password Policy", "Should be between 8 and 15 characters with at least 1 alphabet and 1 numeric digi" +
-                    "t", "Special characters allowed are ! @ # $ . & *", "Should be between 8 and 30 characters with at least 1 alphabet", "Special characters are not allowed", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+                    "mer_cnic}\'", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+                    "METER_ID = 563", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
                     "ress registered with HBL.", "DIGITAL_CHANNEL_SEC", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
                     "nic}\'", "select P.LAST_TRANS_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{cust" +
                     "omer_cnic}\'", "0", "SELECT P.IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{cus" +
                     "tomer_cnic}\'", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
                     "mer_cnic}\'", "BEGIN Update DC_CUSTOMER_INFO D Set D.CUSTOMER_NAME = \'RYANDIAS\' where D.CNIC =\'{" +
                     "customer_cnic}\';COMMIT;END;", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
-                    "", new string[] {
+                    "", " Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PAR" +
+                    "AMETER_ID = 1702", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
+                    "}\'", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+                    "\'", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+                    "\'", new string[] {
                         "source:Data/ChangeLoginID.xlsx"});
 #line hidden
         }
         
-        public virtual void _2AsAUserIWantToVerifyForgetLoginID(string @case, string customer_Type_Query, string cnic_No, string mobile_No, string debit_Card_No, string credit_Card_No, string email_Value, string pin, string success_Message, string[] exampleTags)
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify Change Login ID: To check if user enters invalid Deb" +
+            "it card number")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeLoginID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ChangeLoginID.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To check if user enters invalid Debit card number")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To check if user enters invalid Debit card number")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic", "4220169001163")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card", "5366190009708854")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:card_pin", "1234")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Credit_card", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id", "autom555")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_re_password", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_tran_re_pass", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message_password", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
+            "r new password to login.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_change_req_query", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id_query", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:change_pass_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+            "METER_ID = 563")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_query", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_message", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+            "ress registered with HBL.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_pass_change_query", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+            "nic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_tran_pass_change_query", "select P.LAST_TRANS_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{cust" +
+            "omer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_query", "SELECT P.IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{cus" +
+            "tomer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_query", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:name_update_query", "BEGIN Update DC_CUSTOMER_INFO D Set D.CUSTOMER_NAME = \'RYANDIAS\' where D.CNIC =\'{" +
+            "customer_cnic}\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_info_id_query", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", " Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PAR" +
+            "AMETER_ID = 1702")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_account_blocked_query", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_account_locked_query", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+            "\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_tran_password_locked_query", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+            "\'")]
+        public virtual void _2AsAUserIWantToVerifyChangeLoginID_ToCheckIfUserEntersInvalidDebitCardNumber()
         {
-            string[] @__tags = new string[] {
-                    "ForgetLoginID"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2 As a user i want to verify forget Login ID", @__tags);
-#line 107
-this.ScenarioSetup(scenarioInfo);
-#line 108
- testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 109
- testRunner.And(string.Format("I set value in context from data \"{0}\" as \"customer_cnic\"", cnic_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 110
- testRunner.And(string.Format("I set value in context from data \"{0}\" as \"mobile_number\"", mobile_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 111
- testRunner.And(string.Format("I set value in context from database \"{0}\" as \"customer_type\" on Schema \"DIGITAL_" +
-                        "CHANNEL_SEC\"", customer_Type_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 112
- testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 113
- testRunner.And("I am clicking on \"Forget_btn_Login\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 114
- testRunner.When(string.Format("I have given \"{0}\" on \"Forget_CNIC\"", cnic_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 115
- testRunner.And("I am performing on \"Forget_Login_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 116
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_LoginID_Mobile\"", mobile_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 117
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_LoginID_DebitNo\"", debit_Card_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 118
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_LoginID_CreditNo\"", credit_Card_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 119
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_LoginID_CreditEmail\"", email_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 120
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_LoginID_DebitPin\"", pin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 121
- testRunner.And("I am performing on \"Forget_LoginID_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 122
- testRunner.Then(string.Format("verify through \"{0}\" on \"Forget_Success_LoginMsg\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 123
- testRunner.And("I am performing on \"Forget_Login_FinishBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 82
+this._2AsAUserIWantToVerifyChangeLoginID("To check if user enters invalid Debit card number", "4220169001163", "5366190009708854", "1234", "", "", "autom555", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "pakistan2", "pakistan1", "pakistan1", "pakistan2", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
+                    "r new password to login.", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+                    "METER_ID = 563", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+                    "ress registered with HBL.", "DIGITAL_CHANNEL_SEC", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+                    "nic}\'", "select P.LAST_TRANS_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{cust" +
+                    "omer_cnic}\'", "0", "SELECT P.IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{cus" +
+                    "tomer_cnic}\'", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "BEGIN Update DC_CUSTOMER_INFO D Set D.CUSTOMER_NAME = \'RYANDIAS\' where D.CNIC =\'{" +
+                    "customer_cnic}\';COMMIT;END;", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+                    "", " Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PAR" +
+                    "AMETER_ID = 1702", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
+                    "}\'", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+                    "\'", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+                    "\'", new string[] {
+                        "source:Data/ChangeLoginID.xlsx"});
 #line hidden
-            this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify forget Login ID: When I am verifying Forget login id" +
-            " for Debit Type Customer")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify Change Login ID: To check that Login ID field follow" +
+            "s the Login ID Policy")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetLoginID")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetLoginID.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When I am verifying Forget login id for Debit Type Customer")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When I am verifying Forget login id for Debit Type Customer")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeLoginID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ChangeLoginID.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To check that Login ID field follows the Login ID Policy")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To check that Login ID field follows the Login ID Policy")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic", "4220169001163")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card", "5366190009706181")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:card_pin", "1234")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Credit_card", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id", "auto")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_no", "3640211897773")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no", "03006943677")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card_no", "4028052000002718")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:credit_card_no", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_value", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pin", "1234")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
-            " with HBL.")]
-        public virtual void _2AsAUserIWantToVerifyForgetLoginID_WhenIAmVerifyingForgetLoginIdForDebitTypeCustomer()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_re_password", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_tran_re_pass", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message_password", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
+            "r new password to login.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_change_req_query", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id_query", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:change_pass_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+            "METER_ID = 563")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_query", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_message", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+            "ress registered with HBL.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_pass_change_query", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+            "nic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_tran_pass_change_query", "select P.LAST_TRANS_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{cust" +
+            "omer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_query", "SELECT P.IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{cus" +
+            "tomer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_query", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:name_update_query", "BEGIN Update DC_CUSTOMER_INFO D Set D.CUSTOMER_NAME = \'RYANDIAS\' where D.CNIC =\'{" +
+            "customer_cnic}\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_info_id_query", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", " Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PAR" +
+            "AMETER_ID = 1702")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_account_blocked_query", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_account_locked_query", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+            "\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_tran_password_locked_query", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+            "\'")]
+        public virtual void _2AsAUserIWantToVerifyChangeLoginID_ToCheckThatLoginIDFieldFollowsTheLoginIDPolicy()
         {
-#line 107
-this._2AsAUserIWantToVerifyForgetLoginID("When I am verifying Forget login id for Debit Type Customer", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "3640211897773", "03006943677", "4028052000002718", "", "", "1234", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
-                    " with HBL.", new string[] {
-                        "source:Data/ForgetLoginID.xlsx"});
+#line 82
+this._2AsAUserIWantToVerifyChangeLoginID("To check that Login ID field follows the Login ID Policy", "4220169001163", "5366190009706181", "1234", "", "", "auto", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "pakistan2", "pakistan1", "pakistan1", "pakistan2", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
+                    "r new password to login.", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+                    "METER_ID = 563", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+                    "ress registered with HBL.", "DIGITAL_CHANNEL_SEC", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+                    "nic}\'", "select P.LAST_TRANS_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{cust" +
+                    "omer_cnic}\'", "0", "SELECT P.IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{cus" +
+                    "tomer_cnic}\'", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "BEGIN Update DC_CUSTOMER_INFO D Set D.CUSTOMER_NAME = \'RYANDIAS\' where D.CNIC =\'{" +
+                    "customer_cnic}\';COMMIT;END;", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+                    "", " Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PAR" +
+                    "AMETER_ID = 1702", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
+                    "}\'", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+                    "\'", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+                    "\'", new string[] {
+                        "source:Data/ChangeLoginID.xlsx"});
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify forget Login ID: When I am verifying Forget login id" +
-            " for Credit Type Customer")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify Change Login ID: To verify that Debit card number fi" +
+            "eld does not accept more or less than the 16 digits")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetLoginID")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetLoginID.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When I am verifying Forget login id for Credit Type Customer")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When I am verifying Forget login id for Credit Type Customer")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeLoginID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ChangeLoginID.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that Debit card number field does not accept more or less than the 16 d" +
+            "igits")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that Debit card number field does not accept more or less than the 16 d" +
+            "igits")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic", "4220169001163")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card", "536619006181")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:card_pin", "1234")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Credit_card", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id", "autom555")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_no", "3660178807169")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no", "03008381621")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card_no", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:credit_card_no", "4902870004884109")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_value", "farooq.leo@hotmail.com")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pin", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "")]
-        public virtual void _2AsAUserIWantToVerifyForgetLoginID_WhenIAmVerifyingForgetLoginIdForCreditTypeCustomer()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_re_password", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_tran_re_pass", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message_password", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
+            "r new password to login.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_change_req_query", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id_query", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:change_pass_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+            "METER_ID = 563")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_query", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_message", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+            "ress registered with HBL.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_pass_change_query", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+            "nic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_tran_pass_change_query", "select P.LAST_TRANS_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{cust" +
+            "omer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_query", "SELECT P.IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{cus" +
+            "tomer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_query", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:name_update_query", "BEGIN Update DC_CUSTOMER_INFO D Set D.CUSTOMER_NAME = \'RYANDIAS\' where D.CNIC =\'{" +
+            "customer_cnic}\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_info_id_query", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", " Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PAR" +
+            "AMETER_ID = 1702")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_account_blocked_query", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_account_locked_query", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+            "\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_tran_password_locked_query", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+            "\'")]
+        public virtual void _2AsAUserIWantToVerifyChangeLoginID_ToVerifyThatDebitCardNumberFieldDoesNotAcceptMoreOrLessThanThe16Digits()
         {
-#line 107
-this._2AsAUserIWantToVerifyForgetLoginID("When I am verifying Forget login id for Credit Type Customer", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "3660178807169", "03008381621", "", "4902870004884109", "farooq.leo@hotmail.com", "", "", new string[] {
-                        "source:Data/ForgetLoginID.xlsx"});
+#line 82
+this._2AsAUserIWantToVerifyChangeLoginID("To verify that Debit card number field does not accept more or less than the 16 d" +
+                    "igits", "4220169001163", "536619006181", "1234", "", "", "autom555", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "pakistan2", "pakistan1", "pakistan1", "pakistan2", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
+                    "r new password to login.", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+                    "METER_ID = 563", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+                    "ress registered with HBL.", "DIGITAL_CHANNEL_SEC", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+                    "nic}\'", "select P.LAST_TRANS_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{cust" +
+                    "omer_cnic}\'", "0", "SELECT P.IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{cus" +
+                    "tomer_cnic}\'", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "BEGIN Update DC_CUSTOMER_INFO D Set D.CUSTOMER_NAME = \'RYANDIAS\' where D.CNIC =\'{" +
+                    "customer_cnic}\';COMMIT;END;", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+                    "", " Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PAR" +
+                    "AMETER_ID = 1702", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
+                    "}\'", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+                    "\'", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+                    "\'", new string[] {
+                        "source:Data/ChangeLoginID.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify Change Login ID: To verify that Debit card PIN field" +
+            " does not accept more or less than the 4 digits")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeLoginID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ChangeLoginID.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that Debit card PIN field does not accept more or less than the 4 digit" +
+            "s")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that Debit card PIN field does not accept more or less than the 4 digit" +
+            "s")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic", "4220169001163")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card", "5366190009706181")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:card_pin", "12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Credit_card", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id", "autom555")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_re_password", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_tran_re_pass", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message_password", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
+            "r new password to login.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_change_req_query", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id_query", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:change_pass_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+            "METER_ID = 563")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_query", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_message", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+            "ress registered with HBL.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_pass_change_query", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+            "nic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_tran_pass_change_query", "select P.LAST_TRANS_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{cust" +
+            "omer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_query", "SELECT P.IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{cus" +
+            "tomer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_query", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:name_update_query", "BEGIN Update DC_CUSTOMER_INFO D Set D.CUSTOMER_NAME = \'RYANDIAS\' where D.CNIC =\'{" +
+            "customer_cnic}\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_info_id_query", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", " Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PAR" +
+            "AMETER_ID = 1702")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_account_blocked_query", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_account_locked_query", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+            "\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_tran_password_locked_query", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+            "\'")]
+        public virtual void _2AsAUserIWantToVerifyChangeLoginID_ToVerifyThatDebitCardPINFieldDoesNotAcceptMoreOrLessThanThe4Digits()
+        {
+#line 82
+this._2AsAUserIWantToVerifyChangeLoginID("To verify that Debit card PIN field does not accept more or less than the 4 digit" +
+                    "s", "4220169001163", "5366190009706181", "12", "", "", "autom555", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "pakistan2", "pakistan1", "pakistan1", "pakistan2", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
+                    "r new password to login.", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+                    "METER_ID = 563", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+                    "ress registered with HBL.", "DIGITAL_CHANNEL_SEC", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+                    "nic}\'", "select P.LAST_TRANS_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{cust" +
+                    "omer_cnic}\'", "0", "SELECT P.IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{cus" +
+                    "tomer_cnic}\'", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "BEGIN Update DC_CUSTOMER_INFO D Set D.CUSTOMER_NAME = \'RYANDIAS\' where D.CNIC =\'{" +
+                    "customer_cnic}\';COMMIT;END;", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+                    "", " Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PAR" +
+                    "AMETER_ID = 1702", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
+                    "}\'", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+                    "\'", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+                    "\'", new string[] {
+                        "source:Data/ChangeLoginID.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify Change Login ID: To check that already existing Logi" +
+            "n ID can not be assigned to any other user")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeLoginID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ChangeLoginID.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To check that already existing Login ID can not be assigned to any other user")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To check that already existing Login ID can not be assigned to any other user")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic", "4220169001163")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card", "5366190009706181")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:card_pin", "1234")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Credit_card", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id", "rajawaheed10")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_re_password", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_tran_re_pass", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message_password", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
+            "r new password to login.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_change_req_query", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id_query", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:change_pass_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+            "METER_ID = 563")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_query", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_message", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+            "ress registered with HBL.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_pass_change_query", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+            "nic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_tran_pass_change_query", "select P.LAST_TRANS_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{cust" +
+            "omer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_query", "SELECT P.IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{cus" +
+            "tomer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_query", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:name_update_query", "BEGIN Update DC_CUSTOMER_INFO D Set D.CUSTOMER_NAME = \'RYANDIAS\' where D.CNIC =\'{" +
+            "customer_cnic}\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_info_id_query", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", " Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PAR" +
+            "AMETER_ID = 1702")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_account_blocked_query", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_account_locked_query", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+            "\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_tran_password_locked_query", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+            "\'")]
+        public virtual void _2AsAUserIWantToVerifyChangeLoginID_ToCheckThatAlreadyExistingLoginIDCanNotBeAssignedToAnyOtherUser()
+        {
+#line 82
+this._2AsAUserIWantToVerifyChangeLoginID("To check that already existing Login ID can not be assigned to any other user", "4220169001163", "5366190009706181", "1234", "", "", "rajawaheed10", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "pakistan2", "pakistan1", "pakistan1", "pakistan2", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
+                    "r new password to login.", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+                    "METER_ID = 563", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+                    "ress registered with HBL.", "DIGITAL_CHANNEL_SEC", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+                    "nic}\'", "select P.LAST_TRANS_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{cust" +
+                    "omer_cnic}\'", "0", "SELECT P.IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{cus" +
+                    "tomer_cnic}\'", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "BEGIN Update DC_CUSTOMER_INFO D Set D.CUSTOMER_NAME = \'RYANDIAS\' where D.CNIC =\'{" +
+                    "customer_cnic}\';COMMIT;END;", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+                    "", " Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PAR" +
+                    "AMETER_ID = 1702", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
+                    "}\'", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+                    "\'", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+                    "\'", new string[] {
+                        "source:Data/ChangeLoginID.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify Change Login ID: To check that Active Debit Card cus" +
+            "tomer can successfully change Login ID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeLoginID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ChangeLoginID.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To check that Active Debit Card customer can successfully change Login ID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To check that Active Debit Card customer can successfully change Login ID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic", "4220169001163")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card", "5366190009706181")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:card_pin", "1234")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Credit_card", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id", "autom555")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_re_password", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_tran_re_pass", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message_password", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
+            "r new password to login.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_change_req_query", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id_query", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:change_pass_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+            "METER_ID = 563")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_query", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_message", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+            "ress registered with HBL.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_pass_change_query", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+            "nic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_tran_pass_change_query", "select P.LAST_TRANS_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{cust" +
+            "omer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_query", "SELECT P.IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{cus" +
+            "tomer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_query", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:name_update_query", "BEGIN Update DC_CUSTOMER_INFO D Set D.CUSTOMER_NAME = \'RYANDIAS\' where D.CNIC =\'{" +
+            "customer_cnic}\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_info_id_query", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", " Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PAR" +
+            "AMETER_ID = 1702")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_account_blocked_query", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_account_locked_query", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+            "\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_tran_password_locked_query", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+            "\'")]
+        public virtual void _2AsAUserIWantToVerifyChangeLoginID_ToCheckThatActiveDebitCardCustomerCanSuccessfullyChangeLoginID()
+        {
+#line 82
+this._2AsAUserIWantToVerifyChangeLoginID("To check that Active Debit Card customer can successfully change Login ID", "4220169001163", "5366190009706181", "1234", "", "", "autom555", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "pakistan2", "pakistan1", "pakistan1", "pakistan2", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
+                    "r new password to login.", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+                    "METER_ID = 563", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+                    "ress registered with HBL.", "DIGITAL_CHANNEL_SEC", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+                    "nic}\'", "select P.LAST_TRANS_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{cust" +
+                    "omer_cnic}\'", "0", "SELECT P.IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{cus" +
+                    "tomer_cnic}\'", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "BEGIN Update DC_CUSTOMER_INFO D Set D.CUSTOMER_NAME = \'RYANDIAS\' where D.CNIC =\'{" +
+                    "customer_cnic}\';COMMIT;END;", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+                    "", " Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PAR" +
+                    "AMETER_ID = 1702", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
+                    "}\'", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+                    "\'", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+                    "\'", new string[] {
+                        "source:Data/ChangeLoginID.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify Change Login ID: To check that Partial Active Debit " +
+            "card customer can successfully change Login ID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeLoginID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ChangeLoginID.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To check that Partial Active Debit card customer can successfully change Login ID" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To check that Partial Active Debit card customer can successfully change Login ID" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic", "4200028347788")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card", "5366190000137766")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:card_pin", "1234")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Credit_card", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id", "loginid222")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_re_password", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_tran_re_pass", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message_password", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
+            "r new password to login.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_change_req_query", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id_query", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:change_pass_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+            "METER_ID = 563")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_query", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_message", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+            "ress registered with HBL.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_pass_change_query", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+            "nic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_tran_pass_change_query", "select P.LAST_TRANS_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{cust" +
+            "omer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_query", "SELECT P.IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{cus" +
+            "tomer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_query", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:name_update_query", "BEGIN Update DC_CUSTOMER_INFO D Set D.CUSTOMER_NAME = \'RYANDIAS\' where D.CNIC =\'{" +
+            "customer_cnic}\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_info_id_query", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", " Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PAR" +
+            "AMETER_ID = 1702")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_account_blocked_query", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_account_locked_query", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+            "\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_tran_password_locked_query", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+            "\'")]
+        public virtual void _2AsAUserIWantToVerifyChangeLoginID_ToCheckThatPartialActiveDebitCardCustomerCanSuccessfullyChangeLoginID()
+        {
+#line 82
+this._2AsAUserIWantToVerifyChangeLoginID("To check that Partial Active Debit card customer can successfully change Login ID" +
+                    "", "4200028347788", "5366190000137766", "1234", "", "", "loginid222", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "pakistan2", "pakistan1", "pakistan1", "pakistan2", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
+                    "r new password to login.", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+                    "METER_ID = 563", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+                    "ress registered with HBL.", "DIGITAL_CHANNEL_SEC", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+                    "nic}\'", "select P.LAST_TRANS_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{cust" +
+                    "omer_cnic}\'", "0", "SELECT P.IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{cus" +
+                    "tomer_cnic}\'", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "BEGIN Update DC_CUSTOMER_INFO D Set D.CUSTOMER_NAME = \'RYANDIAS\' where D.CNIC =\'{" +
+                    "customer_cnic}\';COMMIT;END;", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+                    "", " Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PAR" +
+                    "AMETER_ID = 1702", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
+                    "}\'", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+                    "\'", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+                    "\'", new string[] {
+                        "source:Data/ChangeLoginID.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify Change Login ID: To check that Locked Debit card cus" +
+            "tomer can successfully Change Login ID.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeLoginID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ChangeLoginID.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To check that Locked Debit card customer can successfully Change Login ID.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To check that Locked Debit card customer can successfully Change Login ID.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic", "4430182101109")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card", "2205430001186269")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:card_pin", "1234")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Credit_card", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id", "dlocked555")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_re_password", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_tran_re_pass", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message_password", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
+            "r new password to login.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_change_req_query", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id_query", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:change_pass_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+            "METER_ID = 563")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_query", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_message", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+            "ress registered with HBL.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_pass_change_query", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+            "nic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_tran_pass_change_query", "select P.LAST_TRANS_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{cust" +
+            "omer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_query", "SELECT P.IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{cus" +
+            "tomer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_query", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:name_update_query", "BEGIN Update DC_CUSTOMER_INFO D Set D.CUSTOMER_NAME = \'RYANDIAS\' where D.CNIC =\'{" +
+            "customer_cnic}\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_info_id_query", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", " Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PAR" +
+            "AMETER_ID = 1702")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_account_blocked_query", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_account_locked_query", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+            "\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_tran_password_locked_query", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+            "\'")]
+        public virtual void _2AsAUserIWantToVerifyChangeLoginID_ToCheckThatLockedDebitCardCustomerCanSuccessfullyChangeLoginID_()
+        {
+#line 82
+this._2AsAUserIWantToVerifyChangeLoginID("To check that Locked Debit card customer can successfully Change Login ID.", "4430182101109", "2205430001186269", "1234", "", "", "dlocked555", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "pakistan2", "pakistan1", "pakistan1", "pakistan2", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
+                    "r new password to login.", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+                    "METER_ID = 563", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+                    "ress registered with HBL.", "DIGITAL_CHANNEL_SEC", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+                    "nic}\'", "select P.LAST_TRANS_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{cust" +
+                    "omer_cnic}\'", "0", "SELECT P.IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{cus" +
+                    "tomer_cnic}\'", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "BEGIN Update DC_CUSTOMER_INFO D Set D.CUSTOMER_NAME = \'RYANDIAS\' where D.CNIC =\'{" +
+                    "customer_cnic}\';COMMIT;END;", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+                    "", " Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PAR" +
+                    "AMETER_ID = 1702", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
+                    "}\'", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+                    "\'", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+                    "\'", new string[] {
+                        "source:Data/ChangeLoginID.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify Change Login ID: To check if entered CNIC does not e" +
+            "xist in System")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeLoginID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ChangeLoginID.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To check if entered CNIC does not exist in System")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To check if entered CNIC does not exist in System")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic", "4552636554244")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card", "5366190009706181")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:card_pin", "1234")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Credit_card", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id", "autom555")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_re_password", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_tran_re_pass", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message_password", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
+            "r new password to login.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_change_req_query", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id_query", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:change_pass_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+            "METER_ID = 563")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_query", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_message", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+            "ress registered with HBL.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_pass_change_query", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+            "nic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_tran_pass_change_query", "select P.LAST_TRANS_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{cust" +
+            "omer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_query", "SELECT P.IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{cus" +
+            "tomer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_query", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:name_update_query", "BEGIN Update DC_CUSTOMER_INFO D Set D.CUSTOMER_NAME = \'RYANDIAS\' where D.CNIC =\'{" +
+            "customer_cnic}\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_info_id_query", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", " Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PAR" +
+            "AMETER_ID = 1702")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_account_blocked_query", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_account_locked_query", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+            "\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_tran_password_locked_query", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+            "\'")]
+        public virtual void _2AsAUserIWantToVerifyChangeLoginID_ToCheckIfEnteredCNICDoesNotExistInSystem()
+        {
+#line 82
+this._2AsAUserIWantToVerifyChangeLoginID("To check if entered CNIC does not exist in System", "4552636554244", "5366190009706181", "1234", "", "", "autom555", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "pakistan2", "pakistan1", "pakistan1", "pakistan2", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
+                    "r new password to login.", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+                    "METER_ID = 563", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+                    "ress registered with HBL.", "DIGITAL_CHANNEL_SEC", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+                    "nic}\'", "select P.LAST_TRANS_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{cust" +
+                    "omer_cnic}\'", "0", "SELECT P.IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{cus" +
+                    "tomer_cnic}\'", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "BEGIN Update DC_CUSTOMER_INFO D Set D.CUSTOMER_NAME = \'RYANDIAS\' where D.CNIC =\'{" +
+                    "customer_cnic}\';COMMIT;END;", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+                    "", " Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PAR" +
+                    "AMETER_ID = 1702", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
+                    "}\'", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+                    "\'", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+                    "\'", new string[] {
+                        "source:Data/ChangeLoginID.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify Change Login ID: To check that if Entered Credit Car" +
+            "d Number is not tagged with Entered CNIC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeLoginID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ChangeLoginID.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To check that if Entered Credit Card Number is not tagged with Entered CNIC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To check that if Entered Credit Card Number is not tagged with Entered CNIC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic", "3520227406461")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:card_pin", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Credit_card", "4902880001916747")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "aliwaqarazeem@hotmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id", "cloginid666")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_re_password", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_tran_re_pass", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message_password", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
+            "r new password to login.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_change_req_query", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id_query", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:change_pass_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+            "METER_ID = 563")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_query", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_message", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+            "ress registered with HBL.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_pass_change_query", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+            "nic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_tran_pass_change_query", "select P.LAST_TRANS_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{cust" +
+            "omer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_query", "SELECT P.IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{cus" +
+            "tomer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_query", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:name_update_query", "BEGIN Update DC_CUSTOMER_INFO D Set D.CUSTOMER_NAME = \'RYANDIAS\' where D.CNIC =\'{" +
+            "customer_cnic}\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_info_id_query", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", " Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PAR" +
+            "AMETER_ID = 1702")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_account_blocked_query", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_account_locked_query", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+            "\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_tran_password_locked_query", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+            "\'")]
+        public virtual void _2AsAUserIWantToVerifyChangeLoginID_ToCheckThatIfEnteredCreditCardNumberIsNotTaggedWithEnteredCNIC()
+        {
+#line 82
+this._2AsAUserIWantToVerifyChangeLoginID("To check that if Entered Credit Card Number is not tagged with Entered CNIC", "3520227406461", "", "", "4902880001916747", "aliwaqarazeem@hotmail.com", "cloginid666", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "pakistan2", "pakistan1", "pakistan1", "pakistan2", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
+                    "r new password to login.", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+                    "METER_ID = 563", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+                    "ress registered with HBL.", "DIGITAL_CHANNEL_SEC", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+                    "nic}\'", "select P.LAST_TRANS_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{cust" +
+                    "omer_cnic}\'", "0", "SELECT P.IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{cus" +
+                    "tomer_cnic}\'", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "BEGIN Update DC_CUSTOMER_INFO D Set D.CUSTOMER_NAME = \'RYANDIAS\' where D.CNIC =\'{" +
+                    "customer_cnic}\';COMMIT;END;", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+                    "", " Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PAR" +
+                    "AMETER_ID = 1702", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
+                    "}\'", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+                    "\'", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+                    "\'", new string[] {
+                        "source:Data/ChangeLoginID.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify Change Login ID: To check if user enters Email which" +
+            " is not tagged with entered Credit card number")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeLoginID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ChangeLoginID.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To check if user enters Email which is not tagged with entered Credit card number" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To check if user enters Email which is not tagged with entered Credit card number" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic", "3520227406461")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:card_pin", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Credit_card", "4902880001916747")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "usman.safder@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id", "cloginid666")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_re_password", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_tran_re_pass", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message_password", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
+            "r new password to login.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_change_req_query", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id_query", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:change_pass_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+            "METER_ID = 563")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_query", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_message", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+            "ress registered with HBL.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_pass_change_query", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+            "nic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_tran_pass_change_query", "select P.LAST_TRANS_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{cust" +
+            "omer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_query", "SELECT P.IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{cus" +
+            "tomer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_query", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:name_update_query", "BEGIN Update DC_CUSTOMER_INFO D Set D.CUSTOMER_NAME = \'RYANDIAS\' where D.CNIC =\'{" +
+            "customer_cnic}\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_info_id_query", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", " Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PAR" +
+            "AMETER_ID = 1702")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_account_blocked_query", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_account_locked_query", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+            "\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_tran_password_locked_query", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+            "\'")]
+        public virtual void _2AsAUserIWantToVerifyChangeLoginID_ToCheckIfUserEntersEmailWhichIsNotTaggedWithEnteredCreditCardNumber()
+        {
+#line 82
+this._2AsAUserIWantToVerifyChangeLoginID("To check if user enters Email which is not tagged with entered Credit card number" +
+                    "", "3520227406461", "", "", "4902880001916747", "usman.safder@hbl.com", "cloginid666", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "pakistan2", "pakistan1", "pakistan1", "pakistan2", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
+                    "r new password to login.", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+                    "METER_ID = 563", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+                    "ress registered with HBL.", "DIGITAL_CHANNEL_SEC", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+                    "nic}\'", "select P.LAST_TRANS_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{cust" +
+                    "omer_cnic}\'", "0", "SELECT P.IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{cus" +
+                    "tomer_cnic}\'", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "BEGIN Update DC_CUSTOMER_INFO D Set D.CUSTOMER_NAME = \'RYANDIAS\' where D.CNIC =\'{" +
+                    "customer_cnic}\';COMMIT;END;", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+                    "", " Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PAR" +
+                    "AMETER_ID = 1702", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
+                    "}\'", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+                    "\'", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+                    "\'", new string[] {
+                        "source:Data/ChangeLoginID.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify Change Login ID: To check if Email address fields fo" +
+            "llows Email regex")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeLoginID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ChangeLoginID.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To check if Email address fields follows Email regex")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To check if Email address fields follows Email regex")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic", "3520227406461")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:card_pin", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Credit_card", "4902880001916747")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "usman@safder.hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id", "cloginid666")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_re_password", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_tran_re_pass", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message_password", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
+            "r new password to login.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_change_req_query", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id_query", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:change_pass_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+            "METER_ID = 563")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_query", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_message", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+            "ress registered with HBL.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_pass_change_query", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+            "nic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_tran_pass_change_query", "select P.LAST_TRANS_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{cust" +
+            "omer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_query", "SELECT P.IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{cus" +
+            "tomer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_query", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:name_update_query", "BEGIN Update DC_CUSTOMER_INFO D Set D.CUSTOMER_NAME = \'RYANDIAS\' where D.CNIC =\'{" +
+            "customer_cnic}\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_info_id_query", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", " Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PAR" +
+            "AMETER_ID = 1702")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_account_blocked_query", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_account_locked_query", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+            "\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_tran_password_locked_query", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+            "\'")]
+        public virtual void _2AsAUserIWantToVerifyChangeLoginID_ToCheckIfEmailAddressFieldsFollowsEmailRegex()
+        {
+#line 82
+this._2AsAUserIWantToVerifyChangeLoginID("To check if Email address fields follows Email regex", "3520227406461", "", "", "4902880001916747", "usman@safder.hbl.com", "cloginid666", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "pakistan2", "pakistan1", "pakistan1", "pakistan2", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
+                    "r new password to login.", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+                    "METER_ID = 563", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+                    "ress registered with HBL.", "DIGITAL_CHANNEL_SEC", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+                    "nic}\'", "select P.LAST_TRANS_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{cust" +
+                    "omer_cnic}\'", "0", "SELECT P.IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{cus" +
+                    "tomer_cnic}\'", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "BEGIN Update DC_CUSTOMER_INFO D Set D.CUSTOMER_NAME = \'RYANDIAS\' where D.CNIC =\'{" +
+                    "customer_cnic}\';COMMIT;END;", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+                    "", " Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PAR" +
+                    "AMETER_ID = 1702", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
+                    "}\'", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+                    "\'", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+                    "\'", new string[] {
+                        "source:Data/ChangeLoginID.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify Change Login ID: User should not be able to enter Cr" +
+            "edit card number more or less than the 16 digits")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeLoginID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ChangeLoginID.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "User should not be able to enter Credit card number more or less than the 16 digi" +
+            "ts")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "User should not be able to enter Credit card number more or less than the 16 digi" +
+            "ts")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic", "3520227406461")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:card_pin", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Credit_card", "4902880001916")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "aliwaqarazeem@hotmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id", "cloginid666")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_re_password", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_tran_re_pass", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message_password", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
+            "r new password to login.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_change_req_query", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id_query", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:change_pass_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+            "METER_ID = 563")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_query", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_message", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+            "ress registered with HBL.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_pass_change_query", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+            "nic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_tran_pass_change_query", "select P.LAST_TRANS_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{cust" +
+            "omer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_query", "SELECT P.IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{cus" +
+            "tomer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_query", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:name_update_query", "BEGIN Update DC_CUSTOMER_INFO D Set D.CUSTOMER_NAME = \'RYANDIAS\' where D.CNIC =\'{" +
+            "customer_cnic}\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_info_id_query", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", " Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PAR" +
+            "AMETER_ID = 1702")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_account_blocked_query", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_account_locked_query", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+            "\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_tran_password_locked_query", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+            "\'")]
+        public virtual void _2AsAUserIWantToVerifyChangeLoginID_UserShouldNotBeAbleToEnterCreditCardNumberMoreOrLessThanThe16Digits()
+        {
+#line 82
+this._2AsAUserIWantToVerifyChangeLoginID("User should not be able to enter Credit card number more or less than the 16 digi" +
+                    "ts", "3520227406461", "", "", "4902880001916", "aliwaqarazeem@hotmail.com", "cloginid666", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "pakistan2", "pakistan1", "pakistan1", "pakistan2", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
+                    "r new password to login.", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+                    "METER_ID = 563", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+                    "ress registered with HBL.", "DIGITAL_CHANNEL_SEC", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+                    "nic}\'", "select P.LAST_TRANS_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{cust" +
+                    "omer_cnic}\'", "0", "SELECT P.IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{cus" +
+                    "tomer_cnic}\'", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "BEGIN Update DC_CUSTOMER_INFO D Set D.CUSTOMER_NAME = \'RYANDIAS\' where D.CNIC =\'{" +
+                    "customer_cnic}\';COMMIT;END;", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+                    "", " Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PAR" +
+                    "AMETER_ID = 1702", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
+                    "}\'", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+                    "\'", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+                    "\'", new string[] {
+                        "source:Data/ChangeLoginID.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify Change Login ID: To check that Active Credit Card on" +
+            "ly customer can successfully change Login ID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeLoginID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ChangeLoginID.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To check that Active Credit Card only customer can successfully change Login ID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To check that Active Credit Card only customer can successfully change Login ID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic", "1730111412953")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:card_pin", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Credit_card", "4902880001916747")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "aliwaqarazeem@hotmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id", "cloginid666")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_re_password", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_tran_re_pass", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message_password", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
+            "r new password to login.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password_change_req_query", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id_query", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:change_pass_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+            "METER_ID = 563")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_query", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_message", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+            "ress registered with HBL.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_pass_change_query", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+            "nic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:last_tran_pass_change_query", "select P.LAST_TRANS_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{cust" +
+            "omer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_change_required_query", "SELECT P.IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{cus" +
+            "tomer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_password_reset_required_query", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+            "mer_cnic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:name_update_query", "BEGIN Update DC_CUSTOMER_INFO D Set D.CUSTOMER_NAME = \'RYANDIAS\' where D.CNIC =\'{" +
+            "customer_cnic}\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_info_id_query", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", " Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PAR" +
+            "AMETER_ID = 1702")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_account_blocked_query", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_account_locked_query", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+            "\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_tran_password_locked_query", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+            "\'")]
+        public virtual void _2AsAUserIWantToVerifyChangeLoginID_ToCheckThatActiveCreditCardOnlyCustomerCanSuccessfullyChangeLoginID()
+        {
+#line 82
+this._2AsAUserIWantToVerifyChangeLoginID("To check that Active Credit Card only customer can successfully change Login ID", "1730111412953", "", "", "4902880001916747", "aliwaqarazeem@hotmail.com", "cloginid666", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "pakistan2", "pakistan1", "pakistan1", "pakistan2", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
+                    "r new password to login.", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
+                    "METER_ID = 563", "Select K.MOBILE_NO from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'", "A one time password has been sent to your mobile number xxxxxxx and/ or email add" +
+                    "ress registered with HBL.", "DIGITAL_CHANNEL_SEC", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
+                    "nic}\'", "select P.LAST_TRANS_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{cust" +
+                    "omer_cnic}\'", "0", "SELECT P.IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{cus" +
+                    "tomer_cnic}\'", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
+                    "mer_cnic}\'", "BEGIN Update DC_CUSTOMER_INFO D Set D.CUSTOMER_NAME = \'RYANDIAS\' where D.CNIC =\'{" +
+                    "customer_cnic}\';COMMIT;END;", "Select K.CUSTOMER_INFO_ID from DC_CUSTOMER_INFO K where K.CNIC =\'{customer_cnic}\'" +
+                    "", " Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PAR" +
+                    "AMETER_ID = 1702", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
+                    "}\'", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+                    "\'", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
+                    "\'", new string[] {
+                        "source:Data/ChangeLoginID.xlsx"});
 #line hidden
         }
     }

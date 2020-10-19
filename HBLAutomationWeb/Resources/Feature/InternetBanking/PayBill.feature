@@ -4,7 +4,25 @@
 	I want to be told the sum of two numbers
 
 
-@BillPayment
+@BillPayment @Multi_Bill
+Scenario Outline: 1 As a user i want to Verify login for HBL Web Bill Payment
+	Given the test case title is "<Case>"
+	And I set value in context from data "<Login_UserId_Value>" as "username"
+	And the user is arrive to Internet Banking home page 
+	And I have given "<Login_UserId_Value>" on "Login_UserId"
+	And I have given "<Login_Password_Value>" on "Login_Password"
+	When I am performing on "Login_SignIn_Button"
+	And I wait 5000
+	And I have given "<OTP_Value>" on "Login_OTP_field"
+	And I am performing on "Login_OTP_Verify_Button"
+	Then verify through "Welcome" on "Login_Success_Text"
+	@source:Data/MultiBillPayment_Login.xlsx
+	Examples: 
+	|Case|Login_UserId_Value|Login_Password_Value|OTP_Value|
+
+
+
+@BillPayment @Single_Bill_Home_AddNew
 Scenario Outline: As a user i want to Verify Bill Payment From Home Screen Icon
 	Given the test case title is "<Case>"
 	And I set value in context from data "<Pay_BillPayment_ConsumerNo_Value>" as "ConsumerNo"
@@ -79,13 +97,13 @@ Scenario Outline: As a user i want to Verify Bill Payment From Home Screen Icon
 	And I am clicking on "Services_Transaction_Close_btn"
 	#And I am performing on "Pay_Transaction_PayBill_RatingCloseBtn"
 	#And verify the result from <result_query> on Schema "<result_db_value>"
-	@source:Data/IBBillPayment.xlsx
+	@source:Data/IBBillPayment_Home_AddNew.xlsx
 	Examples: 
 	|Case|status_query|status_query2|Category_Value|Company_Value|Pay_BillPayment_ConsumerNo_Value|Bill_Amount_query|company_code_value|OTP_Value|tran_pass_value|tran_type_query|tran_amount_query|from_account_query|company_name_query|consumer_no_query|db_val|db_val2|account_no|account_type|expiry_date|schedule_type|maximum_amount|bene_name|bene_query|instrument_type|schedule_config|schedule_verify|consumer_label_query|IS_SI_Allowed_query|is_paid_query|bill_status_id_query|is_partial_payment_query|
 
 
 
-@BillPayment
+@BillPayment @Single_Bill_Home_Bene
 Scenario Outline: As a user i want to Verify Bill Payment From Home Screen Icon with Bene
 	Given the test case title is "<Case>"
 	And I set value in context from data "<Pay_BillPayment_ConsumerNo_Value>" as "ConsumerNo"
@@ -151,13 +169,13 @@ Scenario Outline: As a user i want to Verify Bill Payment From Home Screen Icon 
 	And I verify Account Balance
 	#And I am performing on "Pay_Transaction_PayBill_RatingCloseBtn"
 	#And verify the result from <result_query> on Schema "<result_db_value>"
-	@source:Data/IBBillPayment.xlsx
+	@source:Data/IBBillPayment_Home_Bene.xlsx
 	Examples: 
 	|Case|status_query|status_query2|Category_Value|Company_Value|Pay_BillPayment_ConsumerNo_Value|Bill_Amount_query|company_code_value|OTP_Value|tran_pass_value|tran_type_query|tran_amount_query|from_account_query|company_name_query|consumer_no_query|db_val|db_val2|account_no|account_type|expiry_date|schedule_type|maximum_amount|bene_name|bene_query|instrument_type|schedule_config|schedule_verify|consumer_label_query|IS_SI_Allowed_query|is_paid_query|bill_status_id_query|is_partial_payment_query|
 
 
 
-@BillPayment
+@BillPayment @Single_Bill_Pay_AddNew
 Scenario Outline: 1 As a user i want to Verify Bill Payment through PAY
 	Given the test case title is "<Case>"
 	And I set value in context from data "<Pay_BillPayment_ConsumerNo_Value>" as "ConsumerNo"
@@ -237,12 +255,12 @@ Scenario Outline: 1 As a user i want to Verify Bill Payment through PAY
 	And I am clicking on "Services_Transaction_Close_btn"
 	#And I am performing on "Pay_Transaction_PayBill_RatingCloseBtn"
 	#And verify the result from <result_query> on Schema "<result_db_value>"
-	@source:Data/IBBillPayment.xlsx
+	@source:Data/IBBillPayment_Pay_AddNew.xlsx
 	Examples: 
 	|Case|status_query|status_query2|Category_Value|Company_Value|Pay_BillPayment_ConsumerNo_Value|Bill_Amount_query|company_code_value|OTP_Value|tran_pass_value|tran_type_query|tran_amount_query|from_account_query|company_name_query|consumer_no_query|db_val|db_val2|account_no|account_type|expiry_date|schedule_type|maximum_amount|bene_name|bene_query|instrument_type|schedule_config|schedule_verify|consumer_label_query|IS_SI_Allowed_query|is_paid_query|bill_status_id_query|is_partial_payment_query|
 
 
-@BillPayment
+@BillPayment @Single_Bill_Pay_Bene
 Scenario Outline: As a user i want to Verify Bill Payment through PAY with Bene
 	Given the test case title is "<Case>"
 	And I set value in context from data "<Pay_BillPayment_ConsumerNo_Value>" as "ConsumerNo"
@@ -308,12 +326,12 @@ Scenario Outline: As a user i want to Verify Bill Payment through PAY with Bene
 	And I verify Account Balance
 	#And I am performing on "Pay_Transaction_PayBill_RatingCloseBtn"
 	#And verify the result from <result_query> on Schema "<result_db_value>"
-	@source:Data/IBBillPayment.xlsx
+	@source:Data/IBBillPayment_Pay_Bene.xlsx
 	Examples: 
 	|Case|status_query|status_query2|Category_Value|Company_Value|Pay_BillPayment_ConsumerNo_Value|Bill_Amount_query|company_code_value|OTP_Value|tran_pass_value|tran_type_query|tran_amount_query|from_account_query|company_name_query|consumer_no_query|db_val|db_val2|account_no|account_type|expiry_date|schedule_type|maximum_amount|bene_name|bene_query|instrument_type|schedule_config|schedule_verify|consumer_label_query|IS_SI_Allowed_query|is_paid_query|bill_status_id_query|is_partial_payment_query|
 
 
-@BillPayment
+@BillPayment @Multi_Bill
 Scenario Outline: As a user i want to Verify MULTI Bill Payment through PAY
 	Given the test case title is "<Case>" 
 	And I set value in context from data "BillPayment" as "Transaction_Type"

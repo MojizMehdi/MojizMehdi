@@ -84,7 +84,7 @@
 #	|Case|CNIC_D|Debit_card_no|pin|dob|Login_id|scroll_text|activation_password|password_query|account_tag1|new_password|success_message|account_query|account_tag_query|feedback_type|feedback_option|password_change_req_query|transaction_password_query|success_message1|success_message2|success_message3|debit_req_text1|debit_req_text2|login_id_query|password_policy_query|IVR_require_query|IVR_check_query|dvl_query|customer_type|customer_type_query|created_on_query|updated_on_query|last_login_query|PARAM_CHANNEL_ID_query|ENABLE_PSD_require_query|ENABLE_PSD_check_query|
 
 
-@Registration
+@Registration @Debit_Registration
 Scenario Outline: As a user i want to Signup using Debit Card Web
 	Given the test case title is "<Case>"
 	And I set value in context from data "<scroll_text>" as "scroll_text"
@@ -149,7 +149,7 @@ Scenario Outline: As a user i want to Signup using Debit Card Web
 	|Case|CNIC_D|Debit_card_no|pin|Login_id|scroll_text|password_policy_query|login_pass|tran_pass|account_tag1|account_query|account_tag_query|success_message|login_id_query|created_on_query|updated_on_query|Last_login_query|customer_type|customer_type_query|IVR_require_query|IVR_check_query|ENABLE_PSD_require_query|ENABLE_PSD_check_query|PARAM_CHANNEL_ID_query|feedback_type|feedback_option|last_pass_change_query|last_tran_pass_change_query|login_confirm|tran_confirm|is_password_change_required_value|is_password_change_required_query|is_password_reset_required_value|is_password_reset_required_query|
 
 
-@Registration
+@Registration @Credit_Registration
 Scenario Outline: As a user i want to Signup using Credit Card Web
 	Given the test case title is "<Case>"
 	And I set value in context from data "<scroll_text>" as "scroll_text"
