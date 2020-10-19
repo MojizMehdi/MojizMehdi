@@ -8,7 +8,7 @@
     <Element keyword="Login_OTP_Verify_Button" locator="//button[@class='btn submit-btn']"/>
     <Element keyword="Login_Dashboard" locator="//img[@class='desk-logo']"/>
     <Element keyword="Login_Success_Text" locator="//h2[@class='over-lap']//span" />
-    
+
     <!-- Agent Portal-->
     
     <!-- Agent Portal-->
@@ -61,8 +61,7 @@
     <Element keyword="Forget_LoginID_Mobile" locator="//div[@ng-show='show{x}cardstep']//input[@ng-model='ForgotUserName.mobileNumber']" />
     <Element keyword="Forget_LoginID_CreditNo" locator="//div[@ng-show='showcreditcardstep']//input[@ng-model='ForgotUserName.creditCardNumber']" />
     <Element keyword="Forget_LoginID_CreditEmail" locator="//div[@ng-show='showcreditcardstep']//input[@ng-model='ForgotUserName.email']" />
-    <Element keyword="Forget_ChangeLogin_PassPolicy1" locator="(//div[@ng-show='show{x}cardstepchangeID']//p[@class='form-text ng-binding ng-scope'])[1]" />
-    <Element keyword="Forget_ChangeLogin_PassPolicy2" locator="(//div[@ng-show='show{x}cardstepchangeID']//p[@class='form-text ng-binding ng-scope'])[2]" />
+    <Element keyword="Forget_ChangeLogin_PassPolicy" locator="//div[@ng-show='showdebitcardstepchangeID']//div[@class='user-policy highlight']" />
     <Element keyword="Forget_Change_NextBtn" locator="//div[@ng-show='show{x}cardstepchangeID']//button" />
     <Element keyword="Forget_Change_DebitNo" locator="//div[@ng-show='showdebitcardstepchangeID']//input[@name='CardNo']" />
     <Element keyword="Forget_Change_DebitPin" locator="//div[@ng-show='showdebitcardstepchangeID']//input[@name='CardNoPin']" />
@@ -71,9 +70,7 @@
     <Element keyword="Forget_Change_NewLogin" locator="//div[@ng-show='show{x}cardstepchangeID']//input[@name='CreateLoginId']" />
     <Element keyword="Forget_Change_OTPMsg" locator="//p[@class='otp-p ng-binding']" />
     <Element keyword="Forget_Change_OTPNextBtn" locator="//div[@ng-show='showOTPstep']//button[text()='Next']" />
-    <Element keyword="Forget_Policy1" locator="//div[@class='user-policy']//h2" />
-    <Element keyword="Forget_Policy2" locator="//div[@class='user-policy']//small[1]" />
-    <Element keyword="Forget_Policy3" locator="//div[@class='user-policy']//small[2]" />
+    <Element keyword="Forget_Policy" locator="//div[@class='user-policy']" />
     <Element keyword="Forget_LoginPass" locator="//input[@name='LoginPassword']" />
     <Element keyword="Forget_LoginRePass" locator="//input[@name='ReLoginPassword']" />
     <Element keyword="Forget_Change_LoginTran" locator="//input[@name='TransactionPassword']" />
@@ -298,8 +295,8 @@
     <Element keyword="Services_Transaction_Activity" locator="//*[contains(text(),'Transaction Activity ')]"/>
     <Element keyword="Services_Last_Transaction" locator="//tr[@ng-repeat='x in GetDataTransactions.historyList'][1]"/>
     <Element keyword="Services_Transaction_Close_btn" locator="//div[@class='modal-content ui-draggable-handle']//a[contains(text(),'Close')]"/>
-    <Element keyword="Services_Clear_Btn" locator="//div[@class='form-group text-right mb-2']//button[contains(text(),'Clear All')]"/>
-    <Element keyword="Services_Search_Btn" locator="//div[@class='form-group text-right mb-2']//button[contains(text(),'Search')]"/>
+    <Element keyword="Services_Clear_Btn" locator="//button[contains(text(),'Clear All')]"/>
+    <Element keyword="Services_Search_Btn" locator="//button[contains(text(),'Search')]"/>
     <Element keyword="Services_CategoryFilter" locator="//select[@name='CategoryFilter']"/>
     <Element keyword="Services_NoOfTransaction" locator="//select[@name='No_of_transaction']"/>
     <Element keyword="Services_Transaction_Type" locator="//select[@name='Transaction_Type']"/>
@@ -453,8 +450,10 @@
     <Element keyword="MyAccount_MngSch_Delete" locator="//p[@class='ng-binding' and contains(@title,'{x}')]/parent::*//following-sibling::div//i[@class='fa fa-trash-o']" />
     <Element keyword="MyAccount_MngSch_DeleteMsg" locator="//div[@id='popup']//p" />
     <Element keyword="MyAccount_MngSch_DeleteOkBtn" locator="//div[@id='popup']//a" />
+    <Element keyword="MyAccount_MngSch_Cancel_RowClick" locator="//p[@class='ng-binding' and contains(@title,'{x}')]/parent::*/parent::*" />
+    <Element keyword="MyAccount_MngSch_CancelDateBtn" locator="//td[@class='ng-binding' and contains(text(),'{x}')]/following-sibling::td/a" />
 
-
+    
   </Module>
 
   <Module name="BeneManage">

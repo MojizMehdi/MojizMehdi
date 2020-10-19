@@ -99,7 +99,27 @@ namespace HBLAutomationWeb.Common
         string Billing_Month;
         string mobile;
         bool change_loginID_check = false;
+        string date_string = "";
+        string schedule_tran_id = "";
 
+
+
+        public void Set_ScheduleID(string schedule_tran_id)
+        {
+            this.schedule_tran_id = schedule_tran_id;
+        }
+        public string Get_Schedule_ID()
+        {
+            return schedule_tran_id;
+        }
+        public string Get_String_Date()
+        {
+            return date_string;
+        }
+        public void Set_String_Date(string date_string)
+        {
+            this.date_string = date_string;
+        }
         public string Get_Mobile_No()
         {
             return mobile;

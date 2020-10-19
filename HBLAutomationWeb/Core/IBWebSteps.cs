@@ -192,6 +192,10 @@ namespace HBLAutomationWeb.Core
                             keyword.Locator = keyword.Locator.Replace("{x}", "debit");
                         }
                     }
+                    if (Keyword.Contains("Investment_MutualFund_InvestBtn"))
+                    {
+                        keyword.Locator = keyword.Locator.Replace("{x}", context.GetInvestFundName());
+                    }
                     //selhelper.ScrollToElement(keyword.Locator);
                     selhelper.Button(keyword.Locator);
                 }
@@ -595,7 +599,13 @@ namespace HBLAutomationWeb.Core
                 context.Set_Mobile_No(value);
             }
             if (attribute == "change_loginID_check")
+            {
                 context.Set_Change_LoginID_Check(Convert.ToBoolean(value));
+            }
+            if (attribute == "String_Date")
+            {
+                context.Set_String_Date(value);
+            }
         }
 
         [When(@"I sleep (.*)")]
@@ -918,23 +928,10 @@ namespace HBLAutomationWeb.Core
                     amount = amount.Replace(",", "");
 
                     message = Convert.ToString(context.Get_term_deposit_balance());
-
                     Assert.AreEqual(message, amount);
-                
                 }
                 else
                 {
-                    if (Keyword.Equals("Forget_ChangeLogin_PassPolicy1") || Keyword.Equals("Forget_ChangeLogin_PassPolicy2"))
-                    {
-                        if (context.GetCustomerType() == "C")
-                        {
-                            keyword.Locator = keyword.Locator.Replace("{x}", "credit");
-                        }
-                        else
-                        {
-                            keyword.Locator = keyword.Locator.Replace("{x}", "debit");
-                        }
-                    }
                     if (Keyword.Equals("Forget_Success_LoginMsg") || Keyword.Equals("Forget_Change_OTPMsg"))
                     {
                         string message_ui = context.Get_Mobile_No();
@@ -996,6 +993,14 @@ namespace HBLAutomationWeb.Core
             if (query.Contains("{GUID}"))
             {
                 query = query.Replace("{GUID}", context.Get_HostReferenceNo());
+            }
+            if (query.Contains("{string_date}"))
+            {
+                query = query.Replace("{string_date}", context.Get_String_Date());
+            }
+            if (query.Contains("{schedule_tran_id}"))
+            {
+                query = query.Replace("{schedule_tran_id}", context.Get_Schedule_ID());
             }
             try
             {
@@ -1121,7 +1126,35 @@ namespace HBLAutomationWeb.Core
                     {
                         message = Convert.ToDecimal(message).ToString("0.00");
                     }
+                    if (Keyword.Equals("Forget_ChangeLogin_PassPolicy"))
+                    {
+                        if (context.GetCustomerType() == "C")
+                        {
+                            keyword.Locator = keyword.Locator.Replace("{x}", "credit");
+                        }
+                        else
+                        {
+                            keyword.Locator = keyword.Locator.Replace("{x}", "debit");
+                        }
 
+                        string temp = selhelper.ReturnKeywordValue(keyword.Locator);
+                        temp = temp.Replace("Login ID Policy\r\n", string.Empty);
+                        temp = temp.Replace("\r\n", ",");
+
+                        Assert.AreEqual(message, temp);
+                        return;
+                    }
+                    if (Keyword.Equals("Forget_Policy"))
+                    {
+                        string temp = selhelper.ReturnKeywordValue(keyword.Locator);
+                        temp = temp.Replace("Password Policy\r\n", string.Empty);
+                        temp = temp.Replace("\r\n", ",");
+
+                        message = message.Replace("<br>", ",");
+
+                        Assert.AreEqual(message, temp);
+                        return;
+                    }
                     if (Keyword.Equals("Pay_Transaction_Unpaid_Amount"))
                     {
                         string company_code = SourceDataTable.Rows[0][1].ToString();
@@ -2029,6 +2062,11 @@ namespace HBLAutomationWeb.Core
             {
                 keyword.Locator = keyword.Locator.Replace("{x}", context.GetBeneAccountNo());
             }
+            if (Keyword.Equals("MyAccount_MngSch_CancelDateBtn"))
+            {
+                keyword.Locator = keyword.Locator.Replace("{x}", context.Get_String_Date());
+            }
+
             selhelper.AlertOperation(option, keyword.Locator);
         }
 

@@ -121,7 +121,8 @@ namespace HBLAutomationWeb.Resources.Feature.InternetBanking
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "Registration"};
+                    "Registration",
+                    "Debit_Registration"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -249,6 +250,7 @@ this.ScenarioSetup(scenarioInfo);
             "p process mojizabidi98")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Registration")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Registration")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Debit_Registration")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/DebitRegistration.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When I am verifying Debit Sign up process mojizabidi98")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When I am verifying Debit Sign up process mojizabidi98")]
@@ -355,7 +357,8 @@ this.AsAUserIWantToSignupUsingDebitCardWeb("When I am verifying Debit Sign up pr
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "Registration"};
+                    "Registration",
+                    "Credit_Registration"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -468,6 +471,7 @@ this.ScenarioSetup(scenarioInfo);
             " up process mojizabidi99")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Registration")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Registration")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Credit_Registration")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/CreditRegistration.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When I am verifying Credit Sign up process mojizabidi99")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When I am verifying Credit Sign up process mojizabidi99")]

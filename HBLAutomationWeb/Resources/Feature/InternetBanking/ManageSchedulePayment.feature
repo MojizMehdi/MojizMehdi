@@ -3,6 +3,24 @@
 	As a math idiot
 	I want to be told the sum of two numbers
 
+
+@Login
+Scenario Outline: 1 As a user i want to Verify login for HBL Web Manage Schedule Payment
+	Given the test case title is "<Case>"
+	And I set value in context from data "<Login_UserId_Value>" as "username"
+	And the user is arrive to Internet Banking home page 
+	And I have given "<Login_UserId_Value>" on "Login_UserId"
+	And I have given "<Login_Password_Value>" on "Login_Password"
+	When I am performing on "Login_SignIn_Button"
+	And I wait 5000
+	And I have given "<OTP_Value>" on "Login_OTP_field"
+	And I am performing on "Login_OTP_Verify_Button"
+	Then verify through "Welcome" on "Login_Success_Text"
+	@source:Data/IBLogin.xlsx
+	Examples: 
+	|Case|Login_UserId_Value|Login_Password_Value|OTP_Value|
+
+
 @MngSchedule
 Scenario Outline: As a user I want to verify Schedule Management from My Account
 	Given the test case title is "<Case>" 
@@ -309,7 +327,7 @@ Scenario Outline: As a user I want to verify Schedule Management after adding Bi
 Scenario Outline: As a user I want to verify deleting a Send Money Schedule 
 	Given the test case title is "<Case>" 
 	And the user is arrive to Internet Banking home page
-	And I set value in context from database "<schedule_count_query>" as "user_schedule_count" on Schema "<db_val>"
+	#And I set value in context from database "<schedule_count_query>" as "user_schedule_count" on Schema "<db_val>"
 	And I set value in context from data "<account_no>" as "Bene_AccountNo"
 	When I am clicking on "MyAccount_Icon"
 	And I am clicking on "MyAccount_MngSch_Icon"
@@ -328,7 +346,7 @@ Scenario Outline: As a user I want to verify deleting a Send Money Schedule
 Scenario Outline: As a user I want to verify deleting a Bill Payment Schedule 
 	Given the test case title is "<Case>" 
 	And the user is arrive to Internet Banking home page
-	And I set value in context from database "<schedule_count_query>" as "user_schedule_count" on Schema "<db_val>"
+	#And I set value in context from database "<schedule_count_query>" as "user_schedule_count" on Schema "<db_val>"
 	And I set value in context from data "<consumer_no>" as "Bene_AccountNo"
 	When I am clicking on "MyAccount_Icon"
 	And I am clicking on "MyAccount_MngSch_Icon"
@@ -341,3 +359,54 @@ Scenario Outline: As a user I want to verify deleting a Bill Payment Schedule
 	@source:Data/ManageSchedule_Delete_BillPayment.xlsx
 	Examples: 
 	|Case|db_val|consumer_no|success_msg|delete_verify_query|
+
+
+@MngSchedule
+Scenario Outline: As a user I want to verify canceling a single send money schedule
+	Given the test case title is "<Case>" 
+	And the user is arrive to Internet Banking home page
+	#And I set value in context from database "<schedule_count_query>" as "user_schedule_count" on Schema "<db_val>"
+	And I set value in context from data "<account_no>" as "Bene_AccountNo"
+	And I set value in context from data "<cancel_date>" as "String_Date"
+	And I set value in context from database "<schedule_tran_id_query>" as "schedule_tran_id" on Schema "<db_val>"
+	When I am clicking on "MyAccount_Icon"
+	And I am clicking on "MyAccount_MngSch_Icon"
+	And I am clicking on "MyAccount_MngSch_Cancel_RowClick"
+	And I am clicking on "MyAccount_MngSch_SummaryClick"
+	Then I am performing "OK" alert operation on cross icon on "MyAccount_MngSch_CancelDateBtn"
+	And verify through "<success_msg>" on "MyAccount_MngSch_DeleteMsg"
+	And I am performing on "MyAccount_MngSch_DeleteOkBtn"
+	And verify the message "<schedule_status>" through database on "<schedule_status_query>" on Schema "<db_val>"
+
+
+
+	@source:Data/ManageSchedule_Delete_SendMoney.xlsx
+	Examples: 
+	|Case|db_val|account_no|success_msg|schedule_tran_id_query|cancel_date|schedule_status|schedule_status_query|
+
+
+
+
+@MngSchedule
+Scenario Outline: As a user I want to verify canceling a single bill payment schedule
+	Given the test case title is "<Case>" 
+	And the user is arrive to Internet Banking home page
+	#And I set value in context from database "<schedule_count_query>" as "user_schedule_count" on Schema "<db_val>"
+	And I set value in context from data "<consumer_no>" as "Bene_AccountNo"
+	And I set value in context from data "<cancel_date>" as "String_Date"
+	And I set value in context from database "<schedule_tran_id_query>" as "schedule_tran_id" on Schema "<db_val>"
+	When I am clicking on "MyAccount_Icon"
+	And I am clicking on "MyAccount_MngSch_Icon"
+	And I am clicking on "MyAccount_MngSch_Cancel_RowClick"
+	And I am clicking on "MyAccount_MngSch_SummaryClick"
+	Then I am performing "OK" alert operation on cross icon on "MyAccount_MngSch_CancelDateBtn"
+	And verify through "<success_msg>" on "MyAccount_MngSch_DeleteMsg"
+	And I am performing on "MyAccount_MngSch_DeleteOkBtn"
+	And verify the message "<schedule_status>" through database on "<schedule_status_query>" on Schema "<db_val>"
+
+
+	@source:Data/ManageSchedule_Cancel_BillPayment.xlsx
+	Examples: 
+	|Case|db_val|consumer_no|success_msg|schedule_tran_id_query|cancel_date|schedule_status|schedule_status_query|
+
+

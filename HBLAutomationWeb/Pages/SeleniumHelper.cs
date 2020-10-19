@@ -194,29 +194,36 @@ namespace HBLAutomationWeb.Pages
         {
             try
             {
+                IWebDriver driver = ContextPage.Driver;
+                ITakesScreenshot sc = (ITakesScreenshot)driver;
                 string FeatureName = ContextPage.GetInstance().GetExcelRecord().FeatureName;
                 string savelocation = Configuration.GetInstance().GetByKey("ScreenshotFolderPath") + FeatureName + DateTime.Now.ToString("yyyyMMdd") + "/";
                 if (!Directory.Exists(savelocation))
                 {
                     Directory.CreateDirectory(savelocation);
                 }
+                string fileName = ContextPage.GetInstance().GetExcelRecord().ScenarioName + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".png";
+                sc.GetScreenshot().SaveAsFile(savelocation + fileName, ScreenshotImageFormat.Png);
+                ExcelRecord record = ContextPage.GetInstance().GetExcelRecord();
+                record.ScreenshotPath = savelocation + fileName;
+                ContextPage.GetInstance().SetExcelRecord(record);
                 //ITakesScreenshot ssdriver = ContextPage.Driver as ITakesScreenshot;
                 //Screenshot screenshot = ssdriver.GetScreenshot();
                 //string fileName = ContextPage.GetInstance().GetExcelRecord().ScenarioName + ".png";
                 //screenshot.SaveAsFile(savelocation + fileName, ScreenshotImageFormat.Png);
-                Rectangle bounds = Screen.GetBounds(Point.Empty);
+                //Rectangle bounds = Screen.GetBounds(Point.Empty);
 
-                using (Bitmap bitmap = new Bitmap(bounds.Width, bounds.Height))
-                {
-                    using (Graphics g = Graphics.FromImage(bitmap))
-                    {
-                        g.CopyFromScreen(Point.Empty, Point.Empty, bounds.Size);
-                    }
-                    string fileName = ContextPage.GetInstance().GetExcelRecord().ScenarioName + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".png";
-                    ExcelRecord rec = ContextPage.GetInstance().GetExcelRecord();
-                    rec.ScreenshotPath = savelocation + fileName;
-                    bitmap.Save(savelocation + fileName, ImageFormat.Png);
-                }
+                //using (Bitmap bitmap = new Bitmap(bounds.Width, bounds.Height))
+                //{
+                //    using (Graphics g = Graphics.FromImage(bitmap))
+                //    {
+                //        g.CopyFromScreen(Point.Empty, Point.Empty, bounds.Size);
+                //    }
+                //    string fileName = ContextPage.GetInstance().GetExcelRecord().ScenarioName + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".png";
+                //    ExcelRecord rec = ContextPage.GetInstance().GetExcelRecord();
+                //    rec.ScreenshotPath = savelocation + fileName;
+                //    bitmap.Save(savelocation + fileName, ImageFormat.Png);
+                //}
             }
             catch (Exception exception)
             {

@@ -83,6 +83,60 @@ namespace HBLAutomationWeb.Resources.Feature.InternetBanking
             testRunner.CollectScenarioErrors();
         }
         
+        public virtual void _1AsAUserIWantToVerifyLoginForHBLWebTransactionalActivity(string @case, string login_UserId_Value, string login_Password_Value, string oTP_Value, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Login"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1 As a user i want to Verify login for HBL Web Transactional Activity", @__tags);
+#line 8
+this.ScenarioSetup(scenarioInfo);
+#line 9
+ testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 10
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"username\"", login_UserId_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 11
+ testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 12
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_UserId\"", login_UserId_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 13
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_Password\"", login_Password_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 14
+ testRunner.When("I am performing on \"Login_SignIn_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 15
+ testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 16
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 17
+ testRunner.And("I am performing on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 18
+ testRunner.Then("verify through \"Welcome\" on \"Login_Success_Text\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 As a user i want to Verify login for HBL Web Transactional Activity: When user " +
+            "id and password are valid")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "TransactionalActivity")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Login")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/IBLogin.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "YASIR113")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        public virtual void _1AsAUserIWantToVerifyLoginForHBLWebTransactionalActivity_WhenUserIdAndPasswordAreValid()
+        {
+#line 8
+this._1AsAUserIWantToVerifyLoginForHBLWebTransactionalActivity("When user id and password are valid", "YASIR113", "pakistan1", "12345678", new string[] {
+                        "source:Data/IBLogin.xlsx"});
+#line hidden
+        }
+        
         public virtual void _2AsAUserIWantToVerifyMyTransactionActivities(
                     string @case, 
                     string transaction_Category, 
@@ -109,53 +163,53 @@ namespace HBLAutomationWeb.Resources.Feature.InternetBanking
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2 As a user i want to Verify my Transaction activities", @__tags);
-#line 7
+#line 25
 this.ScenarioSetup(scenarioInfo);
-#line 8
+#line 26
 testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 9
+#line 27
 testRunner.And(string.Format("I set all excel values \"{0}\" \"{1}\" \"{2}\" \"{3}\" \"{4}\" \"{5}\" \"{6}\" \"{7}\" \"{8}\" \"{9}" +
                         "\" \"{10}\" \"{11}\" \"{12}\" \"{13}\" \"{14}\"  in context class", transaction_Category, no_Of_Transaction, tran_Type, from_Day, from_Month, from_Year, to_Day, to_Month, to_Year, min_Amount, max_Amount, acc_No_Or_Mobile, bill_Company, payee_Nick, to_Bank), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 11
+#line 29
 testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 12
+#line 30
 testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 13
+#line 31
 testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 14
+#line 32
 testRunner.When(string.Format("I select \"{0}\" on \"Services_CategoryFilter\"", transaction_Category), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 15
+#line 33
 testRunner.And(string.Format("I select \"{0}\" on \"Services_NoOfTransaction\"", no_Of_Transaction), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 16
+#line 34
 testRunner.And(string.Format("I select \"{0}\" on \"Services_Transaction_Type\"", tran_Type), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 17
+#line 35
 testRunner.And("I am clicking on \"Services_Date_From\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 18
+#line 36
 testRunner.And(string.Format("I select date \"{0}\" on month \"{1}\" on year \"{2}\"", from_Day, from_Month, from_Year), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 19
+#line 37
 testRunner.And("I am clicking on \"Services_Date_To\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 20
+#line 38
 testRunner.And(string.Format("I select date \"{0}\" on month \"{1}\" on year \"{2}\"", to_Day, to_Month, to_Year), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 21
+#line 39
 testRunner.And(string.Format("I have given \"{0}\" on \"Services_MIN_TRAN_AMOUNT\"", min_Amount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 22
+#line 40
 testRunner.And(string.Format("I have given \"{0}\" on \"Services_MAX_TRAN_AMOUNT\"", max_Amount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 23
+#line 41
 testRunner.And(string.Format("I have given \"{0}\" on \"Services_FROM_ACCOUNT\"", acc_No_Or_Mobile), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 24
+#line 42
 testRunner.And("I scroll to element \"Services_Clear_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 25
+#line 43
 testRunner.And(string.Format("I select on dropdown search \"Services_BILL_COMPANY\" to select \"{0}\" on \"Services_" +
                         "BILL_COMPANY_List\"", bill_Company), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 26
+#line 44
 testRunner.And(string.Format("I select on dropdown search \"Services_BENEFICIARY_NAME\" to select \"{0}\" on \"Servi" +
                         "ces_BENEFICIARY_NAME_List\"", payee_Nick), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 27
+#line 45
 testRunner.And(string.Format("I select on dropdown search \"Services_BENEFICIARY_BANK\" to select \"{0}\" on \"Servi" +
                         "ces_BENEFICIARY_BANK_List\"", to_Bank), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 28
+#line 46
 testRunner.And("I am performing on \"Services_Search_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 29
+#line 47
 testRunner.Then("I generate query based on given data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -186,7 +240,7 @@ testRunner.Then("I generate query based on given data", ((string)(null)), ((Tech
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank", "SAMBA")]
         public virtual void _2AsAUserIWantToVerifyMyTransactionActivities_WhenIAmVerifyingTransactionActivity()
         {
-#line 7
+#line 25
 this._2AsAUserIWantToVerifyMyTransactionActivities("When I am verifying transaction activity", "Financial", "5", "Payments", "2", "Feb", "2020", "4", "Mar", "2020", "100", "900", "03432070527", "PESCO", "Abby", "SAMBA", new string[] {
                         "source:Data/TransactionActivity.xlsx"});
 #line hidden
