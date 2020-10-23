@@ -6,6 +6,7 @@ using HBLAutomationAndroid.Beans;
 using HBLAutomationAndroid.Common;
 using HBLAutomationAndroid.XML.apiconfiguration;
 using HBLAutomationAndroid.XML.ElementFactory;
+using OpenQA.Selenium.Appium.Android;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -47,7 +48,7 @@ namespace HBLAutomationAndroid.Core
         [BeforeTestRun]
         public static void beforeTestRun()
         {
-            var htmlReporter = new ExtentHtmlReporter(@"D:\Automation\Automation_Report-" + DateTime.Now.ToString("yyyy-dd-M-HH-mm-ss") + ".html");
+            var htmlReporter = new ExtentHtmlReporter(@"D:\AndroidAutomation\Automation_Report-" + DateTime.Now.ToString("yyyy-dd-M-HH-mm-ss") + ".html");
             htmlReporter.Configuration().Theme = AventStack.ExtentReports.Reporter.Configuration.Theme.Dark;
 
             extent = new ExtentReports();
@@ -67,7 +68,8 @@ namespace HBLAutomationAndroid.Core
             }
             var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             var connectionStringsSection = (ConnectionStringsSection)config.GetSection("connectionStrings");
-
+            
+            
             try
             {
                 if (Common.Configuration.GetInstance().GetByKey("ConnectionString_DIGITAL_CHANNEL_SEC") != null && Common.Configuration.GetInstance().GetByKey("ProviderName") != null)
@@ -95,6 +97,20 @@ namespace HBLAutomationAndroid.Core
                 {
                     connectionStringsSection.ConnectionStrings["QAT_TPE"].ConnectionString = Common.Configuration.GetInstance().GetByKey("ConnectionString_QAT_TPE");
                     connectionStringsSection.ConnectionStrings["QAT_TPE"].ProviderName = Common.Configuration.GetInstance().GetByKey("ProviderName");
+                    config.Save();
+                    ConfigurationManager.RefreshSection("connectionStrings");
+                }
+                if (Common.Configuration.GetInstance().GetByKey("ConnectionString_TEST_SMS_BANKING") != null && Common.Configuration.GetInstance().GetByKey("ProviderName") != null)
+                {
+                    connectionStringsSection.ConnectionStrings["TEST_SMS_BANKING"].ConnectionString = Common.Configuration.GetInstance().GetByKey("ConnectionString_TEST_SMS_BANKING");
+                    connectionStringsSection.ConnectionStrings["TEST_SMS_BANKING"].ProviderName = Common.Configuration.GetInstance().GetByKey("ProviderName");
+                    config.Save();
+                    ConfigurationManager.RefreshSection("connectionStrings");
+                }
+                if (Common.Configuration.GetInstance().GetByKey("ConnectionString_QAT_BB_SYSTEM") != null && Common.Configuration.GetInstance().GetByKey("ProviderName") != null)
+                {
+                    connectionStringsSection.ConnectionStrings["QAT_BB_SYSTEM"].ConnectionString = Common.Configuration.GetInstance().GetByKey("ConnectionString_QAT_BB_SYSTEM");
+                    connectionStringsSection.ConnectionStrings["QAT_BB_SYSTEM"].ProviderName = Common.Configuration.GetInstance().GetByKey("ProviderName");
                     config.Save();
                     ConfigurationManager.RefreshSection("connectionStrings");
                 }
@@ -141,6 +157,7 @@ namespace HBLAutomationAndroid.Core
             ExcelRecord rec = ContextPage.GetInstance().GetExcelRecord();
             if (!(rec == null))
             {
+
                 if (ScenarioContext.Current.TestError == null && (rec.ExpectedResult == null && rec.ActualResult == null))
                 {
                     rec.Result = "PASS";
@@ -155,9 +172,48 @@ namespace HBLAutomationAndroid.Core
                     error = error.Replace("\r", " ");
                     rec.ErrorMessage = error;
                 }
-                if (rec.ExpectedResult != null && rec.ActualResult != null)
+                //if (rec.ExpectedResult != null && rec.ActualResult != null)
+                //{
+                //    if (rec.ExpectedResult.Equals(rec.ActualResult) && ScenarioContext.Current.TestError == null)
+                //    {
+                //        rec.Result = "PASS";
+                //    }
+                //    else
+                //    {
+                //        if (ScenarioContext.Current.TestError != null)
+
+                //        {
+                //            rec.Result = "FAIL";
+                //            string error = ScenarioContext.Current.TestError.Message;
+                //            error = error.Replace(",", " ");
+                //            error = error.Replace("\n", " ");
+                //            error = error.Replace("\r\n", " ");
+                //            error = error.Replace("\r", " ");
+                //            rec.ErrorMessage = error;
+
+                //        }
+                //    }
+
+                //}
+
+                if (rec.ExpectedResult != null)
                 {
-                    if (rec.ExpectedResult.Equals(rec.ActualResult) && ScenarioContext.Current.TestError == null)
+                    if (rec.ExpectedResult.ToLower() == "pass")
+                    {
+                        AndroidDriver<AndroidElement> driver = (AndroidDriver<AndroidElement>)ContextPage.Driver;
+                        string video = driver.StopRecordingScreen();
+                        string FeatureName = ContextPage.GetInstance().GetExcelRecord().FeatureName;
+                        string savelocation = Common.Configuration.GetInstance().GetByKey("ScreenshotFolderPath") + FeatureName + DateTime.Now.ToString("yyyyMMdd") + "/Videos/";
+                        byte[] decode = Convert.FromBase64String(video);
+                        if (!Directory.Exists(savelocation))
+                        {
+                            Directory.CreateDirectory(savelocation);
+                        }
+                        string fileName = ContextPage.GetInstance().GetExcelRecord().ScenarioName + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".mp4";
+                        rec.VideoPath = savelocation + fileName;
+                        File.WriteAllBytes(savelocation + fileName, decode);
+                    }
+                    if (ScenarioContext.Current.TestError == null)
                     {
                         rec.Result = "PASS";
                     }

@@ -3,11 +3,14 @@
 	As a math idiot
 	I want to be told the sum of two numbers
 
-@mytag
+@BillPayment @MultiBillPyament @AddNew_BillPayment @Bill_Payment_Exisitng_Bene @Bill_Payment_Exisitng_Bene_Via_Home
 Scenario Outline: When user try to login mobile banking for bill payment
 	Given the test case title is "<Case>"
 	And the user is arrive to Mobile Banking home page 
+	And the test case expected result is "<Expected_Result>"
+	And I wait 2000
 	And I am clicking on "Login_permission_allow_btn"
+	And I wait 1000
 	And I am clicking on "Login_permission_allow_btn2"
 	And I am clicking on "SendMoney_SkipBtn"
 	And I set value in context from data "<Login_UserId_Value>" as "username"
@@ -25,24 +28,28 @@ Scenario Outline: When user try to login mobile banking for bill payment
 	And I am clicking on "BillPayment_Rating"
 	And I am clicking on "BillPayment_RatingOkBtn"
 	Then verify through "Welcome, " on "Login_Success_Text"
-	@source:Data/HBLMobileLogin.xlsx
+	#And I am switiching activity as package "com.hbl.android.hblmobilebanking" as activity "com.hbl.android.hblmobilebanking.account.HomeScreen"
+	@source:Data/BillPaymentLogin.xlsx
 	Examples: 
-	|Case|Status_query|Login_UserId_Value|Login_Password_Value|OTP_Value|
+	|Case|Status_query|Login_UserId_Value|Login_Password_Value|OTP_Value|Expected_Result|
 	
-@BillPayment
+@AddNew_BillPayment @BillPayment
 Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make new payment
 	Given the test case title is "<Case>"
 	And I set value in context from data "<BillPayment_ConsumerNo_Value>" as "ConsumerNo"
 	And update the data by query "<status_query>" on QAT_BPS
 	And update the data by query "<status_query2>" on DIGITAL_CHANNEL_SEC
 	And the user is arrive to Mobile Banking home page
+	And the test case expected result is "<Expected_Result>"
 	And I am clicking on "Dashboard"
-	And I set value in context from database "<account_count_query>" as "account_count" on Schema "<db_val>"
-	When I save Account Balances 
+	#And I set value in context from database "<account_count_query>" as "account_count" on Schema "<db_val>"
+	#When I save Account Balances 
+	And I wait 3000
 	When I set value in context from data "0" as "term_deposit_flag" 
 	And I am clicking on "Dashboard_More"
 	And I have given "<Category_Value>" on "SendMoney_SearchBeneField"
 	And I am clicking on "BillPayment_CategoryLink"
+	And I wait 5000
 	And I am clicking on "SendMoney_SkipBtn"
 	And I am clicking on "BillPayment_AddNewBtn"
 	And I have given "<Company_Value>" on "BillPayment_Category_Company"
@@ -61,6 +68,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 	#PaidMarking(Setall)
 	And I set value in context from database "<paid_marking_query>" as "Is_PaidMarking_Req" on Schema "<db_val2>"
 	And I verify bill payment inquiry for mobile
+	And I scroll down
 	And I select "<account_no>" on "BillPayment_FromAccount"
 	#And I have given "<expiry_date>" on "Pay_Card_Expiry_Date"
 	And I wait 5000
@@ -84,7 +92,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 	#And I am clicking on "BillPayment_RatingOkBtn"
 	And I wait 2000
 	#And I am clicking on "BillPayment_Rating_Feedback_OkBtn"
-	And I save Transaction Info
+	#And I save Transaction Info
 	Then verify through "Transaction is successful. " on "BillPayment_TranSuccess"
 	#And verify through database on "<tran_type_query>" on Schema "<db_val>" on "BillPayment_TranType"
 	And verify through database on "<tran_amount_query>" on Schema "<db_val>" on "BillPayment_TranAmount"
@@ -118,7 +126,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 
 	@source:Data/BillPayment.xlsx
 	Examples: 
-	|Case|status_query|status_query2|Category_Value|Company_Value|BillPayment_ConsumerNo_Value|Bill_Amount_query|company_code_value|OTP_Value|tran_pass_value|tran_type_query|tran_amount_query|from_account_query|company_name_query|consumer_no_query|db_val|db_val2|account_no|account_type|expiry_date|bene_name|bene_query|instrument_type|consumer_number_label_query|paid_marking_query|LP_BillStatus_query|partial_payment_check_query|partial_payment_amount|
+	|Case|status_query|status_query2|account_count_query|Category_Value|Company_Value|BillPayment_ConsumerNo_Value|Bill_Amount_query|company_code_value|OTP_Value|tran_pass_value|tran_type_query|tran_amount_query|from_account_query|company_name_query|consumer_no_query|db_val|db_val2|account_no|account_type|expiry_date|bene_name|bene_query|instrument_type|consumer_number_label_query|paid_marking_query|LP_BillStatus_query|partial_payment_check_query|partial_payment_amount|Expected_Result|
 
 @BillPayment
 Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make new payment schedule
@@ -469,7 +477,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 	|Case|status_query|status_query2|Category_Value|Company_Value|BillPayment_ConsumerNo_Value|Bill_Amount_query|company_code_value|OTP_Value|tran_pass_value|tran_type_query|tran_amount_query|from_account_query|company_name_query|consumer_no_query|db_val|db_val2|account_no|account_type|expiry_date|bene_name|bene_query|instrument_type|consumer_number_label_query|paid_marking_query|LP_BillStatus_query|partial_payment_check_query|partial_payment_amount|
 
 
-@BillPayment
+@BillPayment @MultiBillPyament
 Scenario Outline: As a user i want to Verify Multiple Bill Payment through Mobile by bene via home icon
 	Given the test case title is "<Case>"
 	And the user is arrive to Mobile Banking home page
@@ -477,24 +485,28 @@ Scenario Outline: As a user i want to Verify Multiple Bill Payment through Mobil
 	#When I save Account Balances 
 	When I set value in context from data "0" as "term_deposit_flag"
 	And I am clicking on "Dashboard_BillPayment"
+	And I wait 5000
 	And I am clicking on "SendMoney_SkipBtn"
-	And I set list of elements from scroll view on "BillPayment_MultiPayment_Benelist_ConsumerNo" as "3"
+	And I set list of elements from scroll view on "BillPayment_MultiPayment_Benelist_ConsumerNo" as "5"
 	And verify the list using "<bene_check_query>" on Schema "<db_val>"
 	#And I verify array of elements from scroll view on "<bene_check_keywords>" as "<bene_check_query>" on schema "<db_val>" of "2"
 	And I select consumers for multi bill payment as "<Consumer_Numbers>" on "BillPayment_SearchBeneField"
+	#And I select consumers for multi bill payment as "<Consumer_Numbers>" on "BillPayment_SearchBeneField"
 	And I am clicking on "BillPayment_MultiBillSelect_Next"
 	And I set value in context from data "BillPayment" as "Transaction_Type"
 	And I verify bill details of consumer numbers for bill payment
+	And I select "<account_no>" on "BillPayment_FromAccount_Bene"
 	And I am clicking on "BillPayment_NextBtn"
 	And I have transaction pass check and given "<tran_pass_value>" on "BillPayment_TransactionPassword"
+	And I scroll to element text as "Pay"
 	And I am clicking on "BillPayment_MultiPayment_PayBtn"
 	And I wait 20000
 	And I am clicking on "BillPayment_Rating"
 	#And I am clicking on "BillPayment_RatingOkBtn"
 	And I wait 2000
 	#And I am clicking on "BillPayment_Rating_FeedbacBillPayment_TranSuccess_MultiBillk_OkBtn"
-	And I save Transaction Info for MultiPayment
-	Then verify multiple payments summary "Transaction is successful." on "BillPayment_TranSuccess_MultiBill" and "<tran_type_query>" on "BillPayment_TranType" and "<tran_amount_query>" on "BillPayment_TranAmount" and "<from_account_query>" on "BillPayment_TranFromAcc" and "<company_name_query>" on "BillPayment_CompanyName" and "<consumer_no_query>" on "BillPayment_TranSucess_ConsumerNo" on Schema "<db_val>"
+	#And I save Transaction Info for MultiPayment
+	Then verify multiple payments summary "Transaction is successful. " on "BillPayment_TranSuccess_MultiBill" and "<tran_type_query>" on "BillPayment_TranType" and "<tran_amount_query>" on "BillPayment_TranAmount" and "<from_account_query>" on "BillPayment_TranFromAcc" and "<company_name_query>" on "BillPayment_CompanyName" and "<consumer_no_query>" on "BillPayment_TranSucess_ConsumerNo" on Schema "<db_val>"
 	#Then verify multiple payments through "Transaction is successful. " on "BillPayment_TranSuccess_MultiBill"
 	#And verify multiple payments through database on "<tran_type_query>" on Schema "<db_val>" on "BillPayment_TranType"
 	#And verify multiple payments through database on "<tran_amount_query>" on Schema "<db_val>" on "BillPayment_TranAmount"
@@ -504,7 +516,7 @@ Scenario Outline: As a user i want to Verify Multiple Bill Payment through Mobil
 	And I am clicking on "BillPayment_TranInfoClose"
 	And I wait 2000
 	And I am clicking on "Dashboard"
-	And I verify Account Balance
+	#And I verify Account Balance
 	And I am clicking on "Dashboard_Sidebar"
 	And I am clicking on "Dashboard_Sidebar_TranActivity"
 	And I am clicking on "TransactionActivity_Financial"
@@ -513,4 +525,4 @@ Scenario Outline: As a user i want to Verify Multiple Bill Payment through Mobil
 	And verify transaction activity multiple payments "Successful" on "BillPayment_TranSuccess_MultiBill_TranActivity" and "<tran_type_query>" on "BillPayment_TranType" and "<tran_amount_query>" on "BillPayment_TranAmount" and "<from_account_query>" on "BillPayment_TranFromAcc" and "<company_name_query>" on "BillPayment_CompanyName" and "<consumer_no_query>" on "BillPayment_TranSucess_ConsumerNo" on Schema "<db_val>"
 	@source:Data/MultiBillPayment.xlsx
 	Examples: 
-	|Case|status_query|Consumer_Numbers|tran_pass_value|tran_type_query|tran_amount_query|from_account_query|company_name_query|consumer_no_query|bene_check_query|db_val|db_val2|
+	|Case|status_query|Consumer_Numbers|account_no|tran_pass_value|tran_type_query|tran_amount_query|from_account_query|company_name_query|consumer_no_query|bene_check_query|db_val|db_val2|

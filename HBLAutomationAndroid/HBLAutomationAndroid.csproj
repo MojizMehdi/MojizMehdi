@@ -290,6 +290,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TermDeposit.feature</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Feature\Konnet_Customer\BeneficiaryAddition.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BeneficiaryAddition.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Feature\Konnet_Customer\Konnect_Login.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Konnect_Login.feature</DependentUpon>
+    </Compile>
     <Compile Include="XML\apiconfiguration\ApiConfiguration.cs" />
     <Compile Include="XML\ElementFactory\Element.cs" />
     <Compile Include="XML\ElementFactory\ElementFactory.cs" />
@@ -311,6 +321,7 @@
     <None Include="Resources\Feature\HBLMobile\Data\BillPayment%28ExistingBene%29ViaHome.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\BillPayment%28Schedule%29.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\BillPayment.xlsx" />
+    <None Include="Resources\Feature\HBLMobile\Data\BillPaymentLogin.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\BillPaymentViaHome.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\ChangeLoginId.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\CreditRegistration.xlsx" />
@@ -329,6 +340,7 @@
     <None Include="Resources\Feature\HBLMobile\Data\SendMoney%28ViaBene%29_Interbranch.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\SendMoney%28ViaBene%29_Interbranch_Schedule.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\SendMoney.xlsx" />
+    <None Include="Resources\Feature\HBLMobile\Data\SendMoneyMobileLogin.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\SendMoneyViaMore_Interbank.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\SendMoneyViaMore_Interbank_Schedule.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\SendMoneyViaMore_Interbranch.xlsx" />
@@ -363,6 +375,16 @@
     <None Include="Resources\Feature\HBLMobile\TermDeposit.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>TermDeposit.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\Feature\Konnet_Customer\BeneficiaryAddition.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>BeneficiaryAddition.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\Feature\Konnet_Customer\Data\Konnect_Login.xlsx" />
+    <None Include="Resources\Feature\Konnet_Customer\Data\Konnect_Tagging.xlsx" />
+    <None Include="Resources\Feature\Konnet_Customer\Konnect_Login.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Konnect_Login.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

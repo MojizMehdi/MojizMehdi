@@ -30,6 +30,19 @@ namespace HBLAutomationAndroid.Core
             ContextPage.GetInstance().SetExcelRecord(record);
         }
 
+        [Given(@"the test case expected result is ""(.*)""")]
+        public void GivenTheTestCaseExpectedResultIs(string expected_result)
+        {
+            ExcelRecord rec = ContextPage.GetInstance().GetExcelRecord();
+            rec.ExpectedResult = expected_result;
+            if(expected_result.ToLower() == "pass")
+            {
+                AppiumHelper.Start_Video();
+
+            }
+        }
+
+
         [Given(@"the user is arrive to Mobile Banking home page")]
         [When(@"the user is arrive to Mobile Banking home page")]
         [Then(@"the user is arrive to Mobile Banking home page")]
@@ -59,7 +72,7 @@ namespace HBLAutomationAndroid.Core
         public void WhenIVerifyBillPaymentInquiryForMobile()
         {
             AppiumHelper apmhelper = new AppiumHelper();
-            string consumer_template_query = "SELECT CH.CONSUMER_NAME_TEMPLATE,CH.COMPANY_CODE FROM BPS_COMPANY_CHANNEL CH WHERE CH.IS_PARTIAL_PAYMENT_ALLOWED = 0 AND CH.CHANNEL_CODE = 'MB' AND CH.COMPANY_CODE = '" + context.GetCompany_Code() + "'";
+            string consumer_template_query = "SELECT CH.CONSUMER_NAME_TEMPLATE,CH.COMPANY_CODE FROM BPS_COMPANY_CHANNEL CH WHERE CH.CHANNEL_CODE = 'MB' AND CH.COMPANY_CODE = '" + context.GetCompany_Code() + "'";
             DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
             DataTable SourceDataTable = dlink.GetDataTable(consumer_template_query, "QAT_BPS");
             string consumer_template = SourceDataTable.Rows[0][0].ToString();
@@ -144,6 +157,29 @@ namespace HBLAutomationAndroid.Core
 
 
         }
+
+        [Given(@"I am resetting app")]
+        [When(@"I am resetting app")]
+        public void WhenIAmResettingApp()
+        {
+            AppiumHelper apmhelper = new AppiumHelper();
+            apmhelper.reset_app();
+        }
+
+        [Given(@"I am switiching activity as package ""(.*)"" as activity ""(.*)""")]
+        [When(@"I am switiching activity as package ""(.*)"" as activity ""(.*)""")]
+        [Then(@"I am switiching activity as package ""(.*)"" as activity ""(.*)""")]
+        public void GivenIAmSwitichingActivityAsPackageAsActivity(string app_package, string app_activity)
+        {
+            AppiumHelper apmhelper = new AppiumHelper();
+            apmhelper.swtich_activity(app_package, app_activity);
+        }
+
+        //[When(@"I deselect consumers for multi bill payment as ""(.*)"" on ""(.*)""")]
+        //public void WhenIDeselectConsumersForMultiBillPaymentAsOn(string p0, string p1)
+        //{
+        //    ScenarioContext.Current.Pending();
+        //}
 
 
         [When(@"I have given ""(.*)"" on ""(.*)""")]
@@ -345,9 +381,15 @@ namespace HBLAutomationAndroid.Core
         {
             try
             {
+                bool kmobile_msg_check = false;
                 if (query.Contains("{Company_Code}"))
                 {
                     query = query.Replace("{Company_Code}", context.GetCompany_Code());
+                }
+                if (query.Contains("{KMobileNo}"))
+                {
+                    query = query.Replace("{KMobileNo}",context.Get_mobile_no());
+                    kmobile_msg_check = true;
                 }
                 string locator_type = "id";
                 DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
@@ -357,6 +399,19 @@ namespace HBLAutomationAndroid.Core
                 {
                     message = message.Replace("<br>", string.Empty);
                 }
+                if (kmobile_msg_check == true)
+                {
+                    if (message == "")
+                    {
+                        query = "SELECT BB.FIRST_NAME FROM BB_CUSTOMER  BB WHERE BB.CONTACT_NUMBER = '" + context.Get_mobile_no() + "'";
+                        dlink = new DataAccessComponent.DataAccessLink();
+                        SourceDataTable = dlink.GetDataTable(query, "QAT_BB_SYSTEM");
+                        message = SourceDataTable.Rows[0][0].ToString();
+                        message = message.Remove(message.IndexOf(' '));
+                    }
+                    message = "HI, " + message + "!";
+                }
+                
                 AppiumHelper apmhelper = new AppiumHelper();
                 //apmhelper.checkPageIsReady();
                 Element keyword = ContextPage.GetInstance().GetElement(Keyword);
@@ -735,7 +790,7 @@ namespace HBLAutomationAndroid.Core
                 {
                     if (Keyword.Contains("BillPayment_AddNewBtn"))
                     {
-                        string query = "SELECT COUNT(*) FROM DC_BILL_PAYMENT_BENEFICIARY BB WHERE BB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME ='" + context.GetUsername() + "') AND BB.COMPANY_SUB_CATEGORY = '" + context.GetCategory_value() + " Bill Payment' AND BB.IS_ACTIVE = 1";
+                        string query = "SELECT COUNT(*) FROM DC_BILL_PAYMENT_BENEFICIARY BB WHERE BB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME ='" + context.GetUsername() + "') AND BB.COMPANY_SUB_CATEGORY LIKE '%" + context.GetCategory_value() + "%' AND BB.IS_ACTIVE = 1";
                         DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
                         DataTable SourceDataTable = dlink.GetDataTable(query, "DIGITAL_CHANNEL_SEC");
                         int a = Convert.ToInt32(SourceDataTable.Rows[0][0]);
@@ -778,6 +833,7 @@ namespace HBLAutomationAndroid.Core
                     }
                     if (Keyword == "SendMoney_AddNewBtn")
                     {
+                        //int a = (context.Get_no_of_accounts() + context.Get_bene_count_inter_branch() + context.Get_bene_count_inter_bank());
                         if ((context.Get_no_of_accounts() + context.Get_bene_count_inter_branch() + context.Get_bene_count_inter_bank()) <= 1)
                         {
                             return;
@@ -915,6 +971,8 @@ namespace HBLAutomationAndroid.Core
         }
 
         [Given(@"update the data by query ""(.*)"" on Schema ""(.*)""")]
+        [When(@"update the data by query ""(.*)"" on Schema ""(.*)""")]
+        [Then(@"update the data by query ""(.*)"" on Schema ""(.*)""")]
         public void GivenUpdateTheDataByQueryOnSchema(string query, string schema)
         {
             if (query != "")
@@ -1341,7 +1399,10 @@ namespace HBLAutomationAndroid.Core
                 monthsApart = Math.Abs(monthsApart);
                 for (int i = 0; i < monthsApart; i++)
                 {
-                    if (Convert.ToDouble(Configuration.GetInstance().GetByKey("platformVersion")) <= 5.0)
+                    string platformVersion = Configuration.GetInstance().GetByKey("platformVersion");
+                    platformVersion = platformVersion.Substring(0, platformVersion.Length - 2);
+                    double pv = Convert.ToDouble(platformVersion);
+                    if (pv <= 5.0)
                     {
                         apmhelper.scroll_down(0.65, 0.30);
                     }
@@ -1379,8 +1440,9 @@ namespace HBLAutomationAndroid.Core
                 for (int i = 0; i < monthsApart; i++)
                 {
                     string platformVersion = Configuration.GetInstance().GetByKey("platformVersion");
+                    platformVersion = platformVersion.Substring(0, platformVersion.Length - 2);
                     double pv = Convert.ToDouble(platformVersion);
-                    if (pv <= 5.1)
+                    if (pv <= 5.0)
                     {
                         apmhelper.scroll_down(0.65, 0.30);
                     }
@@ -1743,6 +1805,16 @@ namespace HBLAutomationAndroid.Core
                 {
                     return;
                 }
+                if (Keyword.Equals("Forget_Login_Id_SuccessMessage_desc"))
+                {
+                    string message_ui = context.Get_mobile_no();
+                    string mobile = message_ui.Substring(7, 4);
+                    if (message.Contains("xxxxxxx"))
+                    {
+                        message = message.Replace("xxxxxxx", "xxxxxxx" + mobile);
+                    }
+
+                }
 
                 //if (message == "Signup_PassPolicy")
                 //{
@@ -1998,6 +2070,10 @@ namespace HBLAutomationAndroid.Core
                 {
                     context.Set_BillPaymentCategory(value);
                 }
+                if(attribute == "KMobileNo")
+                {
+                    context.Set_mobile_no(value);
+                }
             }
             catch (Exception exception)
             {
@@ -2096,6 +2172,12 @@ namespace HBLAutomationAndroid.Core
                 {
                     context.Set_account_count(Convert.ToInt32(db_value));
                 }
+                if (attribute == "mobile_no")
+                {
+                    context.Set_mobile_no(db_value);
+                }
+
+                
                 //Clob 
             }
             catch (Exception exception)
@@ -2210,7 +2292,8 @@ namespace HBLAutomationAndroid.Core
                     string per_transaction = "";
                     string limit_text = limit_management_elements[i];
                     apmhelper.scroll_to_element_text(limit_text);
-                    apmhelper.scroll_to_element_text_by_index("Per Transaction -", i);
+                    //apmhelper.scroll_down(0.95, 0.001);
+                    apmhelper.scroll_to_element_text_with_parent_sibling(limit_text,"Per Transaction");
                     string temp = keyword.Locator.Replace("{Limit_Type}", limit_text);
                     string limit_type = apmhelper.ReturnKeywordValue(temp,"xpath");
                     dlink = new DataAccessComponent.DataAccessLink();
@@ -2413,7 +2496,9 @@ namespace HBLAutomationAndroid.Core
                 Element Keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_Availed");
                 temp_keyword = Keyword.Locator.Replace("{Limit_Type}", limit_type);
                 apmhelper.scroll_to_element_text(limit_type);
-                apmhelper.scroll_to_element_text_by_index("Per Transaction - ",counter);
+                apmhelper.scroll_to_element_text_with_parent_sibling(limit_type, "Per Transaction");
+                //apmhelper.scroll_down(0.65, 0.10);
+                //apmhelper.scroll_to_element_text_by_index("Per Transaction - ",counter);
                 string daily_consume_limit_ui = apmhelper.ReturnKeywordValue(temp_keyword,"xpath");
                 daily_consume_limit_ui = daily_consume_limit_ui.Remove(daily_consume_limit_ui.Length - 3);
                 daily_consume_limit_ui = daily_consume_limit_ui.Replace(",", "");
@@ -2572,7 +2657,9 @@ namespace HBLAutomationAndroid.Core
                 Keyword = ContextPage.GetInstance().GetElement("MyAccount_Limit_Remaining");
                 temp_keyword = Keyword.Locator.Replace("{Limit_Type}", limit_type);
                 apmhelper.scroll_to_element_text(limit_type);
-                apmhelper.scroll_to_element_text_by_index("Per Transaction - ", counter);
+                apmhelper.scroll_to_element_text_with_parent_sibling(limit_type, "Per Transaction");
+                //apmhelper.scroll_down(0.65, 0.10);
+                //apmhelper.scroll_to_element_text_by_index("Per Transaction - ", counter);
                 string daily_rem_after_edit = apmhelper.ReturnKeywordValue(temp_keyword, "xpath");
                 daily_rem_after_edit = daily_rem_after_edit.Remove(daily_rem_after_edit.Length - 3);
                 daily_rem_after_edit = daily_rem_after_edit.Replace(",", "");
@@ -3304,7 +3391,7 @@ namespace HBLAutomationAndroid.Core
                 {
                     Element keyword = ContextPage.GetInstance().GetElement(Keyword);
                     apmhelper.SetTextBoxValue(consumer_no_arr[i], keyword.Locator, "id");
-                    string query = "SELECT PB.BILL_BENE_NICK,PB.BILL_STATUS,PB.DUE_DATE,PB.AMOUNT_BEFORE_DUE_DATE,PB.AMOUNT_AFTER_DUE_DATE FROM DC_BILL_PAYMENT_BENEFICIARY PB WHERE PB.CONSUMER_NUMBER = '" + consumer_no_arr[i] + "' AND PB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '" + context.GetUsername() + "')";
+                    string query = "SELECT PB.BILL_BENE_NICK,PB.BILL_STATUS,PB.DUE_DATE,PB.AMOUNT_BEFORE_DUE_DATE,PB.AMOUNT_AFTER_DUE_DATE,PB.COMPANY_SUB_CATEGORY FROM DC_BILL_PAYMENT_BENEFICIARY PB WHERE PB.CONSUMER_NUMBER = '" + consumer_no_arr[i] + "' AND PB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '" + context.GetUsername() + "')";
                     DataAccessComponent.DataAccessLink dLink = new DataAccessComponent.DataAccessLink();
                     DataTable SourceDataTable = dLink.GetDataTable(query, "DIGITAL_CHANNEL_SEC");
                     BILL_BENE_NICK = SourceDataTable.Rows[0][0].ToString();
@@ -3321,6 +3408,10 @@ namespace HBLAutomationAndroid.Core
                     DUE_DATE = DUE_DATE_FORMAT.ToString("dd-MMM-yyyy");
                     Element Temp_keyword = ContextPage.GetInstance().GetElement("BillPayment_BeneNick_ViewScreen");
                     ui_bene_nick = apmhelper.ReturnKeywordValue(Temp_keyword.Locator, "id");
+                    if(BILL_BENE_NICK == "")
+                    {
+                        BILL_BENE_NICK = SourceDataTable.Rows[0][5].ToString();
+                    }
                     if (ui_bene_nick != BILL_BENE_NICK)
                     {
                         throw new AssertFailedException(string.Format("The Bene Nick in database {0} is not equal to Bene Nick On Screen {1}", BILL_BENE_NICK, ui_bene_nick));
@@ -3386,7 +3477,7 @@ namespace HBLAutomationAndroid.Core
                     DateTime temp_var = Convert.ToDateTime(billing_month);
                     billing_month = temp_var.ToString("MM/yyyy");
 
-                    string query = "Select L.COMPANY_CODE, L.DUE_DATE, l.BILL_AMOUNT, l.CONSUMER_NAME, L.BILL_STATUS_ID  FROM LP_BILLS L WHERE L.CONSUMER_NO ='" + consumer_no_arr[i] + "' and TO_CHAR(LP.BILLING_MONTH,'MM/YYYY') = '" + billing_month + "'";
+                    string query = "Select L.COMPANY_CODE, L.DUE_DATE, l.BILL_AMOUNT, l.CONSUMER_NAME, L.BILL_STATUS_ID  FROM LP_BILLS L WHERE L.CONSUMER_NO ='" + consumer_no_arr[i] + "' and TO_CHAR(L.BILLING_MONTH,'MM/YYYY') = '" + billing_month + "'";
                     DataAccessComponent.DataAccessLink dLink = new DataAccessComponent.DataAccessLink();
                     DataTable SourceDataTable = dLink.GetDataTable(query, "QAT_BPS");
                     COMPANY_CODE = SourceDataTable.Rows[0][0].ToString();
@@ -3417,7 +3508,7 @@ namespace HBLAutomationAndroid.Core
                     company_name = SourceDataTable.Rows[0][0].ToString();
                     company_name = company_name.Replace("\r\n", "");
                     SURCHARGE_ATTRIBUTE = SourceDataTable.Rows[0][1].ToString();
-                    query = "Select " + SURCHARGE_ATTRIBUTE + " from LP_BILLS L WHERE L.CONSUMER_NO = '" + consumer_no_arr[i] + "' AND TO_CHAR(LP.BILLING_MONTH,'MM/YYYY') = '" + context.GetBilling_Month() + "'";
+                    query = "Select " + SURCHARGE_ATTRIBUTE + " from LP_BILLS L WHERE L.CONSUMER_NO = '" + consumer_no_arr[i] + "' AND TO_CHAR(L.BILLING_MONTH,'MM/YYYY') = '" + billing_month + "'";
 
                     dLink = null;
                     dLink = new DataAccessComponent.DataAccessLink();
@@ -3501,7 +3592,7 @@ namespace HBLAutomationAndroid.Core
                     {
                         ui_amount_within_dd = apmhelper.ReturnKeywordValue(Temp_keyword.Locator, "xpath");
                     }
-                    if (ui_amount_within_dd != amount_within_dd)
+                    if (ui_amount_within_dd != amount_within_dd.TrimStart(new Char[] { '0' }))
                     {
                         throw new AssertFailedException(string.Format("The Amount With In Due Date in database {0} is not equal to Amount With In Due Date On Screen {1}", amount_within_dd, ui_amount_within_dd));
                     }
@@ -3511,7 +3602,7 @@ namespace HBLAutomationAndroid.Core
                     {
                         ui_amount_after_dd = apmhelper.ReturnKeywordValue(Temp_keyword.Locator, "xpath");
                     }
-                    if (ui_amount_after_dd != amount_after_dd)
+                    if (ui_amount_after_dd != amount_after_dd.TrimStart(new Char[] { '0' }))
                     {
                         throw new AssertFailedException(string.Format("The Amount After Due Date in database {0} is not equal to Amount After Due Date On Screen {1}", amount_after_dd, ui_amount_after_dd));
                     }
@@ -3535,6 +3626,7 @@ namespace HBLAutomationAndroid.Core
                 }
                 Temp_keyword = null;
                 Temp_keyword = ContextPage.GetInstance().GetElement("BillPayment_multipayment_totalamount");
+                apmhelper.scroll_to_element_text("Next");
                 string total_amount = apmhelper.ReturnKeywordValue(Temp_keyword.Locator, "id");
                 total_amount = total_amount.Replace(@",", string.Empty);
                 context.Set_multi_payment_amount(amount);
@@ -3633,7 +3725,7 @@ namespace HBLAutomationAndroid.Core
             string temp_query = "";
             for (int i = 0; i < consumer_no_arr.Length; i++)
             {
-                //apmhelper.verification(TranSuccessMessage, keyword.Locator, locator_type);
+                apmhelper.verification(TranSuccessMessage, keyword.Locator, "xpath");
                 if (Keyword1.Contains("BillPayment_TranSuccess") || Keyword1.Contains("SendMoney_TranSuccessMessage") || Keyword1.Contains("BillPayment_TranSuccess_MultiBill"))
                 {
                     keyword = null;
@@ -3688,7 +3780,7 @@ namespace HBLAutomationAndroid.Core
                                     queries[j] = temp;
                                 }
                             }
-                            if (queries[j].Equals("SendMoney_TranAmount")) //|| keywords[j].Equals("BillPayment_TranAmount"))
+                            if (queries[j].Equals("SendMoney_TranAmount") || keywords[j].Equals("BillPayment_TranAmount"))
                             {
                                 message = Convert.ToDecimal(message).ToString("0.00");
                             }
@@ -3752,7 +3844,7 @@ namespace HBLAutomationAndroid.Core
             string temp_query = "";
             for (int i = 1; i <= consumer_no_arr.Length; i++)
             {
-                //apmhelper.verification(TranSuccessMessage, keyword.Locator, locator_type);
+                apmhelper.verification(TranSuccessMessage, keyword.Locator, "xpath");
                 if (Keyword1.Contains("BillPayment_TranSuccess") || Keyword1.Contains("SendMoney_TranSuccessMessage") || Keyword1.Contains("BillPayment_TranSuccess_MultiBill"))
                 {
                     keyword = null;

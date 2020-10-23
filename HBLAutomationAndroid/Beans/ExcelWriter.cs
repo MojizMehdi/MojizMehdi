@@ -35,12 +35,9 @@ namespace HBLAutomationAndroid.Beans
 
             using (var w = new StreamWriter(savelocation + fileName + ".csv"))
             {
-                var header = string.Format("{0},{1},{2},{3}", "Feature", "Scenario", "Status", "Error Message");
+                var header = string.Format("{0},{1},{2},{3},{4},{5},{6}", "Feature", "Scenario", "Expected Result","Actual Result", "Error Message","Screenshot Path","Video Path");
                 w.WriteLine(header);
                 w.Flush();
-
-
-
 
                 //for(int i=1;i<excelRecord.Count;i++)
                 foreach (ExcelRecord rec in excelRecord)
@@ -48,7 +45,7 @@ namespace HBLAutomationAndroid.Beans
                     if (!(rec == null))
                     {
                         //var line = string.Format("{0},{1},{2},{3},{4}", rec.FeatureName, rec.ScenarioName, "'" + rec.STAN, "'" + rec.ExpectedResult, "'" + rec.ActualResult);
-                        var line = string.Format("{0},{1},{2},{3}", rec.FeatureName, rec.ScenarioName, rec.Result, rec.ErrorMessage);
+                        var line = string.Format("{0},{1},{2},{3},{4},{5},{6}", rec.FeatureName, rec.ScenarioName,rec.ExpectedResult, rec.Result, rec.ErrorMessage,rec.ScreenshotPath,rec.VideoPath);
                         w.WriteLine(line);
                         w.Flush();
                     }

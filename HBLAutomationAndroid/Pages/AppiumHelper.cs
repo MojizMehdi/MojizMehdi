@@ -25,12 +25,15 @@ using DocumentFormat.OpenXml.Spreadsheet;
 using OpenQA.Selenium.Appium.MultiTouch;
 using System.Data;
 using OpenQA.Selenium.Appium.Windows.Enums;
+using HBLAutomationAndroid.Beans;
+using OpenQA.Selenium.Appium.ScreenRecording;
 
 namespace HBLAutomationAndroid.Pages
 {
     class AppiumHelper
     {
-        AppiumDriver<AndroidElement> driver = ContextPage.Driver;
+        //AppiumDriver<AndroidElement> driver = ContextPage.Driver;
+        AndroidDriver<AndroidElement> driver = (AndroidDriver<AndroidElement>)ContextPage.Driver;
         //IWebDriver driver = ContextPage.Driver;
         private WebDriverWait waitDriver;
         string savelocation;
@@ -117,6 +120,31 @@ namespace HBLAutomationAndroid.Pages
             ITouchAction tc = new TouchAction(driver);
             tc.LongPress(Control).Perform();
 
+        }
+        //change_driver
+        public void swtich_activity(string activity_package, string activity_name)
+        {
+            try
+            {
+                string ali = driver.CurrentActivity;
+                driver.StartActivity(activity_package,activity_name, activity_package, activity_name,false);
+            }
+            catch (Exception exception)
+            {
+                throw new Exception(exception.Message);
+            }
+        }
+        public void reset_app()
+        {
+            try
+            {
+                driver.ResetApp();
+                
+            }
+            catch (Exception exception)
+            {
+                throw new Exception(exception.Message);
+            }
         }
         //For Counting Elements
         public int SizeCountElements(string locator, string locator_type)
@@ -207,39 +235,104 @@ namespace HBLAutomationAndroid.Pages
         //}
 
 
-        ////For Taking Screenshot
-        public static void TakeScreenshot()
+        ////For Taking Video
+        public static void Start_Video()
         {
             try
             {
-
-                string FeatureName = ContextPage.GetInstance().GetExcelRecord().FeatureName;
-                string savelocation = Configuration.GetInstance().GetByKey("ScreenshotFolderPath") + FeatureName + DateTime.Now.ToString("yyyyMMdd") + "/";
-                if (!Directory.Exists(savelocation))
-                {
-                    Directory.CreateDirectory(savelocation);
-                }
-                //ITakesScreenshot ssdriver = ContextPage.Driver as ITakesScreenshot;
-                //Screenshot screenshot = ssdriver.GetScreenshot();
-                //string fileName = ContextPage.GetInstance().GetExcelRecord().ScenarioName + ".png";
-                //screenshot.SaveAsFile(savelocation + fileName, ScreenshotImageFormat.Png);
-
-                Rectangle bounds = Screen.GetBounds(Point.Empty);
-
-                using (Bitmap bitmap = new Bitmap(bounds.Width, bounds.Height))
-                {
-                    using (Graphics g = Graphics.FromImage(bitmap))
-                    {
-                        g.CopyFromScreen(Point.Empty, Point.Empty, bounds.Size);
-                    }
-                    string fileName = ContextPage.GetInstance().GetExcelRecord().ScenarioName + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".png";
-                    bitmap.Save(savelocation + fileName, ImageFormat.Png);
-                }
+                AndroidDriver<AndroidElement> driver = (AndroidDriver<AndroidElement>)ContextPage.Driver;
+                AndroidStartScreenRecordingOptions sd = new AndroidStartScreenRecordingOptions();
+                sd.WithBitRate(500000);
+                sd.WithVideoSize("720x1280");
+                driver.StartRecordingScreen(sd);
             }
             catch (Exception exception)
             {
                 throw new AssertFailedException(exception.Message);
             }
+
+
+        }
+
+
+        ////For Taking Screenshot
+        public static void TakeScreenshot()
+        {
+            try
+            {
+                AndroidDriver<AndroidElement> driver = (AndroidDriver<AndroidElement>)ContextPage.Driver;
+                string FeatureName = ContextPage.GetInstance().GetExcelRecord().FeatureName;
+                string savelocation = Configuration.GetInstance().GetByKey("ScreenshotFolderPath") + FeatureName + DateTime.Now.ToString("yyyyMMdd") + "/";
+                Screenshot sc = ((ITakesScreenshot)driver).GetScreenshot();
+                if (!Directory.Exists(savelocation))
+                {
+                    Directory.CreateDirectory(savelocation);
+                }
+                string fileName = ContextPage.GetInstance().GetExcelRecord().ScenarioName + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".png";
+                sc.SaveAsFile(savelocation + fileName,ScreenshotImageFormat.Png);
+                ExcelRecord record = ContextPage.GetInstance().GetExcelRecord();
+                record.ScreenshotPath = savelocation + fileName;
+                ContextPage.GetInstance().SetExcelRecord(record);
+                //using (MemoryStream mStream = new MemoryStream(sct.AsByteArray))
+                //{
+                //    try
+                //    {
+                //        Image im = Image.FromStream(mStream);
+                //        im.Save(fileName, ImageFormat.Png);
+                //    }
+
+                //    catch(Exception ex)
+                //    {
+                //        throw new Exception(ex.Message);
+                //    }
+                //    //im.Save(fileName, ImageFormat.Png);
+                //}
+                //Setting Screenshot Path
+                //ExcelRecord record = new ExcelRecord();
+                //record.ScreenshotPath = savelocation;
+                //ContextPage.GetInstance().SetExcelRecord(record);
+
+
+                //Screenshot screenshot = driver.GetScreenshot();
+                //String filename = UUID.randomUUID().toString();
+                //File targetFile = new File(path_screenshot + filename + ".jpg");
+                //FileUtils.copyFile(srcFile, targetFile);
+                //ITakesScreenshot ssdriver = ContextPage.Driver as ITakesScreenshot;
+                //Screenshot screenshot = ssdriver.GetScreenshot();
+                //string fileName = ContextPage.GetInstance().GetExcelRecord().ScenarioName + ".png";
+                //screenshot.SaveAsFile(savelocation + fileName, ScreenshotImageFormat.Png);
+
+                //Rectangle bounds = Screen.GetBounds(Point.Empty);
+
+                //using (Bitmap bitmap = new Bitmap(bounds.Width, bounds.Height))
+                //{
+                //    using (Graphics g = Graphics.FromImage(bitmap))
+                //    {
+                //        g.CopyFromScreen(Point.Empty, Point.Empty, bounds.Size);
+                //    }
+                //    string fileName = ContextPage.GetInstance().GetExcelRecord().ScenarioName + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".png";
+                //    bitmap.Save(savelocation + fileName, ImageFormat.Png);
+                //    ExcelRecord record = ContextPage.GetInstance().GetExcelRecord();
+                //    record.ScreenshotPath = savelocation + fileName;
+                //    ContextPage.GetInstance().SetExcelRecord(record);
+                //}
+                // string fileName = ContextPage.GetInstance().GetExcelRecord().ScenarioName + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".png";
+                //Screenshot sc = new Screenshot(driver.GetScreenshot().AsBase64EncodedString);
+                //sc.GetScreenshot().SaveAsFile(fileName);
+                //driver.GetScreenshot().SaveAsFile(fileName,ScreenshotImageFormat.Png);
+                //File f = sc.SaveAsFile(fileName);
+                //File scrFile = ((ITakesScreenshot)driver).(OutputType.FILE);
+                //File targetFile = File.Copy(screenshot, fileName);
+                //FileUtils.copyFile(srcFile, targetFile);
+
+
+            }
+            catch (Exception exception)
+            {
+                throw new AssertFailedException(exception.Message);
+            }
+
+
         }
 
         // For Range Slider with count and option for Left and Right arrow Key
@@ -270,12 +363,16 @@ namespace HBLAutomationAndroid.Pages
                         //AndroidElement Value = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
                         //Thread.Sleep(100);
                         Actions a = new Actions(driver);
-                        if (key == "Tab")
-                        {
-                            a.SendKeys(OpenQA.Selenium.Keys.Tab);
-                            a.Perform();
-                        }
-                        driver.HideKeyboard();
+                if (key == "Tab")
+                {
+                    //AndroidDriver d = new AndroidDriver(; 
+                    //RemoteWebDriver adb = (AndroidDriver<AndroidElement>)driver;
+                    //driver.ActivateApp()
+                    //(AndroidDriver<driver>)
+                    a.SendKeys(OpenQA.Selenium.Keys.Tab);
+                    a.Perform();
+                }
+                driver.HideKeyboard();
                 //    }
                // }
                 //else if (locator_type == "xpath")
@@ -321,7 +418,16 @@ namespace HBLAutomationAndroid.Pages
                         {
                             return;
                         }
-                        driver.HideKeyboard();
+                        //try
+                        //{
+                            driver.HideKeyboard();
+                        //}
+                        //catch
+                        //{
+
+                        //}
+                        
+                        //driver.HideKeyboard();
                         //if (locator == "com.hbl.android.hblmobilebanking:id/s_hbpsBillCompanies")
                         //{
                         //    Value = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id("com.hbl.android.hblmobilebanking:id/withoutMargin_Lay")));
@@ -679,14 +785,18 @@ namespace HBLAutomationAndroid.Pages
             }
             //var elements = driver.FindElements(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView("+ "new UiSelector().text(\"" + text + "\"));"));
         }
-        public void scroll_to_element_text_by_index(string text,int index)
+        public void scroll_to_element_text_with_parent_sibling(string parent_text, string child)
         {
 
             Thread.Sleep(3000);
-            var temp = driver.FindElements(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"" + text + "\").instance(" + index.ToString() + "));"));
+            //string text2 = "Mobile Prepaid and Postpaid Payments";
+            var temp = driver.FindElements(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().textContains(\"" + parent_text + "\").fromParent(new UiSelector().textContains(\"" + child + "\")));"));
+            //var temp = driver.FindElements(MobileBy.AndroidUIAutomator("//android.widget.TextView[@resource-id='com.hbl.android.hblmobilebanking:id/limit_title' and @text='Mobile Prepaid and Postpaid Payments']//following-sibling::android.widget.TextView[@resource - id = 'com.hbl.android.hblmobilebanking:id/txn_limit_label']"));
+            //var temp = driver.FindElements(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0).resourceId(\"" + ali + "\")).scrollIntoView(new UiSelector().textContains(\"" + text + "\").instance(5));"));
+
             if (temp.Count == 0)
             {
-                throw new Exception(string.Format("Element with the given text: {0} and index: {1} not found on screen",text,index));
+                throw new Exception(string.Format("Element with the given text: {0} and index: {1} not found on screen", parent_text, child));
             }
             //var elements = driver.FindElements(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView("+ "new UiSelector().text(\"" + text + "\"));"));
         }

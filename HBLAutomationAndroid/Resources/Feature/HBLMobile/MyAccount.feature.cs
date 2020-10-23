@@ -126,11 +126,11 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As A user I want to verify Limit Reduction")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As A user I want to verify Limit Reduction")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "QR Payments")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "90000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "70000")]
         public virtual void AsAUserIWantToVerifyLimitsMobile_AsAUserIWantToVerifyLimitReduction()
         {
 #line 7
-this.AsAUserIWantToVerifyLimitsMobile("As A user I want to verify Limit Reduction", "QR Payments", "90000", new string[] {
+this.AsAUserIWantToVerifyLimitsMobile("As A user I want to verify Limit Reduction", "QR Payments", "70000", new string[] {
                         "source:Data/LimitManagement.xlsx"});
 #line hidden
         }

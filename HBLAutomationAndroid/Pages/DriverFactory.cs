@@ -56,6 +56,7 @@ namespace HBLAutomationAndroid.Pages
                         string platformName = Configuration.GetInstance().GetByKey("platformName");
                         string deviceName = Configuration.GetInstance().GetByKey("deviceName");
                         string platformVersion = Configuration.GetInstance().GetByKey("platformVersion");
+                        //ContextPage.platform_version = platformVersion;
                         AppiumOptions options = new AppiumOptions();
                         options.PlatformName = "Android";
                         options.AddAdditionalCapability("appPackage", appPackage);
@@ -63,12 +64,15 @@ namespace HBLAutomationAndroid.Pages
                         options.AddAdditionalCapability("platformName", platformName);
                         options.AddAdditionalCapability("deviceName", deviceName);
                         options.AddAdditionalCapability("platformVersion", platformVersion);
-                        options.AddAdditionalCapability("noReset", "true");
+                        options.AddAdditionalCapability("noReset", "false");
                         options.AddAdditionalCapability("fullReset", "false");
                         options.AddAdditionalCapability("newCommandTimeout", 50000);
+                        options.AddAdditionalCapability("unicodeKeyboard", false);
+                        options.AddAdditionalCapability("resetKeyboard", false);
                         //NEW_COMMAND_TIMEOUT, 300
                         //options.AddAdditionalCapability("newCommandTimeout", 60);
                         initialize(options,serverURL);
+                        //driver.Keyboard.send
                     }
 
                     return driver;
@@ -88,6 +92,7 @@ namespace HBLAutomationAndroid.Pages
             {
 
                 //driver = new AndroidDriver<AndroidElement>(new Uri(serverURL), options);
+                //driver.
                 driver = new WpDriver(new Uri(serverURL), options);
                 //driver = (AndroidDriver<AndroidElement>)rd;
                 //WpDriver rd = driver;
