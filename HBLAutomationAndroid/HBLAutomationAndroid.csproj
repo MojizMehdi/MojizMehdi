@@ -321,6 +321,7 @@
     <None Include="Resources\Feature\HBLMobile\Data\BillPayment%28ExistingBene%29ViaHome.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\BillPayment%28Schedule%29.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\BillPayment.xlsx" />
+    <None Include="Resources\Feature\HBLMobile\Data\BillPaymentLogin.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\BillPaymentViaHome.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\ChangeLoginId.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\CreditRegistration.xlsx" />
@@ -339,6 +340,7 @@
     <None Include="Resources\Feature\HBLMobile\Data\SendMoney%28ViaBene%29_Interbranch.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\SendMoney%28ViaBene%29_Interbranch_Schedule.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\SendMoney.xlsx" />
+    <None Include="Resources\Feature\HBLMobile\Data\SendMoneyMobileLogin.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\SendMoneyViaMore_Interbank.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\SendMoneyViaMore_Interbank_Schedule.xlsx" />
     <None Include="Resources\Feature\HBLMobile\Data\SendMoneyViaMore_Interbranch.xlsx" />

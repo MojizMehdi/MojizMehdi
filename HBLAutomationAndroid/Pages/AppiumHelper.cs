@@ -26,6 +26,7 @@ using OpenQA.Selenium.Appium.MultiTouch;
 using System.Data;
 using OpenQA.Selenium.Appium.Windows.Enums;
 using HBLAutomationAndroid.Beans;
+using OpenQA.Selenium.Appium.ScreenRecording;
 
 namespace HBLAutomationAndroid.Pages
 {
@@ -138,6 +139,7 @@ namespace HBLAutomationAndroid.Pages
             try
             {
                 driver.ResetApp();
+                
             }
             catch (Exception exception)
             {
@@ -233,46 +235,104 @@ namespace HBLAutomationAndroid.Pages
         //}
 
 
-        ////For Taking Screenshot
-        public static void TakeScreenshot()
+        ////For Taking Video
+        public static void Start_Video()
         {
             try
             {
-
-                string FeatureName = ContextPage.GetInstance().GetExcelRecord().FeatureName;
-                string savelocation = Configuration.GetInstance().GetByKey("ScreenshotFolderPath") + FeatureName + DateTime.Now.ToString("yyyyMMdd") + "/";
-                //Setting Screenshot Path
-                //ExcelRecord record = new ExcelRecord();
-                //record.ScreenshotPath = savelocation;
-                //ContextPage.GetInstance().SetExcelRecord(record);
-                if (!Directory.Exists(savelocation))
-                {
-                    Directory.CreateDirectory(savelocation);
-                }
-                //ITakesScreenshot ssdriver = ContextPage.Driver as ITakesScreenshot;
-                //Screenshot screenshot = ssdriver.GetScreenshot();
-                //string fileName = ContextPage.GetInstance().GetExcelRecord().ScenarioName + ".png";
-                //screenshot.SaveAsFile(savelocation + fileName, ScreenshotImageFormat.Png);
-
-                Rectangle bounds = Screen.GetBounds(Point.Empty);
-
-                using (Bitmap bitmap = new Bitmap(bounds.Width, bounds.Height))
-                {
-                    using (Graphics g = Graphics.FromImage(bitmap))
-                    {
-                        g.CopyFromScreen(Point.Empty, Point.Empty, bounds.Size);
-                    }
-                    string fileName = ContextPage.GetInstance().GetExcelRecord().ScenarioName + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".png";
-                    bitmap.Save(savelocation + fileName, ImageFormat.Png);
-                    ExcelRecord record = ContextPage.GetInstance().GetExcelRecord();
-                    record.ScreenshotPath = savelocation + fileName;
-                    ContextPage.GetInstance().SetExcelRecord(record);
-                }
+                AndroidDriver<AndroidElement> driver = (AndroidDriver<AndroidElement>)ContextPage.Driver;
+                AndroidStartScreenRecordingOptions sd = new AndroidStartScreenRecordingOptions();
+                sd.WithBitRate(500000);
+                sd.WithVideoSize("720x1280");
+                driver.StartRecordingScreen(sd);
             }
             catch (Exception exception)
             {
                 throw new AssertFailedException(exception.Message);
             }
+
+
+        }
+
+
+        ////For Taking Screenshot
+        public static void TakeScreenshot()
+        {
+            try
+            {
+                AndroidDriver<AndroidElement> driver = (AndroidDriver<AndroidElement>)ContextPage.Driver;
+                string FeatureName = ContextPage.GetInstance().GetExcelRecord().FeatureName;
+                string savelocation = Configuration.GetInstance().GetByKey("ScreenshotFolderPath") + FeatureName + DateTime.Now.ToString("yyyyMMdd") + "/";
+                Screenshot sc = ((ITakesScreenshot)driver).GetScreenshot();
+                if (!Directory.Exists(savelocation))
+                {
+                    Directory.CreateDirectory(savelocation);
+                }
+                string fileName = ContextPage.GetInstance().GetExcelRecord().ScenarioName + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".png";
+                sc.SaveAsFile(savelocation + fileName,ScreenshotImageFormat.Png);
+                ExcelRecord record = ContextPage.GetInstance().GetExcelRecord();
+                record.ScreenshotPath = savelocation + fileName;
+                ContextPage.GetInstance().SetExcelRecord(record);
+                //using (MemoryStream mStream = new MemoryStream(sct.AsByteArray))
+                //{
+                //    try
+                //    {
+                //        Image im = Image.FromStream(mStream);
+                //        im.Save(fileName, ImageFormat.Png);
+                //    }
+
+                //    catch(Exception ex)
+                //    {
+                //        throw new Exception(ex.Message);
+                //    }
+                //    //im.Save(fileName, ImageFormat.Png);
+                //}
+                //Setting Screenshot Path
+                //ExcelRecord record = new ExcelRecord();
+                //record.ScreenshotPath = savelocation;
+                //ContextPage.GetInstance().SetExcelRecord(record);
+
+
+                //Screenshot screenshot = driver.GetScreenshot();
+                //String filename = UUID.randomUUID().toString();
+                //File targetFile = new File(path_screenshot + filename + ".jpg");
+                //FileUtils.copyFile(srcFile, targetFile);
+                //ITakesScreenshot ssdriver = ContextPage.Driver as ITakesScreenshot;
+                //Screenshot screenshot = ssdriver.GetScreenshot();
+                //string fileName = ContextPage.GetInstance().GetExcelRecord().ScenarioName + ".png";
+                //screenshot.SaveAsFile(savelocation + fileName, ScreenshotImageFormat.Png);
+
+                //Rectangle bounds = Screen.GetBounds(Point.Empty);
+
+                //using (Bitmap bitmap = new Bitmap(bounds.Width, bounds.Height))
+                //{
+                //    using (Graphics g = Graphics.FromImage(bitmap))
+                //    {
+                //        g.CopyFromScreen(Point.Empty, Point.Empty, bounds.Size);
+                //    }
+                //    string fileName = ContextPage.GetInstance().GetExcelRecord().ScenarioName + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".png";
+                //    bitmap.Save(savelocation + fileName, ImageFormat.Png);
+                //    ExcelRecord record = ContextPage.GetInstance().GetExcelRecord();
+                //    record.ScreenshotPath = savelocation + fileName;
+                //    ContextPage.GetInstance().SetExcelRecord(record);
+                //}
+                // string fileName = ContextPage.GetInstance().GetExcelRecord().ScenarioName + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".png";
+                //Screenshot sc = new Screenshot(driver.GetScreenshot().AsBase64EncodedString);
+                //sc.GetScreenshot().SaveAsFile(fileName);
+                //driver.GetScreenshot().SaveAsFile(fileName,ScreenshotImageFormat.Png);
+                //File f = sc.SaveAsFile(fileName);
+                //File scrFile = ((ITakesScreenshot)driver).(OutputType.FILE);
+                //File targetFile = File.Copy(screenshot, fileName);
+                //FileUtils.copyFile(srcFile, targetFile);
+
+
+            }
+            catch (Exception exception)
+            {
+                throw new AssertFailedException(exception.Message);
+            }
+
+
         }
 
         // For Range Slider with count and option for Left and Right arrow Key

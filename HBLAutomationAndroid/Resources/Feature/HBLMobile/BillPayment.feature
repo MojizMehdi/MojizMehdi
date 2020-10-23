@@ -3,10 +3,11 @@
 	As a math idiot
 	I want to be told the sum of two numbers
 
-@Login_BillPayment
+@BillPayment @MultiBillPyament @AddNew_BillPayment @Bill_Payment_Exisitng_Bene @Bill_Payment_Exisitng_Bene_Via_Home
 Scenario Outline: When user try to login mobile banking for bill payment
 	Given the test case title is "<Case>"
 	And the user is arrive to Mobile Banking home page 
+	And the test case expected result is "<Expected_Result>"
 	And I wait 2000
 	And I am clicking on "Login_permission_allow_btn"
 	And I wait 1000
@@ -28,9 +29,9 @@ Scenario Outline: When user try to login mobile banking for bill payment
 	And I am clicking on "BillPayment_RatingOkBtn"
 	Then verify through "Welcome, " on "Login_Success_Text"
 	#And I am switiching activity as package "com.hbl.android.hblmobilebanking" as activity "com.hbl.android.hblmobilebanking.account.HomeScreen"
-	@source:Data/HBLMobileLogin.xlsx
+	@source:Data/BillPaymentLogin.xlsx
 	Examples: 
-	|Case|Status_query|Login_UserId_Value|Login_Password_Value|OTP_Value|
+	|Case|Status_query|Login_UserId_Value|Login_Password_Value|OTP_Value|Expected_Result|
 	
 @AddNew_BillPayment @BillPayment
 Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make new payment
@@ -39,6 +40,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 	And update the data by query "<status_query>" on QAT_BPS
 	And update the data by query "<status_query2>" on DIGITAL_CHANNEL_SEC
 	And the user is arrive to Mobile Banking home page
+	And the test case expected result is "<Expected_Result>"
 	And I am clicking on "Dashboard"
 	#And I set value in context from database "<account_count_query>" as "account_count" on Schema "<db_val>"
 	#When I save Account Balances 
@@ -124,7 +126,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 
 	@source:Data/BillPayment.xlsx
 	Examples: 
-	|Case|status_query|status_query2|account_count_query|Category_Value|Company_Value|BillPayment_ConsumerNo_Value|Bill_Amount_query|company_code_value|OTP_Value|tran_pass_value|tran_type_query|tran_amount_query|from_account_query|company_name_query|consumer_no_query|db_val|db_val2|account_no|account_type|expiry_date|bene_name|bene_query|instrument_type|consumer_number_label_query|paid_marking_query|LP_BillStatus_query|partial_payment_check_query|partial_payment_amount|
+	|Case|status_query|status_query2|account_count_query|Category_Value|Company_Value|BillPayment_ConsumerNo_Value|Bill_Amount_query|company_code_value|OTP_Value|tran_pass_value|tran_type_query|tran_amount_query|from_account_query|company_name_query|consumer_no_query|db_val|db_val2|account_no|account_type|expiry_date|bene_name|bene_query|instrument_type|consumer_number_label_query|paid_marking_query|LP_BillStatus_query|partial_payment_check_query|partial_payment_amount|Expected_Result|
 
 @BillPayment
 Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make new payment schedule
@@ -475,7 +477,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 	|Case|status_query|status_query2|Category_Value|Company_Value|BillPayment_ConsumerNo_Value|Bill_Amount_query|company_code_value|OTP_Value|tran_pass_value|tran_type_query|tran_amount_query|from_account_query|company_name_query|consumer_no_query|db_val|db_val2|account_no|account_type|expiry_date|bene_name|bene_query|instrument_type|consumer_number_label_query|paid_marking_query|LP_BillStatus_query|partial_payment_check_query|partial_payment_amount|
 
 
-@BillPayment
+@BillPayment @MultiBillPyament
 Scenario Outline: As a user i want to Verify Multiple Bill Payment through Mobile by bene via home icon
 	Given the test case title is "<Case>"
 	And the user is arrive to Mobile Banking home page
@@ -485,7 +487,7 @@ Scenario Outline: As a user i want to Verify Multiple Bill Payment through Mobil
 	And I am clicking on "Dashboard_BillPayment"
 	And I wait 5000
 	And I am clicking on "SendMoney_SkipBtn"
-	And I set list of elements from scroll view on "BillPayment_MultiPayment_Benelist_ConsumerNo" as "3"
+	And I set list of elements from scroll view on "BillPayment_MultiPayment_Benelist_ConsumerNo" as "5"
 	And verify the list using "<bene_check_query>" on Schema "<db_val>"
 	#And I verify array of elements from scroll view on "<bene_check_keywords>" as "<bene_check_query>" on schema "<db_val>" of "2"
 	And I select consumers for multi bill payment as "<Consumer_Numbers>" on "BillPayment_SearchBeneField"

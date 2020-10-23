@@ -94,7 +94,7 @@ namespace HBLAutomationAndroid.Common
         int account_count = 0;
         string old_limit;
         Dictionary<string, Tuple<string, string, string>> cust_limit_detail;
-        string kmobile_no;
+        string mobile_no;
         //public static string platform_version;
 
         //public void Set_platform_version(string platform_version)
@@ -105,13 +105,13 @@ namespace HBLAutomationAndroid.Common
         //{
         //    return platform_version;
         //}
-        public void Set_kmobile_no(string kmobile_no)
+        public void Set_mobile_no(string kmobile_no)
         {
-            this.kmobile_no = kmobile_no;
+            this.mobile_no = kmobile_no;
         }
-        public string Get_kmobile_no()
+        public string Get_mobile_no()
         {
-            return kmobile_no;
+            return mobile_no;
         }
         public void SetCustLimitDetail(Dictionary<string, Tuple<string, string, string>> cust_limit_detail)
         {

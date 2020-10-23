@@ -6,6 +6,7 @@ using HBLAutomationAndroid.Beans;
 using HBLAutomationAndroid.Common;
 using HBLAutomationAndroid.XML.apiconfiguration;
 using HBLAutomationAndroid.XML.ElementFactory;
+using OpenQA.Selenium.Appium.Android;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -47,7 +48,7 @@ namespace HBLAutomationAndroid.Core
         [BeforeTestRun]
         public static void beforeTestRun()
         {
-            var htmlReporter = new ExtentHtmlReporter(@"D:\Automation\Automation_Report-" + DateTime.Now.ToString("yyyy-dd-M-HH-mm-ss") + ".html");
+            var htmlReporter = new ExtentHtmlReporter(@"D:\AndroidAutomation\Automation_Report-" + DateTime.Now.ToString("yyyy-dd-M-HH-mm-ss") + ".html");
             htmlReporter.Configuration().Theme = AventStack.ExtentReports.Reporter.Configuration.Theme.Dark;
 
             extent = new ExtentReports();
@@ -156,6 +157,7 @@ namespace HBLAutomationAndroid.Core
             ExcelRecord rec = ContextPage.GetInstance().GetExcelRecord();
             if (!(rec == null))
             {
+
                 if (ScenarioContext.Current.TestError == null && (rec.ExpectedResult == null && rec.ActualResult == null))
                 {
                     rec.Result = "PASS";
@@ -170,9 +172,48 @@ namespace HBLAutomationAndroid.Core
                     error = error.Replace("\r", " ");
                     rec.ErrorMessage = error;
                 }
-                if (rec.ExpectedResult != null && rec.ActualResult != null)
+                //if (rec.ExpectedResult != null && rec.ActualResult != null)
+                //{
+                //    if (rec.ExpectedResult.Equals(rec.ActualResult) && ScenarioContext.Current.TestError == null)
+                //    {
+                //        rec.Result = "PASS";
+                //    }
+                //    else
+                //    {
+                //        if (ScenarioContext.Current.TestError != null)
+
+                //        {
+                //            rec.Result = "FAIL";
+                //            string error = ScenarioContext.Current.TestError.Message;
+                //            error = error.Replace(",", " ");
+                //            error = error.Replace("\n", " ");
+                //            error = error.Replace("\r\n", " ");
+                //            error = error.Replace("\r", " ");
+                //            rec.ErrorMessage = error;
+
+                //        }
+                //    }
+
+                //}
+
+                if (rec.ExpectedResult != null)
                 {
-                    if (rec.ExpectedResult.Equals(rec.ActualResult) && ScenarioContext.Current.TestError == null)
+                    if (rec.ExpectedResult.ToLower() == "pass")
+                    {
+                        AndroidDriver<AndroidElement> driver = (AndroidDriver<AndroidElement>)ContextPage.Driver;
+                        string video = driver.StopRecordingScreen();
+                        string FeatureName = ContextPage.GetInstance().GetExcelRecord().FeatureName;
+                        string savelocation = Common.Configuration.GetInstance().GetByKey("ScreenshotFolderPath") + FeatureName + DateTime.Now.ToString("yyyyMMdd") + "/Videos/";
+                        byte[] decode = Convert.FromBase64String(video);
+                        if (!Directory.Exists(savelocation))
+                        {
+                            Directory.CreateDirectory(savelocation);
+                        }
+                        string fileName = ContextPage.GetInstance().GetExcelRecord().ScenarioName + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".mp4";
+                        rec.VideoPath = savelocation + fileName;
+                        File.WriteAllBytes(savelocation + fileName, decode);
+                    }
+                    if (ScenarioContext.Current.TestError == null)
                     {
                         rec.Result = "PASS";
                     }

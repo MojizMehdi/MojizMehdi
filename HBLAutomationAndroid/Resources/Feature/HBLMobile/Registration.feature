@@ -4,11 +4,12 @@
 	I want to be told the sum of two numbers
 
 
-@Registration
+@Registration @Debit_Registration
 Scenario Outline: 2 As a user i want to Signup using Debit Card Mobile
 	Given the test case title is "<Case>"
-	#And I am resetting app
 	And the user is arrive to Mobile Banking home page 
+	And I am resetting app
+	And the test case expected result is "<Expected_Result>"
 	And I wait 2000
 	And I am clicking on "Login_permission_allow_btn"
 	And I wait 1000
@@ -77,13 +78,15 @@ Scenario Outline: 2 As a user i want to Signup using Debit Card Mobile
 	Then verify the data using "<Last_login_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	@source:Data/DebitRegistration.xlsx
 	Examples:
-	|Case|CNIC_D|Debit_card_no|pin|Login_id|login_id_policy_query|OTP_Value|password_policy_query|login_pass|tran_pass|account_tag1|account_query|account_tag_query|account_tag_query_not_linked|success_message|login_id_query|created_on_query|updated_on_query|last_pass_change_query|last_tran_pass_change_query|is_password_change_required_value|is_password_change_required_query|is_password_reset_required_value|is_password_reset_required_query|Last_login_query|tran_pass_encrypted_value|transaction_password_query|customer_type|customer_type_query|IVR_require_query|IVR_check_query|PARAM_CHANNEL_ID_query|ENABLE_PSD_require_query|ENABLE_PSD_check_query|
+	|Case|CNIC_D|Debit_card_no|pin|Login_id|login_id_policy_query|OTP_Value|password_policy_query|login_pass|tran_pass|account_tag1|account_query|account_tag_query|account_tag_query_not_linked|success_message|login_id_query|created_on_query|updated_on_query|last_pass_change_query|last_tran_pass_change_query|is_password_change_required_value|is_password_change_required_query|is_password_reset_required_value|is_password_reset_required_query|Last_login_query|tran_pass_encrypted_value|transaction_password_query|customer_type|customer_type_query|IVR_require_query|IVR_check_query|PARAM_CHANNEL_ID_query|ENABLE_PSD_require_query|ENABLE_PSD_check_query|Expected_Result|
 	
 	
-@Registration
+@Registration @Credit_Registration
 Scenario Outline: 2 As a user i want to Signup using Credit Card Mobile
 	Given the test case title is "<Case>"	
-	And the user is arrive to Mobile Banking home page 
+	And the user is arrive to Mobile Banking home page
+	And I am resetting app 
+	And the test case expected result is "<Expected_Result>"
 	And I wait 2000
 	And I am clicking on "Login_permission_allow_btn"
 	And I wait 1000
@@ -154,30 +157,30 @@ Scenario Outline: 2 As a user i want to Signup using Credit Card Mobile
 	Then verify the data using "<Last_login_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	@source:Data/CreditRegistration.xlsx
 	Examples:
-	|Case|CNIC_D|Credit_card_no|Customer_Email|Login_id|login_id_policy_query|OTP_Value|password_policy_query|login_pass|tran_pass|success_message|login_id_query|created_on_query|updated_on_query|last_pass_change_query|last_tran_pass_change_query|is_password_change_required_value|is_password_change_required_query|is_password_reset_required_value|is_password_reset_required_query|Last_login_query|tran_pass_encrypted_value|transaction_password_query|customer_type|customer_type_query|IVR_require_query|IVR_check_query|PARAM_CHANNEL_ID_query|ENABLE_PSD_require_query|ENABLE_PSD_check_query|
+	|Case|CNIC_D|Credit_card_no|Customer_Email|Login_id|login_id_policy_query|OTP_Value|password_policy_query|login_pass|tran_pass|success_message|login_id_query|created_on_query|updated_on_query|last_pass_change_query|last_tran_pass_change_query|is_password_change_required_value|is_password_change_required_query|is_password_reset_required_value|is_password_reset_required_query|Last_login_query|tran_pass_encrypted_value|transaction_password_query|customer_type|customer_type_query|IVR_require_query|IVR_check_query|PARAM_CHANNEL_ID_query|ENABLE_PSD_require_query|ENABLE_PSD_check_query|Expected_Result|
 
 
-	@Registration
-Scenario Outline: 2 As a user i want to Signup using Account Mobile
-	Given the test case title is "<Case>"	
-	And the user is arrive to Mobile Banking home page 
-	And I set value in context from data "<CNIC_D>" as "username"
-	And I set value in context from data "<CNIC_D>" as "customer_cnic"
-	And I set value in context from data "True" as "SignupCheck"
-	#And I set value in context from data "<account_tag1>" as "AccountForTag" 
-	And I am clicking on "Registration_HomeBtn"
-	When I have given "<CNIC_D>" on "Registration_Cnic"
-	And I am clicking on "Registration_NextBtn"
-	And I wait 15000
-	And I scroll down
-	And I scroll down
-	And I am clicking on "Registration_AgreeBtn"
-	And I am clicking on "Registration_NextBtn"
-	And I have given "<Login_id>" on "Registration_LoginId"
-	And I am clicking on "Registration_NextBtn"
-	And I change screen attribute value on "Login_OTP_field"
-	And I have given "<OTP_Value>" on "Login_OTP_field"
-
-	@source:Data/AccountRegistration.xlsx
-	Examples:
-	|Case|CNIC_D|Credit_card_no|Customer_Email|Login_id|OTP_Value|password_policy_query|login_pass|tran_pass|success_message|login_id_query|created_on_query|updated_on_query|Last_login_query|tran_pass_encrypted_value|transaction_password_query|customer_type|customer_type_query|IVR_require_query|IVR_check_query|PARAM_CHANNEL_ID_query|ENABLE_PSD_require_query|ENABLE_PSD_check_query|
+#@Registration
+#Scenario Outline: 2 As a user i want to Signup using Account Mobile
+#	Given the test case title is "<Case>"	
+#	And the user is arrive to Mobile Banking home page 
+#	And I set value in context from data "<CNIC_D>" as "username"
+#	And I set value in context from data "<CNIC_D>" as "customer_cnic"
+#	And I set value in context from data "True" as "SignupCheck"
+#	#And I set value in context from data "<account_tag1>" as "AccountForTag" 
+#	And I am clicking on "Registration_HomeBtn"
+#	When I have given "<CNIC_D>" on "Registration_Cnic"
+#	And I am clicking on "Registration_NextBtn"
+#	And I wait 15000
+#	And I scroll down
+#	And I scroll down
+#	And I am clicking on "Registration_AgreeBtn"
+#	And I am clicking on "Registration_NextBtn"
+#	And I have given "<Login_id>" on "Registration_LoginId"
+#	And I am clicking on "Registration_NextBtn"
+#	And I change screen attribute value on "Login_OTP_field"
+#	And I have given "<OTP_Value>" on "Login_OTP_field"
+#
+#	@source:Data/AccountRegistration.xlsx
+#	Examples:
+#	|Case|CNIC_D|Credit_card_no|Customer_Email|Login_id|OTP_Value|password_policy_query|login_pass|tran_pass|success_message|login_id_query|created_on_query|updated_on_query|Last_login_query|tran_pass_encrypted_value|transaction_password_query|customer_type|customer_type_query|IVR_require_query|IVR_check_query|PARAM_CHANNEL_ID_query|ENABLE_PSD_require_query|ENABLE_PSD_check_query|
