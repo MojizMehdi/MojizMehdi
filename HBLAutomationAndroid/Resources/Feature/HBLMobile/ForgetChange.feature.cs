@@ -103,7 +103,7 @@ namespace HBLAutomationAndroid.Resources.Feature.HBLMobile
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "mytag"};
+                    "Forget_Password"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -211,7 +211,7 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to verify forget password for mobile banking: To Verify that D-t" +
             "ype customer can successfully perform Forgot Login Pasword")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Forget_Password")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetPassword.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To Verify that D-type customer can successfully perform Forgot Login Pasword")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To Verify that D-type customer can successfully perform Forgot Login Pasword")]
@@ -246,7 +246,7 @@ this.AsAUserIWantToVerifyForgetPasswordForMobileBanking("To Verify that D-type c
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to verify forget password for mobile banking: To verify that D-t" +
             "ype customer can not perform Forgot Login Password with incorrect Login ID")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Forget_Password")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetPassword.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that D-type customer can not perform Forgot Login Password with incorre" +
             "ct Login ID")]
@@ -284,7 +284,7 @@ this.AsAUserIWantToVerifyForgetPasswordForMobileBanking("To verify that D-type c
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to verify forget password for mobile banking: To verify that D-t" +
             "ype customer can not perform Forgot Login ID with incorrect CNIC")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Forget_Password")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetPassword.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that D-type customer can not perform Forgot Login ID with incorrect CNI" +
             "C")]
@@ -322,7 +322,7 @@ this.AsAUserIWantToVerifyForgetPasswordForMobileBanking("To verify that D-type c
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to verify forget password for mobile banking: To verify that D-t" +
             "ype customer can not perform Forgot Login ID with incorrect Debit Card Number")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Forget_Password")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetPassword.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that D-type customer can not perform Forgot Login ID with incorrect Deb" +
             "it Card Number")]
@@ -360,7 +360,7 @@ this.AsAUserIWantToVerifyForgetPasswordForMobileBanking("To verify that D-type c
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to verify forget password for mobile banking: To Verify that D-t" +
             "ype Locked customer can successfully perform Forgot Login Pasword")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Forget_Password")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetPassword.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To Verify that D-type Locked customer can successfully perform Forgot Login Paswo" +
             "rd")]
@@ -398,7 +398,7 @@ this.AsAUserIWantToVerifyForgetPasswordForMobileBanking("To Verify that D-type L
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to verify forget password for mobile banking: To Verify that D-t" +
             "ype Blocked customer can not perform Forgot Login Pasword")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Forget_Password")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetPassword.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To Verify that D-type Blocked customer can not perform Forgot Login Pasword")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To Verify that D-type Blocked customer can not perform Forgot Login Pasword")]
@@ -433,7 +433,7 @@ this.AsAUserIWantToVerifyForgetPasswordForMobileBanking("To Verify that D-type B
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to verify forget password for mobile banking: To Verify that D-t" +
             "ype Partial Activated customer can not perform Forgot Login Pasword")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Forget_Password")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetPassword.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To Verify that D-type Partial Activated customer can not perform Forgot Login Pas" +
             "word")]
@@ -471,7 +471,7 @@ this.AsAUserIWantToVerifyForgetPasswordForMobileBanking("To Verify that D-type P
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to verify forget password for mobile banking: To Verify that C-t" +
             "ype customer can successfully perform Forgot Login Pasword")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Forget_Password")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetPassword.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To Verify that C-type customer can successfully perform Forgot Login Pasword")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To Verify that C-type customer can successfully perform Forgot Login Pasword")]
@@ -506,7 +506,7 @@ this.AsAUserIWantToVerifyForgetPasswordForMobileBanking("To Verify that C-type c
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to verify forget password for mobile banking: To verify that C-t" +
             "ype customer can not perform Forgot Login Password with incorrect Login ID")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Forget_Password")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetPassword.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that C-type customer can not perform Forgot Login Password with incorre" +
             "ct Login ID")]
@@ -544,7 +544,7 @@ this.AsAUserIWantToVerifyForgetPasswordForMobileBanking("To verify that C-type c
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to verify forget password for mobile banking: To verify that C-t" +
             "ype customer can not perform Forgot Login ID with incorrect CNIC")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Forget_Password")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetPassword.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that C-type customer can not perform Forgot Login ID with incorrect CNI" +
             "C")]
@@ -582,7 +582,7 @@ this.AsAUserIWantToVerifyForgetPasswordForMobileBanking("To verify that C-type c
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to verify forget password for mobile banking: To verify that C-t" +
             "ype customer can not perform Forgot Login ID with incorrect Credit Card Number")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Forget_Password")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetPassword.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that C-type customer can not perform Forgot Login ID with incorrect Cre" +
             "dit Card Number")]
@@ -621,7 +621,7 @@ this.AsAUserIWantToVerifyForgetPasswordForMobileBanking("To verify that C-type c
             "ype customer can not successfully perform Forgot Login Pasword with incorrect Em" +
             "ail Address")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Forget_Password")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetPassword.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To Verify that C-type customer can not successfully perform Forgot Login Pasword " +
             "with incorrect Email Address")]
@@ -659,7 +659,7 @@ this.AsAUserIWantToVerifyForgetPasswordForMobileBanking("To Verify that C-type c
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to verify forget password for mobile banking: To Verify that C-t" +
             "ype Locked customer can successfully perform Forgot Login Pasword")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Forget_Password")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetPassword.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To Verify that C-type Locked customer can successfully perform Forgot Login Paswo" +
             "rd")]
@@ -697,7 +697,7 @@ this.AsAUserIWantToVerifyForgetPasswordForMobileBanking("To Verify that C-type L
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to verify forget password for mobile banking: To Verify that C-t" +
             "ype Blocked customer can not perform Forgot Login Pasword")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Forget_Password")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetPassword.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To Verify that C-type Blocked customer can not perform Forgot Login Pasword")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To Verify that C-type Blocked customer can not perform Forgot Login Pasword")]
@@ -732,7 +732,7 @@ this.AsAUserIWantToVerifyForgetPasswordForMobileBanking("To Verify that C-type B
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to verify forget password for mobile banking: To Verify that C-t" +
             "ype Partial Activated customer can not perform Forgot Login Pasword")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Forget_Password")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetPassword.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To Verify that C-type Partial Activated customer can not perform Forgot Login Pas" +
             "word")]
@@ -769,7 +769,7 @@ this.AsAUserIWantToVerifyForgetPasswordForMobileBanking("To Verify that C-type P
         public virtual void AsAUserIWantToVerifyForgetLoginIdForMobileBanking(string @case, string customer_Type_Query, string cnic_No, string mobile_No, string debit_Card_No, string credit_Card_No, string email_Value, string pin, string success_Message, string success_Message_Desc, string mob_No_Query, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "mytag"};
+                    "Forget_LoginID"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -837,7 +837,7 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to verify forget login id for mobile banking: To verify that D-t" +
             "ype customer can successfully perform Forgot Login ID")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Forget_LoginID")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetLoginId.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that D-type customer can successfully perform Forgot Login ID")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that D-type customer can successfully perform Forgot Login ID")]
@@ -865,7 +865,7 @@ this.AsAUserIWantToVerifyForgetLoginIdForMobileBanking("To verify that D-type cu
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to verify forget login id for mobile banking: To verify that D-t" +
             "ype customer can not perform Forgot Login ID with incorrect CNIC")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Forget_LoginID")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetLoginId.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that D-type customer can not perform Forgot Login ID with incorrect CNI" +
             "C")]
@@ -896,7 +896,7 @@ this.AsAUserIWantToVerifyForgetLoginIdForMobileBanking("To verify that D-type cu
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to verify forget login id for mobile banking: To verify that D-t" +
             "ype customer can not perform Forgot Login ID with incorrect Mobile Number")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Forget_LoginID")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetLoginId.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that D-type customer can not perform Forgot Login ID with incorrect Mob" +
             "ile Number")]
@@ -928,7 +928,7 @@ this.AsAUserIWantToVerifyForgetLoginIdForMobileBanking("To verify that D-type cu
             "ype customer can successfully perform Forgot Login ID with incorrect Debit Card " +
             "number")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Forget_LoginID")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetLoginId.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that D-type customer can successfully perform Forgot Login ID with inco" +
             "rrect Debit Card number")]
@@ -959,7 +959,7 @@ this.AsAUserIWantToVerifyForgetLoginIdForMobileBanking("To verify that D-type cu
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to verify forget login id for mobile banking: To verify that C-t" +
             "ype customer can successfully perform Forgot Login ID")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Forget_LoginID")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetLoginId.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that C-type customer can successfully perform Forgot Login ID")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that C-type customer can successfully perform Forgot Login ID")]
@@ -987,7 +987,7 @@ this.AsAUserIWantToVerifyForgetLoginIdForMobileBanking("To verify that C-type cu
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to verify forget login id for mobile banking: To verify that C-t" +
             "ype customer can not perform Forgot Login ID with incorrect CNIC")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Forget_LoginID")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetLoginId.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that C-type customer can not perform Forgot Login ID with incorrect CNI" +
             "C")]
@@ -1018,7 +1018,7 @@ this.AsAUserIWantToVerifyForgetLoginIdForMobileBanking("To verify that C-type cu
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to verify forget login id for mobile banking: To verify that C-t" +
             "ype customer can not perform Forgot Login ID with incorrect Mobile Number")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Forget_LoginID")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetLoginId.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that C-type customer can not perform Forgot Login ID with incorrect Mob" +
             "ile Number")]
@@ -1050,7 +1050,7 @@ this.AsAUserIWantToVerifyForgetLoginIdForMobileBanking("To verify that C-type cu
             "ype customer can successfully perform Forgot Login ID with incorrect Credit Card" +
             " number")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Forget_LoginID")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetLoginId.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that C-type customer can successfully perform Forgot Login ID with inco" +
             "rrect Credit Card number")]
@@ -1082,7 +1082,7 @@ this.AsAUserIWantToVerifyForgetLoginIdForMobileBanking("To verify that C-type cu
             "ype customer can successfully perform Forgot Login ID with incorrect Email Addre" +
             "ss")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Forget_LoginID")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetLoginId.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that C-type customer can successfully perform Forgot Login ID with inco" +
             "rrect Email Address")]
@@ -1113,7 +1113,7 @@ this.AsAUserIWantToVerifyForgetLoginIdForMobileBanking("To verify that C-type cu
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to verify forget login id for mobile banking: To verify that Blo" +
             "cked user can not perform Forgot Login ID journey")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Forget_LoginID")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetLoginId.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that Blocked user can not perform Forgot Login ID journey")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that Blocked user can not perform Forgot Login ID journey")]
@@ -1141,7 +1141,7 @@ this.AsAUserIWantToVerifyForgetLoginIdForMobileBanking("To verify that Blocked u
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to verify forget login id for mobile banking: To verify that Par" +
             "tial Activated user can not perform Forgot Login ID journey")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Forget_LoginID")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetLoginId.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that Partial Activated user can not perform Forgot Login ID journey")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that Partial Activated user can not perform Forgot Login ID journey")]
@@ -1168,7 +1168,7 @@ this.AsAUserIWantToVerifyForgetLoginIdForMobileBanking("To verify that Partial A
         public virtual void AsAUserIWantToVerifyChangeLoginIdForMobileBanking(string @case, string customer_Type_Query, string cnic_No, string mobile_No, string debit_Card_No, string credit_Card_No, string email_Value, string pin, string new_Login_Id, string forget_Password_NewPass_Value, string forget_Password_RepeatNewPass_Value, string forget_Password_TranPass_Value, string forget_Password_RepeatTranPass_Value, string success_Message, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "mytag"};
+                    "Change_LoginId"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1263,7 +1263,7 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to verify change login id for mobile banking: When I am verifyin" +
             "g Change login id for Debit Type Customer")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Change_LoginId")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ChangeLoginId.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When I am verifying Change login id for Debit Type Customer")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When I am verifying Change login id for Debit Type Customer")]
@@ -1294,7 +1294,7 @@ this.AsAUserIWantToVerifyChangeLoginIdForMobileBanking("When I am verifying Chan
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to verify change login id for mobile banking: When I am verifyin" +
             "g Change login id for Credit Type Customer")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Change_LoginId")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ChangeLoginId.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When I am verifying Change login id for Credit Type Customer")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When I am verifying Change login id for Credit Type Customer")]

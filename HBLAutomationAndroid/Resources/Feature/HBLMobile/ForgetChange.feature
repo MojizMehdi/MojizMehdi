@@ -3,7 +3,7 @@
 	As a math idiot
 	I want to be told the sum of two numbers
 
-@mytag
+@Forget_Password
 Scenario Outline: As a user i want to verify forget password for mobile banking
 	Given the test case title is "<Case>"
 	And I set value in context from data "<cnic_no>" as "customer_cnic"
@@ -56,7 +56,7 @@ Scenario Outline: As a user i want to verify forget password for mobile banking
 	|Case|Status_Query|login_id_value|customer_type_query|cnic_no|card_number|card_pin|card_email|lead_field_value|lead_field_query|OTP_Value|password_reset_req_query_old|Forget_Password_NewPass_Value|Forget_Password_RepeatNewPass_Value|success_message|password_reset_req_query|
 
 
-@mytag
+@Forget_LoginID
 Scenario Outline: As a user i want to verify forget login id for mobile banking
 	Given the test case title is "<Case>"
 	And I set value in context from data "<cnic_no>" as "customer_cnic"
@@ -91,7 +91,7 @@ Scenario Outline: As a user i want to verify forget login id for mobile banking
 
 
 
-@mytag
+@Change_LoginId
 Scenario Outline: As a user i want to verify change login id for mobile banking
 	Given the test case title is "<Case>"
 	And I set value in context from data "<cnic_no>" as "customer_cnic"
