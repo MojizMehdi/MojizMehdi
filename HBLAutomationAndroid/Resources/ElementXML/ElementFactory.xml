@@ -11,6 +11,7 @@
     <Element keyword="Login_OTP_Verify_Button" locator="com.hbl.android.hblmobilebanking:id/registerDeviceOkBtn"/>
     <Element keyword="Login_permission_allow_btn" locator="com.android.permissioncontroller:id/permission_allow_button"/>
     <Element keyword="Login_permission_allow_btn2" locator="com.android.permissioncontroller:id/permission_allow_foreground_only_button"/>
+    <Element keyword="Login_permission_deny_btn" locator="com.android.permissioncontroller:id/permission_deny_button"/>
     <Element keyword="Login_Success_Text" locator="//android.widget.TextView[contains(@text,'Welcome,')]"/>
     <!--Konnect_Login-->
     <Element keyword="Login_Tagging_Next" locator="com.hbl.bbcustomerapp:id/next"/>
