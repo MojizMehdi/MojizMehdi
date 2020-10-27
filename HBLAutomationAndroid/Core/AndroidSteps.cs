@@ -37,8 +37,10 @@ namespace HBLAutomationAndroid.Core
             rec.ExpectedResult = expected_result;
             if(expected_result.ToLower() == "pass")
             {
-                AppiumHelper.Start_Video();
-
+                if(Configuration.GetInstance().GetByKey("Record_Video").ToLower() == "yes")
+                {
+                    AppiumHelper.Start_Video();
+                }
             }
         }
 
@@ -763,7 +765,18 @@ namespace HBLAutomationAndroid.Core
                 //}
                 if (Keyword == "BillPayment_Rating" || Keyword == "BillPayment_RatingOkBtn" || Keyword == "BillPayment_Rating_Feedback_OkBtn" || Keyword == "BillPayment_Rating" || Keyword == "SendMoney_SkipBtn" || Keyword == "Login_permission_allow_btn" || Keyword == "Login_permission_allow_btn2")
                 {
+                    if (Keyword.Contains("Login_permission_allow_btn") || Keyword.Contains("Login_permission_allow_btn2"))
+                    {
+                        if(Configuration.GetInstance().GetByKey("Manage_Calls_Permission").ToLower() == "no" && Keyword.Contains("Login_permission_allow_btn"))
+                        {
+                            keyword = ContextPage.GetInstance().GetElement("Login_permission_deny_btn");
+                        }
+                        if (Configuration.GetInstance().GetByKey("Location_Permission").ToLower() == "no" && Keyword.Contains("Login_permission_allow_btn2"))
+                        {
+                            keyword = ContextPage.GetInstance().GetElement("Login_permission_deny_btn");
+                        }
 
+                    }
                     //Element keyword = ContextPage.GetInstance().GetElement(Keyword);
                     apmhelper.rating(keyword.Locator);
                     return;

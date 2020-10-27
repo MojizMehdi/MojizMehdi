@@ -263,6 +263,10 @@ namespace HBLAutomationAndroid.Pages
                 AndroidDriver<AndroidElement> driver = (AndroidDriver<AndroidElement>)ContextPage.Driver;
                 string FeatureName = ContextPage.GetInstance().GetExcelRecord().FeatureName;
                 string savelocation = Configuration.GetInstance().GetByKey("ScreenshotFolderPath") + FeatureName + DateTime.Now.ToString("yyyyMMdd") + "/";
+                if (savelocation.Contains("{Device_Name}"))
+                {
+                    savelocation = savelocation.Replace("{Device_Name}", Common.Configuration.GetInstance().GetByKey("deviceName").ToString());
+                }
                 Screenshot sc = ((ITakesScreenshot)driver).GetScreenshot();
                 if (!Directory.Exists(savelocation))
                 {

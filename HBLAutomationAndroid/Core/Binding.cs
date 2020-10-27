@@ -200,18 +200,25 @@ namespace HBLAutomationAndroid.Core
                 {
                     if (rec.ExpectedResult.ToLower() == "pass")
                     {
-                        AndroidDriver<AndroidElement> driver = (AndroidDriver<AndroidElement>)ContextPage.Driver;
-                        string video = driver.StopRecordingScreen();
-                        string FeatureName = ContextPage.GetInstance().GetExcelRecord().FeatureName;
-                        string savelocation = Common.Configuration.GetInstance().GetByKey("ScreenshotFolderPath") + FeatureName + DateTime.Now.ToString("yyyyMMdd") + "/Videos/";
-                        byte[] decode = Convert.FromBase64String(video);
-                        if (!Directory.Exists(savelocation))
+                        if (Common.Configuration.GetInstance().GetByKey("Record_Video").ToLower() == "yes")
                         {
-                            Directory.CreateDirectory(savelocation);
+                            AndroidDriver<AndroidElement> driver = (AndroidDriver<AndroidElement>)ContextPage.Driver;
+                            string video = driver.StopRecordingScreen();
+                            string FeatureName = ContextPage.GetInstance().GetExcelRecord().FeatureName;
+                            string savelocation = Common.Configuration.GetInstance().GetByKey("ScreenshotFolderPath") + FeatureName + DateTime.Now.ToString("yyyyMMdd") + "/Videos/";
+                            if (savelocation.Contains("{Device_Name}"))
+                            {
+                                savelocation = savelocation.Replace("{Device_Name}", Common.Configuration.GetInstance().GetByKey("deviceName").ToString());
+                            }
+                            byte[] decode = Convert.FromBase64String(video);
+                            if (!Directory.Exists(savelocation))
+                            {
+                                Directory.CreateDirectory(savelocation);
+                            }
+                            string fileName = ContextPage.GetInstance().GetExcelRecord().ScenarioName + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".mp4";
+                            rec.VideoPath = savelocation + fileName;
+                            File.WriteAllBytes(savelocation + fileName, decode);
                         }
-                        string fileName = ContextPage.GetInstance().GetExcelRecord().ScenarioName + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".mp4";
-                        rec.VideoPath = savelocation + fileName;
-                        File.WriteAllBytes(savelocation + fileName, decode);
                     }
                     if (ScenarioContext.Current.TestError == null)
                     {

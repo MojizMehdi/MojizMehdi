@@ -179,7 +179,7 @@ this.WhenUserTryToLoginMobileBankingForBillPayment("When user id and password ar
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to login mobile banking for bill payment: When user id and password" +
-            " are valid for add_new")]
+            " are valid for add_new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MultiBillPyament")]
@@ -187,8 +187,8 @@ this.WhenUserTryToLoginMobileBankingForBillPayment("When user id and password ar
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Bill_Payment_Exisitng_Bene")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Bill_Payment_Exisitng_Bene_Via_Home")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPaymentLogin.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid for add_new")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid for add_new")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid for add_new_psd_y")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid for add_new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Status_query", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
             "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
             "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;")]
@@ -196,12 +196,157 @@ this.WhenUserTryToLoginMobileBankingForBillPayment("When user id and password ar
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
-        public virtual void WhenUserTryToLoginMobileBankingForBillPayment_WhenUserIdAndPasswordAreValidForAdd_New()
+        public virtual void WhenUserTryToLoginMobileBankingForBillPayment_WhenUserIdAndPasswordAreValidForAdd_New_Psd_Y()
         {
 #line 7
-this.WhenUserTryToLoginMobileBankingForBillPayment("When user id and password are valid for add_new", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
+this.WhenUserTryToLoginMobileBankingForBillPayment("When user id and password are valid for add_new_psd_y", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
                     "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
                     "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;", "DEXTER", "pakistan1", "12345678", "PASS", new string[] {
+                        "source:Data/BillPaymentLogin.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to login mobile banking for bill payment: When user id and password" +
+            " are valid for add_new_invalid_tran_pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MultiBillPyament")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Bill_Payment_Exisitng_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Bill_Payment_Exisitng_Bene_Via_Home")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPaymentLogin.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid for add_new_invalid_tran_pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid for add_new_invalid_tran_pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Status_query", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
+            "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
+            "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "VALID_INVALID")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void WhenUserTryToLoginMobileBankingForBillPayment_WhenUserIdAndPasswordAreValidForAdd_New_Invalid_Tran_Pass()
+        {
+#line 7
+this.WhenUserTryToLoginMobileBankingForBillPayment("When user id and password are valid for add_new_invalid_tran_pass", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
+                    "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
+                    "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;", "VALID_INVALID", "pakistan1", "12345678", "PASS", new string[] {
+                        "source:Data/BillPaymentLogin.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to login mobile banking for bill payment: When user id and password" +
+            " are valid for add_new_insufficient_balance")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MultiBillPyament")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Bill_Payment_Exisitng_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Bill_Payment_Exisitng_Bene_Via_Home")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPaymentLogin.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid for add_new_insufficient_balance")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid for add_new_insufficient_balance")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Status_query", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
+            "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
+            "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "NOTHING")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void WhenUserTryToLoginMobileBankingForBillPayment_WhenUserIdAndPasswordAreValidForAdd_New_Insufficient_Balance()
+        {
+#line 7
+this.WhenUserTryToLoginMobileBankingForBillPayment("When user id and password are valid for add_new_insufficient_balance", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
+                    "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
+                    "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;", "NOTHING", "pakistan1", "12345678", "PASS", new string[] {
+                        "source:Data/BillPaymentLogin.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to login mobile banking for bill payment: When user id and password" +
+            " are valid for add_new_ivr_calling")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MultiBillPyament")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Bill_Payment_Exisitng_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Bill_Payment_Exisitng_Bene_Via_Home")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPaymentLogin.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid for add_new_ivr_calling")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid for add_new_ivr_calling")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Status_query", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
+            "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
+            "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "IVRCALLING")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void WhenUserTryToLoginMobileBankingForBillPayment_WhenUserIdAndPasswordAreValidForAdd_New_Ivr_Calling()
+        {
+#line 7
+this.WhenUserTryToLoginMobileBankingForBillPayment("When user id and password are valid for add_new_ivr_calling", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
+                    "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
+                    "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;", "IVRCALLING", "pakistan1", "12345678", "PASS", new string[] {
+                        "source:Data/BillPaymentLogin.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to login mobile banking for bill payment: When user id and password" +
+            " are valid for add_new_psd_n")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MultiBillPyament")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Bill_Payment_Exisitng_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Bill_Payment_Exisitng_Bene_Via_Home")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPaymentLogin.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid for add_new_psd_n")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid for add_new_psd_n")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Status_query", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
+            "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
+            "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "ENABLEPSD1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void WhenUserTryToLoginMobileBankingForBillPayment_WhenUserIdAndPasswordAreValidForAdd_New_Psd_N()
+        {
+#line 7
+this.WhenUserTryToLoginMobileBankingForBillPayment("When user id and password are valid for add_new_psd_n", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
+                    "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
+                    "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;", "ENABLEPSD1", "pakistan1", "12345678", "PASS", new string[] {
+                        "source:Data/BillPaymentLogin.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to login mobile banking for bill payment: When user id and password" +
+            " are valid for add_new_prestige_customer")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MultiBillPyament")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Bill_Payment_Exisitng_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Bill_Payment_Exisitng_Bene_Via_Home")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPaymentLogin.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid for add_new_prestige_customer")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid for add_new_prestige_customer")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Status_query", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
+            "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
+            "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "PRESTIGEBRO")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void WhenUserTryToLoginMobileBankingForBillPayment_WhenUserIdAndPasswordAreValidForAdd_New_Prestige_Customer()
+        {
+#line 7
+this.WhenUserTryToLoginMobileBankingForBillPayment("When user id and password are valid for add_new_prestige_customer", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
+                    "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
+                    "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;", "PRESTIGEBRO", "pakistan1", "12345678", "PASS", new string[] {
                         "source:Data/BillPaymentLogin.xlsx"});
 #line hidden
         }
@@ -455,15 +600,15 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: When " +
             "valid bill details are provided of Electricity where password is required add_ne" +
-            "w")]
+            "w_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid bill details are provided of Electricity where password is required ad" +
-            "d_new")]
+            "d_new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid bill details are provided of Electricity where password is required ad" +
-            "d_new")]
+            "d_new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query2", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_count_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
@@ -505,11 +650,11 @@ this.ScenarioSetup(scenarioInfo);
             "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_amount", "2")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
-        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenValidBillDetailsAreProvidedOfElectricityWherePasswordIsRequiredAdd_New()
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenValidBillDetailsAreProvidedOfElectricityWherePasswordIsRequiredAdd_New_Psd_Y()
         {
 #line 37
 this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When valid bill details are provided of Electricity where password is required ad" +
-                    "d_new", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+                    "d_new_psd_y", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
                     "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
                     "\') AND CA.IS_ACCOUNT_LINK = 1", "Electricity", "K-ELECTRIC", "0400000615003", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
                     "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "KESC0001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
@@ -529,15 +674,15 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When valid bi
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: When " +
             "valid bill details are provided of Water where password and OTP both are require" +
-            "d add_new")]
+            "d add_new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid bill details are provided of Water where password and OTP both are req" +
-            "uired add_new")]
+            "uired add_new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid bill details are provided of Water where password and OTP both are req" +
-            "uired add_new")]
+            "uired add_new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query2", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_count_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
@@ -578,12 +723,12 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When valid bi
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_check_query", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
             "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_amount", "2")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
-        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenValidBillDetailsAreProvidedOfWaterWherePasswordAndOTPBothAreRequiredAdd_New()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenValidBillDetailsAreProvidedOfWaterWherePasswordAndOTPBothAreRequiredAdd_New_Psd_Y()
         {
 #line 37
 this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When valid bill details are provided of Water where password and OTP both are req" +
-                    "uired add_new", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+                    "uired add_new_psd_y", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
                     "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
                     "\') AND CA.IS_ACCOUNT_LINK = 1", "Water", "KWSB", "65009083300070", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
                     "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "KWSB0001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
@@ -595,20 +740,20 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When valid bi
                     "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
                     "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
                     "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
-                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "", new string[] {
+                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "PASS", new string[] {
                         "source:Data/BillPayment.xlsx"});
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: When " +
-            "valid bill details are provided Gas where OTP is required add_new")]
+            "valid bill details are provided Gas where OTP is required add_new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid bill details are provided Gas where OTP is required add_new")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid bill details are provided Gas where OTP is required add_new")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid bill details are provided Gas where OTP is required add_new_psd_y")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid bill details are provided Gas where OTP is required add_new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query2", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_count_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
@@ -649,11 +794,11 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When valid bi
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_check_query", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
             "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_amount", "2")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
-        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenValidBillDetailsAreProvidedGasWhereOTPIsRequiredAdd_New()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenValidBillDetailsAreProvidedGasWhereOTPIsRequiredAdd_New_Psd_Y()
         {
 #line 37
-this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When valid bill details are provided Gas where OTP is required add_new", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When valid bill details are provided Gas where OTP is required add_new_psd_y", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
                     "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
                     "\') AND CA.IS_ACCOUNT_LINK = 1", "Gas", "SSGC", "0782991137", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
                     "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "SSGC0001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
@@ -665,7 +810,7 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When valid bi
                     "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
                     "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
                     "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
-                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "", new string[] {
+                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "PASS", new string[] {
                         "source:Data/BillPayment.xlsx"});
 #line hidden
         }
@@ -673,15 +818,15 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When valid bi
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: When " +
             "valid bill details are provided Landline where OTP and password both are not req" +
-            "uired add_new")]
+            "uired add_new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid bill details are provided Landline where OTP and password both are not" +
-            " required add_new")]
+            " required add_new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid bill details are provided Landline where OTP and password both are not" +
-            " required add_new")]
+            " required add_new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query2", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_count_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
@@ -722,12 +867,12 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When valid bi
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_check_query", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
             "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_amount", "2")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
-        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenValidBillDetailsAreProvidedLandlineWhereOTPAndPasswordBothAreNotRequiredAdd_New()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenValidBillDetailsAreProvidedLandlineWhereOTPAndPasswordBothAreNotRequiredAdd_New_Psd_Y()
         {
 #line 37
 this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When valid bill details are provided Landline where OTP and password both are not" +
-                    " required add_new", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+                    " required add_new_psd_y", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
                     "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
                     "\') AND CA.IS_ACCOUNT_LINK = 1", "Landline", "SCO", "1759538", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
                     "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "SCO00001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
@@ -739,20 +884,20 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When valid bi
                     "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
                     "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
                     "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
-                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "", new string[] {
+                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "PASS", new string[] {
                         "source:Data/BillPayment.xlsx"});
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: When " +
-            "bill is already paid add_new")]
+            "bill is already paid add_new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When bill is already paid add_new")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When bill is already paid add_new")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When bill is already paid add_new_psd_y")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When bill is already paid add_new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query2", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_count_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
@@ -793,11 +938,11 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When valid bi
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_check_query", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
             "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_amount", "2")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
-        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenBillIsAlreadyPaidAdd_New()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenBillIsAlreadyPaidAdd_New_Psd_Y()
         {
 #line 37
-this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When bill is already paid add_new", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When bill is already paid add_new_psd_y", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
                     "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
                     "\') AND CA.IS_ACCOUNT_LINK = 1", "Electricity", "K-ELECTRIC", "0400000444470", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
                     "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "KESC0001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
@@ -809,20 +954,20 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When bill is 
                     "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
                     "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
                     "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
-                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "", new string[] {
+                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "FAIL", new string[] {
                         "source:Data/BillPayment.xlsx"});
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: When " +
-            "bill is blocked due to allowed days have passed add_new")]
+            "bill is blocked due to allowed days have passed add_new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When bill is blocked due to allowed days have passed add_new")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When bill is blocked due to allowed days have passed add_new")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When bill is blocked due to allowed days have passed add_new_psd_y")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When bill is blocked due to allowed days have passed add_new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query2", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_count_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
@@ -863,11 +1008,11 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When bill is 
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_check_query", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
             "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_amount", "2")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
-        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenBillIsBlockedDueToAllowedDaysHavePassedAdd_New()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenBillIsBlockedDueToAllowedDaysHavePassedAdd_New_Psd_Y()
         {
 #line 37
-this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When bill is blocked due to allowed days have passed add_new", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When bill is blocked due to allowed days have passed add_new_psd_y", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
                     "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
                     "\') AND CA.IS_ACCOUNT_LINK = 1", "Water", "KWSB", "65008900600073", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
                     "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "KWSB0001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
@@ -879,20 +1024,20 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When bill is 
                     "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
                     "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
                     "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
-                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "", new string[] {
+                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "FAIL", new string[] {
                         "source:Data/BillPayment.xlsx"});
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: When " +
-            "bill is blocked due to 0 amount add_new")]
+            "bill is blocked due to 0 amount add_new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When bill is blocked due to 0 amount add_new")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When bill is blocked due to 0 amount add_new")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When bill is blocked due to 0 amount add_new_psd_y")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When bill is blocked due to 0 amount add_new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query2", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_count_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
@@ -933,11 +1078,11 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When bill is 
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_check_query", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
             "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_amount", "2")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
-        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenBillIsBlockedDueTo0AmountAdd_New()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenBillIsBlockedDueTo0AmountAdd_New_Psd_Y()
         {
 #line 37
-this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When bill is blocked due to 0 amount add_new", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When bill is blocked due to 0 amount add_new_psd_y", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
                     "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
                     "\') AND CA.IS_ACCOUNT_LINK = 1", "Gas", "SSGC", "0048757038", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
                     "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "SSGC0001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
@@ -949,20 +1094,20 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When bill is 
                     "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
                     "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
                     "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
-                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "", new string[] {
+                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "FAIL", new string[] {
                         "source:Data/BillPayment.xlsx"});
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: When " +
-            "bill is blocked due to negative amount add_new")]
+            "bill is blocked due to negative amount add_new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When bill is blocked due to negative amount add_new")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When bill is blocked due to negative amount add_new")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When bill is blocked due to negative amount add_new_psd_y")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When bill is blocked due to negative amount add_new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query2", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_count_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
@@ -1003,11 +1148,11 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When bill is 
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_check_query", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
             "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_amount", "2")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
-        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenBillIsBlockedDueToNegativeAmountAdd_New()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenBillIsBlockedDueToNegativeAmountAdd_New_Psd_Y()
         {
 #line 37
-this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When bill is blocked due to negative amount add_new", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When bill is blocked due to negative amount add_new_psd_y", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
                     "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
                     "\') AND CA.IS_ACCOUNT_LINK = 1", "Landline", "SCO", "1758405", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
                     "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "SCO00001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
@@ -1019,20 +1164,20 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When bill is 
                     "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
                     "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
                     "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
-                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "", new string[] {
+                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "FAIL", new string[] {
                         "source:Data/BillPayment.xlsx"});
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: When " +
-            "bill is blocked due bill amount is below MIN ammount in HBPS add_new")]
+            "bill is blocked due bill amount is below MIN ammount in HBPS add_new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When bill is blocked due bill amount is below MIN ammount in HBPS add_new")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When bill is blocked due bill amount is below MIN ammount in HBPS add_new")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When bill is blocked due bill amount is below MIN ammount in HBPS add_new_psd_y")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When bill is blocked due bill amount is below MIN ammount in HBPS add_new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query2", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_count_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
@@ -1073,11 +1218,11 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When bill is 
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_check_query", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
             "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_amount", "2")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
-        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenBillIsBlockedDueBillAmountIsBelowMINAmmountInHBPSAdd_New()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenBillIsBlockedDueBillAmountIsBelowMINAmmountInHBPSAdd_New_Psd_Y()
         {
 #line 37
-this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When bill is blocked due bill amount is below MIN ammount in HBPS add_new", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When bill is blocked due bill amount is below MIN ammount in HBPS add_new_psd_y", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
                     "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
                     "\') AND CA.IS_ACCOUNT_LINK = 1", "Electricity", "K-ELECTRIC", "0400000615003", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
                     "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "KESC0001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
@@ -1089,20 +1234,20 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When bill is 
                     "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
                     "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
                     "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
-                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "", new string[] {
+                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "FAIL", new string[] {
                         "source:Data/BillPayment.xlsx"});
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: When " +
-            "user enter extra payment which is not allowed add_new")]
+            "user enter extra payment which is not allowed add_new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user enter extra payment which is not allowed add_new")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user enter extra payment which is not allowed add_new")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user enter extra payment which is not allowed add_new_psd_y")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user enter extra payment which is not allowed add_new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query2", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_count_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
@@ -1143,11 +1288,11 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When bill is 
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_check_query", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
             "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_amount", "501")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
-        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenUserEnterExtraPaymentWhichIsNotAllowedAdd_New()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenUserEnterExtraPaymentWhichIsNotAllowedAdd_New_Psd_Y()
         {
 #line 37
-this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When user enter extra payment which is not allowed add_new", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When user enter extra payment which is not allowed add_new_psd_y", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
                     "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
                     "\') AND CA.IS_ACCOUNT_LINK = 1", "Electricity", "GEPCO", "15121110774400", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
                     "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "GEPCO001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
@@ -1159,20 +1304,20 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When user ent
                     "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
                     "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
                     "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
-                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "501", "", new string[] {
+                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "501", "FAIL", new string[] {
                         "source:Data/BillPayment.xlsx"});
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: When " +
-            "user enter invalid consumer number add_new")]
+            "user enter invalid consumer number add_new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user enter invalid consumer number add_new")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user enter invalid consumer number add_new")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user enter invalid consumer number add_new_psd_y")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user enter invalid consumer number add_new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query2", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_count_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
@@ -1213,11 +1358,11 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When user ent
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_check_query", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
             "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_amount", "2")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
-        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenUserEnterInvalidConsumerNumberAdd_New()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenUserEnterInvalidConsumerNumberAdd_New_Psd_Y()
         {
 #line 37
-this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When user enter invalid consumer number add_new", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When user enter invalid consumer number add_new_psd_y", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
                     "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
                     "\') AND CA.IS_ACCOUNT_LINK = 1", "Landline", "SCO", "1111111", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
                     "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "SCO00001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
@@ -1229,20 +1374,20 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When user ent
                     "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
                     "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
                     "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
-                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "", new string[] {
+                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "FAIL", new string[] {
                         "source:Data/BillPayment.xlsx"});
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: When " +
-            "bill is blocked due bill amount exceed MAX ammount in HBPS add_new")]
+            "bill is blocked due bill amount exceed MAX ammount in HBPS add_new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When bill is blocked due bill amount exceed MAX ammount in HBPS add_new")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When bill is blocked due bill amount exceed MAX ammount in HBPS add_new")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When bill is blocked due bill amount exceed MAX ammount in HBPS add_new_psd_y")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When bill is blocked due bill amount exceed MAX ammount in HBPS add_new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query2", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_count_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
@@ -1283,11 +1428,11 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When user ent
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_check_query", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
             "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_amount", "2")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
-        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenBillIsBlockedDueBillAmountExceedMAXAmmountInHBPSAdd_New()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenBillIsBlockedDueBillAmountExceedMAXAmmountInHBPSAdd_New_Psd_Y()
         {
 #line 37
-this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When bill is blocked due bill amount exceed MAX ammount in HBPS add_new", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When bill is blocked due bill amount exceed MAX ammount in HBPS add_new_psd_y", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
                     "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
                     "\') AND CA.IS_ACCOUNT_LINK = 1", "Electricity", "K-ELECTRIC", "0400000444373", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
                     "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "KESC0001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
@@ -1299,20 +1444,20 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When bill is 
                     "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
                     "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
                     "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
-                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "", new string[] {
+                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "FAIL", new string[] {
                         "source:Data/BillPayment.xlsx"});
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: When " +
-            "user enter valid OTP add_new")]
+            "user enter valid OTP add_new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user enter valid OTP add_new")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user enter valid OTP add_new")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user enter valid OTP add_new_psd_y")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user enter valid OTP add_new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query2", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_count_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
@@ -1353,11 +1498,11 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When bill is 
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_check_query", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
             "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_amount", "2")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
-        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenUserEnterValidOTPAdd_New()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenUserEnterValidOTPAdd_New_Psd_Y()
         {
 #line 37
-this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When user enter valid OTP add_new", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When user enter valid OTP add_new_psd_y", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
                     "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
                     "\') AND CA.IS_ACCOUNT_LINK = 1", "Gas", "SSGC", "0633950000", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
                     "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "SSGC0001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
@@ -1369,20 +1514,20 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When user ent
                     "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
                     "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
                     "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
-                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "", new string[] {
+                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "PASS", new string[] {
                         "source:Data/BillPayment.xlsx"});
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: When " +
-            "user enter invalid OTP add_new")]
+            "user enter invalid OTP add_new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user enter invalid OTP add_new")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user enter invalid OTP add_new")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user enter invalid OTP add_new_psd_y")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user enter invalid OTP add_new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query2", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_count_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
@@ -1423,11 +1568,11 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When user ent
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_check_query", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
             "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_amount", "2")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
-        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenUserEnterInvalidOTPAdd_New()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenUserEnterInvalidOTPAdd_New_Psd_Y()
         {
 #line 37
-this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When user enter invalid OTP add_new", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When user enter invalid OTP add_new_psd_y", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
                     "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
                     "\') AND CA.IS_ACCOUNT_LINK = 1", "Gas", "SSGC", "0634000000", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
                     "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "SSGC0001", "87654321", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
@@ -1439,22 +1584,23 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When user ent
                     "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
                     "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
                     "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
-                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "", new string[] {
+                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "PASS", new string[] {
                         "source:Data/BillPayment.xlsx"});
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: When " +
-            "company is disabled at HBPS and system wants to perform the transaction add_new")]
+            "company is disabled at HBPS and system wants to perform the transaction add_new_" +
+            "psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When company is disabled at HBPS and system wants to perform the transaction add_" +
-            "new")]
+            "new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When company is disabled at HBPS and system wants to perform the transaction add_" +
-            "new")]
+            "new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query2", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_count_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
@@ -1495,12 +1641,12 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When user ent
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_check_query", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
             "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_amount", "2")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
-        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenCompanyIsDisabledAtHBPSAndSystemWantsToPerformTheTransactionAdd_New()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenCompanyIsDisabledAtHBPSAndSystemWantsToPerformTheTransactionAdd_New_Psd_Y()
         {
 #line 37
 this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When company is disabled at HBPS and system wants to perform the transaction add_" +
-                    "new", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+                    "new_psd_y", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
                     "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
                     "\') AND CA.IS_ACCOUNT_LINK = 1", "Water", "GWASA", "186297", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
                     "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "GWASA001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
@@ -1512,20 +1658,20 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When company 
                     "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
                     "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
                     "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
-                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "", new string[] {
+                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "FAIL", new string[] {
                         "source:Data/BillPayment.xlsx"});
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: To ve" +
-            "rify the boundary values of limits add_new")]
+            "rify the boundary values of limits add_new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify the boundary values of limits add_new")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify the boundary values of limits add_new")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify the boundary values of limits add_new_psd_y")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify the boundary values of limits add_new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query2", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_count_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
@@ -1566,11 +1712,11 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When company 
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_check_query", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
             "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_amount", "2")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
-        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_ToVerifyTheBoundaryValuesOfLimitsAdd_New()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_ToVerifyTheBoundaryValuesOfLimitsAdd_New_Psd_Y()
         {
 #line 37
-this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("To verify the boundary values of limits add_new", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("To verify the boundary values of limits add_new_psd_y", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
                     "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
                     "\') AND CA.IS_ACCOUNT_LINK = 1", "Water", "KWSB", "65009208300055", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
                     "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "KWSB0001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
@@ -1582,20 +1728,20 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("To verify the
                     "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
                     "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
                     "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
-                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "", new string[] {
+                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "FAIL", new string[] {
                         "source:Data/BillPayment.xlsx"});
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: When " +
-            "user\'s daily limit is exhausted add_new")]
+            "user\'s daily limit is exhausted add_new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user\'s daily limit is exhausted add_new")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user\'s daily limit is exhausted add_new")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user\'s daily limit is exhausted add_new_psd_y")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user\'s daily limit is exhausted add_new_psd_y")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query2", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_count_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
@@ -1636,11 +1782,11 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("To verify the
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_check_query", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
             "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_amount", "2")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
-        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenUsersDailyLimitIsExhaustedAdd_New()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenUsersDailyLimitIsExhaustedAdd_New_Psd_Y()
         {
 #line 37
-this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When user\'s daily limit is exhausted add_new", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When user\'s daily limit is exhausted add_new_psd_y", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
                     "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
                     "\') AND CA.IS_ACCOUNT_LINK = 1", "Electricity", "K-ELECTRIC", "0400000300460", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
                     "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "KESC0001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
@@ -1652,7 +1798,1006 @@ this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When user\'s 
                     "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
                     "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
                     "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
-                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "", new string[] {
+                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "FAIL", new string[] {
+                        "source:Data/BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: When " +
+            "user enter valid password add_new_invalid_tran_pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user enter valid password add_new_invalid_tran_pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user enter valid password add_new_invalid_tran_pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query2", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_count_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+            "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
+            "\') AND CA.IS_ACCOUNT_LINK = 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Electricity")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Company_Value", "K-ELECTRIC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BillPayment_ConsumerNo_Value", "0400000293944")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bill_Amount_query", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
+            "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_code_value", "KESC0001")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_name_query", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no_query", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "19107900422303")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_type", "RETAIL")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expiry_date", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "jango1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_query", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+            "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:instrument_type", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+            "Code}\' and i.CHANNEL_CODE=\'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_number_label_query", "SELECT CH.CONSUMER_NO_LABEL FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_CODE = \'" +
+            "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:paid_marking_query", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
+            "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:LP_BillStatus_query", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
+            "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_check_query", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
+            "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_amount", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenUserEnterValidPasswordAdd_New_Invalid_Tran_Pass()
+        {
+#line 37
+this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When user enter valid password add_new_invalid_tran_pass", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+                    "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
+                    "\') AND CA.IS_ACCOUNT_LINK = 1", "Electricity", "K-ELECTRIC", "0400000293944", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
+                    "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "KESC0001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+                    "", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "19107900422303", "RETAIL", "", "jango1", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+                    "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+                    "Code}\' and i.CHANNEL_CODE=\'MB\'", "SELECT CH.CONSUMER_NO_LABEL FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_CODE = \'" +
+                    "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
+                    "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
+                    "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
+                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "PASS", new string[] {
+                        "source:Data/BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: When " +
+            "user enter invalid password count 1 add_new_invalid_tran_pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user enter invalid password count 1 add_new_invalid_tran_pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user enter invalid password count 1 add_new_invalid_tran_pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query2", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_count_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+            "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
+            "\') AND CA.IS_ACCOUNT_LINK = 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Electricity")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Company_Value", "K-ELECTRIC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BillPayment_ConsumerNo_Value", "0400000295998")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bill_Amount_query", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
+            "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_code_value", "KESC0001")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_name_query", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no_query", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "19107900422303")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_type", "RETAIL")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expiry_date", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "jango2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_query", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+            "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:instrument_type", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+            "Code}\' and i.CHANNEL_CODE=\'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_number_label_query", "SELECT CH.CONSUMER_NO_LABEL FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_CODE = \'" +
+            "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:paid_marking_query", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
+            "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:LP_BillStatus_query", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
+            "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_check_query", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
+            "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_amount", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenUserEnterInvalidPasswordCount1Add_New_Invalid_Tran_Pass()
+        {
+#line 37
+this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When user enter invalid password count 1 add_new_invalid_tran_pass", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+                    "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
+                    "\') AND CA.IS_ACCOUNT_LINK = 1", "Electricity", "K-ELECTRIC", "0400000295998", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
+                    "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "KESC0001", "12345678", "pakistan3", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+                    "", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "19107900422303", "RETAIL", "", "jango2", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+                    "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+                    "Code}\' and i.CHANNEL_CODE=\'MB\'", "SELECT CH.CONSUMER_NO_LABEL FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_CODE = \'" +
+                    "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
+                    "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
+                    "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
+                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "FAIL", new string[] {
+                        "source:Data/BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: When " +
+            "user enter invalid password count 2 add_new_invalid_tran_pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user enter invalid password count 2 add_new_invalid_tran_pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user enter invalid password count 2 add_new_invalid_tran_pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query2", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_count_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+            "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
+            "\') AND CA.IS_ACCOUNT_LINK = 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Electricity")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Company_Value", "K-ELECTRIC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BillPayment_ConsumerNo_Value", "0400000295998")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bill_Amount_query", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
+            "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_code_value", "KESC0001")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_name_query", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no_query", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "19107900422303")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_type", "RETAIL")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expiry_date", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "jango3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_query", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+            "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:instrument_type", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+            "Code}\' and i.CHANNEL_CODE=\'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_number_label_query", "SELECT CH.CONSUMER_NO_LABEL FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_CODE = \'" +
+            "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:paid_marking_query", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
+            "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:LP_BillStatus_query", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
+            "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_check_query", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
+            "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_amount", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenUserEnterInvalidPasswordCount2Add_New_Invalid_Tran_Pass()
+        {
+#line 37
+this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When user enter invalid password count 2 add_new_invalid_tran_pass", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+                    "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
+                    "\') AND CA.IS_ACCOUNT_LINK = 1", "Electricity", "K-ELECTRIC", "0400000295998", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
+                    "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "KESC0001", "12345678", "pakistan3", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+                    "", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "19107900422303", "RETAIL", "", "jango3", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+                    "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+                    "Code}\' and i.CHANNEL_CODE=\'MB\'", "SELECT CH.CONSUMER_NO_LABEL FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_CODE = \'" +
+                    "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
+                    "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
+                    "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
+                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "FAIL", new string[] {
+                        "source:Data/BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: When " +
+            "user enter invalid password count 3 add_new_invalid_tran_pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user enter invalid password count 3 add_new_invalid_tran_pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user enter invalid password count 3 add_new_invalid_tran_pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query2", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_count_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+            "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
+            "\') AND CA.IS_ACCOUNT_LINK = 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Electricity")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Company_Value", "K-ELECTRIC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BillPayment_ConsumerNo_Value", "0400000295998")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bill_Amount_query", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
+            "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_code_value", "KESC0001")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_name_query", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no_query", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "19107900422303")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_type", "RETAIL")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expiry_date", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "jango1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_query", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+            "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:instrument_type", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+            "Code}\' and i.CHANNEL_CODE=\'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_number_label_query", "SELECT CH.CONSUMER_NO_LABEL FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_CODE = \'" +
+            "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:paid_marking_query", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
+            "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:LP_BillStatus_query", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
+            "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_check_query", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
+            "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_amount", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenUserEnterInvalidPasswordCount3Add_New_Invalid_Tran_Pass()
+        {
+#line 37
+this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When user enter invalid password count 3 add_new_invalid_tran_pass", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+                    "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
+                    "\') AND CA.IS_ACCOUNT_LINK = 1", "Electricity", "K-ELECTRIC", "0400000295998", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
+                    "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "KESC0001", "12345678", "pakistan3", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+                    "", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "19107900422303", "RETAIL", "", "jango1", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+                    "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+                    "Code}\' and i.CHANNEL_CODE=\'MB\'", "SELECT CH.CONSUMER_NO_LABEL FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_CODE = \'" +
+                    "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
+                    "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
+                    "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
+                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "FAIL", new string[] {
+                        "source:Data/BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: When " +
+            "user enter valid password but at this time TXN password locked add_new_invalid_t" +
+            "ran_pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user enter valid password but at this time TXN password locked add_new_inval" +
+            "id_tran_pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user enter valid password but at this time TXN password locked add_new_inval" +
+            "id_tran_pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query2", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_count_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+            "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
+            "\') AND CA.IS_ACCOUNT_LINK = 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Electricity")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Company_Value", "K-ELECTRIC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BillPayment_ConsumerNo_Value", "0400000295998")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bill_Amount_query", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
+            "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_code_value", "KESC0001")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_name_query", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no_query", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "19107900422303")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_type", "RETAIL")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expiry_date", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "jango4")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_query", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+            "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:instrument_type", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+            "Code}\' and i.CHANNEL_CODE=\'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_number_label_query", "SELECT CH.CONSUMER_NO_LABEL FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_CODE = \'" +
+            "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:paid_marking_query", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
+            "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:LP_BillStatus_query", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
+            "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_check_query", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
+            "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_amount", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenUserEnterValidPasswordButAtThisTimeTXNPasswordLockedAdd_New_Invalid_Tran_Pass()
+        {
+#line 37
+this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When user enter valid password but at this time TXN password locked add_new_inval" +
+                    "id_tran_pass", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+                    "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
+                    "\') AND CA.IS_ACCOUNT_LINK = 1", "Electricity", "K-ELECTRIC", "0400000295998", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
+                    "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "KESC0001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+                    "", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "19107900422303", "RETAIL", "", "jango4", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+                    "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+                    "Code}\' and i.CHANNEL_CODE=\'MB\'", "SELECT CH.CONSUMER_NO_LABEL FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_CODE = \'" +
+                    "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
+                    "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
+                    "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
+                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "FAIL", new string[] {
+                        "source:Data/BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: If us" +
+            "er have insufficient balance and perfrom the transaction add_new_insufficient_ba" +
+            "lance")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "If user have insufficient balance and perfrom the transaction add_new_insufficien" +
+            "t_balance")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "If user have insufficient balance and perfrom the transaction add_new_insufficien" +
+            "t_balance")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query2", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_count_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+            "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
+            "\') AND CA.IS_ACCOUNT_LINK = 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Gas")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Company_Value", "SSGC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BillPayment_ConsumerNo_Value", "0016561000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bill_Amount_query", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
+            "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_code_value", "SSGC0001")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_name_query", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no_query", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "02307900756503")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_type", "RETAIL")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expiry_date", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "jango3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_query", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+            "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:instrument_type", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+            "Code}\' and i.CHANNEL_CODE=\'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_number_label_query", "SELECT CH.CONSUMER_NO_LABEL FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_CODE = \'" +
+            "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:paid_marking_query", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
+            "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:LP_BillStatus_query", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
+            "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_check_query", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
+            "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_amount", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_IfUserHaveInsufficientBalanceAndPerfromTheTransactionAdd_New_Insufficient_Balance()
+        {
+#line 37
+this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("If user have insufficient balance and perfrom the transaction add_new_insufficien" +
+                    "t_balance", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+                    "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
+                    "\') AND CA.IS_ACCOUNT_LINK = 1", "Gas", "SSGC", "0016561000", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
+                    "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "SSGC0001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+                    "", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "02307900756503", "RETAIL", "", "jango3", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+                    "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+                    "Code}\' and i.CHANNEL_CODE=\'MB\'", "SELECT CH.CONSUMER_NO_LABEL FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_CODE = \'" +
+                    "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
+                    "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
+                    "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
+                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "FAIL", new string[] {
+                        "source:Data/BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: To ve" +
+            "rfiy that user receive IVR call at the time of transaction add_new_ivr_calling")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verfiy that user receive IVR call at the time of transaction add_new_ivr_calli" +
+            "ng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verfiy that user receive IVR call at the time of transaction add_new_ivr_calli" +
+            "ng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query2", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_count_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+            "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
+            "\') AND CA.IS_ACCOUNT_LINK = 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Gas")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Company_Value", "SSGC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BillPayment_ConsumerNo_Value", "0469291000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bill_Amount_query", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
+            "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_code_value", "SSGC0001")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_name_query", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no_query", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "05687900940303")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_type", "RETAIL")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expiry_date", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "jango3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_query", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+            "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:instrument_type", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+            "Code}\' and i.CHANNEL_CODE=\'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_number_label_query", "SELECT CH.CONSUMER_NO_LABEL FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_CODE = \'" +
+            "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:paid_marking_query", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
+            "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:LP_BillStatus_query", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
+            "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_check_query", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
+            "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_amount", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_ToVerfiyThatUserReceiveIVRCallAtTheTimeOfTransactionAdd_New_Ivr_Calling()
+        {
+#line 37
+this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("To verfiy that user receive IVR call at the time of transaction add_new_ivr_calli" +
+                    "ng", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+                    "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
+                    "\') AND CA.IS_ACCOUNT_LINK = 1", "Gas", "SSGC", "0469291000", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
+                    "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "SSGC0001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+                    "", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "05687900940303", "RETAIL", "", "jango3", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+                    "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+                    "Code}\' and i.CHANNEL_CODE=\'MB\'", "SELECT CH.CONSUMER_NO_LABEL FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_CODE = \'" +
+                    "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
+                    "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
+                    "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
+                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "FAIL", new string[] {
+                        "source:Data/BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: To ve" +
+            "rfiy that user receive 2nd IVR call at the time of transaction 1st one is in pen" +
+            "ding state add_new_ivr_calling")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verfiy that user receive 2nd IVR call at the time of transaction 1st one is in" +
+            " pending state add_new_ivr_calling")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verfiy that user receive 2nd IVR call at the time of transaction 1st one is in" +
+            " pending state add_new_ivr_calling")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query2", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_count_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+            "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
+            "\') AND CA.IS_ACCOUNT_LINK = 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Gas")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Company_Value", "SSGC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BillPayment_ConsumerNo_Value", "0469291000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bill_Amount_query", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
+            "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_code_value", "SSGC0001")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_name_query", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no_query", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "05687900940303")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_type", "RETAIL")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expiry_date", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "jango3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_query", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+            "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:instrument_type", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+            "Code}\' and i.CHANNEL_CODE=\'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_number_label_query", "SELECT CH.CONSUMER_NO_LABEL FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_CODE = \'" +
+            "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:paid_marking_query", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
+            "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:LP_BillStatus_query", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
+            "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_check_query", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
+            "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_amount", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_ToVerfiyThatUserReceive2NdIVRCallAtTheTimeOfTransaction1StOneIsInPendingStateAdd_New_Ivr_Calling()
+        {
+#line 37
+this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("To verfiy that user receive 2nd IVR call at the time of transaction 1st one is in" +
+                    " pending state add_new_ivr_calling", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+                    "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
+                    "\') AND CA.IS_ACCOUNT_LINK = 1", "Gas", "SSGC", "0469291000", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
+                    "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "SSGC0001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+                    "", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "05687900940303", "RETAIL", "", "jango3", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+                    "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+                    "Code}\' and i.CHANNEL_CODE=\'MB\'", "SELECT CH.CONSUMER_NO_LABEL FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_CODE = \'" +
+                    "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
+                    "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
+                    "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
+                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "FAIL", new string[] {
+                        "source:Data/BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: To ve" +
+            "rify the boundary values of limits add_new_psd_n")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify the boundary values of limits add_new_psd_n")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify the boundary values of limits add_new_psd_n")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query2", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_count_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+            "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
+            "\') AND CA.IS_ACCOUNT_LINK = 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Electricity")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Company_Value", "K-ELECTRIC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BillPayment_ConsumerNo_Value", "0400001263607")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bill_Amount_query", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
+            "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_code_value", "KESC0001")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_name_query", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no_query", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24747000017803")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_type", "RETAIL")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expiry_date", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "jango2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_query", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+            "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:instrument_type", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+            "Code}\' and i.CHANNEL_CODE=\'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_number_label_query", "SELECT CH.CONSUMER_NO_LABEL FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_CODE = \'" +
+            "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:paid_marking_query", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
+            "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:LP_BillStatus_query", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
+            "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_check_query", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
+            "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_amount", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_ToVerifyTheBoundaryValuesOfLimitsAdd_New_Psd_N()
+        {
+#line 37
+this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("To verify the boundary values of limits add_new_psd_n", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+                    "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
+                    "\') AND CA.IS_ACCOUNT_LINK = 1", "Electricity", "K-ELECTRIC", "0400001263607", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
+                    "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "KESC0001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+                    "", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "24747000017803", "RETAIL", "", "jango2", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+                    "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+                    "Code}\' and i.CHANNEL_CODE=\'MB\'", "SELECT CH.CONSUMER_NO_LABEL FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_CODE = \'" +
+                    "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
+                    "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
+                    "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
+                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "FAIL", new string[] {
+                        "source:Data/BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: When " +
+            "valid bill details are provided of Electricity bill payment add_new_psd_n")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid bill details are provided of Electricity bill payment add_new_psd_n")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid bill details are provided of Electricity bill payment add_new_psd_n")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query2", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_count_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+            "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
+            "\') AND CA.IS_ACCOUNT_LINK = 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Electricity")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Company_Value", "K-ELECTRIC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BillPayment_ConsumerNo_Value", "0400001128041")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bill_Amount_query", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
+            "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_code_value", "KESC0001")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_name_query", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no_query", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24747000017803")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_type", "RETAIL")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expiry_date", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "jango1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_query", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+            "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:instrument_type", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+            "Code}\' and i.CHANNEL_CODE=\'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_number_label_query", "SELECT CH.CONSUMER_NO_LABEL FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_CODE = \'" +
+            "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:paid_marking_query", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
+            "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:LP_BillStatus_query", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
+            "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_check_query", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
+            "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_amount", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenValidBillDetailsAreProvidedOfElectricityBillPaymentAdd_New_Psd_N()
+        {
+#line 37
+this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When valid bill details are provided of Electricity bill payment add_new_psd_n", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+                    "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
+                    "\') AND CA.IS_ACCOUNT_LINK = 1", "Electricity", "K-ELECTRIC", "0400001128041", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
+                    "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "KESC0001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+                    "", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "24747000017803", "RETAIL", "", "jango1", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+                    "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+                    "Code}\' and i.CHANNEL_CODE=\'MB\'", "SELECT CH.CONSUMER_NO_LABEL FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_CODE = \'" +
+                    "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
+                    "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
+                    "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
+                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "PASS", new string[] {
+                        "source:Data/BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: When " +
+            "user\'s daily limit is exhausted add_new_psd_n")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user\'s daily limit is exhausted add_new_psd_n")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user\'s daily limit is exhausted add_new_psd_n")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query2", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_count_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+            "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
+            "\') AND CA.IS_ACCOUNT_LINK = 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Electricity")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Company_Value", "K-ELECTRIC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BillPayment_ConsumerNo_Value", "0400001128106")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bill_Amount_query", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
+            "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_code_value", "KESC0001")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_name_query", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no_query", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24747000017803")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_type", "RETAIL")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expiry_date", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "jango5")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_query", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+            "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:instrument_type", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+            "Code}\' and i.CHANNEL_CODE=\'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_number_label_query", "SELECT CH.CONSUMER_NO_LABEL FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_CODE = \'" +
+            "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:paid_marking_query", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
+            "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:LP_BillStatus_query", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
+            "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_check_query", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
+            "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_amount", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenUsersDailyLimitIsExhaustedAdd_New_Psd_N()
+        {
+#line 37
+this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When user\'s daily limit is exhausted add_new_psd_n", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+                    "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
+                    "\') AND CA.IS_ACCOUNT_LINK = 1", "Electricity", "K-ELECTRIC", "0400001128106", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
+                    "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "KESC0001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+                    "", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "24747000017803", "RETAIL", "", "jango5", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+                    "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+                    "Code}\' and i.CHANNEL_CODE=\'MB\'", "SELECT CH.CONSUMER_NO_LABEL FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_CODE = \'" +
+                    "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
+                    "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
+                    "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
+                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "FAIL", new string[] {
+                        "source:Data/BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: To ve" +
+            "rify the boundary values of limits add_new_prestige_customer")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify the boundary values of limits add_new_prestige_customer")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify the boundary values of limits add_new_prestige_customer")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query2", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_count_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+            "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
+            "\') AND CA.IS_ACCOUNT_LINK = 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Electricity")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Company_Value", "K-ELECTRIC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BillPayment_ConsumerNo_Value", "0400001137806")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bill_Amount_query", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
+            "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_code_value", "KESC0001")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_name_query", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no_query", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094903010")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_type", "RETAIL")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expiry_date", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "jango2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_query", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+            "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:instrument_type", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+            "Code}\' and i.CHANNEL_CODE=\'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_number_label_query", "SELECT CH.CONSUMER_NO_LABEL FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_CODE = \'" +
+            "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:paid_marking_query", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
+            "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:LP_BillStatus_query", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
+            "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_check_query", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
+            "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_amount", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_ToVerifyTheBoundaryValuesOfLimitsAdd_New_Prestige_Customer()
+        {
+#line 37
+this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("To verify the boundary values of limits add_new_prestige_customer", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+                    "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
+                    "\') AND CA.IS_ACCOUNT_LINK = 1", "Electricity", "K-ELECTRIC", "0400001137806", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
+                    "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "KESC0001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+                    "", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "24460094903010", "RETAIL", "", "jango2", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+                    "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+                    "Code}\' and i.CHANNEL_CODE=\'MB\'", "SELECT CH.CONSUMER_NO_LABEL FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_CODE = \'" +
+                    "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
+                    "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
+                    "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
+                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "FAIL", new string[] {
+                        "source:Data/BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: When " +
+            "valid bill details are provided of Electricity bill payment add_new_prestige_cus" +
+            "tomer")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid bill details are provided of Electricity bill payment add_new_prestige" +
+            "_customer")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid bill details are provided of Electricity bill payment add_new_prestige" +
+            "_customer")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query2", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_count_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+            "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
+            "\') AND CA.IS_ACCOUNT_LINK = 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Electricity")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Company_Value", "K-ELECTRIC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BillPayment_ConsumerNo_Value", "0400001137997")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bill_Amount_query", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
+            "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_code_value", "KESC0001")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_name_query", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no_query", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094903010")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_type", "RETAIL")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expiry_date", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "jango1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_query", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+            "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:instrument_type", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+            "Code}\' and i.CHANNEL_CODE=\'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_number_label_query", "SELECT CH.CONSUMER_NO_LABEL FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_CODE = \'" +
+            "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:paid_marking_query", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
+            "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:LP_BillStatus_query", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
+            "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_check_query", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
+            "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_amount", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenValidBillDetailsAreProvidedOfElectricityBillPaymentAdd_New_Prestige_Customer()
+        {
+#line 37
+this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When valid bill details are provided of Electricity bill payment add_new_prestige" +
+                    "_customer", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+                    "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
+                    "\') AND CA.IS_ACCOUNT_LINK = 1", "Electricity", "K-ELECTRIC", "0400001137997", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
+                    "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "KESC0001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+                    "", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "24460094903010", "RETAIL", "", "jango1", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+                    "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+                    "Code}\' and i.CHANNEL_CODE=\'MB\'", "SELECT CH.CONSUMER_NO_LABEL FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_CODE = \'" +
+                    "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
+                    "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
+                    "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
+                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "PASS", new string[] {
+                        "source:Data/BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Bill Payment through Mobile by make new payment: When " +
+            "user\'s daily limit is exhausted add_new_prestige_customer")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddNew_BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BillPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user\'s daily limit is exhausted add_new_prestige_customer")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user\'s daily limit is exhausted add_new_prestige_customer")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query2", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_count_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+            "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
+            "\') AND CA.IS_ACCOUNT_LINK = 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Electricity")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Company_Value", "K-ELECTRIC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BillPayment_ConsumerNo_Value", "0400001140165")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bill_Amount_query", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
+            "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_code_value", "KESC0001")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_name_query", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no_query", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094903010")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_type", "RETAIL")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expiry_date", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "jango5")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_query", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+            "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:instrument_type", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+            "Code}\' and i.CHANNEL_CODE=\'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_number_label_query", "SELECT CH.CONSUMER_NO_LABEL FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_CODE = \'" +
+            "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:paid_marking_query", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
+            "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:LP_BillStatus_query", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
+            "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_check_query", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
+            "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_payment_amount", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment_WhenUsersDailyLimitIsExhaustedAdd_New_Prestige_Customer()
+        {
+#line 37
+this.AsAUserIWantToVerifyBillPaymentThroughMobileByMakeNewPayment("When user\'s daily limit is exhausted add_new_prestige_customer", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT C" +
+                    "I.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{username}" +
+                    "\') AND CA.IS_ACCOUNT_LINK = 1", "Electricity", "K-ELECTRIC", "0400001140165", "SELECT LB.BILL_AMOUNT,LB.COMPANY_CODE,LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CONSU" +
+                    "MER_NO=\'{ConsumerNo}\' ORDER BY LB.CREATED_ON DESC", "KESC0001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+                    "", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "24460094903010", "RETAIL", "", "jango5", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+                    "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+                    "Code}\' and i.CHANNEL_CODE=\'MB\'", "SELECT CH.CONSUMER_NO_LABEL FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_CODE = \'" +
+                    "{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT CH.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY_C" +
+                    "ODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "SELECT LP.BILL_STATUS_ID FROM LP_BILLS LP WHERE LP.CONSUMER_NO = \'{ConsumerNo}\' a" +
+                    "nd TO_CHAR(LP.BILLING_MONTH,\'MM/YYYY\') = \'\" + {Billing_Month} + \"\'\"", "SELECT CH.IS_PARTIAL_PAYMENT_ALLOWED FROM BPS_COMPANY_CHANNEL CH WHERE CH.COMPANY" +
+                    "_CODE = \'{Company_Code}\' AND CH.CHANNEL_CODE = \'MB\'", "2", "FAIL", new string[] {
                         "source:Data/BillPayment.xlsx"});
 #line hidden
         }
