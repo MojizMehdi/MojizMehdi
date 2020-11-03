@@ -81,6 +81,11 @@ namespace HBLAutomationWeb.Pages
                             Console.WriteLine("chrome");
                             ChromeOptions chromeOptions = new ChromeOptions();
                             chromeOptions.AddArgument("--start-maximized");
+                            if (Configuration.GetInstance().GetByKey("Headless_Allowed").ToLower() == "yes")
+                            {
+                                chromeOptions.AddArgument("--headless");
+                            }
+                            //chromeOptions.AddArgument("headless");
                             //chromeOptions.AddArguments("disable-infobars");
                             //chromeOptions.AddArgument("--disable-notifications");
                             chromeOptions.AddExcludedArgument("enable-automation");
@@ -113,6 +118,14 @@ namespace HBLAutomationWeb.Pages
                             //FirefoxOptions foptions = new FirefoxOptions();
                             //foptions.AddAdditionalCapability("acceptInsecureCerts", true);
                             //capabilities.SetCapability("acceptInsecureCerts", true);
+                            FirefoxOptions firefoxOptions = new FirefoxOptions();
+                            if (Configuration.GetInstance().GetByKey("Headless_Allowed").ToLower() == "yes")
+                            {
+                                firefoxOptions.AddArgument("--headless");
+                            }
+                            //firefoxOptions.AddArgument("--headless");
+                            firefoxOptions.AddArgument("--start-maximized");
+                            //firefoxOptions.ad("enable-automation");
                             driver = new FirefoxDriver();
                             driver.Manage().Window.Maximize();
                             break;

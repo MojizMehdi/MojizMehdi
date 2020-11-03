@@ -22,17 +22,29 @@ Scenario Outline: 1 As a user i want to Verify login for HBL Web Manage Schedule
 
 
 @MngSchedule
-Scenario Outline: As a user I want to verify Schedule Management from My Account
+Scenario Outline: As a user I want to verify Send Money Beneficiaries of Schedule Management from My Account
 	Given the test case title is "<Case>" 
 	And the user is arrive to Internet Banking home page
 	And I set value in context from database "<schedule_count_query>" as "user_schedule_count" on Schema "<db_val>"
 	When I am clicking on "MyAccount_Icon"
 	And I am clicking on "MyAccount_MngSch_Icon"
 	Then I am verifying schedule payments of Send Money from My Account
-	And I am verifying schedule payments of Bill Payment from My Account
+
+	@source:Data/ManageSchedule_SendMoney_Verify.xlsx
+	Examples: 
+	|Case|db_val|schedule_count_query|
 
 
-	@source:Data/ManageScheduleVerify.xlsx
+@MngSchedule
+Scenario Outline: As a user I want to verify Bill Payment Beneficiaries of Schedule Management from My Account
+	Given the test case title is "<Case>" 
+	And the user is arrive to Internet Banking home page
+	And I set value in context from database "<schedule_count_query>" as "user_schedule_count" on Schema "<db_val>"
+	When I am clicking on "MyAccount_Icon"
+	And I am clicking on "MyAccount_MngSch_Icon"
+	Then I am verifying schedule payments of Bill Payment from My Account
+
+	@source:Data/ManageSchedule_BillPayment_Verify.xlsx
 	Examples: 
 	|Case|db_val|schedule_count_query|
 

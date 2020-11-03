@@ -3,7 +3,7 @@
 	As a math idiot
 	I want to be told the sum of two numbers
 
-@Login
+@SendMoney
 Scenario Outline: 1 As a user i want to Verify login for HBL Web Send Money
 	Given the test case title is "<Case>"
 	And I set value in context from data "<Login_UserId_Value>" as "username"

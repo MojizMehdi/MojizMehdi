@@ -8,7 +8,10 @@
     <Element keyword="Login_OTP_Verify_Button" locator="//button[@class='btn submit-btn']"/>
     <Element keyword="Login_Dashboard" locator="//img[@class='desk-logo']"/>
     <Element keyword="Login_Success_Text" locator="//h2[@class='over-lap']//span" />
+    <Element keyword="Login_Logout_opt" locator="//div[@class='actions col-lg-5 col-xl-5']//a[@class='logout']" />
+    <Element keyword="Login_LogoutBtn" locator="//div[@id='logoutpop']//button[@type='button' and text()='Yes']" />
 
+    /
     <!-- Agent Portal-->
     
     <!-- Agent Portal-->
@@ -61,7 +64,7 @@
     <Element keyword="Forget_LoginID_Mobile" locator="//div[@ng-show='show{x}cardstep']//input[@ng-model='ForgotUserName.mobileNumber']" />
     <Element keyword="Forget_LoginID_CreditNo" locator="//div[@ng-show='showcreditcardstep']//input[@ng-model='ForgotUserName.creditCardNumber']" />
     <Element keyword="Forget_LoginID_CreditEmail" locator="//div[@ng-show='showcreditcardstep']//input[@ng-model='ForgotUserName.email']" />
-    <Element keyword="Forget_ChangeLogin_PassPolicy" locator="//div[@ng-show='showdebitcardstepchangeID']//div[@class='user-policy highlight']" />
+    <Element keyword="Forget_ChangeLogin_PassPolicy" locator="//div[@ng-show='show{x}cardstepchangeID']//div[@class='user-policy highlight']" />
     <Element keyword="Forget_Change_NextBtn" locator="//div[@ng-show='show{x}cardstepchangeID']//button" />
     <Element keyword="Forget_Change_DebitNo" locator="//div[@ng-show='showdebitcardstepchangeID']//input[@name='CardNo']" />
     <Element keyword="Forget_Change_DebitPin" locator="//div[@ng-show='showdebitcardstepchangeID']//input[@name='CardNoPin']" />
@@ -148,6 +151,7 @@
     <Element keyword="Pay_LinkHomeIcon" locator="//a[@class='widget_item' and text()='Bill Payment']"/>
     <Element keyword="Pay_AddNewBtn" locator="//a[contains(text(),'Add New') and @class='btn add float-right']"/>
     <Element keyword="Pay_BillPaymentCategory" locator="//li[contains(text(),'{BillPaymentCategory}')]"/>
+    <Element keyword="Pay_BillPaymentCategory_List" locator="//li[@class='ng-binding ng-scope']"/>
     <Element keyword="Pay_BillPaymentCategory_Company" locator="//h2[@class='head ng-binding ng-scope' and contains(text(),'{Pay_BillPaymentCategory_Company}')]"/>
     <Element keyword="Pay_BillPayment_ConsumerNo" locator="//input[@id='ConsumerNo']"/>
     <Element keyword="Pay_BillPayment_NextBtn" locator="//button[@class='btn submit-btn' and text()='Next']"/>
@@ -218,7 +222,7 @@
     <Element keyword="Pay_MultiBill_RatingCloseBtn" locator="//div[@class='ng-scope']//a" />
     <Element keyword="Pay_MultiBill_Services_row" locator="//tr[@ng-repeat='x in GetDataTransactions.historyList'][{k}]" />
     <Element keyword="Pay_MultiBill_SRV_TranStatus" locator="//h2[@class='ng-binding' and text()= 'Transaction Status']//following-sibling::p" />
-    <Element keyword="Pay_MultiBill_SRV_TranID" locator="//h2[@class='ng-binding' and text()= 'Transaction ID']//following-sibling::p" />
+    <Element keyword="Pay_MultiBill_SRV_TranID" locator="//h2[@class='ng-binding' and text()= 'Receipt ID']//following-sibling::p" />
     <Element keyword="Pay_MultiBill_SRV_TranType" locator="//h2[@class='ng-binding' and text()= 'Transaction Type']//following-sibling::p" />
     <Element keyword="Pay_MultiBill_SRV_TranAmount" locator="//h2[@class='ng-binding' and text()= 'Transaction Amount']//following-sibling::p" />
     <Element keyword="Pay_MultiBill_SRV_FromAcc" locator="//h2[@class='ng-binding' and text()= 'From']//following-sibling::p" />
@@ -317,7 +321,7 @@
     <Element keyword="MyAccount_Icon" locator="//div[@class='actions col-lg-5 col-xl-5']//a[contains(text(),'My Account')]" />
     <Element keyword="MyAccount_AccLinkOption" locator="//a[@ng-click='CustomerAccountDetail();']" />
     <Element keyword="MyAccount_LinkToggleBtn" locator="//label[@for='{account_no}']"/>
-    <Element keyword="MyAccount_LinkSubmitBtn" locator=" //div[@class='form-group col-11 text-right']//button"/>
+    <Element keyword="MyAccount_LinkSubmitBtn" locator=" //button[@class='btn btn submit-btn']"/>
     <Element keyword="MyAccount_LinkVerifyBtn" locator="//button[text()='Verify']"/>
     <Element keyword="MyAccount_Tran_DeLink" locator="//h2[@class='ng-binding' and text()= 'Delinked Account Number(s)']//following-sibling::p"/>
     <Element keyword="MyAccount_Tran_Link" locator="//h2[@class='ng-binding' and text()= 'Linked Account Number(s)']//following-sibling::p"/>
@@ -376,11 +380,11 @@
     <Element keyword="MyAccount_CheqBook_forAcc_List" locator="//select[@name='fromAccounts']" />
     <Element keyword="MyAccount_CheqBook_No" locator="//select[@name='NoofLeaves']" />
     <Element keyword="MyAccount_CheqBook_CityList" locator="//label[@for='City']//following-sibling::div//a//span" />
-    <Element keyword="MyAccount_CheqBook_CityList_Search" locator="//label[@for='City']//following-sibling::div//input" />
-    <Element keyword="MyAccount_CheqBook_BranchList_Search" locator="//label[@for='Branch']//following-sibling::div//input" />
+    <Element keyword="MyAccount_CheqBook_CityList_Search" locator="//label[@for='City']//following-sibling::div//ul//li" />
+    <Element keyword="MyAccount_CheqBook_BranchList_Search" locator="//label[@for='Branch']//following-sibling::div//ul//li" />
     <Element keyword="MyAccount_CheqBook_BranchList" locator="//label[@for='Branch']//following-sibling::div//a//span" />
-    <Element keyword="MyAccount_CheqBook_BranchCheck" locator="//span[@class='custom-control-indicator']" />
-    <Element keyword="MyAccount_CheqBook_TranPass" locator="//input[@name='TransactionPassword']" />
+    <Element keyword="MyAccount_CheqBook_BranchCheck" locator="//span[@class='custom-control-description']" />
+    <Element keyword="MyAccount_CheqBook_TranPass" locator="//div[@ng-form='checkbock']//input[@name='TransactionPassword']" />
     <Element keyword="MyAccount_CheqBook_ReqBtn" locator="//button[@class='btn submit-btn' and text()='Send Request']" />
     <Element keyword="MyAccount_CheqBook_TranSuccessMessage" locator="//h2[text()='Transaction ID']/parent::*/parent::*//preceding-sibling::div//p" />
     <Element keyword="MyAccount_CheqBook_TranType" locator="//*[contains(text(),'Transaction Type')]//following-sibling::p" />
@@ -399,9 +403,10 @@
     <Element keyword="MyAccount_PayOrder_Bene" locator="//div[@ng-form='payorder']//input[@name='Beneficiary']" />
     <Element keyword="MyAccount_PayOrder_Purpose" locator="//div[@ng-form='payorder']//select[@name='purpose']" />
     <Element keyword="MyAccount_PayOrder_City" locator="//label[@for='beniname' and text()='City']//following-sibling::div//a//span" />
-    <Element keyword="MyAccount_PayOrder_City_Search" locator="//label[@for='beniname' and text()='City']//following-sibling::div//a//span" />
-    <Element keyword="MyAccount_PayOrder_Branch" locator="//label[@for='beniname' and text()='Branch']//following-sibling::div//input" />
-    <Element keyword="MyAccount_PayOrder_Branch_Search" locator="//label[@for='beniname' and text()='Branch']//following-sibling::div//input" />
+    <Element keyword="MyAccount_PayOrder_City_Search" locator="//label[@for='beniname' and text()='City']//following-sibling::div//ul//li" />
+    <Element keyword="MyAccount_PayOrder_Branch" locator="//label[@for='beniname' and text()='Branch']//following-sibling::div//a//span" />
+    <Element keyword="MyAccount_PayOrder_Branch_Search" locator="//label[@for='beniname' and text()='Branch']//following-sibling::div//ul//li" />
+    <Element keyword="MyAccount_PayOrder_TranPass" locator="//div[@ng-form='payorder']//input[@name='TransactionPassword']" />
     <Element keyword="MyAccount_PayOrder_ReqBtn" locator="//div[@ng-form='payorder']//button" />
     <Element keyword="MyAccount_PayOrder_TranSuccessMessage" locator="//div[@id='successPopupGen']//div[@class='congrats-div']//p" />
     <Element keyword="MyAccount_PayOrder_TranType" locator="//h2[text()='Transaction Type']//following-sibling::p" />
@@ -410,7 +415,8 @@
     <Element keyword="MyAccount_PayOrder_Tran_FromAcc" locator="//h2[text()='Source Account Number']//following-sibling::p" />
     <Element keyword="MyAccount_PayOrder_Tran_BranchName" locator="//h2[text()='Delivery Branch Name']//following-sibling::p" />
     <Element keyword="MyAccount_PayOrder_TranBranchCode" locator="//h2[text()='Delivery Branch Code']//following-sibling::p" />
-    <Element keyword="MyAccount_PayOrder_Tran_Purpose" locator="//h2[text()='Purpose']//following-sibling::p" />
+    <Element keyword="MyAccount_PayOrder_Tran_Purpose" locator="//div[@id='successPopupGen']//h2[text()='Purpose']//following-sibling::p" />
+    <Element keyword="MyAccount_PayOrder_TranActivity_Purpose" locator="//h2[text()='Purpose']//following-sibling::p" />
     <Element keyword="MyAccount_PayOrder_Tran_CloseBtn" locator="//div[@id='successPopupGen']//a" />
     <Element keyword="MyAccount_WithHoldTax_ForAcc_List" locator="//select[@name='fromAccount']" />
     <Element keyword="MyAccount_WithHoldTax_FromDate" locator="//input[@name='fromDate']" />
@@ -485,6 +491,7 @@
     <Element keyword="BeneManage_TranNick" locator="//h2[text()='Beneficiary Nick']//following-sibling::p"/>
     <Element keyword="BeneManage_TranType" locator="//h2[text()='Transaction Type']//following-sibling::p"/>
     <Element keyword="BeneManage_TranDate" locator="//*[contains(text(), 'Transaction Date')]//following-sibling::p"/>
+    <Element keyword="BeneManage_Transaction_ID" locator="(//*[contains(text(),'Receipt ID')]//following-sibling::p)[2]"/>
     <Element keyword="BeneManage_Tran_CloseBtn" locator="//a[@class='btn' and text()='Close']"/>
     <Element keyword="BeneManage_Delete" locator="//p[contains(text(), '{x}')]/parent::*//following-sibling::div//a[@class='del']" />
     <Element keyword="BeneManage_Edit" locator="//p[contains(text(), '{x}')]/parent::*//following-sibling::div//a[@class='edt']" />
@@ -497,6 +504,7 @@
     <Element keyword="BeneManage_Edit_Email" locator="//input[@name='Email']"/>
     <Element keyword="BeneManage_Edit_Mobile" locator="//input[@name='MobileNumber']"/>
     <Element keyword="BeneManage_Edit_UpdateBtn" locator="//button[@class='btn submit-btn' and text()='Update']"/>
+    <Element keyword="BeneManage_Add_OtpSaveBtn" locator="(//button[@class='btn submit-btn'])[1]"/>
 
 
   </Module>
@@ -551,7 +559,7 @@
     <Element keyword="Investment_MutualFund_TranOld" locator="//h2[text()='Previous Limits']//following-sibling::p" />
     <Element keyword="Investment_MutualFund_TranNew" locator="//h2[text()='New Limits']//following-sibling::p" />
     <Element keyword="Investment_MutualFund_TranFundName" locator="(//h2[@class='ng-binding' and text()='Fund Name']//following-sibling::p)[1]" />
-    <Element keyword="Investment_MutualFund_TranCloseBtn" locator="//div[@id='transactionActivity']//a" />
+    <Element keyword="Investment_MutualFund_TranCloseBtn" locator="//form[@name='MainForm']//a[text()='Close']" />
     <Element keyword="Investment_MutualFund_PopupBtn" locator="//button[@class='btn' and text()='Next']" />
     <Element keyword="Investment_TermDep_RatingOkBtn" locator="//div[@id='successPopupGen2']//button[contains(text(),'Ok')]" />
     <Element keyword="Investment_TermDep_RatingCancel" locator="//div[@id='successPopupGen2']//a" />

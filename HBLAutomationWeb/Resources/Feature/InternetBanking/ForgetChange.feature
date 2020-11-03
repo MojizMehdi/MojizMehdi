@@ -21,8 +21,8 @@ Scenario Outline: 2 As a user i want to verify forget password
 	And I have given "<Credit_card>" on "Forget_Password_CreditCardNo"
 	And I have given "<email>" on "Forget_Password_Email"
 	And I am performing on "Forget_PasswordSubmitBtn"
-	And I set value in context from database "<mobile_no_query>" as "mobile_number" on Schema "<db_val>"
 	And I wait 5000
+	And I set value in context from database "<mobile_no_query>" as "mobile_number" on Schema "<db_val>"
 	And verify the message "<lead_field_value>" through database on "<lead_field_query>" on Schema "<db_val>"
 	And verify through "<OTP_message>" on "Forget_Change_OTPMsg"
 	And I set value in context from data "true" as "change_loginID_check"
@@ -42,8 +42,14 @@ Scenario Outline: 2 As a user i want to verify forget password
 	And I am performing on "Login_SignIn_Button"
 	And I have given "" on "Login_OTP_field"
 	And I am performing on "Login_OTP_Verify_Button"
+	And I am clicking on "Signup_SkipBtn"
+	And I am clicking on "Login_Dashboard"
+	And I wait 6000
 	And verify through "Welcome" on "Login_Success_Text"
 	And update the data by query "<password_query>" on DIGITAL_CHANNEL_SEC
+	And I am clicking on "Login_Logout_opt"
+	And I am performing on "Login_LogoutBtn"
+
 
 
 	@source:Data/ForgetPassword.xlsx
@@ -57,12 +63,12 @@ Scenario Outline: 2 As a user i want to verify forget Login ID
 	Given the test case title is "<Case>"
 	And I set value in context from data "<cnic_no>" as "customer_cnic"
 	And I set value in context from data "<mobile_no>" as "mobile_number"
-	And I set value in context from database "<customer_type_query>" as "customer_type" on Schema "DIGITAL_CHANNEL_SEC"
 	And the user is arrive to Internet Banking home page 	
 	And I am clicking on "Login_Dashboard"
 	And I am clicking on "Forget_btn_Login"
 	When I have given "<cnic_no>" on "Forget_CNIC"
 	And I am performing on "Forget_Login_NextBtn"
+	And I set value in context from database "<customer_type_query>" as "customer_type" on Schema "DIGITAL_CHANNEL_SEC"
 	And I have given "<mobile_no>" on "Forget_LoginID_Mobile"
 	And I have given "<debit_card_no>" on "Forget_LoginID_DebitNo"
 	And I have given "<credit_card_no>" on "Forget_LoginID_CreditNo"
@@ -97,8 +103,8 @@ Scenario Outline: 2 As a user i want to verify Change Login ID
 	And I have given "<email>" on "Forget_Change_CreditEmail"
 	And I have given "<new_login_id>" on "Forget_Change_NewLogin"
 	And I am performing on "Forget_Change_NextBtn"
-	And I set value in context from database "<mobile_no_query>" as "mobile_number" on Schema "<db_val>"
 	And I wait 5000
+	And I set value in context from database "<mobile_no_query>" as "mobile_number" on Schema "<db_val>"
 	And verify through "<OTP_message>" on "Forget_Change_OTPMsg"
 	And I set value in context from data "true" as "change_loginID_check"
 	And I have given "" on "Login_OTP_field"
@@ -124,8 +130,13 @@ Scenario Outline: 2 As a user i want to verify Change Login ID
 	And I am performing on "Login_SignIn_Button"
 	And I have given "" on "Login_OTP_field"
 	And I am performing on "Login_OTP_Verify_Button"
+	And I am clicking on "Login_Dashboard"
+	And I wait 6000
 	And verify through "Welcome" on "Login_Success_Text"
 	And update the data by query "<name_update_query>" on DIGITAL_CHANNEL_SEC
+	And I wait 6000
+	And I am clicking on "Login_Logout_opt"
+	And I am performing on "Login_LogoutBtn"
 
 	@source:Data/ChangeLoginID.xlsx
 	Examples:

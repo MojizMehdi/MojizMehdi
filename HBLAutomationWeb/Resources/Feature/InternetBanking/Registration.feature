@@ -166,6 +166,8 @@ Scenario Outline: As a user i want to Signup using Credit Card Web
 	And I have given "<Login_id>" on "Registration_LoginId"
 	And I am clicking on "Registration_FormNextBtn"
 	And I wait 3000
+	#And I set value in context from database "<mobile_no_query>" as "mobile_number" on Schema "DIGITAL_CHANNEL_SEC"
+	#And verify through "<OTP_message>" on "Forget_Change_OTPMsg"
 	And I have given "<OTP_Value>" on "Login_OTP_field"
 	And I scroll to element "Registration_OtpNextBtn"
 	And I am performing on "Registration_OtpNextBtn"
@@ -205,7 +207,7 @@ Scenario Outline: As a user i want to Signup using Credit Card Web
 
 	@source:Data/CreditRegistration.xlsx
 	Examples:
-	|Case|CNIC_D|Credit_card_no|Customer_Email|Login_id|scroll_text|OTP_Value|password_policy_query|login_pass|tran_pass|success_message|login_id_query|created_on_query|updated_on_query|Last_login_query|tran_pass_encrypted_value|customer_type|customer_type_query|IVR_require_query|IVR_check_query|PARAM_CHANNEL_ID_query|ENABLE_PSD_check_query|feedback_type|feedback_option|last_pass_change_query|last_tran_pass_change_query|login_confirm|tran_confirm|is_password_change_required_value|is_password_change_required_query|is_password_reset_required_value|is_password_reset_required_query|
+	|Case|CNIC_D|Credit_card_no|Customer_Email|Login_id|scroll_text|OTP_Value|password_policy_query|login_pass|tran_pass|success_message|login_id_query|created_on_query|updated_on_query|Last_login_query|tran_pass_encrypted_value|customer_type|customer_type_query|IVR_require_query|IVR_check_query|PARAM_CHANNEL_ID_query|ENABLE_PSD_require_query|ENABLE_PSD_check_query|feedback_type|feedback_option|last_pass_change_query|last_tran_pass_change_query|login_confirm|tran_confirm|is_password_change_required_value|is_password_change_required_query|is_password_reset_required_value|is_password_reset_required_query|OTP_message|mobile_no_query|
 
 
 

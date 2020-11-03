@@ -96,6 +96,8 @@ namespace HBLAutomationWeb.Pages
                 IWebElement elementbutton = waitDriver.Until(ExpectedConditions.ElementExists(By.XPath(locator)));
                 IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
                 js.ExecuteScript("arguments[0].scrollIntoView();", elementbutton);
+                //js.ExecuteScript("arguments[0].scrollIntoView();", elementbutton);
+                //js.ExecuteScript("arguments[0].scrollIntoView();", elementbutton);
                 // var elmnt = document.getElementById("content");
                 //  elmnt.scrollIntoView();
                 //IWebElement button = waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
@@ -122,7 +124,7 @@ namespace HBLAutomationWeb.Pages
                     value = Control.Text;
                 }
                 value = value.Trim();
-                Assert.AreEqual(message, value);
+                Assert.AreEqual(message.Trim(), value.Trim());
 
             }
             catch (ElementNotVisibleException ex)
@@ -398,8 +400,6 @@ namespace HBLAutomationWeb.Pages
         {
             try
             {
-
-
                 //Home Page Locator
                 if (locator.Equals("//img[@class='desk-logo']"))
                 {
@@ -606,7 +606,7 @@ namespace HBLAutomationWeb.Pages
                 query = "Select I.OTP from DC_OTP_HISTORY I where I.CNIC='{CNIC}' AND I.TRANSACTION_TYPE_ID = '247' ORDER BY I.GENERATED_ON DESC";
                 query = query.Replace("{CNIC}", context.GetCustomerCNIC());
             }
-            if (context.Get_Change_LoginID_Check() == true)
+            else if (context.Get_Change_LoginID_Check() == true)
             {
                 query = "Select I.OTP from DC_OTP_HISTORY I where I.CUSTOMER_INFO_ID='{CUSTOMER_INFO_ID}' ORDER BY I.GENERATED_ON DESC";
                 query = query.Replace("{CUSTOMER_INFO_ID}", context.GetCustomerInfoID());
@@ -620,6 +620,7 @@ namespace HBLAutomationWeb.Pages
             DataAccessComponent.DataAccessLink dLink2 = new DataAccessComponent.DataAccessLink();
             DataTable SourceDataTable2 = dLink2.GetDataTable(query, schema);
             otp = SourceDataTable2.Rows[0][0].ToString();
+            
 
             string chk_encrypt_query = "Select PARAMTER_VALUE  from DC_APPLICATION_PARAM_DETAIL i where I.PARAMETER_NAME='OTP_HISTORY_ENCRYPTED'";
             DataAccessComponent.DataAccessLink dLink = new DataAccessComponent.DataAccessLink();
@@ -670,7 +671,8 @@ namespace HBLAutomationWeb.Pages
             {
                 js.ExecuteScript("window.confirm = function(msg) { return false; }");
             }
-            link.Click();
+            PressEnter(locator);
+            //link.Click();
 
         }
 
