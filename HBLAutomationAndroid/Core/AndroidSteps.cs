@@ -73,92 +73,106 @@ namespace HBLAutomationAndroid.Core
         [When(@"I verify bill payment inquiry for mobile")]
         public void WhenIVerifyBillPaymentInquiryForMobile()
         {
-            AppiumHelper apmhelper = new AppiumHelper();
-            string consumer_template_query = "SELECT CH.CONSUMER_NAME_TEMPLATE,CH.COMPANY_CODE FROM BPS_COMPANY_CHANNEL CH WHERE CH.CHANNEL_CODE = 'MB' AND CH.COMPANY_CODE = '" + context.GetCompany_Code() + "'";
-            DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
-            DataTable SourceDataTable = dlink.GetDataTable(consumer_template_query, "QAT_BPS");
-            string consumer_template = SourceDataTable.Rows[0][0].ToString();
-            char[] char_spearator = new char[2];
-            char_spearator[0] = '|';
-            char_spearator[1] = ';';
-            string[] consumer_template_arr = consumer_template.Split(char_spearator);
-            Element keyword = ContextPage.GetInstance().GetElement("BillPayment_Bill_Inquiry_Fields");
-            string temp = "";
-            string ui_value = "";
-            string db_value = "";
-            string[] date_fromat_arr;
-            //string date_format;
-            for (int i = 0; i < consumer_template_arr.Length; i++)
+            try
             {
-
-                if (i % 2 == 0)
+                AppiumHelper apmhelper = new AppiumHelper();
+                string consumer_template_query = "SELECT CH.CONSUMER_NAME_TEMPLATE,CH.COMPANY_CODE FROM BPS_COMPANY_CHANNEL CH WHERE CH.CHANNEL_CODE = 'MB' AND CH.COMPANY_CODE = '" + context.GetCompany_Code() + "'";
+                DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
+                DataTable SourceDataTable = dlink.GetDataTable(consumer_template_query, "QAT_BPS");
+                string consumer_template = SourceDataTable.Rows[0][0].ToString();
+                char[] char_spearator = new char[2];
+                char_spearator[0] = '|';
+                char_spearator[1] = ';';
+                string[] consumer_template_arr = consumer_template.Split(char_spearator);
+                Element keyword = ContextPage.GetInstance().GetElement("BillPayment_Bill_Inquiry_Fields");
+                string temp = "";
+                string ui_value = "";
+                string db_value = "";
+                string[] date_fromat_arr;
+                //string date_format;
+                for (int i = 0; i < consumer_template_arr.Length; i++)
                 {
-                    temp = keyword.Locator.Replace("{Field_Name}", consumer_template_arr[i]);
-                    ui_value = apmhelper.ReturnKeywordValue(temp, "xpath");
-                }
-                if (i % 2 != 0)
-                {
-                    consumer_template_arr[i] = consumer_template_arr[i].Replace("<FS_01:", string.Empty);
-                    date_fromat_arr = consumer_template_arr[i].Split('>');
-                    consumer_template_arr[i] = date_fromat_arr[0];
-                    if (consumer_template_arr[i - 1] == "Bill Status")
-                    {
-                        consumer_template_arr[i] = "BILL_STATUS_ID";
-                    }
-                    string query = "SELECT LP." + consumer_template_arr[i] + " FROM LP_BILLS LP WHERE LP.CONSUMER_NO = '" + context.GetConsumer_No() + "' AND TO_CHAR(LP.BILLING_MONTH,'MM/YYYY') = '" + context.GetBilling_Month() + "'";
-                    if (query.Contains("COMPANY_NAME"))
-                    {
-                        query = "SELECT CO.COMPANY_NAME FROM BPS_COMPANY CO WHERE CO.COMPANY_CODE = '" + context.GetCompany_Code() + "'";
-                    }
 
-                    if (query.Contains("ATTRIBUTE"))
+                    if (i % 2 == 0)
                     {
-                        query = query.Replace("ATTRIBUTE", "ATTRIBUTE_");
+                        temp = keyword.Locator.Replace("{Field_Name}", consumer_template_arr[i]);
+                        ui_value = apmhelper.ReturnKeywordValue(temp, "xpath");
                     }
-                    SourceDataTable = null;
-                    SourceDataTable = dlink.GetDataTable(query, "QAT_BPS");
-                    db_value = SourceDataTable.Rows[0][0].ToString();
-                    if (consumer_template_arr[i] == "BILL_STATUS_ID")
+                    if (i % 2 != 0)
                     {
-                        if (db_value == "1")
+                        consumer_template_arr[i] = consumer_template_arr[i].Replace("<FS_01:", string.Empty);
+                        date_fromat_arr = consumer_template_arr[i].Split('>');
+                        consumer_template_arr[i] = date_fromat_arr[0];
+                        //if (consumer_template_arr[i - 1] == "Bill Status")
+                        //{
+                        //    consumer_template_arr[i] = "BILL_STATUS_ID";
+                        //}
+                        string query = "SELECT * FROM (SELECT BI." + consumer_template_arr[i] + " FROM BPS_BILL_INFO BI WHERE BI.CREATED_ON >= trunc(sysdate) AND BI.CONSUMER_NO = '" + context.GetConsumer_No() + "' AND TO_CHAR(BI.BILLING_MONTH,'MM/YYYY') = '" + context.GetBilling_Month() + "'order by BI.BILL_INFO_ID desc) WHERE ROWNUM = 1";
+                        //if (query.Contains("COMPANY_NAME"))
+                        //{
+                        //    query = "SELECT CO.COMPANY_NAME FROM BPS_COMPANY CO WHERE CO.COMPANY_CODE = '" + context.GetCompany_Code() + "'";
+                        //}
+
+                        //if (query.Contains("ATTRIBUTE"))
+                        //{
+                        //    query = query.Replace("ATTRIBUTE", "ATTRIBUTE_");
+                        //}
+                        SourceDataTable = null;
+                        SourceDataTable = dlink.GetDataTable(query, "QAT_BPS");
+                        db_value = SourceDataTable.Rows[0][0].ToString();
+
+                        if(consumer_template_arr[i - 1] == "Consumer Name")
                         {
-                            db_value = "UNPAID";
+                            db_value = db_value.Replace(" ", string.Empty);
+                            ui_value = ui_value.Replace(" ", string.Empty);
                         }
-                        else if (db_value == "2")
+                        //if (consumer_template_arr[i] == "BILL_STATUS_ID")
+                        //{
+                        //    if (db_value == "1")
+                        //    {
+                        //        db_value = "UNPAID";
+                        //    }
+                        //    else if (db_value == "2")
+                        //    {
+                        //        db_value = "PAID";
+                        //    }
+                        //    else if (db_value == "3")
+                        //    {
+                        //        db_value = "You cannot pay this bill because the grace period after due date has passed";
+                        //    }
+                        //}
+                        //if(query.Contains("SELECT LP.BILLING_MONTH"))
+                        //{
+                        //    DateTime dt = Convert.ToDateTime(db_value);
+                        //    db_value = dt.ToString("MMM-yyyy");
+                        //}
+                        //if (query.Contains("CONSUMER_NAME"))
+                        //{
+                        //    ui_value = ui_value.Replace(" ", string.Empty);
+                        //    db_value = db_value.Replace(" ", string.Empty);
+                        //}
+                        if (date_fromat_arr[1] != "")
                         {
-                            db_value = "PAID";
+                            date_fromat_arr[1] = date_fromat_arr[1].Replace("^", string.Empty);
+                            DateTime dt = Convert.ToDateTime(db_value);
+                            db_value = dt.ToString(date_fromat_arr[1]);
                         }
-                        else if (db_value == "3")
+                        if (ui_value != db_value)
                         {
-                            db_value = "You cannot pay this bill because the grace period after due date has passed";
+                            throw new Exception(string.Format("The UI value is {0} and the databse value is {1}", ui_value, db_value));
                         }
-                    }
-                    //if(query.Contains("SELECT LP.BILLING_MONTH"))
-                    //{
-                    //    DateTime dt = Convert.ToDateTime(db_value);
-                    //    db_value = dt.ToString("MMM-yyyy");
-                    //}
-                    if (query.Contains("CONSUMER_NAME"))
-                    {
-                        ui_value = ui_value.Replace(" ", string.Empty);
-                        db_value = db_value.Replace(" ", string.Empty);
-                    }
-                    if (date_fromat_arr[1] != "")
-                    {
-                        date_fromat_arr[1] = date_fromat_arr[1].Replace("^", string.Empty);
-                        DateTime dt = Convert.ToDateTime(db_value);
-                        db_value = dt.ToString(date_fromat_arr[1]);
-                    }
-                    if (ui_value != db_value)
-                    {
-                        throw new Exception(string.Format("The UI value is {0} and the databse value is {1}", ui_value, db_value));
                     }
                 }
+
+
             }
-
-
-
+            catch(Exception exception)
+            {
+                AppiumHelper.TakeScreenshot();
+                throw new Exception(exception.Message);
+            }
         }
+
 
         [Given(@"I am resetting app")]
         [When(@"I am resetting app")]
@@ -600,16 +614,20 @@ namespace HBLAutomationAndroid.Core
                         string temp_query = query.Replace("LB.BILL_AMOUNT", "LB.DUE_DATE");
                         SourceDataTable = null;
                         SourceDataTable = dLink.GetDataTable(temp_query, db_value);
-                        value2 = SourceDataTable.Rows[0][0].ToString();
+                        value2 = SourceDataTable.Rows[0][2].ToString();
                         if (Convert.ToDateTime(value2) < DateTime.Today)
                         {
                             query = "SELECT L.CONSUMER_NAME_TEMPLATE FROM BPS_COMPANY_CHANNEL L WHERE L.CHANNEL_CODE='MB'  AND L.COMPANY_CODE = '" + context.GetCompany_Code() + "'";
                             SourceDataTable = dLink.GetDataTable(query, db_value);
                             value = SourceDataTable.Rows[0][0].ToString();
-                            string code = "Payable After Due Date|<FS_01:ATTRIBUTE";
+                            string code = "Payable After Due Date|<FS_01:";
+                            //int b = value.IndexOf(code);
+                            //int a = value.IndexOf(code) + code.Length;
                             code = value.Substring(value.IndexOf(code) + code.Length);
                             code = code.Split(new string[] { ">;" }, 2, StringSplitOptions.None)[0];
-                            query = temp_query.Replace("LB.DUE_DATE", "LB.ATTRIBUTE_" + code);
+                            //query = temp_query.Replace("LB.DUE_DATE", "LB.ATTRIBUTE_" + code);
+                            query = "SELECT * FROM (SELECT LB." + code + " FROM BPS_BILL_INFO LB WHERE LB.CONSUMER_NO='" + context.GetConsumer_No() + "' ORDER BY LB.CREATED_ON DESC) WHERE ROWNUM = 1";
+                            //query = temp_query.Replace("LB.DUE_DATE", "LB." + code);
                             SourceDataTable = dLink.GetDataTable(query, db_value);
                             value = SourceDataTable.Rows[0][0].ToString();
                         }
@@ -765,9 +783,21 @@ namespace HBLAutomationAndroid.Core
                 //}
                 if (Keyword == "BillPayment_Rating" || Keyword == "BillPayment_RatingOkBtn" || Keyword == "BillPayment_Rating_Feedback_OkBtn" || Keyword == "BillPayment_Rating" || Keyword == "SendMoney_SkipBtn" || Keyword == "Login_permission_allow_btn" || Keyword == "Login_permission_allow_btn2")
                 {
+
                     if (Keyword.Contains("Login_permission_allow_btn") || Keyword.Contains("Login_permission_allow_btn2"))
                     {
-                        if(Configuration.GetInstance().GetByKey("Manage_Calls_Permission").ToLower() == "no" && Keyword.Contains("Login_permission_allow_btn"))
+                        string platformVersion = Configuration.GetInstance().GetByKey("platformVersion");
+                        platformVersion = platformVersion.Substring(0, platformVersion.Length - 2);
+                        double pv = Convert.ToDouble(platformVersion);
+                        if (pv > 10.0 && Keyword.Equals("Login_permission_allow_btn"))
+                        {
+                            keyword = ContextPage.GetInstance().GetElement("Login_permission_allow_btn_11");
+                        }
+                        if (pv > 10.0 && Keyword.Equals("Login_permission_allow_btn2"))
+                        {
+                            keyword = ContextPage.GetInstance().GetElement("Login_permission_allow_btn2");
+                        }
+                        if (Configuration.GetInstance().GetByKey("Manage_Calls_Permission").ToLower() == "no" && Keyword.Contains("Login_permission_allow_btn"))
                         {
                             keyword = ContextPage.GetInstance().GetElement("Login_permission_deny_btn");
                         }
@@ -775,6 +805,7 @@ namespace HBLAutomationAndroid.Core
                         {
                             keyword = ContextPage.GetInstance().GetElement("Login_permission_deny_btn");
                         }
+                        
 
                     }
                     //Element keyword = ContextPage.GetInstance().GetElement(Keyword);
@@ -1406,7 +1437,8 @@ namespace HBLAutomationAndroid.Core
             {
                 AppiumHelper apmhelper = new AppiumHelper();
                 DateTime current_date = DateTime.Today;
-                DateTime given_date = Convert.ToDateTime(date);
+                //DateTime given_date = Convert.ToDateTime(date);
+                DateTime given_date = current_date.AddDays(Convert.ToInt32(date));
                 string xpath_date = given_date.ToString("dd MMMM yyyy");
                 int monthsApart = 12 * (current_date.Year - given_date.Year) + current_date.Month - given_date.Month;
                 monthsApart = Math.Abs(monthsApart);
@@ -1446,7 +1478,8 @@ namespace HBLAutomationAndroid.Core
             {
                 AppiumHelper apmhelper = new AppiumHelper();
                 DateTime current_date = DateTime.Today;
-                DateTime given_date = Convert.ToDateTime(date);
+                //DateTime given_date = Convert.ToDateTime(date);
+                DateTime given_date = Convert.ToDateTime(current_date.AddDays(Convert.ToInt32(date)));
                 string xpath_date = given_date.ToString("dd MMMM yyyy");
                 int monthsApart = 12 * (current_date.Year - given_date.Year) + current_date.Month - given_date.Month;
                 monthsApart = Math.Abs(monthsApart);
@@ -1461,7 +1494,7 @@ namespace HBLAutomationAndroid.Core
                     }
                     else
                     {
-                        apmhelper.scroll_right(0.6, 0.8, 0.2);
+                        apmhelper.scroll_right(0.6, 0.7, 0.25);
                     }
                 }
                 Element keyword = ContextPage.GetInstance().GetElement("SendMoney_SchedulePayment_CalendarDateSelect");
@@ -2866,7 +2899,8 @@ namespace HBLAutomationAndroid.Core
                         double balance_d = Convert.ToDouble(SourceDataTable.Rows[i][2].ToString());
                         balance_d = Math.Round(balance_d, 2);
                         amount_db += balance_d;
-                        string balance_db = string.Format("{0:0.00}", balance_d);
+                        //string balance_db = string.Format("{0:0.00}", balance_d);
+                        string balance_db = balance_d.ToString();
                         string units_db = SourceDataTable.Rows[i][3].ToString();
                         string nav_db = SourceDataTable.Rows[i][4].ToString();
                         nav_db = Convert.ToString(Math.Round(Convert.ToDecimal(nav_db), 3));

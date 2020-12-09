@@ -9,9 +9,10 @@
     <Element keyword="Login_SignIn_Button" locator="com.hbl.android.hblmobilebanking:id/login_button"/>
     <Element keyword="Login_OTP_field" locator="com.hbl.android.hblmobilebanking:id/txt_pin_entry"/>
     <Element keyword="Login_OTP_Verify_Button" locator="com.hbl.android.hblmobilebanking:id/registerDeviceOkBtn"/>
-    <Element keyword="Login_permission_allow_btn" locator="com.android.permissioncontroller:id/permission_allow_button"/>
-    <Element keyword="Login_permission_allow_btn2" locator="com.android.permissioncontroller:id/permission_allow_foreground_only_button"/>
-    <Element keyword="Login_permission_deny_btn" locator="com.android.permissioncontroller:id/permission_deny_button"/>
+    <Element keyword="Login_permission_allow_btn" locator="//android.widget.Button[contains(@text,'Allow') or contains(@text,'ALLOW')]"/>
+    <Element keyword="Login_permission_allow_btn2" locator="//android.widget.Button[contains(@text,'Allow') or contains(@text,'ALLOW')]"/>
+    <Element keyword="Login_permission_allow_btn_11" locator="//android.widget.Button[contains(@text,'While using the app')]"/>
+    <Element keyword="Login_permission_deny_btn" locator="//android.widget.Button[@text='DENY']"/>
     <Element keyword="Login_Success_Text" locator="//android.widget.TextView[contains(@text,'Welcome,')]"/>
     <!--Konnect_Login-->
     <Element keyword="Login_Tagging_Next" locator="com.hbl.bbcustomerapp:id/next"/>
@@ -168,8 +169,9 @@
     <Element keyword="BillPayment_TransactionPassword" locator="com.hbl.android.hblmobilebanking:id/eTextTransPassword"/>
     <Element keyword="BillPayment_Bill_Status" locator ="//android.widget.TextView[@text='Bill Status']/following-sibling::android.widget.TextView" />
     <Element keyword="BillPayment_Bill_Inquiry_Fields" locator ="//android.widget.TextView[@text='{Field_Name}']/following-sibling::android.widget.TextView" />
-    <Element keyword="BillPayment_Transaction_Unpaid_Amount" locator ="//android.widget.TextView[@text='Amount']/following-sibling::android.widget.TextView" />
-    <Element keyword="BillPayment_Transaction_Unpaid_Amount_Field" locator ="com.hbl.android.hblmobilebanking:id/amount_Field" />
+    <!--<Element keyword="BillPayment_Transaction_Unpaid_Amount" locator ="//android.widget.TextView[@text='Amount']/following-sibling::android.widget.TextView" />-->
+    <Element keyword="BillPayment_Transaction_Unpaid_Amount" locator ="com.hbl.android.hblmobilebanking:id/textReceiverAmount" />
+    <Element keyword="BillPayment_Transaction_Unpaid_Amount_Field" locator ="com.hbl.android.hblmobilebanking:id/textReceiverAmount" />
     <Element keyword="BillPayment_TranFromAcc" locator="//android.widget.TextView[@text='From']/following-sibling::android.widget.TextView"/>
     <Element keyword="BillPayment_TranSuccess" locator="com.hbl.android.hblmobilebanking:id/successMessageTxt"/>
     <Element keyword="BillPayment_TranSuccess_MultiBill" locator="//android.widget.TextView[@text='Status']/following-sibling::android.widget.TextView"/>

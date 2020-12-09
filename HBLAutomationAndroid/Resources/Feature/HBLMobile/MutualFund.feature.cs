@@ -83,94 +83,240 @@ namespace HBLAutomationAndroid.Resources.Feature.HBLMobile
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void WhenUserTryToLoginMobileBankingForMutualFund(string @case, string status_Query, string login_UserId_Value, string login_Password_Value, string cnic_Query, string oTP_Value, string[] exampleTags)
+        public virtual void _1WhenUserTryToLoginMobileBankingForMutualFund(string @case, string status_Query, string login_UserId_Value, string login_Password_Value, string cnic_Query, string oTP_Value, string expected_Result, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "mytag"};
+                    "Mutual_Fund"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When user try to login mobile banking for mutual fund", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1When user try to login mobile banking for mutual fund", @__tags);
 #line 7
 this.ScenarioSetup(scenarioInfo);
 #line 8
  testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
- testRunner.And(string.Format("update the data by query \"{0}\" on DIGITAL_CHANNEL_SEC", status_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 10
  testRunner.And("the user is arrive to Mobile Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 10
+ testRunner.And(string.Format("the test case expected result is \"{0}\"", expected_Result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.When(string.Format("I have given \"{0}\" on \"Login_UserId\"", login_UserId_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 12
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_Password\"", login_Password_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 13
  testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 12
+ testRunner.And("I am clicking on \"Login_permission_allow_btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 13
+ testRunner.And("I wait 1000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 14
- testRunner.And("I am performing on \"Login_SignIn_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Login_permission_allow_btn2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 15
- testRunner.And(string.Format("I set value in context from data \"{0}\" as \"username\"", login_UserId_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"SendMoney_SkipBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 16
- testRunner.And("I wait 30000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"username\"", login_UserId_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("update the data by query \"{0}\" on DIGITAL_CHANNEL_SEC", status_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
- testRunner.And("I am clicking on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When(string.Format("I have given \"{0}\" on \"Login_UserId\"", login_UserId_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 19
- testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_Password\"", login_Password_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 20
+ testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 21
+ testRunner.And("I am performing on \"Login_SignIn_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 22
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"username\"", login_UserId_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 23
+ testRunner.And("I wait 30000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 24
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 25
+ testRunner.And("I am clicking on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 26
+ testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 27
  testRunner.Then("verify through \"Welcome, \" on \"Login_Success_Text\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to login mobile banking for mutual fund: When user id and password " +
-            "are valid BASIT555")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1When user try to login mobile banking for mutual fund: When user id and password" +
+            " are valid MFMB12")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/HBLMobileMutualFundLogin.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid BASIT555")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid BASIT555")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFundMobileLogin.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid MFMB12")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Status_query", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
             "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
-            "= \'BASIT555\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "BASIT555")]
+            "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "MFMB12")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Cnic_query", "12345678")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "")]
-        public virtual void WhenUserTryToLoginMobileBankingForMutualFund_WhenUserIdAndPasswordAreValidBASIT555()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "PASS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
+        public virtual void _1WhenUserTryToLoginMobileBankingForMutualFund_WhenUserIdAndPasswordAreValidMFMB12()
         {
 #line 7
-this.WhenUserTryToLoginMobileBankingForMutualFund("When user id and password are valid BASIT555", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
+this._1WhenUserTryToLoginMobileBankingForMutualFund("When user id and password are valid MFMB12", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
                     "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
-                    "= \'BASIT555\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;", "BASIT555", "pakistan1", "12345678", "", new string[] {
-                        "source:Data/HBLMobileMutualFundLogin.xlsx"});
+                    "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;", "MFMB12", "pakistan1", "12345678", "PASS", "", new string[] {
+                        "source:Data/MutualFundMobileLogin.xlsx"});
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to login mobile banking for mutual fund: When user id and password " +
-            "are valid ALIIMRAN7")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1When user try to login mobile banking for mutual fund: When user id and password" +
+            " are valid LTPMB")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/HBLMobileMutualFundLogin.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid ALIIMRAN7")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid ALIIMRAN7")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFundMobileLogin.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid LTPMB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid LTPMB")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Status_query", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
             "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
-            "= \'ALIIMRAN7\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "ALIIMRAN7")]
+            "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "LTPMB")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Cnic_query", "12345678")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "")]
-        public virtual void WhenUserTryToLoginMobileBankingForMutualFund_WhenUserIdAndPasswordAreValidALIIMRAN7()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "PASS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
+        public virtual void _1WhenUserTryToLoginMobileBankingForMutualFund_WhenUserIdAndPasswordAreValidLTPMB()
         {
 #line 7
-this.WhenUserTryToLoginMobileBankingForMutualFund("When user id and password are valid ALIIMRAN7", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
+this._1WhenUserTryToLoginMobileBankingForMutualFund("When user id and password are valid LTPMB", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
                     "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
-                    "= \'ALIIMRAN7\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;", "ALIIMRAN7", "pakistan1", "12345678", "", new string[] {
-                        "source:Data/HBLMobileMutualFundLogin.xlsx"});
+                    "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;", "LTPMB", "pakistan1", "12345678", "PASS", "", new string[] {
+                        "source:Data/MutualFundMobileLogin.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1When user try to login mobile banking for mutual fund: When user id and password" +
+            " are valid NTP22")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFundMobileLogin.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid NTP22")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid NTP22")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Status_query", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
+            "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
+            "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "Automatepsdy")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Cnic_query", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "PASS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
+        public virtual void _1WhenUserTryToLoginMobileBankingForMutualFund_WhenUserIdAndPasswordAreValidNTP22()
+        {
+#line 7
+this._1WhenUserTryToLoginMobileBankingForMutualFund("When user id and password are valid NTP22", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
+                    "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
+                    "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;", "Automatepsdy", "pakistan1", "12345678", "PASS", "", new string[] {
+                        "source:Data/MutualFundMobileLogin.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1When user try to login mobile banking for mutual fund: When user id and password" +
+            " are valid PSDYMB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFundMobileLogin.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid PSDYMB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid PSDYMB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Status_query", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
+            "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
+            "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "PSDYMB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Cnic_query", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "PASS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
+        public virtual void _1WhenUserTryToLoginMobileBankingForMutualFund_WhenUserIdAndPasswordAreValidPSDYMB()
+        {
+#line 7
+this._1WhenUserTryToLoginMobileBankingForMutualFund("When user id and password are valid PSDYMB", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
+                    "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
+                    "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;", "PSDYMB", "pakistan1", "12345678", "PASS", "", new string[] {
+                        "source:Data/MutualFundMobileLogin.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1When user try to login mobile banking for mutual fund: When user id and password" +
+            " are valid LINKMB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFundMobileLogin.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid LINKMB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid LINKMB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Status_query", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
+            "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
+            "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "LINKMB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Cnic_query", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "PASS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
+        public virtual void _1WhenUserTryToLoginMobileBankingForMutualFund_WhenUserIdAndPasswordAreValidLINKMB()
+        {
+#line 7
+this._1WhenUserTryToLoginMobileBankingForMutualFund("When user id and password are valid LINKMB", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
+                    "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
+                    "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;", "LINKMB", "pakistan1", "12345678", "PASS", "", new string[] {
+                        "source:Data/MutualFundMobileLogin.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1When user try to login mobile banking for mutual fund: When user id and password" +
+            " are valid NOMFMB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFundMobileLogin.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid NOMFMB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid NOMFMB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Status_query", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
+            "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
+            "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "NOMFMB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Cnic_query", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "PASS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
+        public virtual void _1WhenUserTryToLoginMobileBankingForMutualFund_WhenUserIdAndPasswordAreValidNOMFMB()
+        {
+#line 7
+this._1WhenUserTryToLoginMobileBankingForMutualFund("When user id and password are valid NOMFMB", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
+                    "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
+                    "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;", "NOMFMB", "pakistan1", "12345678", "PASS", "", new string[] {
+                        "source:Data/MutualFundMobileLogin.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1When user try to login mobile banking for mutual fund: When user id and password" +
+            " are valid PSDNMB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFundMobileLogin.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid PSDNMB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid PSDNMB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Status_query", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
+            "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
+            "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "PSDNMB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Cnic_query", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "PASS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
+        public virtual void _1WhenUserTryToLoginMobileBankingForMutualFund_WhenUserIdAndPasswordAreValidPSDNMB()
+        {
+#line 7
+this._1WhenUserTryToLoginMobileBankingForMutualFund("When user id and password are valid PSDNMB", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
+                    "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
+                    "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;", "PSDNMB", "pakistan1", "12345678", "PASS", "", new string[] {
+                        "source:Data/MutualFundMobileLogin.xlsx"});
 #line hidden
         }
         
@@ -206,127 +352,127 @@ this.WhenUserTryToLoginMobileBankingForMutualFund("When user id and password are
                     string customer_Cnic_Verify_Query, 
                     string customer_Mobile_No_Query, 
                     string tran_Amount_Verify_Query, 
+                    string expected_Result, 
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "mytag"};
+                    "Mutual_Fund"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When user try to mutual fund", @__tags);
-#line 27
-this.ScenarioSetup(scenarioInfo);
-#line 28
- testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 29
- testRunner.And("the user is arrive to Mobile Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 30
- testRunner.And("I am clicking on \"Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 31
- testRunner.And("I wait 4000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 32
- testRunner.And("I set value in context from data \"1\" as \"mutual_fund_flag\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 33
- testRunner.When("I save Account Balances", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 34
- testRunner.And(string.Format("I set value in context from data \"{0}\" as \"MutualFundName\"", mutual_Fund_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 35
+ testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 36
+ testRunner.And("the user is arrive to Mobile Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 37
+ testRunner.And(string.Format("the test case expected result is \"{0}\"", expected_Result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 38
+ testRunner.And("I am clicking on \"Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 39
+ testRunner.And("I wait 4000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 40
+ testRunner.And("I set value in context from data \"1\" as \"mutual_fund_flag\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 42
+ testRunner.When(string.Format("I set value in context from data \"{0}\" as \"MutualFundName\"", mutual_Fund_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 43
  testRunner.And(string.Format("I set value in context from database \"{0}\" as \"mutual_fund_disclaimer_popup\" on S" +
                         "chema \"{1}\"", disclaimer_Query, db_Val3), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 36
+#line 44
  testRunner.And(string.Format("I set value in context from database \"{0}\" as \"customer_profile_id\" on Schema \"{1" +
                         "}\"", cust_Profile_Id_Query, db_Val3), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 37
- testRunner.And("I am clicking on \"Dashboard_More\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 38
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_SearchBeneField\"", category_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 39
- testRunner.And("I am clicking on \"BillPayment_CategoryLink\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 40
- testRunner.And(string.Format("I verify user Mutual Fund status on schema \"{0}\" as \"{1}\"", db_Val3, statement_Counter), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 41
- testRunner.And("I am clicking on \"MutualFund_Investment_Tab\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 42
- testRunner.And("I set list of elements from scroll view on \"MutualFund_List_FundName\" as \"3\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 43
- testRunner.And(string.Format("verify the list using \"{0}\" on Schema \"QAT_AMC\"", fund_Names_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 44
- testRunner.And(string.Format("I scroll to element text as \"{0}\"", mutual_Fund_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 45
- testRunner.And("I am clicking on \"MutualFund_InvestBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Dashboard_More\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 46
- testRunner.And(string.Format("verify through \"{0}\" on \"MutualFund_DisPopup\"", disclaimer_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_SearchBeneField\"", category_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 47
- testRunner.And("I am clicking on \"MutualFund_PopupBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 48
- testRunner.And(string.Format("I select \"{0}\" on \"MutualFund_FromAccount\"", account_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"BillPayment_CategoryLink\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 49
+ testRunner.And("I am clicking on \"MutualFund_Investment_Tab\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 50
+ testRunner.And("I set list of elements from scroll view on \"MutualFund_List_FundName\" as \"3\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 51
+ testRunner.And(string.Format("verify the list using \"{0}\" on Schema \"QAT_AMC\"", fund_Names_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 52
+ testRunner.And(string.Format("I scroll to element text as \"{0}\"", mutual_Fund_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 53
+ testRunner.And("I am clicking on \"MutualFund_InvestBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 54
+ testRunner.And(string.Format("verify through \"{0}\" on \"MutualFund_DisPopup\"", disclaimer_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 55
+ testRunner.And("I am clicking on \"MutualFund_PopupBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 56
+ testRunner.And(string.Format("I select \"{0}\" on \"MutualFund_FromAccount\"", account_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 57
  testRunner.And(string.Format("I check values of combobox using database from \"{0}\" on schema {1} on combobox \"M" +
                         "utualFund_FolioNumber\" of list \"MutualFund_FolioNumber_List_Locator\"", folio_No_Query, db_Val3), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 50
- testRunner.And(string.Format("I select \"{0}\" on \"MutualFund_FolioNumber\"", folio_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 51
- testRunner.And(string.Format("I have given \"{0}\" on \"MutualFund_FundAmount\"", amount_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 52
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"MutualFund_FundAccNo\"", gl_Account_Query, db_Val3), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 54
- testRunner.And("I am clicking on \"MutualFund_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 55
- testRunner.And("I wait 10000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 56
- testRunner.And("I scroll to element text as \"and risks involved\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 57
- testRunner.And("I am clicking on \"MutualFund_AgreeBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 58
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"MutualFund_CutOff_Timings\"", tran_Timing_Query, db_Val3), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I select \"{0}\" on \"MutualFund_FolioNumber\"", folio_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 59
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_TranPass\"", tran_Pass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"MutualFund_FundAmount\"", amount_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 60
- testRunner.And("I am clicking on \"MutualFund_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 61
- testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"MutualFund_FundAccNo\"", gl_Account_Query, db_Val3), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 62
- testRunner.And("I am clicking on \"BillPayment_Rating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"MutualFund_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 63
+ testRunner.And("I wait 10000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 64
+ testRunner.And("I scroll to element text as \"and risks involved\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 65
- testRunner.Then(string.Format("verify through \"{0}\" on \"SendMoney_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I am clicking on \"MutualFund_AgreeBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 66
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"MutualFund_CutOff_Timings\"", tran_Timing_Query, db_Val3), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 67
- testRunner.And(string.Format("I set value in context from database \"{0}\" as \"GUID\" on Schema \"{1}\"", gUID_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_TranPass\"", tran_Pass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 68
+ testRunner.And("I am clicking on \"MutualFund_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 69
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"TermDeposit_TranAmount\"", tran_Amount_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 70
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFromAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 71
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"MutualFund_TranToAcc\"", to_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 72
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"MutualFund_Tran_FundName\"", fund_Name_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"BillPayment_Rating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 73
- testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"{2}\"", folio_No, folio_No_Verify_Query, db_Val3), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then(string.Format("verify through \"{0}\" on \"SendMoney_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 75
- testRunner.And(string.Format("verify the data using \"{0}\" on Schema \"{1}\"", customer_Cnic_Verify_Query, db_Val3), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I set value in context from database \"{0}\" as \"GUID\" on Schema \"{1}\"", gUID_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 77
- testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"{2}\"", amount_Value, tran_Amount_Verify_Query, db_Val3), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"TermDeposit_TranAmount\"", tran_Amount_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 78
- testRunner.And("I save Transaction Info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFromAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 79
- testRunner.And("I am clicking on \"TermDeposit_CloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"MutualFund_TranToAcc\"", to_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 80
- testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"MutualFund_Tran_FundName\"", fund_Name_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 81
+ testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"{2}\"", folio_No, folio_No_Verify_Query, db_Val3), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 83
+ testRunner.And(string.Format("verify the data using \"{0}\" on Schema \"{1}\"", customer_Cnic_Verify_Query, db_Val3), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 85
+ testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"{2}\"", amount_Value, tran_Amount_Verify_Query, db_Val3), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 87
+ testRunner.And("I am clicking on \"TermDeposit_CloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 88
+ testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 89
  testRunner.And("I am clicking on \"Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 82
+#line 90
  testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: When user try to invest in mutual fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To verify that Customer can successfully apply for " +
+            "Mutual Fund HBL Cash Fund MFMB12")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user try to invest in mutual fund")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user try to invest in mutual fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that Customer can successfully apply for Mutual Fund HBL Cash Fund MFMB" +
+            "12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that Customer can successfully apply for Mutual Fund HBL Cash Fund MFMB" +
+            "12")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
             "ic}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
@@ -334,7 +480,7 @@ this.ScenarioSetup(scenarioInfo);
             "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
             "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Equity Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Cash Fund")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094903010")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
             "")]
@@ -372,13 +518,15 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
             "}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
-        public virtual void WhenUserTryToMutualFund_WhenUserTryToInvestInMutualFund()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatCustomerCanSuccessfullyApplyForMutualFundHBLCashFundMFMB12()
         {
-#line 27
-this.WhenUserTryToMutualFund("When user try to invest in mutual fund", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+#line 34
+this.WhenUserTryToMutualFund("To verify that Customer can successfully apply for Mutual Fund HBL Cash Fund MFMB" +
+                    "12", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
                     "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
                     "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
-                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Equity Fund", "24460094903010", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Cash Fund", "24460094903010", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
                     "", "10437", "1000", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
                     "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
                     "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
@@ -390,19 +538,21 @@ this.WhenUserTryToMutualFund("When user try to invest in mutual fund", "SELECT C
                     "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
                     "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
                     "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
-                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", new string[] {
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "PASS", new string[] {
                         "source:Data/MutualFund.xlsx"});
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: When user try to invest in mutual fund (AbBY Case T" +
-            "wo)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To verify that Customer can successfully apply for " +
+            "Mutual Fund HBL Energy Fund MFMB12")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user try to invest in mutual fund (AbBY Case Two)")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user try to invest in mutual fund (AbBY Case Two)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that Customer can successfully apply for Mutual Fund HBL Energy Fund MF" +
+            "MB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that Customer can successfully apply for Mutual Fund HBL Energy Fund MF" +
+            "MB12")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
             "ic}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
@@ -410,7 +560,7 @@ this.WhenUserTryToMutualFund("When user try to invest in mutual fund", "SELECT C
             "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
             "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Cash Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Energy Fund")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094903010")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
             "")]
@@ -448,13 +598,15 @@ this.WhenUserTryToMutualFund("When user try to invest in mutual fund", "SELECT C
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
             "}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
-        public virtual void WhenUserTryToMutualFund_WhenUserTryToInvestInMutualFundAbBYCaseTwo()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatCustomerCanSuccessfullyApplyForMutualFundHBLEnergyFundMFMB12()
         {
-#line 27
-this.WhenUserTryToMutualFund("When user try to invest in mutual fund (AbBY Case Two)", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+#line 34
+this.WhenUserTryToMutualFund("To verify that Customer can successfully apply for Mutual Fund HBL Energy Fund MF" +
+                    "MB12", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
                     "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
                     "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
-                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Cash Fund", "24460094903010", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Energy Fund", "24460094903010", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
                     "", "10437", "2000", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
                     "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
                     "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
@@ -466,7 +618,2947 @@ this.WhenUserTryToMutualFund("When user try to invest in mutual fund (AbBY Case 
                     "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
                     "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
                     "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
-                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", new string[] {
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "PASS", new string[] {
+                        "source:Data/MutualFund.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To verify that Customer can successfully apply for " +
+            "Mutual Fund HBL Equity Fund MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that Customer can successfully apply for Mutual Fund HBL Equity Fund MF" +
+            "MB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that Customer can successfully apply for Mutual Fund HBL Equity Fund MF" +
+            "MB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+            "ic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Fund_Names_query", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+            "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+            "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Equity Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094903010")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no", "10437")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount_value", "1000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:gl_account_query", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+            "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+            "nd_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_timing_query", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+            "fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+            "e call HBL PhoneBanking on 021 - 111 - 111 - 426")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:GUID_query", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+            "AN_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+            "RANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fund_name_query", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_message", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_query", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+            "UND = \'{mutual_fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val3", "QAT_AMC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val4", "QAT_TPE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_verify_query", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_name_verify_query", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_cnic_verify_query", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatCustomerCanSuccessfullyApplyForMutualFundHBLEquityFundMFMB12()
+        {
+#line 34
+this.WhenUserTryToMutualFund("To verify that Customer can successfully apply for Mutual Fund HBL Equity Fund MF" +
+                    "MB12", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+                    "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+                    "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Equity Fund", "24460094903010", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "", "10437", "1000", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+                    "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+                    "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+                    "fund_name}\'", "pakistan3", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+                    "e call HBL PhoneBanking on 021 - 111 - 111 - 426", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+                    "AN_ID}\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+                    "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+                    "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+                    "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "PASS", new string[] {
+                        "source:Data/MutualFund.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To verify that Customer can successfully apply for " +
+            "Mutual Fund HBL Financial Planning Fund-Active Allocation Plan MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that Customer can successfully apply for Mutual Fund HBL Financial Plan" +
+            "ning Fund-Active Allocation Plan MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that Customer can successfully apply for Mutual Fund HBL Financial Plan" +
+            "ning Fund-Active Allocation Plan MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+            "ic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Fund_Names_query", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+            "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+            "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Financial Planning Fund-Active Allocation Plan")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094903010")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no", "10437")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount_value", "1000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:gl_account_query", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+            "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+            "nd_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_timing_query", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+            "fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan4")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+            "e call HBL PhoneBanking on 021 - 111 - 111 - 427")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:GUID_query", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+            "AN_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+            "RANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fund_name_query", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_message", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_query", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+            "UND = \'{mutual_fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val3", "QAT_AMC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val4", "QAT_TPE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_verify_query", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_name_verify_query", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_cnic_verify_query", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatCustomerCanSuccessfullyApplyForMutualFundHBLFinancialPlanningFund_ActiveAllocationPlanMFMB12()
+        {
+#line 34
+this.WhenUserTryToMutualFund("To verify that Customer can successfully apply for Mutual Fund HBL Financial Plan" +
+                    "ning Fund-Active Allocation Plan MFMB12", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+                    "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+                    "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Financial Planning Fund-Active Allocation Plan", "24460094903010", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "", "10437", "1000", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+                    "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+                    "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+                    "fund_name}\'", "pakistan4", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+                    "e call HBL PhoneBanking on 021 - 111 - 111 - 427", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+                    "AN_ID}\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+                    "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+                    "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+                    "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "PASS", new string[] {
+                        "source:Data/MutualFund.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To verify that Customer can successfully apply for " +
+            "Mutual Fund HBL Financial Planning Fund-Conservative Allocation Plan MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that Customer can successfully apply for Mutual Fund HBL Financial Plan" +
+            "ning Fund-Conservative Allocation Plan MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that Customer can successfully apply for Mutual Fund HBL Financial Plan" +
+            "ning Fund-Conservative Allocation Plan MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+            "ic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Fund_Names_query", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+            "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+            "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Financial Planning Fund-Conservative Allocation Plan")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094903010")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no", "10437")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount_value", "1000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:gl_account_query", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+            "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+            "nd_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_timing_query", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+            "fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan5")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+            "e call HBL PhoneBanking on 021 - 111 - 111 - 428")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:GUID_query", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+            "AN_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+            "RANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fund_name_query", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_message", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_query", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+            "UND = \'{mutual_fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val3", "QAT_AMC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val4", "QAT_TPE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_verify_query", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_name_verify_query", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_cnic_verify_query", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatCustomerCanSuccessfullyApplyForMutualFundHBLFinancialPlanningFund_ConservativeAllocationPlanMFMB12()
+        {
+#line 34
+this.WhenUserTryToMutualFund("To verify that Customer can successfully apply for Mutual Fund HBL Financial Plan" +
+                    "ning Fund-Conservative Allocation Plan MFMB12", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+                    "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+                    "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Financial Planning Fund-Conservative Allocation Plan", "24460094903010", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "", "10437", "1000", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+                    "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+                    "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+                    "fund_name}\'", "pakistan5", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+                    "e call HBL PhoneBanking on 021 - 111 - 111 - 428", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+                    "AN_ID}\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+                    "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+                    "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+                    "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "PASS", new string[] {
+                        "source:Data/MutualFund.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To verify that Customer can successfully apply for " +
+            "Mutual Fund HBL Government Securities Fund MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that Customer can successfully apply for Mutual Fund HBL Government Sec" +
+            "urities Fund MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that Customer can successfully apply for Mutual Fund HBL Government Sec" +
+            "urities Fund MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+            "ic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Fund_Names_query", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+            "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+            "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Government Securities Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094903010")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no", "10437")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount_value", "1000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:gl_account_query", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+            "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+            "nd_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_timing_query", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+            "fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan6")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+            "e call HBL PhoneBanking on 021 - 111 - 111 - 429")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:GUID_query", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+            "AN_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+            "RANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fund_name_query", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_message", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_query", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+            "UND = \'{mutual_fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val3", "QAT_AMC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val4", "QAT_TPE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_verify_query", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_name_verify_query", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_cnic_verify_query", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatCustomerCanSuccessfullyApplyForMutualFundHBLGovernmentSecuritiesFundMFMB12()
+        {
+#line 34
+this.WhenUserTryToMutualFund("To verify that Customer can successfully apply for Mutual Fund HBL Government Sec" +
+                    "urities Fund MFMB12", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+                    "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+                    "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Government Securities Fund", "24460094903010", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "", "10437", "1000", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+                    "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+                    "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+                    "fund_name}\'", "pakistan6", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+                    "e call HBL PhoneBanking on 021 - 111 - 111 - 429", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+                    "AN_ID}\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+                    "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+                    "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+                    "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "PASS", new string[] {
+                        "source:Data/MutualFund.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To verify that Customer can not apply for Mutual Fu" +
+            "nd HBL Growth Fund MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that Customer can not apply for Mutual Fund HBL Growth Fund MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that Customer can not apply for Mutual Fund HBL Growth Fund MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+            "ic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Fund_Names_query", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+            "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+            "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Growth Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094903010")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no", "10437")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount_value", "1000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:gl_account_query", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+            "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+            "nd_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_timing_query", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+            "fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan7")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+            "e call HBL PhoneBanking on 021 - 111 - 111 - 430")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:GUID_query", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+            "AN_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+            "RANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fund_name_query", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_message", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_query", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+            "UND = \'{mutual_fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val3", "QAT_AMC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val4", "QAT_TPE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_verify_query", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_name_verify_query", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_cnic_verify_query", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatCustomerCanNotApplyForMutualFundHBLGrowthFundMFMB12()
+        {
+#line 34
+this.WhenUserTryToMutualFund("To verify that Customer can not apply for Mutual Fund HBL Growth Fund MFMB12", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+                    "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+                    "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Growth Fund", "24460094903010", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "", "10437", "1000", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+                    "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+                    "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+                    "fund_name}\'", "pakistan7", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+                    "e call HBL PhoneBanking on 021 - 111 - 111 - 430", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+                    "AN_ID}\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+                    "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+                    "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+                    "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "FAIL", new string[] {
+                        "source:Data/MutualFund.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To verify that Customer can successfully apply for " +
+            "Mutual Fund HBL Income Fund MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that Customer can successfully apply for Mutual Fund HBL Income Fund MF" +
+            "MB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that Customer can successfully apply for Mutual Fund HBL Income Fund MF" +
+            "MB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+            "ic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Fund_Names_query", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+            "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+            "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Income Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094903010")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no", "10437")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount_value", "1000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:gl_account_query", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+            "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+            "nd_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_timing_query", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+            "fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan8")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+            "e call HBL PhoneBanking on 021 - 111 - 111 - 431")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:GUID_query", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+            "AN_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+            "RANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fund_name_query", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_message", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_query", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+            "UND = \'{mutual_fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val3", "QAT_AMC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val4", "QAT_TPE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_verify_query", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_name_verify_query", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_cnic_verify_query", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatCustomerCanSuccessfullyApplyForMutualFundHBLIncomeFundMFMB12()
+        {
+#line 34
+this.WhenUserTryToMutualFund("To verify that Customer can successfully apply for Mutual Fund HBL Income Fund MF" +
+                    "MB12", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+                    "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+                    "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Income Fund", "24460094903010", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "", "10437", "1000", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+                    "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+                    "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+                    "fund_name}\'", "pakistan8", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+                    "e call HBL PhoneBanking on 021 - 111 - 111 - 431", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+                    "AN_ID}\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+                    "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+                    "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+                    "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "PASS", new string[] {
+                        "source:Data/MutualFund.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To verify that Customer can not apply for Mutual Fu" +
+            "nd HBL Investment Fund MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that Customer can not apply for Mutual Fund HBL Investment Fund MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that Customer can not apply for Mutual Fund HBL Investment Fund MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+            "ic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Fund_Names_query", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+            "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+            "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Investment Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094903010")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no", "10437")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount_value", "1000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:gl_account_query", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+            "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+            "nd_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_timing_query", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+            "fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan9")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+            "e call HBL PhoneBanking on 021 - 111 - 111 - 432")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:GUID_query", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+            "AN_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+            "RANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fund_name_query", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_message", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_query", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+            "UND = \'{mutual_fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val3", "QAT_AMC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val4", "QAT_TPE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_verify_query", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_name_verify_query", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_cnic_verify_query", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatCustomerCanNotApplyForMutualFundHBLInvestmentFundMFMB12()
+        {
+#line 34
+this.WhenUserTryToMutualFund("To verify that Customer can not apply for Mutual Fund HBL Investment Fund MFMB12", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+                    "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+                    "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Investment Fund", "24460094903010", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "", "10437", "1000", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+                    "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+                    "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+                    "fund_name}\'", "pakistan9", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+                    "e call HBL PhoneBanking on 021 - 111 - 111 - 432", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+                    "AN_ID}\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+                    "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+                    "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+                    "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "FAIL", new string[] {
+                        "source:Data/MutualFund.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To verify that Customer can successfully apply for " +
+            "Mutual Fund HBL Islamic Asset Allocation Fund MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that Customer can successfully apply for Mutual Fund HBL Islamic Asset " +
+            "Allocation Fund MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that Customer can successfully apply for Mutual Fund HBL Islamic Asset " +
+            "Allocation Fund MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+            "ic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Fund_Names_query", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+            "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+            "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Islamic Asset Allocation Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094903010")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no", "10437")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount_value", "1000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:gl_account_query", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+            "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+            "nd_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_timing_query", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+            "fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan10")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+            "e call HBL PhoneBanking on 021 - 111 - 111 - 433")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:GUID_query", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+            "AN_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+            "RANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fund_name_query", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_message", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_query", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+            "UND = \'{mutual_fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val3", "QAT_AMC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val4", "QAT_TPE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_verify_query", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_name_verify_query", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_cnic_verify_query", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatCustomerCanSuccessfullyApplyForMutualFundHBLIslamicAssetAllocationFundMFMB12()
+        {
+#line 34
+this.WhenUserTryToMutualFund("To verify that Customer can successfully apply for Mutual Fund HBL Islamic Asset " +
+                    "Allocation Fund MFMB12", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+                    "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+                    "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Islamic Asset Allocation Fund", "24460094903010", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "", "10437", "1000", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+                    "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+                    "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+                    "fund_name}\'", "pakistan10", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+                    "e call HBL PhoneBanking on 021 - 111 - 111 - 433", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+                    "AN_ID}\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+                    "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+                    "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+                    "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "PASS", new string[] {
+                        "source:Data/MutualFund.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To verify that Customer can successfully apply for " +
+            "Mutual Fund HBL Islamic Equity Fund MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that Customer can successfully apply for Mutual Fund HBL Islamic Equity" +
+            " Fund MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that Customer can successfully apply for Mutual Fund HBL Islamic Equity" +
+            " Fund MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+            "ic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Fund_Names_query", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+            "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+            "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Islamic Equity Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094903010")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no", "10437")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount_value", "1000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:gl_account_query", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+            "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+            "nd_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_timing_query", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+            "fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan11")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+            "e call HBL PhoneBanking on 021 - 111 - 111 - 434")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:GUID_query", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+            "AN_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+            "RANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fund_name_query", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_message", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_query", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+            "UND = \'{mutual_fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val3", "QAT_AMC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val4", "QAT_TPE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_verify_query", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_name_verify_query", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_cnic_verify_query", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatCustomerCanSuccessfullyApplyForMutualFundHBLIslamicEquityFundMFMB12()
+        {
+#line 34
+this.WhenUserTryToMutualFund("To verify that Customer can successfully apply for Mutual Fund HBL Islamic Equity" +
+                    " Fund MFMB12", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+                    "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+                    "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Islamic Equity Fund", "24460094903010", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "", "10437", "1000", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+                    "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+                    "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+                    "fund_name}\'", "pakistan11", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+                    "e call HBL PhoneBanking on 021 - 111 - 111 - 434", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+                    "AN_ID}\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+                    "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+                    "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+                    "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "PASS", new string[] {
+                        "source:Data/MutualFund.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To verify that Customer can successfully apply for " +
+            "Mutual Fund HBL Islamic Financial Planning Fund-Active Allocation Plan MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that Customer can successfully apply for Mutual Fund HBL Islamic Financ" +
+            "ial Planning Fund-Active Allocation Plan MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that Customer can successfully apply for Mutual Fund HBL Islamic Financ" +
+            "ial Planning Fund-Active Allocation Plan MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+            "ic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Fund_Names_query", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+            "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+            "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Islamic Financial Planning Fund-Active Allocation Plan")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094903010")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no", "10437")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount_value", "1000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:gl_account_query", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+            "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+            "nd_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_timing_query", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+            "fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+            "e call HBL PhoneBanking on 021 - 111 - 111 - 435")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:GUID_query", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+            "AN_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+            "RANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fund_name_query", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_message", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_query", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+            "UND = \'{mutual_fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val3", "QAT_AMC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val4", "QAT_TPE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_verify_query", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_name_verify_query", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_cnic_verify_query", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatCustomerCanSuccessfullyApplyForMutualFundHBLIslamicFinancialPlanningFund_ActiveAllocationPlanMFMB12()
+        {
+#line 34
+this.WhenUserTryToMutualFund("To verify that Customer can successfully apply for Mutual Fund HBL Islamic Financ" +
+                    "ial Planning Fund-Active Allocation Plan MFMB12", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+                    "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+                    "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Islamic Financial Planning Fund-Active Allocation Plan", "24460094903010", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "", "10437", "1000", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+                    "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+                    "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+                    "fund_name}\'", "pakistan12", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+                    "e call HBL PhoneBanking on 021 - 111 - 111 - 435", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+                    "AN_ID}\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+                    "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+                    "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+                    "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "PASS", new string[] {
+                        "source:Data/MutualFund.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To verify that Customer can successfully apply for " +
+            "Mutual Fund HBL Islamic Financial Planning Fund-Conservative Allocation Plan MFM" +
+            "B12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that Customer can successfully apply for Mutual Fund HBL Islamic Financ" +
+            "ial Planning Fund-Conservative Allocation Plan MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that Customer can successfully apply for Mutual Fund HBL Islamic Financ" +
+            "ial Planning Fund-Conservative Allocation Plan MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+            "ic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Fund_Names_query", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+            "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+            "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Islamic Financial Planning Fund-Conservative Allocation Plan")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094903010")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no", "10437")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount_value", "1000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:gl_account_query", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+            "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+            "nd_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_timing_query", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+            "fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan13")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+            "e call HBL PhoneBanking on 021 - 111 - 111 - 436")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:GUID_query", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+            "AN_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+            "RANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fund_name_query", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_message", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_query", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+            "UND = \'{mutual_fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val3", "QAT_AMC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val4", "QAT_TPE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_verify_query", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_name_verify_query", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_cnic_verify_query", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatCustomerCanSuccessfullyApplyForMutualFundHBLIslamicFinancialPlanningFund_ConservativeAllocationPlanMFMB12()
+        {
+#line 34
+this.WhenUserTryToMutualFund("To verify that Customer can successfully apply for Mutual Fund HBL Islamic Financ" +
+                    "ial Planning Fund-Conservative Allocation Plan MFMB12", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+                    "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+                    "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Islamic Financial Planning Fund-Conservative Allocation Plan", "24460094903010", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "", "10437", "1000", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+                    "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+                    "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+                    "fund_name}\'", "pakistan13", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+                    "e call HBL PhoneBanking on 021 - 111 - 111 - 436", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+                    "AN_ID}\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+                    "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+                    "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+                    "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "PASS", new string[] {
+                        "source:Data/MutualFund.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To verify that Customer can not apply for Mutual Fu" +
+            "nd HBL Islamic Financial Planning Fund-Strategic Allocation Plan MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that Customer can not apply for Mutual Fund HBL Islamic Financial Plann" +
+            "ing Fund-Strategic Allocation Plan MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that Customer can not apply for Mutual Fund HBL Islamic Financial Plann" +
+            "ing Fund-Strategic Allocation Plan MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+            "ic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Fund_Names_query", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+            "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+            "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Islamic Financial Planning Fund-Strategic Allocation Plan")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094903010")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no", "10437")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount_value", "1000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:gl_account_query", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+            "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+            "nd_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_timing_query", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+            "fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan14")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+            "e call HBL PhoneBanking on 021 - 111 - 111 - 437")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:GUID_query", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+            "AN_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+            "RANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fund_name_query", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_message", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_query", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+            "UND = \'{mutual_fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val3", "QAT_AMC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val4", "QAT_TPE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_verify_query", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_name_verify_query", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_cnic_verify_query", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatCustomerCanNotApplyForMutualFundHBLIslamicFinancialPlanningFund_StrategicAllocationPlanMFMB12()
+        {
+#line 34
+this.WhenUserTryToMutualFund("To verify that Customer can not apply for Mutual Fund HBL Islamic Financial Plann" +
+                    "ing Fund-Strategic Allocation Plan MFMB12", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+                    "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+                    "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Islamic Financial Planning Fund-Strategic Allocation Plan", "24460094903010", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "", "10437", "1000", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+                    "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+                    "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+                    "fund_name}\'", "pakistan14", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+                    "e call HBL PhoneBanking on 021 - 111 - 111 - 437", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+                    "AN_ID}\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+                    "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+                    "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+                    "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "FAIL", new string[] {
+                        "source:Data/MutualFund.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To verify that Customer can successfully apply for " +
+            "Mutual Fund HBL Islamic Income Fund MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that Customer can successfully apply for Mutual Fund HBL Islamic Income" +
+            " Fund MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that Customer can successfully apply for Mutual Fund HBL Islamic Income" +
+            " Fund MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+            "ic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Fund_Names_query", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+            "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+            "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Islamic Income Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094903010")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no", "10437")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount_value", "1000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:gl_account_query", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+            "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+            "nd_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_timing_query", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+            "fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan15")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+            "e call HBL PhoneBanking on 021 - 111 - 111 - 438")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:GUID_query", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+            "AN_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+            "RANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fund_name_query", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_message", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_query", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+            "UND = \'{mutual_fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val3", "QAT_AMC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val4", "QAT_TPE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_verify_query", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_name_verify_query", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_cnic_verify_query", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatCustomerCanSuccessfullyApplyForMutualFundHBLIslamicIncomeFundMFMB12()
+        {
+#line 34
+this.WhenUserTryToMutualFund("To verify that Customer can successfully apply for Mutual Fund HBL Islamic Income" +
+                    " Fund MFMB12", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+                    "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+                    "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Islamic Income Fund", "24460094903010", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "", "10437", "1000", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+                    "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+                    "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+                    "fund_name}\'", "pakistan15", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+                    "e call HBL PhoneBanking on 021 - 111 - 111 - 438", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+                    "AN_ID}\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+                    "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+                    "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+                    "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "PASS", new string[] {
+                        "source:Data/MutualFund.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To verify that Customer can successfully apply for " +
+            "Mutual Fund HBL Islamic Money Market Fund MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that Customer can successfully apply for Mutual Fund HBL Islamic Money " +
+            "Market Fund MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that Customer can successfully apply for Mutual Fund HBL Islamic Money " +
+            "Market Fund MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+            "ic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Fund_Names_query", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+            "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+            "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Islamic Money Market Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094903010")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no", "10437")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount_value", "500000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:gl_account_query", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+            "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+            "nd_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_timing_query", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+            "fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan16")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+            "e call HBL PhoneBanking on 021 - 111 - 111 - 439")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:GUID_query", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+            "AN_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+            "RANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fund_name_query", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_message", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_query", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+            "UND = \'{mutual_fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val3", "QAT_AMC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val4", "QAT_TPE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_verify_query", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_name_verify_query", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_cnic_verify_query", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatCustomerCanSuccessfullyApplyForMutualFundHBLIslamicMoneyMarketFundMFMB12()
+        {
+#line 34
+this.WhenUserTryToMutualFund("To verify that Customer can successfully apply for Mutual Fund HBL Islamic Money " +
+                    "Market Fund MFMB12", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+                    "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+                    "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Islamic Money Market Fund", "24460094903010", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "", "10437", "500000", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+                    "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+                    "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+                    "fund_name}\'", "pakistan16", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+                    "e call HBL PhoneBanking on 021 - 111 - 111 - 439", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+                    "AN_ID}\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+                    "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+                    "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+                    "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "PASS", new string[] {
+                        "source:Data/MutualFund.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To verify that Customer can successfully apply for " +
+            "Mutual Fund HBL Islamic Pension Fund MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that Customer can successfully apply for Mutual Fund HBL Islamic Pensio" +
+            "n Fund MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that Customer can successfully apply for Mutual Fund HBL Islamic Pensio" +
+            "n Fund MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+            "ic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Fund_Names_query", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+            "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+            "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Islamic Pension Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094903010")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no", "10437")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount_value", "1000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:gl_account_query", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+            "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+            "nd_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_timing_query", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+            "fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan17")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+            "e call HBL PhoneBanking on 021 - 111 - 111 - 440")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:GUID_query", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+            "AN_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+            "RANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fund_name_query", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_message", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_query", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+            "UND = \'{mutual_fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val3", "QAT_AMC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val4", "QAT_TPE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_verify_query", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_name_verify_query", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_cnic_verify_query", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatCustomerCanSuccessfullyApplyForMutualFundHBLIslamicPensionFundMFMB12()
+        {
+#line 34
+this.WhenUserTryToMutualFund("To verify that Customer can successfully apply for Mutual Fund HBL Islamic Pensio" +
+                    "n Fund MFMB12", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+                    "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+                    "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Islamic Pension Fund", "24460094903010", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "", "10437", "1000", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+                    "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+                    "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+                    "fund_name}\'", "pakistan17", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+                    "e call HBL PhoneBanking on 021 - 111 - 111 - 440", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+                    "AN_ID}\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+                    "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+                    "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+                    "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "PASS", new string[] {
+                        "source:Data/MutualFund.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To verify that Customer can successfully apply for " +
+            "Mutual Fund HBL Islamic Stock Fund MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that Customer can successfully apply for Mutual Fund HBL Islamic Stock " +
+            "Fund MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that Customer can successfully apply for Mutual Fund HBL Islamic Stock " +
+            "Fund MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+            "ic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Fund_Names_query", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+            "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+            "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Islamic Stock Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094903010")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no", "10437")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount_value", "1000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:gl_account_query", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+            "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+            "nd_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_timing_query", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+            "fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan18")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+            "e call HBL PhoneBanking on 021 - 111 - 111 - 441")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:GUID_query", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+            "AN_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+            "RANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fund_name_query", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_message", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_query", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+            "UND = \'{mutual_fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val3", "QAT_AMC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val4", "QAT_TPE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_verify_query", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_name_verify_query", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_cnic_verify_query", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatCustomerCanSuccessfullyApplyForMutualFundHBLIslamicStockFundMFMB12()
+        {
+#line 34
+this.WhenUserTryToMutualFund("To verify that Customer can successfully apply for Mutual Fund HBL Islamic Stock " +
+                    "Fund MFMB12", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+                    "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+                    "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Islamic Stock Fund", "24460094903010", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "", "10437", "1000", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+                    "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+                    "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+                    "fund_name}\'", "pakistan18", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+                    "e call HBL PhoneBanking on 021 - 111 - 111 - 441", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+                    "AN_ID}\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+                    "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+                    "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+                    "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "PASS", new string[] {
+                        "source:Data/MutualFund.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To verify that Customer can successfully apply for " +
+            "Mutual Fund HBL Money Market Fund MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that Customer can successfully apply for Mutual Fund HBL Money Market F" +
+            "und MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that Customer can successfully apply for Mutual Fund HBL Money Market F" +
+            "und MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+            "ic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Fund_Names_query", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+            "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+            "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Money Market Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094903010")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no", "10437")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount_value", "1000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:gl_account_query", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+            "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+            "nd_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_timing_query", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+            "fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan19")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+            "e call HBL PhoneBanking on 021 - 111 - 111 - 442")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:GUID_query", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+            "AN_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+            "RANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fund_name_query", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_message", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_query", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+            "UND = \'{mutual_fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val3", "QAT_AMC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val4", "QAT_TPE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_verify_query", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_name_verify_query", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_cnic_verify_query", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatCustomerCanSuccessfullyApplyForMutualFundHBLMoneyMarketFundMFMB12()
+        {
+#line 34
+this.WhenUserTryToMutualFund("To verify that Customer can successfully apply for Mutual Fund HBL Money Market F" +
+                    "und MFMB12", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+                    "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+                    "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Money Market Fund", "24460094903010", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "", "10437", "1000", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+                    "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+                    "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+                    "fund_name}\'", "pakistan19", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+                    "e call HBL PhoneBanking on 021 - 111 - 111 - 442", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+                    "AN_ID}\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+                    "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+                    "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+                    "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "PASS", new string[] {
+                        "source:Data/MutualFund.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To verify that Customer can successfully apply for " +
+            "Mutual Fund HBL Multi Asset Fund MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that Customer can successfully apply for Mutual Fund HBL Multi Asset Fu" +
+            "nd MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that Customer can successfully apply for Mutual Fund HBL Multi Asset Fu" +
+            "nd MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+            "ic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Fund_Names_query", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+            "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+            "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Multi Asset Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094903010")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no", "10437")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount_value", "1000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:gl_account_query", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+            "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+            "nd_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_timing_query", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+            "fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan20")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+            "e call HBL PhoneBanking on 021 - 111 - 111 - 443")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:GUID_query", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+            "AN_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+            "RANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fund_name_query", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_message", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_query", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+            "UND = \'{mutual_fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val3", "QAT_AMC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val4", "QAT_TPE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_verify_query", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_name_verify_query", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_cnic_verify_query", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatCustomerCanSuccessfullyApplyForMutualFundHBLMultiAssetFundMFMB12()
+        {
+#line 34
+this.WhenUserTryToMutualFund("To verify that Customer can successfully apply for Mutual Fund HBL Multi Asset Fu" +
+                    "nd MFMB12", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+                    "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+                    "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Multi Asset Fund", "24460094903010", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "", "10437", "1000", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+                    "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+                    "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+                    "fund_name}\'", "pakistan20", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+                    "e call HBL PhoneBanking on 021 - 111 - 111 - 443", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+                    "AN_ID}\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+                    "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+                    "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+                    "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "PASS", new string[] {
+                        "source:Data/MutualFund.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To verify that Customer can successfully apply for " +
+            "Mutual Fund HBL Pension Fund MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that Customer can successfully apply for Mutual Fund HBL Pension Fund M" +
+            "FMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that Customer can successfully apply for Mutual Fund HBL Pension Fund M" +
+            "FMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+            "ic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Fund_Names_query", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+            "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+            "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Pension Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094903010")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no", "10437")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount_value", "1000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:gl_account_query", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+            "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+            "nd_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_timing_query", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+            "fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan21")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+            "e call HBL PhoneBanking on 021 - 111 - 111 - 444")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:GUID_query", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+            "AN_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+            "RANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fund_name_query", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_message", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_query", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+            "UND = \'{mutual_fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val3", "QAT_AMC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val4", "QAT_TPE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_verify_query", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_name_verify_query", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_cnic_verify_query", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatCustomerCanSuccessfullyApplyForMutualFundHBLPensionFundMFMB12()
+        {
+#line 34
+this.WhenUserTryToMutualFund("To verify that Customer can successfully apply for Mutual Fund HBL Pension Fund M" +
+                    "FMB12", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+                    "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+                    "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Pension Fund", "24460094903010", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "", "10437", "1000", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+                    "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+                    "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+                    "fund_name}\'", "pakistan21", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+                    "e call HBL PhoneBanking on 021 - 111 - 111 - 444", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+                    "AN_ID}\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+                    "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+                    "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+                    "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "PASS", new string[] {
+                        "source:Data/MutualFund.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To verify that Customer can successfully apply for " +
+            "Mutual Fund HBL Stock Fund MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that Customer can successfully apply for Mutual Fund HBL Stock Fund MFM" +
+            "B12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that Customer can successfully apply for Mutual Fund HBL Stock Fund MFM" +
+            "B12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+            "ic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Fund_Names_query", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+            "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+            "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Stock Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094903010")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no", "10437")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount_value", "500000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:gl_account_query", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+            "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+            "nd_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_timing_query", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+            "fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan22")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+            "e call HBL PhoneBanking on 021 - 111 - 111 - 445")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:GUID_query", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+            "AN_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+            "RANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fund_name_query", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_message", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_query", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+            "UND = \'{mutual_fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val3", "QAT_AMC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val4", "QAT_TPE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_verify_query", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_name_verify_query", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_cnic_verify_query", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatCustomerCanSuccessfullyApplyForMutualFundHBLStockFundMFMB12()
+        {
+#line 34
+this.WhenUserTryToMutualFund("To verify that Customer can successfully apply for Mutual Fund HBL Stock Fund MFM" +
+                    "B12", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+                    "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+                    "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Stock Fund", "24460094903010", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "", "10437", "500000", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+                    "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+                    "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+                    "fund_name}\'", "pakistan22", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+                    "e call HBL PhoneBanking on 021 - 111 - 111 - 445", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+                    "AN_ID}\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+                    "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+                    "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+                    "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "PASS", new string[] {
+                        "source:Data/MutualFund.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To verify that Customer can not apply for Mutual Fu" +
+            "nd HBL-FPF-Special Income Plan MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that Customer can not apply for Mutual Fund HBL-FPF-Special Income Plan" +
+            " MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that Customer can not apply for Mutual Fund HBL-FPF-Special Income Plan" +
+            " MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+            "ic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Fund_Names_query", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+            "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+            "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL-FPF-Special Income Plan")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094903010")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no", "10437")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount_value", "1000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:gl_account_query", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+            "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+            "nd_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_timing_query", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+            "fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan23")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+            "e call HBL PhoneBanking on 021 - 111 - 111 - 446")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:GUID_query", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+            "AN_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+            "RANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fund_name_query", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_message", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_query", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+            "UND = \'{mutual_fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val3", "QAT_AMC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val4", "QAT_TPE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_verify_query", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_name_verify_query", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_cnic_verify_query", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatCustomerCanNotApplyForMutualFundHBL_FPF_SpecialIncomePlanMFMB12()
+        {
+#line 34
+this.WhenUserTryToMutualFund("To verify that Customer can not apply for Mutual Fund HBL-FPF-Special Income Plan" +
+                    " MFMB12", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+                    "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+                    "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL-FPF-Special Income Plan", "24460094903010", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "", "10437", "1000", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+                    "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+                    "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+                    "fund_name}\'", "pakistan23", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+                    "e call HBL PhoneBanking on 021 - 111 - 111 - 446", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+                    "AN_ID}\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+                    "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+                    "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+                    "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "FAIL", new string[] {
+                        "source:Data/MutualFund.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To verify that Customer can not apply for Mutual Fu" +
+            "nd HBL-IFPF-Islamic Capital Preservation Plan MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that Customer can not apply for Mutual Fund HBL-IFPF-Islamic Capital Pr" +
+            "eservation Plan MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that Customer can not apply for Mutual Fund HBL-IFPF-Islamic Capital Pr" +
+            "eservation Plan MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+            "ic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Fund_Names_query", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+            "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+            "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL-IFPF-Islamic Capital Preservation Plan")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094903010")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no", "10437")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount_value", "1000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:gl_account_query", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+            "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+            "nd_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_timing_query", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+            "fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan24")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+            "e call HBL PhoneBanking on 021 - 111 - 111 - 447")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:GUID_query", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+            "AN_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+            "RANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fund_name_query", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_message", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_query", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+            "UND = \'{mutual_fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val3", "QAT_AMC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val4", "QAT_TPE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_verify_query", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_name_verify_query", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_cnic_verify_query", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatCustomerCanNotApplyForMutualFundHBL_IFPF_IslamicCapitalPreservationPlanMFMB12()
+        {
+#line 34
+this.WhenUserTryToMutualFund("To verify that Customer can not apply for Mutual Fund HBL-IFPF-Islamic Capital Pr" +
+                    "eservation Plan MFMB12", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+                    "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+                    "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL-IFPF-Islamic Capital Preservation Plan", "24460094903010", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "", "10437", "1000", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+                    "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+                    "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+                    "fund_name}\'", "pakistan24", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+                    "e call HBL PhoneBanking on 021 - 111 - 111 - 447", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+                    "AN_ID}\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+                    "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+                    "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+                    "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "FAIL", new string[] {
+                        "source:Data/MutualFund.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To verify that Customer can not apply for Mutual Fu" +
+            "nd with Decimal value MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that Customer can not apply for Mutual Fund with Decimal value MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that Customer can not apply for Mutual Fund with Decimal value MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+            "ic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Fund_Names_query", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+            "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+            "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Government Securities Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094903010")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no", "16699")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount_value", "1200.45")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:gl_account_query", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+            "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+            "nd_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_timing_query", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+            "fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan30")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+            "e call HBL PhoneBanking on 021 - 111 - 111 - 453")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:GUID_query", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+            "AN_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+            "RANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fund_name_query", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_message", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_query", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+            "UND = \'{mutual_fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val3", "QAT_AMC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val4", "QAT_TPE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_verify_query", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_name_verify_query", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_cnic_verify_query", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatCustomerCanNotApplyForMutualFundWithDecimalValueMFMB12()
+        {
+#line 34
+this.WhenUserTryToMutualFund("To verify that Customer can not apply for Mutual Fund with Decimal value MFMB12", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+                    "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+                    "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Government Securities Fund", "24460094903010", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "", "16699", "1200.45", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+                    "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+                    "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+                    "fund_name}\'", "pakistan30", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+                    "e call HBL PhoneBanking on 021 - 111 - 111 - 453", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+                    "AN_ID}\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+                    "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+                    "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+                    "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "FAIL", new string[] {
+                        "source:Data/MutualFund.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To verify that Customer can not apply for Mutual Fu" +
+            "nd with 0 amount MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that Customer can not apply for Mutual Fund with 0 amount MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that Customer can not apply for Mutual Fund with 0 amount MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+            "ic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Fund_Names_query", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+            "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+            "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Islamic Money Market Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094903010")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no", "10437")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount_value", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:gl_account_query", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+            "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+            "nd_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_timing_query", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+            "fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan32")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+            "e call HBL PhoneBanking on 021 - 111 - 111 - 455")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:GUID_query", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+            "AN_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+            "RANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fund_name_query", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_message", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_query", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+            "UND = \'{mutual_fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val3", "QAT_AMC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val4", "QAT_TPE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_verify_query", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_name_verify_query", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_cnic_verify_query", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatCustomerCanNotApplyForMutualFundWith0AmountMFMB12()
+        {
+#line 34
+this.WhenUserTryToMutualFund("To verify that Customer can not apply for Mutual Fund with 0 amount MFMB12", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+                    "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+                    "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Islamic Money Market Fund", "24460094903010", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "", "10437", "0", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+                    "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+                    "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+                    "fund_name}\'", "pakistan32", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+                    "e call HBL PhoneBanking on 021 - 111 - 111 - 455", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+                    "AN_ID}\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+                    "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+                    "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+                    "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "FAIL", new string[] {
+                        "source:Data/MutualFund.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To verify that customer can not perform transaction" +
+            " greater than available account balance MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that customer can not perform transaction greater than available accoun" +
+            "t balance MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that customer can not perform transaction greater than available accoun" +
+            "t balance MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+            "ic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Fund_Names_query", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+            "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+            "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Equity Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094903010")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no", "10437")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount_value", "1000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:gl_account_query", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+            "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+            "nd_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_timing_query", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+            "fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan33")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+            "e call HBL PhoneBanking on 021 - 111 - 111 - 456")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:GUID_query", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+            "AN_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+            "RANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fund_name_query", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_message", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_query", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+            "UND = \'{mutual_fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val3", "QAT_AMC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val4", "QAT_TPE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_verify_query", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_name_verify_query", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_cnic_verify_query", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatCustomerCanNotPerformTransactionGreaterThanAvailableAccountBalanceMFMB12()
+        {
+#line 34
+this.WhenUserTryToMutualFund("To verify that customer can not perform transaction greater than available accoun" +
+                    "t balance MFMB12", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+                    "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+                    "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Equity Fund", "24460094903010", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "", "10437", "1000", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+                    "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+                    "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+                    "fund_name}\'", "pakistan33", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+                    "e call HBL PhoneBanking on 021 - 111 - 111 - 456", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+                    "AN_ID}\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+                    "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+                    "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+                    "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "FAIL", new string[] {
+                        "source:Data/MutualFund.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To verify that customer can not perform transaction" +
+            " with invalid Transaction password MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that customer can not perform transaction with invalid Transaction pass" +
+            "word MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that customer can not perform transaction with invalid Transaction pass" +
+            "word MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+            "ic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Fund_Names_query", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+            "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+            "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Equity Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094903010")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no", "10437")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount_value", "1000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:gl_account_query", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+            "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+            "nd_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_timing_query", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+            "fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan34")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+            "e call HBL PhoneBanking on 021 - 111 - 111 - 457")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:GUID_query", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+            "AN_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+            "RANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fund_name_query", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_message", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_query", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+            "UND = \'{mutual_fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val3", "QAT_AMC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val4", "QAT_TPE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_verify_query", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_name_verify_query", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_cnic_verify_query", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatCustomerCanNotPerformTransactionWithInvalidTransactionPasswordMFMB12()
+        {
+#line 34
+this.WhenUserTryToMutualFund("To verify that customer can not perform transaction with invalid Transaction pass" +
+                    "word MFMB12", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+                    "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+                    "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Equity Fund", "24460094903010", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "", "10437", "1000", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+                    "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+                    "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+                    "fund_name}\'", "pakistan34", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+                    "e call HBL PhoneBanking on 021 - 111 - 111 - 457", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+                    "AN_ID}\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+                    "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+                    "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+                    "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "FAIL", new string[] {
+                        "source:Data/MutualFund.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To Verify that customer can not apply for AMC less " +
+            "than initial investment minimum limit MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To Verify that customer can not apply for AMC less than initial investment minimu" +
+            "m limit MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To Verify that customer can not apply for AMC less than initial investment minimu" +
+            "m limit MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+            "ic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Fund_Names_query", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+            "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+            "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Islamic Equity Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094903010")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no", "10437")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount_value", "999")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:gl_account_query", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+            "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+            "nd_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_timing_query", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+            "fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan35")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+            "e call HBL PhoneBanking on 021 - 111 - 111 - 458")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:GUID_query", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+            "AN_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+            "RANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fund_name_query", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_message", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_query", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+            "UND = \'{mutual_fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val3", "QAT_AMC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val4", "QAT_TPE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_verify_query", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_name_verify_query", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_cnic_verify_query", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatCustomerCanNotApplyForAMCLessThanInitialInvestmentMinimumLimitMFMB12()
+        {
+#line 34
+this.WhenUserTryToMutualFund("To Verify that customer can not apply for AMC less than initial investment minimu" +
+                    "m limit MFMB12", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+                    "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+                    "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Islamic Equity Fund", "24460094903010", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "", "10437", "999", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+                    "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+                    "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+                    "fund_name}\'", "pakistan35", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+                    "e call HBL PhoneBanking on 021 - 111 - 111 - 458", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+                    "AN_ID}\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+                    "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+                    "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+                    "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "FAIL", new string[] {
+                        "source:Data/MutualFund.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To Verify that customer can not apply for AMC great" +
+            "er than initial investment maximum limit MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To Verify that customer can not apply for AMC greater than initial investment max" +
+            "imum limit MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To Verify that customer can not apply for AMC greater than initial investment max" +
+            "imum limit MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+            "ic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Fund_Names_query", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+            "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+            "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Islamic Equity Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094903010")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no", "10437")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount_value", "500001")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:gl_account_query", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+            "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+            "nd_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_timing_query", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+            "fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan36")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+            "e call HBL PhoneBanking on 021 - 111 - 111 - 459")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:GUID_query", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+            "AN_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+            "RANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fund_name_query", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_message", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_query", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+            "UND = \'{mutual_fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val3", "QAT_AMC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val4", "QAT_TPE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_verify_query", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_name_verify_query", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_cnic_verify_query", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatCustomerCanNotApplyForAMCGreaterThanInitialInvestmentMaximumLimitMFMB12()
+        {
+#line 34
+this.WhenUserTryToMutualFund("To Verify that customer can not apply for AMC greater than initial investment max" +
+                    "imum limit MFMB12", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+                    "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+                    "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Islamic Equity Fund", "24460094903010", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "", "10437", "500001", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+                    "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+                    "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+                    "fund_name}\'", "pakistan36", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+                    "e call HBL PhoneBanking on 021 - 111 - 111 - 459", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+                    "AN_ID}\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+                    "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+                    "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+                    "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "FAIL", new string[] {
+                        "source:Data/MutualFund.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To Verify that customer can not apply for AMC less " +
+            "than initial re investment minimum limit MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To Verify that customer can not apply for AMC less than initial re investment min" +
+            "imum limit MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To Verify that customer can not apply for AMC less than initial re investment min" +
+            "imum limit MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+            "ic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Fund_Names_query", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+            "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+            "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Islamic Money Market Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094903010")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no", "10437")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount_value", "999")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:gl_account_query", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+            "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+            "nd_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_timing_query", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+            "fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan37")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+            "e call HBL PhoneBanking on 021 - 111 - 111 - 460")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:GUID_query", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+            "AN_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+            "RANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fund_name_query", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_message", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_query", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+            "UND = \'{mutual_fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val3", "QAT_AMC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val4", "QAT_TPE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_verify_query", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_name_verify_query", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_cnic_verify_query", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatCustomerCanNotApplyForAMCLessThanInitialReInvestmentMinimumLimitMFMB12()
+        {
+#line 34
+this.WhenUserTryToMutualFund("To Verify that customer can not apply for AMC less than initial re investment min" +
+                    "imum limit MFMB12", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+                    "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+                    "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Islamic Money Market Fund", "24460094903010", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "", "10437", "999", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+                    "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+                    "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+                    "fund_name}\'", "pakistan37", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+                    "e call HBL PhoneBanking on 021 - 111 - 111 - 460", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+                    "AN_ID}\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+                    "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+                    "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+                    "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "FAIL", new string[] {
+                        "source:Data/MutualFund.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To Verify that customer can not apply for AMC great" +
+            "er than initial re investment maximum limit MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To Verify that customer can not apply for AMC greater than initial re investment " +
+            "maximum limit MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To Verify that customer can not apply for AMC greater than initial re investment " +
+            "maximum limit MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+            "ic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Fund_Names_query", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+            "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+            "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Islamic Money Market Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094903010")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no", "10437")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount_value", "500001")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:gl_account_query", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+            "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+            "nd_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_timing_query", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+            "fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan38")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+            "e call HBL PhoneBanking on 021 - 111 - 111 - 461")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:GUID_query", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+            "AN_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+            "RANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fund_name_query", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_message", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_query", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+            "UND = \'{mutual_fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val3", "QAT_AMC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val4", "QAT_TPE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_verify_query", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_name_verify_query", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_cnic_verify_query", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatCustomerCanNotApplyForAMCGreaterThanInitialReInvestmentMaximumLimitMFMB12()
+        {
+#line 34
+this.WhenUserTryToMutualFund("To Verify that customer can not apply for AMC greater than initial re investment " +
+                    "maximum limit MFMB12", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+                    "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+                    "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Islamic Money Market Fund", "24460094903010", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "", "10437", "500001", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+                    "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+                    "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+                    "fund_name}\'", "pakistan38", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+                    "e call HBL PhoneBanking on 021 - 111 - 111 - 461", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+                    "AN_ID}\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+                    "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+                    "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+                    "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "FAIL", new string[] {
+                        "source:Data/MutualFund.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To Verify that customer can not apply for AMC with " +
+            "investment limit while reinvestments limits are applicable MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To Verify that customer can not apply for AMC with investment limit while reinves" +
+            "tments limits are applicable MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To Verify that customer can not apply for AMC with investment limit while reinves" +
+            "tments limits are applicable MFMB12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+            "ic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Fund_Names_query", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+            "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+            "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Islamic Money Market Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094903010")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no", "10437")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount_value", "100")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:gl_account_query", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+            "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+            "nd_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_timing_query", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+            "fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan39")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+            "e call HBL PhoneBanking on 021 - 111 - 111 - 462")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:GUID_query", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+            "AN_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+            "RANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fund_name_query", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_message", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_query", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+            "UND = \'{mutual_fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val3", "QAT_AMC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val4", "QAT_TPE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_verify_query", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_name_verify_query", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_cnic_verify_query", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatCustomerCanNotApplyForAMCWithInvestmentLimitWhileReinvestmentsLimitsAreApplicableMFMB12()
+        {
+#line 34
+this.WhenUserTryToMutualFund("To Verify that customer can not apply for AMC with investment limit while reinves" +
+                    "tments limits are applicable MFMB12", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+                    "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+                    "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Islamic Money Market Fund", "24460094903010", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "", "10437", "100", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+                    "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+                    "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+                    "fund_name}\'", "pakistan39", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+                    "e call HBL PhoneBanking on 021 - 111 - 111 - 462", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+                    "AN_ID}\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+                    "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+                    "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+                    "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "FAIL", new string[] {
+                        "source:Data/MutualFund.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To verify that Customer can not apply for Mutual Fu" +
+            "nd with Locked Transaction Password LTPMB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that Customer can not apply for Mutual Fund with Locked Transaction Pas" +
+            "sword LTPMB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that Customer can not apply for Mutual Fund with Locked Transaction Pas" +
+            "sword LTPMB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+            "ic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Fund_Names_query", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+            "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+            "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Energy Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "22647000000401")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no", "16699")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount_value", "1000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:gl_account_query", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+            "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+            "nd_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_timing_query", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+            "fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan25")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+            "e call HBL PhoneBanking on 021 - 111 - 111 - 448")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:GUID_query", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+            "AN_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+            "RANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fund_name_query", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_message", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_query", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+            "UND = \'{mutual_fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val3", "QAT_AMC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val4", "QAT_TPE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_verify_query", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_name_verify_query", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_cnic_verify_query", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatCustomerCanNotApplyForMutualFundWithLockedTransactionPasswordLTPMB()
+        {
+#line 34
+this.WhenUserTryToMutualFund("To verify that Customer can not apply for Mutual Fund with Locked Transaction Pas" +
+                    "sword LTPMB", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+                    "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+                    "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Energy Fund", "22647000000401", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "", "16699", "1000", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+                    "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+                    "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+                    "fund_name}\'", "pakistan25", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+                    "e call HBL PhoneBanking on 021 - 111 - 111 - 448", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+                    "AN_ID}\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+                    "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+                    "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+                    "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "FAIL", new string[] {
+                        "source:Data/MutualFund.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To verify that Customer can not apply for Mutual Fu" +
+            "nd with Null Transaction Password NTP22")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that Customer can not apply for Mutual Fund with Null Transaction Passw" +
+            "ord NTP22")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that Customer can not apply for Mutual Fund with Null Transaction Passw" +
+            "ord NTP22")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+            "ic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Fund_Names_query", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+            "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+            "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Money Market Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "22647000001903")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no", "16699")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount_value", "1000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:gl_account_query", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+            "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+            "nd_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_timing_query", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+            "fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan26")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+            "e call HBL PhoneBanking on 021 - 111 - 111 - 449")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:GUID_query", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+            "AN_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+            "RANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fund_name_query", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_message", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_query", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+            "UND = \'{mutual_fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val3", "QAT_AMC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val4", "QAT_TPE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_verify_query", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_name_verify_query", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_cnic_verify_query", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatCustomerCanNotApplyForMutualFundWithNullTransactionPasswordNTP22()
+        {
+#line 34
+this.WhenUserTryToMutualFund("To verify that Customer can not apply for Mutual Fund with Null Transaction Passw" +
+                    "ord NTP22", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+                    "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+                    "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Money Market Fund", "22647000001903", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "", "16699", "1000", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+                    "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+                    "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+                    "fund_name}\'", "pakistan26", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+                    "e call HBL PhoneBanking on 021 - 111 - 111 - 449", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+                    "AN_ID}\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+                    "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+                    "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+                    "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "FAIL", new string[] {
+                        "source:Data/MutualFund.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To verify that PSD(Y) Customer can successfully app" +
+            "ly for Mutual Fund PSDYMB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that PSD(Y) Customer can successfully apply for Mutual Fund PSDYMB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that PSD(Y) Customer can successfully apply for Mutual Fund PSDYMB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+            "ic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Fund_Names_query", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+            "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+            "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Money Market Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "00476000135901")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no", "16699")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount_value", "10000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:gl_account_query", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+            "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+            "nd_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_timing_query", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+            "fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan27")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+            "e call HBL PhoneBanking on 021 - 111 - 111 - 450")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:GUID_query", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+            "AN_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+            "RANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fund_name_query", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_message", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_query", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+            "UND = \'{mutual_fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val3", "QAT_AMC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val4", "QAT_TPE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_verify_query", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_name_verify_query", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_cnic_verify_query", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatPSDYCustomerCanSuccessfullyApplyForMutualFundPSDYMB()
+        {
+#line 34
+this.WhenUserTryToMutualFund("To verify that PSD(Y) Customer can successfully apply for Mutual Fund PSDYMB", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+                    "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+                    "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Money Market Fund", "00476000135901", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "", "16699", "10000", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+                    "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+                    "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+                    "fund_name}\'", "pakistan27", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+                    "e call HBL PhoneBanking on 021 - 111 - 111 - 450", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+                    "AN_ID}\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+                    "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+                    "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+                    "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "PASS", new string[] {
+                        "source:Data/MutualFund.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To verify that PSD(N) Customer can successfully app" +
+            "ly for Mutual Fund PSDNMB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that PSD(N) Customer can successfully apply for Mutual Fund PSDNMB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that PSD(N) Customer can successfully apply for Mutual Fund PSDNMB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+            "ic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Fund_Names_query", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+            "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+            "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Money Market Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "22647000000401")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no", "16699")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount_value", "15000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:gl_account_query", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+            "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+            "nd_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_timing_query", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+            "fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan28")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+            "e call HBL PhoneBanking on 021 - 111 - 111 - 451")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:GUID_query", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+            "AN_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+            "RANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fund_name_query", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_message", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_query", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+            "UND = \'{mutual_fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val3", "QAT_AMC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val4", "QAT_TPE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_verify_query", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_name_verify_query", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_cnic_verify_query", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatPSDNCustomerCanSuccessfullyApplyForMutualFundPSDNMB()
+        {
+#line 34
+this.WhenUserTryToMutualFund("To verify that PSD(N) Customer can successfully apply for Mutual Fund PSDNMB", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+                    "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+                    "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Money Market Fund", "22647000000401", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "", "16699", "15000", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+                    "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+                    "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+                    "fund_name}\'", "pakistan28", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+                    "e call HBL PhoneBanking on 021 - 111 - 111 - 451", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+                    "AN_ID}\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+                    "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+                    "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+                    "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "PASS", new string[] {
+                        "source:Data/MutualFund.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To verify that PSD(N) Customer can not apply for Mu" +
+            "tual Fund with De linked account LINKMB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that PSD(N) Customer can not apply for Mutual Fund with De linked accou" +
+            "nt LINKMB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that PSD(N) Customer can not apply for Mutual Fund with De linked accou" +
+            "nt LINKMB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+            "ic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Fund_Names_query", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+            "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+            "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Government Securities Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "22647000001903")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no", "16699")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount_value", "15000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:gl_account_query", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+            "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+            "nd_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_timing_query", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+            "fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan29")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+            "e call HBL PhoneBanking on 021 - 111 - 111 - 452")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:GUID_query", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+            "AN_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+            "RANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fund_name_query", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_message", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_query", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+            "UND = \'{mutual_fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val3", "QAT_AMC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val4", "QAT_TPE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_verify_query", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_name_verify_query", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_cnic_verify_query", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatPSDNCustomerCanNotApplyForMutualFundWithDeLinkedAccountLINKMB()
+        {
+#line 34
+this.WhenUserTryToMutualFund("To verify that PSD(N) Customer can not apply for Mutual Fund with De linked accou" +
+                    "nt LINKMB", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+                    "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+                    "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Government Securities Fund", "22647000001903", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "", "16699", "15000", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+                    "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+                    "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+                    "fund_name}\'", "pakistan29", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+                    "e call HBL PhoneBanking on 021 - 111 - 111 - 452", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+                    "AN_ID}\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+                    "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+                    "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+                    "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "FAIL", new string[] {
+                        "source:Data/MutualFund.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to mutual fund: To verify that Customer can not apply for Mutual Fu" +
+            "nd with No mutual Fund NOMFMB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MutualFund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mutual_Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MutualFund.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that Customer can not apply for Mutual Fund with No mutual Fund NOMFMB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that Customer can not apply for Mutual Fund with No mutual Fund NOMFMB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cust_profile_id_query", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+            "ic}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Mutual Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Fund_Names_query", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+            "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+            "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:statement_counter", "all")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mutual_Fund_Value", "HBL Government Securities Fund")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "23397900303403")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_query", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no", "16699")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount_value", "1000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:gl_account_query", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+            "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+            "nd_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_timing_query", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+            "fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan31")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+            "e call HBL PhoneBanking on 021 - 111 - 111 - 454")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:GUID_query", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+            "AN_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+            "RANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:fund_name_query", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_message", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:disclaimer_query", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+            "UND = \'{mutual_fund_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val3", "QAT_AMC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val4", "QAT_TPE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:folio_no_verify_query", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_name_verify_query", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_cnic_verify_query", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_mobile_no_query", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+            "}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_verify_query", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
+        public virtual void WhenUserTryToMutualFund_ToVerifyThatCustomerCanNotApplyForMutualFundWithNoMutualFundNOMFMB()
+        {
+#line 34
+this.WhenUserTryToMutualFund("To verify that Customer can not apply for Mutual Fund with No mutual Fund NOMFMB", "SELECT CUSTOMER_PROFILE_ID FROM AMC_CUSTOMER_PROFILE L WHERE L.CNIC=\'{customer_cn" +
+                    "ic}\'", "Mutual Fund", "SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE PP INNER JOIN QAT_AMC.AMC" +
+                    "_PRODUCT_CHANNEL PC ON PP.PRODUCT_ID = PC.PRODUCT_ID WHERE PP.IS_DELETED=0 AND P" +
+                    "C.IS_ENABLED = 1 AND PC.CHANNEL_CODE = \'MB\' ORDER BY (PP.NAME_OF_FUND)", "all", "HBL Government Securities Fund", "23397900303403", "SELECT CP.FOLIO_NO FROM AMC_CUSTOMER_PROFILE CP WHERE CP.CNIC = \'{customer_cnic}\'" +
+                    "", "16699", "1000", "SELECT PP.GL_ACCOUNT_NO FROM QAT_AMC.AMC_PRODUCT_CHANNEL PP INNER JOIN AMC_PRODUC" +
+                    "T_PROFILE CP ON PP.PRODUCT_ID = CP.PRODUCT_ID where CP.NAME_OF_FUND =\'{mutual_fu" +
+                    "nd_name}\'", "Select CUT_OFF_TIME from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_FUND = \'{mutual_" +
+                    "fund_name}\'", "pakistan31", "You have successfully invested in HBL Mutual Funds, for further assistance, pleas" +
+                    "e call HBL PhoneBanking on 021 - 111 - 111 - 454", "SELECT TT.HOST_REFERENCE_NO FROM DC_TRANSACTION TT WHERE TT.TRANSACTION_ID = \'{TR" +
+                    "AN_ID}\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Select TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.T" +
+                    "RANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select PRODUCT_CODE FROM DC_TRANSACTION DT WHERE DT.CHANNEL_ID=\'1\'and  DT.TRANSAC" +
+                    "TION_ID = \'", @"Disclaimer: You have chosen to invest in Equity Related Scheme (High Risk Category). Your risk profile does not warrant you to invest in Equity Related Scheme. Kindly press ""Next"" to acknowledge that you understand the risk associated with this investment.", "Select length(PP.POPUP_DISCLAIMER) from AMC_PRODUCT_PROFILE PP where PP.NAME_OF_F" +
+                    "UND = \'{mutual_fund_name}\'", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "QAT_AMC", "QAT_TPE", "SELECT TT.FOLIO_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_NAME FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_CNIC FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "SELECT TT.CUSTOMER_MOBILE_NO FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID" +
+                    "}\'", "SELECT TT.TRAN_AMOUNT FROM QAT_AMC.AMC_TRANSACTION TT WHERE TT.GUID=\'{GUID}\'", "FAIL", new string[] {
                         "source:Data/MutualFund.xlsx"});
 #line hidden
         }

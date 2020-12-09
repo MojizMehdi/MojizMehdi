@@ -643,6 +643,9 @@ namespace HBLAutomationAndroid.Pages
                             link_err.Click();
                         }
                         
+                        AndroidElement link1 = (AndroidElement)driver.FindElementByXPath("//*[contains(@text,'')]");
+                        link1.Click();
+                        Thread.Sleep(6000);
                         AndroidElement link = (AndroidElement)driver.FindElementById(locator);
                         link.Click();
                     }
@@ -728,32 +731,66 @@ namespace HBLAutomationAndroid.Pages
             try
             {
                 Thread.Sleep(3000);
-                Boolean a = driver.FindElements(By.Id(locator)).Count != 0;
-                if (a == true)
+                Boolean a = false;
+                if (locator.StartsWith("//") || locator.StartsWith("("))
                 {
-                    waitDriver.Until(ExpectedConditions.ElementIsVisible(By.Id(locator)));
+                    a = driver.FindElements(By.XPath(locator)).Count != 0;
+                    if (a == true)
                     {
-                        waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
+                        waitDriver.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
                         {
-                            IWebElement link = waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
+                            waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
+                            {
+                                IWebElement link = waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
 
-                            link.Click();
+
+
+                                link.Click();
+                            }
                         }
+                    }
+                    else
+                    {
+                        //do nothing
                     }
                 }
                 else
                 {
-                    //do nothing
+                    a = driver.FindElements(By.Id(locator)).Count != 0;
+                    if (a == true)
+                    {
+                        waitDriver.Until(ExpectedConditions.ElementIsVisible(By.Id(locator)));
+                        {
+                            waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
+                            {
+                                IWebElement link = waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.Id(locator)));
+
+
+
+                                link.Click();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        //do nothing
+                    }
                 }
+
+
 
             }
             catch (ElementNotVisibleException)
             {
 
+
+
                 throw new AssertFailedException(string.Format("The element provided {0} is not on screen", locator));
             }
             catch (StaleElementReferenceException)
             {
+
+
 
                 throw new AssertFailedException(string.Format("The element provided {0} is Stale", locator));
             }
@@ -761,7 +798,11 @@ namespace HBLAutomationAndroid.Pages
             {
                 throw new Exception("ex message: " + ex.Message);
 
+
+
             }
+
+
 
         }
 

@@ -83,15 +83,16 @@ namespace HBLAutomationAndroid.Resources.Feature.HBLMobile
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void AsAUserIWantToVerifyLimitsMobile(string @case, string limit_Type, string new_Limit, string[] exampleTags)
+        public virtual void WhenUserTryToLoginMobileBankingForMyAccount(string @case, string status_Query, string login_UserId_Value, string login_Password_Value, string oTP_Value, string expected_Result, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "MyAccount",
                     "Limit_Management"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user i want to Verify Limits Mobile", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When user try to login mobile banking for MyAccount", @__tags);
 #line 7
 this.ScenarioSetup(scenarioInfo);
 #line 8
@@ -99,18 +100,184 @@ this.ScenarioSetup(scenarioInfo);
 #line 9
  testRunner.And("the user is arrive to Mobile Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
- testRunner.And("I am clicking on \"Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("the test case expected result is \"{0}\"", expected_Result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.When("I am clicking on \"Dashboard_Sidebar\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
- testRunner.And("I am clicking on \"Dashboard_Sidebar_MyAccount\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Login_permission_allow_btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
- testRunner.And("I am clicking on \"MyAccount_Limit_Management_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I wait 1000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 14
- testRunner.And("I set list of elements from scroll view on \"MyAccount_Limit_Type_count\" as \"3\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Login_permission_allow_btn2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 15
- testRunner.Then("I am performing Limit verification operation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I am clicking on \"SendMoney_SkipBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 16
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"username\"", login_UserId_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 17
+ testRunner.And(string.Format("update the data by query \"{0}\" on DIGITAL_CHANNEL_SEC", status_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 18
+ testRunner.When(string.Format("I have given \"{0}\" on \"Login_UserId\"", login_UserId_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 19
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_Password\"", login_Password_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 20
+ testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 21
+ testRunner.And("I am performing on \"Login_SignIn_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 22
+ testRunner.And("I wait 30000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 23
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 24
+ testRunner.And("I am clicking on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 25
+ testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 26
+ testRunner.And("I am clicking on \"BillPayment_Rating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 27
+ testRunner.And("I am clicking on \"SendMoney_SkipBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 28
+ testRunner.And("I am clicking on \"BillPayment_Rating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 29
+ testRunner.And("I am clicking on \"BillPayment_RatingOkBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 30
+ testRunner.Then("verify through \"Welcome, \" on \"Login_Success_Text\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to login mobile banking for MyAccount: When user id and password ar" +
+            "e valid Limit_PSD_Y_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Limit_Management")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/My_Account_Login.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid Limit_PSD_Y_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid Limit_PSD_Y_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Status_query", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
+            "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
+            "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "HASSANALI1ASAD")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void WhenUserTryToLoginMobileBankingForMyAccount_WhenUserIdAndPasswordAreValidLimit_PSD_Y_Two()
+        {
+#line 7
+this.WhenUserTryToLoginMobileBankingForMyAccount("When user id and password are valid Limit_PSD_Y_Two", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
+                    "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
+                    "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;", "HASSANALI1ASAD", "pakistan1", "12345678", "PASS", new string[] {
+                        "source:Data/My_Account_Login.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to login mobile banking for MyAccount: When user id and password ar" +
+            "e valid Limit_PSD_Y_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Limit_Management")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/My_Account_Login.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid Limit_PSD_Y_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid Limit_PSD_Y_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Status_query", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
+            "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
+            "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "HINAAHMER")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void WhenUserTryToLoginMobileBankingForMyAccount_WhenUserIdAndPasswordAreValidLimit_PSD_Y_One()
+        {
+#line 7
+this.WhenUserTryToLoginMobileBankingForMyAccount("When user id and password are valid Limit_PSD_Y_One", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
+                    "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
+                    "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;", "HINAAHMER", "pakistan1", "12345678", "PASS", new string[] {
+                        "source:Data/My_Account_Login.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to login mobile banking for MyAccount: When user id and password ar" +
+            "e valid Limit_PSD_N_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Limit_Management")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/My_Account_Login.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid Limit_PSD_N_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid Limit_PSD_N_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Status_query", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
+            "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
+            "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "ABDULJALILKHAN")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void WhenUserTryToLoginMobileBankingForMyAccount_WhenUserIdAndPasswordAreValidLimit_PSD_N_Two()
+        {
+#line 7
+this.WhenUserTryToLoginMobileBankingForMyAccount("When user id and password are valid Limit_PSD_N_Two", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
+                    "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
+                    "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;", "ABDULJALILKHAN", "pakistan1", "12345678", "PASS", new string[] {
+                        "source:Data/My_Account_Login.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("When user try to login mobile banking for MyAccount: When user id and password ar" +
+            "e valid Limit_PSD_N_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Limit_Management")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/My_Account_Login.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid Limit_PSD_N_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid Limit_PSD_N_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Status_query", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
+            "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
+            "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "MEHBOOB6184")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
+        public virtual void WhenUserTryToLoginMobileBankingForMyAccount_WhenUserIdAndPasswordAreValidLimit_PSD_N_One()
+        {
+#line 7
+this.WhenUserTryToLoginMobileBankingForMyAccount("When user id and password are valid Limit_PSD_N_One", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
+                    "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
+                    "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;", "MEHBOOB6184", "pakistan1", "12345678", "PASS", new string[] {
+                        "source:Data/My_Account_Login.xlsx"});
+#line hidden
+        }
+        
+        public virtual void AsAUserIWantToVerifyLimitsMobile(string @case, string limit_Type, string new_Limit, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "MyAccount",
+                    "Limit_Management"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user i want to Verify Limits Mobile", @__tags);
+#line 40
+this.ScenarioSetup(scenarioInfo);
+#line 41
+ testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 42
+ testRunner.And("the user is arrive to Mobile Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 43
+ testRunner.And("I am clicking on \"Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 44
+ testRunner.When("I am clicking on \"Dashboard_Sidebar\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 45
+ testRunner.And("I am clicking on \"Dashboard_Sidebar_MyAccount\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 46
+ testRunner.And("I am clicking on \"MyAccount_Limit_Management_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 47
+ testRunner.And("I set list of elements from scroll view on \"MyAccount_Limit_Type_count\" as \"3\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 48
+ testRunner.Then("I am performing Limit verification operation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 49
  testRunner.And(string.Format("I am performing limit reduction operation on \"MyAccount_Limit_Edit_Icon\" of slide" +
                         "r \"MyAccount_Limit_Slider\" of \"{0}\" with new limit as \"{1}\"", limit_Type, new_Limit), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -118,19 +285,481 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Limits Mobile: As A user I want to verify Limit Reduct" +
-            "ion")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Limits Mobile: To verify Limits reduction of QR Paymen" +
+            "ts Limit_PSD_Y_One")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Limit_Management")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As A user I want to verify Limit Reduction")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As A user I want to verify Limit Reduction")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of QR Payments Limit_PSD_Y_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of QR Payments Limit_PSD_Y_One")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "QR Payments")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "70000")]
-        public virtual void AsAUserIWantToVerifyLimitsMobile_AsAUserIWantToVerifyLimitReduction()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "90000")]
+        public virtual void AsAUserIWantToVerifyLimitsMobile_ToVerifyLimitsReductionOfQRPaymentsLimit_PSD_Y_One()
         {
-#line 7
-this.AsAUserIWantToVerifyLimitsMobile("As A user I want to verify Limit Reduction", "QR Payments", "70000", new string[] {
+#line 40
+this.AsAUserIWantToVerifyLimitsMobile("To verify Limits reduction of QR Payments Limit_PSD_Y_One", "QR Payments", "90000", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Limits Mobile: To verify Limits reduction of Funds Tra" +
+            "nsfer to Other Banks Account Limit_PSD_Y_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Limit_Management")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Funds Transfer to Other Banks Account Limit_PSD_Y_O" +
+            "ne")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Funds Transfer to Other Banks Account Limit_PSD_Y_O" +
+            "ne")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Funds Transfer to Other Banks Account")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "90000")]
+        public virtual void AsAUserIWantToVerifyLimitsMobile_ToVerifyLimitsReductionOfFundsTransferToOtherBanksAccountLimit_PSD_Y_One()
+        {
+#line 40
+this.AsAUserIWantToVerifyLimitsMobile("To verify Limits reduction of Funds Transfer to Other Banks Account Limit_PSD_Y_O" +
+                    "ne", "Funds Transfer to Other Banks Account", "90000", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Limits Mobile: To verify Limits reduction of Funds Tra" +
+            "nsfer to HBL Account Limit_PSD_Y_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Limit_Management")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Funds Transfer to HBL Account Limit_PSD_Y_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Funds Transfer to HBL Account Limit_PSD_Y_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Funds Transfer to HBL Account")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "95000")]
+        public virtual void AsAUserIWantToVerifyLimitsMobile_ToVerifyLimitsReductionOfFundsTransferToHBLAccountLimit_PSD_Y_One()
+        {
+#line 40
+this.AsAUserIWantToVerifyLimitsMobile("To verify Limits reduction of Funds Transfer to HBL Account Limit_PSD_Y_One", "Funds Transfer to HBL Account", "95000", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Limits Mobile: To verify Limits reduction of Funds Tra" +
+            "nsfer to Own HBL Account Limit_PSD_Y_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Limit_Management")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Funds Transfer to Own HBL Account Limit_PSD_Y_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Funds Transfer to Own HBL Account Limit_PSD_Y_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Funds Transfer to Own HBL Account")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "0")]
+        public virtual void AsAUserIWantToVerifyLimitsMobile_ToVerifyLimitsReductionOfFundsTransferToOwnHBLAccountLimit_PSD_Y_One()
+        {
+#line 40
+this.AsAUserIWantToVerifyLimitsMobile("To verify Limits reduction of Funds Transfer to Own HBL Account Limit_PSD_Y_One", "Funds Transfer to Own HBL Account", "0", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Limits Mobile: To verify Limits reduction of Mobile Pr" +
+            "epaid and Postpaid Payments Limit_PSD_Y_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Limit_Management")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Mobile Prepaid and Postpaid Payments Limit_PSD_Y_On" +
+            "e")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Mobile Prepaid and Postpaid Payments Limit_PSD_Y_On" +
+            "e")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Mobile Prepaid and Postpaid Payments")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "8000")]
+        public virtual void AsAUserIWantToVerifyLimitsMobile_ToVerifyLimitsReductionOfMobilePrepaidAndPostpaidPaymentsLimit_PSD_Y_One()
+        {
+#line 40
+this.AsAUserIWantToVerifyLimitsMobile("To verify Limits reduction of Mobile Prepaid and Postpaid Payments Limit_PSD_Y_On" +
+                    "e", "Mobile Prepaid and Postpaid Payments", "8000", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Limits Mobile: To verify Limits reduction of Utility B" +
+            "ills and Other Payments Limit_PSD_Y_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Limit_Management")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Utility Bills and Other Payments Limit_PSD_Y_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Utility Bills and Other Payments Limit_PSD_Y_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Utility Bills and Other Payments")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "120000")]
+        public virtual void AsAUserIWantToVerifyLimitsMobile_ToVerifyLimitsReductionOfUtilityBillsAndOtherPaymentsLimit_PSD_Y_One()
+        {
+#line 40
+this.AsAUserIWantToVerifyLimitsMobile("To verify Limits reduction of Utility Bills and Other Payments Limit_PSD_Y_One", "Utility Bills and Other Payments", "120000", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Limits Mobile: To verify Limits reduction of QR Paymen" +
+            "ts Limit_PSD_N_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Limit_Management")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of QR Payments Limit_PSD_N_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of QR Payments Limit_PSD_N_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "QR Payments")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "4000")]
+        public virtual void AsAUserIWantToVerifyLimitsMobile_ToVerifyLimitsReductionOfQRPaymentsLimit_PSD_N_One()
+        {
+#line 40
+this.AsAUserIWantToVerifyLimitsMobile("To verify Limits reduction of QR Payments Limit_PSD_N_One", "QR Payments", "4000", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Limits Mobile: To verify Limits reduction of Funds Tra" +
+            "nsfer to Other Banks Account Limit_PSD_N_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Limit_Management")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Funds Transfer to Other Banks Account Limit_PSD_N_O" +
+            "ne")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Funds Transfer to Other Banks Account Limit_PSD_N_O" +
+            "ne")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Funds Transfer to Other Banks Account")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "13000")]
+        public virtual void AsAUserIWantToVerifyLimitsMobile_ToVerifyLimitsReductionOfFundsTransferToOtherBanksAccountLimit_PSD_N_One()
+        {
+#line 40
+this.AsAUserIWantToVerifyLimitsMobile("To verify Limits reduction of Funds Transfer to Other Banks Account Limit_PSD_N_O" +
+                    "ne", "Funds Transfer to Other Banks Account", "13000", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Limits Mobile: To verify Limits reduction of Funds Tra" +
+            "nsfer to HBL Account Limit_PSD_N_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Limit_Management")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Funds Transfer to HBL Account Limit_PSD_N_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Funds Transfer to HBL Account Limit_PSD_N_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Funds Transfer to HBL Account")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "14000")]
+        public virtual void AsAUserIWantToVerifyLimitsMobile_ToVerifyLimitsReductionOfFundsTransferToHBLAccountLimit_PSD_N_One()
+        {
+#line 40
+this.AsAUserIWantToVerifyLimitsMobile("To verify Limits reduction of Funds Transfer to HBL Account Limit_PSD_N_One", "Funds Transfer to HBL Account", "14000", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Limits Mobile: To verify Limits reduction of Funds Tra" +
+            "nsfer to Own HBL Account Limit_PSD_N_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Limit_Management")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Funds Transfer to Own HBL Account Limit_PSD_N_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Funds Transfer to Own HBL Account Limit_PSD_N_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Funds Transfer to Own HBL Account")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "250000")]
+        public virtual void AsAUserIWantToVerifyLimitsMobile_ToVerifyLimitsReductionOfFundsTransferToOwnHBLAccountLimit_PSD_N_One()
+        {
+#line 40
+this.AsAUserIWantToVerifyLimitsMobile("To verify Limits reduction of Funds Transfer to Own HBL Account Limit_PSD_N_One", "Funds Transfer to Own HBL Account", "250000", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Limits Mobile: To verify Limits reduction of Mobile Pr" +
+            "epaid and Postpaid Payments Limit_PSD_N_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Limit_Management")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Mobile Prepaid and Postpaid Payments Limit_PSD_N_On" +
+            "e")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Mobile Prepaid and Postpaid Payments Limit_PSD_N_On" +
+            "e")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Mobile Prepaid and Postpaid Payments")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "3000")]
+        public virtual void AsAUserIWantToVerifyLimitsMobile_ToVerifyLimitsReductionOfMobilePrepaidAndPostpaidPaymentsLimit_PSD_N_One()
+        {
+#line 40
+this.AsAUserIWantToVerifyLimitsMobile("To verify Limits reduction of Mobile Prepaid and Postpaid Payments Limit_PSD_N_On" +
+                    "e", "Mobile Prepaid and Postpaid Payments", "3000", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Limits Mobile: To verify Limits reduction of Utility B" +
+            "ills and Other Payments Limit_PSD_N_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Limit_Management")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Utility Bills and Other Payments Limit_PSD_N_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Utility Bills and Other Payments Limit_PSD_N_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Utility Bills and Other Payments")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "20000")]
+        public virtual void AsAUserIWantToVerifyLimitsMobile_ToVerifyLimitsReductionOfUtilityBillsAndOtherPaymentsLimit_PSD_N_One()
+        {
+#line 40
+this.AsAUserIWantToVerifyLimitsMobile("To verify Limits reduction of Utility Bills and Other Payments Limit_PSD_N_One", "Utility Bills and Other Payments", "20000", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Limits Mobile: To verify Limits reduction of QR Paymen" +
+            "ts Limit_PSD_Y_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Limit_Management")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of QR Payments Limit_PSD_Y_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of QR Payments Limit_PSD_Y_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "QR Payments")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "80000")]
+        public virtual void AsAUserIWantToVerifyLimitsMobile_ToVerifyLimitsReductionOfQRPaymentsLimit_PSD_Y_Two()
+        {
+#line 40
+this.AsAUserIWantToVerifyLimitsMobile("To verify Limits reduction of QR Payments Limit_PSD_Y_Two", "QR Payments", "80000", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Limits Mobile: To verify Limits reduction of Funds Tra" +
+            "nsfer to Other Banks Account Limit_PSD_Y_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Limit_Management")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Funds Transfer to Other Banks Account Limit_PSD_Y_T" +
+            "wo")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Funds Transfer to Other Banks Account Limit_PSD_Y_T" +
+            "wo")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Funds Transfer to Other Banks Account")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "70000")]
+        public virtual void AsAUserIWantToVerifyLimitsMobile_ToVerifyLimitsReductionOfFundsTransferToOtherBanksAccountLimit_PSD_Y_Two()
+        {
+#line 40
+this.AsAUserIWantToVerifyLimitsMobile("To verify Limits reduction of Funds Transfer to Other Banks Account Limit_PSD_Y_T" +
+                    "wo", "Funds Transfer to Other Banks Account", "70000", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Limits Mobile: To verify Limits reduction of Funds Tra" +
+            "nsfer to HBL Account Limit_PSD_Y_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Limit_Management")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Funds Transfer to HBL Account Limit_PSD_Y_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Funds Transfer to HBL Account Limit_PSD_Y_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Funds Transfer to HBL Account")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "80000")]
+        public virtual void AsAUserIWantToVerifyLimitsMobile_ToVerifyLimitsReductionOfFundsTransferToHBLAccountLimit_PSD_Y_Two()
+        {
+#line 40
+this.AsAUserIWantToVerifyLimitsMobile("To verify Limits reduction of Funds Transfer to HBL Account Limit_PSD_Y_Two", "Funds Transfer to HBL Account", "80000", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Limits Mobile: To verify Limits reduction of Funds Tra" +
+            "nsfer to Own HBL Account Limit_PSD_Y_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Limit_Management")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Funds Transfer to Own HBL Account Limit_PSD_Y_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Funds Transfer to Own HBL Account Limit_PSD_Y_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Funds Transfer to Own HBL Account")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "20000")]
+        public virtual void AsAUserIWantToVerifyLimitsMobile_ToVerifyLimitsReductionOfFundsTransferToOwnHBLAccountLimit_PSD_Y_Two()
+        {
+#line 40
+this.AsAUserIWantToVerifyLimitsMobile("To verify Limits reduction of Funds Transfer to Own HBL Account Limit_PSD_Y_Two", "Funds Transfer to Own HBL Account", "20000", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Limits Mobile: To verify Limits reduction of Mobile Pr" +
+            "epaid and Postpaid Payments Limit_PSD_Y_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Limit_Management")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Mobile Prepaid and Postpaid Payments Limit_PSD_Y_Tw" +
+            "o")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Mobile Prepaid and Postpaid Payments Limit_PSD_Y_Tw" +
+            "o")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Mobile Prepaid and Postpaid Payments")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "20000")]
+        public virtual void AsAUserIWantToVerifyLimitsMobile_ToVerifyLimitsReductionOfMobilePrepaidAndPostpaidPaymentsLimit_PSD_Y_Two()
+        {
+#line 40
+this.AsAUserIWantToVerifyLimitsMobile("To verify Limits reduction of Mobile Prepaid and Postpaid Payments Limit_PSD_Y_Tw" +
+                    "o", "Mobile Prepaid and Postpaid Payments", "20000", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Limits Mobile: To verify Limits reduction of Utility B" +
+            "ills and Other Payments Limit_PSD_Y_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Limit_Management")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Utility Bills and Other Payments Limit_PSD_Y_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Utility Bills and Other Payments Limit_PSD_Y_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Utility Bills and Other Payments")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "190000")]
+        public virtual void AsAUserIWantToVerifyLimitsMobile_ToVerifyLimitsReductionOfUtilityBillsAndOtherPaymentsLimit_PSD_Y_Two()
+        {
+#line 40
+this.AsAUserIWantToVerifyLimitsMobile("To verify Limits reduction of Utility Bills and Other Payments Limit_PSD_Y_Two", "Utility Bills and Other Payments", "190000", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Limits Mobile: To verify Limits reduction of QR Paymen" +
+            "ts Limit_PSD_N_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Limit_Management")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of QR Payments Limit_PSD_N_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of QR Payments Limit_PSD_N_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "QR Payments")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "4000")]
+        public virtual void AsAUserIWantToVerifyLimitsMobile_ToVerifyLimitsReductionOfQRPaymentsLimit_PSD_N_Two()
+        {
+#line 40
+this.AsAUserIWantToVerifyLimitsMobile("To verify Limits reduction of QR Payments Limit_PSD_N_Two", "QR Payments", "4000", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Limits Mobile: To verify Limits reduction of Funds Tra" +
+            "nsfer to Other Banks Account Limit_PSD_N_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Limit_Management")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Funds Transfer to Other Banks Account Limit_PSD_N_T" +
+            "wo")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Funds Transfer to Other Banks Account Limit_PSD_N_T" +
+            "wo")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Funds Transfer to Other Banks Account")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "20000")]
+        public virtual void AsAUserIWantToVerifyLimitsMobile_ToVerifyLimitsReductionOfFundsTransferToOtherBanksAccountLimit_PSD_N_Two()
+        {
+#line 40
+this.AsAUserIWantToVerifyLimitsMobile("To verify Limits reduction of Funds Transfer to Other Banks Account Limit_PSD_N_T" +
+                    "wo", "Funds Transfer to Other Banks Account", "20000", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Limits Mobile: To verify Limits reduction of Funds Tra" +
+            "nsfer to HBL Account Limit_PSD_N_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Limit_Management")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Funds Transfer to HBL Account Limit_PSD_N_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Funds Transfer to HBL Account Limit_PSD_N_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Funds Transfer to HBL Account")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "140000")]
+        public virtual void AsAUserIWantToVerifyLimitsMobile_ToVerifyLimitsReductionOfFundsTransferToHBLAccountLimit_PSD_N_Two()
+        {
+#line 40
+this.AsAUserIWantToVerifyLimitsMobile("To verify Limits reduction of Funds Transfer to HBL Account Limit_PSD_N_Two", "Funds Transfer to HBL Account", "140000", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Limits Mobile: To verify Limits reduction of Funds Tra" +
+            "nsfer to Own HBL Account Limit_PSD_N_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Limit_Management")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Funds Transfer to Own HBL Account Limit_PSD_N_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Funds Transfer to Own HBL Account Limit_PSD_N_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Funds Transfer to Own HBL Account")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "210000")]
+        public virtual void AsAUserIWantToVerifyLimitsMobile_ToVerifyLimitsReductionOfFundsTransferToOwnHBLAccountLimit_PSD_N_Two()
+        {
+#line 40
+this.AsAUserIWantToVerifyLimitsMobile("To verify Limits reduction of Funds Transfer to Own HBL Account Limit_PSD_N_Two", "Funds Transfer to Own HBL Account", "210000", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Limits Mobile: To verify Limits reduction of Mobile Pr" +
+            "epaid and Postpaid Payments Limit_PSD_N_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Limit_Management")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Mobile Prepaid and Postpaid Payments Limit_PSD_N_Tw" +
+            "o")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Mobile Prepaid and Postpaid Payments Limit_PSD_N_Tw" +
+            "o")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Mobile Prepaid and Postpaid Payments")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "3000")]
+        public virtual void AsAUserIWantToVerifyLimitsMobile_ToVerifyLimitsReductionOfMobilePrepaidAndPostpaidPaymentsLimit_PSD_N_Two()
+        {
+#line 40
+this.AsAUserIWantToVerifyLimitsMobile("To verify Limits reduction of Mobile Prepaid and Postpaid Payments Limit_PSD_N_Tw" +
+                    "o", "Mobile Prepaid and Postpaid Payments", "3000", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Limits Mobile: To verify Limits reduction of Utility B" +
+            "ills and Other Payments Limit_PSD_N_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Limit_Management")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Utility Bills and Other Payments Limit_PSD_N_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Utility Bills and Other Payments Limit_PSD_N_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Utility Bills and Other Payments")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "19000")]
+        public virtual void AsAUserIWantToVerifyLimitsMobile_ToVerifyLimitsReductionOfUtilityBillsAndOtherPaymentsLimit_PSD_N_Two()
+        {
+#line 40
+this.AsAUserIWantToVerifyLimitsMobile("To verify Limits reduction of Utility Bills and Other Payments Limit_PSD_N_Two", "Utility Bills and Other Payments", "19000", new string[] {
                         "source:Data/LimitManagement.xlsx"});
 #line hidden
         }
