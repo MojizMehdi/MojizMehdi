@@ -3,11 +3,18 @@
 	As a math idiot
 	I want to be told the sum of two numbers
 
-@mytag
-Scenario Outline: When user try to login mobile banking for mutual fund
+@Mutual_Fund
+Scenario Outline: 1When user try to login mobile banking for mutual fund
 	Given the test case title is "<Case>"
-	And update the data by query "<Status_query>" on DIGITAL_CHANNEL_SEC
 	And the user is arrive to Mobile Banking home page 
+	And the test case expected result is "<Expected_Result>"
+	And I wait 2000
+	And I am clicking on "Login_permission_allow_btn"
+	And I wait 1000
+	And I am clicking on "Login_permission_allow_btn2"
+	And I am clicking on "SendMoney_SkipBtn"
+	And I set value in context from data "<Login_UserId_Value>" as "username"
+	And update the data by query "<Status_query>" on DIGITAL_CHANNEL_SEC
 	When I have given "<Login_UserId_Value>" on "Login_UserId"
 	And I have given "<Login_Password_Value>" on "Login_Password"
 	And I wait 2000
@@ -18,26 +25,27 @@ Scenario Outline: When user try to login mobile banking for mutual fund
 	And I am clicking on "Login_OTP_Verify_Button"
 	And I wait 5000 
 	Then verify through "Welcome, " on "Login_Success_Text"
-	@source:Data/HBLMobileMutualFundLogin.xlsx
+	@source:Data/MutualFundMobileLogin.xlsx
 	Examples: 
-	|Case|Status_query|Login_UserId_Value|Login_Password_Value|Cnic_query|OTP_Value|
+	|Case|Status_query|Login_UserId_Value|Login_Password_Value|Cnic_query|OTP_Value|Expected_Result|
 
 
-@mytag
+@Mutual_Fund
 Scenario Outline: When user try to mutual fund
 	Given the test case title is "<Case>"
 	And the user is arrive to Mobile Banking home page
+	And the test case expected result is "<Expected_Result>"
 	And I am clicking on "Dashboard"
 	And I wait 4000
 	And I set value in context from data "1" as "mutual_fund_flag"
-	When I save Account Balances
-	And I set value in context from data "<Mutual_Fund_Value>" as "MutualFundName"
+	#When I save Account Balances
+	When I set value in context from data "<Mutual_Fund_Value>" as "MutualFundName"
 	And I set value in context from database "<disclaimer_query>" as "mutual_fund_disclaimer_popup" on Schema "<db_val3>"
 	And I set value in context from database "<cust_profile_id_query>" as "customer_profile_id" on Schema "<db_val3>"
 	And I am clicking on "Dashboard_More"
 	And I have given "<Category_Value>" on "SendMoney_SearchBeneField"
 	And I am clicking on "BillPayment_CategoryLink"
-	And I verify user Mutual Fund status on schema "<db_val3>" as "<statement_counter>"
+	#And I verify user Mutual Fund status on schema "<db_val3>" as "<statement_counter>"
 	And I am clicking on "MutualFund_Investment_Tab"
 	And I set list of elements from scroll view on "MutualFund_List_FundName" as "3"
 	And verify the list using "<Fund_Names_query>" on Schema "QAT_AMC"
@@ -75,7 +83,7 @@ Scenario Outline: When user try to mutual fund
 	And verify the data using "<customer_cnic_verify_query>" on Schema "<db_val3>"
 	#And verify the data using "<customer_mobile_no_query>" on Schema "<db_val3>"
 	And verify the message "<amount_value>" through database on "<tran_amount_verify_query>" on Schema "<db_val3>"
-	And I save Transaction Info
+	#And I save Transaction Info
 	And I am clicking on "TermDeposit_CloseBtn"
 	And I wait 3000
 	And I am clicking on "Dashboard"
@@ -84,4 +92,4 @@ Scenario Outline: When user try to mutual fund
 	
 	@source:Data/MutualFund.xlsx
 	Examples: 
-	|Case|cust_profile_id_query|Category_Value|Fund_Names_query|statement_counter|Mutual_Fund_Value|account_no|folio_no_query|folio_no|amount_value|gl_account_query|tran_timing_query|tran_pass_value|Success_Message|GUID_query|tran_type_query|tran_amount_query|from_account_query|to_account_query|fund_name_query|disclaimer_message|disclaimer_query|db_val|db_val2|db_val3|db_val4|folio_no_verify_query|customer_name_verify_query|customer_cnic_verify_query|customer_mobile_no_query|tran_amount_verify_query|
+	|Case|cust_profile_id_query|Category_Value|Fund_Names_query|statement_counter|Mutual_Fund_Value|account_no|folio_no_query|folio_no|amount_value|gl_account_query|tran_timing_query|tran_pass_value|Success_Message|GUID_query|tran_type_query|tran_amount_query|from_account_query|to_account_query|fund_name_query|disclaimer_message|disclaimer_query|db_val|db_val2|db_val3|db_val4|folio_no_verify_query|customer_name_verify_query|customer_cnic_verify_query|customer_mobile_no_query|tran_amount_verify_query|Expected_Result|

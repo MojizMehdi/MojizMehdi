@@ -69,6 +69,7 @@ namespace HBLAutomationAndroid.Pages
                         options.AddAdditionalCapability("newCommandTimeout", 50000);
                         options.AddAdditionalCapability("unicodeKeyboard", false);
                         options.AddAdditionalCapability("resetKeyboard", false);
+                        //options.AddAdditionalCapability("autoGrantPermissions", false);
                         //NEW_COMMAND_TIMEOUT, 300
                         //options.AddAdditionalCapability("newCommandTimeout", 60);
                         initialize(options,serverURL);
