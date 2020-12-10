@@ -422,15 +422,16 @@ namespace HBLAutomationAndroid.Pages
                         {
                             return;
                         }
+                        driver.HideKeyboard();
                         //try
                         //{
-                            driver.HideKeyboard();
+                        //driver.HideKeyboard();
                         //}
                         //catch
                         //{
 
                         //}
-                        
+
                         //driver.HideKeyboard();
                         //if (locator == "com.hbl.android.hblmobilebanking:id/s_hbpsBillCompanies")
                         //{
@@ -972,6 +973,8 @@ namespace HBLAutomationAndroid.Pages
                     Thread.Sleep(1000);
                     Combobox.Click();
                     Thread.Sleep(2000);
+                    scroll_to_element_text(value);
+                    Thread.Sleep(1000);
                     AndroidElement ComboboxValue = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//*[contains(@text,'" + value + "')]")));
                     ComboboxValue.Click();
                     Thread.Sleep(3000);
@@ -982,6 +985,8 @@ namespace HBLAutomationAndroid.Pages
                     Thread.Sleep(1000);
                     Combobox.Click();
                     Thread.Sleep(2000);
+                    scroll_to_element_text(value);
+                    Thread.Sleep(1000);
                     AndroidElement ComboboxValue = (AndroidElement)waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//*[contains(@text,'" + value + "')]")));
                     ComboboxValue.Click();
                     Thread.Sleep(3000);
