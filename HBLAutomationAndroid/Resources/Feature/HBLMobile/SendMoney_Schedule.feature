@@ -62,8 +62,8 @@ Scenario Outline: When user try to send money mobile add new schedule payment
 	When I select "<PurposeOfPayment_Value>" on "SendMoney_PurposeOfPayment"
 	And I scroll down
 	And I have given "<Bene_Nick>" on "SendMoney_BeneNick"
-	And I have given "<Bene_Mobile_No>" on "SendMoney_BeneMobileNo"
 	And I have given "<Bene_Email>" on "SendMoney_BeneEmail"
+	And I have given "<Bene_Mobile_No>" on "SendMoney_BeneMobileNo"
 	And I am clicking on "SendMoney_SchedulePayment_Check"
 	And I scroll down
 	And I select "<Frequency_Value>" on "SendMoney_SchedulePayment_Frequency"
