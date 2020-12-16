@@ -251,6 +251,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BeneManagement.feature</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Feature\InternetBanking\BillPayment.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BillPayment.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Feature\InternetBanking\BillPaymentSchedule.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BillPaymentSchedule.feature</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Feature\InternetBanking\ForgetChange.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -275,11 +285,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MyAccount.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Resources\Feature\InternetBanking\PayBill1.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PayBill.feature</DependentUpon>
     </Compile>
     <Compile Include="Resources\Feature\InternetBanking\Registration.feature.cs">
       <AutoGen>True</AutoGen>
@@ -314,11 +319,20 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>BeneManagement.feature.cs</LastGenOutput>
     </None>
+    <None Include="Resources\Feature\InternetBanking\BillPayment.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>BillPayment.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\Feature\InternetBanking\BillPaymentSchedule.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>BillPaymentSchedule.feature.cs</LastGenOutput>
+    </None>
     <None Include="Resources\Feature\InternetBanking\Data\AccountsStatement.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\BeneDeletion.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\BeneEditing.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\BeneficiaryAddition.xlsx" />
-    <None Include="Resources\Feature\InternetBanking\Data\BeneVerification.xlsx" />
+    <None Include="Resources\Feature\InternetBanking\Data\BeneVerification_Pay.xlsx" />
+    <None Include="Resources\Feature\InternetBanking\Data\BeneVerification_SendMoney.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\Bene_Mng_Login.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\ChangeLoginID.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\ChangeLoginPassword.xlsx" />
@@ -330,13 +344,18 @@
     <None Include="Resources\Feature\InternetBanking\Data\ForgetLoginID.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\ForgetPassword.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\ForgotTransactionPassword.xlsx" />
+    <None Include="Resources\Feature\InternetBanking\Data\IBBillPaymentSchedule_Login.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\IBBillPayment_Home_AddNew.xlsx" />
+    <None Include="Resources\Feature\InternetBanking\Data\IBBillPayment_Home_AddNew_Schedule.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\IBBillPayment_Pay_AddNew.xlsx" />
+    <None Include="Resources\Feature\InternetBanking\Data\IBBillPayment_Pay_AddNew_Schedule.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\IBBillPayment_Pay_Bene.xlsx" />
+    <None Include="Resources\Feature\InternetBanking\Data\IBBillPayment_Pay_Bene_Schedule.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\IBLogin.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\Investments_Login.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\LimitManagement.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\ManageSchedule_BillPayment_Verify.xlsx" />
+    <None Include="Resources\Feature\InternetBanking\Data\ManageSchedule_Login.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\ManageSchedule_SendMoney_Verify.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\ManageSchedule_Bill_AddNewBene.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\ManageSchedule_Bill_WithBene.xlsx" />
@@ -355,6 +374,7 @@
     <None Include="Resources\Feature\InternetBanking\Data\PayOrder.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\SendMoney.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\SendMoney_Beneficiary.xlsx" />
+    <None Include="Resources\Feature\InternetBanking\Data\SendMoney_Login.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\SendMoney_Schedule.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\SendMoney_Schedule_Beneficiary.xlsx" />
     <None Include="Resources\Feature\InternetBanking\Data\Settings.xlsx" />
@@ -379,10 +399,6 @@
     <None Include="Resources\Feature\InternetBanking\MyAccount.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>MyAccount.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Resources\Feature\InternetBanking\PayBill.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>PayBill1.feature.cs</LastGenOutput>
     </None>
     <None Include="Resources\Feature\InternetBanking\Registration.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

@@ -5,7 +5,7 @@
 
 
 @Login
-Scenario Outline: 1 As a user i want to Verify login for HBL Web Transactional Activity
+Scenario Outline: 1 As a user i want to Verify login for HBL Web Transaction activities
 	Given the test case title is "<Case>"
 	And I set value in context from data "<Login_UserId_Value>" as "username"
 	And the user is arrive to Internet Banking home page 
@@ -22,8 +22,9 @@ Scenario Outline: 1 As a user i want to Verify login for HBL Web Transactional A
 
 
 @TransActivity
-Scenario Outline: 2 As a user i want to Verify my Transaction activities
+Scenario Outline: As a user i want to Verify my Transaction activities
 Given the test case title is "<Case>"
+And the user is arrive to Internet Banking home page
 And I set all excel values "<Transaction_Category>" "<No_of_Transaction>" "<Tran_Type>" "<from_day>" "<from_month>" "<from_year>" "<to_day>" "<to_month>" "<to_year>" "<Min_Amount>" "<Max_Amount>" "<Acc_no_or_mobile>" "<bill_company>" "<payee_nick>" "<to_bank>"  in context class
 #And I generate query based on given data
 And I am clicking on "Services_Link"
@@ -33,6 +34,7 @@ When I select "<Transaction_Category>" on "Services_CategoryFilter"
 And I select "<No_of_Transaction>" on "Services_NoOfTransaction"
 And I select "<Tran_Type>" on "Services_Transaction_Type"
 And I am clicking on "Services_Date_From"
+#And I select day "<from_day>" and calculate date 
 And I select date "<from_day>" on month "<from_month>" on year "<from_year>"
 And I am clicking on "Services_Date_To"
 And I select date "<to_day>" on month "<to_month>" on year "<to_year>"

@@ -81,8 +81,12 @@
     <Element keyword="Forget_Change_FinishBtn" locator="//button[@class='btn submit-btn' and text()='Finish']" />
     <Element keyword="Forget_Password_OTPNextBtn" locator="//div[@ng-form='FormOTP']//button[text()='Next']" />
     <Element keyword="Forget_Password_NextBtn" locator="//div[@ng-form='FormPasswordValdiation']//button" />
+    <Element keyword="Forget_Services_Row" locator="//tr[@ng-repeat='x in GetDataTransactions.historyList']//td[contains(text(),'Password Reset Via Debit Card')]" />
+    <Element keyword="Forget_Services_TranPopup_Debit" locator="//h2[text()='Debit Card Number']//following-sibling::p" />
+    <Element keyword="Forget_Change_Services_Row" locator="//tr[@ng-repeat='x in GetDataTransactions.historyList']//td[contains(text(),'Change Login ID')]" />
+    <Element keyword="Forget_ChangeLogin_Services_Row" locator="//tr[@ng-repeat='x in GetDataTransactions.historyList']//td[contains(text(),'Forgot Login ID ')]" />
 
-    
+
   </Module>
 
   <Module name="Registration">
@@ -132,7 +136,7 @@
     <Element keyword="Signup_ReTransactionPassword" locator="//input[@name='ReTransactionPassword']" />
     <Element keyword="Signup_SubmitBtn" locator="//button[@class='btn submit-btn']" />
     <Element keyword="Signup_SuccessNextBtn" locator="//div[@class='form-group button-center reg-complete']//button[@class='btn' and text()='Next']"/>
-    <Element keyword="Signup_FeedbackOptionHBL" locator="//input[@name='137']"/>
+    <Element keyword="Signup_FeedbackOptionHBL" locator="//input[@type='radio']//parent::label[text()='{x}']"/>
     <Element keyword="Signup_FeedbackText" locator="//input[@name='Employeeid']"/>"/>
     <Element keyword="Signup_FeedbackSubmit" locator="//button[@class='btn btn submit-btn' and text()='Submit']"/>
     <Element keyword="Signup_FeedbackMessage" locator="//div[@id='FeedbackSuccessPopup']//div//div//div//h2"/>
@@ -157,6 +161,7 @@
     <Element keyword="Pay_BillPayment_NextBtn" locator="//button[@class='btn submit-btn' and text()='Next']"/>
     <Element keyword="Pay_BillPayment_Inquiry_NextBtn" locator="//button[@class='btn btn submit-btn' and text()='Next']"/>
     <Element keyword="Pay_BillPayment_PayBtn" locator="//button[@class='btn submit-btn' and text()='Pay']"/>
+    <Element keyword="Pay_BillPayment_Bene_PayBtn" locator="//button[ text()='Pay']"/>
     <Element keyword="Pay_Transaction_TranSuccessMessage" locator="//div[@class='congrats-div ng-scope']//div[@class='display-table']//p"/>
     <Element keyword="Pay_Transaction_Success_Amount" locator="//h2[@class='ng-binding' and text()='Transaction Amount']//following-sibling::p"/>
     <Element keyword="Pay_Transaction_Success_FromAccount" locator="//h2[@class='ng-binding' and contains(text(),'From')]//following-sibling::p"/>
@@ -170,14 +175,16 @@
     <Element keyword="Pay_Transaction_PayBillAmount_NextBtn" locator="//div[@class='ng-scope']//button[@class='btn submit-btn' and contains(text(),'Next')]"/>
     <Element keyword="Pay_Transaction_PayBillAmount_AgreeBtn" locator="//button[@class='btn ng-scope' and contains(text(),'Agree')]"/>
     <Element keyword="Pay_Transaction_PayBillAmount_CloseBtn" locator="//div[@class='ng-scope']//a[contains(text(),'Close')]"/>
-    <!--<Element keyword="Pay_Transaction_PayBill_BeneSearchTextbox" locator="//input[@class='search-list ng-pristine ng-valid ng-empty ng-valid-maxlength ng-touched']"/>-->
-    <Element keyword="Pay_Transaction_PayBill_BeneSearchTextbox" locator="//input[contains(@ng-show,'pay')]"/>
+    <Element keyword="Pay_Transaction_PayBillAmountBene_CloseBtn" locator="//div[@id='poppayments']//button"/>
+    <Element keyword="Pay_Transaction_PayBillAmount_AddNew_CloseBtn" locator="//div[@id='poppayments']//a"/>
+    <Element keyword="Pay_Transaction_PayBill_BeneSearchTextbox" locator="//input[@ng-model='searchBill']"/>
     <Element keyword="Pay_Transaction_PayBill_BeneSearchConsumerNo" locator="//p[@class='text-right ng-binding']"/>
     <Element keyword="Pay_Transaction_PayBill_RatingCloseBtn" locator="//div[@class='text-right ng-scope']//button[contains(text(),'Close')]"/>
     <Element keyword="Pay_Transaction_PayBill_RatingOkBtn" locator="//div[@class='text-right ng-scope']//button[contains(text(),'Ok')]"/>
     <Element keyword="Pay_Transaction_PayBill_TransactionPassword" locator="//input[@name='TransactionPassword']"/>
     <Element keyword="Pay_Transaction_PayBill_Rating" locator="//ul[@class='rating']//li[last()]"/>
     <Element keyword="Pay_Bill_Status" locator ="//div[@class='details ng-scope']//following-sibling::div[last()]//following-sibling::p[last()]" />
+    <Element keyword="Pay_Bill_Bene_Status" locator="//div[@class='bill-detail-cont ng-scope']//following-sibling::div[last()]//following-sibling::p[last()]"/>
     <Element keyword="Pay_Transaction_Unpaid_Amount" locator ="//input[@name='Amount']" />
     <Element keyword="Pay_Bill_Status_Color" locator ="//p[@class='val ng-binding']" />
     <Element keyword="Pay_Aval_Limit_CC" locator ="//div[@class='cards account-wrap liabilities ng-scope']//div//span[@class='available balance ng-binding']" />
@@ -186,7 +193,7 @@
     <Element keyword="Pay_Acc_No" locator="//div[@ng-repeat='accountList in CustomerAccountInfo.customerAccountDetails.customerGeneralAccounts']{i}//div[@class='acc-num ng-binding']" />
     <Element keyword="Pay_Acc_No_Investment" locator="//div[@class='account-wrap']//h5[text()='Investment']" />
     <Element keyword="Pay_Acc_Balance" locator="//div[@ng-repeat='accountList in CustomerAccountInfo.customerAccountDetails.customerGeneralAccounts']{j}//span[@class='balance ng-binding']" />
-    <Element keyword="Pay_Bene_checkbox" locator ="//span[@class='custom-control-description']" />
+    <Element keyword="Pay_Bene_checkbox" locator ="//div[@ng-form='NickForm']//span[@class='custom-control-description']" />
     <Element keyword="Pay_Bene_text" locator ="//input[@name='Nick']" />
     <Element keyword="Pay_Bene_button" locator ="//button[@class='btn btn']" />
     <Element keyword="Pay_Bene_message" locator ="//label[@class='form-check-label col-12  Issuccessclass']" />
@@ -264,12 +271,15 @@
     <Element keyword="SendMoney_Schedule_FromDate" locator="//input[@name='FirstExecutionDate']"/>
     <Element keyword="SendMoney_Schedule_ToDate" locator="//input[@name='ExpiryDate']"/>
     <Element keyword="SendMoney_Btn_ViewSummary" locator="//button[text()='Payment Schedule']"/>
-    <Element keyword="SendMoney_Btn_Summary_OK" locator="//div[@class='modal-footer']//a[text()='OK' and @data-dismiss='modal']"/>
+    <Element keyword="SendMoney_Btn_Summary_OK" locator="//div[@id='popupSISummary']//a"/>
     <Element keyword="SendMoney_Btn_Summary_Iteration_Dates" locator="//tr[@class='ng-scope'][{Iteration_Number}]//td[@class='ng-binding']"/>
     <Element keyword="SendMoney_SearchBeneField" locator="//input[@type='search']"/>
     <Element keyword="SendMoney_BeneClick" locator="//ul[@class='item']"/>
     <Element keyword="SendMoney_CloseBtn" locator="//a[text()='Close']"/>
     <Element keyword="SendMoney_ScheduleBtn" locator="//button[text()='Schedule']"/>
+    <Element keyword="SendMoney_Rating" locator="//div[@id='SendMoneyPopupGen']//ul[@class='rating']//li[last()]"/>
+    <Element keyword="SendMoney_RatingOkBtn" locator="//div[@id='SendMoneyPopupGen']//button[contains(text(),'Ok')]"/>
+    <Element keyword="SendMoney_RatingThankOkBtn" locator="//div[@id='SendMoneyPopupGen']//a"/>
 
 
   </Module>
@@ -329,7 +339,7 @@
     <Element keyword="MyAccount_TranPopUp_Text" locator="//div[@class='modal-content ui-draggable-handle ng-pristine ng-valid ng-scope']//div[@class='display-table']//p[@class='ng-binding']"/>
     <Element keyword="MyAccount_Services_CloseBtn" locator="//div[@class='modal-footer']//a[text()='Close']"/>
     <Element keyword="MyAccount_LimitMngOption" locator="//a[@ng-click='GetLimitsListData()']" />
-    <Element keyword="MyAccount_Limit_Edit_Icon" locator="//div[contains(text(),'{x}')]/parent::div/parent::div/parent::div/parent::div//div[@class='limit-grey-sec']//p//button" />
+    <Element keyword="MyAccount_Limit_Edit_Icon" locator="//div[text()='{x}']/parent::div/parent::div/parent::div/parent::div//div[@class='limit-grey-sec']//p//button" />
     <Element keyword="MyAccount_Limit_Slider" locator="//div[contains(text(),'{x}')]/parent::div/parent::*/parent::*/parent::div[@class='limit-count-update']//div[@class='col-12']//input" />
     <Element keyword="MyAccount_Limit_NewPrice" locator="//div[contains(text(),'{x}')]/parent::div/parent::*/parent::*/parent::div[@class='limit-count-update']//div//div//div[@ng-if='onrangeclick']//div" />
     <Element keyword="MyAccount_Limit_Edit_Save_Btn" locator="//div[contains(text(),'{x}')]/parent::div/parent::*/parent::*/parent::div[@class='limit-count-update']//div[@class='limit-grey-sec text-right']//button[text()='Save']"/>
@@ -344,6 +354,7 @@
     <Element keyword="MyAccount_Limit_Availed" locator="//div[contains(text(),'{x}')]/parent::*//following-sibling::div/parent::*//following-sibling::div//div[@class='limit-availed' and text()='Availed']/parent::*/parent::*//following-sibling::div//div[@class='limit-av-amt ng-binding']" />
     <Element keyword="MyAccount_Limit_Remaining" locator="//div[contains(text(),'{x}')]/parent::*//following-sibling::div/parent::*//following-sibling::div//div[@class='limit-remain' and text()='Remaining']/parent::*/parent::*//following-sibling::div//div[@class='limit-rem-amt ng-binding']" />
     <Element keyword="MyAccount_Limit_Old_Amount" locator="//div[contains(text(),'{x}')]/parent::*/parent::*/parent::*/parent::*[@class='limit-cont']//div//div//div//div[@class='limit-amt ng-binding']" />
+    <Element keyword="MyAccount_LimitMng_TranILimitName" locator="//h2[text()='Limit Name']//following-sibling::p" />
     <Element keyword="MyAccount_ChangePassOptn" locator="//a[@href = '#changepassword']" />
     <Element keyword="MyAccount_ChangePassOKBtn" locator="//div[@class='modal-dialog']//a[@class='btn' and text()='OK']" />
     <Element keyword="MyAccount_ChangeTranPassOptn" locator="//a[@ng-click = 'blockForgot();']" />
@@ -457,9 +468,11 @@
     <Element keyword="MyAccount_MngSch_DeleteMsg" locator="//div[@id='popup']//p" />
     <Element keyword="MyAccount_MngSch_DeleteOkBtn" locator="//div[@id='popup']//a" />
     <Element keyword="MyAccount_MngSch_Cancel_RowClick" locator="//p[@class='ng-binding' and contains(@title,'{x}')]/parent::*/parent::*" />
-    <Element keyword="MyAccount_MngSch_CancelDateBtn" locator="//td[@class='ng-binding' and contains(text(),'{x}')]/following-sibling::td/a" />
+    <Element keyword="MyAccount_MngSchSend_CancelDateBtn" locator="//td[@class='ng-binding' and contains(text(),'{x}')]/following-sibling::td/a" />
+    <Element keyword="MyAccount_MngSchBill_CancelDateBtn" locator="//td[@class='ng-binding' and contains(text(),'{x}')]/following-sibling::td/a" />
+    <Element keyword="MyAccount_MngSch_Popup_Btn" locator="//button[@class='btn ng-binding']" />
 
-    
+
   </Module>
 
   <Module name="BeneManage">

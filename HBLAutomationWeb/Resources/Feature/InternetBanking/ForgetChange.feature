@@ -37,6 +37,12 @@ Scenario Outline: 2 As a user i want to verify forget password
 	And verify the result from "<last_pass_change_query>" on Schema "<db_val>"
 	And verify the message "<is_password_change_required_value>" through database on "<password_change_req_query>" on Schema "<db_val>"
 	And verify the message "<is_password_reset_required_value>" through database on "<is_password_reset_required_query>" on Schema "<db_val>"
+	And verify the message "<customer_type>" through database on "<customer_type_tran_query>" on Schema "<db_val>"
+	And verify the message "<cnic_no>" through database on "<cnic_tran_query>" on Schema "<db_val>"
+	And verify the message "<email>" through database on "<email_tran_query>" on Schema "<db_val>"
+	And verify the message "" through database on "<mobile_no_tran_query>" on Schema "<db_val>"
+	And verify the result from "<created_on_tran_query>" on Schema "<db_val>"
+	And verify the result from "<updated_on_tran_query>" on Schema "<db_val>"
 	And I have given "<login_id>" on "Login_UserId"
 	And I have given "<new_password>" on "Login_Password"
 	And I am performing on "Login_SignIn_Button"
@@ -47,14 +53,24 @@ Scenario Outline: 2 As a user i want to verify forget password
 	And I wait 6000
 	And verify through "Welcome" on "Login_Success_Text"
 	And update the data by query "<password_query>" on DIGITAL_CHANNEL_SEC
+	And I am clicking on "Services_Link"
+	And I am clicking on "Services_Transaction_Activity"
+	And I select "Non Financial" on "Services_CategoryFilter"
+	And I select "Password Reset" on "Services_Transaction_Type"
+	And I scroll to element "Services_Clear_Btn"
+	And I am performing on "Services_Search_Btn"
+	And I am clicking on "Forget_Services_Row"
+	And verify through database on "Successful " on Schema "<db_val>" on "Pay_MultiBill_SRV_TranStatus"
+	And verify through database on "<tran_type_query>" on Schema "<db_val>" on "MyAccount_TranPopup_TranType"
+	And verify through database on "<tran_date_query>" on Schema "<db_val>" on "MyAccount_TranPopup_TranDate"
+	And verify through database on "<tran_debit_query>" on Schema "<db_val>" on "Forget_Services_TranPopup_Debit"
+	And I am clicking on "Services_Transaction_Close_btn"
 	And I am clicking on "Login_Logout_opt"
 	And I am performing on "Login_LogoutBtn"
 
-
-
 	@source:Data/ForgetPassword.xlsx
 	Examples:
-	|Case|login_id|customer_type_query|cnic_no|debit_card|card_pin|Credit_card|email|new_password|new_re_password|password_query|password_change_req_query|mobile_no_query|OTP_message|customer_info_id_query|success_message_password|db_val|lead_field_value|lead_field_query|last_pass_change_query|is_password_change_required_value|is_password_reset_required_value|is_password_reset_required_query|new_password_policy_query|
+	|Case|login_id|customer_type_query|cnic_no|debit_card|card_pin|Credit_card|email|new_password|new_re_password|password_query|password_change_req_query|mobile_no_query|OTP_message|customer_info_id_query|success_message_password|db_val|lead_field_value|lead_field_query|last_pass_change_query|is_password_change_required_value|is_password_reset_required_value|is_password_reset_required_query|new_password_policy_query|tran_type_query|tran_date_query|tran_debit_query|created_on_tran_query|updated_on_tran_query|cnic_tran_query|customer_type_tran_query|email_tran_query|mobile_no_tran_query|customer_type|
 
 
 
@@ -77,10 +93,38 @@ Scenario Outline: 2 As a user i want to verify forget Login ID
 	And I am performing on "Forget_LoginID_NextBtn"
 	Then verify through "<success_message>" on "Forget_Success_LoginMsg"
 	And I am performing on "Forget_Login_FinishBtn"
+	And verify the message "<customer_type>" through database on "<customer_type_tran_query>" on Schema "<db_val>"
+	And verify the message "<cnic_no>" through database on "<cnic_tran_query>" on Schema "<db_val>"
+	And verify the message "<email>" through database on "<email_tran_query>" on Schema "<db_val>"
+	And verify the message "" through database on "<mobile_no_tran_query>" on Schema "<db_val>"
+	And verify the result from "<created_on_tran_query>" on Schema "<db_val>"
+	And verify the result from "<updated_on_tran_query>" on Schema "<db_val>"
+	And I have given "<login_id>" on "Login_UserId"
+	And I have given "<login_password>" on "Login_Password"
+	And I am performing on "Login_SignIn_Button"
+	And I have given "" on "Login_OTP_field"
+	And I am performing on "Login_OTP_Verify_Button"
+	And I am clicking on "Login_Dashboard"
+	And I wait 6000
+	And verify through "Welcome" on "Login_Success_Text"
+	And I am clicking on "Services_Link"
+	And I am clicking on "Services_Transaction_Activity"
+	And I select "Non Financial" on "Services_CategoryFilter"
+	And I select "Change User Credentials" on "Services_Transaction_Type"
+	And I scroll to element "Services_Clear_Btn"
+	And I am performing on "Services_Search_Btn"
+	And I am clicking on "Forget_ChangeLogin_Services_Row"
+	And verify through database on "Successful " on Schema "<db_val>" on "Pay_MultiBill_SRV_TranStatus"
+	And verify through database on "<tran_type_query>" on Schema "<db_val>" on "MyAccount_TranPopup_TranType"
+	And verify through database on "<tran_date_query>" on Schema "<db_val>" on "MyAccount_TranPopup_TranDate"
+	And I am clicking on "Services_Transaction_Close_btn"
+	And I am clicking on "Login_Logout_opt"
+	And I am performing on "Login_LogoutBtn"
+
 
 	@source:Data/ForgetLoginID.xlsx
 	Examples:
-	|Case|customer_type_query|cnic_no|mobile_no|debit_card_no|credit_card_no|email_value|pin|success_message|
+	|Case|customer_type_query|cnic_no|mobile_no|debit_card_no|credit_card_no|email_value|pin|success_message|login_id|login_password|tran_type_query|tran_date_query|customer_type_tran_query|cnic_tran_query|email_tran_query|mobile_no_tran_query|created_on_tran_query|updated_on_tran_query|
 
 
 
@@ -120,11 +164,18 @@ Scenario Outline: 2 As a user i want to verify Change Login ID
 	And verify the message "<new_login_id>" through database on "<new_login_id_query>" on Schema "<db_val>"
 	And verify the result from "<last_tran_pass_change_query>" on Schema "<db_val>"
 	And verify the result from "<last_pass_change_query>" on Schema "<db_val>"
-	And verify the message "<is_password_change_required_value>" through database on "<is_password_change_required_query>" on Schema "DIGITAL_CHANNEL_SEC"
-	And verify the message "<is_password_reset_required_value>" through database on "<is_password_reset_required_query>" on Schema "DIGITAL_CHANNEL_SEC"
-	And verify the message "0" through database on "<is_account_blocked_query>" on Schema "DIGITAL_CHANNEL_SEC"
-	And verify the message "0" through database on "<is_account_locked_query>" on Schema "DIGITAL_CHANNEL_SEC"
-	And verify the message "0" through database on "<is_tran_password_locked_query>" on Schema "DIGITAL_CHANNEL_SEC"
+	And verify the message "<is_password_change_required_value>" through database on "<is_password_change_required_query>" on Schema "<db_val>"
+	And verify the message "<is_password_reset_required_value>" through database on "<is_password_reset_required_query>" on Schema "<db_val>"
+	And verify the message "0" through database on "<is_account_blocked_query>" on Schema "<db_val>"
+	And verify the message "0" through database on "<is_account_locked_query>" on Schema "<db_val>"
+	And verify the message "0" through database on "<is_tran_password_locked_query>" on Schema "<db_val>"
+	And verify the message "<customer_type>" through database on "<customer_type_tran_query>" on Schema "<db_val>"
+	And verify the message "<cnic_no>" through database on "<cnic_tran_query>" on Schema "<db_val>"
+	And verify the message "<email>" through database on "<email_tran_query>" on Schema "<db_val>"
+	And verify the message "" through database on "<mobile_no_tran_query>" on Schema "<db_val>"
+	And verify the message "<new_login_id>" through database on "<new_login_id_tran_query>" on Schema "<db_val>"
+	And verify the result from "<created_on_tran_query>" on Schema "<db_val>"
+	And verify the result from "<updated_on_tran_query>" on Schema "<db_val>"
 	And I have given "<new_login_id>" on "Login_UserId"
 	And I have given "<new_password>" on "Login_Password"
 	And I am performing on "Login_SignIn_Button"
@@ -135,9 +186,20 @@ Scenario Outline: 2 As a user i want to verify Change Login ID
 	And verify through "Welcome" on "Login_Success_Text"
 	And update the data by query "<name_update_query>" on DIGITAL_CHANNEL_SEC
 	And I wait 6000
+	And I am clicking on "Services_Link"
+	And I am clicking on "Services_Transaction_Activity"
+	And I select "Non Financial" on "Services_CategoryFilter"
+	And I select "Change User Credentials" on "Services_Transaction_Type"
+	And I scroll to element "Services_Clear_Btn"
+	And I am performing on "Services_Search_Btn"
+	And I am clicking on "Forget_Change_Services_Row"
+	And verify through database on "Successful " on Schema "<db_val>" on "Pay_MultiBill_SRV_TranStatus"
+	And verify through database on "<tran_type_query>" on Schema "<db_val>" on "MyAccount_TranPopup_TranType"
+	And verify through database on "<tran_date_query>" on Schema "<db_val>" on "MyAccount_TranPopup_TranDate"
+	And I am clicking on "Services_Transaction_Close_btn"
 	And I am clicking on "Login_Logout_opt"
 	And I am performing on "Login_LogoutBtn"
 
 	@source:Data/ChangeLoginID.xlsx
 	Examples:
-	|Case|cnic|debit_card|card_pin|Credit_card|email|new_login_id|customer_type_query|tran_pass|new_password|new_re_password|new_tran_re_pass|success_message_password|password_change_req_query|new_login_id_query|change_pass_policy_query|mobile_no_query|OTP_message|db_val|last_pass_change_query|last_tran_pass_change_query|is_password_change_required_value|is_password_change_required_query|is_password_reset_required_value|is_password_reset_required_query|name_update_query|customer_info_id_query|new_password_policy_query|is_account_blocked_query|is_account_locked_query|is_tran_password_locked_query|
+	|Case|cnic|debit_card|card_pin|Credit_card|email|new_login_id|customer_type_query|tran_pass|new_password|new_re_password|new_tran_re_pass|success_message_password|password_change_req_query|new_login_id_query|change_pass_policy_query|mobile_no_query|OTP_message|db_val|last_pass_change_query|last_tran_pass_change_query|is_password_change_required_value|is_password_change_required_query|is_password_reset_required_value|is_password_reset_required_query|name_update_query|customer_info_id_query|new_password_policy_query|is_account_blocked_query|is_account_locked_query|is_tran_password_locked_query|tran_type_query|tran_date_query|created_on_tran_query|updated_on_tran_query|cnic_tran_query|customer_type_tran_query|email_tran_query|mobile_no_tran_query|customer_type|new_login_id_tran_query|

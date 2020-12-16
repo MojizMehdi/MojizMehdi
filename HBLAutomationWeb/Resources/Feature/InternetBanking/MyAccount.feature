@@ -48,7 +48,7 @@ Scenario Outline: As a user I want to verify Account Linking & De-Linking from M
 
 
 @MyAccount @LimitMng
-Scenario Outline: As a user I want to veAs a user I want to verify Limit Management from My Accountrify Limit Management from My Account
+Scenario Outline: As a user I want to verify Limit Management from My Account
 	Given the test case title is "<Case>" 
 	And the user is arrive to Internet Banking home page
 	And I am clicking on "Login_Dashboard"
@@ -68,13 +68,13 @@ Scenario Outline: As a user I want to veAs a user I want to verify Limit Managem
 	And verify through database on "<tran_date_query>" on Schema "DIGITAL_CHANNEL_SEC" on "MyAccount_TranPopup_TranDate"
 	And verify through database on "<old_limit_tran_query>" on Schema "DIGITAL_CHANNEL_SEC" on "Investment_MutualFund_TranOld"
 	And verify through database on "<new_limit_tran_query>" on Schema "DIGITAL_CHANNEL_SEC" on "Investment_MutualFund_TranNew"
-	And verify through database on "<limit_name_tran_query>" on Schema "DIGITAL_CHANNEL_SEC" on "Investment_MutualFund_TranFundName"
+	And verify through database on "<limit_name_tran_query>" on Schema "DIGITAL_CHANNEL_SEC" on "MyAccount_LimitMng_TranILimitName"
 	And I am performing on "Investment_MutualFund_TranCloseBtn"
 
 
 	@source:Data/LimitManagement.xlsx
 	Examples: 
-	|Case|limit_type|new_limit|Transaction_Category|tran_type_query|tran_date_query|old_limit_tran_query|new_limit_tran_query|limit_name_tran_query|
+	|Case|Expected_Result|limit_type|new_limit|Transaction_Category|tran_type_query|tran_date_query|old_limit_tran_query|new_limit_tran_query|limit_name_tran_query|
 
 
 @MyAccount @ChangeUserPass
@@ -223,6 +223,7 @@ Scenario Outline: As a user i want to verify Forgot Transaction password
 @MyAccount @ChequeBook
 Scenario Outline: As a user I want to verify Cheque Book Request from My Account
 	Given the test case title is "<Case>" 
+	And the test case expected result is "<Expected_Result>"
 	And the user is arrive to Internet Banking home page
 	And I am clicking on "Login_Dashboard"
 	And I set value in context from data "<home_branch_option>" as "home_branch_del_flag"
@@ -267,7 +268,7 @@ Scenario Outline: As a user I want to verify Cheque Book Request from My Account
 
 	@source:Data/ChequeBook.xlsx
 	Examples: 
-	|Case|for_account|no_of_cheque|home_branch_option|City|Branch|transaction_password|customer_type_query|db_val|success_message|tran_type_query|tran_date_query|tran_account_no_query|tran_response_query|tran_cheque_no_query|status_message|
+	|Case|Expected_result|for_account|no_of_cheque|home_branch_option|City|Branch|transaction_password|customer_type_query|db_val|success_message|tran_type_query|tran_date_query|tran_account_no_query|tran_response_query|tran_cheque_no_query|status_message|
 
 
 

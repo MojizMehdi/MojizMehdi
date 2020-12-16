@@ -13,6 +13,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Globalization;
 using System.Collections.Generic;
 using System.Linq;
+using System.Diagnostics;
 
 namespace HBLAutomationWeb.Core
 {
@@ -39,9 +40,24 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
+        [Given(@"the test case expected result is ""(.*)""")]
+        public void GivenTheTestCaseExpectedResultIs(string expected_result)
+        {
+            ExcelRecord rec = ContextPage.GetInstance().GetExcelRecord();
+            rec.ExpectedResult = expected_result;
+            //if (expected_result.ToLower() == "pass")
+            //{
+            //    //if (Configuration.GetInstance().GetByKey("Record_Video").ToLower() == "yes")
+            //    //{
+            //    //    AppiumHelper.Start_Video();
+            //    //}
+            //}
+        }
+
 
         [Given(@"I have given ""(.*)"" on ""(.*)""")]
         [When(@"I have given ""(.*)"" on ""(.*)""")]
@@ -54,10 +70,14 @@ namespace HBLAutomationWeb.Core
                 SeleniumHelper selhelper = new SeleniumHelper();
                 textboxvalue = selhelper.GetOTP();
             }
-            if (Keyword.Contains("Pay_Card_Expiry_Date"))
+            if (Keyword.Contains("Pay_Card_Expiry_Date") && context.GetCredit_Card_Check() == null)
             {
                 return;
             }
+            //if (Keyword.Contains("Pay_Card_Expiry_Date"))
+            //{
+            //    return;
+            //}
             if (Keyword.Contains("Accounts_NoOfDays"))
             {
                 if ((Convert.ToInt32(textboxvalue) > Convert.ToInt32(context.GetAccStatementDays())) && (Convert.ToInt32(textboxvalue) == 0))
@@ -85,6 +105,10 @@ namespace HBLAutomationWeb.Core
             if ((Keyword.Equals("Forget_LoginID_CreditNo") || Keyword.Equals("Forget_LoginID_CreditEmail") || Keyword.Equals("Forget_Change_CreditNo") || Keyword.Equals("Forget_Change_CreditEmail") || Keyword.Equals("Forget_Password_CreditCardNo") || Keyword.Equals("Forget_Password_Email")) && context.GetCustomerType() != "C")
             {
                 return;
+            }
+            if (Keyword.Contains("SendMoney_Amount"))
+            {
+                context.SetTran_Balance(Convert.ToDecimal(textboxvalue));
             }
             if (String.IsNullOrEmpty(textboxvalue))
             {
@@ -130,7 +154,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
 
             if (Keyword.Contains("Signup_FeedbackText"))
@@ -214,7 +239,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
 
@@ -229,7 +255,19 @@ namespace HBLAutomationWeb.Core
                 SeleniumHelper selhelper = new SeleniumHelper();
                 selhelper.checkPageIsReady();
                 Element keyword = ContextPage.GetInstance().GetElement(Keyword);
-
+            
+                if (Keyword.Equals("MyAccount_MngSch_AddNew") && context.GetUserScheduleCount() == 0)
+                {
+                    Element keyword_temp = ContextPage.GetInstance().GetElement("MyAccount_MngSch_Popup_Btn");
+                    selhelper.links(keyword_temp.Locator);
+                }
+                if (Keyword.Equals("SendMoney_AddNewBtn") || Keyword.Equals("Pay_AddNewBtn"))
+                {
+                    if (context.Get_Bene_Count() == "0")
+                    {
+                        return;
+                    }
+                }
                 if (Keyword.Contains("Services_Date"))
                 {
                     if (context.GetTranFromDateFlag() == false || context.GetTranToDateFlag() == false)
@@ -237,12 +275,24 @@ namespace HBLAutomationWeb.Core
                         return;
                     }
                 }
+                else if (Keyword.Equals("MyAccount_MngSch_Cancel_RowClick"))
+                {
+                    temp = keyword.Locator.Replace("{x}", context.GetBeneAccountNo());
+                    selhelper.links(temp);
+                    return;
+                }
 
-                else if (Keyword == "Pay_Transaction_PayBill_Rating" || Keyword == "Signup_SkipBtn")
+                else if (Keyword == "Pay_Transaction_PayBill_Rating" || Keyword == "Signup_SkipBtn" ||  Keyword == "SendMoney_Rating")
                 {
                     selhelper.rating(keyword.Locator);
                 }
-
+                else if (Keyword == "SendMoney_RatingThankOkBtn")
+                {
+                    if (context.GetRatingCheck() == false)
+                    {
+                        return;
+                    }
+                }
                 else if (Keyword.Contains("RatingOkBtn"))
                 {
                     if (context.GetRatingCheck() == true)
@@ -323,7 +373,8 @@ namespace HBLAutomationWeb.Core
                 if (Keyword != "Pay_AddNewBtn")
                 {
                     SeleniumHelper.TakeScreenshot();
-                    throw new AssertFailedException(exception.Message);
+                    string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                    throw new AssertFailedException(exception.Message + line_no);
                 }
             }
         }
@@ -349,6 +400,10 @@ namespace HBLAutomationWeb.Core
                         locator = keyword.Locator.Replace("{Pay_BillPaymentCategory_Company}", text);
                         //keyword.Locator = locator;
                     }
+                    if (Keyword.Equals("Pay_BillPaymentCategory"))
+                    {
+                        selhelper.ScrollToElement(locator);
+                    }
                     //Element keyword = ContextPage.GetInstance().GetElement(Keyword);
                     selhelper.links(locator);
                 }
@@ -358,7 +413,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
 
@@ -367,7 +423,7 @@ namespace HBLAutomationWeb.Core
         [Then(@"I select ""(.*)"" on ""(.*)""")]
         public void GivenISelectOn(string value, string Keyword)
         {
-            if (Keyword.Contains("Acc_List") || Keyword.Contains("accountno"))
+            if ((Keyword.Contains("Acc_List") || Keyword.Contains("accountno") || Keyword.Contains("FromAccount")) && (context.GetCredit_Card_Check() == "" || context.GetCredit_Card_Check() == null))
             {
                 int count = context.GeTSizeCount();
                 if (count == 1)
@@ -382,6 +438,19 @@ namespace HBLAutomationWeb.Core
             }
             try
             {
+                if (context.GetCredit_Card_Check() != "")
+                {
+                    var dict = context.Get_acc_balance();
+                    foreach (var item in dict.Keys)
+                    {
+                        if (item.Contains("x"))
+                        {
+                            value = item;
+                            break;
+                        }
+                    }
+                    //value = value.Remove(4, 8).Insert(4, "xxxxxxxx");
+                }
                 SeleniumHelper selhelper = new SeleniumHelper();
                 selhelper.checkPageIsReady();
                 Element keyword = ContextPage.GetInstance().GetElement(Keyword);
@@ -394,7 +463,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
 
@@ -431,7 +501,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
 
@@ -449,7 +520,8 @@ namespace HBLAutomationWeb.Core
                 catch (Exception e)
                 {
                     SeleniumHelper.TakeScreenshot();
-                    throw new AssertFailedException(e.Message);
+                    string line_no = SeleniumHelper.Get_Error_LineNo_exception(e);
+                    throw new AssertFailedException(e.Message + line_no);
 
                 }
             }
@@ -490,7 +562,8 @@ namespace HBLAutomationWeb.Core
                 catch (Exception e)
                 {
                     SeleniumHelper.TakeScreenshot();
-                    throw new AssertFailedException(e.Message);
+                    string line_no = SeleniumHelper.Get_Error_LineNo_exception(e);
+                    throw new AssertFailedException(e.Message + line_no);
 
                 }
                 //if (query.Contains("LOGIN_PASSWORD"))
@@ -517,7 +590,8 @@ namespace HBLAutomationWeb.Core
                 catch (Exception e)
                 {
                     SeleniumHelper.TakeScreenshot();
-                    throw new AssertFailedException(e.Message);
+                    string line_no = SeleniumHelper.Get_Error_LineNo_exception(e);
+                    throw new AssertFailedException(e.Message + line_no);
                 }
             }
 
@@ -529,6 +603,10 @@ namespace HBLAutomationWeb.Core
         {
             try
             {
+                if(attribute == "customer_type")
+                {
+                    context.SetCustomerType(value);
+                }
                 if (attribute == "SignupCheck")
                 {
                     context.Set_signup_check(Convert.ToBoolean(value));
@@ -629,7 +707,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
 
@@ -695,7 +774,43 @@ namespace HBLAutomationWeb.Core
                         throw new Exception("Bill Status ID in not equal to PAID in LP_BILLS table in Database");
                     }
                 }
+                if (query.Contains("P.LIMIT_TYPE_ID"))
+                {
+                    string config_value = "";
+                    string limit_type_id = "";
 
+                    DataAccessComponent.DataAccessLink dLink2 = new DataAccessComponent.DataAccessLink();
+                    DataTable SourceDataTable2 = dLink2.GetDataTable("select CONFIG_VALUE from dc_customer_info_config k where K.CUSTOMER_INFO_ID= (Select CUSTOMER_INFO_ID from dc_customer_info l where L.CUSTOMER_NAME='" + context.GetUsername() + "') and K.CONFIG_NAME = 'CUSTOMER_REGISTRATION_PROCESS'", db_value);
+                    if (SourceDataTable.Rows.Count != 0)
+                    {
+                        config_value = SourceDataTable.Rows[0][0].ToString();
+                    }
+                    dLink2 = null;
+                    SourceDataTable2 = null;
+
+                    dLink2 = new DataAccessComponent.DataAccessLink();
+                    SourceDataTable2 = dLink2.GetDataTable("select CONFIG_VALUE from dc_customer_info_config k where K.CUSTOMER_INFO_ID= (Select CUSTOMER_INFO_ID from dc_customer_info l where L.CUSTOMER_NAME='" + context.GetUsername() + "') and K.CONFIG_NAME = 'CUSTOMER_NATURE'", db_value);
+                    if (SourceDataTable.Rows.Count != 0)
+                    {
+                        config_value = SourceDataTable.Rows[0][0].ToString();
+                    }
+                    if (config_value == "NRP")
+                    {
+                        limit_type_id = "5";
+                    }
+                    else if (config_value == "P")
+                    {
+                        limit_type_id = "8";
+                    }
+                    else
+                    {
+                        limit_type_id = "1";
+                    }
+                    if (inst_type != limit_type_id)
+                    {
+                        throw new Exception(string.Format("Limit Type ID in Database :{0} is not equal to the desired limit type :{1}", inst_type, limit_type_id));
+                    }
+                }
                 if (query.Contains("IVR_REQUIRED"))
                 {
                     context.SetIVRReq(inst_type);
@@ -714,11 +829,12 @@ namespace HBLAutomationWeb.Core
                 }
                 if (query.Contains("ENABLE_PSD_BIOMETRIC"))
                 {
-                    context.SetEnablePSD(inst_type);
+                    context.SetEnableCheck(inst_type);
                 }
                 if (query.Contains("Z.ENABLE_PSD "))
                 {
-                    if ((context.GetEnablePSD() != inst_type))
+                    context.SetEnablePSD(inst_type);
+                    if ((context.GetEnableCheck() != inst_type))
                     {
                         throw new AssertFailedException("ENABLE_PSD setting is not correct");
                     }
@@ -844,7 +960,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
 
@@ -890,7 +1007,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
 
@@ -973,7 +1091,7 @@ namespace HBLAutomationWeb.Core
                 }
                 else
                 {
-                    if (Keyword.Equals("Forget_Success_LoginMsg") || Keyword.Equals("Forget_Change_OTPMsg"))
+                    if (Keyword.Equals("Forget_Success_LoginMsg") || Keyword.Equals("Forget_Change_OTPMsg") || Keyword.Equals("Forget_Success_LoginMsg"))
                     {
                         string message_ui = context.Get_Mobile_No();
                         string mobile = message_ui.Substring(7, 4);
@@ -1016,7 +1134,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
         [When(@"verify the message ""(.*)"" through database on ""(.*)"" on Schema ""(.*)""")]
@@ -1046,11 +1165,32 @@ namespace HBLAutomationWeb.Core
             }
             if (query.Contains("{string_date}"))
             {
-                query = query.Replace("{string_date}", context.Get_String_Date());
+                if (query.Contains("DD-MM-YYYY'"))
+                {
+                    string temp_value = context.Get_String_Date();
+                    string temp_date = DateTime.Now.Date.AddDays(Convert.ToInt32(temp_value)).ToString("DD-MM-YYYY");
+                    query = query.Replace("{string_date}", temp_date);
+                }
+                else if (query.Contains("Mon YYYY"))
+                {
+                    string temp_value = context.Get_String_Date();
+                    DateTime ct = DateTime.Now.Date;
+                    DateTime future = ct.AddMonths(Convert.ToInt32(temp_value));
+                    string temp_date = future.ToString("Mon YYYY");
+                    query = query.Replace("{string_date}", temp_date);
+                }
+                else
+                {
+                    query = query.Replace("{string_date}", context.Get_String_Date());
+                }
             }
             if (query.Contains("{schedule_tran_id}"))
             {
                 query = query.Replace("{schedule_tran_id}", context.Get_Schedule_ID());
+            }
+            if (query.Contains("MOBILE_NO"))
+            {
+                value = context.Get_Mobile_No();
             }
             try
             {
@@ -1115,7 +1255,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
 
@@ -1178,7 +1319,7 @@ namespace HBLAutomationWeb.Core
                     DataTable SourceDataTable = dlink.GetDataTable(query, schema);
                     message = SourceDataTable.Rows[0][0].ToString();
 
-                    if(Keyword.Contains("TranAmount"))
+                    if(Keyword.Contains("TranAmount") || Keyword.Contains("Investment_MutualFund_TranOld") || Keyword.Contains("Investment_MutualFund_TranNew"))
                     {
                         message = Convert.ToDecimal(message).ToString("0.00");
                     }
@@ -1298,7 +1439,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
         [When(@"I scroll down ""(.*)"" on ""(.*)""")]
@@ -1316,7 +1458,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
 
@@ -1349,7 +1492,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
 
@@ -1394,7 +1538,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception ex)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new Exception(ex.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(ex);
+                throw new Exception(ex.Message + line_no);
             }
         }
         [Given(@"I have otp check and given (.*) on ""(.*)""")]
@@ -1417,7 +1562,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
 
@@ -1438,7 +1584,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
 
@@ -1462,7 +1609,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
 
@@ -1514,10 +1662,14 @@ namespace HBLAutomationWeb.Core
                             query = "SELECT L.CONSUMER_NAME_TEMPLATE FROM BPS_COMPANY_CHANNEL L WHERE L.CHANNEL_CODE='MB'  AND L.COMPANY_CODE = '" + context.GetCompany_Code() + "'";
                             SourceDataTable = dLink.GetDataTable(query, db_value);
                             value = SourceDataTable.Rows[0][0].ToString();
-                            string code = "Payable After Due Date|<FS_01:ATTRIBUTE";
+                            string code = "Payable After Due Date|<FS_01:";
+                            //int b = value.IndexOf(code);
+                            //int a = value.IndexOf(code) + code.Length;
                             code = value.Substring(value.IndexOf(code) + code.Length);
                             code = code.Split(new string[] { ">;" }, 2, StringSplitOptions.None)[0];
-                            query = temp_query.Replace("LB.DUE_DATE", "LB.ATTRIBUTE_" + code);
+                            //query = temp_query.Replace("LB.DUE_DATE", "LB.ATTRIBUTE_" + code);
+                            query = "SELECT * FROM (SELECT LB." + code + " FROM BPS_BILL_INFO LB WHERE LB.CONSUMER_NO='" + context.GetConsumer_No() + "' ORDER BY LB.CREATED_ON DESC) WHERE ROWNUM = 1";
+                            //query = temp_query.Replace("LB.DUE_DATE", "LB." + code);
                             SourceDataTable = dLink.GetDataTable(query, db_value);
                             value = SourceDataTable.Rows[0][0].ToString();
                         }
@@ -1539,9 +1691,55 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
-}
+        }
+
+        [Given(@"I select day ""(.*)"" and calculate date")]
+        [When(@"I select day ""(.*)"" and calculate date")]
+        [Then(@"I select day ""(.*)"" and calculate date")]
+        public void WhenISelectDayAndCalculateDate(string day)
+        {
+            try
+            {
+                string temp = DateTime.Now.Date.AddDays(Convert.ToInt32(day)).ToString("dd MMM yyyy");
+
+                string[] tempdate = temp.Split(' ');
+
+                string date = tempdate[0];
+                date = date.TrimStart('0');
+                string month = tempdate[1];
+                string year = tempdate[2];
+
+                string keyword_date = "//a[contains(text(), ";
+                string keyword_month = "//select[@class='ui-datepicker-month']";
+                string keyword_year = "//select[@class='ui-datepicker-year']";
+                SeleniumHelper selhelper = new SeleniumHelper();
+                selhelper.checkPageIsReady();
+
+                selhelper.combobox(year, keyword_year);
+                selhelper.combobox(month, keyword_month);
+
+                keyword_date = keyword_date + "'" + date + "')]";
+                selhelper.links(keyword_date);
+
+                if (Convert.ToInt32(date) < 10)
+                {
+                    date = ("0" + date);
+                }
+                string complete_date = date + " " + month + " " + year;
+                DateTime temp_date = DateTime.ParseExact(complete_date, "dd MMM yyyy", CultureInfo.InvariantCulture);
+                context.Settempdate(temp_date);
+            }
+            catch (Exception exception)
+            {
+                SeleniumHelper.TakeScreenshot();
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
+            }
+        }
+
         [Given(@"I select date ""(.*)"" on month ""(.*)"" on year ""(.*)""")]
         [When(@"I select date ""(.*)"" on month ""(.*)"" on year ""(.*)""")]
         [Then(@"I select date ""(.*)"" on month ""(.*)"" on year ""(.*)""")]
@@ -1604,7 +1802,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
         [When(@"I set calendar from date")]
@@ -1629,7 +1828,7 @@ namespace HBLAutomationWeb.Core
                 selhelper.checkPageIsReady();
                 string temp = selhelper.ReturnKeywordValue(keyword.Locator);
 
-                if (Keyword.Equals("Pay_Bill_Status"))
+                if (Keyword.Equals("Pay_Bill_Status") || Keyword.Equals("Pay_Bill_Bene_Status"))
                 {
                     context.SetBill_Status(temp);
                 }
@@ -1643,7 +1842,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
 
@@ -1677,7 +1877,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
         [Given(@"I am verifying list of execution iterations on ""(.*)""")]
@@ -1720,7 +1921,7 @@ namespace HBLAutomationWeb.Core
                 DateTime ed_date = context.Getcalendar_todate().Date;
                 difference = ((ed_date - st_date).TotalDays) + 1;
                 difference = difference / loop_increment_counter;
-                int diff = Convert.ToInt32(difference) + 1;
+                int diff = Convert.ToInt32(Math.Ceiling(difference));
                 int counter = 1;
                 for (int i = 0; i < diff * loop_increment_counter; i += loop_increment_counter)
                 {
@@ -1728,6 +1929,7 @@ namespace HBLAutomationWeb.Core
                     temp = temp.Date;
                     lst.Add(temp.ToString("dd MMM yyyy"));
                     string locator = keyword.Locator.Replace("{Iteration_Number}", counter.ToString());
+                    selhelper.ScrollToElement(locator);
                     lstui.Add(selhelper.ReturnKeywordValue(locator));
                     if (lst[counter - 1] != lstui[counter - 1])
                     {
@@ -1735,15 +1937,13 @@ namespace HBLAutomationWeb.Core
                     }
                     counter++;
                 }
-                //for (int i = 1; i <= loop_counter; i += loop_increment_counter)
-                //{
-
-                //}
+                context.Set_iteration_dates_schedule(lst);
             }
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
 
@@ -1840,7 +2040,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
 
@@ -1922,7 +2123,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
         [When(@"I verify Account Balance")]
@@ -1943,6 +2145,10 @@ namespace HBLAutomationWeb.Core
                     string tAccountNo = context.GeTran_Account();
                     string temp = keyword.Locator.Replace("{k}", tAccountNo);
                     new_account_bal = selhelper.ReturnKeywordValue(temp);
+                    if (new_account_bal.Contains(","))
+                    {
+                        new_account_bal = new_account_bal.Replace(",", "");
+                    }
 
                     if (Convert.ToDecimal(new_account_bal) != old_account_bal)
                     {
@@ -1994,7 +2200,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
 
 
@@ -2019,7 +2226,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
 
@@ -2066,7 +2274,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
 
@@ -2127,7 +2336,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
 
@@ -2197,7 +2407,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
 
         }
@@ -2257,7 +2468,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
         //To perform cancel operation on cross icon
@@ -2280,11 +2492,30 @@ namespace HBLAutomationWeb.Core
                 }
                 if (Keyword.Equals("MyAccount_MngSch_Delete"))
                 {
-                    keyword.Locator = keyword.Locator.Replace("{x}", context.GetBeneAccountNo());
+                    temp = keyword.Locator.Replace("{x}", context.GetBeneAccountNo());
+                    selhelper.AlertOperation(option, temp);
+                    return;
                 }
-                if (Keyword.Equals("MyAccount_MngSch_CancelDateBtn"))
+                if (Keyword.Equals("MyAccount_MngSchSend_CancelDateBtn"))
                 {
-                    keyword.Locator = keyword.Locator.Replace("{x}", context.Get_String_Date());
+                    string temp_value = context.Get_String_Date();
+                    string temp_date = DateTime.Now.Date.AddDays(Convert.ToInt32(temp_value)).ToString("dd-MM-yyyy");
+                    temp = keyword.Locator.Replace("{x}", temp_date);
+                    selhelper.ScrollToElement(temp);
+                    selhelper.AlertOperation(option, temp);
+                    return;
+                }
+                if (Keyword.Equals("MyAccount_MngSchBill_CancelDateBtn"))
+                {
+                    string temp_value = context.Get_String_Date();
+
+                    DateTime ct = DateTime.Now.Date;
+                    DateTime future = ct.AddMonths(Convert.ToInt32(temp_value));
+
+                    string temp_date = future.ToString("MMM yyyy");
+                    temp = keyword.Locator.Replace("{x}", temp_date);
+                    selhelper.AlertOperation(option, temp);
+                    return;
                 }
 
                 selhelper.AlertOperation(option, keyword.Locator);
@@ -2292,7 +2523,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
 
@@ -2317,7 +2549,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
         //For clicking on any generic xpath
@@ -2330,24 +2563,15 @@ namespace HBLAutomationWeb.Core
             {
                 SeleniumHelper selhelper = new SeleniumHelper();
                 Element Keyword = ContextPage.GetInstance().GetElement(keyword);
-                string locator = Keyword.Locator;
 
-                if (keyword.Contains("FeedbackOption"))
-                {
-                    locator = Keyword.Locator.Replace("{X}", value);
-                    selhelper.links(locator);
-
-                    DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
-                    DataTable SourceDataTable = dlink.GetDataTable("Select FEEDBACK from DC_CUSTOMER_REG_FEEDBACK a where A.CUSTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from dc_customer_info j where J.CNIC='" + context.GetCustomerCNIC() + "') ", "DIGITAL_CHANNEL_SEC");
-                    string message = SourceDataTable.Rows[0][0].ToString();
-
-                    Assert.AreEqual(value, message);
-                }
+                string locator = Keyword.Locator.Replace("{x}", value);
+                selhelper.links(locator);
             }
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
         [When(@"I save Account Numbers")]
@@ -2381,7 +2605,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
         [When(@"I select consumers for multi bill payment as ""(.*)"" on ""(.*)""")]
@@ -2469,7 +2694,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
         [When(@"I verify bill details of consumer numbers for bill payment")]
@@ -2552,7 +2778,6 @@ namespace HBLAutomationWeb.Core
                     amount_after_dd = Convert.ToString(Convert.ToInt32(SourceDataTable.Rows[0][0].ToString()));
                     if (DUE_DATE_FORMAT < DateTime.Today)
                     {
-
                         amount += Convert.ToInt32(amount_after_dd);
                     }
                     else
@@ -2642,7 +2867,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
         [Then(@"verify multiple payments summary ""(.*)"" on ""(.*)"" and ""(.*)"" on ""(.*)"" and ""(.*)"" on ""(.*)"" and ""(.*)"" on ""(.*)"" and ""(.*)"" on ""(.*)"" and ""(.*)"" on ""(.*)"" on Schema ""(.*)""")]
@@ -2816,20 +3042,20 @@ namespace HBLAutomationWeb.Core
                         {
                             throw new AssertFailedException(string.Format("The Value in DC_Transaction table : {0} is not equal to respected value in LP_BILLS table : {1} :{2}", tran_CREATED_ON, updated_on, consumer_no_arr[i]));
                         }
-
-                        if (i != 0)
-                        {
-                            keyword = null;
-                            keyword = ContextPage.GetInstance().GetElement("Pay_MultiBill_BackArrow");
-                            selhelper.links(keyword.Locator);
-                        }
+                    }
+                    if (i != 0)
+                    {
+                        keyword = null;
+                        keyword = ContextPage.GetInstance().GetElement("Pay_MultiBill_BackArrow");
+                        selhelper.links(keyword.Locator);
                     }
                 }
             }
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
 
@@ -2977,7 +3203,6 @@ namespace HBLAutomationWeb.Core
 
                 for (int i = 0; i < size; i++)
                 {
-
                     Element keyword = ContextPage.GetInstance().GetElement("Pay_Acc_No");
                     string temp = keyword.Locator.Replace("{i}", "[" + (i + 1).ToString() + "]");
 
@@ -2995,7 +3220,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
 
@@ -3031,7 +3257,6 @@ namespace HBLAutomationWeb.Core
                 }
                 dlink = null;
                 SourceDataTable = null;
-
 
                 dlink = new DataAccessComponent.DataAccessLink();
                 SourceDataTable = dlink.GetDataTable("select CONFIG_VALUE from dc_customer_info_config k where K.CUSTOMER_INFO_ID= (Select CUSTOMER_INFO_ID from dc_customer_info l where L.CUSTOMER_NAME='" + context.GetUsername() + "') and K.CONFIG_NAME = 'CUSTOMER_NATURE'", "DIGITAL_CHANNEL_SEC");
@@ -3259,7 +3484,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
 
@@ -3569,7 +3795,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
 
@@ -3614,11 +3841,16 @@ namespace HBLAutomationWeb.Core
                         for (int j = 0; j < Convert.ToInt32(count); j++)
                         {
                             string db_acc_no = (SourceDataTable.Rows[j][0].ToString()).Trim();
+                            db_acc_no = db_acc_no.Replace(" ", string.Empty);
+
                             string db_acc_title = (SourceDataTable.Rows[j][1].ToString()).Trim();
+                            db_acc_title = db_acc_title.Replace(" ", string.Empty);
+
                             string db_nick = (SourceDataTable.Rows[j][2].ToString()).Trim();
+                            db_nick = db_nick.Replace(" ", string.Empty);
 
                             db_dict.Add(db_acc_no, Tuple.Create(db_acc_title, db_nick));
-
+                            
                         }
 
                         int size = selhelper.SizeCountElements(Keyword.Locator);
@@ -3630,6 +3862,7 @@ namespace HBLAutomationWeb.Core
                             selhelper.ScrollToElement(locator);
                             string nick = selhelper.ReturnKeywordValue(locator);
                             nick = nick.Trim();
+                            nick = nick.Replace(" ", string.Empty);
                             Keyword2 = null;
                             locator = null;
 
@@ -3637,6 +3870,7 @@ namespace HBLAutomationWeb.Core
                             locator = Keyword2.Locator.Replace("{i}", Convert.ToString(i));
                             string account_title = selhelper.ReturnKeywordValue(locator);
                             account_title = account_title.Trim();
+                            account_title = account_title.Replace(" ", string.Empty);
                             Keyword2 = null;
                             locator = null;
 
@@ -3644,6 +3878,7 @@ namespace HBLAutomationWeb.Core
                             locator = Keyword2.Locator.Replace("{i}", Convert.ToString(i));
                             string account_no = selhelper.ReturnKeywordValue(locator);
                             account_no = account_no.Trim();
+                            account_no = account_no.Replace(" ", string.Empty);
                             Keyword2 = null;
                             locator = null;
 
@@ -3762,6 +3997,11 @@ namespace HBLAutomationWeb.Core
                                 {
                                     db_bill_bene_nick = item;
                                 }
+
+                                db_consumer_no = db_consumer_no.Replace(" ", string.Empty);
+                                db_company_name = db_company_name.Replace(" ", string.Empty);
+                                db_bill_bene_nick = db_bill_bene_nick.Replace(" ", string.Empty);
+
                                 db_dict.Add(db_consumer_no, Tuple.Create(db_company_name, db_bill_bene_nick));
 
                                 Element Keyword2 = ContextPage.GetInstance().GetElement("BeneManage_Pay_Nick");
@@ -3769,7 +4009,7 @@ namespace HBLAutomationWeb.Core
                                 locator = locator.Replace("{sub_catg_value}", item);
                                 selhelper.ScrollToElement(locator);
                                 string bill_bene_nick = selhelper.ReturnKeywordValue(locator);
-                                bill_bene_nick = bill_bene_nick.Trim();
+                                bill_bene_nick = bill_bene_nick.Replace(" ", string.Empty).Trim();
                                 Keyword2 = null;
                                 locator = null;
 
@@ -3777,7 +4017,7 @@ namespace HBLAutomationWeb.Core
                                 locator = Keyword2.Locator.Replace("{j}", Convert.ToString(z + 1));
                                 locator = locator.Replace("{sub_catg_value}", item);
                                 string company_name = selhelper.ReturnKeywordValue(locator);
-                                company_name = company_name.Trim();
+                                company_name = company_name.Replace(" ", string.Empty).Trim();
                                 Keyword2 = null;
                                 locator = null;
 
@@ -3785,7 +4025,7 @@ namespace HBLAutomationWeb.Core
                                 locator = Keyword2.Locator.Replace("{j}", Convert.ToString(z + 1));
                                 locator = locator.Replace("{sub_catg_value}", item);
                                 string consumer_no = selhelper.ReturnKeywordValue(locator);
-                                consumer_no = consumer_no.Trim();
+                                consumer_no = consumer_no.Replace(" ", string.Empty).Trim();
                                 Keyword2 = null;
                                 locator = null;
 
@@ -3833,7 +4073,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
 
@@ -3878,7 +4119,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
 
         }
@@ -4022,7 +4264,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
 
         }
@@ -4037,6 +4280,10 @@ namespace HBLAutomationWeb.Core
             }
             try
             {
+                if (query.Contains("{account_number}"))
+                {
+                    query = query.Replace("{account_number}", context.GetBeneAccountNo());
+                }
                 if (query.Contains("{customer_name}"))
                 {
                     query = query.Replace("{customer_name}", context.GetUsername());
@@ -4064,6 +4311,10 @@ namespace HBLAutomationWeb.Core
                 if (attribute == "fund_disclaimer_popup")
                 {
                     context.SetFundDisclaimerPopup(db_value);
+                }
+                if (attribute == "schedule_tran_id")
+                {
+                    context.Set_ScheduleID(db_value);
                 }
                 if (attribute == "term_dep_ref_no")
                 {
@@ -4109,11 +4360,16 @@ namespace HBLAutomationWeb.Core
                 {
                     context.SetCustomerInfoID(db_value);
                 }
+                if (attribute == "Bene_Count")
+                {
+                    context.Set_Bene_Count(db_value);
+                }
             }
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
 
@@ -4396,7 +4652,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
 
@@ -4707,7 +4964,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception ex)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new Exception("ex message: " + ex.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(ex);
+                throw new Exception("ex message: " + ex.Message + line_no);
             }
         }
         [Then(@"I verify multiple payment details in Transaction Activity ""(.*)"" on ""(.*)"" and ""(.*)"" on ""(.*)"" and ""(.*)"" on ""(.*)"" and ""(.*)"" on ""(.*)"" and ""(.*)"" on ""(.*)"" and ""(.*)"" on ""(.*)"" on Schema ""(.*)""")]
@@ -4803,7 +5061,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
         [Given(@"I set list of elements from scroll view on ""(.*)""")]
@@ -4844,7 +5103,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
         [Given(@"verify the list using ""(.*)"" on Schema ""(.*)""")]
@@ -4882,13 +5142,27 @@ namespace HBLAutomationWeb.Core
                     Thread.Sleep(2000);
                     DataAccessComponent.DataAccessLink dLink = new DataAccessComponent.DataAccessLink();
                     DataTable SourceDataTable = dLink.GetDataTable(query, schema);
+
+                    //List<string> ui_list = new List<string>();
+                    //for (int j = 0; j< SourceDataTable.Rows.Count; j++)
+                    //{
+                    //    ui_list.Add(SourceDataTable.Rows[j][0].ToString());
+                    //}
+
+                    //var result = ui_list.Except(message).Union(message.Except(ui_list)).ToList();
+
+                    //var ui_result = message.Except(ui_list).ToList();
+
+                    //var db_re = ui_list.Except(message).ToList();
+
+
                     for (int i = 0; i < SourceDataTable.Rows.Count; i++)
                     {
                         if (message[i].ToUpper() != (SourceDataTable.Rows[i][0].ToString()).ToUpper())
                         {
                             //string ali = SourceDataTable.Rows[i][0].ToString();
 
-                            throw new AssertFailedException(string.Format("The Value of code is {0} and value of db is", message[i], SourceDataTable.Rows[i][0]));
+                            throw new AssertFailedException(string.Format("The Value of code is {0} and value of db is", message[i], SourceDataTable.Rows[i][0].ToString()));
                         }
                         //db_result.Add(SourceDataTable.Rows[i][0].ToString());
                     }
@@ -4901,7 +5175,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
         [Then(@"I check values of combobox using database from ""(.*)"" on schema (.*) on combobox ""(.*)"" of list ""(.*)""")]
@@ -4940,7 +5215,8 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
         [When(@"I verify bill payment inquiry for Web")]
@@ -4970,6 +5246,7 @@ namespace HBLAutomationWeb.Core
                     {
                         temp = keyword.Locator.Replace("{Field_Name}", consumer_template_arr[i]);
                         ui_value = selhelper.ReturnKeywordValue(temp);
+                        ui_value = ui_value.Replace(" ", string.Empty);
                     }
                     if (i % 2 != 0)
                     {
@@ -5023,7 +5300,9 @@ namespace HBLAutomationWeb.Core
                             date_fromat_arr[1] = date_fromat_arr[1].Replace("^", string.Empty);
                             DateTime dt = Convert.ToDateTime(db_value);
                             db_value = dt.ToString(date_fromat_arr[1]);
+
                         }
+                        db_value = db_value.Replace(" ", string.Empty);
                         if (ui_value.Trim() != db_value.Trim())
                         {
                             throw new Exception(string.Format("The UI value is {0} and the databse value is {1}", ui_value, db_value));
@@ -5035,7 +5314,100 @@ namespace HBLAutomationWeb.Core
             catch (Exception exception)
             {
                 SeleniumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
+            }
+        }
+        [Then(@"verify the result of schedule payment from database")]
+        public void ThenVerifyTheResultOfSchedulePaymentFromDatabase()
+        {
+            try
+            {
+                string tran_master_id = "";
+                string query = "SELECT TM.STATE,TM.SCHEDULED_AMOUNT,TM.SCHEDULED_TRAN_TYPE,TM.SCHEDULED_TRAN_MASTER_ID FROM DC_SCHEDULED_TRAN_MASTER TM WHERE TM.FUND_TRANSFER_BENEFICIARY_ID =  (SELECT FT.FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY FT WHERE FT.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '" + context.GetUsername() + "') AND FT.IS_DELETED = 0 AND FT.NICK = '" + context.GetBeneAccountNo() + "') AND TM.IS_DELETED = 0";
+                DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
+                DataTable SourceDataTable = dlink.GetDataTable(query, "DIGITAL_CHANNEL_SEC");
+                string state = SourceDataTable.Rows[0][0].ToString();
+                string tran_amount = SourceDataTable.Rows[0][1].ToString();
+                string tran_type = SourceDataTable.Rows[0][2].ToString();
+                if ("41" != state)
+                {
+                    throw new AssertFailedException(string.Format("The State {0} is not equal to State in databse 41", state));
+                }
+                if (context.GetTran_Balance().ToString() != tran_amount)
+                {
+                    throw new AssertFailedException(string.Format("The Schedule Amount {0} is not equal to Schedule Amount in databse {1}", context.GetTran_Balance().ToString(), SourceDataTable.Rows[0][1].ToString()));
+                }
+                if ("LOCAL_FUND_TRANSFER" != tran_type)
+                {
+                    throw new AssertFailedException(string.Format("The Schedule transaction type {0} is not equal to Schedule transaction type in databse LOCAL_FUND_TRANSFER", tran_type));
+                }
+                tran_master_id = SourceDataTable.Rows[0][0].ToString();
+                query = "";
+                query = "SELECT TD.EXECUTION_DATE FROM DC_SCHEDULED_TRAN_DETAIL TD WHERE TD.SCHEDULED_TRAN_MASTER_ID = (SELECT MAX(TM.SCHEDULED_TRAN_MASTER_ID) FROM DC_SCHEDULED_TRAN_MASTER TM WHERE TM.FUND_TRANSFER_BENEFICIARY_ID = (SELECT FT.FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY FT WHERE FT.CUSTOMER_INFO_ID =(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '" + context.GetUsername() + "')AND FT.IS_DELETED = 0 AND FT.NICK = '" + context.GetBeneAccountNo() + "')AND TM.IS_DELETED = 0) ORDER BY TD.EXECUTION_DATE ASC";
+                SourceDataTable = null;
+                SourceDataTable = dlink.GetDataTable(query, "DIGITAL_CHANNEL_SEC");
+                List<string> iterations = context.Get_iteration_dates_schedule();
+                for (int i = 0; i < iterations.Count; i++)
+                {
+                    string temp = SourceDataTable.Rows[i][0].ToString();
+                    DateTime dt = Convert.ToDateTime(temp);
+                    temp = dt.ToString("dd-MM-yyyy");
+                    if (iterations[i] != temp)
+                    {
+                        throw new AssertFailedException(string.Format("The Schedule Date {0} is not equal to Schedule Date in databse {1}", iterations[i], SourceDataTable.Rows[i][0].ToString()));
+                    }
+                }
+            }
+            catch (Exception exception)
+            {
+                SeleniumHelper.TakeScreenshot();
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
+            }
+        }
+        [Given(@"verify the result of two queries ""(.*)"" on ""(.*)""  through database on Schema ""(.*)""")]
+        [When(@"verify the result of two queries ""(.*)"" on ""(.*)""  through database on Schema ""(.*)""")]
+        [Then(@"verify the result of two queries ""(.*)"" on ""(.*)""  through database on Schema ""(.*)""")]
+        public void ThenVerifyTheResultOfTwoQueriesOnThroughDatabaseOnSchema(string query2, string query1, string schema)
+        {
+            DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
+            DataAccessComponent.DataAccessLink dlink2 = new DataAccessComponent.DataAccessLink();
+            //DataTable SourceDataTable2;
+            if (query1.Contains("{customer_name}"))
+            {
+                query1 = query1.Replace("{customer_name}", context.GetUsername());
+            }
+            if (query2.Contains("{customer_name}"))
+            {
+                query2 = query2.Replace("{customer_name}", context.GetUsername());
+            }
+            if (query1.Contains("{customer_cnic}"))
+            {
+                query1 = query1.Replace("{customer_cnic}", context.GetCustomerCNIC());
+            }
+            if (query2.Contains("{customer_cnic}"))
+            {
+                query2 = query2.Replace("{customer_cnic}", context.GetCustomerCNIC());
+            }
+            try
+            {
+                dlink = new DataAccessComponent.DataAccessLink();
+                DataTable SourceDataTable = dlink.GetDataTable(query1, schema);
+                string message = SourceDataTable.Rows[0][0].ToString();
+
+                dlink2 = new DataAccessComponent.DataAccessLink();
+                DataTable SourceDataTable2 = dlink.GetDataTable(query2, schema);
+                string message2 = SourceDataTable.Rows[0][0].ToString();
+
+                Assert.AreEqual(message, message2);
+
+            }
+            catch (Exception exception)
+            {
+                SeleniumHelper.TakeScreenshot();
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
             }
         }
 

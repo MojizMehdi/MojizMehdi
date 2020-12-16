@@ -19,6 +19,7 @@ using Tamir.SharpSsh;
 using System.Data;
 using OpenQA.Selenium.Interactions;
 using HBLAutomationWeb.Beans;
+using System.Diagnostics;
 
 namespace HBLAutomationWeb.Pages
 {
@@ -189,6 +190,16 @@ namespace HBLAutomationWeb.Pages
             string hex = myColor.R.ToString("X2") + myColor.G.ToString("X2") + myColor.B.ToString("X2");
             return hex;
         }
+        //Return Line No For Exception
+        public static string Get_Error_LineNo_exception(Exception ex)
+        {
+            var st = new StackTrace(ex, true);
+            // Get the top stack frame
+            var frame = st.GetFrame(st.FrameCount - 1);
+            // Get the line number from the stack frame
+            var line = frame.GetFileLineNumber();
+            return (" And Exception Line Number Is " + line.ToString());
+        }
 
 
         ////For Taking Screenshot
@@ -239,10 +250,8 @@ namespace HBLAutomationWeb.Pages
         {
             try
             {
-
                 waitDriver.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
                 {
-
                     IWebElement Value = waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
                     Thread.Sleep(100);
                     Value.Click();
@@ -344,8 +353,6 @@ namespace HBLAutomationWeb.Pages
         {
             try
             {
-
-
                 //Home Page Locator
                 if (locator.Equals("//img[@class='desk-logo']"))
                 {
@@ -358,7 +365,6 @@ namespace HBLAutomationWeb.Pages
                 }
                 else
                 {
-
                     Thread.Sleep(3000);
 
                     waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
@@ -392,8 +398,6 @@ namespace HBLAutomationWeb.Pages
             }
 
         }
-
-
 
         //Method For Rating
         public void rating(string locator)
@@ -464,7 +468,6 @@ namespace HBLAutomationWeb.Pages
                 Thread.Sleep(200);
                 return;
             }
-
         }
 
         //Method For Combobox
@@ -478,6 +481,7 @@ namespace HBLAutomationWeb.Pages
                 Thread.Sleep(2000);
                 var selectElement = new SelectElement(Combobox);
                 var selecteditem = selectElement.Options;
+
                 foreach (var item in selecteditem)
                 {
                     if (item.Text.Contains(value))
@@ -510,8 +514,6 @@ namespace HBLAutomationWeb.Pages
 
                 //}
                 Thread.Sleep(3000);
-
-
             }
 
             catch (ElementNotVisibleException)
@@ -530,11 +532,7 @@ namespace HBLAutomationWeb.Pages
                 throw new Exception("ex message: " + ex.Message);
 
             }
-
-
         }
-
-
 
         //Method For Combobox With Search Field
         public void comboboxSearch(string value, string locator1, string locator2)
@@ -562,8 +560,6 @@ namespace HBLAutomationWeb.Pages
                     throw new AssertFailedException(string.Format("The given value {0} is not present in the list", value));
                 }
                 Thread.Sleep(3000);
-
-
             }
 
             catch (ElementNotVisibleException)
@@ -580,7 +576,6 @@ namespace HBLAutomationWeb.Pages
             catch (Exception ex)
             {
                 throw new Exception("ex message: " + ex.Message);
-
             }
         }
 
@@ -673,7 +668,6 @@ namespace HBLAutomationWeb.Pages
             }
             PressEnter(locator);
             //link.Click();
-
         }
 
         // For Range Slider with count and option for Left and Right arrow Key

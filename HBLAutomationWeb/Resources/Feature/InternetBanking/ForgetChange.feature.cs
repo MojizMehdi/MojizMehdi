@@ -108,6 +108,16 @@ namespace HBLAutomationWeb.Resources.Feature.InternetBanking
                     string is_Password_Reset_Required_Value, 
                     string is_Password_Reset_Required_Query, 
                     string new_Password_Policy_Query, 
+                    string tran_Type_Query, 
+                    string tran_Date_Query, 
+                    string tran_Debit_Query, 
+                    string created_On_Tran_Query, 
+                    string updated_On_Tran_Query, 
+                    string cnic_Tran_Query, 
+                    string customer_Type_Tran_Query, 
+                    string email_Tran_Query, 
+                    string mobile_No_Tran_Query, 
+                    string customer_Type, 
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -183,28 +193,68 @@ this.ScenarioSetup(scenarioInfo);
 #line 39
  testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"{2}\"", is_Password_Reset_Required_Value, is_Password_Reset_Required_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 40
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_UserId\"", login_Id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"{2}\"", customer_Type, customer_Type_Tran_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 41
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_Password\"", new_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"{2}\"", cnic_No, cnic_Tran_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 42
- testRunner.And("I am performing on \"Login_SignIn_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"{2}\"", email, email_Tran_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 43
- testRunner.And("I have given \"\" on \"Login_OTP_field\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify the message \"\" through database on \"{0}\" on Schema \"{1}\"", mobile_No_Tran_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 44
- testRunner.And("I am performing on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"{1}\"", created_On_Tran_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 45
- testRunner.And("I am clicking on \"Signup_SkipBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"{1}\"", updated_On_Tran_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 46
- testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_UserId\"", login_Id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 47
- testRunner.And("I wait 6000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_Password\"", new_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 48
- testRunner.And("verify through \"Welcome\" on \"Login_Success_Text\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am performing on \"Login_SignIn_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 49
- testRunner.And(string.Format("update the data by query \"{0}\" on DIGITAL_CHANNEL_SEC", password_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I have given \"\" on \"Login_OTP_field\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 50
- testRunner.And("I am clicking on \"Login_Logout_opt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am performing on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 51
+ testRunner.And("I am clicking on \"Signup_SkipBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 52
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 53
+ testRunner.And("I wait 6000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 54
+ testRunner.And("verify through \"Welcome\" on \"Login_Success_Text\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 55
+ testRunner.And(string.Format("update the data by query \"{0}\" on DIGITAL_CHANNEL_SEC", password_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 56
+ testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 57
+ testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 58
+ testRunner.And("I select \"Non Financial\" on \"Services_CategoryFilter\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 59
+ testRunner.And("I select \"Password Reset\" on \"Services_Transaction_Type\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 60
+ testRunner.And("I scroll to element \"Services_Clear_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 61
+ testRunner.And("I am performing on \"Services_Search_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 62
+ testRunner.And("I am clicking on \"Forget_Services_Row\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 63
+ testRunner.And(string.Format("verify through database on \"Successful \" on Schema \"{0}\" on \"Pay_MultiBill_SRV_Tr" +
+                        "anStatus\"", db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 64
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"MyAccount_TranPopup_TranType" +
+                        "\"", tran_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 65
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"MyAccount_TranPopup_TranDate" +
+                        "\"", tran_Date_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 66
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Forget_Services_TranPopup_De" +
+                        "bit\"", tran_Debit_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 67
+ testRunner.And("I am clicking on \"Services_Transaction_Close_btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 68
+ testRunner.And("I am clicking on \"Login_Logout_opt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 69
  testRunner.And("I am performing on \"Login_LogoutBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -249,6 +299,24 @@ this.ScenarioSetup(scenarioInfo);
             "mer_cnic}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
             "METER_ID = 1702")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_debit_query", "SELECT DT.DEBIT_CARD_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' order b" +
+            "y 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' or" +
+            "der by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type", "D")]
         public virtual void _2AsAUserIWantToVerifyForgetPassword_ToVerifyThatD_TypeCustomerCanSuccessfullyPerformForgotLoginPasword()
         {
 #line 8
@@ -259,7 +327,15 @@ this._2AsAUserIWantToVerifyForgetPassword("To Verify that D-type customer can su
                     "", "Your login password has changed.", "DIGITAL_CHANNEL_SEC", "FORGOT_PASSWORD True", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
                     "nic}\'", "0", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
                     "mer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
-                    "METER_ID = 1702", new string[] {
+                    "METER_ID = 1702", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.DEBIT_CARD_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+                    "rder by 1 desc", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+                    "rder by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' order b" +
+                    "y 1 desc", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+                    "\' order by 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+                    "\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' or" +
+                    "der by 1 desc", "D", new string[] {
                         "source:Data/ForgetPassword.xlsx"});
 #line hidden
         }
@@ -305,6 +381,24 @@ this._2AsAUserIWantToVerifyForgetPassword("To Verify that D-type customer can su
             "mer_cnic}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
             "METER_ID = 1702")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_debit_query", "SELECT DT.DEBIT_CARD_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' order b" +
+            "y 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' or" +
+            "der by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type", "D")]
         public virtual void _2AsAUserIWantToVerifyForgetPassword_ToVerifyThatD_TypeCustomerCanNotPerformForgotLoginPasswordWithIncorrectLoginID()
         {
 #line 8
@@ -316,7 +410,15 @@ this._2AsAUserIWantToVerifyForgetPassword("To verify that D-type customer can no
                     "", "Your login password has changed.", "DIGITAL_CHANNEL_SEC", "FORGOT_PASSWORD True", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
                     "nic}\'", "0", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
                     "mer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
-                    "METER_ID = 1702", new string[] {
+                    "METER_ID = 1702", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.DEBIT_CARD_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+                    "rder by 1 desc", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+                    "rder by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' order b" +
+                    "y 1 desc", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+                    "\' order by 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+                    "\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' or" +
+                    "der by 1 desc", "D", new string[] {
                         "source:Data/ForgetPassword.xlsx"});
 #line hidden
         }
@@ -362,6 +464,24 @@ this._2AsAUserIWantToVerifyForgetPassword("To verify that D-type customer can no
             "mer_cnic}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
             "METER_ID = 1702")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_debit_query", "SELECT DT.DEBIT_CARD_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' order b" +
+            "y 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' or" +
+            "der by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type", "D")]
         public virtual void _2AsAUserIWantToVerifyForgetPassword_ToVerifyThatD_TypeCustomerCanNotPerformForgotLoginIDWithIncorrectCNIC()
         {
 #line 8
@@ -373,7 +493,15 @@ this._2AsAUserIWantToVerifyForgetPassword("To verify that D-type customer can no
                     "", "Your login password has changed.", "DIGITAL_CHANNEL_SEC", "FORGOT_PASSWORD True", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
                     "nic}\'", "0", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
                     "mer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
-                    "METER_ID = 1702", new string[] {
+                    "METER_ID = 1702", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.DEBIT_CARD_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+                    "rder by 1 desc", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+                    "rder by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' order b" +
+                    "y 1 desc", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+                    "\' order by 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+                    "\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' or" +
+                    "der by 1 desc", "D", new string[] {
                         "source:Data/ForgetPassword.xlsx"});
 #line hidden
         }
@@ -419,6 +547,24 @@ this._2AsAUserIWantToVerifyForgetPassword("To verify that D-type customer can no
             "mer_cnic}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
             "METER_ID = 1702")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_debit_query", "SELECT DT.DEBIT_CARD_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' order b" +
+            "y 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' or" +
+            "der by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type", "D")]
         public virtual void _2AsAUserIWantToVerifyForgetPassword_ToVerifyThatD_TypeCustomerCanNotPerformForgotLoginIDWithIncorrectDebitCardNumber()
         {
 #line 8
@@ -430,7 +576,15 @@ this._2AsAUserIWantToVerifyForgetPassword("To verify that D-type customer can no
                     "", "Your login password has changed.", "DIGITAL_CHANNEL_SEC", "FORGOT_PASSWORD True", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
                     "nic}\'", "0", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
                     "mer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
-                    "METER_ID = 1702", new string[] {
+                    "METER_ID = 1702", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.DEBIT_CARD_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+                    "rder by 1 desc", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+                    "rder by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' order b" +
+                    "y 1 desc", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+                    "\' order by 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+                    "\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' or" +
+                    "der by 1 desc", "D", new string[] {
                         "source:Data/ForgetPassword.xlsx"});
 #line hidden
         }
@@ -476,6 +630,24 @@ this._2AsAUserIWantToVerifyForgetPassword("To verify that D-type customer can no
             "mer_cnic}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
             "METER_ID = 1702")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_debit_query", "SELECT DT.DEBIT_CARD_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' order b" +
+            "y 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' or" +
+            "der by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type", "D")]
         public virtual void _2AsAUserIWantToVerifyForgetPassword_ToVerifyThatD_TypeLockedCustomerCanSuccessfullyPerformForgotLoginPasword()
         {
 #line 8
@@ -487,7 +659,15 @@ this._2AsAUserIWantToVerifyForgetPassword("To Verify that D-type Locked customer
                     "", "Your login password has changed.", "DIGITAL_CHANNEL_SEC", "FORGOT_PASSWORD True", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
                     "nic}\'", "0", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
                     "mer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
-                    "METER_ID = 1702", new string[] {
+                    "METER_ID = 1702", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.DEBIT_CARD_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+                    "rder by 1 desc", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+                    "rder by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' order b" +
+                    "y 1 desc", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+                    "\' order by 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+                    "\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' or" +
+                    "der by 1 desc", "D", new string[] {
                         "source:Data/ForgetPassword.xlsx"});
 #line hidden
         }
@@ -531,6 +711,24 @@ this._2AsAUserIWantToVerifyForgetPassword("To Verify that D-type Locked customer
             "mer_cnic}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
             "METER_ID = 1702")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_debit_query", "SELECT DT.DEBIT_CARD_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' order b" +
+            "y 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' or" +
+            "der by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type", "D")]
         public virtual void _2AsAUserIWantToVerifyForgetPassword_ToVerifyThatD_TypeBlockedCustomerCanNotPerformForgotLoginPasword()
         {
 #line 8
@@ -541,7 +739,15 @@ this._2AsAUserIWantToVerifyForgetPassword("To Verify that D-type Blocked custome
                     "", "Your login password has changed.", "DIGITAL_CHANNEL_SEC", "FORGOT_PASSWORD True", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
                     "nic}\'", "0", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
                     "mer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
-                    "METER_ID = 1702", new string[] {
+                    "METER_ID = 1702", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.DEBIT_CARD_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+                    "rder by 1 desc", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+                    "rder by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' order b" +
+                    "y 1 desc", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+                    "\' order by 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+                    "\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' or" +
+                    "der by 1 desc", "D", new string[] {
                         "source:Data/ForgetPassword.xlsx"});
 #line hidden
         }
@@ -587,6 +793,24 @@ this._2AsAUserIWantToVerifyForgetPassword("To Verify that D-type Blocked custome
             "mer_cnic}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
             "METER_ID = 1702")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_debit_query", "SELECT DT.DEBIT_CARD_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' order b" +
+            "y 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' or" +
+            "der by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type", "D")]
         public virtual void _2AsAUserIWantToVerifyForgetPassword_ToVerifyThatD_TypePartialActivatedCustomerCanNotPerformForgotLoginPasword()
         {
 #line 8
@@ -598,7 +822,15 @@ this._2AsAUserIWantToVerifyForgetPassword("To Verify that D-type Partial Activat
                     "", "Your login password has changed.", "DIGITAL_CHANNEL_SEC", "FORGOT_PASSWORD True", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
                     "nic}\'", "0", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
                     "mer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
-                    "METER_ID = 1702", new string[] {
+                    "METER_ID = 1702", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.DEBIT_CARD_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+                    "rder by 1 desc", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+                    "rder by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' order b" +
+                    "y 1 desc", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+                    "\' order by 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+                    "\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' or" +
+                    "der by 1 desc", "D", new string[] {
                         "source:Data/ForgetPassword.xlsx"});
 #line hidden
         }
@@ -642,6 +874,24 @@ this._2AsAUserIWantToVerifyForgetPassword("To Verify that D-type Partial Activat
             "mer_cnic}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
             "METER_ID = 1702")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_debit_query", "SELECT DT.DEBIT_CARD_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' order b" +
+            "y 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' or" +
+            "der by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type", "C")]
         public virtual void _2AsAUserIWantToVerifyForgetPassword_ToVerifyThatC_TypeCustomerCanSuccessfullyPerformForgotLoginPasword()
         {
 #line 8
@@ -652,7 +902,15 @@ this._2AsAUserIWantToVerifyForgetPassword("To Verify that C-type customer can su
                     "", "Your login password has changed.", "DIGITAL_CHANNEL_SEC", "FORGOT_PASSWORD True", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
                     "nic}\'", "0", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
                     "mer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
-                    "METER_ID = 1702", new string[] {
+                    "METER_ID = 1702", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.DEBIT_CARD_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+                    "rder by 1 desc", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+                    "rder by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' order b" +
+                    "y 1 desc", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+                    "\' order by 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+                    "\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' or" +
+                    "der by 1 desc", "C", new string[] {
                         "source:Data/ForgetPassword.xlsx"});
 #line hidden
         }
@@ -698,6 +956,24 @@ this._2AsAUserIWantToVerifyForgetPassword("To Verify that C-type customer can su
             "mer_cnic}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
             "METER_ID = 1702")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_debit_query", "SELECT DT.DEBIT_CARD_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' order b" +
+            "y 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' or" +
+            "der by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type", "C")]
         public virtual void _2AsAUserIWantToVerifyForgetPassword_ToVerifyThatC_TypeCustomerCanNotPerformForgotLoginPasswordWithIncorrectLoginID()
         {
 #line 8
@@ -709,7 +985,15 @@ this._2AsAUserIWantToVerifyForgetPassword("To verify that C-type customer can no
                     "", "Your login password has changed.", "DIGITAL_CHANNEL_SEC", "FORGOT_PASSWORD True", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
                     "nic}\'", "0", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
                     "mer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
-                    "METER_ID = 1702", new string[] {
+                    "METER_ID = 1702", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.DEBIT_CARD_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+                    "rder by 1 desc", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+                    "rder by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' order b" +
+                    "y 1 desc", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+                    "\' order by 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+                    "\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' or" +
+                    "der by 1 desc", "C", new string[] {
                         "source:Data/ForgetPassword.xlsx"});
 #line hidden
         }
@@ -755,6 +1039,24 @@ this._2AsAUserIWantToVerifyForgetPassword("To verify that C-type customer can no
             "mer_cnic}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
             "METER_ID = 1702")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_debit_query", "SELECT DT.DEBIT_CARD_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' order b" +
+            "y 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' or" +
+            "der by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type", "C")]
         public virtual void _2AsAUserIWantToVerifyForgetPassword_ToVerifyThatC_TypeCustomerCanNotPerformForgotLoginIDWithIncorrectCNIC()
         {
 #line 8
@@ -766,7 +1068,15 @@ this._2AsAUserIWantToVerifyForgetPassword("To verify that C-type customer can no
                     "", "Your login password has changed.", "DIGITAL_CHANNEL_SEC", "FORGOT_PASSWORD True", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
                     "nic}\'", "0", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
                     "mer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
-                    "METER_ID = 1702", new string[] {
+                    "METER_ID = 1702", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.DEBIT_CARD_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+                    "rder by 1 desc", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+                    "rder by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' order b" +
+                    "y 1 desc", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+                    "\' order by 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+                    "\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' or" +
+                    "der by 1 desc", "C", new string[] {
                         "source:Data/ForgetPassword.xlsx"});
 #line hidden
         }
@@ -812,6 +1122,24 @@ this._2AsAUserIWantToVerifyForgetPassword("To verify that C-type customer can no
             "mer_cnic}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
             "METER_ID = 1702")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_debit_query", "SELECT DT.DEBIT_CARD_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' order b" +
+            "y 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' or" +
+            "der by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type", "C")]
         public virtual void _2AsAUserIWantToVerifyForgetPassword_ToVerifyThatC_TypeCustomerCanNotPerformForgotLoginIDWithIncorrectCreditCardNumber()
         {
 #line 8
@@ -823,7 +1151,15 @@ this._2AsAUserIWantToVerifyForgetPassword("To verify that C-type customer can no
                     "", "Your login password has changed.", "DIGITAL_CHANNEL_SEC", "FORGOT_PASSWORD True", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
                     "nic}\'", "0", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
                     "mer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
-                    "METER_ID = 1702", new string[] {
+                    "METER_ID = 1702", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.DEBIT_CARD_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+                    "rder by 1 desc", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+                    "rder by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' order b" +
+                    "y 1 desc", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+                    "\' order by 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+                    "\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' or" +
+                    "der by 1 desc", "C", new string[] {
                         "source:Data/ForgetPassword.xlsx"});
 #line hidden
         }
@@ -869,6 +1205,24 @@ this._2AsAUserIWantToVerifyForgetPassword("To verify that C-type customer can no
             "mer_cnic}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
             "METER_ID = 1702")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_debit_query", "SELECT DT.DEBIT_CARD_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' order b" +
+            "y 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' or" +
+            "der by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type", "C")]
         public virtual void _2AsAUserIWantToVerifyForgetPassword_ToVerifyThatC_TypeCustomerCanNotSuccessfullyPerformForgotLoginPaswordWithIncorrectEmailAddress()
         {
 #line 8
@@ -880,7 +1234,15 @@ this._2AsAUserIWantToVerifyForgetPassword("To Verify that C-type customer can no
                     "", "Your login password has changed.", "DIGITAL_CHANNEL_SEC", "FORGOT_PASSWORD True", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
                     "nic}\'", "0", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
                     "mer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
-                    "METER_ID = 1702", new string[] {
+                    "METER_ID = 1702", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.DEBIT_CARD_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+                    "rder by 1 desc", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+                    "rder by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' order b" +
+                    "y 1 desc", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+                    "\' order by 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+                    "\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' or" +
+                    "der by 1 desc", "C", new string[] {
                         "source:Data/ForgetPassword.xlsx"});
 #line hidden
         }
@@ -926,6 +1288,24 @@ this._2AsAUserIWantToVerifyForgetPassword("To Verify that C-type customer can no
             "mer_cnic}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
             "METER_ID = 1702")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_debit_query", "SELECT DT.DEBIT_CARD_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' order b" +
+            "y 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' or" +
+            "der by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type", "C")]
         public virtual void _2AsAUserIWantToVerifyForgetPassword_ToVerifyThatC_TypeLockedCustomerCanSuccessfullyPerformForgotLoginPasword()
         {
 #line 8
@@ -937,7 +1317,15 @@ this._2AsAUserIWantToVerifyForgetPassword("To Verify that C-type Locked customer
                     "", "Your login password has changed.", "DIGITAL_CHANNEL_SEC", "FORGOT_PASSWORD True", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
                     "nic}\'", "0", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
                     "mer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
-                    "METER_ID = 1702", new string[] {
+                    "METER_ID = 1702", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.DEBIT_CARD_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+                    "rder by 1 desc", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+                    "rder by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' order b" +
+                    "y 1 desc", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+                    "\' order by 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+                    "\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' or" +
+                    "der by 1 desc", "C", new string[] {
                         "source:Data/ForgetPassword.xlsx"});
 #line hidden
         }
@@ -981,6 +1369,24 @@ this._2AsAUserIWantToVerifyForgetPassword("To Verify that C-type Locked customer
             "mer_cnic}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
             "METER_ID = 1702")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_debit_query", "SELECT DT.DEBIT_CARD_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' order b" +
+            "y 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' or" +
+            "der by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type", "C")]
         public virtual void _2AsAUserIWantToVerifyForgetPassword_ToVerifyThatC_TypeBlockedCustomerCanNotPerformForgotLoginPasword()
         {
 #line 8
@@ -991,7 +1397,15 @@ this._2AsAUserIWantToVerifyForgetPassword("To Verify that C-type Blocked custome
                     "", "Your login password has changed.", "DIGITAL_CHANNEL_SEC", "FORGOT_PASSWORD True", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
                     "nic}\'", "0", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
                     "mer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
-                    "METER_ID = 1702", new string[] {
+                    "METER_ID = 1702", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.DEBIT_CARD_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+                    "rder by 1 desc", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+                    "rder by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' order b" +
+                    "y 1 desc", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+                    "\' order by 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+                    "\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' or" +
+                    "der by 1 desc", "C", new string[] {
                         "source:Data/ForgetPassword.xlsx"});
 #line hidden
         }
@@ -1037,6 +1451,24 @@ this._2AsAUserIWantToVerifyForgetPassword("To Verify that C-type Blocked custome
             "mer_cnic}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_password_policy_query", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
             "METER_ID = 1702")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_debit_query", "SELECT DT.DEBIT_CARD_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' order b" +
+            "y 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' or" +
+            "der by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type", "C")]
         public virtual void _2AsAUserIWantToVerifyForgetPassword_ToVerifyThatC_TypePartialActivatedCustomerCanNotPerformForgotLoginPasword()
         {
 #line 8
@@ -1048,12 +1480,40 @@ this._2AsAUserIWantToVerifyForgetPassword("To Verify that C-type Partial Activat
                     "", "Your login password has changed.", "DIGITAL_CHANNEL_SEC", "FORGOT_PASSWORD True", @"SELECT * FROM (SELECT T.LEAD_FIELD2 FROM DC_TRANSACTION T WHERE T.CREATED_ON>=TRUNC(Sysdate) AND T.TRANSACTION_TYPE_ID = '249' AND T.CUSTOMER_INFO_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC='{customer_cnic}') AND T.CLIENT_DEVICE_OS = 'Windows 10' ORDER BY (T.CREATED_ON) desc) WHERE rownum = 1", "select P.LAST_PASSWORD_CHANGED from dc_customer_info P where P.CNIC =\'{customer_c" +
                     "nic}\'", "0", "0", "SELECT P.IS_PASSWORD_RESET_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
                     "mer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
-                    "METER_ID = 1702", new string[] {
+                    "METER_ID = 1702", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.DEBIT_CARD_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+                    "rder by 1 desc", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' o" +
+                    "rder by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' order b" +
+                    "y 1 desc", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+                    "\' order by 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58" +
+                    "\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'58\' or" +
+                    "der by 1 desc", "C", new string[] {
                         "source:Data/ForgetPassword.xlsx"});
 #line hidden
         }
         
-        public virtual void _2AsAUserIWantToVerifyForgetLoginID(string @case, string customer_Type_Query, string cnic_No, string mobile_No, string debit_Card_No, string credit_Card_No, string email_Value, string pin, string success_Message, string[] exampleTags)
+        public virtual void _2AsAUserIWantToVerifyForgetLoginID(
+                    string @case, 
+                    string customer_Type_Query, 
+                    string cnic_No, 
+                    string mobile_No, 
+                    string debit_Card_No, 
+                    string credit_Card_No, 
+                    string email_Value, 
+                    string pin, 
+                    string success_Message, 
+                    string login_Id, 
+                    string login_Password, 
+                    string tran_Type_Query, 
+                    string tran_Date_Query, 
+                    string customer_Type_Tran_Query, 
+                    string cnic_Tran_Query, 
+                    string email_Tran_Query, 
+                    string mobile_No_Tran_Query, 
+                    string created_On_Tran_Query, 
+                    string updated_On_Tran_Query, 
+                    string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "ForgetChange",
@@ -1063,43 +1523,101 @@ this._2AsAUserIWantToVerifyForgetPassword("To Verify that C-type Partial Activat
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2 As a user i want to verify forget Login ID", @__tags);
-#line 62
+#line 78
 this.ScenarioSetup(scenarioInfo);
-#line 63
+#line 79
  testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 64
+#line 80
  testRunner.And(string.Format("I set value in context from data \"{0}\" as \"customer_cnic\"", cnic_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 65
+#line 81
  testRunner.And(string.Format("I set value in context from data \"{0}\" as \"mobile_number\"", mobile_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 66
+#line 82
  testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 67
+#line 83
  testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 68
+#line 84
  testRunner.And("I am clicking on \"Forget_btn_Login\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 69
+#line 85
  testRunner.When(string.Format("I have given \"{0}\" on \"Forget_CNIC\"", cnic_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 70
+#line 86
  testRunner.And("I am performing on \"Forget_Login_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 71
+#line 87
  testRunner.And(string.Format("I set value in context from database \"{0}\" as \"customer_type\" on Schema \"DIGITAL_" +
                         "CHANNEL_SEC\"", customer_Type_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 72
+#line 88
  testRunner.And(string.Format("I have given \"{0}\" on \"Forget_LoginID_Mobile\"", mobile_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 73
+#line 89
  testRunner.And(string.Format("I have given \"{0}\" on \"Forget_LoginID_DebitNo\"", debit_Card_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 74
+#line 90
  testRunner.And(string.Format("I have given \"{0}\" on \"Forget_LoginID_CreditNo\"", credit_Card_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 75
+#line 91
  testRunner.And(string.Format("I have given \"{0}\" on \"Forget_LoginID_CreditEmail\"", email_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 76
+#line 92
  testRunner.And(string.Format("I have given \"{0}\" on \"Forget_LoginID_DebitPin\"", pin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 77
+#line 93
  testRunner.And("I am performing on \"Forget_LoginID_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 78
+#line 94
  testRunner.Then(string.Format("verify through \"{0}\" on \"Forget_Success_LoginMsg\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 79
+#line 95
  testRunner.And("I am performing on \"Forget_Login_FinishBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 96
+ testRunner.And(string.Format("verify the message \"<customer_type>\" through database on \"{0}\" on Schema \"<db_val" +
+                        ">\"", customer_Type_Tran_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 97
+ testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"<db_val>\"", cnic_No, cnic_Tran_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 98
+ testRunner.And(string.Format("verify the message \"<email>\" through database on \"{0}\" on Schema \"<db_val>\"", email_Tran_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 99
+ testRunner.And(string.Format("verify the message \"\" through database on \"{0}\" on Schema \"<db_val>\"", mobile_No_Tran_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 100
+ testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"<db_val>\"", created_On_Tran_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 101
+ testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"<db_val>\"", updated_On_Tran_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 102
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_UserId\"", login_Id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 103
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_Password\"", login_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 104
+ testRunner.And("I am performing on \"Login_SignIn_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 105
+ testRunner.And("I have given \"\" on \"Login_OTP_field\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 106
+ testRunner.And("I am performing on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 107
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 108
+ testRunner.And("I wait 6000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 109
+ testRunner.And("verify through \"Welcome\" on \"Login_Success_Text\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 110
+ testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 111
+ testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 112
+ testRunner.And("I select \"Non Financial\" on \"Services_CategoryFilter\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 113
+ testRunner.And("I select \"Change User Credentials\" on \"Services_Transaction_Type\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 114
+ testRunner.And("I scroll to element \"Services_Clear_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 115
+ testRunner.And("I am performing on \"Services_Search_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 116
+ testRunner.And("I am clicking on \"Forget_ChangeLogin_Services_Row\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 117
+ testRunner.And("verify through database on \"Successful \" on Schema \"<db_val>\" on \"Pay_MultiBill_S" +
+                    "RV_TranStatus\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 118
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"<db_val>\" on \"MyAccount_TranPopup_Tra" +
+                        "nType\"", tran_Type_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 119
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"<db_val>\" on \"MyAccount_TranPopup_Tra" +
+                        "nDate\"", tran_Date_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 120
+ testRunner.And("I am clicking on \"Services_Transaction_Close_btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 121
+ testRunner.And("I am clicking on \"Login_Logout_opt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 122
+ testRunner.And("I am performing on \"Login_LogoutBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1122,11 +1640,35 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pin", "1234")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
             " with HBL.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_id", "CHEETA1988")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_password", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "C")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' order b" +
+            "y 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' or" +
+            "der by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' o" +
+            "rder by 1 desc")]
         public virtual void _2AsAUserIWantToVerifyForgetLoginID_ToVerifyThatC_TypeCustomerCanSuccessfullyPerformForgotLoginID()
         {
-#line 62
+#line 78
 this._2AsAUserIWantToVerifyForgetLoginID("To verify that C-type customer can successfully perform Forgot Login ID", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "3660178807169", "03008381621", "", "4902870004884109", "farooq.leo@hotmail.com", "1234", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
-                    " with HBL.", new string[] {
+                    " with HBL.", "CHEETA1988", "pakistan1", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "C", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+                    "\' order by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' order b" +
+                    "y 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+                    "\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' or" +
+                    "der by 1 desc", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' o" +
+                    "rder by 1 desc", new string[] {
                         "source:Data/ForgetLoginID.xlsx"});
 #line hidden
         }
@@ -1149,11 +1691,35 @@ this._2AsAUserIWantToVerifyForgetLoginID("To verify that C-type customer can suc
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pin", "1234")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
             " with HBL.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_id", "LOGINID123")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_password", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "D")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' order b" +
+            "y 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' or" +
+            "der by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' o" +
+            "rder by 1 desc")]
         public virtual void _2AsAUserIWantToVerifyForgetLoginID_ToVerifyThatD_TypeCustomerCanSuccessfullyPerformForgotLoginID()
         {
-#line 62
+#line 78
 this._2AsAUserIWantToVerifyForgetLoginID("To verify that D-type customer can successfully perform Forgot Login ID", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "1350314051455", "03110204994", "2205430001256567", "", "", "1234", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
-                    " with HBL.", new string[] {
+                    " with HBL.", "LOGINID123", "pakistan1", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "D", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+                    "\' order by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' order b" +
+                    "y 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+                    "\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' or" +
+                    "der by 1 desc", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' o" +
+                    "rder by 1 desc", new string[] {
                         "source:Data/ForgetLoginID.xlsx"});
 #line hidden
         }
@@ -1178,12 +1744,36 @@ this._2AsAUserIWantToVerifyForgetLoginID("To verify that D-type customer can suc
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pin", "1234")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
             " with HBL.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_id", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_password", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "D")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' order b" +
+            "y 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' or" +
+            "der by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' o" +
+            "rder by 1 desc")]
         public virtual void _2AsAUserIWantToVerifyForgetLoginID_ToVerifyThatD_TypeCustomerCanNotPerformForgotLoginIDWithIncorrectCNIC()
         {
-#line 62
+#line 78
 this._2AsAUserIWantToVerifyForgetLoginID("To verify that D-type customer can not perform Forgot Login ID with incorrect CNI" +
                     "C", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "4552102554255", "03110204994", "2205430001256567", "", "", "1234", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
-                    " with HBL.", new string[] {
+                    " with HBL.", "", "", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "D", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+                    "\' order by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' order b" +
+                    "y 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+                    "\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' or" +
+                    "der by 1 desc", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' o" +
+                    "rder by 1 desc", new string[] {
                         "source:Data/ForgetLoginID.xlsx"});
 #line hidden
         }
@@ -1208,27 +1798,51 @@ this._2AsAUserIWantToVerifyForgetLoginID("To verify that D-type customer can not
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pin", "1234")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
             " with HBL.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_id", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_password", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "D")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' order b" +
+            "y 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' or" +
+            "der by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' o" +
+            "rder by 1 desc")]
         public virtual void _2AsAUserIWantToVerifyForgetLoginID_ToVerifyThatD_TypeCustomerCanNotPerformForgotLoginIDWithIncorrectMobileNumber()
         {
-#line 62
+#line 78
 this._2AsAUserIWantToVerifyForgetLoginID("To verify that D-type customer can not perform Forgot Login ID with incorrect Mob" +
                     "ile Number", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "1350314051455", "03425452587", "2205430001256567", "", "", "1234", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
-                    " with HBL.", new string[] {
+                    " with HBL.", "", "", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "D", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+                    "\' order by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' order b" +
+                    "y 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+                    "\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' or" +
+                    "der by 1 desc", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' o" +
+                    "rder by 1 desc", new string[] {
                         "source:Data/ForgetLoginID.xlsx"});
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify forget Login ID: To verify that D-type customer can " +
-            "successfully perform Forgot Login ID with incorrect Debit Card number")]
+            "not perform Forgot Login ID with incorrect Debit no")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetLoginID")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetLoginID.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that D-type customer can successfully perform Forgot Login ID with inco" +
-            "rrect Debit Card number")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that D-type customer can successfully perform Forgot Login ID with inco" +
-            "rrect Debit Card number")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that D-type customer can not perform Forgot Login ID with incorrect Deb" +
+            "it no")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that D-type customer can not perform Forgot Login ID with incorrect Deb" +
+            "it no")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_no", "1350314051455")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no", "03110204994")]
@@ -1238,12 +1852,36 @@ this._2AsAUserIWantToVerifyForgetLoginID("To verify that D-type customer can not
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pin", "1234")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
             " with HBL.")]
-        public virtual void _2AsAUserIWantToVerifyForgetLoginID_ToVerifyThatD_TypeCustomerCanSuccessfullyPerformForgotLoginIDWithIncorrectDebitCardNumber()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_id", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_password", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "D")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' order b" +
+            "y 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' or" +
+            "der by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' o" +
+            "rder by 1 desc")]
+        public virtual void _2AsAUserIWantToVerifyForgetLoginID_ToVerifyThatD_TypeCustomerCanNotPerformForgotLoginIDWithIncorrectDebitNo()
         {
-#line 62
-this._2AsAUserIWantToVerifyForgetLoginID("To verify that D-type customer can successfully perform Forgot Login ID with inco" +
-                    "rrect Debit Card number", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "1350314051455", "03110204994", "2205430001251234", "", "", "1234", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
-                    " with HBL.", new string[] {
+#line 78
+this._2AsAUserIWantToVerifyForgetLoginID("To verify that D-type customer can not perform Forgot Login ID with incorrect Deb" +
+                    "it no", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "1350314051455", "03110204994", "2205430001251234", "", "", "1234", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
+                    " with HBL.", "", "", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "D", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+                    "\' order by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' order b" +
+                    "y 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+                    "\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' or" +
+                    "der by 1 desc", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' o" +
+                    "rder by 1 desc", new string[] {
                         "source:Data/ForgetLoginID.xlsx"});
 #line hidden
         }
@@ -1268,27 +1906,51 @@ this._2AsAUserIWantToVerifyForgetLoginID("To verify that D-type customer can suc
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pin", "1234")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
             " with HBL.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_id", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_password", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "C")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' order b" +
+            "y 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' or" +
+            "der by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' o" +
+            "rder by 1 desc")]
         public virtual void _2AsAUserIWantToVerifyForgetLoginID_ToVerifyThatC_TypeCustomerCanNotPerformForgotLoginIDWithIncorrectCNIC()
         {
-#line 62
+#line 78
 this._2AsAUserIWantToVerifyForgetLoginID("To verify that C-type customer can not perform Forgot Login ID with incorrect CNI" +
                     "C", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "8445201335477", "03008381621", "", "4902870004884109", "farooq.leo@hotmail.com", "1234", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
-                    " with HBL.", new string[] {
+                    " with HBL.", "", "", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "C", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+                    "\' order by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' order b" +
+                    "y 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+                    "\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' or" +
+                    "der by 1 desc", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' o" +
+                    "rder by 1 desc", new string[] {
                         "source:Data/ForgetLoginID.xlsx"});
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify forget Login ID: To verify that C-type customer can " +
-            "not perform Forgot Login ID with incorrect Mobile Number")]
+            "not perform Forgot Login ID with incorrect Mobile")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetLoginID")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetLoginID.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that C-type customer can not perform Forgot Login ID with incorrect Mob" +
-            "ile Number")]
+            "ile")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that C-type customer can not perform Forgot Login ID with incorrect Mob" +
-            "ile Number")]
+            "ile")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_no", "3660178807169")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no", "03564587547")]
@@ -1298,27 +1960,51 @@ this._2AsAUserIWantToVerifyForgetLoginID("To verify that C-type customer can not
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pin", "1234")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
             " with HBL.")]
-        public virtual void _2AsAUserIWantToVerifyForgetLoginID_ToVerifyThatC_TypeCustomerCanNotPerformForgotLoginIDWithIncorrectMobileNumber()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_id", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_password", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "C")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' order b" +
+            "y 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' or" +
+            "der by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' o" +
+            "rder by 1 desc")]
+        public virtual void _2AsAUserIWantToVerifyForgetLoginID_ToVerifyThatC_TypeCustomerCanNotPerformForgotLoginIDWithIncorrectMobile()
         {
-#line 62
+#line 78
 this._2AsAUserIWantToVerifyForgetLoginID("To verify that C-type customer can not perform Forgot Login ID with incorrect Mob" +
-                    "ile Number", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "3660178807169", "03564587547", "", "4902870004884109", "farooq.leo@hotmail.com", "1234", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
-                    " with HBL.", new string[] {
+                    "ile", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "3660178807169", "03564587547", "", "4902870004884109", "farooq.leo@hotmail.com", "1234", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
+                    " with HBL.", "", "", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "C", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+                    "\' order by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' order b" +
+                    "y 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+                    "\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' or" +
+                    "der by 1 desc", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' o" +
+                    "rder by 1 desc", new string[] {
                         "source:Data/ForgetLoginID.xlsx"});
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify forget Login ID: To verify that C-type customer can " +
-            "successfully perform Forgot Login ID with incorrect Credit Card number")]
+            "not perform Forgot Login ID with incorrect Credit Card no")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetLoginID")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetLoginID.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that C-type customer can successfully perform Forgot Login ID with inco" +
-            "rrect Credit Card number")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that C-type customer can successfully perform Forgot Login ID with inco" +
-            "rrect Credit Card number")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that C-type customer can not perform Forgot Login ID with incorrect Cre" +
+            "dit Card no")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that C-type customer can not perform Forgot Login ID with incorrect Cre" +
+            "dit Card no")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_no", "3660178807169")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no", "03008381621")]
@@ -1328,27 +2014,51 @@ this._2AsAUserIWantToVerifyForgetLoginID("To verify that C-type customer can not
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pin", "1234")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
             " with HBL.")]
-        public virtual void _2AsAUserIWantToVerifyForgetLoginID_ToVerifyThatC_TypeCustomerCanSuccessfullyPerformForgotLoginIDWithIncorrectCreditCardNumber()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_id", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_password", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "C")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' order b" +
+            "y 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' or" +
+            "der by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' o" +
+            "rder by 1 desc")]
+        public virtual void _2AsAUserIWantToVerifyForgetLoginID_ToVerifyThatC_TypeCustomerCanNotPerformForgotLoginIDWithIncorrectCreditCardNo()
         {
-#line 62
-this._2AsAUserIWantToVerifyForgetLoginID("To verify that C-type customer can successfully perform Forgot Login ID with inco" +
-                    "rrect Credit Card number", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "3660178807169", "03008381621", "", "4902845454884109", "farooq.leo@hotmail.com", "1234", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
-                    " with HBL.", new string[] {
+#line 78
+this._2AsAUserIWantToVerifyForgetLoginID("To verify that C-type customer can not perform Forgot Login ID with incorrect Cre" +
+                    "dit Card no", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "3660178807169", "03008381621", "", "4902845454884109", "farooq.leo@hotmail.com", "1234", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
+                    " with HBL.", "", "", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "C", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+                    "\' order by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' order b" +
+                    "y 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+                    "\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' or" +
+                    "der by 1 desc", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' o" +
+                    "rder by 1 desc", new string[] {
                         "source:Data/ForgetLoginID.xlsx"});
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 As a user i want to verify forget Login ID: To verify that C-type customer can " +
-            "successfully perform Forgot Login ID with incorrect Email Address")]
+            "not perform Forgot Login ID with incorrect Email ")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ForgetChange")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetChange")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetLoginID")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgetLoginID.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that C-type customer can successfully perform Forgot Login ID with inco" +
-            "rrect Email Address")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that C-type customer can successfully perform Forgot Login ID with inco" +
-            "rrect Email Address")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify that C-type customer can not perform Forgot Login ID with incorrect Ema" +
+            "il ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify that C-type customer can not perform Forgot Login ID with incorrect Ema" +
+            "il ")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_no", "3660178807169")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no", "03008381621")]
@@ -1358,12 +2068,36 @@ this._2AsAUserIWantToVerifyForgetLoginID("To verify that C-type customer can suc
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pin", "1234")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
             " with HBL.")]
-        public virtual void _2AsAUserIWantToVerifyForgetLoginID_ToVerifyThatC_TypeCustomerCanSuccessfullyPerformForgotLoginIDWithIncorrectEmailAddress()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_id", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_password", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "C")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' order b" +
+            "y 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' or" +
+            "der by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' o" +
+            "rder by 1 desc")]
+        public virtual void _2AsAUserIWantToVerifyForgetLoginID_ToVerifyThatC_TypeCustomerCanNotPerformForgotLoginIDWithIncorrectEmail()
         {
-#line 62
-this._2AsAUserIWantToVerifyForgetLoginID("To verify that C-type customer can successfully perform Forgot Login ID with inco" +
-                    "rrect Email Address", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "3660178807169", "03008381621", "", "4902870004884109", "shoaib.qureshi@hbl.com", "1234", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
-                    " with HBL.", new string[] {
+#line 78
+this._2AsAUserIWantToVerifyForgetLoginID("To verify that C-type customer can not perform Forgot Login ID with incorrect Ema" +
+                    "il ", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "3660178807169", "03008381621", "", "4902870004884109", "shoaib.qureshi@hbl.com", "1234", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
+                    " with HBL.", "", "", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "C", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+                    "\' order by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' order b" +
+                    "y 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+                    "\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' or" +
+                    "der by 1 desc", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' o" +
+                    "rder by 1 desc", new string[] {
                         "source:Data/ForgetLoginID.xlsx"});
 #line hidden
         }
@@ -1386,11 +2120,35 @@ this._2AsAUserIWantToVerifyForgetLoginID("To verify that C-type customer can suc
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pin", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
             " with HBL.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_id", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_password", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "D")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' order b" +
+            "y 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' or" +
+            "der by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' o" +
+            "rder by 1 desc")]
         public virtual void _2AsAUserIWantToVerifyForgetLoginID_ToVerifyThatBlockedUserCanNotPerformForgotLoginIDJourney()
         {
-#line 62
+#line 78
 this._2AsAUserIWantToVerifyForgetLoginID("To verify that Blocked user can not perform Forgot Login ID journey", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "3630238205916", "", "", "", "", "", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
-                    " with HBL.", new string[] {
+                    " with HBL.", "", "", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "D", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+                    "\' order by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' order b" +
+                    "y 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+                    "\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' or" +
+                    "der by 1 desc", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' o" +
+                    "rder by 1 desc", new string[] {
                         "source:Data/ForgetLoginID.xlsx"});
 #line hidden
         }
@@ -1413,11 +2171,35 @@ this._2AsAUserIWantToVerifyForgetLoginID("To verify that Blocked user can not pe
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pin", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
             " with HBL.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_id", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:login_password", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "D")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' order b" +
+            "y 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+            "\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' or" +
+            "der by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' o" +
+            "rder by 1 desc")]
         public virtual void _2AsAUserIWantToVerifyForgetLoginID_ToVerifyThatPartialActivatedUserCanNotPerformForgotLoginIDJourney()
         {
-#line 62
+#line 78
 this._2AsAUserIWantToVerifyForgetLoginID("To verify that Partial Activated user can not perform Forgot Login ID journey", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "4250148850220", "", "", "", "", "", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
-                    " with HBL.", new string[] {
+                    " with HBL.", "", "", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "D", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+                    "\' order by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' order b" +
+                    "y 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54" +
+                    "\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' or" +
+                    "der by 1 desc", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'54\' o" +
+                    "rder by 1 desc", new string[] {
                         "source:Data/ForgetLoginID.xlsx"});
 #line hidden
         }
@@ -1454,6 +2236,16 @@ this._2AsAUserIWantToVerifyForgetLoginID("To verify that Partial Activated user 
                     string is_Account_Blocked_Query, 
                     string is_Account_Locked_Query, 
                     string is_Tran_Password_Locked_Query, 
+                    string tran_Type_Query, 
+                    string tran_Date_Query, 
+                    string created_On_Tran_Query, 
+                    string updated_On_Tran_Query, 
+                    string cnic_Tran_Query, 
+                    string customer_Type_Tran_Query, 
+                    string email_Tran_Query, 
+                    string mobile_No_Tran_Query, 
+                    string customer_Type, 
+                    string new_Login_Id_Tran_Query, 
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -1464,112 +2256,149 @@ this._2AsAUserIWantToVerifyForgetLoginID("To verify that Partial Activated user 
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2 As a user i want to verify Change Login ID", @__tags);
-#line 88
+#line 132
 this.ScenarioSetup(scenarioInfo);
-#line 89
+#line 133
  testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 90
+#line 134
  testRunner.And(string.Format("I set value in context from data \"{0}\" as \"customer_cnic\"", cnic), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 91
+#line 135
  testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 92
+#line 136
  testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 93
+#line 137
  testRunner.And("I am clicking on \"Forget_btn_Login\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 94
+#line 138
  testRunner.And("I am clicking on \"Forget_ChangeLoginNav\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 95
+#line 139
  testRunner.And(string.Format("I have given \"{0}\" on \"Forget_ChangeCNIC\"", cnic), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 96
+#line 140
  testRunner.When("I am performing on \"Forget_ChangeLoginNextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 97
+#line 141
  testRunner.And(string.Format("I set value in context from database \"{0}\" as \"customer_type\" on Schema \"{1}\"", customer_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 98
+#line 142
  testRunner.And(string.Format("I set value in context from database \"{0}\" as \"customer_info_id\" on Schema \"{1}\"", customer_Info_Id_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 99
+#line 143
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Forget_ChangeLogin_PassPolic" +
                         "y\"", change_Pass_Policy_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 100
+#line 144
  testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Change_DebitNo\"", debit_Card), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 101
+#line 145
  testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Change_DebitPin\"", card_Pin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 102
+#line 146
  testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Change_CreditNo\"", credit_Card), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 103
+#line 147
  testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Change_CreditEmail\"", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 104
+#line 148
  testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Change_NewLogin\"", new_Login_Id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 105
+#line 149
  testRunner.And("I am performing on \"Forget_Change_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 106
+#line 150
  testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 107
+#line 151
  testRunner.And(string.Format("I set value in context from database \"{0}\" as \"mobile_number\" on Schema \"{1}\"", mobile_No_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 108
+#line 152
  testRunner.And(string.Format("verify through \"{0}\" on \"Forget_Change_OTPMsg\"", oTP_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 109
+#line 153
  testRunner.And("I set value in context from data \"true\" as \"change_loginID_check\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 110
+#line 154
  testRunner.And("I have given \"\" on \"Login_OTP_field\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 111
+#line 155
  testRunner.And("I am performing on \"Forget_Change_OTPNextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 112
+#line 156
  testRunner.And(string.Format("I have given \"{0}\" on \"Forget_LoginPass\"", new_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 113
+#line 157
  testRunner.And(string.Format("I have given \"{0}\" on \"Forget_LoginRePass\"", new_Re_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 114
+#line 158
  testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Change_LoginTran\"", tran_Pass), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 115
+#line 159
  testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Change_LoginReTran\"", new_Tran_Re_Pass), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 116
+#line 160
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Forget_Policy\"", new_Password_Policy_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 117
+#line 161
  testRunner.And("I am performing on \"Forget_Change_FinishBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 118
+#line 162
  testRunner.Then(string.Format("verify through \"{0}\" on \"Forget_SuccessMsg\"", success_Message_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 119
+#line 163
  testRunner.And("I am performing on \"Forget_OkBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 120
+#line 164
  testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"{2}\"", new_Login_Id, new_Login_Id_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 121
+#line 165
  testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"{1}\"", last_Tran_Pass_Change_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 122
+#line 166
  testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"{1}\"", last_Pass_Change_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 123
- testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"DIGITAL_CHANNEL_SEC" +
-                        "\"", is_Password_Change_Required_Value, is_Password_Change_Required_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 124
- testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"DIGITAL_CHANNEL_SEC" +
-                        "\"", is_Password_Reset_Required_Value, is_Password_Reset_Required_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 125
- testRunner.And(string.Format("verify the message \"0\" through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", is_Account_Blocked_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 126
- testRunner.And(string.Format("verify the message \"0\" through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", is_Account_Locked_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 127
- testRunner.And(string.Format("verify the message \"0\" through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", is_Tran_Password_Locked_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 128
+#line 167
+ testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"{2}\"", is_Password_Change_Required_Value, is_Password_Change_Required_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 168
+ testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"{2}\"", is_Password_Reset_Required_Value, is_Password_Reset_Required_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 169
+ testRunner.And(string.Format("verify the message \"0\" through database on \"{0}\" on Schema \"{1}\"", is_Account_Blocked_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 170
+ testRunner.And(string.Format("verify the message \"0\" through database on \"{0}\" on Schema \"{1}\"", is_Account_Locked_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 171
+ testRunner.And(string.Format("verify the message \"0\" through database on \"{0}\" on Schema \"{1}\"", is_Tran_Password_Locked_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 172
+ testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"{2}\"", customer_Type, customer_Type_Tran_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 173
+ testRunner.And(string.Format("verify the message \"<cnic_no>\" through database on \"{0}\" on Schema \"{1}\"", cnic_Tran_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 174
+ testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"{2}\"", email, email_Tran_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 175
+ testRunner.And(string.Format("verify the message \"\" through database on \"{0}\" on Schema \"{1}\"", mobile_No_Tran_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 176
+ testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"{2}\"", new_Login_Id, new_Login_Id_Tran_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 177
+ testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"{1}\"", created_On_Tran_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 178
+ testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"{1}\"", updated_On_Tran_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 179
  testRunner.And(string.Format("I have given \"{0}\" on \"Login_UserId\"", new_Login_Id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 129
+#line 180
  testRunner.And(string.Format("I have given \"{0}\" on \"Login_Password\"", new_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 130
+#line 181
  testRunner.And("I am performing on \"Login_SignIn_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 131
+#line 182
  testRunner.And("I have given \"\" on \"Login_OTP_field\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 132
+#line 183
  testRunner.And("I am performing on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 133
+#line 184
  testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 134
+#line 185
  testRunner.And("I wait 6000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 135
+#line 186
  testRunner.And("verify through \"Welcome\" on \"Login_Success_Text\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 136
+#line 187
  testRunner.And(string.Format("update the data by query \"{0}\" on DIGITAL_CHANNEL_SEC", name_Update_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 137
+#line 188
  testRunner.And("I wait 6000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 138
+#line 189
+ testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 190
+ testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 191
+ testRunner.And("I select \"Non Financial\" on \"Services_CategoryFilter\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 192
+ testRunner.And("I select \"Change User Credentials\" on \"Services_Transaction_Type\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 193
+ testRunner.And("I scroll to element \"Services_Clear_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 194
+ testRunner.And("I am performing on \"Services_Search_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 195
+ testRunner.And("I am clicking on \"Forget_Change_Services_Row\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 196
+ testRunner.And(string.Format("verify through database on \"Successful \" on Schema \"{0}\" on \"Pay_MultiBill_SRV_Tr" +
+                        "anStatus\"", db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 197
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"MyAccount_TranPopup_TranType" +
+                        "\"", tran_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 198
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"MyAccount_TranPopup_TranDate" +
+                        "\"", tran_Date_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 199
+ testRunner.And("I am clicking on \"Services_Transaction_Close_btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 200
  testRunner.And("I am clicking on \"Login_Logout_opt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 139
+#line 201
  testRunner.And("I am performing on \"Login_LogoutBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1628,9 +2457,28 @@ this.ScenarioSetup(scenarioInfo);
             "\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_tran_password_locked_query", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
             "\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' order " +
+            "by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+            "8\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+            "8\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type", "D")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id_tran_query", "SELECT DT.LOGIN_NAME FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
         public virtual void _2AsAUserIWantToVerifyChangeLoginID_ToCheckThatIfEnteredDebitCardNumberIsNotTaggedWithEnteredCNIC()
         {
-#line 88
+#line 132
 this._2AsAUserIWantToVerifyChangeLoginID("To check that if Entered Debit Card Number is not tagged with Entered CNIC", "4220169001163", "2205430001256567", "1234", "", "", "autom555", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "pakistan2", "pakistan1", "pakistan1", "pakistan2", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
                     "r new password to login.", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
                     "mer_cnic}\'", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
@@ -1645,7 +2493,16 @@ this._2AsAUserIWantToVerifyChangeLoginID("To check that if Entered Debit Card Nu
                     "AMETER_ID = 1702", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
                     "}\'", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
                     "\'", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
-                    "\'", new string[] {
+                    "\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' order " +
+                    "by 1 desc", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+                    "8\' order by 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+                    "8\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' o" +
+                    "rder by 1 desc", "D", "SELECT DT.LOGIN_NAME FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", new string[] {
                         "source:Data/ChangeLoginID.xlsx"});
 #line hidden
         }
@@ -1703,9 +2560,28 @@ this._2AsAUserIWantToVerifyChangeLoginID("To check that if Entered Debit Card Nu
             "\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_tran_password_locked_query", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
             "\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' order " +
+            "by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+            "8\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+            "8\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type", "D")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id_tran_query", "SELECT DT.LOGIN_NAME FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
         public virtual void _2AsAUserIWantToVerifyChangeLoginID_ToCheckIfUserEntersInvalidDebitCardNumber()
         {
-#line 88
+#line 132
 this._2AsAUserIWantToVerifyChangeLoginID("To check if user enters invalid Debit card number", "4220169001163", "5366190009708854", "1234", "", "", "autom555", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "pakistan2", "pakistan1", "pakistan1", "pakistan2", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
                     "r new password to login.", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
                     "mer_cnic}\'", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
@@ -1720,7 +2596,16 @@ this._2AsAUserIWantToVerifyChangeLoginID("To check if user enters invalid Debit 
                     "AMETER_ID = 1702", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
                     "}\'", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
                     "\'", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
-                    "\'", new string[] {
+                    "\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' order " +
+                    "by 1 desc", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+                    "8\' order by 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+                    "8\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' o" +
+                    "rder by 1 desc", "D", "SELECT DT.LOGIN_NAME FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", new string[] {
                         "source:Data/ChangeLoginID.xlsx"});
 #line hidden
         }
@@ -1778,9 +2663,28 @@ this._2AsAUserIWantToVerifyChangeLoginID("To check if user enters invalid Debit 
             "\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_tran_password_locked_query", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
             "\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' order " +
+            "by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+            "8\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+            "8\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type", "D")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id_tran_query", "SELECT DT.LOGIN_NAME FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
         public virtual void _2AsAUserIWantToVerifyChangeLoginID_ToCheckThatLoginIDFieldFollowsTheLoginIDPolicy()
         {
-#line 88
+#line 132
 this._2AsAUserIWantToVerifyChangeLoginID("To check that Login ID field follows the Login ID Policy", "4220169001163", "5366190009706181", "1234", "", "", "auto", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "pakistan2", "pakistan1", "pakistan1", "pakistan2", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
                     "r new password to login.", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
                     "mer_cnic}\'", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
@@ -1795,7 +2699,16 @@ this._2AsAUserIWantToVerifyChangeLoginID("To check that Login ID field follows t
                     "AMETER_ID = 1702", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
                     "}\'", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
                     "\'", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
-                    "\'", new string[] {
+                    "\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' order " +
+                    "by 1 desc", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+                    "8\' order by 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+                    "8\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' o" +
+                    "rder by 1 desc", "D", "SELECT DT.LOGIN_NAME FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", new string[] {
                         "source:Data/ChangeLoginID.xlsx"});
 #line hidden
         }
@@ -1855,9 +2768,28 @@ this._2AsAUserIWantToVerifyChangeLoginID("To check that Login ID field follows t
             "\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_tran_password_locked_query", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
             "\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' order " +
+            "by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+            "8\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+            "8\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type", "D")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id_tran_query", "SELECT DT.LOGIN_NAME FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
         public virtual void _2AsAUserIWantToVerifyChangeLoginID_ToVerifyThatDebitCardNumberFieldDoesNotAcceptMoreOrLessThanThe16Digits()
         {
-#line 88
+#line 132
 this._2AsAUserIWantToVerifyChangeLoginID("To verify that Debit card number field does not accept more or less than the 16 d" +
                     "igits", "4220169001163", "536619006181", "1234", "", "", "autom555", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "pakistan2", "pakistan1", "pakistan1", "pakistan2", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
                     "r new password to login.", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
@@ -1873,7 +2805,16 @@ this._2AsAUserIWantToVerifyChangeLoginID("To verify that Debit card number field
                     "AMETER_ID = 1702", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
                     "}\'", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
                     "\'", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
-                    "\'", new string[] {
+                    "\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' order " +
+                    "by 1 desc", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+                    "8\' order by 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+                    "8\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' o" +
+                    "rder by 1 desc", "D", "SELECT DT.LOGIN_NAME FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", new string[] {
                         "source:Data/ChangeLoginID.xlsx"});
 #line hidden
         }
@@ -1933,9 +2874,28 @@ this._2AsAUserIWantToVerifyChangeLoginID("To verify that Debit card number field
             "\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_tran_password_locked_query", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
             "\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' order " +
+            "by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+            "8\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+            "8\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type", "D")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id_tran_query", "SELECT DT.LOGIN_NAME FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
         public virtual void _2AsAUserIWantToVerifyChangeLoginID_ToVerifyThatDebitCardPINFieldDoesNotAcceptMoreOrLessThanThe4Digits()
         {
-#line 88
+#line 132
 this._2AsAUserIWantToVerifyChangeLoginID("To verify that Debit card PIN field does not accept more or less than the 4 digit" +
                     "s", "4220169001163", "5366190009706181", "12", "", "", "autom555", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "pakistan2", "pakistan1", "pakistan1", "pakistan2", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
                     "r new password to login.", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
@@ -1951,7 +2911,16 @@ this._2AsAUserIWantToVerifyChangeLoginID("To verify that Debit card PIN field do
                     "AMETER_ID = 1702", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
                     "}\'", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
                     "\'", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
-                    "\'", new string[] {
+                    "\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' order " +
+                    "by 1 desc", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+                    "8\' order by 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+                    "8\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' o" +
+                    "rder by 1 desc", "D", "SELECT DT.LOGIN_NAME FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", new string[] {
                         "source:Data/ChangeLoginID.xlsx"});
 #line hidden
         }
@@ -2009,9 +2978,28 @@ this._2AsAUserIWantToVerifyChangeLoginID("To verify that Debit card PIN field do
             "\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_tran_password_locked_query", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
             "\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' order " +
+            "by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+            "8\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+            "8\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type", "D")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id_tran_query", "SELECT DT.LOGIN_NAME FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
         public virtual void _2AsAUserIWantToVerifyChangeLoginID_ToCheckThatAlreadyExistingLoginIDCanNotBeAssignedToAnyOtherUser()
         {
-#line 88
+#line 132
 this._2AsAUserIWantToVerifyChangeLoginID("To check that already existing Login ID can not be assigned to any other user", "4220169001163", "5366190009706181", "1234", "", "", "rajawaheed10", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "pakistan2", "pakistan1", "pakistan1", "pakistan2", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
                     "r new password to login.", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
                     "mer_cnic}\'", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
@@ -2026,7 +3014,16 @@ this._2AsAUserIWantToVerifyChangeLoginID("To check that already existing Login I
                     "AMETER_ID = 1702", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
                     "}\'", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
                     "\'", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
-                    "\'", new string[] {
+                    "\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' order " +
+                    "by 1 desc", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+                    "8\' order by 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+                    "8\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' o" +
+                    "rder by 1 desc", "D", "SELECT DT.LOGIN_NAME FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", new string[] {
                         "source:Data/ChangeLoginID.xlsx"});
 #line hidden
         }
@@ -2084,9 +3081,28 @@ this._2AsAUserIWantToVerifyChangeLoginID("To check that already existing Login I
             "\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_tran_password_locked_query", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
             "\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' order " +
+            "by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+            "8\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+            "8\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type", "D")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id_tran_query", "SELECT DT.LOGIN_NAME FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
         public virtual void _2AsAUserIWantToVerifyChangeLoginID_ToCheckThatActiveDebitCardCustomerCanSuccessfullyChangeLoginID()
         {
-#line 88
+#line 132
 this._2AsAUserIWantToVerifyChangeLoginID("To check that Active Debit Card customer can successfully change Login ID", "4220169001163", "5366190009706181", "1234", "", "", "autom555", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "pakistan2", "pakistan1", "pakistan1", "pakistan2", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
                     "r new password to login.", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
                     "mer_cnic}\'", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
@@ -2101,7 +3117,16 @@ this._2AsAUserIWantToVerifyChangeLoginID("To check that Active Debit Card custom
                     "AMETER_ID = 1702", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
                     "}\'", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
                     "\'", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
-                    "\'", new string[] {
+                    "\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' order " +
+                    "by 1 desc", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+                    "8\' order by 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+                    "8\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' o" +
+                    "rder by 1 desc", "D", "SELECT DT.LOGIN_NAME FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", new string[] {
                         "source:Data/ChangeLoginID.xlsx"});
 #line hidden
         }
@@ -2161,9 +3186,28 @@ this._2AsAUserIWantToVerifyChangeLoginID("To check that Active Debit Card custom
             "\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_tran_password_locked_query", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
             "\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' order " +
+            "by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+            "8\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+            "8\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type", "D")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id_tran_query", "SELECT DT.LOGIN_NAME FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
         public virtual void _2AsAUserIWantToVerifyChangeLoginID_ToCheckThatPartialActiveDebitCardCustomerCanSuccessfullyChangeLoginID()
         {
-#line 88
+#line 132
 this._2AsAUserIWantToVerifyChangeLoginID("To check that Partial Active Debit card customer can successfully change Login ID" +
                     "", "4200028347788", "5366190000137766", "1234", "", "", "loginid222", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "pakistan2", "pakistan1", "pakistan1", "pakistan2", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
                     "r new password to login.", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
@@ -2179,7 +3223,16 @@ this._2AsAUserIWantToVerifyChangeLoginID("To check that Partial Active Debit car
                     "AMETER_ID = 1702", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
                     "}\'", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
                     "\'", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
-                    "\'", new string[] {
+                    "\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' order " +
+                    "by 1 desc", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+                    "8\' order by 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+                    "8\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' o" +
+                    "rder by 1 desc", "D", "SELECT DT.LOGIN_NAME FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", new string[] {
                         "source:Data/ChangeLoginID.xlsx"});
 #line hidden
         }
@@ -2237,9 +3290,28 @@ this._2AsAUserIWantToVerifyChangeLoginID("To check that Partial Active Debit car
             "\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_tran_password_locked_query", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
             "\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' order " +
+            "by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+            "8\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+            "8\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type", "D")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id_tran_query", "SELECT DT.LOGIN_NAME FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
         public virtual void _2AsAUserIWantToVerifyChangeLoginID_ToCheckThatLockedDebitCardCustomerCanSuccessfullyChangeLoginID_()
         {
-#line 88
+#line 132
 this._2AsAUserIWantToVerifyChangeLoginID("To check that Locked Debit card customer can successfully Change Login ID.", "4430182101109", "2205430001186269", "1234", "", "", "dlocked555", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "pakistan2", "pakistan1", "pakistan1", "pakistan2", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
                     "r new password to login.", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
                     "mer_cnic}\'", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
@@ -2254,7 +3326,16 @@ this._2AsAUserIWantToVerifyChangeLoginID("To check that Locked Debit card custom
                     "AMETER_ID = 1702", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
                     "}\'", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
                     "\'", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
-                    "\'", new string[] {
+                    "\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' order " +
+                    "by 1 desc", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+                    "8\' order by 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+                    "8\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' o" +
+                    "rder by 1 desc", "D", "SELECT DT.LOGIN_NAME FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", new string[] {
                         "source:Data/ChangeLoginID.xlsx"});
 #line hidden
         }
@@ -2312,9 +3393,28 @@ this._2AsAUserIWantToVerifyChangeLoginID("To check that Locked Debit card custom
             "\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_tran_password_locked_query", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
             "\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' order " +
+            "by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+            "8\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+            "8\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type", "D")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id_tran_query", "SELECT DT.LOGIN_NAME FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
         public virtual void _2AsAUserIWantToVerifyChangeLoginID_ToCheckIfEnteredCNICDoesNotExistInSystem()
         {
-#line 88
+#line 132
 this._2AsAUserIWantToVerifyChangeLoginID("To check if entered CNIC does not exist in System", "4552636554244", "5366190009706181", "1234", "", "", "autom555", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "pakistan2", "pakistan1", "pakistan1", "pakistan2", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
                     "r new password to login.", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
                     "mer_cnic}\'", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
@@ -2329,7 +3429,16 @@ this._2AsAUserIWantToVerifyChangeLoginID("To check if entered CNIC does not exis
                     "AMETER_ID = 1702", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
                     "}\'", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
                     "\'", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
-                    "\'", new string[] {
+                    "\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' order " +
+                    "by 1 desc", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+                    "8\' order by 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+                    "8\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' o" +
+                    "rder by 1 desc", "D", "SELECT DT.LOGIN_NAME FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", new string[] {
                         "source:Data/ChangeLoginID.xlsx"});
 #line hidden
         }
@@ -2387,9 +3496,28 @@ this._2AsAUserIWantToVerifyChangeLoginID("To check if entered CNIC does not exis
             "\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_tran_password_locked_query", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
             "\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' order " +
+            "by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+            "8\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+            "8\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type", "C ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id_tran_query", "SELECT DT.LOGIN_NAME FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
         public virtual void _2AsAUserIWantToVerifyChangeLoginID_ToCheckThatIfEnteredCreditCardNumberIsNotTaggedWithEnteredCNIC()
         {
-#line 88
+#line 132
 this._2AsAUserIWantToVerifyChangeLoginID("To check that if Entered Credit Card Number is not tagged with Entered CNIC", "3520227406461", "", "", "4902880001916747", "aliwaqarazeem@hotmail.com", "cloginid666", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "pakistan2", "pakistan1", "pakistan1", "pakistan2", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
                     "r new password to login.", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
                     "mer_cnic}\'", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
@@ -2404,7 +3532,16 @@ this._2AsAUserIWantToVerifyChangeLoginID("To check that if Entered Credit Card N
                     "AMETER_ID = 1702", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
                     "}\'", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
                     "\'", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
-                    "\'", new string[] {
+                    "\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' order " +
+                    "by 1 desc", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+                    "8\' order by 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+                    "8\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' o" +
+                    "rder by 1 desc", "C ", "SELECT DT.LOGIN_NAME FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", new string[] {
                         "source:Data/ChangeLoginID.xlsx"});
 #line hidden
         }
@@ -2464,9 +3601,28 @@ this._2AsAUserIWantToVerifyChangeLoginID("To check that if Entered Credit Card N
             "\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_tran_password_locked_query", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
             "\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' order " +
+            "by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+            "8\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+            "8\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type", "C ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id_tran_query", "SELECT DT.LOGIN_NAME FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
         public virtual void _2AsAUserIWantToVerifyChangeLoginID_ToCheckIfUserEntersEmailWhichIsNotTaggedWithEnteredCreditCardNumber()
         {
-#line 88
+#line 132
 this._2AsAUserIWantToVerifyChangeLoginID("To check if user enters Email which is not tagged with entered Credit card number" +
                     "", "3520227406461", "", "", "4902880001916747", "usman.safder@hbl.com", "cloginid666", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "pakistan2", "pakistan1", "pakistan1", "pakistan2", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
                     "r new password to login.", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
@@ -2482,7 +3638,16 @@ this._2AsAUserIWantToVerifyChangeLoginID("To check if user enters Email which is
                     "AMETER_ID = 1702", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
                     "}\'", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
                     "\'", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
-                    "\'", new string[] {
+                    "\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' order " +
+                    "by 1 desc", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+                    "8\' order by 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+                    "8\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' o" +
+                    "rder by 1 desc", "C ", "SELECT DT.LOGIN_NAME FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", new string[] {
                         "source:Data/ChangeLoginID.xlsx"});
 #line hidden
         }
@@ -2540,9 +3705,28 @@ this._2AsAUserIWantToVerifyChangeLoginID("To check if user enters Email which is
             "\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_tran_password_locked_query", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
             "\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' order " +
+            "by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+            "8\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+            "8\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type", "C ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id_tran_query", "SELECT DT.LOGIN_NAME FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
         public virtual void _2AsAUserIWantToVerifyChangeLoginID_ToCheckIfEmailAddressFieldsFollowsEmailRegex()
         {
-#line 88
+#line 132
 this._2AsAUserIWantToVerifyChangeLoginID("To check if Email address fields follows Email regex", "3520227406461", "", "", "4902880001916747", "usman@safder.hbl.com", "cloginid666", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "pakistan2", "pakistan1", "pakistan1", "pakistan2", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
                     "r new password to login.", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
                     "mer_cnic}\'", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
@@ -2557,7 +3741,16 @@ this._2AsAUserIWantToVerifyChangeLoginID("To check if Email address fields follo
                     "AMETER_ID = 1702", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
                     "}\'", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
                     "\'", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
-                    "\'", new string[] {
+                    "\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' order " +
+                    "by 1 desc", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+                    "8\' order by 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+                    "8\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' o" +
+                    "rder by 1 desc", "C ", "SELECT DT.LOGIN_NAME FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", new string[] {
                         "source:Data/ChangeLoginID.xlsx"});
 #line hidden
         }
@@ -2617,9 +3810,28 @@ this._2AsAUserIWantToVerifyChangeLoginID("To check if Email address fields follo
             "\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_tran_password_locked_query", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
             "\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' order " +
+            "by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+            "8\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+            "8\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type", "C ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id_tran_query", "SELECT DT.LOGIN_NAME FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
         public virtual void _2AsAUserIWantToVerifyChangeLoginID_UserShouldNotBeAbleToEnterCreditCardNumberMoreOrLessThanThe16Digits()
         {
-#line 88
+#line 132
 this._2AsAUserIWantToVerifyChangeLoginID("User should not be able to enter Credit card number more or less than the 16 digi" +
                     "ts", "3520227406461", "", "", "4902880001916", "aliwaqarazeem@hotmail.com", "cloginid666", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "pakistan2", "pakistan1", "pakistan1", "pakistan2", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
                     "r new password to login.", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
@@ -2635,7 +3847,16 @@ this._2AsAUserIWantToVerifyChangeLoginID("User should not be able to enter Credi
                     "AMETER_ID = 1702", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
                     "}\'", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
                     "\'", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
-                    "\'", new string[] {
+                    "\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' order " +
+                    "by 1 desc", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+                    "8\' order by 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+                    "8\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' o" +
+                    "rder by 1 desc", "C ", "SELECT DT.LOGIN_NAME FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", new string[] {
                         "source:Data/ChangeLoginID.xlsx"});
 #line hidden
         }
@@ -2693,9 +3914,28 @@ this._2AsAUserIWantToVerifyChangeLoginID("User should not be able to enter Credi
             "\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_tran_password_locked_query", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
             "\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:created_on_tran_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:updated_on_tran_query", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_tran_query", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' order " +
+            "by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_tran_query", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+            "8\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_tran_query", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+            "8\' order by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no_tran_query", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' o" +
+            "rder by 1 desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type", "C ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_login_id_tran_query", "SELECT DT.LOGIN_NAME FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+            "order by 1 desc")]
         public virtual void _2AsAUserIWantToVerifyChangeLoginID_ToCheckThatActiveCreditCardOnlyCustomerCanSuccessfullyChangeLoginID()
         {
-#line 88
+#line 132
 this._2AsAUserIWantToVerifyChangeLoginID("To check that Active Credit Card only customer can successfully change Login ID", "1730111412953", "", "", "4902880001916747", "aliwaqarazeem@hotmail.com", "cloginid666", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "pakistan2", "pakistan1", "pakistan1", "pakistan2", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
                     "r new password to login.", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.CNIC =\'{custo" +
                     "mer_cnic}\'", "select CUSTOMER_NAME from dc_customer_info P where P.CNIC =\'{customer_cnic}\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL L where L.APPLICATION_PARA" +
@@ -2710,7 +3950,16 @@ this._2AsAUserIWantToVerifyChangeLoginID("To check that Active Credit Card only 
                     "AMETER_ID = 1702", "SELECT P.IS_ACCOUNT_BLOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic" +
                     "}\'", "SELECT P.IS_ACCOUNT_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
                     "\'", "SELECT P.IS_TXN_PWD_LOCKED from dc_customer_info P where P.CNIC =\'{customer_cnic}" +
-                    "\'", new string[] {
+                    "\'", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", "SELECT DT.UPDATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", "SELECT DT.CNIC FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' order " +
+                    "by 1 desc", "SELECT DT.CUSTOMER_TYPE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+                    "8\' order by 1 desc", "SELECT DT.EMAIL_ADDRESS FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'24" +
+                    "8\' order by 1 desc", "SELECT DT.MOBILE_NO FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' o" +
+                    "rder by 1 desc", "C ", "SELECT DT.LOGIN_NAME FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_TYPE_ID = \'248\' " +
+                    "order by 1 desc", new string[] {
                         "source:Data/ChangeLoginID.xlsx"});
 #line hidden
         }
@@ -2718,3 +3967,4 @@ this._2AsAUserIWantToVerifyChangeLoginID("To check that Active Credit Card only 
 }
 #pragma warning restore
 #endregion
+

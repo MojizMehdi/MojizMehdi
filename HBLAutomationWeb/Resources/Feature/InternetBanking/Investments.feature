@@ -25,6 +25,7 @@ Scenario Outline: 1 As a user i want to Verify login for HBL Web Investments
 @Investsments @Term_Deposit
 Scenario Outline: When user try to term deposit thorugh Investments
 	Given the test case title is "<Case>"
+	And the test case expected result is "<Expected_Result>"
 	And the user is arrive to Internet Banking home page
 	And I am clicking on "Login_Dashboard"
 	And I set value in context from data "1" as "term_deposit_flag"
@@ -80,13 +81,14 @@ Scenario Outline: When user try to term deposit thorugh Investments
 
 	@source:Data/ETDR.xlsx
 	Examples: 
-	|Case|status_query|status_query2|Category_Value|Deposit_Years_Value|account_no|profit_account|Amount_Value|Tran_Pass_Value|Success_Message|tran_type_query|tran_amount_query|from_account_query|to_account_query|db_val|term_deposit_type|date_query|reference_no_query|
+	|Case|Expected_Result|Category_Value|Deposit_Years_Value|account_no|profit_account|Amount_Value|Tran_Pass_Value|Success_Message|tran_type_query|tran_amount_query|from_account_query|to_account_query|db_val|term_deposit_type|date_query|reference_no_query|
 
 
 
 @Investsments @Mutual_Fund
 Scenario Outline: When user try to verify Mutual Fund
 	Given the test case title is "<Case>"
+	And the test case expected result is "<Expected_Result>"
 	And the user is arrive to Internet Banking home page
 	And I set value in context from data "<invest_option>" as "invest_fund_name"
     And I set value in context from database "<disclaimer_query>" as "fund_disclaimer_popup" on Schema "QAT_AMC"
@@ -145,5 +147,5 @@ Scenario Outline: When user try to verify Mutual Fund
 
 @source:Data/MutualFund.xlsx
 	Examples: 
-	|Case|cust_profile_id_query|from_acc|amount|db_val3|invest_option|disclaimer_message|gl_account_query|tran_timing_query|tran_pass|success_msg|disclaimer_query|tran_type_query|tran_date_query|tran_amount_query|from_acc_query|to_acc_query|fund_name_query|GUID_query|tran_amount_verify_query|folio_no_query|folio_no|Fund_Names_query|db_val|
+	|Case|Expected_Result|cust_profile_id_query|from_acc|amount|db_val3|invest_option|disclaimer_message|gl_account_query|tran_timing_query|tran_pass|success_msg|disclaimer_query|tran_type_query|tran_date_query|tran_amount_query|from_acc_query|to_acc_query|fund_name_query|GUID_query|tran_amount_verify_query|folio_no_query|folio_no|Fund_Names_query|db_val|
 

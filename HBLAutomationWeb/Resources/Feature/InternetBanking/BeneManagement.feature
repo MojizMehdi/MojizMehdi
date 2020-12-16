@@ -3,8 +3,8 @@
 	As a math idiot
 	I want to be told the sum of two numbers
 
-@BeneMng @BeneVerification @BeneEditing @BeneDeletion @BeneAddition
-Scenario Outline: 1 As a user i want to Verify login for HBL Web Beneficiary Management
+@BeneMng @BeneVerificationSendMoney @BeneVerificationBillPay @BeneEditing @BeneDeletion @BeneAddition
+Scenario Outline: AA As a user i want to Verify login for HBL Web Beneficiary Management
 	Given the test case title is "<Case>"
 	And I set value in context from data "<Login_UserId_Value>" as "username"
 	And the user is arrive to Internet Banking home page 
@@ -21,8 +21,8 @@ Scenario Outline: 1 As a user i want to Verify login for HBL Web Beneficiary Man
 
 
 
-@BeneMng @BeneVerification
-Scenario Outline: As a user I want to verify Beneficiaries
+@BeneMng @BeneVerificationSendMoney
+Scenario Outline: As a user I want to verify Send Money Beneficiaries
 	Given the test case title is "<Case>" 
 	And the user is arrive to Internet Banking home page
 	And I am clicking on "Login_Dashboard"
@@ -30,14 +30,25 @@ Scenario Outline: As a user I want to verify Beneficiaries
 	And I wait 10000
 	And I am clicking on "BeneManage_SendMoney_Tab"
 	Then I want to verify already added beneficiaries with query "<send_money_query>" of Schema "<db_val>" on keyword "BeneManage_SendMoney_BeneCount"
+
+	@source:Data/BeneVerification_SendMoney.xlsx
+	Examples: 
+	|Case|db_val|send_money_query|
+
+
+@BeneMng @BeneVerificationBillPay
+Scenario Outline: As a user I want to verify Bill Payment Beneficiaries
+	Given the test case title is "<Case>" 
+	And the user is arrive to Internet Banking home page
 	And I am clicking on "Login_Dashboard"
-	And I am clicking on "BeneManage_Link"
+	When I am clicking on "BeneManage_Link"
+	And I wait 10000
 	And I am clicking on "BeneManage_Pay_Tab"
 	Then I want to verify already added beneficiaries with query "<pay_query>" of Schema "<db_val>" on keyword "BeneManage_Pay_BeneCount"
 
-	@source:Data/BeneVerification.xlsx
+	@source:Data/BeneVerification_Pay.xlsx
 	Examples: 
-	|Case|db_val|send_money_query|pay_query|
+	|Case|db_val|pay_query|
 
 
 @BeneMng @BeneEditing
@@ -120,8 +131,9 @@ Scenario Outline: As a user I want to verify Deleting Beneficiaries
 Scenario Outline: As a user i want to Verify Beneficiary Addition for Send Money
 	Given the test case title is "<Case>"
 	And I set value in context from data "<account_no>" as "Bene_AccountNo"
-	And update the data by query "<StatusQuery>" on DIGITAL_CHANNEL_SEC
+	#And update the data by query "<StatusQuery>" on DIGITAL_CHANNEL_SEC
 	And the user is arrive to Internet Banking home page
+	And the test case expected result is "<Expected_Result>"
  	And I am clicking on "Login_Dashboard"
 	And I am clicking on "BeneManage_Link"
 	And I wait 6000
@@ -135,9 +147,10 @@ Scenario Outline: As a user i want to Verify Beneficiary Addition for Send Money
 	And I have given "<Email>" on "BeneManage_PayeeEmail"
 	And I have given "<Mobile_No>" on "BeneManage_PayeeMobileNumber"
 	Then I am performing on "Forget_PasswordNextbtn"
-	And I am performing on "Forget_OkBtn"
+	#And I am performing on "Forget_OkBtn"
 	And I have given "<OTP_Value>" on "Login_OTP_field"
-	And I am performing on "BeneManage_Add_OtpSaveBtn"
+	And I press Enter on "BeneManage_Add_OtpSaveBtn"
+	#And I am performing on "BeneManage_Add_OtpSaveBtn"
 	And verify through "Congratulations" on "BeneManage_TranSuccessMessage"
 	And verify through database on "<tran_response_query>" on Schema "DIGITAL_CHANNEL_SEC" on "BeneManage_TranResponseMsg"
 	#And verify through database on "<tran_type_query>" on Schema "DIGITAL_CHANNEL_SEC" on "BeneManage_TranType"
@@ -155,6 +168,7 @@ Scenario Outline: As a user i want to Verify Beneficiary Addition for Send Money
 	And I scroll to element "Services_Clear_Btn"
 	And I am performing on "Services_Search_Btn"
 	And I am clicking on "Services_Last_Transaction"
+	And verify through "Successful" on "MyAccount_Forgot_TranSuccessMessage"
 	And verify through database on "<tran_response_query>" on Schema "DIGITAL_CHANNEL_SEC" on "BeneManage_TranResponseMsg"
 	#And verify through database on "<tran_type_query>" on Schema "DIGITAL_CHANNEL_SEC" on "BeneManage_TranType"
 	And verify through database on "<tran_date_query>" on Schema "DIGITAL_CHANNEL_SEC" on "BeneManage_TranDate"
@@ -163,5 +177,5 @@ Scenario Outline: As a user i want to Verify Beneficiary Addition for Send Money
 
 	@source:Data/BeneficiaryAddition.xlsx
 	Examples: 
-	|Case|account_no|StatusQuery|Bank_Value|BeneNick_Value|Email|Mobile_No|OTP_Value|tran_type_query|tran_response_query|tran_date_query|tran_bene_name_query|account_no_query|email_query|mobile_query|nick_query|
+	|Case|Expected_Result|account_no|StatusQuery|Bank_Value|BeneNick_Value|Email|Mobile_No|OTP_Value|tran_type_query|tran_response_query|tran_date_query|tran_bene_name_query|account_no_query|email_query|mobile_query|nick_query|
 
