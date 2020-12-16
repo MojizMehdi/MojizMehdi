@@ -3,7 +3,7 @@
 	As a math idiot
 	I want to be told the sum of two numbers
 
-@Login
+@MyAccount @LinkDelink @LimitMng @ChangeUserPass @ChangeTranPass @ForgetTranPass @ChequeBook @PayOrder @WithHoldingTax
 Scenario Outline: 1 As a user i want to Verify login for HBL Web My Account
 	Given the test case title is "<Case>"
 	And I set value in context from data "<Login_UserId_Value>" as "username"
@@ -15,22 +15,23 @@ Scenario Outline: 1 As a user i want to Verify login for HBL Web My Account
 	And I have given "<OTP_Value>" on "Login_OTP_field"
 	And I am performing on "Login_OTP_Verify_Button"
 	Then verify through "Welcome" on "Login_Success_Text"
-	@source:Data/IBLogin.xlsx
+	@source:Data/MyAccount_Login.xlsx
 	Examples: 
 	|Case|Login_UserId_Value|Login_Password_Value|OTP_Value|
 
 
 
-@MyAccount
+@MyAccount @LinkDelink
 Scenario Outline: As a user I want to verify Account Linking & De-Linking from My Account
 	Given the test case title is "<Case>" 
 	And the user is arrive to Internet Banking home page
+	And I am clicking on "Login_Dashboard"
 	And I count Number of Account
 	When I save Account Balances
 	And I am clicking on "MyAccount_Icon"
 	#And I am clicking on "MyAccount_AccLinkOption"
 	Then I select "<De_Linking_Account>" for Account linking or de-linking "<operation_type>" with success message as "<Success_message>"
-	When I am clicking on "Services_Link"
+	And I am clicking on "Services_Link"
 	And I am clicking on "Services_Transaction_Activity"
 	And I select "<Transaction_Category>" on "Services_CategoryFilter"
 	And I scroll to element "Services_Clear_Btn"
@@ -40,16 +41,17 @@ Scenario Outline: As a user I want to verify Account Linking & De-Linking from M
 	And verify through database on "<tran_type_query>" on Schema "<db_val>" on "Pay_MultiBill_SRV_TranType"
 	And I am clicking on "MyAccount_Services_CloseBtn"
 
-	@source:Data/MyAccount.xlsx
+	@source:Data/LinkDelink.xlsx
 	Examples: 
 	|Case|Linking_Account|De_Linking_Account|operation_type|Success_message|db_val|tran_type_query|Transaction_Category|
 
 
 
-@MyAccount
-Scenario Outline: As a user I want to veAs a user I want to verify Limit Management from My Accountrify Limit Management from My Account
+@MyAccount @LimitMng
+Scenario Outline: As a user I want to verify Limit Management from My Account
 	Given the test case title is "<Case>" 
 	And the user is arrive to Internet Banking home page
+	And I am clicking on "Login_Dashboard"
 	When I am clicking on "MyAccount_Icon"
 	And I wait 5000
 	And I am clicking on "MyAccount_LimitMngOption"
@@ -66,16 +68,16 @@ Scenario Outline: As a user I want to veAs a user I want to verify Limit Managem
 	And verify through database on "<tran_date_query>" on Schema "DIGITAL_CHANNEL_SEC" on "MyAccount_TranPopup_TranDate"
 	And verify through database on "<old_limit_tran_query>" on Schema "DIGITAL_CHANNEL_SEC" on "Investment_MutualFund_TranOld"
 	And verify through database on "<new_limit_tran_query>" on Schema "DIGITAL_CHANNEL_SEC" on "Investment_MutualFund_TranNew"
-	And verify through database on "<limit_name_tran_query>" on Schema "DIGITAL_CHANNEL_SEC" on "Investment_MutualFund_TranFundName"
+	And verify through database on "<limit_name_tran_query>" on Schema "DIGITAL_CHANNEL_SEC" on "MyAccount_LimitMng_TranILimitName"
 	And I am performing on "Investment_MutualFund_TranCloseBtn"
 
 
 	@source:Data/LimitManagement.xlsx
 	Examples: 
-	|Case|limit_type|new_limit|Transaction_Category|tran_type_query|tran_date_query|old_limit_tran_query|new_limit_tran_query|limit_name_tran_query|
+	|Case|Expected_Result|limit_type|new_limit|Transaction_Category|tran_type_query|tran_date_query|old_limit_tran_query|new_limit_tran_query|limit_name_tran_query|
 
 
-@MyAccount
+@MyAccount @ChangeUserPass
 Scenario Outline: As a user i want to verify change user login password
 	Given the test case title is "<Case>"
 	And the user is arrive to Internet Banking home page
@@ -124,7 +126,7 @@ Scenario Outline: As a user i want to verify change user login password
 
 
 
-@MyAccount
+@MyAccount @ChangeTranPass
 Scenario Outline: As a user i want to verify change user Transaction password
 	Given the test case title is "<Case>"
 	And the user is arrive to Internet Banking home page
@@ -168,7 +170,7 @@ Scenario Outline: As a user i want to verify change user Transaction password
 	|Case|Login_UserId_Value|Login_Password_Value|OTP_Value|tran_old_password|tran_new_password|Update_Password_query|password_policy_query|success_message|db_val|LAST_TRANS_PASSWORD_CHANGED|tran_type_query|tran_date_query|tran_confirm_password|customer_password_query|
 
 
-@MyAccount
+@MyAccount @ForgetTranPass
 Scenario Outline: As a user i want to verify Forgot Transaction password
 	Given the test case title is "<Case>"
 	And I set value in context from data "<Login_UserId_Value>" as "username"
@@ -218,10 +220,12 @@ Scenario Outline: As a user i want to verify Forgot Transaction password
 
 
 
-@MyAccount
+@MyAccount @ChequeBook
 Scenario Outline: As a user I want to verify Cheque Book Request from My Account
 	Given the test case title is "<Case>" 
+	And the test case expected result is "<Expected_Result>"
 	And the user is arrive to Internet Banking home page
+	And I am clicking on "Login_Dashboard"
 	And I set value in context from data "<home_branch_option>" as "home_branch_del_flag"
 	And I count Number of Account
 	And I am clicking on "MyAccount_Icon"
@@ -235,7 +239,7 @@ Scenario Outline: As a user I want to verify Cheque Book Request from My Account
 	And I select on dropdown search "MyAccount_CheqBook_BranchList" to select "<Branch>" on "MyAccount_CheqBook_BranchList_Search"
 	And I have given "<transaction_password>" on "MyAccount_CheqBook_TranPass"
 	Then I am performing on "MyAccount_CheqBook_ReqBtn"
-	And verify through "<success_message>" on "MyAccount_CheqBook_TranMsg"
+	And verify through "<success_message>" on "MyAccount_CheqBook_TranSuccessMessage"
 	And verify through database on "<tran_type_query>" on Schema "DIGITAL_CHANNEL_SEC" on "MyAccount_CheqBook_TranType"
 	And verify through database on "<tran_date_query>" on Schema "DIGITAL_CHANNEL_SEC" on "MyAccount_CheqBook_TranDate"
 	And verify through database on "<tran_account_no_query>" on Schema "DIGITAL_CHANNEL_SEC" on "MyAccount_CheqBook_TranAccNo"
@@ -264,14 +268,15 @@ Scenario Outline: As a user I want to verify Cheque Book Request from My Account
 
 	@source:Data/ChequeBook.xlsx
 	Examples: 
-	|Case|for_account|no_of_cheque|home_branch_option|City|Branch|transaction_password|customer_type_query|db_val|success_message|tran_type_query|tran_date_query|tran_account_no_query|tran_response_query|tran_cheque_no_query|status_message|
+	|Case|Expected_result|for_account|no_of_cheque|home_branch_option|City|Branch|transaction_password|customer_type_query|db_val|success_message|tran_type_query|tran_date_query|tran_account_no_query|tran_response_query|tran_cheque_no_query|status_message|
 
 
 
-@MyAccount
+@MyAccount @PayOrder
 Scenario Outline: As a user I want to verify Pay Order Request from My Account
 	Given the test case title is "<Case>" 
 	And the user is arrive to Internet Banking home page
+	And I am clicking on "Login_Dashboard"
 	And I count Number of Account
 	And I am clicking on "MyAccount_Icon"
 	And I wait 5000
@@ -282,10 +287,9 @@ Scenario Outline: As a user I want to verify Pay Order Request from My Account
 	And I select "<purpose>" on "MyAccount_PayOrder_Purpose"
 	And I select on dropdown search "MyAccount_PayOrder_City" to select "<city>" on "MyAccount_PayOrder_City_Search"
 	And I select on dropdown search "MyAccount_PayOrder_Branch" to select "<branch>" on "MyAccount_PayOrder_Branch_Search"
-	And I have given "<transaction_password>" on "MyAccount_CheqBook_TranPass"
+	And I have given "<transaction_password>" on "MyAccount_PayOrder_TranPass"
 	Then I am performing on "MyAccount_PayOrder_ReqBtn"
-	And verify through "<success_message>" on "MyAccount_PayOrder_Success"
-	And verify through database on "<tran_type_query>" on Schema "DIGITAL_CHANNEL_SEC" on "MyAccount_PayOrder_TranType"
+	And verify through "<success_message>" on "MyAccount_PayOrder_TranSuccessMessage"
 	And verify through database on "<tran_amount_query>" on Schema "DIGITAL_CHANNEL_SEC" on "MyAccount_PayOrder_Tran_Amount"
 	And verify through database on "<from_account_query>" on Schema "DIGITAL_CHANNEL_SEC" on "MyAccount_PayOrder_Tran_FromAcc"
 	And verify through database on "<tran_branch_query>" on Schema "DIGITAL_CHANNEL_SEC" on "MyAccount_PayOrder_Tran_BranchName"
@@ -306,7 +310,7 @@ Scenario Outline: As a user I want to verify Pay Order Request from My Account
 	And verify through database on "<from_account_query>" on Schema "DIGITAL_CHANNEL_SEC" on "MyAccount_PayOrder_Tran_FromAcc"
 	And verify through database on "<tran_branch_query>" on Schema "DIGITAL_CHANNEL_SEC" on "MyAccount_PayOrder_Tran_BranchName"
 	And verify through database on "<tran_branch_code_query>" on Schema "DIGITAL_CHANNEL_SEC" on "MyAccount_PayOrder_TranBranchCode"
-	And verify through database on "<tran_purpose_query>" on Schema "DIGITAL_CHANNEL_SEC" on "MyAccount_PayOrder_Tran_Purpose"
+	And verify through database on "<tran_purpose_query>" on Schema "DIGITAL_CHANNEL_SEC" on "MyAccount_PayOrder_TranActivity_Purpose"
 	And verify through database on "<tran_date_query>" on Schema "DIGITAL_CHANNEL_SEC" on "MyAccount_PayOrder_TranDate"
 	And I am performing on "Investment_TranActivityCloseBtn"
 
@@ -317,10 +321,11 @@ Scenario Outline: As a user I want to verify Pay Order Request from My Account
 
 
 
-@MyAccount
+@MyAccount @WithHoldingTax
 Scenario Outline: As a user I want to verify Withholding Tax Certificate Request from My Account
 	Given the test case title is "<Case>" 
 	And the user is arrive to Internet Banking home page
+	And I am clicking on "Login_Dashboard"
 	And I count Number of Account
 	And I am clicking on "MyAccount_Icon"
 	And I wait 5000

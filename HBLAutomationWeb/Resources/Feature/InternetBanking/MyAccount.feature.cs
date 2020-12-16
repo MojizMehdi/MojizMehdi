@@ -86,7 +86,15 @@ namespace HBLAutomationWeb.Resources.Feature.InternetBanking
         public virtual void _1AsAUserIWantToVerifyLoginForHBLWebMyAccount(string @case, string login_UserId_Value, string login_Password_Value, string oTP_Value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "Login"};
+                    "MyAccount",
+                    "LinkDelink",
+                    "LimitMng",
+                    "ChangeUserPass",
+                    "ChangeTranPass",
+                    "ForgetTranPass",
+                    "ChequeBook",
+                    "PayOrder",
+                    "WithHoldingTax"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -120,27 +128,333 @@ this.ScenarioSetup(scenarioInfo);
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 As a user i want to Verify login for HBL Web My Account: When user id and passw" +
-            "ord are valid")]
+            "ord are valid Cheque_Book_Normal")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Login")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/IBLogin.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "YASIR113")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LinkDelink")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LimitMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeUserPass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeTranPass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetTranPass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChequeBook")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("PayOrder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("WithHoldingTax")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MyAccount_Login.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid Cheque_Book_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid Cheque_Book_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "RANA3050")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
-        public virtual void _1AsAUserIWantToVerifyLoginForHBLWebMyAccount_WhenUserIdAndPasswordAreValid()
+        public virtual void _1AsAUserIWantToVerifyLoginForHBLWebMyAccount_WhenUserIdAndPasswordAreValidCheque_Book_Normal()
         {
 #line 7
-this._1AsAUserIWantToVerifyLoginForHBLWebMyAccount("When user id and password are valid", "YASIR113", "pakistan1", "12345678", new string[] {
-                        "source:Data/IBLogin.xlsx"});
+this._1AsAUserIWantToVerifyLoginForHBLWebMyAccount("When user id and password are valid Cheque_Book_Normal", "RANA3050", "pakistan1", "12345678", new string[] {
+                        "source:Data/MyAccount_Login.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 As a user i want to Verify login for HBL Web My Account: When user id and passw" +
+            "ord are valid Cheque_Book_Normal_other")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LinkDelink")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LimitMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeUserPass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeTranPass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetTranPass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChequeBook")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("PayOrder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("WithHoldingTax")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MyAccount_Login.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid Cheque_Book_Normal_other")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid Cheque_Book_Normal_other")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "RANAHASAN2270")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        public virtual void _1AsAUserIWantToVerifyLoginForHBLWebMyAccount_WhenUserIdAndPasswordAreValidCheque_Book_Normal_Other()
+        {
+#line 7
+this._1AsAUserIWantToVerifyLoginForHBLWebMyAccount("When user id and password are valid Cheque_Book_Normal_other", "RANAHASAN2270", "pakistan1", "12345678", new string[] {
+                        "source:Data/MyAccount_Login.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 As a user i want to Verify login for HBL Web My Account: When user id and passw" +
+            "ord are valid Cheque_Book_FCY")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LinkDelink")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LimitMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeUserPass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeTranPass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetTranPass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChequeBook")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("PayOrder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("WithHoldingTax")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MyAccount_Login.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid Cheque_Book_FCY")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid Cheque_Book_FCY")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "GBPCHEQUEBOOK")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        public virtual void _1AsAUserIWantToVerifyLoginForHBLWebMyAccount_WhenUserIdAndPasswordAreValidCheque_Book_FCY()
+        {
+#line 7
+this._1AsAUserIWantToVerifyLoginForHBLWebMyAccount("When user id and password are valid Cheque_Book_FCY", "GBPCHEQUEBOOK", "pakistan1", "12345678", new string[] {
+                        "source:Data/MyAccount_Login.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 As a user i want to Verify login for HBL Web My Account: When user id and passw" +
+            "ord are valid Link_Delink_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LinkDelink")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LimitMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeUserPass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeTranPass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetTranPass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChequeBook")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("PayOrder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("WithHoldingTax")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MyAccount_Login.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid Link_Delink_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid Link_Delink_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "ABBY")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        public virtual void _1AsAUserIWantToVerifyLoginForHBLWebMyAccount_WhenUserIdAndPasswordAreValidLink_Delink_Normal()
+        {
+#line 7
+this._1AsAUserIWantToVerifyLoginForHBLWebMyAccount("When user id and password are valid Link_Delink_Normal", "ABBY", "pakistan1", "12345678", new string[] {
+                        "source:Data/MyAccount_Login.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 As a user i want to Verify login for HBL Web My Account: When user id and passw" +
+            "ord are valid Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LinkDelink")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LimitMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeUserPass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeTranPass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetTranPass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChequeBook")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("PayOrder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("WithHoldingTax")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MyAccount_Login.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "REHAN2222")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        public virtual void _1AsAUserIWantToVerifyLoginForHBLWebMyAccount_WhenUserIdAndPasswordAreValidPay_Order_Normal()
+        {
+#line 7
+this._1AsAUserIWantToVerifyLoginForHBLWebMyAccount("When user id and password are valid Pay_Order_Normal", "REHAN2222", "pakistan1", "12345678", new string[] {
+                        "source:Data/MyAccount_Login.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 As a user i want to Verify login for HBL Web My Account: When user id and passw" +
+            "ord are valid WithHolding_Tax_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LinkDelink")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LimitMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeUserPass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeTranPass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetTranPass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChequeBook")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("PayOrder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("WithHoldingTax")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MyAccount_Login.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid WithHolding_Tax_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid WithHolding_Tax_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "DOLLAR")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        public virtual void _1AsAUserIWantToVerifyLoginForHBLWebMyAccount_WhenUserIdAndPasswordAreValidWithHolding_Tax_Normal()
+        {
+#line 7
+this._1AsAUserIWantToVerifyLoginForHBLWebMyAccount("When user id and password are valid WithHolding_Tax_Normal", "DOLLAR", "pakistan1", "12345678", new string[] {
+                        "source:Data/MyAccount_Login.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 As a user i want to Verify login for HBL Web My Account: When user id and passw" +
+            "ord are valid Pay_Order_FCY")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LinkDelink")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LimitMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeUserPass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeTranPass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetTranPass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChequeBook")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("PayOrder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("WithHoldingTax")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MyAccount_Login.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid Pay_Order_FCY")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid Pay_Order_FCY")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "REHAN2222")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        public virtual void _1AsAUserIWantToVerifyLoginForHBLWebMyAccount_WhenUserIdAndPasswordAreValidPay_Order_FCY()
+        {
+#line 7
+this._1AsAUserIWantToVerifyLoginForHBLWebMyAccount("When user id and password are valid Pay_Order_FCY", "REHAN2222", "pakistan1", "12345678", new string[] {
+                        "source:Data/MyAccount_Login.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 As a user i want to Verify login for HBL Web My Account: When user id and passw" +
+            "ord are valid WithHolding_Tax_FCY")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LinkDelink")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LimitMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeUserPass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeTranPass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetTranPass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChequeBook")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("PayOrder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("WithHoldingTax")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MyAccount_Login.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid WithHolding_Tax_FCY")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid WithHolding_Tax_FCY")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "DOLLAR")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        public virtual void _1AsAUserIWantToVerifyLoginForHBLWebMyAccount_WhenUserIdAndPasswordAreValidWithHolding_Tax_FCY()
+        {
+#line 7
+this._1AsAUserIWantToVerifyLoginForHBLWebMyAccount("When user id and password are valid WithHolding_Tax_FCY", "DOLLAR", "pakistan1", "12345678", new string[] {
+                        "source:Data/MyAccount_Login.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 As a user i want to Verify login for HBL Web My Account: When user id and passw" +
+            "ord are valid Limit_PSD_Y_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LinkDelink")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LimitMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeUserPass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeTranPass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetTranPass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChequeBook")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("PayOrder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("WithHoldingTax")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MyAccount_Login.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid Limit_PSD_Y_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid Limit_PSD_Y_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "RAEESROOMI")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        public virtual void _1AsAUserIWantToVerifyLoginForHBLWebMyAccount_WhenUserIdAndPasswordAreValidLimit_PSD_Y_One()
+        {
+#line 7
+this._1AsAUserIWantToVerifyLoginForHBLWebMyAccount("When user id and password are valid Limit_PSD_Y_One", "RAEESROOMI", "pakistan1", "12345678", new string[] {
+                        "source:Data/MyAccount_Login.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 As a user i want to Verify login for HBL Web My Account: When user id and passw" +
+            "ord are valid Limit_PSD_N_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LinkDelink")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LimitMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeUserPass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeTranPass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetTranPass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChequeBook")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("PayOrder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("WithHoldingTax")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MyAccount_Login.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid Limit_PSD_N_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid Limit_PSD_N_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "E00347569")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        public virtual void _1AsAUserIWantToVerifyLoginForHBLWebMyAccount_WhenUserIdAndPasswordAreValidLimit_PSD_N_One()
+        {
+#line 7
+this._1AsAUserIWantToVerifyLoginForHBLWebMyAccount("When user id and password are valid Limit_PSD_N_One", "E00347569", "pakistan1", "12345678", new string[] {
+                        "source:Data/MyAccount_Login.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 As a user i want to Verify login for HBL Web My Account: When user id and passw" +
+            "ord are valid Limit_PSD_Y_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LinkDelink")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LimitMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeUserPass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeTranPass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetTranPass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChequeBook")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("PayOrder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("WithHoldingTax")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MyAccount_Login.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid Limit_PSD_Y_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid Limit_PSD_Y_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "ASHRAF199")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        public virtual void _1AsAUserIWantToVerifyLoginForHBLWebMyAccount_WhenUserIdAndPasswordAreValidLimit_PSD_Y_Two()
+        {
+#line 7
+this._1AsAUserIWantToVerifyLoginForHBLWebMyAccount("When user id and password are valid Limit_PSD_Y_Two", "ASHRAF199", "pakistan1", "12345678", new string[] {
+                        "source:Data/MyAccount_Login.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 As a user i want to Verify login for HBL Web My Account: When user id and passw" +
+            "ord are valid Limit_PSD_N_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LinkDelink")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LimitMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeUserPass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeTranPass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetTranPass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChequeBook")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("PayOrder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("WithHoldingTax")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MyAccount_Login.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid Limit_PSD_N_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid Limit_PSD_N_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "HOTELMIKE4")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        public virtual void _1AsAUserIWantToVerifyLoginForHBLWebMyAccount_WhenUserIdAndPasswordAreValidLimit_PSD_N_Two()
+        {
+#line 7
+this._1AsAUserIWantToVerifyLoginForHBLWebMyAccount("When user id and password are valid Limit_PSD_N_Two", "HOTELMIKE4", "pakistan1", "12345678", new string[] {
+                        "source:Data/MyAccount_Login.xlsx"});
 #line hidden
         }
         
         public virtual void AsAUserIWantToVerifyAccountLinkingDe_LinkingFromMyAccount(string @case, string linking_Account, string de_Linking_Account, string operation_Type, string success_Message, string db_Val, string tran_Type_Query, string transaction_Category, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "MyAccount"};
+                    "MyAccount",
+                    "LinkDelink"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -153,47 +467,50 @@ this.ScenarioSetup(scenarioInfo);
 #line 27
  testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 28
- testRunner.And("I count Number of Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 29
- testRunner.When("I save Account Balances", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I count Number of Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 30
+ testRunner.When("I save Account Balances", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 31
  testRunner.And("I am clicking on \"MyAccount_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 32
+#line 33
  testRunner.Then(string.Format("I select \"{0}\" for Account linking or de-linking \"{1}\" with success message as \"{" +
                         "2}\"", de_Linking_Account, operation_Type, success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 33
- testRunner.When("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 34
- testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 35
- testRunner.And(string.Format("I select \"{0}\" on \"Services_CategoryFilter\"", transaction_Category), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 36
- testRunner.And("I scroll to element \"Services_Clear_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I select \"{0}\" on \"Services_CategoryFilter\"", transaction_Category), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 37
- testRunner.And("I am performing on \"Services_Search_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I scroll to element \"Services_Clear_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 38
- testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am performing on \"Services_Search_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 39
+ testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 40
  testRunner.And(string.Format("verify through database on \"Successful\" on Schema \"{0}\" on \"Pay_MultiBill_SRV_Tra" +
                         "nStatus\"", db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 40
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_MultiBill_SRV_TranType\"", tran_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 41
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_MultiBill_SRV_TranType\"", tran_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 42
  testRunner.And("I am clicking on \"MyAccount_Services_CloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Account Linking & De-Linking from My Account: As a use" +
-            "r I want to verify Account Linking & De-Linking")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Account Linking & De-Linking from My Account: User  wa" +
+            "nt to verify Account  De-Linking Transaction Link_Delink_Normal")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MyAccount.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify Account Linking & De-Linking")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify Account Linking & De-Linking")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Linking_Account", "12757902514503")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:De_Linking_Account", "12757902514503,04727901450003")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LinkDelink")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LinkDelink.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "User  want to verify Account  De-Linking Transaction Link_Delink_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "User  want to verify Account  De-Linking Transaction Link_Delink_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Linking_Account", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:De_Linking_Account", "12757902514503")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:operation_type", "delinking")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_message", "Your request to update Account(s) Linking for Digital Banking has been processed " +
             "successfully.")]
@@ -202,104 +519,911 @@ this.ScenarioSetup(scenarioInfo);
             "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
             "TION_ID = \'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Transaction_Category", "Non Financial")]
-        public virtual void AsAUserIWantToVerifyAccountLinkingDe_LinkingFromMyAccount_AsAUserIWantToVerifyAccountLinkingDe_Linking()
+        public virtual void AsAUserIWantToVerifyAccountLinkingDe_LinkingFromMyAccount_UserWantToVerifyAccountDe_LinkingTransactionLink_Delink_Normal()
         {
 #line 25
-this.AsAUserIWantToVerifyAccountLinkingDe_LinkingFromMyAccount("As a user I want to verify Account Linking & De-Linking", "12757902514503", "12757902514503,04727901450003", "delinking", "Your request to update Account(s) Linking for Digital Banking has been processed " +
+this.AsAUserIWantToVerifyAccountLinkingDe_LinkingFromMyAccount("User  want to verify Account  De-Linking Transaction Link_Delink_Normal", "", "12757902514503", "delinking", "Your request to update Account(s) Linking for Digital Banking has been processed " +
                     "successfully.", "DIGITAL_CHANNEL_SEC", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "Non Financial", new string[] {
-                        "source:Data/MyAccount.xlsx"});
+                        "source:Data/LinkDelink.xlsx"});
 #line hidden
         }
         
-        public virtual void AsAUserIWantToVeAsAUserIWantToVerifyLimitManagementFromMyAccountrifyLimitManagementFromMyAccount(string @case, string limit_Type, string new_Limit, string transaction_Category, string tran_Type_Query, string tran_Date_Query, string old_Limit_Tran_Query, string new_Limit_Tran_Query, string limit_Name_Tran_Query, string[] exampleTags)
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Account Linking & De-Linking from My Account: User  wa" +
+            "nt to verify Account  De-Linking Transaction multiple Link_Delink_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LinkDelink")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LinkDelink.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "User  want to verify Account  De-Linking Transaction multiple Link_Delink_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "User  want to verify Account  De-Linking Transaction multiple Link_Delink_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Linking_Account", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:De_Linking_Account", "04727901450003,12757900256303")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:operation_type", "delinking")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_message", "Your request to update Account(s) Linking for Digital Banking has been processed " +
+            "successfully.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Transaction_Category", "Non Financial")]
+        public virtual void AsAUserIWantToVerifyAccountLinkingDe_LinkingFromMyAccount_UserWantToVerifyAccountDe_LinkingTransactionMultipleLink_Delink_Normal()
+        {
+#line 25
+this.AsAUserIWantToVerifyAccountLinkingDe_LinkingFromMyAccount("User  want to verify Account  De-Linking Transaction multiple Link_Delink_Normal", "", "04727901450003,12757900256303", "delinking", "Your request to update Account(s) Linking for Digital Banking has been processed " +
+                    "successfully.", "DIGITAL_CHANNEL_SEC", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Non Financial", new string[] {
+                        "source:Data/LinkDelink.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Account Linking & De-Linking from My Account: User wan" +
+            "t to verify Account Linking Transaction Link_Delink_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LinkDelink")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LinkDelink.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "User want to verify Account Linking Transaction Link_Delink_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "User want to verify Account Linking Transaction Link_Delink_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Linking_Account", "12757902514503")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:De_Linking_Account", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:operation_type", "linking")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_message", "Your request to update Account(s) Linking for Digital Banking has been processed " +
+            "successfully.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Transaction_Category", "Non Financial")]
+        public virtual void AsAUserIWantToVerifyAccountLinkingDe_LinkingFromMyAccount_UserWantToVerifyAccountLinkingTransactionLink_Delink_Normal()
+        {
+#line 25
+this.AsAUserIWantToVerifyAccountLinkingDe_LinkingFromMyAccount("User want to verify Account Linking Transaction Link_Delink_Normal", "12757902514503", "", "linking", "Your request to update Account(s) Linking for Digital Banking has been processed " +
+                    "successfully.", "DIGITAL_CHANNEL_SEC", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Non Financial", new string[] {
+                        "source:Data/LinkDelink.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Account Linking & De-Linking from My Account: User  wa" +
+            "nt to verify Account  Linking Transaction multiple Link_Delink_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LinkDelink")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LinkDelink.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "User  want to verify Account  Linking Transaction multiple Link_Delink_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "User  want to verify Account  Linking Transaction multiple Link_Delink_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Linking_Account", "12757902514503,12757900256303")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:De_Linking_Account", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:operation_type", "linking")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_message", "Your request to update Account(s) Linking for Digital Banking has been processed " +
+            "successfully.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Transaction_Category", "Non Financial")]
+        public virtual void AsAUserIWantToVerifyAccountLinkingDe_LinkingFromMyAccount_UserWantToVerifyAccountLinkingTransactionMultipleLink_Delink_Normal()
+        {
+#line 25
+this.AsAUserIWantToVerifyAccountLinkingDe_LinkingFromMyAccount("User  want to verify Account  Linking Transaction multiple Link_Delink_Normal", "12757902514503,12757900256303", "", "linking", "Your request to update Account(s) Linking for Digital Banking has been processed " +
+                    "successfully.", "DIGITAL_CHANNEL_SEC", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "Non Financial", new string[] {
+                        "source:Data/LinkDelink.xlsx"});
+#line hidden
+        }
+        
+        public virtual void AsAUserIWantToVerifyLimitManagementFromMyAccount(string @case, string expected_Result, string limit_Type, string new_Limit, string transaction_Category, string tran_Type_Query, string tran_Date_Query, string old_Limit_Tran_Query, string new_Limit_Tran_Query, string limit_Name_Tran_Query, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "MyAccount"};
+                    "MyAccount",
+                    "LimitMng"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user I want to veAs a user I want to verify Limit Management from My Account" +
-                    "rify Limit Management from My Account", @__tags);
-#line 50
-this.ScenarioSetup(scenarioInfo);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user I want to verify Limit Management from My Account", @__tags);
 #line 51
- testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 52
- testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 53
- testRunner.When("I am clicking on \"MyAccount_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 54
- testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 55
- testRunner.And("I am clicking on \"MyAccount_LimitMngOption\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I am clicking on \"MyAccount_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 56
- testRunner.Then("i am performing Limit verification operation with \"MyAccount_Limit_Type_count\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 57
+ testRunner.And("I am clicking on \"MyAccount_LimitMngOption\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 58
+ testRunner.Then("i am performing Limit verification operation with \"MyAccount_Limit_Type_count\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 59
  testRunner.And(string.Format("I am performing limit reduction operation on \"MyAccount_Limit_Edit_Icon\" of slide" +
                         "r \"MyAccount_Limit_Slider\" of \"{0}\" with new limit as \"{1}\"", limit_Type, new_Limit), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 58
- testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 59
- testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 60
- testRunner.And(string.Format("I select \"{0}\" on \"Services_CategoryFilter\"", transaction_Category), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 61
- testRunner.And("I scroll to element \"Services_Clear_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 62
- testRunner.And("I am performing on \"Services_Search_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I select \"{0}\" on \"Services_CategoryFilter\"", transaction_Category), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 63
- testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I scroll to element \"Services_Clear_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 64
- testRunner.And("verify through \"Successful\" on \"MyAccount_Forgot_TranSuccessMessage\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am performing on \"Services_Search_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 65
+ testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 66
+ testRunner.And("verify through \"Successful\" on \"MyAccount_Forgot_TranSuccessMessage\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 67
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Tr" +
                         "anPopup_TranType\"", tran_Type_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 66
+#line 68
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Tr" +
                         "anPopup_TranDate\"", tran_Date_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 67
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"Investment_M" +
-                        "utualFund_TranOld\"", old_Limit_Tran_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 68
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"Investment_M" +
-                        "utualFund_TranNew\"", new_Limit_Tran_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 69
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"Investment_M" +
-                        "utualFund_TranFundName\"", limit_Name_Tran_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                        "utualFund_TranOld\"", old_Limit_Tran_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 70
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"Investment_M" +
+                        "utualFund_TranNew\"", new_Limit_Tran_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 71
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Li" +
+                        "mitMng_TranILimitName\"", limit_Name_Tran_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 72
  testRunner.And("I am performing on \"Investment_MutualFund_TranCloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to veAs a user I want to verify Limit Management from My Account" +
-            "rify Limit Management from My Account: As A user I want to verify Limit Reductio" +
-            "n")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Limit Management from My Account: To verify Limits red" +
+            "uction of QR Payments Limit_PSD_Y_One")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LimitMng")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As A user I want to verify Limit Reduction")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As A user I want to verify Limit Reduction")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of QR Payments Limit_PSD_Y_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of QR Payments Limit_PSD_Y_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "QR Payments")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "90000")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Transaction_Category", "Non Financial")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
             "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
             "TION_ID = \'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:old_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_name_tran_query", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
-        public virtual void AsAUserIWantToVeAsAUserIWantToVerifyLimitManagementFromMyAccountrifyLimitManagementFromMyAccount_AsAUserIWantToVerifyLimitReduction()
+        public virtual void AsAUserIWantToVerifyLimitManagementFromMyAccount_ToVerifyLimitsReductionOfQRPaymentsLimit_PSD_Y_One()
         {
-#line 50
-this.AsAUserIWantToVeAsAUserIWantToVerifyLimitManagementFromMyAccountrifyLimitManagementFromMyAccount("As A user I want to verify Limit Reduction", "QR Payments", "90000", "Non Financial", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+#line 51
+this.AsAUserIWantToVerifyLimitManagementFromMyAccount("To verify Limits reduction of QR Payments Limit_PSD_Y_One", "Pass", "QR Payments", "90000", "Non Financial", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
-                    "TION_ID = \'", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Limit Management from My Account: To verify Limits red" +
+            "uction of Funds Transfer to Other Banks Account Limit_PSD_Y_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LimitMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Funds Transfer to Other Banks Account Limit_PSD_Y_O" +
+            "ne")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Funds Transfer to Other Banks Account Limit_PSD_Y_O" +
+            "ne")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Funds Transfer to Other Banks Account")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "90000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Transaction_Category", "Non Financial")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:old_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_name_tran_query", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyLimitManagementFromMyAccount_ToVerifyLimitsReductionOfFundsTransferToOtherBanksAccountLimit_PSD_Y_One()
+        {
+#line 51
+this.AsAUserIWantToVerifyLimitManagementFromMyAccount("To verify Limits reduction of Funds Transfer to Other Banks Account Limit_PSD_Y_O" +
+                    "ne", "Pass", "Funds Transfer to Other Banks Account", "90000", "Non Financial", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Limit Management from My Account: To verify Limits red" +
+            "uction of Funds Transfer to HBL Account Limit_PSD_Y_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LimitMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Funds Transfer to HBL Account Limit_PSD_Y_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Funds Transfer to HBL Account Limit_PSD_Y_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Funds Transfer to HBL Account")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "95000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Transaction_Category", "Non Financial")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:old_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_name_tran_query", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyLimitManagementFromMyAccount_ToVerifyLimitsReductionOfFundsTransferToHBLAccountLimit_PSD_Y_One()
+        {
+#line 51
+this.AsAUserIWantToVerifyLimitManagementFromMyAccount("To verify Limits reduction of Funds Transfer to HBL Account Limit_PSD_Y_One", "Pass", "Funds Transfer to HBL Account", "95000", "Non Financial", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Limit Management from My Account: To verify Limits red" +
+            "uction of Funds Transfer to Own HBL Account Limit_PSD_Y_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LimitMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Funds Transfer to Own HBL Account Limit_PSD_Y_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Funds Transfer to Own HBL Account Limit_PSD_Y_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Funds Transfer to Own HBL Account")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Transaction_Category", "Non Financial")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:old_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_name_tran_query", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyLimitManagementFromMyAccount_ToVerifyLimitsReductionOfFundsTransferToOwnHBLAccountLimit_PSD_Y_One()
+        {
+#line 51
+this.AsAUserIWantToVerifyLimitManagementFromMyAccount("To verify Limits reduction of Funds Transfer to Own HBL Account Limit_PSD_Y_One", "Fail", "Funds Transfer to Own HBL Account", "0", "Non Financial", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Limit Management from My Account: To verify Limits red" +
+            "uction of Mobile Prepaid and Postpaid Payments Limit_PSD_Y_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LimitMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Mobile Prepaid and Postpaid Payments Limit_PSD_Y_On" +
+            "e")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Mobile Prepaid and Postpaid Payments Limit_PSD_Y_On" +
+            "e")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Mobile Prepaid and Postpaid Payments")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "8000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Transaction_Category", "Non Financial")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:old_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_name_tran_query", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyLimitManagementFromMyAccount_ToVerifyLimitsReductionOfMobilePrepaidAndPostpaidPaymentsLimit_PSD_Y_One()
+        {
+#line 51
+this.AsAUserIWantToVerifyLimitManagementFromMyAccount("To verify Limits reduction of Mobile Prepaid and Postpaid Payments Limit_PSD_Y_On" +
+                    "e", "Pass", "Mobile Prepaid and Postpaid Payments", "8000", "Non Financial", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Limit Management from My Account: To verify Limits red" +
+            "uction of Utility Bills and Other Payments Limit_PSD_Y_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LimitMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Utility Bills and Other Payments Limit_PSD_Y_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Utility Bills and Other Payments Limit_PSD_Y_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Utility Bills and Other Payments")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "120000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Transaction_Category", "Non Financial")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:old_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_name_tran_query", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyLimitManagementFromMyAccount_ToVerifyLimitsReductionOfUtilityBillsAndOtherPaymentsLimit_PSD_Y_One()
+        {
+#line 51
+this.AsAUserIWantToVerifyLimitManagementFromMyAccount("To verify Limits reduction of Utility Bills and Other Payments Limit_PSD_Y_One", "Pass", "Utility Bills and Other Payments", "120000", "Non Financial", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Limit Management from My Account: To verify Limits red" +
+            "uction of QR Payments Limit_PSD_N_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LimitMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of QR Payments Limit_PSD_N_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of QR Payments Limit_PSD_N_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "QR Payments")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "4000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Transaction_Category", "Non Financial")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:old_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_name_tran_query", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyLimitManagementFromMyAccount_ToVerifyLimitsReductionOfQRPaymentsLimit_PSD_N_One()
+        {
+#line 51
+this.AsAUserIWantToVerifyLimitManagementFromMyAccount("To verify Limits reduction of QR Payments Limit_PSD_N_One", "Pass", "QR Payments", "4000", "Non Financial", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Limit Management from My Account: To verify Limits red" +
+            "uction of Funds Transfer to Other Banks Account Limit_PSD_N_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LimitMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Funds Transfer to Other Banks Account Limit_PSD_N_O" +
+            "ne")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Funds Transfer to Other Banks Account Limit_PSD_N_O" +
+            "ne")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Funds Transfer to Other Banks Account")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "13000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Transaction_Category", "Non Financial")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:old_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_name_tran_query", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyLimitManagementFromMyAccount_ToVerifyLimitsReductionOfFundsTransferToOtherBanksAccountLimit_PSD_N_One()
+        {
+#line 51
+this.AsAUserIWantToVerifyLimitManagementFromMyAccount("To verify Limits reduction of Funds Transfer to Other Banks Account Limit_PSD_N_O" +
+                    "ne", "Pass", "Funds Transfer to Other Banks Account", "13000", "Non Financial", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Limit Management from My Account: To verify Limits red" +
+            "uction of Funds Transfer to HBL Account Limit_PSD_N_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LimitMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Funds Transfer to HBL Account Limit_PSD_N_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Funds Transfer to HBL Account Limit_PSD_N_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Funds Transfer to HBL Account")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "14000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Transaction_Category", "Non Financial")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:old_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_name_tran_query", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyLimitManagementFromMyAccount_ToVerifyLimitsReductionOfFundsTransferToHBLAccountLimit_PSD_N_One()
+        {
+#line 51
+this.AsAUserIWantToVerifyLimitManagementFromMyAccount("To verify Limits reduction of Funds Transfer to HBL Account Limit_PSD_N_One", "Pass", "Funds Transfer to HBL Account", "14000", "Non Financial", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Limit Management from My Account: To verify Limits red" +
+            "uction of Funds Transfer to Own HBL Account Limit_PSD_N_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LimitMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Funds Transfer to Own HBL Account Limit_PSD_N_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Funds Transfer to Own HBL Account Limit_PSD_N_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Funds Transfer to Own HBL Account")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "250000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Transaction_Category", "Non Financial")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:old_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_name_tran_query", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyLimitManagementFromMyAccount_ToVerifyLimitsReductionOfFundsTransferToOwnHBLAccountLimit_PSD_N_One()
+        {
+#line 51
+this.AsAUserIWantToVerifyLimitManagementFromMyAccount("To verify Limits reduction of Funds Transfer to Own HBL Account Limit_PSD_N_One", "Pass", "Funds Transfer to Own HBL Account", "250000", "Non Financial", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Limit Management from My Account: To verify Limits red" +
+            "uction of Mobile Prepaid and Postpaid Payments Limit_PSD_N_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LimitMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Mobile Prepaid and Postpaid Payments Limit_PSD_N_On" +
+            "e")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Mobile Prepaid and Postpaid Payments Limit_PSD_N_On" +
+            "e")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Mobile Prepaid and Postpaid Payments")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "3000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Transaction_Category", "Non Financial")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:old_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_name_tran_query", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyLimitManagementFromMyAccount_ToVerifyLimitsReductionOfMobilePrepaidAndPostpaidPaymentsLimit_PSD_N_One()
+        {
+#line 51
+this.AsAUserIWantToVerifyLimitManagementFromMyAccount("To verify Limits reduction of Mobile Prepaid and Postpaid Payments Limit_PSD_N_On" +
+                    "e", "Pass", "Mobile Prepaid and Postpaid Payments", "3000", "Non Financial", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Limit Management from My Account: To verify Limits red" +
+            "uction of Utility Bills and Other Payments Limit_PSD_N_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LimitMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Utility Bills and Other Payments Limit_PSD_N_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Utility Bills and Other Payments Limit_PSD_N_One")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Utility Bills and Other Payments")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "20000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Transaction_Category", "Non Financial")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:old_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_name_tran_query", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyLimitManagementFromMyAccount_ToVerifyLimitsReductionOfUtilityBillsAndOtherPaymentsLimit_PSD_N_One()
+        {
+#line 51
+this.AsAUserIWantToVerifyLimitManagementFromMyAccount("To verify Limits reduction of Utility Bills and Other Payments Limit_PSD_N_One", "Pass", "Utility Bills and Other Payments", "20000", "Non Financial", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Limit Management from My Account: To verify Limits red" +
+            "uction of QR Payments Limit_PSD_Y_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LimitMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of QR Payments Limit_PSD_Y_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of QR Payments Limit_PSD_Y_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "QR Payments")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "80000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Transaction_Category", "Non Financial")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:old_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_name_tran_query", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyLimitManagementFromMyAccount_ToVerifyLimitsReductionOfQRPaymentsLimit_PSD_Y_Two()
+        {
+#line 51
+this.AsAUserIWantToVerifyLimitManagementFromMyAccount("To verify Limits reduction of QR Payments Limit_PSD_Y_Two", "Pass", "QR Payments", "80000", "Non Financial", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Limit Management from My Account: To verify Limits red" +
+            "uction of Funds Transfer to Other Banks Account Limit_PSD_Y_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LimitMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Funds Transfer to Other Banks Account Limit_PSD_Y_T" +
+            "wo")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Funds Transfer to Other Banks Account Limit_PSD_Y_T" +
+            "wo")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Funds Transfer to Other Banks Account")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "70000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Transaction_Category", "Non Financial")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:old_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_name_tran_query", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyLimitManagementFromMyAccount_ToVerifyLimitsReductionOfFundsTransferToOtherBanksAccountLimit_PSD_Y_Two()
+        {
+#line 51
+this.AsAUserIWantToVerifyLimitManagementFromMyAccount("To verify Limits reduction of Funds Transfer to Other Banks Account Limit_PSD_Y_T" +
+                    "wo", "Pass", "Funds Transfer to Other Banks Account", "70000", "Non Financial", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Limit Management from My Account: To verify Limits red" +
+            "uction of Funds Transfer to HBL Account Limit_PSD_Y_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LimitMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Funds Transfer to HBL Account Limit_PSD_Y_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Funds Transfer to HBL Account Limit_PSD_Y_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Funds Transfer to HBL Account")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "80000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Transaction_Category", "Non Financial")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:old_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_name_tran_query", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyLimitManagementFromMyAccount_ToVerifyLimitsReductionOfFundsTransferToHBLAccountLimit_PSD_Y_Two()
+        {
+#line 51
+this.AsAUserIWantToVerifyLimitManagementFromMyAccount("To verify Limits reduction of Funds Transfer to HBL Account Limit_PSD_Y_Two", "Pass", "Funds Transfer to HBL Account", "80000", "Non Financial", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Limit Management from My Account: To verify Limits red" +
+            "uction of Funds Transfer to Own HBL Account Limit_PSD_Y_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LimitMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Funds Transfer to Own HBL Account Limit_PSD_Y_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Funds Transfer to Own HBL Account Limit_PSD_Y_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Funds Transfer to Own HBL Account")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "20000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Transaction_Category", "Non Financial")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:old_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_name_tran_query", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyLimitManagementFromMyAccount_ToVerifyLimitsReductionOfFundsTransferToOwnHBLAccountLimit_PSD_Y_Two()
+        {
+#line 51
+this.AsAUserIWantToVerifyLimitManagementFromMyAccount("To verify Limits reduction of Funds Transfer to Own HBL Account Limit_PSD_Y_Two", "Pass", "Funds Transfer to Own HBL Account", "20000", "Non Financial", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Limit Management from My Account: To verify Limits red" +
+            "uction of Mobile Prepaid and Postpaid Payments Limit_PSD_Y_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LimitMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Mobile Prepaid and Postpaid Payments Limit_PSD_Y_Tw" +
+            "o")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Mobile Prepaid and Postpaid Payments Limit_PSD_Y_Tw" +
+            "o")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Mobile Prepaid and Postpaid Payments")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "20000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Transaction_Category", "Non Financial")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:old_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_name_tran_query", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyLimitManagementFromMyAccount_ToVerifyLimitsReductionOfMobilePrepaidAndPostpaidPaymentsLimit_PSD_Y_Two()
+        {
+#line 51
+this.AsAUserIWantToVerifyLimitManagementFromMyAccount("To verify Limits reduction of Mobile Prepaid and Postpaid Payments Limit_PSD_Y_Tw" +
+                    "o", "Pass", "Mobile Prepaid and Postpaid Payments", "20000", "Non Financial", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Limit Management from My Account: To verify Limits red" +
+            "uction of Utility Bills and Other Payments Limit_PSD_Y_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LimitMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Utility Bills and Other Payments Limit_PSD_Y_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Utility Bills and Other Payments Limit_PSD_Y_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Utility Bills and Other Payments")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "190000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Transaction_Category", "Non Financial")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:old_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_name_tran_query", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyLimitManagementFromMyAccount_ToVerifyLimitsReductionOfUtilityBillsAndOtherPaymentsLimit_PSD_Y_Two()
+        {
+#line 51
+this.AsAUserIWantToVerifyLimitManagementFromMyAccount("To verify Limits reduction of Utility Bills and Other Payments Limit_PSD_Y_Two", "Pass", "Utility Bills and Other Payments", "190000", "Non Financial", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Limit Management from My Account: To verify Limits red" +
+            "uction of QR Payments Limit_PSD_N_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LimitMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of QR Payments Limit_PSD_N_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of QR Payments Limit_PSD_N_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "QR Payments")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "4000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Transaction_Category", "Non Financial")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:old_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_name_tran_query", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyLimitManagementFromMyAccount_ToVerifyLimitsReductionOfQRPaymentsLimit_PSD_N_Two()
+        {
+#line 51
+this.AsAUserIWantToVerifyLimitManagementFromMyAccount("To verify Limits reduction of QR Payments Limit_PSD_N_Two", "Pass", "QR Payments", "4000", "Non Financial", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Limit Management from My Account: To verify Limits red" +
+            "uction of Funds Transfer to Other Banks Account Limit_PSD_N_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LimitMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Funds Transfer to Other Banks Account Limit_PSD_N_T" +
+            "wo")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Funds Transfer to Other Banks Account Limit_PSD_N_T" +
+            "wo")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Funds Transfer to Other Banks Account")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "20000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Transaction_Category", "Non Financial")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:old_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_name_tran_query", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyLimitManagementFromMyAccount_ToVerifyLimitsReductionOfFundsTransferToOtherBanksAccountLimit_PSD_N_Two()
+        {
+#line 51
+this.AsAUserIWantToVerifyLimitManagementFromMyAccount("To verify Limits reduction of Funds Transfer to Other Banks Account Limit_PSD_N_T" +
+                    "wo", "Pass", "Funds Transfer to Other Banks Account", "20000", "Non Financial", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Limit Management from My Account: To verify Limits red" +
+            "uction of Funds Transfer to HBL Account Limit_PSD_N_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LimitMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Funds Transfer to HBL Account Limit_PSD_N_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Funds Transfer to HBL Account Limit_PSD_N_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Funds Transfer to HBL Account")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "140000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Transaction_Category", "Non Financial")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:old_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_name_tran_query", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyLimitManagementFromMyAccount_ToVerifyLimitsReductionOfFundsTransferToHBLAccountLimit_PSD_N_Two()
+        {
+#line 51
+this.AsAUserIWantToVerifyLimitManagementFromMyAccount("To verify Limits reduction of Funds Transfer to HBL Account Limit_PSD_N_Two", "Pass", "Funds Transfer to HBL Account", "140000", "Non Financial", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Limit Management from My Account: To verify Limits red" +
+            "uction of Funds Transfer to Own HBL Account Limit_PSD_N_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LimitMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Funds Transfer to Own HBL Account Limit_PSD_N_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Funds Transfer to Own HBL Account Limit_PSD_N_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Funds Transfer to Own HBL Account")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "210000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Transaction_Category", "Non Financial")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:old_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_name_tran_query", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyLimitManagementFromMyAccount_ToVerifyLimitsReductionOfFundsTransferToOwnHBLAccountLimit_PSD_N_Two()
+        {
+#line 51
+this.AsAUserIWantToVerifyLimitManagementFromMyAccount("To verify Limits reduction of Funds Transfer to Own HBL Account Limit_PSD_N_Two", "Pass", "Funds Transfer to Own HBL Account", "210000", "Non Financial", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Limit Management from My Account: To verify Limits red" +
+            "uction of Mobile Prepaid and Postpaid Payments Limit_PSD_N_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LimitMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Mobile Prepaid and Postpaid Payments Limit_PSD_N_Tw" +
+            "o")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Mobile Prepaid and Postpaid Payments Limit_PSD_N_Tw" +
+            "o")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Mobile Prepaid and Postpaid Payments")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "3000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Transaction_Category", "Non Financial")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:old_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_name_tran_query", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyLimitManagementFromMyAccount_ToVerifyLimitsReductionOfMobilePrepaidAndPostpaidPaymentsLimit_PSD_N_Two()
+        {
+#line 51
+this.AsAUserIWantToVerifyLimitManagementFromMyAccount("To verify Limits reduction of Mobile Prepaid and Postpaid Payments Limit_PSD_N_Tw" +
+                    "o", "Pass", "Mobile Prepaid and Postpaid Payments", "3000", "Non Financial", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/LimitManagement.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Limit Management from My Account: To verify Limits red" +
+            "uction of Utility Bills and Other Payments Limit_PSD_N_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("LimitMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/LimitManagement.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Limits reduction of Utility Bills and Other Payments Limit_PSD_N_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Limits reduction of Utility Bills and Other Payments Limit_PSD_N_Two")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_type", "Utility Bills and Other Payments")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit", "19000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Transaction_Category", "Non Financial")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:old_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:new_limit_tran_query", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:limit_name_tran_query", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyLimitManagementFromMyAccount_ToVerifyLimitsReductionOfUtilityBillsAndOtherPaymentsLimit_PSD_N_Two()
+        {
+#line 51
+this.AsAUserIWantToVerifyLimitManagementFromMyAccount("To verify Limits reduction of Utility Bills and Other Payments Limit_PSD_N_Two", "Pass", "Utility Bills and Other Payments", "19000", "Non Financial", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE2 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.IVR_ATTRIBUTE3 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.LEAD_FIELD1 FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
                         "source:Data/LimitManagement.xlsx"});
 #line hidden
         }
@@ -326,91 +1450,92 @@ this.AsAUserIWantToVeAsAUserIWantToVerifyLimitManagementFromMyAccountrifyLimitMa
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "MyAccount"};
+                    "MyAccount",
+                    "ChangeUserPass"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user i want to verify change user login password", @__tags);
-#line 79
-this.ScenarioSetup(scenarioInfo);
-#line 80
- testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 81
- testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 82
- testRunner.And(string.Format("I set value in context from data \"{0}\" as \"username\"", login_UserId_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 83
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_UserId\"", login_UserId_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 84
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_Password\"", login_Password_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"username\"", login_UserId_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 85
- testRunner.When("I am performing on \"Login_SignIn_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 86
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 87
- testRunner.And("I am performing on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 88
- testRunner.And("verify through \"Welcome\" on \"Login_Success_Text\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 89
- testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 90
- testRunner.And("I am clicking on \"MyAccount_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 91
- testRunner.And("I am clicking on \"MyAccount_ChangePassOptn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 92
- testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"{1}\"", password_Policy_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 93
- testRunner.And("verify through \"MyAccount_PassPolicy\" on \"MyAccount_Forgot_UserPassPolicy1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 94
- testRunner.And(string.Format("I have given \"{0}\" on \"Settings_login_old_pass\"", login_Password_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 95
- testRunner.And(string.Format("I have given \"{0}\" on \"Settings_login_new_pass\"", login_New_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 96
- testRunner.And(string.Format("I have given \"{0}\" on \"Settings_login_confirm_pass\"", confirm_Password_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 97
- testRunner.And("I am performing on \"Settings_change_login_button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 98
- testRunner.Then(string.Format("verify through \"{0}\" on \"MyAccount_Forgot_Tran_Success\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 99
- testRunner.And("I am clicking on \"MyAccount_ChangePassOKBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 100
- testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"{1}\"", password_Change_Req_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 101
- testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"{1}\"", iS_PASSWORD_RESET_REQUIRED, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 102
- testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"{1}\"", lAST_PASSWORD_CHANGED, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 103
- testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"{1}\"", lGN_PWD_CHANGED_POPUP_COUNT, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 104
- testRunner.And(string.Format("verify the message \"1\" through database on \"{0}\" on Schema \"{1}\"", customer_Password_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 105
  testRunner.And(string.Format("I have given \"{0}\" on \"Login_UserId\"", login_UserId_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 106
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_Password\"", login_New_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 107
- testRunner.And("I am performing on \"Login_SignIn_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 108
+#line 86
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_Password\"", login_Password_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 87
+ testRunner.When("I am performing on \"Login_SignIn_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 88
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 89
+ testRunner.And("I am performing on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 90
  testRunner.And("verify through \"Welcome\" on \"Login_Success_Text\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 91
+ testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 92
+ testRunner.And("I am clicking on \"MyAccount_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 93
+ testRunner.And("I am clicking on \"MyAccount_ChangePassOptn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 94
+ testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"{1}\"", password_Policy_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 95
+ testRunner.And("verify through \"MyAccount_PassPolicy\" on \"MyAccount_Forgot_UserPassPolicy1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 96
+ testRunner.And(string.Format("I have given \"{0}\" on \"Settings_login_old_pass\"", login_Password_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 97
+ testRunner.And(string.Format("I have given \"{0}\" on \"Settings_login_new_pass\"", login_New_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 98
+ testRunner.And(string.Format("I have given \"{0}\" on \"Settings_login_confirm_pass\"", confirm_Password_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 99
+ testRunner.And("I am performing on \"Settings_change_login_button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 100
+ testRunner.Then(string.Format("verify through \"{0}\" on \"MyAccount_Forgot_Tran_Success\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 101
+ testRunner.And("I am clicking on \"MyAccount_ChangePassOKBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 102
+ testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"{1}\"", password_Change_Req_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 103
+ testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"{1}\"", iS_PASSWORD_RESET_REQUIRED, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 104
+ testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"{1}\"", lAST_PASSWORD_CHANGED, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 105
+ testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"{1}\"", lGN_PWD_CHANGED_POPUP_COUNT, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 106
+ testRunner.And(string.Format("verify the message \"1\" through database on \"{0}\" on Schema \"{1}\"", customer_Password_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 107
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_UserId\"", login_UserId_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 108
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_Password\"", login_New_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 109
- testRunner.And(string.Format("update the data by query \"{0}\" on DIGITAL_CHANNEL_SEC", update_Password_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am performing on \"Login_SignIn_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 110
- testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("verify through \"Welcome\" on \"Login_Success_Text\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 111
- testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("update the data by query \"{0}\" on DIGITAL_CHANNEL_SEC", update_Password_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 112
- testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 113
- testRunner.And("I select \"Non Financial\" on \"Services_CategoryFilter\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 114
- testRunner.And("I scroll to element \"Services_Clear_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 115
- testRunner.And("I am performing on \"Services_Search_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I select \"Non Financial\" on \"Services_CategoryFilter\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 116
- testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I scroll to element \"Services_Clear_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 117
- testRunner.And("verify through \"Successful\" on \"MyAccount_Forgot_TranSuccessMessage\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am performing on \"Services_Search_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 118
+ testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 119
+ testRunner.And("verify through \"Successful\" on \"MyAccount_Forgot_TranSuccessMessage\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 120
  testRunner.And("I am performing on \"Investment_TranActivityCloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -421,6 +1546,7 @@ this.ScenarioSetup(scenarioInfo);
             " change user login password from MY ACCOUNT")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeUserPass")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ChangeLoginPassword.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user i want to verify change user login password from MY ACCOUNT")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user i want to verify change user login password from MY ACCOUNT")]
@@ -454,7 +1580,7 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_password_query", @"Select count(*) from (Select MAX(AA.CREATED_ON) from DC_CUSTOMER_PASSWORD_HISTORY AA INNER JOIN DC_CUSTOMER_INFO BB ON AA.CUSTOMER_INFO_ID = BB.CUSTOMER_INFO_ID where AA.CUSTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from dc_customer_info l where L.CUSTOMER_NAME = '{customer_name}') and AA.TRANSACTION_TYPE_ID = (Select LL.TRANSACTION_TYPE_ID from DC_TRANSACTION LL where LL.TRANSACTION_ID = '{TRANSACTION_ID}') and AA.PASSWORD = BB.LOGIN_PASSWORD and TRUNC(AA.CREATED_ON) < (SELECT TRUNC(SYSDATE) FROM DUAL) and TRUNC(AA.UPDATED_ON) < (SELECT TRUNC(SYSDATE) FROM DUAL) order by AA.UPDATED_ON desc) where rownum = 1")]
         public virtual void AsAUserIWantToVerifyChangeUserLoginPassword_AsAUserIWantToVerifyChangeUserLoginPasswordFromMYACCOUNT()
         {
-#line 79
+#line 81
 this.AsAUserIWantToVerifyChangeUserLoginPassword("As a user i want to verify change user login password from MY ACCOUNT", "YASIR113", "pakistan1", "pakistan3", "12345", "pakistan3", "Begin Update DC_CUSTOMER_INFO d SET D.LOGIN_PASSWORD= \'$2a$31$/X5tDPefefOhOzzU5U7" +
                     "a4e25j9rW8Hd/f0.ddthMr6vdRaJfnE8/6\' where D.CUSTOMER_NAME= \'{customer_name}\';COM" +
                     "MIT;END;", "select IS_PASSWORD_CHANGED_REQUIRED from dc_customer_info P where P.customer_name" +
@@ -490,84 +1616,85 @@ this.AsAUserIWantToVerifyChangeUserLoginPassword("As a user i want to verify cha
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "MyAccount"};
+                    "MyAccount",
+                    "ChangeTranPass"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user i want to verify change user Transaction password", @__tags);
-#line 128
-this.ScenarioSetup(scenarioInfo);
-#line 129
- testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 130
- testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 131
- testRunner.And(string.Format("I set value in context from data \"{0}\" as \"username\"", login_UserId_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 132
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_UserId\"", login_UserId_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 133
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_Password\"", login_Password_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"username\"", login_UserId_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 134
- testRunner.When("I am performing on \"Login_SignIn_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_UserId\"", login_UserId_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 135
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_Password\"", login_Password_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 136
- testRunner.And("I am performing on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I am performing on \"Login_SignIn_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 137
- testRunner.And("verify through \"Welcome\" on \"Login_Success_Text\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 138
+ testRunner.And("I am performing on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 139
- testRunner.And("I am clicking on \"MyAccount_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 140
- testRunner.And("I am clicking on \"MyAccount_ChangeTranPassOptn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("verify through \"Welcome\" on \"Login_Success_Text\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 141
- testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"{1}\"", password_Policy_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"MyAccount_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 142
- testRunner.And("verify through \"MyAccount_PassPolicy\" on \"MyAccount_Forgot_TranPassPolicy1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"MyAccount_ChangeTranPassOptn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 143
- testRunner.And(string.Format("I have given \"{0}\" on \"MyAccount_TranOldPass\"", tran_Old_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"{1}\"", password_Policy_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 144
- testRunner.And(string.Format("I have given \"{0}\" on \"MyAccount_TranNewPass\"", tran_New_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("verify through \"MyAccount_PassPolicy\" on \"MyAccount_Forgot_TranPassPolicy1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 145
- testRunner.And(string.Format("I have given \"{0}\" on \"MyAccount_TranConfirmPass\"", tran_Confirm_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"MyAccount_TranOldPass\"", tran_Old_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 146
- testRunner.And("I am performing on \"MyAccount_TranChangeBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"MyAccount_TranNewPass\"", tran_New_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 147
- testRunner.Then(string.Format("verify through \"{0}\" on \"MyAccount_TranPopup_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"MyAccount_TranConfirmPass\"", tran_Confirm_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 148
+ testRunner.And("I am performing on \"MyAccount_TranChangeBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 149
+ testRunner.Then(string.Format("verify through \"{0}\" on \"MyAccount_TranPopup_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 151
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"MyAccount_TranPopup_TranDate" +
                         "\"", tran_Date_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 150
- testRunner.And(string.Format("verify the message \"1\" through database on \"{0}\" on Schema \"{1}\"", customer_Password_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 151
- testRunner.And("I am performing on \"MyAccount_TranPopupClose\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 152
- testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"{1}\"", lAST_TRANS_PASSWORD_CHANGED, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify the message \"1\" through database on \"{0}\" on Schema \"{1}\"", customer_Password_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 153
- testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am performing on \"MyAccount_TranPopupClose\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 154
- testRunner.And(string.Format("update the data by query \"{0}\" on DIGITAL_CHANNEL_SEC", update_Password_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"{1}\"", lAST_TRANS_PASSWORD_CHANGED, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 155
- testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 156
- testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("update the data by query \"{0}\" on DIGITAL_CHANNEL_SEC", update_Password_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 157
- testRunner.And("I select \"Non Financial\" on \"Services_CategoryFilter\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 158
- testRunner.And("I scroll to element \"Services_Clear_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 159
- testRunner.And("I am performing on \"Services_Search_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I select \"Non Financial\" on \"Services_CategoryFilter\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 160
- testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I scroll to element \"Services_Clear_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 161
- testRunner.And("verify through \"Successful\" on \"MyAccount_Forgot_TranSuccessMessage\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am performing on \"Services_Search_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 162
+ testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 163
+ testRunner.And("verify through \"Successful\" on \"MyAccount_Forgot_TranSuccessMessage\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 164
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"MyAccount_TranPopup_TranType" +
                         "\"", tran_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 163
+#line 165
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"MyAccount_TranPopup_TranDate" +
                         "\"", tran_Date_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 164
+#line 166
  testRunner.And("I am performing on \"Investment_TranActivityCloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -578,6 +1705,7 @@ this.ScenarioSetup(scenarioInfo);
             "verify change user Transaction password from MY ACCOUNT")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChangeTranPass")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ChangeTransactionPassword.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user i want to verify change user Transaction password from MY ACCOUNT")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user i want to verify change user Transaction password from MY ACCOUNT")]
@@ -604,7 +1732,7 @@ this.ScenarioSetup(scenarioInfo);
             "mer_name}\'")]
         public virtual void AsAUserIWantToVerifyChangeUserTransactionPassword_AsAUserIWantToVerifyChangeUserTransactionPasswordFromMYACCOUNT()
         {
-#line 128
+#line 130
 this.AsAUserIWantToVerifyChangeUserTransactionPassword("As a user i want to verify change user Transaction password from MY ACCOUNT", "YASIR113", "pakistan1", "12345", "pakistan2", "pakistan4", "Begin Update DC_CUSTOMER_INFO d SET D.TRANSACTION_PASSWORD= \'$2a$10$fZ3EqVq2W9QWb" +
                     "2silU6sVuDUr.2XrXNSHjU98hOuQsCE/Dr1oN6cy\' where D.CUSTOMER_NAME= \'{customer_name" +
                     "}\';COMMIT;END;", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL P where P.PARAMETER_NAME =" +
@@ -639,87 +1767,88 @@ this.AsAUserIWantToVerifyChangeUserTransactionPassword("As a user i want to veri
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "MyAccount"};
+                    "MyAccount",
+                    "ForgetTranPass"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user i want to verify Forgot Transaction password", @__tags);
-#line 172
-this.ScenarioSetup(scenarioInfo);
-#line 173
- testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 174
- testRunner.And(string.Format("I set value in context from data \"{0}\" as \"username\"", login_UserId_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 175
- testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 176
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_UserId\"", login_UserId_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"username\"", login_UserId_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 177
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_Password\"", login_Password_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 178
- testRunner.When("I am performing on \"Login_SignIn_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_UserId\"", login_UserId_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 179
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_Password\"", login_Password_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 180
- testRunner.And("I am performing on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I am performing on \"Login_SignIn_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 181
- testRunner.And("verify through \"Welcome\" on \"Login_Success_Text\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 182
+ testRunner.And("I am performing on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 183
- testRunner.And("I am clicking on \"MyAccount_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 184
- testRunner.And("I am clicking on \"MyAccount_ChangeTranPassOptn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("verify through \"Welcome\" on \"Login_Success_Text\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 185
- testRunner.And("I am clicking on \"MyAccount_Tran_ForgotLink\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"MyAccount_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 186
- testRunner.And(string.Format("I have given \"{0}\" on \"MyAccount_Forgot_TranCNIC\"", cnic), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"MyAccount_ChangeTranPassOptn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 187
+ testRunner.And("I am clicking on \"MyAccount_Tran_ForgotLink\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 188
- testRunner.And(string.Format("I have given \"{0}\" on \"MyAccount_Forgot_TranCardNo\"", cardNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 189
- testRunner.And(string.Format("I have given \"{0}\" on \"MyAccount_Forgot_TranPIN\"", pin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"MyAccount_Forgot_TranCNIC\"", cnic), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 190
- testRunner.And("I am performing on \"MyAccount_Forgot_TranContBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"MyAccount_Forgot_TranCardNo\"", cardNo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 191
- testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"{1}\"", password_Policy_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"MyAccount_Forgot_TranPIN\"", pin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 192
- testRunner.And("verify through \"MyAccount_PassPolicy\" on \"MyAccount_Forgot_TranPassPolicy1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am performing on \"MyAccount_Forgot_TranContBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 193
- testRunner.And(string.Format("I have given \"{0}\" on \"MyAccount_Forgot_Tran_NewPass\"", tran_New_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"{1}\"", password_Policy_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 194
- testRunner.And(string.Format("I have given \"{0}\" on \"MyAccount_Forgot_Tran_CnfrmPass\"", tran_Confirm_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("verify through \"MyAccount_PassPolicy\" on \"MyAccount_Forgot_TranPassPolicy1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 195
- testRunner.Then("I am performing on \"MyAccount_Forgot_Tran_ChangeBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"MyAccount_Forgot_Tran_NewPass\"", tran_New_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 196
- testRunner.And(string.Format("verify through \"{0}\" on \"MyAccount_Forgot_Tran_Success\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"MyAccount_Forgot_Tran_CnfrmPass\"", tran_Confirm_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 197
- testRunner.And(string.Format("verify the message \"1\" through database on \"{0}\" on Schema \"{1}\"", customer_Password_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("I am performing on \"MyAccount_Forgot_Tran_ChangeBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 198
- testRunner.And("I am performing on \"MyAccount_Forgot_Tran_OkBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify through \"{0}\" on \"MyAccount_Forgot_Tran_Success\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 199
- testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify the message \"1\" through database on \"{0}\" on Schema \"{1}\"", customer_Password_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 200
- testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am performing on \"MyAccount_Forgot_Tran_OkBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 201
- testRunner.And("I select \"Non Financial\" on \"Services_CategoryFilter\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 202
- testRunner.And("I scroll to element \"Services_Clear_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 203
+ testRunner.And("I select \"Non Financial\" on \"Services_CategoryFilter\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 204
- testRunner.And("I press Enter on \"Services_Search_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 205
- testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I scroll to element \"Services_Clear_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 206
- testRunner.And("verify through \"Successful\" on \"MyAccount_Forgot_TranSuccessMessage\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I press Enter on \"Services_Search_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 207
- testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"{1}\"", lAST_TRANS_PASSWORD_CHANGED, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 208
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"MyAccount_Forgot_TranType\"", tran_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("verify through \"Successful\" on \"MyAccount_Forgot_TranSuccessMessage\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 209
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"MyAccount_Forgot_TranDate\"", tran_Date_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"{1}\"", lAST_TRANS_PASSWORD_CHANGED, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 210
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"MyAccount_Forgot_TranType\"", tran_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 211
- testRunner.And("I am performing on \"MyAccount_Forgot_CloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 212
- testRunner.And(string.Format("update the data by query \"{0}\" on DIGITAL_CHANNEL_SEC", update_Password_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"MyAccount_Forgot_TranDate\"", tran_Date_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 213
+ testRunner.And("I am performing on \"MyAccount_Forgot_CloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 214
+ testRunner.And(string.Format("update the data by query \"{0}\" on DIGITAL_CHANNEL_SEC", update_Password_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 215
  testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -730,6 +1859,7 @@ this.ScenarioSetup(scenarioInfo);
             "y Forgot Transaction password from MY ACCOUNT")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ForgetTranPass")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ForgotTransactionPassword.xlsx")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user i want to verify Forgot Transaction password from MY ACCOUNT")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user i want to verify Forgot Transaction password from MY ACCOUNT")]
@@ -759,7 +1889,7 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_password_query", @"Select count(*) from (Select MAX(AA.CREATED_ON) from DC_CUSTOMER_PASSWORD_HISTORY AA INNER JOIN DC_CUSTOMER_INFO BB ON AA.CUSTOMER_INFO_ID = BB.CUSTOMER_INFO_ID where AA.CUSTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from dc_customer_info l where L.CUSTOMER_NAME = '{customer_name}') and AA.TRANSACTION_TYPE_ID = (Select LL.TRANSACTION_TYPE_ID from DC_TRANSACTION LL where LL.TRANSACTION_ID = '{TRANSACTION_ID}') and AA.PASSWORD = BB.TRANSACTION_PASSWORD and TRUNC(AA.CREATED_ON) < (SELECT TRUNC(SYSDATE) FROM DUAL) and TRUNC(AA.UPDATED_ON) < (SELECT TRUNC(SYSDATE) FROM DUAL) order by AA.UPDATED_ON desc) where rownum = 1")]
         public virtual void AsAUserIWantToVerifyForgotTransactionPassword_AsAUserIWantToVerifyForgotTransactionPasswordFromMYACCOUNT()
         {
-#line 172
+#line 174
 this.AsAUserIWantToVerifyForgotTransactionPassword("As a user i want to verify Forgot Transaction password from MY ACCOUNT", "MOJIZUSER", "pakistan1", "12345", "pakistan4", "Begin Update DC_CUSTOMER_INFO d SET D.TRANSACTION_PASSWORD= \'$2a$10$fZ3EqVq2W9QWb" +
                     "2silU6sVuDUr.2XrXNSHjU98hOuQsCE/Dr1oN6cy\' where D.CUSTOMER_NAME= \'{customer_name" +
                     "}\';COMMIT;END;", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL P where P.PARAMETER_NAME =" +
@@ -774,6 +1904,7 @@ this.AsAUserIWantToVerifyForgotTransactionPassword("As a user i want to verify F
         
         public virtual void AsAUserIWantToVerifyChequeBookRequestFromMyAccount(
                     string @case, 
+                    string expected_Result, 
                     string for_Account, 
                     string no_Of_Cheque, 
                     string home_Branch_Option, 
@@ -792,117 +1923,496 @@ this.AsAUserIWantToVerifyForgotTransactionPassword("As a user i want to verify F
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "MyAccount"};
+                    "MyAccount",
+                    "ChequeBook"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user I want to verify Cheque Book Request from My Account", @__tags);
-#line 222
-this.ScenarioSetup(scenarioInfo);
-#line 223
- testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 224
- testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 225
- testRunner.And(string.Format("I set value in context from data \"{0}\" as \"home_branch_del_flag\"", home_Branch_Option), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 226
- testRunner.And("I count Number of Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the test case expected result is \"<Expected_Result>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 227
- testRunner.And("I am clicking on \"MyAccount_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 228
- testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 229
- testRunner.And("I am clicking on \"MyAccount_CheqBook_Opt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"home_branch_del_flag\"", home_Branch_Option), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 230
- testRunner.And(string.Format("verify the message \"D\" through database on \"{0}\" on Schema \"{1}\"", customer_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I count Number of Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 231
- testRunner.When(string.Format("I select \"{0}\" on \"MyAccount_CheqBook_forAcc_List\"", for_Account), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I am clicking on \"MyAccount_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 232
- testRunner.And(string.Format("I select \"{0}\" on \"MyAccount_CheqBook_No\"", no_Of_Cheque), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 233
- testRunner.And("I am clicking on \"MyAccount_CheqBook_BranchCheck\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"MyAccount_CheqBook_Opt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 234
+ testRunner.And(string.Format("verify the message \"D\" through database on \"{0}\" on Schema \"{1}\"", customer_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 235
+ testRunner.When(string.Format("I select \"{0}\" on \"MyAccount_CheqBook_forAcc_List\"", for_Account), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 236
+ testRunner.And(string.Format("I select \"{0}\" on \"MyAccount_CheqBook_No\"", no_Of_Cheque), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 237
+ testRunner.And("I am clicking on \"MyAccount_CheqBook_BranchCheck\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 238
  testRunner.And(string.Format("I select on dropdown search \"MyAccount_CheqBook_CityList\" to select \"{0}\" on \"MyA" +
                         "ccount_CheqBook_CityList_Search\"", city), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 235
+#line 239
  testRunner.And(string.Format("I select on dropdown search \"MyAccount_CheqBook_BranchList\" to select \"{0}\" on \"M" +
                         "yAccount_CheqBook_BranchList_Search\"", branch), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 236
+#line 240
  testRunner.And(string.Format("I have given \"{0}\" on \"MyAccount_CheqBook_TranPass\"", transaction_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 237
+#line 241
  testRunner.Then("I am performing on \"MyAccount_CheqBook_ReqBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 238
- testRunner.And(string.Format("verify through \"{0}\" on \"MyAccount_CheqBook_TranMsg\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 239
+#line 242
+ testRunner.And(string.Format("verify through \"{0}\" on \"MyAccount_CheqBook_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 243
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Ch" +
                         "eqBook_TranType\"", tran_Type_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 240
+#line 244
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Ch" +
                         "eqBook_TranDate\"", tran_Date_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 241
+#line 245
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Ch" +
                         "eqBook_TranAccNo\"", tran_Account_No_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 242
+#line 246
  testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"DIGITAL_CHANNEL_SEC" +
                         "\"", success_Message, tran_Response_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 243
+#line 247
  testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"DIGITAL_CHANNEL_SEC" +
                         "\"", no_Of_Cheque, tran_Cheque_No_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 244
- testRunner.And("I am performing on \"MyAccount_CheqBook_TranCloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 245
- testRunner.And("I am clicking on \"MyAccount_CheqBook_StatusTab\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 246
- testRunner.And(string.Format("I select \"{0}\" on \"MyAccount_CheqBook_Status_ForAcc_List\"", for_Account), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 247
- testRunner.And(string.Format("verify through \"{0}\" on \"MyAccount_CheqBook_Status_ChqNo\"", no_Of_Cheque), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 248
- testRunner.And("I am performing on \"MyAccount_CheqBook_Status_CheckBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am performing on \"MyAccount_CheqBook_TranCloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 249
- testRunner.And(string.Format("verify through \"{0}\" on \"MyAccount_CheqBook_Status_Msg\"", status_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"MyAccount_CheqBook_StatusTab\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 250
- testRunner.And("I am performing on \"MyAccount_CheqBook_Status_CloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I select \"{0}\" on \"MyAccount_CheqBook_Status_ForAcc_List\"", for_Account), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 251
- testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify through \"{0}\" on \"MyAccount_CheqBook_Status_ChqNo\"", no_Of_Cheque), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 252
- testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am performing on \"MyAccount_CheqBook_Status_CheckBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 253
- testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify through \"{0}\" on \"MyAccount_CheqBook_Status_Msg\"", status_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 254
- testRunner.And("I select \"Non Financial\" on \"Services_CategoryFilter\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am performing on \"MyAccount_CheqBook_Status_CloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 255
- testRunner.And("I scroll to element \"Services_Clear_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 256
- testRunner.And("I am performing on \"Services_Search_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 257
- testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 258
- testRunner.And("verify through \"Successful\" on \"MyAccount_Forgot_TranSuccessMessage\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I select \"Non Financial\" on \"Services_CategoryFilter\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 259
+ testRunner.And("I scroll to element \"Services_Clear_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 260
+ testRunner.And("I am performing on \"Services_Search_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 261
+ testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 262
+ testRunner.And("verify through \"Successful\" on \"MyAccount_Forgot_TranSuccessMessage\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 263
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Ch" +
                         "eqBook_TranType\"", tran_Type_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 260
+#line 264
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Ch" +
                         "eqBook_TranDate\"", tran_Date_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 261
+#line 265
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Ch" +
                         "eqBook_TranAccNo\"", tran_Account_No_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 262
+#line 266
  testRunner.And("I am performing on \"Investment_TranActivityCloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Cheque Book Request from My Account: As a user I want " +
-            "to verify Cheque Book Request")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Cheque Book Request from My Account: User want to appl" +
+            "y for cheque book for  leaves 200 Cheque_Book_Normal")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChequeBook")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ChequeBook.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify Cheque Book Request")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify Cheque Book Request")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "User want to apply for cheque book for  leaves 200 Cheque_Book_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "User want to apply for cheque book for  leaves 200 Cheque_Book_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "08527900480003")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:no_of_cheque", "200")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:home_branch_option", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:City", "Attock")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Branch", "AHMEDABAD DISTT. NAR | 0852")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:transaction_password", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select CUSTOMER_TYPE from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_n" +
+            "ame}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your Cheque Book request has been logged successfully. You can check the status i" +
+            "n My Account-->Cheque Book-->Status")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_account_no_query", "SELECT FROM_ACCOUNT FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_cheque_no_query", "SELECT CHQ_NO_OF_LEAVES FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_message", "Your Cheque Book Request is in process")]
+        public virtual void AsAUserIWantToVerifyChequeBookRequestFromMyAccount_UserWantToApplyForChequeBookForLeaves200Cheque_Book_Normal()
+        {
+#line 224
+this.AsAUserIWantToVerifyChequeBookRequestFromMyAccount("User want to apply for cheque book for  leaves 200 Cheque_Book_Normal", "Fail", "08527900480003", "200", "", "Attock", "AHMEDABAD DISTT. NAR | 0852", "pakistan2", "Select CUSTOMER_TYPE from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_n" +
+                    "ame}\'", "DIGITAL_CHANNEL_SEC", "Your Cheque Book request has been logged successfully. You can check the status i" +
+                    "n My Account-->Cheque Book-->Status", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT FROM_ACCOUNT FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CHQ_NO_OF_LEAVES FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Your Cheque Book Request is in process", new string[] {
+                        "source:Data/ChequeBook.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Cheque Book Request from My Account: User want to appl" +
+            "y for cheque book for leaves 0 Cheque_Book_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChequeBook")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ChequeBook.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "User want to apply for cheque book for leaves 0 Cheque_Book_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "User want to apply for cheque book for leaves 0 Cheque_Book_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "08527900480003")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:no_of_cheque", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:home_branch_option", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:City", "Attock")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Branch", "AHMEDABAD DISTT. NAR | 0852")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:transaction_password", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select CUSTOMER_TYPE from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_n" +
+            "ame}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your Cheque Book request has been logged successfully. You can check the status i" +
+            "n My Account-->Cheque Book-->Status")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_account_no_query", "SELECT FROM_ACCOUNT FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_cheque_no_query", "SELECT CHQ_NO_OF_LEAVES FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_message", "Your Cheque Book Request is in process")]
+        public virtual void AsAUserIWantToVerifyChequeBookRequestFromMyAccount_UserWantToApplyForChequeBookForLeaves0Cheque_Book_Normal()
+        {
+#line 224
+this.AsAUserIWantToVerifyChequeBookRequestFromMyAccount("User want to apply for cheque book for leaves 0 Cheque_Book_Normal", "Fail", "08527900480003", "0", "", "Attock", "AHMEDABAD DISTT. NAR | 0852", "pakistan2", "Select CUSTOMER_TYPE from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_n" +
+                    "ame}\'", "DIGITAL_CHANNEL_SEC", "Your Cheque Book request has been logged successfully. You can check the status i" +
+                    "n My Account-->Cheque Book-->Status", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT FROM_ACCOUNT FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CHQ_NO_OF_LEAVES FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Your Cheque Book Request is in process", new string[] {
+                        "source:Data/ChequeBook.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Cheque Book Request from My Account: As a user when wr" +
+            "ong Transaction Password Cheque_Book_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChequeBook")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ChequeBook.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user when wrong Transaction Password Cheque_Book_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user when wrong Transaction Password Cheque_Book_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "08527900480003")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:no_of_cheque", "100")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:home_branch_option", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:City", "Attock")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Branch", "AHMEDABAD DISTT. NAR | 0852")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:transaction_password", "pakistan22@")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select CUSTOMER_TYPE from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_n" +
+            "ame}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your Cheque Book request has been logged successfully. You can check the status i" +
+            "n My Account-->Cheque Book-->Status")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_account_no_query", "SELECT FROM_ACCOUNT FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_cheque_no_query", "SELECT CHQ_NO_OF_LEAVES FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_message", "Your Cheque Book Request is in process")]
+        public virtual void AsAUserIWantToVerifyChequeBookRequestFromMyAccount_AsAUserWhenWrongTransactionPasswordCheque_Book_Normal()
+        {
+#line 224
+this.AsAUserIWantToVerifyChequeBookRequestFromMyAccount("As a user when wrong Transaction Password Cheque_Book_Normal", "Fail", "08527900480003", "100", "", "Attock", "AHMEDABAD DISTT. NAR | 0852", "pakistan22@", "Select CUSTOMER_TYPE from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_n" +
+                    "ame}\'", "DIGITAL_CHANNEL_SEC", "Your Cheque Book request has been logged successfully. You can check the status i" +
+                    "n My Account-->Cheque Book-->Status", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT FROM_ACCOUNT FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CHQ_NO_OF_LEAVES FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Your Cheque Book Request is in process", new string[] {
+                        "source:Data/ChequeBook.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Cheque Book Request from My Account: As a user when Tr" +
+            "ansaction Password isnt\' entered  Cheque_Book_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChequeBook")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ChequeBook.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user when Transaction Password isnt\' entered  Cheque_Book_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user when Transaction Password isnt\' entered  Cheque_Book_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "08527900480003")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:no_of_cheque", "100")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:home_branch_option", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:City", "Attock")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Branch", "AHMEDABAD DISTT. NAR | 0852")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:transaction_password", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select CUSTOMER_TYPE from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_n" +
+            "ame}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your Cheque Book request has been logged successfully. You can check the status i" +
+            "n My Account-->Cheque Book-->Status")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_account_no_query", "SELECT FROM_ACCOUNT FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_cheque_no_query", "SELECT CHQ_NO_OF_LEAVES FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_message", "Your Cheque Book Request is in process")]
+        public virtual void AsAUserIWantToVerifyChequeBookRequestFromMyAccount_AsAUserWhenTransactionPasswordIsntEnteredCheque_Book_Normal()
+        {
+#line 224
+this.AsAUserIWantToVerifyChequeBookRequestFromMyAccount("As a user when Transaction Password isnt\' entered  Cheque_Book_Normal", "Fail", "08527900480003", "100", "", "Attock", "AHMEDABAD DISTT. NAR | 0852", "", "Select CUSTOMER_TYPE from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_n" +
+                    "ame}\'", "DIGITAL_CHANNEL_SEC", "Your Cheque Book request has been logged successfully. You can check the status i" +
+                    "n My Account-->Cheque Book-->Status", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT FROM_ACCOUNT FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CHQ_NO_OF_LEAVES FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Your Cheque Book Request is in process", new string[] {
+                        "source:Data/ChequeBook.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Cheque Book Request from My Account: As a user when in" +
+            "valid City selected Cheque_Book_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChequeBook")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ChequeBook.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user when invalid City selected Cheque_Book_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user when invalid City selected Cheque_Book_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "08527900480003")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:no_of_cheque", "39")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:home_branch_option", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:City", "Attockaa")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Branch", "AHMEDABAD DISTT. NAR | 0852")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:transaction_password", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select CUSTOMER_TYPE from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_n" +
+            "ame}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your Cheque Book request has been logged successfully. You can check the status i" +
+            "n My Account-->Cheque Book-->Status")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_account_no_query", "SELECT FROM_ACCOUNT FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_cheque_no_query", "SELECT CHQ_NO_OF_LEAVES FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_message", "Your Cheque Book Request is in process")]
+        public virtual void AsAUserIWantToVerifyChequeBookRequestFromMyAccount_AsAUserWhenInvalidCitySelectedCheque_Book_Normal()
+        {
+#line 224
+this.AsAUserIWantToVerifyChequeBookRequestFromMyAccount("As a user when invalid City selected Cheque_Book_Normal", "Fail", "08527900480003", "39", "", "Attockaa", "AHMEDABAD DISTT. NAR | 0852", "pakistan2", "Select CUSTOMER_TYPE from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_n" +
+                    "ame}\'", "DIGITAL_CHANNEL_SEC", "Your Cheque Book request has been logged successfully. You can check the status i" +
+                    "n My Account-->Cheque Book-->Status", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT FROM_ACCOUNT FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CHQ_NO_OF_LEAVES FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Your Cheque Book Request is in process", new string[] {
+                        "source:Data/ChequeBook.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Cheque Book Request from My Account: As a user when in" +
+            "valid Branch selected Cheque_Book_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChequeBook")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ChequeBook.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user when invalid Branch selected Cheque_Book_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user when invalid Branch selected Cheque_Book_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "08527900480003")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:no_of_cheque", "39")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:home_branch_option", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:City", "Attock")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Branch", "AHMEDAB DIS. N | 0852")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:transaction_password", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select CUSTOMER_TYPE from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_n" +
+            "ame}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your Cheque Book request has been logged successfully. You can check the status i" +
+            "n My Account-->Cheque Book-->Status")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_account_no_query", "SELECT FROM_ACCOUNT FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_cheque_no_query", "SELECT CHQ_NO_OF_LEAVES FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_message", "Your Cheque Book Request is in process")]
+        public virtual void AsAUserIWantToVerifyChequeBookRequestFromMyAccount_AsAUserWhenInvalidBranchSelectedCheque_Book_Normal()
+        {
+#line 224
+this.AsAUserIWantToVerifyChequeBookRequestFromMyAccount("As a user when invalid Branch selected Cheque_Book_Normal", "Fail", "08527900480003", "39", "", "Attock", "AHMEDAB DIS. N | 0852", "pakistan2", "Select CUSTOMER_TYPE from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_n" +
+                    "ame}\'", "DIGITAL_CHANNEL_SEC", "Your Cheque Book request has been logged successfully. You can check the status i" +
+                    "n My Account-->Cheque Book-->Status", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT FROM_ACCOUNT FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CHQ_NO_OF_LEAVES FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Your Cheque Book Request is in process", new string[] {
+                        "source:Data/ChequeBook.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Cheque Book Request from My Account: As a user I want " +
+            "to verify Cheque Book Request Home Branch Cheque_Book_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChequeBook")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ChequeBook.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify Cheque Book Request Home Branch Cheque_Book_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify Cheque Book Request Home Branch Cheque_Book_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "08527900480003")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:no_of_cheque", "25")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:home_branch_option", "yes")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:City", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Branch", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:transaction_password", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select CUSTOMER_TYPE from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_n" +
+            "ame}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your Cheque Book request has been logged successfully. You can check the status i" +
+            "n My Account-->Cheque Book-->Status")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_account_no_query", "SELECT FROM_ACCOUNT FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_cheque_no_query", "SELECT CHQ_NO_OF_LEAVES FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_message", "Your Cheque Book Request is in process")]
+        public virtual void AsAUserIWantToVerifyChequeBookRequestFromMyAccount_AsAUserIWantToVerifyChequeBookRequestHomeBranchCheque_Book_Normal()
+        {
+#line 224
+this.AsAUserIWantToVerifyChequeBookRequestFromMyAccount("As a user I want to verify Cheque Book Request Home Branch Cheque_Book_Normal", "Pass", "08527900480003", "25", "yes", "", "", "pakistan2", "Select CUSTOMER_TYPE from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_n" +
+                    "ame}\'", "DIGITAL_CHANNEL_SEC", "Your Cheque Book request has been logged successfully. You can check the status i" +
+                    "n My Account-->Cheque Book-->Status", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT FROM_ACCOUNT FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CHQ_NO_OF_LEAVES FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Your Cheque Book Request is in process", new string[] {
+                        "source:Data/ChequeBook.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Cheque Book Request from My Account: Cannot apply if C" +
+            "ustomer has already requested for Cheque Book Cheque_Book_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChequeBook")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ChequeBook.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Cannot apply if Customer has already requested for Cheque Book Cheque_Book_Normal" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Cannot apply if Customer has already requested for Cheque Book Cheque_Book_Normal" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "08527900480003")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:no_of_cheque", "10")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:home_branch_option", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:City", "Attock")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Branch", "AHMEDABAD DISTT. NAR | 0852")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:transaction_password", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select CUSTOMER_TYPE from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_n" +
+            "ame}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your Cheque Book request has been logged successfully. You can check the status i" +
+            "n My Account-->Cheque Book-->Status")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_account_no_query", "SELECT FROM_ACCOUNT FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_cheque_no_query", "SELECT CHQ_NO_OF_LEAVES FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_message", "Your Cheque Book Request is in process")]
+        public virtual void AsAUserIWantToVerifyChequeBookRequestFromMyAccount_CannotApplyIfCustomerHasAlreadyRequestedForChequeBookCheque_Book_Normal()
+        {
+#line 224
+this.AsAUserIWantToVerifyChequeBookRequestFromMyAccount("Cannot apply if Customer has already requested for Cheque Book Cheque_Book_Normal" +
+                    "", "Fail", "08527900480003", "10", "", "Attock", "AHMEDABAD DISTT. NAR | 0852", "pakistan2", "Select CUSTOMER_TYPE from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_n" +
+                    "ame}\'", "DIGITAL_CHANNEL_SEC", "Your Cheque Book request has been logged successfully. You can check the status i" +
+                    "n My Account-->Cheque Book-->Status", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT FROM_ACCOUNT FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CHQ_NO_OF_LEAVES FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Your Cheque Book Request is in process", new string[] {
+                        "source:Data/ChequeBook.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Cheque Book Request from My Account: As a user when Ci" +
+            "ty and branch selected Other Branch Cheque_Book_Normal_other")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChequeBook")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ChequeBook.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user when City and branch selected Other Branch Cheque_Book_Normal_other")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user when City and branch selected Other Branch Cheque_Book_Normal_other")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "08527900480003")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:no_of_cheque", "50")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:home_branch_option", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:City", "Banu")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Branch", "KAKKI | 0331")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:transaction_password", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select CUSTOMER_TYPE from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_n" +
+            "ame}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your Cheque Book request has been logged successfully. You can check the status i" +
+            "n My Account-->Cheque Book-->Status")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_account_no_query", "SELECT FROM_ACCOUNT FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_cheque_no_query", "SELECT CHQ_NO_OF_LEAVES FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_message", "Your Cheque Book Request is in process")]
+        public virtual void AsAUserIWantToVerifyChequeBookRequestFromMyAccount_AsAUserWhenCityAndBranchSelectedOtherBranchCheque_Book_Normal_Other()
+        {
+#line 224
+this.AsAUserIWantToVerifyChequeBookRequestFromMyAccount("As a user when City and branch selected Other Branch Cheque_Book_Normal_other", "Pass", "08527900480003", "50", "", "Banu", "KAKKI | 0331", "pakistan2", "Select CUSTOMER_TYPE from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_n" +
+                    "ame}\'", "DIGITAL_CHANNEL_SEC", "Your Cheque Book request has been logged successfully. You can check the status i" +
+                    "n My Account-->Cheque Book-->Status", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT FROM_ACCOUNT FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CHQ_NO_OF_LEAVES FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Your Cheque Book Request is in process", new string[] {
+                        "source:Data/ChequeBook.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Cheque Book Request from My Account: As a user when FC" +
+            "Y Acc is selected Home Branch Cheque_Book_FCY")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChequeBook")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ChequeBook.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user when FCY Acc is selected Home Branch Cheque_Book_FCY")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user when FCY Acc is selected Home Branch Cheque_Book_FCY")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "24460099464901")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:no_of_cheque", "10")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:home_branch_option", "yes")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:City", "")]
@@ -921,10 +2431,51 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_cheque_no_query", "SELECT CHQ_NO_OF_LEAVES FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_message", "Your Cheque Book Request is in process")]
-        public virtual void AsAUserIWantToVerifyChequeBookRequestFromMyAccount_AsAUserIWantToVerifyChequeBookRequest()
+        public virtual void AsAUserIWantToVerifyChequeBookRequestFromMyAccount_AsAUserWhenFCYAccIsSelectedHomeBranchCheque_Book_FCY()
         {
-#line 222
-this.AsAUserIWantToVerifyChequeBookRequestFromMyAccount("As a user I want to verify Cheque Book Request", "", "10", "yes", "", "", "pakistan2", "Select CUSTOMER_TYPE from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_n" +
+#line 224
+this.AsAUserIWantToVerifyChequeBookRequestFromMyAccount("As a user when FCY Acc is selected Home Branch Cheque_Book_FCY", "Fail", "24460099464901", "10", "yes", "", "", "pakistan2", "Select CUSTOMER_TYPE from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_n" +
+                    "ame}\'", "DIGITAL_CHANNEL_SEC", "Your Cheque Book request has been logged successfully. You can check the status i" +
+                    "n My Account-->Cheque Book-->Status", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT FROM_ACCOUNT FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CHQ_NO_OF_LEAVES FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Your Cheque Book Request is in process", new string[] {
+                        "source:Data/ChequeBook.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Cheque Book Request from My Account: As a user when FC" +
+            "Y Acc is selected Other Branch  Cheque_Book_FCY")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ChequeBook")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ChequeBook.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user when FCY Acc is selected Other Branch  Cheque_Book_FCY")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user when FCY Acc is selected Other Branch  Cheque_Book_FCY")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "24460099464901")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:no_of_cheque", "100")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:home_branch_option", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:City", "Banu")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Branch", "KAKKI | 0331")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:transaction_password", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select CUSTOMER_TYPE from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_n" +
+            "ame}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your Cheque Book request has been logged successfully. You can check the status i" +
+            "n My Account-->Cheque Book-->Status")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_account_no_query", "SELECT FROM_ACCOUNT FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_cheque_no_query", "SELECT CHQ_NO_OF_LEAVES FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_message", "Your Cheque Book Request is in process")]
+        public virtual void AsAUserIWantToVerifyChequeBookRequestFromMyAccount_AsAUserWhenFCYAccIsSelectedOtherBranchCheque_Book_FCY()
+        {
+#line 224
+this.AsAUserIWantToVerifyChequeBookRequestFromMyAccount("As a user when FCY Acc is selected Other Branch  Cheque_Book_FCY", "Fail", "24460099464901", "100", "", "Banu", "KAKKI | 0331", "pakistan2", "Select CUSTOMER_TYPE from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_n" +
                     "ame}\'", "DIGITAL_CHANNEL_SEC", "Your Cheque Book request has been logged successfully. You can check the status i" +
                     "n My Account-->Cheque Book-->Status", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
@@ -953,107 +2504,107 @@ this.AsAUserIWantToVerifyChequeBookRequestFromMyAccount("As a user I want to ver
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "MyAccount"};
+                    "MyAccount",
+                    "PayOrder"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user I want to verify Pay Order Request from My Account", @__tags);
-#line 272
-this.ScenarioSetup(scenarioInfo);
-#line 273
- testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 274
- testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 275
- testRunner.And("I count Number of Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 276
- testRunner.And("I am clicking on \"MyAccount_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 277
- testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 278
- testRunner.And("I am clicking on \"MyAccount_PayOrder_Opt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 279
- testRunner.When(string.Format("I select \"{0}\" on \"MyAccount_PayOrder_ForAcc_List\"", for_Account), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 280
- testRunner.And(string.Format("I have given \"{0}\" on \"MyAccount_PayOrder_Amount\"", amount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I count Number of Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 281
- testRunner.And(string.Format("I have given \"{0}\" on \"MyAccount_PayOrder_Bene\"", bene_Name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"MyAccount_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 282
- testRunner.And(string.Format("I select \"{0}\" on \"MyAccount_PayOrder_Purpose\"", purpose), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 283
+ testRunner.And("I am clicking on \"MyAccount_PayOrder_Opt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 284
+ testRunner.When(string.Format("I select \"{0}\" on \"MyAccount_PayOrder_ForAcc_List\"", for_Account), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 285
+ testRunner.And(string.Format("I have given \"{0}\" on \"MyAccount_PayOrder_Amount\"", amount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 286
+ testRunner.And(string.Format("I have given \"{0}\" on \"MyAccount_PayOrder_Bene\"", bene_Name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 287
+ testRunner.And(string.Format("I select \"{0}\" on \"MyAccount_PayOrder_Purpose\"", purpose), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 288
  testRunner.And(string.Format("I select on dropdown search \"MyAccount_PayOrder_City\" to select \"{0}\" on \"MyAccou" +
                         "nt_PayOrder_City_Search\"", city), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 284
+#line 289
  testRunner.And(string.Format("I select on dropdown search \"MyAccount_PayOrder_Branch\" to select \"{0}\" on \"MyAcc" +
                         "ount_PayOrder_Branch_Search\"", branch), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 285
- testRunner.And(string.Format("I have given \"{0}\" on \"MyAccount_CheqBook_TranPass\"", transaction_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 286
- testRunner.Then("I am performing on \"MyAccount_PayOrder_ReqBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 287
- testRunner.And(string.Format("verify through \"{0}\" on \"MyAccount_PayOrder_Success\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 288
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Pa" +
-                        "yOrder_TranType\"", tran_Type_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 289
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Pa" +
-                        "yOrder_Tran_Amount\"", tran_Amount_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 290
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Pa" +
-                        "yOrder_Tran_FromAcc\"", from_Account_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"MyAccount_PayOrder_TranPass\"", transaction_Password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 291
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Pa" +
-                        "yOrder_Tran_BranchName\"", tran_Branch_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("I am performing on \"MyAccount_PayOrder_ReqBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 292
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Pa" +
-                        "yOrder_TranBranchCode\"", tran_Branch_Code_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify through \"{0}\" on \"MyAccount_PayOrder_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 293
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Pa" +
-                        "yOrder_Tran_Purpose\"", tran_Purpose_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                        "yOrder_Tran_Amount\"", tran_Amount_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 294
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Pa" +
-                        "yOrder_TranDate\"", tran_Date_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 295
- testRunner.And("I am performing on \"MyAccount_PayOrder_Tran_CloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 296
- testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 297
- testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 298
- testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 299
- testRunner.And("I select \"Non Financial\" on \"Services_CategoryFilter\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 300
- testRunner.And("I scroll to element \"Services_Clear_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 301
- testRunner.And("I am performing on \"Services_Search_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 302
- testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 303
- testRunner.And("verify through \"Successful\" on \"MyAccount_Forgot_TranSuccessMessage\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 304
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Pa" +
-                        "yOrder_TranType\"", tran_Type_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 305
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Pa" +
-                        "yOrder_Tran_Amount\"", tran_Amount_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 306
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Pa" +
                         "yOrder_Tran_FromAcc\"", from_Account_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 307
+#line 295
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Pa" +
                         "yOrder_Tran_BranchName\"", tran_Branch_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 308
+#line 296
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Pa" +
                         "yOrder_TranBranchCode\"", tran_Branch_Code_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 309
+#line 297
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Pa" +
                         "yOrder_Tran_Purpose\"", tran_Purpose_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 310
+#line 298
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Pa" +
                         "yOrder_TranDate\"", tran_Date_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 299
+ testRunner.And("I am performing on \"MyAccount_PayOrder_Tran_CloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 300
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 301
+ testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 302
+ testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 303
+ testRunner.And("I select \"Non Financial\" on \"Services_CategoryFilter\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 304
+ testRunner.And("I scroll to element \"Services_Clear_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 305
+ testRunner.And("I am performing on \"Services_Search_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 306
+ testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 307
+ testRunner.And("verify through \"Successful\" on \"MyAccount_Forgot_TranSuccessMessage\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 308
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Pa" +
+                        "yOrder_TranType\"", tran_Type_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 309
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Pa" +
+                        "yOrder_Tran_Amount\"", tran_Amount_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 310
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Pa" +
+                        "yOrder_Tran_FromAcc\"", from_Account_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 311
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Pa" +
+                        "yOrder_Tran_BranchName\"", tran_Branch_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 312
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Pa" +
+                        "yOrder_TranBranchCode\"", tran_Branch_Code_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 313
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Pa" +
+                        "yOrder_TranActivity_Purpose\"", tran_Purpose_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 314
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"MyAccount_Pa" +
+                        "yOrder_TranDate\"", tran_Date_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 315
  testRunner.And("I am performing on \"Investment_TranActivityCloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1061,18 +2612,19 @@ this.ScenarioSetup(scenarioInfo);
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Pay Order Request from My Account: As a user I want to" +
-            " verify Pay Order Request")]
+            " verify Pay Order Request Pay_Order_Normal")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("PayOrder")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/PayOrder.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify Pay Order Request")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify Pay Order Request")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "580052365603")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount", "500")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify Pay Order Request Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify Pay Order Request Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "06947900309303")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount", "500.50")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "YASIRBENE")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose", "Credit Card Payment  ")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:city", "Karachi ")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch", "1101")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:city", "Karachi")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch", "AL-BADAR SQUARE, KARACHI | 1101")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:transaction_password", "pakistan2")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your request has been processed successfully. Please visit your branch with the R" +
             "eference Number to collect the Pay Order/Bankers Cheque.")]
@@ -1085,10 +2637,656 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
-        public virtual void AsAUserIWantToVerifyPayOrderRequestFromMyAccount_AsAUserIWantToVerifyPayOrderRequest()
+        public virtual void AsAUserIWantToVerifyPayOrderRequestFromMyAccount_AsAUserIWantToVerifyPayOrderRequestPay_Order_Normal()
         {
-#line 272
-this.AsAUserIWantToVerifyPayOrderRequestFromMyAccount("As a user I want to verify Pay Order Request", "580052365603", "500", "YASIRBENE", "Credit Card Payment  ", "Karachi ", "1101", "pakistan2", "Your request has been processed successfully. Please visit your branch with the R" +
+#line 276
+this.AsAUserIWantToVerifyPayOrderRequestFromMyAccount("As a user I want to verify Pay Order Request Pay_Order_Normal", "06947900309303", "500.50", "YASIRBENE", "Credit Card Payment  ", "Karachi", "AL-BADAR SQUARE, KARACHI | 1101", "pakistan2", "Your request has been processed successfully. Please visit your branch with the R" +
+                    "eference Number to collect the Pay Order/Bankers Cheque.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_BRANCH FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/PayOrder.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Pay Order Request from My Account: As a user when 0 am" +
+            "ount is entered Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("PayOrder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/PayOrder.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user when 0 amount is entered Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user when 0 amount is entered Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "06947900309303")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount", "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "YASIRBENE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose", "Credit Card Payment  ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:city", "Karachi")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch", "AL-BADAR SQUARE, KARACHI | 1101")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:transaction_password", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your request has been processed successfully. Please visit your branch with the R" +
+            "eference Number to collect the Pay Order/Bankers Cheque.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_branch_query", "SELECT DT.TO_BRANCH FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyPayOrderRequestFromMyAccount_AsAUserWhen0AmountIsEnteredPay_Order_Normal()
+        {
+#line 276
+this.AsAUserIWantToVerifyPayOrderRequestFromMyAccount("As a user when 0 amount is entered Pay_Order_Normal", "06947900309303", "0", "YASIRBENE", "Credit Card Payment  ", "Karachi", "AL-BADAR SQUARE, KARACHI | 1101", "pakistan2", "Your request has been processed successfully. Please visit your branch with the R" +
+                    "eference Number to collect the Pay Order/Bankers Cheque.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_BRANCH FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/PayOrder.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Pay Order Request from My Account: As a user when amou" +
+            "nt exceeds the allowed limit Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("PayOrder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/PayOrder.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user when amount exceeds the allowed limit Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user when amount exceeds the allowed limit Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "06947900309303")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount", "170000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "YASIRBENE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose", "Credit Card Payment  ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:city", "Karachi")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch", "AL-BADAR SQUARE, KARACHI | 1101")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:transaction_password", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your request has been processed successfully. Please visit your branch with the R" +
+            "eference Number to collect the Pay Order/Bankers Cheque.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_branch_query", "SELECT DT.TO_BRANCH FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyPayOrderRequestFromMyAccount_AsAUserWhenAmountExceedsTheAllowedLimitPay_Order_Normal()
+        {
+#line 276
+this.AsAUserIWantToVerifyPayOrderRequestFromMyAccount("As a user when amount exceeds the allowed limit Pay_Order_Normal", "06947900309303", "170000", "YASIRBENE", "Credit Card Payment  ", "Karachi", "AL-BADAR SQUARE, KARACHI | 1101", "pakistan2", "Your request has been processed successfully. Please visit your branch with the R" +
+                    "eference Number to collect the Pay Order/Bankers Cheque.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_BRANCH FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/PayOrder.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Pay Order Request from My Account: As a user when bene" +
+            " name contains special characters Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("PayOrder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/PayOrder.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user when bene name contains special characters Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user when bene name contains special characters Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "06947900309303")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount", "560")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "asdf547689437694303@!##@$")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose", "Credit Card Payment  ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:city", "Karachi")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch", "AL-BADAR SQUARE, KARACHI | 1101")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:transaction_password", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your request has been processed successfully. Please visit your branch with the R" +
+            "eference Number to collect the Pay Order/Bankers Cheque.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_branch_query", "SELECT DT.TO_BRANCH FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyPayOrderRequestFromMyAccount_AsAUserWhenBeneNameContainsSpecialCharactersPay_Order_Normal()
+        {
+#line 276
+this.AsAUserIWantToVerifyPayOrderRequestFromMyAccount("As a user when bene name contains special characters Pay_Order_Normal", "06947900309303", "560", "asdf547689437694303@!##@$", "Credit Card Payment  ", "Karachi", "AL-BADAR SQUARE, KARACHI | 1101", "pakistan2", "Your request has been processed successfully. Please visit your branch with the R" +
+                    "eference Number to collect the Pay Order/Bankers Cheque.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_BRANCH FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/PayOrder.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Pay Order Request from My Account: As a user when purp" +
+            "ose is Educational Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("PayOrder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/PayOrder.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user when purpose is Educational Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user when purpose is Educational Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "06947900309303")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount", "500.50")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "YASIRBENE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose", "Educational")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:city", "Karachi")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch", "AL-BADAR SQUARE, KARACHI | 1101")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:transaction_password", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your request has been processed successfully. Please visit your branch with the R" +
+            "eference Number to collect the Pay Order/Bankers Cheque.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_branch_query", "SELECT DT.TO_BRANCH FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyPayOrderRequestFromMyAccount_AsAUserWhenPurposeIsEducationalPay_Order_Normal()
+        {
+#line 276
+this.AsAUserIWantToVerifyPayOrderRequestFromMyAccount("As a user when purpose is Educational Pay_Order_Normal", "06947900309303", "500.50", "YASIRBENE", "Educational", "Karachi", "AL-BADAR SQUARE, KARACHI | 1101", "pakistan2", "Your request has been processed successfully. Please visit your branch with the R" +
+                    "eference Number to collect the Pay Order/Bankers Cheque.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_BRANCH FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/PayOrder.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Pay Order Request from My Account: As a user when inva" +
+            "lid city is selected Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("PayOrder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/PayOrder.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user when invalid city is selected Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user when invalid city is selected Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "06947900309303")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount", "500.50")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "YASIRBENE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose", "Educational")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:city", "Karachi")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch", "AL-BADAR SQUARE, KARACHI | 1101")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:transaction_password", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your request has been processed successfully. Please visit your branch with the R" +
+            "eference Number to collect the Pay Order/Bankers Cheque.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_branch_query", "SELECT DT.TO_BRANCH FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyPayOrderRequestFromMyAccount_AsAUserWhenInvalidCityIsSelectedPay_Order_Normal()
+        {
+#line 276
+this.AsAUserIWantToVerifyPayOrderRequestFromMyAccount("As a user when invalid city is selected Pay_Order_Normal", "06947900309303", "500.50", "YASIRBENE", "Educational", "Karachi", "AL-BADAR SQUARE, KARACHI | 1101", "pakistan2", "Your request has been processed successfully. Please visit your branch with the R" +
+                    "eference Number to collect the Pay Order/Bankers Cheque.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_BRANCH FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/PayOrder.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Pay Order Request from My Account: As a user when inva" +
+            "lid branch is selected Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("PayOrder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/PayOrder.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user when invalid branch is selected Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user when invalid branch is selected Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "06947900309303")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount", "500.50")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "YASIRBENE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose", "Educational")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:city", "Karachi")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch", "AL-BADAR SQUARE, KARACHI | 1101")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:transaction_password", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your request has been processed successfully. Please visit your branch with the R" +
+            "eference Number to collect the Pay Order/Bankers Cheque.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_branch_query", "SELECT DT.TO_BRANCH FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyPayOrderRequestFromMyAccount_AsAUserWhenInvalidBranchIsSelectedPay_Order_Normal()
+        {
+#line 276
+this.AsAUserIWantToVerifyPayOrderRequestFromMyAccount("As a user when invalid branch is selected Pay_Order_Normal", "06947900309303", "500.50", "YASIRBENE", "Educational", "Karachi", "AL-BADAR SQUARE, KARACHI | 1101", "pakistan2", "Your request has been processed successfully. Please visit your branch with the R" +
+                    "eference Number to collect the Pay Order/Bankers Cheque.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_BRANCH FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/PayOrder.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Pay Order Request from My Account: As a user when inva" +
+            "lid Transaction Password is selected Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("PayOrder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/PayOrder.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user when invalid Transaction Password is selected Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user when invalid Transaction Password is selected Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "06947900309303")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount", "500.50")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "YASIRBENE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose", "Educational")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:city", "Karachi")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch", "AL-BADAR SQUARE, KARACHI | 1101")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:transaction_password", "pakistan22")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your request has been processed successfully. Please visit your branch with the R" +
+            "eference Number to collect the Pay Order/Bankers Cheque.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_branch_query", "SELECT DT.TO_BRANCH FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyPayOrderRequestFromMyAccount_AsAUserWhenInvalidTransactionPasswordIsSelectedPay_Order_Normal()
+        {
+#line 276
+this.AsAUserIWantToVerifyPayOrderRequestFromMyAccount("As a user when invalid Transaction Password is selected Pay_Order_Normal", "06947900309303", "500.50", "YASIRBENE", "Educational", "Karachi", "AL-BADAR SQUARE, KARACHI | 1101", "pakistan22", "Your request has been processed successfully. Please visit your branch with the R" +
+                    "eference Number to collect the Pay Order/Bankers Cheque.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_BRANCH FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/PayOrder.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Pay Order Request from My Account: As a user when NULL" +
+            " amount is entered Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("PayOrder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/PayOrder.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user when NULL amount is entered Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user when NULL amount is entered Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "06947900309303")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "YASIRBENE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose", "Credit Card Payment  ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:city", "Karachi")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch", "AL-BADAR SQUARE, KARACHI | 1101")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:transaction_password", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your request has been processed successfully. Please visit your branch with the R" +
+            "eference Number to collect the Pay Order/Bankers Cheque.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_branch_query", "SELECT DT.TO_BRANCH FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyPayOrderRequestFromMyAccount_AsAUserWhenNULLAmountIsEnteredPay_Order_Normal()
+        {
+#line 276
+this.AsAUserIWantToVerifyPayOrderRequestFromMyAccount("As a user when NULL amount is entered Pay_Order_Normal", "06947900309303", "", "YASIRBENE", "Credit Card Payment  ", "Karachi", "AL-BADAR SQUARE, KARACHI | 1101", "pakistan2", "Your request has been processed successfully. Please visit your branch with the R" +
+                    "eference Number to collect the Pay Order/Bankers Cheque.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_BRANCH FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/PayOrder.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Pay Order Request from My Account: As a user when city" +
+            " isn\'t selected Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("PayOrder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/PayOrder.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user when city isn\'t selected Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user when city isn\'t selected Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "06947900309303")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount", "544")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "YASIRBENE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose", "Credit Card Payment  ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:city", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch", "AL-BADAR SQUARE, KARACHI | 1101")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:transaction_password", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your request has been processed successfully. Please visit your branch with the R" +
+            "eference Number to collect the Pay Order/Bankers Cheque.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_branch_query", "SELECT DT.TO_BRANCH FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyPayOrderRequestFromMyAccount_AsAUserWhenCityIsntSelectedPay_Order_Normal()
+        {
+#line 276
+this.AsAUserIWantToVerifyPayOrderRequestFromMyAccount("As a user when city isn\'t selected Pay_Order_Normal", "06947900309303", "544", "YASIRBENE", "Credit Card Payment  ", "", "AL-BADAR SQUARE, KARACHI | 1101", "pakistan2", "Your request has been processed successfully. Please visit your branch with the R" +
+                    "eference Number to collect the Pay Order/Bankers Cheque.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_BRANCH FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/PayOrder.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Pay Order Request from My Account: As a user when bran" +
+            "ch isn\'t selected Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("PayOrder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/PayOrder.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user when branch isn\'t selected Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user when branch isn\'t selected Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "06947900309303")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount", "544")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "YASIRBENE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose", "Credit Card Payment  ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:city", "Karachi")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:transaction_password", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your request has been processed successfully. Please visit your branch with the R" +
+            "eference Number to collect the Pay Order/Bankers Cheque.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_branch_query", "SELECT DT.TO_BRANCH FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyPayOrderRequestFromMyAccount_AsAUserWhenBranchIsntSelectedPay_Order_Normal()
+        {
+#line 276
+this.AsAUserIWantToVerifyPayOrderRequestFromMyAccount("As a user when branch isn\'t selected Pay_Order_Normal", "06947900309303", "544", "YASIRBENE", "Credit Card Payment  ", "Karachi", "", "pakistan2", "Your request has been processed successfully. Please visit your branch with the R" +
+                    "eference Number to collect the Pay Order/Bankers Cheque.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_BRANCH FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/PayOrder.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Pay Order Request from My Account: As a user when Tran" +
+            "saction Pass isn\'t entered Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("PayOrder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/PayOrder.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user when Transaction Pass isn\'t entered Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user when Transaction Pass isn\'t entered Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "06947900309303")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount", "544")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "YASIRBENE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose", "Credit Card Payment  ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:city", "Karachi")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch", "AL-BADAR SQUARE, KARACHI | 1101")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:transaction_password", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your request has been processed successfully. Please visit your branch with the R" +
+            "eference Number to collect the Pay Order/Bankers Cheque.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_branch_query", "SELECT DT.TO_BRANCH FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyPayOrderRequestFromMyAccount_AsAUserWhenTransactionPassIsntEnteredPay_Order_Normal()
+        {
+#line 276
+this.AsAUserIWantToVerifyPayOrderRequestFromMyAccount("As a user when Transaction Pass isn\'t entered Pay_Order_Normal", "06947900309303", "544", "YASIRBENE", "Credit Card Payment  ", "Karachi", "AL-BADAR SQUARE, KARACHI | 1101", "", "Your request has been processed successfully. Please visit your branch with the R" +
+                    "eference Number to collect the Pay Order/Bankers Cheque.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_BRANCH FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/PayOrder.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Pay Order Request from My Account: As a user when PURP" +
+            "OSE isnt\' selected Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("PayOrder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/PayOrder.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user when PURPOSE isnt\' selected Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user when PURPOSE isnt\' selected Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "06947900309303")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount", "500.50")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "YASIRBENE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:city", "Karachi")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch", "AL-BADAR SQUARE, KARACHI | 1101")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:transaction_password", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your request has been processed successfully. Please visit your branch with the R" +
+            "eference Number to collect the Pay Order/Bankers Cheque.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_branch_query", "SELECT DT.TO_BRANCH FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyPayOrderRequestFromMyAccount_AsAUserWhenPURPOSEIsntSelectedPay_Order_Normal()
+        {
+#line 276
+this.AsAUserIWantToVerifyPayOrderRequestFromMyAccount("As a user when PURPOSE isnt\' selected Pay_Order_Normal", "06947900309303", "500.50", "YASIRBENE", "", "Karachi", "AL-BADAR SQUARE, KARACHI | 1101", "pakistan2", "Your request has been processed successfully. Please visit your branch with the R" +
+                    "eference Number to collect the Pay Order/Bankers Cheque.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_BRANCH FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/PayOrder.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Pay Order Request from My Account: As a user when Full" +
+            " length Bene is entered Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("PayOrder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/PayOrder.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user when Full length Bene is entered Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user when Full length Bene is entered Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "06947900309303")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount", "500.50")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "asd32sdijhf87wqey78ryq987wrweuhfawe87fyiuasdhfiusd")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose", "Credit Card Payment  ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:city", "Karachi")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch", "AL-BADAR SQUARE, KARACHI | 1101")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:transaction_password", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your request has been processed successfully. Please visit your branch with the R" +
+            "eference Number to collect the Pay Order/Bankers Cheque.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_branch_query", "SELECT DT.TO_BRANCH FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyPayOrderRequestFromMyAccount_AsAUserWhenFullLengthBeneIsEnteredPay_Order_Normal()
+        {
+#line 276
+this.AsAUserIWantToVerifyPayOrderRequestFromMyAccount("As a user when Full length Bene is entered Pay_Order_Normal", "06947900309303", "500.50", "asd32sdijhf87wqey78ryq987wrweuhfawe87fyiuasdhfiusd", "Credit Card Payment  ", "Karachi", "AL-BADAR SQUARE, KARACHI | 1101", "pakistan2", "Your request has been processed successfully. Please visit your branch with the R" +
+                    "eference Number to collect the Pay Order/Bankers Cheque.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_BRANCH FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/PayOrder.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Pay Order Request from My Account: User enter the Bene" +
+            "ficiary name greater than the full length Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("PayOrder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/PayOrder.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "User enter the Beneficiary name greater than the full length Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "User enter the Beneficiary name greater than the full length Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "06947900309303")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount", "500.50")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "asd32sdijhf87wqey78ryq987wrweuhfawe87fyiuasdhfiusdend")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose", "Credit Card Payment  ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:city", "Karachi")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch", "AL-BADAR SQUARE, KARACHI | 1101")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:transaction_password", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your request has been processed successfully. Please visit your branch with the R" +
+            "eference Number to collect the Pay Order/Bankers Cheque.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_branch_query", "SELECT DT.TO_BRANCH FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyPayOrderRequestFromMyAccount_UserEnterTheBeneficiaryNameGreaterThanTheFullLengthPay_Order_Normal()
+        {
+#line 276
+this.AsAUserIWantToVerifyPayOrderRequestFromMyAccount("User enter the Beneficiary name greater than the full length Pay_Order_Normal", "06947900309303", "500.50", "asd32sdijhf87wqey78ryq987wrweuhfawe87fyiuasdhfiusdend", "Credit Card Payment  ", "Karachi", "AL-BADAR SQUARE, KARACHI | 1101", "pakistan2", "Your request has been processed successfully. Please visit your branch with the R" +
+                    "eference Number to collect the Pay Order/Bankers Cheque.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_BRANCH FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/PayOrder.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Pay Order Request from My Account: User not select the" +
+            " account or Account not fetched in CRI Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("PayOrder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/PayOrder.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "User not select the account or Account not fetched in CRI Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "User not select the account or Account not fetched in CRI Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount", "5560.50")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "asd32sdijhf87wqey78ryq987wrweuhfawe87fyiuasdhfiusd")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose", "Credit Card Payment  ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:city", "Karachi")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch", "AL-BADAR SQUARE, KARACHI | 1101")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:transaction_password", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your request has been processed successfully. Please visit your branch with the R" +
+            "eference Number to collect the Pay Order/Bankers Cheque.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_branch_query", "SELECT DT.TO_BRANCH FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyPayOrderRequestFromMyAccount_UserNotSelectTheAccountOrAccountNotFetchedInCRIPay_Order_Normal()
+        {
+#line 276
+this.AsAUserIWantToVerifyPayOrderRequestFromMyAccount("User not select the account or Account not fetched in CRI Pay_Order_Normal", "", "5560.50", "asd32sdijhf87wqey78ryq987wrweuhfawe87fyiuasdhfiusd", "Credit Card Payment  ", "Karachi", "AL-BADAR SQUARE, KARACHI | 1101", "pakistan2", "Your request has been processed successfully. Please visit your branch with the R" +
+                    "eference Number to collect the Pay Order/Bankers Cheque.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_BRANCH FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/PayOrder.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Pay Order Request from My Account: As a user when inva" +
+            "lid from acc Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("PayOrder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/PayOrder.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user when invalid from acc Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user when invalid from acc Pay_Order_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "06947944409333")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount", "5560.50")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "asd32sdijhf87wqey78ryq987wrweuhfawe87fyiuasdhfiusd")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose", "Credit Card Payment  ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:city", "Karachi")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch", "AL-BADAR SQUARE, KARACHI | 1101")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:transaction_password", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your request has been processed successfully. Please visit your branch with the R" +
+            "eference Number to collect the Pay Order/Bankers Cheque.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_branch_query", "SELECT DT.TO_BRANCH FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyPayOrderRequestFromMyAccount_AsAUserWhenInvalidFromAccPay_Order_Normal()
+        {
+#line 276
+this.AsAUserIWantToVerifyPayOrderRequestFromMyAccount("As a user when invalid from acc Pay_Order_Normal", "06947944409333", "5560.50", "asd32sdijhf87wqey78ryq987wrweuhfawe87fyiuasdhfiusd", "Credit Card Payment  ", "Karachi", "AL-BADAR SQUARE, KARACHI | 1101", "pakistan2", "Your request has been processed successfully. Please visit your branch with the R" +
+                    "eference Number to collect the Pay Order/Bankers Cheque.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_BRANCH FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/PayOrder.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Pay Order Request from My Account: As a user when FCY " +
+            "ACC is selected Pay_Order_FCY")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("PayOrder")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/PayOrder.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user when FCY ACC is selected Pay_Order_FCY")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user when FCY ACC is selected Pay_Order_FCY")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "23087900855910")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:amount", "500.50")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "YASIRBENE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose", "Credit Card Payment  ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:city", "Attock")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch", "FATEHJANG | 1171")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:transaction_password", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Your request has been processed successfully. Please visit your branch with the R" +
+            "eference Number to collect the Pay Order/Bankers Cheque.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_branch_query", "SELECT DT.TO_BRANCH FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifyPayOrderRequestFromMyAccount_AsAUserWhenFCYACCIsSelectedPay_Order_FCY()
+        {
+#line 276
+this.AsAUserIWantToVerifyPayOrderRequestFromMyAccount("As a user when FCY ACC is selected Pay_Order_FCY", "23087900855910", "500.50", "YASIRBENE", "Credit Card Payment  ", "Attock", "FATEHJANG | 1171", "pakistan2", "Your request has been processed successfully. Please visit your branch with the R" +
                     "eference Number to collect the Pay Order/Bankers Cheque.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_BRANCH FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.CREATED_ON FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
@@ -1099,65 +3297,68 @@ this.AsAUserIWantToVerifyPayOrderRequestFromMyAccount("As a user I want to verif
         public virtual void AsAUserIWantToVerifyWithholdingTaxCertificateRequestFromMyAccount(string @case, string for_Account, string from_Day, string from_Month, string from_Year, string from_Date, string to_Day, string to_Month, string to_Year, string to_Date, string tran_Status_Query, string from_Account_Tran_Query, string from_Date_Tran_Query, string to_Date_Tran_Query, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "MyAccount"};
+                    "MyAccount",
+                    "WithHoldingTax"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user I want to verify Withholding Tax Certificate Request from My Account", @__tags);
-#line 321
-this.ScenarioSetup(scenarioInfo);
-#line 322
- testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 323
- testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 324
- testRunner.And("I count Number of Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 325
- testRunner.And("I am clicking on \"MyAccount_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 326
- testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 327
- testRunner.And("I am clicking on \"MyAccount_WithHold_Tax_Opt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 328
- testRunner.When(string.Format("I select \"{0}\" on \"MyAccount_WithHoldTax_ForAcc_List\"", for_Account), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 329
- testRunner.And("I am clicking on \"MyAccount_WithHoldTax_FromDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I count Number of Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 330
- testRunner.And(string.Format("I select date \"{0}\" on month \"{1}\" on year \"{2}\"", from_Day, from_Month, from_Year), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"MyAccount_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 331
- testRunner.And("I am clicking on \"MyAccount_WithHoldTax_ToDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 332
- testRunner.And(string.Format("I select date \"{0}\" on month \"{1}\" on year \"{2}\"", to_Day, to_Month, to_Year), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"MyAccount_WithHold_Tax_Opt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 333
- testRunner.Then("I am performing on \"MyAccount_WithHoldTax_ReqBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When(string.Format("I select \"{0}\" on \"MyAccount_WithHoldTax_ForAcc_List\"", for_Account), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 334
+ testRunner.And("I am clicking on \"MyAccount_WithHoldTax_FromDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 335
+ testRunner.And(string.Format("I select date \"{0}\" on month \"{1}\" on year \"{2}\"", from_Day, from_Month, from_Year), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 336
+ testRunner.And("I am clicking on \"MyAccount_WithHoldTax_ToDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 337
+ testRunner.And(string.Format("I select date \"{0}\" on month \"{1}\" on year \"{2}\"", to_Day, to_Month, to_Year), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 338
+ testRunner.Then("I am performing on \"MyAccount_WithHoldTax_ReqBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 339
  testRunner.And(string.Format("verify the message \"Success\" through database on \"{0}\" on Schema \"DIGITAL_CHANNEL" +
                         "_SEC\"", tran_Status_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 335
+#line 340
  testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"DIGITAL_CHANNEL_SEC" +
                         "\"", for_Account, from_Account_Tran_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 336
+#line 341
  testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"DIGITAL_CHANNEL_SEC" +
                         "\"", from_Date, from_Account_Tran_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 337
+#line 342
  testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"DIGITAL_CHANNEL_SEC" +
                         "\"", to_Date, to_Date_Tran_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 338
- testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 339
- testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 340
- testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 341
- testRunner.And("I select \"Non Financial\" on \"Services_CategoryFilter\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 342
- testRunner.And("I scroll to element \"Services_Clear_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 343
- testRunner.And("I am performing on \"Services_Search_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 344
- testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 345
+ testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 346
+ testRunner.And("I select \"Non Financial\" on \"Services_CategoryFilter\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 347
+ testRunner.And("I scroll to element \"Services_Clear_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 348
+ testRunner.And("I am performing on \"Services_Search_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 349
+ testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 350
  testRunner.And("I am performing on \"Investment_TranActivityCloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1165,13 +3366,17 @@ this.ScenarioSetup(scenarioInfo);
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Withholding Tax Certificate Request from My Account: A" +
-            "s a user I want to verify Withholding Tax certificate Request")]
+            "s a user I want to verify Withholding Tax certificate Request WithHolding_Tax_No" +
+            "rmal")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("WithHoldingTax")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/WithHoldingTaxCertifcate.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify Withholding Tax certificate Request")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify Withholding Tax certificate Request")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify Withholding Tax certificate Request WithHolding_Tax_No" +
+            "rmal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify Withholding Tax certificate Request WithHolding_Tax_No" +
+            "rmal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "06947900309303")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_day", "1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_month", "Aug")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_year", "2019")]
@@ -1189,10 +3394,291 @@ this.ScenarioSetup(scenarioInfo);
             "MER_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_date_tran_query", "Select L.TO_DATE from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTOME" +
             "R_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'")]
-        public virtual void AsAUserIWantToVerifyWithholdingTaxCertificateRequestFromMyAccount_AsAUserIWantToVerifyWithholdingTaxCertificateRequest()
+        public virtual void AsAUserIWantToVerifyWithholdingTaxCertificateRequestFromMyAccount_AsAUserIWantToVerifyWithholdingTaxCertificateRequestWithHolding_Tax_Normal()
         {
-#line 321
-this.AsAUserIWantToVerifyWithholdingTaxCertificateRequestFromMyAccount("As a user I want to verify Withholding Tax certificate Request", "", "1", "Aug", "2019", "8/1/2019", "1", "Aug", "2020", "8/1/2020", "Select L.STATUS from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTOMER" +
+#line 325
+this.AsAUserIWantToVerifyWithholdingTaxCertificateRequestFromMyAccount("As a user I want to verify Withholding Tax certificate Request WithHolding_Tax_No" +
+                    "rmal", "06947900309303", "1", "Aug", "2019", "8/1/2019", "1", "Aug", "2020", "8/1/2020", "Select L.STATUS from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTOMER" +
+                    "_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'", "Select L.FROM_ACCOUNT from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CU" +
+                    "STOMER_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'" +
+                    "", "Select L.FROM_DATE from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTO" +
+                    "MER_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'", "Select L.TO_DATE from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTOME" +
+                    "R_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'", new string[] {
+                        "source:Data/WithHoldingTaxCertifcate.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Withholding Tax Certificate Request from My Account: A" +
+            "s a user when Invalid From Date is selected WithHolding_Tax_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("WithHoldingTax")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/WithHoldingTaxCertifcate.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user when Invalid From Date is selected WithHolding_Tax_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user when Invalid From Date is selected WithHolding_Tax_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "06947900309303")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_day", "1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_month", "Jun")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_year", "2019")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_date", "6/1/2019")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_day", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_month", "Aug")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_year", "2020")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_date", "8/2/2020")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_status_query", "Select L.STATUS from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTOMER" +
+            "_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_tran_query", "Select L.FROM_ACCOUNT from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CU" +
+            "STOMER_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_date_tran_query", "Select L.FROM_DATE from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTO" +
+            "MER_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_date_tran_query", "Select L.TO_DATE from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTOME" +
+            "R_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'")]
+        public virtual void AsAUserIWantToVerifyWithholdingTaxCertificateRequestFromMyAccount_AsAUserWhenInvalidFromDateIsSelectedWithHolding_Tax_Normal()
+        {
+#line 325
+this.AsAUserIWantToVerifyWithholdingTaxCertificateRequestFromMyAccount("As a user when Invalid From Date is selected WithHolding_Tax_Normal", "06947900309303", "1", "Jun", "2019", "6/1/2019", "2", "Aug", "2020", "8/2/2020", "Select L.STATUS from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTOMER" +
+                    "_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'", "Select L.FROM_ACCOUNT from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CU" +
+                    "STOMER_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'" +
+                    "", "Select L.FROM_DATE from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTO" +
+                    "MER_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'", "Select L.TO_DATE from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTOME" +
+                    "R_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'", new string[] {
+                        "source:Data/WithHoldingTaxCertifcate.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Withholding Tax Certificate Request from My Account: A" +
+            "s a user when Invalid To Date is selected WithHolding_Tax_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("WithHoldingTax")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/WithHoldingTaxCertifcate.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user when Invalid To Date is selected WithHolding_Tax_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user when Invalid To Date is selected WithHolding_Tax_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "06947900309303")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_day", "1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_month", "Aug")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_year", "2019")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_date", "8/1/2019")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_day", "3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_month", "Aug")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_year", "2021")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_date", "8/3/2021")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_status_query", "Select L.STATUS from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTOMER" +
+            "_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_tran_query", "Select L.FROM_ACCOUNT from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CU" +
+            "STOMER_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_date_tran_query", "Select L.FROM_DATE from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTO" +
+            "MER_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_date_tran_query", "Select L.TO_DATE from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTOME" +
+            "R_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'")]
+        public virtual void AsAUserIWantToVerifyWithholdingTaxCertificateRequestFromMyAccount_AsAUserWhenInvalidToDateIsSelectedWithHolding_Tax_Normal()
+        {
+#line 325
+this.AsAUserIWantToVerifyWithholdingTaxCertificateRequestFromMyAccount("As a user when Invalid To Date is selected WithHolding_Tax_Normal", "06947900309303", "1", "Aug", "2019", "8/1/2019", "3", "Aug", "2021", "8/3/2021", "Select L.STATUS from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTOMER" +
+                    "_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'", "Select L.FROM_ACCOUNT from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CU" +
+                    "STOMER_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'" +
+                    "", "Select L.FROM_DATE from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTO" +
+                    "MER_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'", "Select L.TO_DATE from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTOME" +
+                    "R_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'", new string[] {
+                        "source:Data/WithHoldingTaxCertifcate.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Withholding Tax Certificate Request from My Account: A" +
+            "s a user when duration is 1 month WithHolding_Tax_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("WithHoldingTax")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/WithHoldingTaxCertifcate.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user when duration is 1 month WithHolding_Tax_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user when duration is 1 month WithHolding_Tax_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "06947900309303")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_day", "1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_month", "Sep")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_year", "2020")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_date", "9/1/2020")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_day", "30")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_month", "Sep")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_year", "2020")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_date", "9/30/2020")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_status_query", "Select L.STATUS from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTOMER" +
+            "_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_tran_query", "Select L.FROM_ACCOUNT from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CU" +
+            "STOMER_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_date_tran_query", "Select L.FROM_DATE from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTO" +
+            "MER_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_date_tran_query", "Select L.TO_DATE from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTOME" +
+            "R_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'")]
+        public virtual void AsAUserIWantToVerifyWithholdingTaxCertificateRequestFromMyAccount_AsAUserWhenDurationIs1MonthWithHolding_Tax_Normal()
+        {
+#line 325
+this.AsAUserIWantToVerifyWithholdingTaxCertificateRequestFromMyAccount("As a user when duration is 1 month WithHolding_Tax_Normal", "06947900309303", "1", "Sep", "2020", "9/1/2020", "30", "Sep", "2020", "9/30/2020", "Select L.STATUS from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTOMER" +
+                    "_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'", "Select L.FROM_ACCOUNT from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CU" +
+                    "STOMER_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'" +
+                    "", "Select L.FROM_DATE from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTO" +
+                    "MER_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'", "Select L.TO_DATE from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTOME" +
+                    "R_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'", new string[] {
+                        "source:Data/WithHoldingTaxCertifcate.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Withholding Tax Certificate Request from My Account: A" +
+            "s a user when From date is greater than to date WithHolding_Tax_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("WithHoldingTax")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/WithHoldingTaxCertifcate.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user when From date is greater than to date WithHolding_Tax_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user when From date is greater than to date WithHolding_Tax_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "06947900309303")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_day", "1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_month", "Sep")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_year", "2020")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_date", "9/1/2020")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_day", "30")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_month", "Sep")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_year", "2020")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_date", "9/30/2019")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_status_query", "Select L.STATUS from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTOMER" +
+            "_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_tran_query", "Select L.FROM_ACCOUNT from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CU" +
+            "STOMER_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_date_tran_query", "Select L.FROM_DATE from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTO" +
+            "MER_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_date_tran_query", "Select L.TO_DATE from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTOME" +
+            "R_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'")]
+        public virtual void AsAUserIWantToVerifyWithholdingTaxCertificateRequestFromMyAccount_AsAUserWhenFromDateIsGreaterThanToDateWithHolding_Tax_Normal()
+        {
+#line 325
+this.AsAUserIWantToVerifyWithholdingTaxCertificateRequestFromMyAccount("As a user when From date is greater than to date WithHolding_Tax_Normal", "06947900309303", "1", "Sep", "2020", "9/1/2020", "30", "Sep", "2020", "9/30/2019", "Select L.STATUS from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTOMER" +
+                    "_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'", "Select L.FROM_ACCOUNT from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CU" +
+                    "STOMER_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'" +
+                    "", "Select L.FROM_DATE from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTO" +
+                    "MER_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'", "Select L.TO_DATE from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTOME" +
+                    "R_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'", new string[] {
+                        "source:Data/WithHoldingTaxCertifcate.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Withholding Tax Certificate Request from My Account: A" +
+            "s a user when invalid to date is entered Month WithHolding_Tax_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("WithHoldingTax")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/WithHoldingTaxCertifcate.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user when invalid to date is entered Month WithHolding_Tax_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user when invalid to date is entered Month WithHolding_Tax_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "06947900309303")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_day", "1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_month", "Sea")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_year", "2020")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_date", "13/1/2020")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_day", "30")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_month", "Sep")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_year", "2020")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_date", "9/30/2019")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_status_query", "Select L.STATUS from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTOMER" +
+            "_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_tran_query", "Select L.FROM_ACCOUNT from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CU" +
+            "STOMER_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_date_tran_query", "Select L.FROM_DATE from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTO" +
+            "MER_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_date_tran_query", "Select L.TO_DATE from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTOME" +
+            "R_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'")]
+        public virtual void AsAUserIWantToVerifyWithholdingTaxCertificateRequestFromMyAccount_AsAUserWhenInvalidToDateIsEnteredMonthWithHolding_Tax_Normal()
+        {
+#line 325
+this.AsAUserIWantToVerifyWithholdingTaxCertificateRequestFromMyAccount("As a user when invalid to date is entered Month WithHolding_Tax_Normal", "06947900309303", "1", "Sea", "2020", "13/1/2020", "30", "Sep", "2020", "9/30/2019", "Select L.STATUS from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTOMER" +
+                    "_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'", "Select L.FROM_ACCOUNT from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CU" +
+                    "STOMER_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'" +
+                    "", "Select L.FROM_DATE from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTO" +
+                    "MER_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'", "Select L.TO_DATE from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTOME" +
+                    "R_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'", new string[] {
+                        "source:Data/WithHoldingTaxCertifcate.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Withholding Tax Certificate Request from My Account: A" +
+            "s a user when From to date is entered Date WithHolding_Tax_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("WithHoldingTax")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/WithHoldingTaxCertifcate.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user when From to date is entered Date WithHolding_Tax_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user when From to date is entered Date WithHolding_Tax_Normal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "06947900309303")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_day", "13")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_month", "Sea")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_year", "2020")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_date", "9/13/2020")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_day", "30")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_month", "Sep")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_year", "2020")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_date", "9/40/2019")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_status_query", "Select L.STATUS from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTOMER" +
+            "_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_tran_query", "Select L.FROM_ACCOUNT from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CU" +
+            "STOMER_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_date_tran_query", "Select L.FROM_DATE from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTO" +
+            "MER_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_date_tran_query", "Select L.TO_DATE from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTOME" +
+            "R_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'")]
+        public virtual void AsAUserIWantToVerifyWithholdingTaxCertificateRequestFromMyAccount_AsAUserWhenFromToDateIsEnteredDateWithHolding_Tax_Normal()
+        {
+#line 325
+this.AsAUserIWantToVerifyWithholdingTaxCertificateRequestFromMyAccount("As a user when From to date is entered Date WithHolding_Tax_Normal", "06947900309303", "13", "Sea", "2020", "9/13/2020", "30", "Sep", "2020", "9/40/2019", "Select L.STATUS from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTOMER" +
+                    "_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'", "Select L.FROM_ACCOUNT from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CU" +
+                    "STOMER_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'" +
+                    "", "Select L.FROM_DATE from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTO" +
+                    "MER_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'", "Select L.TO_DATE from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTOME" +
+                    "R_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'", new string[] {
+                        "source:Data/WithHoldingTaxCertifcate.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Withholding Tax Certificate Request from My Account: W" +
+            "hen FCY Acc is selected WithHolding_Tax_FCY")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MyAccount")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("WithHoldingTax")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/WithHoldingTaxCertifcate.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When FCY Acc is selected WithHolding_Tax_FCY")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When FCY Acc is selected WithHolding_Tax_FCY")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:for_account", "23087900855910")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_day", "1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_month", "Aug")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_year", "2019")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_date", "8/1/2019")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_day", "1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_month", "Aug")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_year", "2020")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_date", "8/1/2020")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_status_query", "Select L.STATUS from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTOMER" +
+            "_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_tran_query", "Select L.FROM_ACCOUNT from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CU" +
+            "STOMER_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_date_tran_query", "Select L.FROM_DATE from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTO" +
+            "MER_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_date_tran_query", "Select L.TO_DATE from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTOME" +
+            "R_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'")]
+        public virtual void AsAUserIWantToVerifyWithholdingTaxCertificateRequestFromMyAccount_WhenFCYAccIsSelectedWithHolding_Tax_FCY()
+        {
+#line 325
+this.AsAUserIWantToVerifyWithholdingTaxCertificateRequestFromMyAccount("When FCY Acc is selected WithHolding_Tax_FCY", "23087900855910", "1", "Aug", "2019", "8/1/2019", "1", "Aug", "2020", "8/1/2020", "Select L.STATUS from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTOMER" +
                     "_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'", "Select L.FROM_ACCOUNT from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CU" +
                     "STOMER_INFO_ID from dc_customer_info k where K.CUSTOMER_NAME = \'{customer_name}\'" +
                     "", "Select L.FROM_DATE from dc_transaction l where L.CUSTOMER_INFO_ID = (Select CUSTO" +

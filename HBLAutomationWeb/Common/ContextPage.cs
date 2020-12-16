@@ -65,6 +65,7 @@ namespace HBLAutomationWeb.Common
         string customer_type;
         string ivr_req;
         string enable_psd;
+        string enable_check;
         string pass_policy1;
         string pass_policy2;
         string pass_policy3;
@@ -101,8 +102,17 @@ namespace HBLAutomationWeb.Common
         bool change_loginID_check = false;
         string date_string = "";
         string schedule_tran_id = "";
+        string bene_count = "";
+        List<string> iteration_dates_schedule;
 
-
+        public void Set_Bene_Count(string bene_count)
+        {
+            this.bene_count = bene_count;
+        }
+        public string Get_Bene_Count()
+        {
+            return bene_count;
+        }
 
         public void Set_ScheduleID(string schedule_tran_id)
         {
@@ -527,6 +537,14 @@ namespace HBLAutomationWeb.Common
         {
             this.frequency = frequency;
         }
+        public List<string> Get_iteration_dates_schedule()
+        {
+            return iteration_dates_schedule;
+        }
+        public void Set_iteration_dates_schedule(List<string> iteration_dates_schedule)
+        {
+            this.iteration_dates_schedule = iteration_dates_schedule;
+        }
         public string Getfrequency()
         {
             return frequency;
@@ -708,6 +726,14 @@ namespace HBLAutomationWeb.Common
         public string GetEnablePSD()
         {
             return enable_psd;
+        }
+        public void SetEnableCheck(string enable_check)
+        {
+            this.enable_check = enable_check;
+        }
+        public string GetEnableCheck()
+        {
+            return enable_check;
         }
         public void SetPassPolicy1(string pass_policy1)
         {

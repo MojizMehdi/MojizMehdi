@@ -83,10 +83,20 @@ namespace HBLAutomationWeb.Resources.Feature.InternetBanking
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void _1AsAUserIWantToVerifyLoginForHBLWebManageSchedulePayment(string @case, string login_UserId_Value, string login_Password_Value, string oTP_Value, string[] exampleTags)
+        public virtual void _1AsAUserIWantToVerifyLoginForHBLWebManageSchedulePayment(string @case, string expected_Result, string login_UserId_Value, string login_Password_Value, string oTP_Value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "Login"};
+                    "MngSchedule",
+                    "MngSchedule_Send_Verify",
+                    "MngSchedule_Bill_Verify",
+                    "MngSchedule_Send_New",
+                    "MngSchedule_Send_Bene",
+                    "MngSchedule_Bill_New",
+                    "MngSchedule_Bill_Bene",
+                    "MngSchedule_Bill_Cancel",
+                    "MngSchedule_Send_Cancel",
+                    "MngSchedule_Bill_Delete",
+                    "MngSchedule_Send_Delete"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -97,22 +107,24 @@ this.ScenarioSetup(scenarioInfo);
 #line 9
  testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 10
- testRunner.And(string.Format("I set value in context from data \"{0}\" as \"username\"", login_UserId_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("the test case expected result is \"{0}\"", expected_Result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"username\"", login_UserId_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_UserId\"", login_UserId_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_Password\"", login_Password_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_UserId\"", login_UserId_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 14
- testRunner.When("I am performing on \"Login_SignIn_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_Password\"", login_Password_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 15
- testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I am performing on \"Login_SignIn_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 16
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
- testRunner.And("I am performing on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
+ testRunner.And("I am performing on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 19
  testRunner.Then("verify through \"Welcome\" on \"Login_Success_Text\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -120,120 +132,460 @@ this.ScenarioSetup(scenarioInfo);
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 As a user i want to Verify login for HBL Web Manage Schedule Payment: When user" +
-            " id and password are valid")]
+            " id and password are valid ManageSchedule Mng_Bill_Cancel")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Login")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/IBLogin.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "YASIR113")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Login.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid ManageSchedule Mng_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid ManageSchedule Mng_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "CANCELBILLPAYMENT")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
-        public virtual void _1AsAUserIWantToVerifyLoginForHBLWebManageSchedulePayment_WhenUserIdAndPasswordAreValid()
+        public virtual void _1AsAUserIWantToVerifyLoginForHBLWebManageSchedulePayment_WhenUserIdAndPasswordAreValidManageScheduleMng_Bill_Cancel()
         {
 #line 8
-this._1AsAUserIWantToVerifyLoginForHBLWebManageSchedulePayment("When user id and password are valid", "YASIR113", "pakistan1", "12345678", new string[] {
-                        "source:Data/IBLogin.xlsx"});
+this._1AsAUserIWantToVerifyLoginForHBLWebManageSchedulePayment("When user id and password are valid ManageSchedule Mng_Bill_Cancel", "Pass", "CANCELBILLPAYMENT", "pakistan1", "12345678", new string[] {
+                        "source:Data/ManageSchedule_Login.xlsx"});
 #line hidden
         }
         
-        public virtual void AsAUserIWantToVerifyScheduleManagementFromMyAccount(string @case, string db_Val, string schedule_Count_Query, string[] exampleTags)
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 As a user i want to Verify login for HBL Web Manage Schedule Payment: When user" +
+            " id and password are valid ManageSchedule Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Login.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid ManageSchedule Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid ManageSchedule Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "CANCELSENDMONEY")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        public virtual void _1AsAUserIWantToVerifyLoginForHBLWebManageSchedulePayment_WhenUserIdAndPasswordAreValidManageScheduleMng_Send_Cancel()
+        {
+#line 8
+this._1AsAUserIWantToVerifyLoginForHBLWebManageSchedulePayment("When user id and password are valid ManageSchedule Mng_Send_Cancel", "Pass", "CANCELSENDMONEY", "pakistan1", "12345678", new string[] {
+                        "source:Data/ManageSchedule_Login.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 As a user i want to Verify login for HBL Web Manage Schedule Payment: When user" +
+            " id and password are valid ManageSchedule Mng_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Login.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid ManageSchedule Mng_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid ManageSchedule Mng_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "CANCELBILLPAYMENT")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        public virtual void _1AsAUserIWantToVerifyLoginForHBLWebManageSchedulePayment_WhenUserIdAndPasswordAreValidManageScheduleMng_Bill_Delete()
+        {
+#line 8
+this._1AsAUserIWantToVerifyLoginForHBLWebManageSchedulePayment("When user id and password are valid ManageSchedule Mng_Bill_Delete", "Pass", "CANCELBILLPAYMENT", "pakistan1", "12345678", new string[] {
+                        "source:Data/ManageSchedule_Login.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 As a user i want to Verify login for HBL Web Manage Schedule Payment: When user" +
+            " id and password are valid ManageSchedule Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Login.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid ManageSchedule Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid ManageSchedule Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "CANCELSENDMONEY")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        public virtual void _1AsAUserIWantToVerifyLoginForHBLWebManageSchedulePayment_WhenUserIdAndPasswordAreValidManageScheduleMng_Send_Delete()
+        {
+#line 8
+this._1AsAUserIWantToVerifyLoginForHBLWebManageSchedulePayment("When user id and password are valid ManageSchedule Mng_Send_Delete", "Pass", "CANCELSENDMONEY", "pakistan1", "12345678", new string[] {
+                        "source:Data/ManageSchedule_Login.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 As a user i want to Verify login for HBL Web Manage Schedule Payment: When user" +
+            " id and password are valid ManageSchedule Mng_Bill_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Login.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid ManageSchedule Mng_Bill_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid ManageSchedule Mng_Bill_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "CANCELBILLPAYMENT")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        public virtual void _1AsAUserIWantToVerifyLoginForHBLWebManageSchedulePayment_WhenUserIdAndPasswordAreValidManageScheduleMng_Bill_Verify()
+        {
+#line 8
+this._1AsAUserIWantToVerifyLoginForHBLWebManageSchedulePayment("When user id and password are valid ManageSchedule Mng_Bill_Verify", "Pass", "CANCELBILLPAYMENT", "pakistan1", "12345678", new string[] {
+                        "source:Data/ManageSchedule_Login.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 As a user i want to Verify login for HBL Web Manage Schedule Payment: When user" +
+            " id and password are valid ManageSchedule Mng_Bill_Invalid_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Login.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid ManageSchedule Mng_Bill_Invalid_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid ManageSchedule Mng_Bill_Invalid_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "MANAGESIBILLVERIFYNO")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        public virtual void _1AsAUserIWantToVerifyLoginForHBLWebManageSchedulePayment_WhenUserIdAndPasswordAreValidManageScheduleMng_Bill_Invalid_Verify()
+        {
+#line 8
+this._1AsAUserIWantToVerifyLoginForHBLWebManageSchedulePayment("When user id and password are valid ManageSchedule Mng_Bill_Invalid_Verify", "Pass", "MANAGESIBILLVERIFYNO", "pakistan1", "12345678", new string[] {
+                        "source:Data/ManageSchedule_Login.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 As a user i want to Verify login for HBL Web Manage Schedule Payment: When user" +
+            " id and password are valid ManageSchedule Mng_Send_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Login.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid ManageSchedule Mng_Send_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid ManageSchedule Mng_Send_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "CANCELSENDMONEY")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        public virtual void _1AsAUserIWantToVerifyLoginForHBLWebManageSchedulePayment_WhenUserIdAndPasswordAreValidManageScheduleMng_Send_Verify()
+        {
+#line 8
+this._1AsAUserIWantToVerifyLoginForHBLWebManageSchedulePayment("When user id and password are valid ManageSchedule Mng_Send_Verify", "Pass", "CANCELSENDMONEY", "pakistan1", "12345678", new string[] {
+                        "source:Data/ManageSchedule_Login.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 As a user i want to Verify login for HBL Web Manage Schedule Payment: When user" +
+            " id and password are valid ManageSchedule Mng_Send_Invalid_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Login.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid ManageSchedule Mng_Send_Invalid_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid ManageSchedule Mng_Send_Invalid_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "MANAGESIVERIFYNO")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        public virtual void _1AsAUserIWantToVerifyLoginForHBLWebManageSchedulePayment_WhenUserIdAndPasswordAreValidManageScheduleMng_Send_Invalid_Verify()
+        {
+#line 8
+this._1AsAUserIWantToVerifyLoginForHBLWebManageSchedulePayment("When user id and password are valid ManageSchedule Mng_Send_Invalid_Verify", "Pass", "MANAGESIVERIFYNO", "pakistan1", "12345678", new string[] {
+                        "source:Data/ManageSchedule_Login.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 As a user i want to Verify login for HBL Web Manage Schedule Payment: When user" +
+            " id and password are valid ManageSchedule MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Login.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid ManageSchedule MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid ManageSchedule MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "CANCELSENDMONEY")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        public virtual void _1AsAUserIWantToVerifyLoginForHBLWebManageSchedulePayment_WhenUserIdAndPasswordAreValidManageScheduleMngSch_Send_AddNew()
+        {
+#line 8
+this._1AsAUserIWantToVerifyLoginForHBLWebManageSchedulePayment("When user id and password are valid ManageSchedule MngSch_Send_AddNew", "Pass", "CANCELSENDMONEY", "pakistan1", "12345678", new string[] {
+                        "source:Data/ManageSchedule_Login.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 As a user i want to Verify login for HBL Web Manage Schedule Payment: When user" +
+            " id and password are valid ManageSchedule MngSch_Bill_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Login.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid ManageSchedule MngSch_Bill_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid ManageSchedule MngSch_Bill_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "CANCELBILLPAYMENT")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        public virtual void _1AsAUserIWantToVerifyLoginForHBLWebManageSchedulePayment_WhenUserIdAndPasswordAreValidManageScheduleMngSch_Bill_AddNew()
+        {
+#line 8
+this._1AsAUserIWantToVerifyLoginForHBLWebManageSchedulePayment("When user id and password are valid ManageSchedule MngSch_Bill_AddNew", "Pass", "CANCELBILLPAYMENT", "pakistan1", "12345678", new string[] {
+                        "source:Data/ManageSchedule_Login.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 As a user i want to Verify login for HBL Web Manage Schedule Payment: When user" +
+            " id and password are valid ManageSchedule MngSch_Bill_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Login.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid ManageSchedule MngSch_Bill_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid ManageSchedule MngSch_Bill_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "CANCELBILLPAYMENT")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        public virtual void _1AsAUserIWantToVerifyLoginForHBLWebManageSchedulePayment_WhenUserIdAndPasswordAreValidManageScheduleMngSch_Bill_Bene()
+        {
+#line 8
+this._1AsAUserIWantToVerifyLoginForHBLWebManageSchedulePayment("When user id and password are valid ManageSchedule MngSch_Bill_Bene", "Pass", "CANCELBILLPAYMENT", "pakistan1", "12345678", new string[] {
+                        "source:Data/ManageSchedule_Login.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 As a user i want to Verify login for HBL Web Manage Schedule Payment: When user" +
+            " id and password are valid ManageSchedule MngSch_Send_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Login.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid ManageSchedule MngSch_Send_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid ManageSchedule MngSch_Send_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "CANCELSENDMONEY")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        public virtual void _1AsAUserIWantToVerifyLoginForHBLWebManageSchedulePayment_WhenUserIdAndPasswordAreValidManageScheduleMngSch_Send_Bene()
+        {
+#line 8
+this._1AsAUserIWantToVerifyLoginForHBLWebManageSchedulePayment("When user id and password are valid ManageSchedule MngSch_Send_Bene", "Pass", "CANCELSENDMONEY", "pakistan1", "12345678", new string[] {
+                        "source:Data/ManageSchedule_Login.xlsx"});
+#line hidden
+        }
+        
+        public virtual void AsAUserIWantToVerifySendMoneyBeneOfScheduleManagement(string @case, string expected_Result, string db_Val, string schedule_Count_Query, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "MngSchedule"};
+                    "MngSchedule",
+                    "MngSchedule_Send_Verify"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user I want to verify Schedule Management from My Account", @__tags);
-#line 25
-this.ScenarioSetup(scenarioInfo);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user I want to verify Send Money Bene of Schedule Management", @__tags);
 #line 26
- testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 27
- testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 28
+ testRunner.And(string.Format("the test case expected result is \"{0}\"", expected_Result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 29
+ testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 30
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 31
  testRunner.And(string.Format("I set value in context from database \"{0}\" as \"user_schedule_count\" on Schema \"{1" +
                         "}\"", schedule_Count_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 29
- testRunner.When("I am clicking on \"MyAccount_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 30
- testRunner.And("I am clicking on \"MyAccount_MngSch_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 31
- testRunner.Then("I am verifying schedule payments of Send Money from My Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 32
- testRunner.And("I am verifying schedule payments of Bill Payment from My Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I am clicking on \"MyAccount_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 33
+ testRunner.And("I am clicking on \"MyAccount_MngSch_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 34
+ testRunner.Then("I am verifying schedule payments of Send Money from My Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Schedule Management from My Account: As a user I want " +
-            "to verify schedule management from My Account")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Send Money Bene of Schedule Management: As a user I wa" +
+            "nt to verify schedule management Mng_Send_Verify")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageScheduleVerify.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify schedule management from My Account")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify schedule management from My Account")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_SendMoney_Verify.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify schedule management Mng_Send_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify schedule management Mng_Send_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
-            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
-            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
-        public virtual void AsAUserIWantToVerifyScheduleManagementFromMyAccount_AsAUserIWantToVerifyScheduleManagementFromMyAccount()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", @"SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0 and TM.BILL_BENEFICIARY_ID = 0")]
+        public virtual void AsAUserIWantToVerifySendMoneyBeneOfScheduleManagement_AsAUserIWantToVerifyScheduleManagementMng_Send_Verify()
         {
-#line 25
-this.AsAUserIWantToVerifyScheduleManagementFromMyAccount("As a user I want to verify schedule management from My Account", "DIGITAL_CHANNEL_SEC", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
-                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
-                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", new string[] {
-                        "source:Data/ManageScheduleVerify.xlsx"});
+#line 26
+this.AsAUserIWantToVerifySendMoneyBeneOfScheduleManagement("As a user I want to verify schedule management Mng_Send_Verify", "Pass", "DIGITAL_CHANNEL_SEC", @"SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0 and TM.BILL_BENEFICIARY_ID = 0", new string[] {
+                        "source:Data/ManageSchedule_SendMoney_Verify.xlsx"});
 #line hidden
         }
         
-        public virtual void AsAUserIWantToVerifyScheduleManagementAfterAddingSendMoneySchedularWithNewBene(
-                    string @case, 
-                    string schedule_Count_Query, 
-                    string status_Query, 
-                    string from_Account_Value, 
-                    string bank_Value, 
-                    string account_Number_Value, 
-                    string amount_Value, 
-                    string purposeOfPayment_Value, 
-                    string bene_Nick, 
-                    string bene_Mobile_No, 
-                    string bene_Email, 
-                    string oTP_Value, 
-                    string tran_Pass_Value, 
-                    string success_Message, 
-                    string tran_Type_Query, 
-                    string tran_Amount_Query, 
-                    string from_Account_Query, 
-                    string to_Account_Query, 
-                    string to_Bank_Query, 
-                    string bene_Name_Query, 
-                    string purpose_Query, 
-                    string db_Val, 
-                    string[] exampleTags)
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Send Money Bene of Schedule Management: As a user I wa" +
+            "nt to verify schedule management but no schedule set Mng_Send_Invalid_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_SendMoney_Verify.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify schedule management but no schedule set Mng_Send_Inval" +
+            "id_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify schedule management but no schedule set Mng_Send_Inval" +
+            "id_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", @"SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0 and TM.BILL_BENEFICIARY_ID = 0")]
+        public virtual void AsAUserIWantToVerifySendMoneyBeneOfScheduleManagement_AsAUserIWantToVerifyScheduleManagementButNoScheduleSetMng_Send_Invalid_Verify()
+        {
+#line 26
+this.AsAUserIWantToVerifySendMoneyBeneOfScheduleManagement("As a user I want to verify schedule management but no schedule set Mng_Send_Inval" +
+                    "id_Verify", "Fail", "DIGITAL_CHANNEL_SEC", @"SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0 and TM.BILL_BENEFICIARY_ID = 0", new string[] {
+                        "source:Data/ManageSchedule_SendMoney_Verify.xlsx"});
+#line hidden
+        }
+        
+        public virtual void AsAUserIWantToVerifyBillPaymentBeneOfScheduleManagement(string @case, string expected_Result, string db_Val, string schedule_Count_Query, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "MngSchedule"};
+                    "MngSchedule",
+                    "MngSchedule_Bill_Verify"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user I want to verify Schedule Management after adding Send Money schedular " +
-                    "with new Bene", @__tags);
-#line 41
-this.ScenarioSetup(scenarioInfo);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user I want to verify Bill Payment Bene of Schedule Management", @__tags);
 #line 42
- testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 43
- testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 44
- testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("the test case expected result is \"{0}\"", expected_Result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 45
- testRunner.And("I count Number of Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 46
- testRunner.And("I save Account Balances", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 47
  testRunner.And(string.Format("I set value in context from database \"{0}\" as \"user_schedule_count\" on Schema \"{1" +
                         "}\"", schedule_Count_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -242,156 +594,58 @@ this.ScenarioSetup(scenarioInfo);
 #line 49
  testRunner.And("I am clicking on \"MyAccount_MngSch_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 50
- testRunner.And("I am clicking on \"MyAccount_MngSch_AddNew\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 51
- testRunner.And("I am clicking on \"MyAccount_MngSch_AddNew_SendMoney\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 52
- testRunner.And(string.Format("I set value in context from data \"{0}\" as \"Bene_AccountNo\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 53
- testRunner.And(string.Format("update the data by query \"{0}\" on DIGITAL_CHANNEL_SEC", status_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 54
- testRunner.And("I am clicking on \"SendMoney_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 55
- testRunner.And("I am clicking on \"SendMoney_AddNewBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 56
- testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 57
- testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_FromAccount\"", from_Account_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 58
- testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_Bank\"", bank_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 59
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_ToAccount\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 60
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_Amount\"", amount_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 61
- testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_PurposeOfPayment\"", purposeOfPayment_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 62
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_BeneNick\"", bene_Nick), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 63
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_BeneMobileNo\"", bene_Mobile_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 64
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_BeneEmail\"", bene_Email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 65
- testRunner.And("I am clicking on \"SendMoney_ScheduleCheck\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 66
- testRunner.And("I scroll to element \"SendMoney_Frequency\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 67
- testRunner.And("I select \"<Frequency_Value>\" on \"SendMoney_Frequency\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 68
- testRunner.And("I am clicking on \"SendMoney_Schedule_FromDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 69
- testRunner.And("I select date \"<From_Date_Value>\" on month \"<From_Month_Value>\" on year \"<From_Ye" +
-                    "ar_Value>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 70
- testRunner.And("I set calendar from date", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 71
- testRunner.And("I am clicking on \"SendMoney_Schedule_ToDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 72
- testRunner.And("I select date \"<To_Date_Value>\" on month \"<To_Month_Value>\" on year \"<To_Year_Val" +
-                    "ue>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 73
- testRunner.And("I set calendar to date", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 74
- testRunner.And("I am clicking on \"SendMoney_Btn_ViewSummary\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 75
- testRunner.And("I am verifying list of execution iterations on \"SendMoney_Btn_Summary_Iteration_D" +
-                    "ates\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 76
- testRunner.And("I am clicking on \"SendMoney_Btn_Summary_OK\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 77
- testRunner.And("I scroll to element \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 78
- testRunner.And("I am clicking on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 79
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 80
- testRunner.And("I am performing on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 81
- testRunner.And(string.Format("I have given \"{0}\" on \"Pay_Transaction_PayBill_TransactionPassword\"", tran_Pass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 82
- testRunner.And("I am clicking on \"SendMoney_ScheduleBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 83
- testRunner.And("I save Transaction Info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 84
- testRunner.And(string.Format("verify through \"{0}\" on \"SendMoney_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 85
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranSourceAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 86
- testRunner.And(string.Format("verify through database on \"<frequency_query>\" on Schema \"{0}\" on \"SendMoney_Tran" +
-                        "Frequency\"", db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 87
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranPurpose\"", purpose_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 88
- testRunner.And("I am performing on \"SendMoney_CloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 89
- testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 90
- testRunner.And("I verify Account Balance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 91
- testRunner.And("I am clicking on \"MyAccount_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 92
- testRunner.And("I am clicking on \"MyAccount_MngSch_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 93
- testRunner.Then("I am verifying schedule payments of Send Money from My Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I am verifying schedule payments of Bill Payment from My Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Schedule Management after adding Send Money schedular " +
-            "with new Bene: When verifying schedule payment from My Account with valid Accoun" +
-            "t Details are provided with adding new Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Bill Payment Bene of Schedule Management: As a user I " +
+            "want to verify schedule management Mng_Bill_Verify")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MngSchedule_SendMoneyAddNew.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When verifying schedule payment from My Account with valid Account Details are pr" +
-            "ovided with adding new Bene")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When verifying schedule payment from My Account with valid Account Details are pr" +
-            "ovided with adding new Bene")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
-            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
-            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", @"BEGIN UPDATE  DC_FUND_TRANSFER_BENEFICIARY TF SET TF.IS_DELETED = 1 WHERE TF.ACCOUNT_NO = '{account_number}' AND TF.CUSTOMER_INFO_ID = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DCI WHERE DCI.CUSTOMER_NAME = '{customer_name}');DELETE FROM DC_DATA_CACHE DC WHERE DC.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}');COMMIT;END;")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "00580052365603")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Account_Number_Value", "06047900194203")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "10")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PurposeOfPayment_Value", "Others")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "AliAbbas1")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Mobile_No", "03121223345")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Email", "aliabb111@gmail.com")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Tran_Pass_Value", "pakistan2")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "Money sent successfully.")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
-            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
-            "TION_ID = \'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
-            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name_query", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_BillPayment_Verify.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify schedule management Mng_Bill_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify schedule management Mng_Bill_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
-        public virtual void AsAUserIWantToVerifyScheduleManagementAfterAddingSendMoneySchedularWithNewBene_WhenVerifyingSchedulePaymentFromMyAccountWithValidAccountDetailsAreProvidedWithAddingNewBene()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", @"SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0 and TM.FUND_TRANSFER_BENEFICIARY_ID = 0")]
+        public virtual void AsAUserIWantToVerifyBillPaymentBeneOfScheduleManagement_AsAUserIWantToVerifyScheduleManagementMng_Bill_Verify()
         {
-#line 41
-this.AsAUserIWantToVerifyScheduleManagementAfterAddingSendMoneySchedularWithNewBene("When verifying schedule payment from My Account with valid Account Details are pr" +
-                    "ovided with adding new Bene", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
-                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
-                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", @"BEGIN UPDATE  DC_FUND_TRANSFER_BENEFICIARY TF SET TF.IS_DELETED = 1 WHERE TF.ACCOUNT_NO = '{account_number}' AND TF.CUSTOMER_INFO_ID = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DCI WHERE DCI.CUSTOMER_NAME = '{customer_name}');DELETE FROM DC_DATA_CACHE DC WHERE DC.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}');COMMIT;END;", "00580052365603", "HBL / Konnect", "06047900194203", "10", "Others", "AliAbbas1", "03121223345", "aliabb111@gmail.com", "12345", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
-                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
-                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
-                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", new string[] {
-                        "source:Data/MngSchedule_SendMoneyAddNew.xlsx"});
+#line 42
+this.AsAUserIWantToVerifyBillPaymentBeneOfScheduleManagement("As a user I want to verify schedule management Mng_Bill_Verify", "Pass", "DIGITAL_CHANNEL_SEC", @"SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0 and TM.FUND_TRANSFER_BENEFICIARY_ID = 0", new string[] {
+                        "source:Data/ManageSchedule_BillPayment_Verify.xlsx"});
 #line hidden
         }
         
-        public virtual void AsAUserIWantToVerifyScheduleManagementAfterAddingSendMoneySchedularWithExistingBene(
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Bill Payment Bene of Schedule Management: As a user I " +
+            "want to verify schedule management with NO SI Mng_Bill_Invalid_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Verify")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_BillPayment_Verify.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify schedule management with NO SI Mng_Bill_Invalid_Verify" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify schedule management with NO SI Mng_Bill_Invalid_Verify" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", @"SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0 and TM.FUND_TRANSFER_BENEFICIARY_ID = 0")]
+        public virtual void AsAUserIWantToVerifyBillPaymentBeneOfScheduleManagement_AsAUserIWantToVerifyScheduleManagementWithNOSIMng_Bill_Invalid_Verify()
+        {
+#line 42
+this.AsAUserIWantToVerifyBillPaymentBeneOfScheduleManagement("As a user I want to verify schedule management with NO SI Mng_Bill_Invalid_Verify" +
+                    "", "Fail", "DIGITAL_CHANNEL_SEC", @"SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0 and TM.FUND_TRANSFER_BENEFICIARY_ID = 0", new string[] {
+                        "source:Data/ManageSchedule_BillPayment_Verify.xlsx"});
+#line hidden
+        }
+        
+        public virtual void AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement(
                     string @case, 
                     string schedule_Count_Query, 
-                    string status_Query, 
+                    string expected_Result, 
                     string from_Account_Value, 
                     string bank_Value, 
                     string account_Number_Value, 
@@ -402,11 +656,1512 @@ this.AsAUserIWantToVerifyScheduleManagementAfterAddingSendMoneySchedularWithNewB
                     string bene_Email, 
                     string frequency_Value, 
                     string from_Date_Value, 
-                    string from_Month_Value, 
-                    string from_Year_Value, 
                     string to_Date_Value, 
-                    string to_Month_Value, 
-                    string to_Year_Value, 
+                    string oTP_Value, 
+                    string tran_Pass_Value, 
+                    string success_Message, 
+                    string tran_Type_Query, 
+                    string from_Account_Query, 
+                    string frequency_Query, 
+                    string purpose_Query, 
+                    string db_Val, 
+                    string tran_Amount_Query, 
+                    string to_Account_Query, 
+                    string to_Bank_Query, 
+                    string bene_Count_Query, 
+                    string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "MngSchedule",
+                    "MngSchedule_Send_New"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user I want to verify Add New Send Money Schedule Management", @__tags);
+#line 58
+this.ScenarioSetup(scenarioInfo);
+#line 59
+ testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 60
+ testRunner.And(string.Format("the test case expected result is \"{0}\"", expected_Result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 61
+ testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 62
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 63
+ testRunner.And("I count Number of Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 64
+ testRunner.And("I save Account Balances", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 65
+ testRunner.And(string.Format("I set value in context from database \"{0}\" as \"user_schedule_count\" on Schema \"{1" +
+                        "}\"", schedule_Count_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 66
+ testRunner.And(string.Format("I set value in context from database \"{0}\" as \"Bene_Count\" on Schema \"{1}\"", bene_Count_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 67
+ testRunner.When("I am clicking on \"MyAccount_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 68
+ testRunner.And("I am clicking on \"MyAccount_MngSch_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 69
+ testRunner.And("I am clicking on \"MyAccount_MngSch_AddNew\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 70
+ testRunner.And("I am clicking on \"MyAccount_MngSch_AddNew_SendMoney\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 71
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"Bene_AccountNo\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 72
+ testRunner.And("I am clicking on \"SendMoney_AddNewBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 73
+ testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 74
+ testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_FromAccount\"", from_Account_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 75
+ testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_Bank\"", bank_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 76
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_ToAccount\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 77
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_Amount\"", amount_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 78
+ testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_PurposeOfPayment\"", purposeOfPayment_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 79
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_BeneNick\"", bene_Nick), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 80
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_BeneMobileNo\"", bene_Mobile_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 81
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_BeneEmail\"", bene_Email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 83
+ testRunner.And("I scroll to element \"SendMoney_Frequency\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 84
+ testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_Frequency\"", frequency_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 85
+ testRunner.And("I am clicking on \"SendMoney_Schedule_FromDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 86
+ testRunner.And(string.Format("I select day \"{0}\" and calculate date", from_Date_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 87
+ testRunner.And("I set calendar from date", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 88
+ testRunner.And("I am clicking on \"SendMoney_Schedule_ToDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 89
+ testRunner.And(string.Format("I select day \"{0}\" and calculate date", to_Date_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 90
+ testRunner.And("I set calendar to date", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 91
+ testRunner.And("I am clicking on \"SendMoney_Btn_ViewSummary\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 92
+ testRunner.And("I am verifying list of execution iterations on \"SendMoney_Btn_Summary_Iteration_D" +
+                    "ates\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 93
+ testRunner.And("I am clicking on \"SendMoney_Btn_Summary_OK\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 94
+ testRunner.And("I scroll to element \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 95
+ testRunner.And("I am clicking on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 96
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 97
+ testRunner.And("I am performing on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 98
+ testRunner.And(string.Format("I have given \"{0}\" on \"Pay_Transaction_PayBill_TransactionPassword\"", tran_Pass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 99
+ testRunner.And("I am clicking on \"SendMoney_ScheduleBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 101
+ testRunner.And(string.Format("verify through \"{0}\" on \"SendMoney_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 103
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranSourceAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 104
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFrequency\"", frequency_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 105
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranPurpose\"", purpose_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 106
+ testRunner.And("I am performing on \"SendMoney_CloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 107
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 120
+ testRunner.And("I am clicking on \"MyAccount_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 121
+ testRunner.And("I am clicking on \"MyAccount_MngSch_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 122
+ testRunner.And(string.Format("I set value in context from database \"{0}\" as \"user_schedule_count\" on Schema \"{1" +
+                        "}\"", schedule_Count_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 123
+ testRunner.Then("I am verifying schedule payments of Send Money from My Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Add New Send Money Schedule Management: When Details a" +
+            "re provided with all valid details MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MngSchedule_SendMoneyAddNew.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When Details are provided with all valid details MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When Details are provided with all valid details MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "04897901885203")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Account_Number_Value", "00147900721001")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PurposeOfPayment_Value", "Courier Services")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "AliSchedule13")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Mobile_No", "03291234579")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Email", "aliabb111@gmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Frequency_Value", "Daily")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "28")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Tran_Pass_Value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "Transaction is successful. ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:frequency_query", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+            "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+            "mer_name}\') and B.IS_DELETED = 0")]
+        public virtual void AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement_WhenDetailsAreProvidedWithAllValidDetailsMngSch_Send_AddNew()
+        {
+#line 58
+this.AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement("When Details are provided with all valid details MngSch_Send_AddNew", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "Pass", "04897901885203", "HBL / Konnect", "00147900721001", "1", "Courier Services", "AliSchedule13", "03291234579", "aliabb111@gmail.com", "Daily", "2", "28", "12345678", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+                    "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                        "source:Data/MngSchedule_SendMoneyAddNew.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Add New Send Money Schedule Management: When Details a" +
+            "re provided with all valid details iban MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MngSchedule_SendMoneyAddNew.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When Details are provided with all valid details iban MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When Details are provided with all valid details iban MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "04897901885203")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Account_Number_Value", "PK50HABB0013227900983503")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PurposeOfPayment_Value", "Courier Services")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "AliSchedule14")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Mobile_No", "03291234580")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Email", "aliabb111@gmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Frequency_Value", "Daily")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "28")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Tran_Pass_Value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "Transaction is successful. ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:frequency_query", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+            "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+            "mer_name}\') and B.IS_DELETED = 0")]
+        public virtual void AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement_WhenDetailsAreProvidedWithAllValidDetailsIbanMngSch_Send_AddNew()
+        {
+#line 58
+this.AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement("When Details are provided with all valid details iban MngSch_Send_AddNew", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "Pass", "04897901885203", "HBL / Konnect", "PK50HABB0013227900983503", "2", "Courier Services", "AliSchedule14", "03291234580", "aliabb111@gmail.com", "Daily", "2", "28", "12345678", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+                    "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                        "source:Data/MngSchedule_SendMoneyAddNew.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Add New Send Money Schedule Management: When valid HBL" +
+            " Acc is provided with valid dates Daily MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MngSchedule_SendMoneyAddNew.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid HBL Acc is provided with valid dates Daily MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid HBL Acc is provided with valid dates Daily MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "04897901885203")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Account_Number_Value", "23457913894303")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PurposeOfPayment_Value", "Courier Services")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "AliSch1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Mobile_No", "03291234579")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Email", "aliabb111@gmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Frequency_Value", "Daily")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "28")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Tran_Pass_Value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "Transaction is successful. ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:frequency_query", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+            "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+            "mer_name}\') and B.IS_DELETED = 0")]
+        public virtual void AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement_WhenValidHBLAccIsProvidedWithValidDatesDailyMngSch_Send_AddNew()
+        {
+#line 58
+this.AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement("When valid HBL Acc is provided with valid dates Daily MngSch_Send_AddNew", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "Pass", "04897901885203", "HBL / Konnect", "23457913894303", "3", "Courier Services", "AliSch1", "03291234579", "aliabb111@gmail.com", "Daily", "2", "28", "12345678", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+                    "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                        "source:Data/MngSchedule_SendMoneyAddNew.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Add New Send Money Schedule Management: When valid HBL" +
+            " Acc is provided with valid dates Weekly MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MngSchedule_SendMoneyAddNew.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid HBL Acc is provided with valid dates Weekly MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid HBL Acc is provided with valid dates Weekly MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "04897901885203")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Account_Number_Value", "08497900068901")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "4")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PurposeOfPayment_Value", "Courier Services")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "AliSch2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Mobile_No", "03291234579")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Email", "aliabb111@gmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Frequency_Value", "Weekly")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "200")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Tran_Pass_Value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "Transaction is successful. ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:frequency_query", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+            "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+            "mer_name}\') and B.IS_DELETED = 0")]
+        public virtual void AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement_WhenValidHBLAccIsProvidedWithValidDatesWeeklyMngSch_Send_AddNew()
+        {
+#line 58
+this.AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement("When valid HBL Acc is provided with valid dates Weekly MngSch_Send_AddNew", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "Pass", "04897901885203", "HBL / Konnect", "08497900068901", "4", "Courier Services", "AliSch2", "03291234579", "aliabb111@gmail.com", "Weekly", "2", "200", "12345678", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+                    "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                        "source:Data/MngSchedule_SendMoneyAddNew.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Add New Send Money Schedule Management: When valid HBL" +
+            " Acc is provided with valid dates Fortnightly MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MngSchedule_SendMoneyAddNew.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid HBL Acc is provided with valid dates Fortnightly MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid HBL Acc is provided with valid dates Fortnightly MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "04897901885203")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Account_Number_Value", "00277900350711")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "5")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PurposeOfPayment_Value", "Courier Services")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "AliSch3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Mobile_No", "03291234579")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Email", "aliabb111@gmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Frequency_Value", "Fortnightly")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "400")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Tran_Pass_Value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "Transaction is successful. ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:frequency_query", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+            "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+            "mer_name}\') and B.IS_DELETED = 0")]
+        public virtual void AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement_WhenValidHBLAccIsProvidedWithValidDatesFortnightlyMngSch_Send_AddNew()
+        {
+#line 58
+this.AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement("When valid HBL Acc is provided with valid dates Fortnightly MngSch_Send_AddNew", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "Pass", "04897901885203", "HBL / Konnect", "00277900350711", "5", "Courier Services", "AliSch3", "03291234579", "aliabb111@gmail.com", "Fortnightly", "2", "400", "12345678", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+                    "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                        "source:Data/MngSchedule_SendMoneyAddNew.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Add New Send Money Schedule Management: When valid HBL" +
+            " Acc is provided with valid dates Monthly MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MngSchedule_SendMoneyAddNew.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid HBL Acc is provided with valid dates Monthly MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid HBL Acc is provided with valid dates Monthly MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "04897901885203")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Account_Number_Value", "07867901527301")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "6")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PurposeOfPayment_Value", "Courier Services")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "AliSch4")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Mobile_No", "03291234579")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Email", "aliabb111@gmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Frequency_Value", "Monthly")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "800")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Tran_Pass_Value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "Transaction is successful. ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:frequency_query", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+            "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+            "mer_name}\') and B.IS_DELETED = 0")]
+        public virtual void AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement_WhenValidHBLAccIsProvidedWithValidDatesMonthlyMngSch_Send_AddNew()
+        {
+#line 58
+this.AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement("When valid HBL Acc is provided with valid dates Monthly MngSch_Send_AddNew", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "Pass", "04897901885203", "HBL / Konnect", "07867901527301", "6", "Courier Services", "AliSch4", "03291234579", "aliabb111@gmail.com", "Monthly", "2", "800", "12345678", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+                    "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                        "source:Data/MngSchedule_SendMoneyAddNew.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Add New Send Money Schedule Management: When valid HBL" +
+            " Acc is provided with valid dates Quarterly MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MngSchedule_SendMoneyAddNew.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid HBL Acc is provided with valid dates Quarterly MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid HBL Acc is provided with valid dates Quarterly MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "04897901885203")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Account_Number_Value", "07867916249703")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "7")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PurposeOfPayment_Value", "Courier Services")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "AliSch5")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Mobile_No", "03291234579")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Email", "aliabb111@gmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Frequency_Value", "Quarterly")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "3200")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Tran_Pass_Value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "Transaction is successful. ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:frequency_query", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+            "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+            "mer_name}\') and B.IS_DELETED = 0")]
+        public virtual void AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement_WhenValidHBLAccIsProvidedWithValidDatesQuarterlyMngSch_Send_AddNew()
+        {
+#line 58
+this.AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement("When valid HBL Acc is provided with valid dates Quarterly MngSch_Send_AddNew", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "Pass", "04897901885203", "HBL / Konnect", "07867916249703", "7", "Courier Services", "AliSch5", "03291234579", "aliabb111@gmail.com", "Quarterly", "2", "3200", "12345678", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+                    "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                        "source:Data/MngSchedule_SendMoneyAddNew.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Add New Send Money Schedule Management: When valid IBF" +
+            "T Acc is provided with valid dates Daily MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MngSchedule_SendMoneyAddNew.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid IBFT Acc is provided with valid dates Daily MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid IBFT Acc is provided with valid dates Daily MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "04897901885203")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Askari Commercial Bank Limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Account_Number_Value", "02800320004636")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "8")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PurposeOfPayment_Value", "Courier Services")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "ibft1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Mobile_No", "03291234579")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Email", "aliabb111@gmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Frequency_Value", "Daily")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "28")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Tran_Pass_Value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "Transaction is successful. ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:frequency_query", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+            "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+            "mer_name}\') and B.IS_DELETED = 0")]
+        public virtual void AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement_WhenValidIBFTAccIsProvidedWithValidDatesDailyMngSch_Send_AddNew()
+        {
+#line 58
+this.AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement("When valid IBFT Acc is provided with valid dates Daily MngSch_Send_AddNew", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "Pass", "04897901885203", "Askari Commercial Bank Limited", "02800320004636", "8", "Courier Services", "ibft1", "03291234579", "aliabb111@gmail.com", "Daily", "2", "28", "12345678", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+                    "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                        "source:Data/MngSchedule_SendMoneyAddNew.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Add New Send Money Schedule Management: When valid IBF" +
+            "T Acc is provided with valid dates Weekly MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MngSchedule_SendMoneyAddNew.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid IBFT Acc is provided with valid dates Weekly MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid IBFT Acc is provided with valid dates Weekly MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "04897901885203")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "United Bank Limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Account_Number_Value", "0605060510946074")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "9")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PurposeOfPayment_Value", "Courier Services")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "ibft2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Mobile_No", "03291234579")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Email", "aliabb111@gmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Frequency_Value", "Weekly")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "200")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Tran_Pass_Value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "Transaction is successful. ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:frequency_query", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+            "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+            "mer_name}\') and B.IS_DELETED = 0")]
+        public virtual void AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement_WhenValidIBFTAccIsProvidedWithValidDatesWeeklyMngSch_Send_AddNew()
+        {
+#line 58
+this.AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement("When valid IBFT Acc is provided with valid dates Weekly MngSch_Send_AddNew", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "Pass", "04897901885203", "United Bank Limited", "0605060510946074", "9", "Courier Services", "ibft2", "03291234579", "aliabb111@gmail.com", "Weekly", "2", "200", "12345678", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+                    "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                        "source:Data/MngSchedule_SendMoneyAddNew.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Add New Send Money Schedule Management: When valid IBF" +
+            "T Acc is provided with valid dates Fortnightly MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MngSchedule_SendMoneyAddNew.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid IBFT Acc is provided with valid dates Fortnightly MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid IBFT Acc is provided with valid dates Fortnightly MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "04897901885203")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Standard Chartered Bank")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Account_Number_Value", "01719020101")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "10")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PurposeOfPayment_Value", "Courier Services")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "ibft3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Mobile_No", "03291234579")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Email", "aliabb111@gmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Frequency_Value", "Fortnightly")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "400")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Tran_Pass_Value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "Transaction is successful. ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:frequency_query", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+            "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+            "mer_name}\') and B.IS_DELETED = 0")]
+        public virtual void AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement_WhenValidIBFTAccIsProvidedWithValidDatesFortnightlyMngSch_Send_AddNew()
+        {
+#line 58
+this.AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement("When valid IBFT Acc is provided with valid dates Fortnightly MngSch_Send_AddNew", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "Pass", "04897901885203", "Standard Chartered Bank", "01719020101", "10", "Courier Services", "ibft3", "03291234579", "aliabb111@gmail.com", "Fortnightly", "2", "400", "12345678", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+                    "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                        "source:Data/MngSchedule_SendMoneyAddNew.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Add New Send Money Schedule Management: When valid IBF" +
+            "T Acc is provided with valid dates Monthly MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MngSchedule_SendMoneyAddNew.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid IBFT Acc is provided with valid dates Monthly MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid IBFT Acc is provided with valid dates Monthly MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "04897901885203")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "BankIslami Pakistan Limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Account_Number_Value", "100605050300201")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "11")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PurposeOfPayment_Value", "Courier Services")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "ibft4")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Mobile_No", "03291234579")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Email", "aliabb111@gmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Frequency_Value", "Monthly")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "800")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Tran_Pass_Value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "Transaction is successful. ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:frequency_query", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+            "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+            "mer_name}\') and B.IS_DELETED = 0")]
+        public virtual void AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement_WhenValidIBFTAccIsProvidedWithValidDatesMonthlyMngSch_Send_AddNew()
+        {
+#line 58
+this.AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement("When valid IBFT Acc is provided with valid dates Monthly MngSch_Send_AddNew", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "Pass", "04897901885203", "BankIslami Pakistan Limited", "100605050300201", "11", "Courier Services", "ibft4", "03291234579", "aliabb111@gmail.com", "Monthly", "2", "800", "12345678", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+                    "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                        "source:Data/MngSchedule_SendMoneyAddNew.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Add New Send Money Schedule Management: When valid IBF" +
+            "T Acc is provided with valid dates Quarterly MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MngSchedule_SendMoneyAddNew.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid IBFT Acc is provided with valid dates Quarterly MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid IBFT Acc is provided with valid dates Quarterly MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "04897901885203")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "MCB Bank Limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Account_Number_Value", "0300777261006679")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PurposeOfPayment_Value", "Courier Services")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "ibft5")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Mobile_No", "03291234579")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Email", "aliabb111@gmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Frequency_Value", "Quarterly")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "3200")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Tran_Pass_Value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "Transaction is successful. ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:frequency_query", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+            "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+            "mer_name}\') and B.IS_DELETED = 0")]
+        public virtual void AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement_WhenValidIBFTAccIsProvidedWithValidDatesQuarterlyMngSch_Send_AddNew()
+        {
+#line 58
+this.AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement("When valid IBFT Acc is provided with valid dates Quarterly MngSch_Send_AddNew", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "Pass", "04897901885203", "MCB Bank Limited", "0300777261006679", "12", "Courier Services", "ibft5", "03291234579", "aliabb111@gmail.com", "Quarterly", "2", "3200", "12345678", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+                    "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                        "source:Data/MngSchedule_SendMoneyAddNew.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Add New Send Money Schedule Management: When valid IBF" +
+            "T via IBAN Acc is provided with valid dates Daily MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MngSchedule_SendMoneyAddNew.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid IBFT via IBAN Acc is provided with valid dates Daily MngSch_Send_AddNe" +
+            "w")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid IBFT via IBAN Acc is provided with valid dates Daily MngSch_Send_AddNe" +
+            "w")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "04897901885203")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Bank AL Habib Limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Account_Number_Value", "PK27BAHL1083009501262002")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "13")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PurposeOfPayment_Value", "Courier Services")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "ibftiban1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Mobile_No", "03291234579")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Email", "aliabb111@gmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Frequency_Value", "Daily")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "28")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Tran_Pass_Value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "Transaction is successful. ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:frequency_query", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+            "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+            "mer_name}\') and B.IS_DELETED = 0")]
+        public virtual void AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement_WhenValidIBFTViaIBANAccIsProvidedWithValidDatesDailyMngSch_Send_AddNew()
+        {
+#line 58
+this.AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement("When valid IBFT via IBAN Acc is provided with valid dates Daily MngSch_Send_AddNe" +
+                    "w", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "Pass", "04897901885203", "Bank AL Habib Limited", "PK27BAHL1083009501262002", "13", "Courier Services", "ibftiban1", "03291234579", "aliabb111@gmail.com", "Daily", "2", "28", "12345678", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+                    "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                        "source:Data/MngSchedule_SendMoneyAddNew.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Add New Send Money Schedule Management: When valid IBF" +
+            "T via IBAN Acc is provided with valid dates Weekly MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MngSchedule_SendMoneyAddNew.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid IBFT via IBAN Acc is provided with valid dates Weekly MngSch_Send_AddN" +
+            "ew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid IBFT via IBAN Acc is provided with valid dates Weekly MngSch_Send_AddN" +
+            "ew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "04897901885203")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Bank AL Habib Limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Account_Number_Value", "PK97BAHL1108009500890601")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "14")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PurposeOfPayment_Value", "Courier Services")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "ibftiban2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Mobile_No", "03291234579")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Email", "aliabb111@gmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Frequency_Value", "Weekly")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "200")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Tran_Pass_Value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "Transaction is successful. ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:frequency_query", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+            "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+            "mer_name}\') and B.IS_DELETED = 0")]
+        public virtual void AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement_WhenValidIBFTViaIBANAccIsProvidedWithValidDatesWeeklyMngSch_Send_AddNew()
+        {
+#line 58
+this.AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement("When valid IBFT via IBAN Acc is provided with valid dates Weekly MngSch_Send_AddN" +
+                    "ew", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "Pass", "04897901885203", "Bank AL Habib Limited", "PK97BAHL1108009500890601", "14", "Courier Services", "ibftiban2", "03291234579", "aliabb111@gmail.com", "Weekly", "2", "200", "12345678", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+                    "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                        "source:Data/MngSchedule_SendMoneyAddNew.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Add New Send Money Schedule Management: When valid IBF" +
+            "T via IBAN Acc is provided with valid dates Fortnightly MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MngSchedule_SendMoneyAddNew.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid IBFT via IBAN Acc is provided with valid dates Fortnightly MngSch_Send" +
+            "_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid IBFT via IBAN Acc is provided with valid dates Fortnightly MngSch_Send" +
+            "_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "04897901885203")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Bank AL Habib Limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Account_Number_Value", "PK48BAHL0070009500457801")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "15")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PurposeOfPayment_Value", "Courier Services")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "ibftiban3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Mobile_No", "03291234579")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Email", "aliabb111@gmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Frequency_Value", "Fortnightly")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "400")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Tran_Pass_Value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "Transaction is successful. ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:frequency_query", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+            "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+            "mer_name}\') and B.IS_DELETED = 0")]
+        public virtual void AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement_WhenValidIBFTViaIBANAccIsProvidedWithValidDatesFortnightlyMngSch_Send_AddNew()
+        {
+#line 58
+this.AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement("When valid IBFT via IBAN Acc is provided with valid dates Fortnightly MngSch_Send" +
+                    "_AddNew", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "Pass", "04897901885203", "Bank AL Habib Limited", "PK48BAHL0070009500457801", "15", "Courier Services", "ibftiban3", "03291234579", "aliabb111@gmail.com", "Fortnightly", "2", "400", "12345678", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+                    "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                        "source:Data/MngSchedule_SendMoneyAddNew.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Add New Send Money Schedule Management: When valid IBF" +
+            "T via IBAN Acc is provided with valid dates Monthly MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MngSchedule_SendMoneyAddNew.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid IBFT via IBAN Acc is provided with valid dates Monthly MngSch_Send_Add" +
+            "New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid IBFT via IBAN Acc is provided with valid dates Monthly MngSch_Send_Add" +
+            "New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "04897901885203")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Bank AL Habib Limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Account_Number_Value", "PK97BAHL1108009500890601")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "16")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PurposeOfPayment_Value", "Courier Services")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "ibftiban4")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Mobile_No", "03291234579")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Email", "aliabb111@gmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Frequency_Value", "Monthly")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "800")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Tran_Pass_Value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "Transaction is successful. ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:frequency_query", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+            "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+            "mer_name}\') and B.IS_DELETED = 0")]
+        public virtual void AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement_WhenValidIBFTViaIBANAccIsProvidedWithValidDatesMonthlyMngSch_Send_AddNew()
+        {
+#line 58
+this.AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement("When valid IBFT via IBAN Acc is provided with valid dates Monthly MngSch_Send_Add" +
+                    "New", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "Pass", "04897901885203", "Bank AL Habib Limited", "PK97BAHL1108009500890601", "16", "Courier Services", "ibftiban4", "03291234579", "aliabb111@gmail.com", "Monthly", "2", "800", "12345678", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+                    "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                        "source:Data/MngSchedule_SendMoneyAddNew.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Add New Send Money Schedule Management: When valid IBF" +
+            "T via IBAN Acc is provided with valid dates Quarterly MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MngSchedule_SendMoneyAddNew.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid IBFT via IBAN Acc is provided with valid dates Quarterly MngSch_Send_A" +
+            "ddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid IBFT via IBAN Acc is provided with valid dates Quarterly MngSch_Send_A" +
+            "ddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "04897901885203")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Bank AL Habib Limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Account_Number_Value", "PK27BAHL1083009501262002")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "17")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PurposeOfPayment_Value", "Courier Services")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "ibftiban5")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Mobile_No", "03291234579")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Email", "aliabb111@gmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Frequency_Value", "Quarterly")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "3200")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Tran_Pass_Value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "Transaction is successful. ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:frequency_query", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+            "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+            "mer_name}\') and B.IS_DELETED = 0")]
+        public virtual void AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement_WhenValidIBFTViaIBANAccIsProvidedWithValidDatesQuarterlyMngSch_Send_AddNew()
+        {
+#line 58
+this.AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement("When valid IBFT via IBAN Acc is provided with valid dates Quarterly MngSch_Send_A" +
+                    "ddNew", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "Pass", "04897901885203", "Bank AL Habib Limited", "PK27BAHL1083009501262002", "17", "Courier Services", "ibftiban5", "03291234579", "aliabb111@gmail.com", "Quarterly", "2", "3200", "12345678", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+                    "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                        "source:Data/MngSchedule_SendMoneyAddNew.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Add New Send Money Schedule Management: When Bene Acco" +
+            "unt is LOAN MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MngSchedule_SendMoneyAddNew.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When Bene Account is LOAN MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When Bene Account is LOAN MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "04897901885203")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Account_Number_Value", "22667230559903")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "18")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PurposeOfPayment_Value", "Courier Services")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "loan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Mobile_No", "03291234579")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Email", "aliabb111@gmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Frequency_Value", "Daily")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "28")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Tran_Pass_Value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "Transaction is successful. ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:frequency_query", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+            "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+            "mer_name}\') and B.IS_DELETED = 0")]
+        public virtual void AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement_WhenBeneAccountIsLOANMngSch_Send_AddNew()
+        {
+#line 58
+this.AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement("When Bene Account is LOAN MngSch_Send_AddNew", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "Pass", "04897901885203", "HBL / Konnect", "22667230559903", "18", "Courier Services", "loan1", "03291234579", "aliabb111@gmail.com", "Daily", "2", "28", "12345678", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+                    "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                        "source:Data/MngSchedule_SendMoneyAddNew.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Add New Send Money Schedule Management: When Bene Acco" +
+            "unt is FCY MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MngSchedule_SendMoneyAddNew.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When Bene Account is FCY MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When Bene Account is FCY MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "04897901885203")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Account_Number_Value", "23087900855910")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "19")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PurposeOfPayment_Value", "Courier Services")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "fcy1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Mobile_No", "03291234579")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Email", "aliabb111@gmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Frequency_Value", "Daily")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "28")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Tran_Pass_Value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "Transaction is successful. ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:frequency_query", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+            "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+            "mer_name}\') and B.IS_DELETED = 0")]
+        public virtual void AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement_WhenBeneAccountIsFCYMngSch_Send_AddNew()
+        {
+#line 58
+this.AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement("When Bene Account is FCY MngSch_Send_AddNew", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "Pass", "04897901885203", "HBL / Konnect", "23087900855910", "19", "Courier Services", "fcy1", "03291234579", "aliabb111@gmail.com", "Daily", "2", "28", "12345678", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+                    "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                        "source:Data/MngSchedule_SendMoneyAddNew.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Add New Send Money Schedule Management: When Bene Acco" +
+            "unt is MONEY CLUB MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MngSchedule_SendMoneyAddNew.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When Bene Account is MONEY CLUB MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When Bene Account is MONEY CLUB MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "04897901885203")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Account_Number_Value", "12497900564101")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "20")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PurposeOfPayment_Value", "Courier Services")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "moneyclub1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Mobile_No", "03291234579")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Email", "aliabb111@gmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Frequency_Value", "Daily")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "28")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Tran_Pass_Value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "Transaction is successful. ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:frequency_query", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+            "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+            "mer_name}\') and B.IS_DELETED = 0")]
+        public virtual void AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement_WhenBeneAccountIsMONEYCLUBMngSch_Send_AddNew()
+        {
+#line 58
+this.AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement("When Bene Account is MONEY CLUB MngSch_Send_AddNew", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "Pass", "04897901885203", "HBL / Konnect", "12497900564101", "20", "Courier Services", "moneyclub1", "03291234579", "aliabb111@gmail.com", "Daily", "2", "28", "12345678", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+                    "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                        "source:Data/MngSchedule_SendMoneyAddNew.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Add New Send Money Schedule Management: When Bene Acco" +
+            "unt is BRANCHLESS Konnect MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MngSchedule_SendMoneyAddNew.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When Bene Account is BRANCHLESS Konnect MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When Bene Account is BRANCHLESS Konnect MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "04897901885203")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Account_Number_Value", "03334900125")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "21")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PurposeOfPayment_Value", "Courier Services")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "branchless1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Mobile_No", "03291234579")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Email", "aliabb111@gmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Frequency_Value", "Daily")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "28")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Tran_Pass_Value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "Transaction is successful. ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:frequency_query", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+            "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+            "mer_name}\') and B.IS_DELETED = 0")]
+        public virtual void AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement_WhenBeneAccountIsBRANCHLESSKonnectMngSch_Send_AddNew()
+        {
+#line 58
+this.AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement("When Bene Account is BRANCHLESS Konnect MngSch_Send_AddNew", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "Pass", "04897901885203", "HBL / Konnect", "03334900125", "21", "Courier Services", "branchless1", "03291234579", "aliabb111@gmail.com", "Daily", "2", "28", "12345678", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+                    "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                        "source:Data/MngSchedule_SendMoneyAddNew.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Add New Send Money Schedule Management: When Daily Lim" +
+            "it Exceeds on HBL Acc MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MngSchedule_SendMoneyAddNew.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When Daily Limit Exceeds on HBL Acc MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When Daily Limit Exceeds on HBL Acc MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "04897901885203")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Account_Number_Value", "12757900758503")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "600000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PurposeOfPayment_Value", "Courier Services")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "limitexceedsHBL")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Mobile_No", "03291234579")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Email", "aliabb111@gmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Frequency_Value", "Daily")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "28")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Tran_Pass_Value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "Transaction is successful. ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:frequency_query", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+            "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+            "mer_name}\') and B.IS_DELETED = 0")]
+        public virtual void AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement_WhenDailyLimitExceedsOnHBLAccMngSch_Send_AddNew()
+        {
+#line 58
+this.AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement("When Daily Limit Exceeds on HBL Acc MngSch_Send_AddNew", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "Pass", "04897901885203", "HBL / Konnect", "12757900758503", "600000", "Courier Services", "limitexceedsHBL", "03291234579", "aliabb111@gmail.com", "Daily", "2", "28", "12345678", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+                    "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                        "source:Data/MngSchedule_SendMoneyAddNew.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Add New Send Money Schedule Management: When Daily Lim" +
+            "it Exceeds on IBFT Acc MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MngSchedule_SendMoneyAddNew.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When Daily Limit Exceeds on IBFT Acc MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When Daily Limit Exceeds on IBFT Acc MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "04897901885203")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Model Bank")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Account_Number_Value", "00020000011005730")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "700000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PurposeOfPayment_Value", "Courier Services")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "limitexceedsIBFT")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Mobile_No", "03291234579")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Email", "aliabb111@gmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Frequency_Value", "Daily")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "28")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Tran_Pass_Value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "Transaction is successful. ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:frequency_query", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+            "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+            "mer_name}\') and B.IS_DELETED = 0")]
+        public virtual void AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement_WhenDailyLimitExceedsOnIBFTAccMngSch_Send_AddNew()
+        {
+#line 58
+this.AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement("When Daily Limit Exceeds on IBFT Acc MngSch_Send_AddNew", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "Pass", "04897901885203", "Model Bank", "00020000011005730", "700000", "Courier Services", "limitexceedsIBFT", "03291234579", "aliabb111@gmail.com", "Daily", "2", "28", "12345678", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+                    "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                        "source:Data/MngSchedule_SendMoneyAddNew.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Add New Send Money Schedule Management: When Senders h" +
+            "ave INSUFFICIENT BALANCE MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/MngSchedule_SendMoneyAddNew.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When Senders have INSUFFICIENT BALANCE MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When Senders have INSUFFICIENT BALANCE MngSch_Send_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "04897901885203")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Account_Number_Value", "22837900580401")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "98500")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PurposeOfPayment_Value", "Courier Services")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "insufficient1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Mobile_No", "03291234579")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Email", "aliabb111@gmail.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Frequency_Value", "Daily")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "28")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Tran_Pass_Value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "Transaction is successful. ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:frequency_query", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+            "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+            "mer_name}\') and B.IS_DELETED = 0")]
+        public virtual void AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement_WhenSendersHaveINSUFFICIENTBALANCEMngSch_Send_AddNew()
+        {
+#line 58
+this.AsAUserIWantToVerifyAddNewSendMoneyScheduleManagement("When Senders have INSUFFICIENT BALANCE MngSch_Send_AddNew", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "Pass", "04897901885203", "HBL / Konnect", "22837900580401", "98500", "Courier Services", "insufficient1", "03291234579", "aliabb111@gmail.com", "Daily", "2", "28", "12345678", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
+                    "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
+                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                        "source:Data/MngSchedule_SendMoneyAddNew.xlsx"});
+#line hidden
+        }
+        
+        public virtual void AsAUserIWantToVerifySendMoneyBeneScheduleManagement(
+                    string @case, 
+                    string expected_Result, 
+                    string schedule_Count_Query, 
+                    string from_Account_Value, 
+                    string bank_Value, 
+                    string account_Number_Value, 
+                    string amount_Value, 
+                    string purposeOfPayment_Value, 
+                    string bene_Nick, 
+                    string bene_Mobile_No, 
+                    string bene_Email, 
+                    string frequency_Value, 
+                    string from_Date_Value, 
+                    string to_Date_Value, 
                     string oTP_Value, 
                     string tran_Pass_Value, 
                     string success_Message, 
@@ -421,156 +2176,151 @@ this.AsAUserIWantToVerifyScheduleManagementAfterAddingSendMoneySchedularWithNewB
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "MngSchedule"};
+                    "MngSchedule",
+                    "MngSchedule_Send_Bene"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user I want to verify Schedule Management after adding Send Money schedular " +
-                    "with existing Bene", @__tags);
-#line 102
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user I want to verify Send Money Bene Schedule Management", @__tags);
+#line 133
 this.ScenarioSetup(scenarioInfo);
-#line 103
+#line 134
  testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 104
+#line 135
+ testRunner.And(string.Format("the test case expected result is \"{0}\"", expected_Result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 136
  testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 105
+#line 137
  testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 106
+#line 138
  testRunner.And(string.Format("I set value in context from database \"{0}\" as \"user_schedule_count\" on Schema \"{1" +
                         "}\"", schedule_Count_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 107
+#line 139
  testRunner.When("I am clicking on \"MyAccount_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 108
+#line 140
  testRunner.And("I am clicking on \"MyAccount_MngSch_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 109
+#line 141
  testRunner.And("I am clicking on \"MyAccount_MngSch_AddNew\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 110
+#line 142
  testRunner.And("I am clicking on \"MyAccount_MngSch_AddNew_SendMoney\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 111
+#line 143
  testRunner.And(string.Format("I set value in context from data \"{0}\" as \"Bene_AccountNo\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 112
- testRunner.And("I am clicking on \"SendMoney_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 113
+#line 144
  testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 114
+#line 145
  testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_SearchBeneField\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 115
+#line 146
  testRunner.And("I am clicking on \"SendMoney_BeneClick\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 116
+#line 147
  testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 117
+#line 148
  testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_FromAccount\"", from_Account_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 118
+#line 149
  testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_Amount\"", amount_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 119
+#line 150
  testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_PurposeOfPaymentBene\"", purposeOfPayment_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 120
- testRunner.And("I am clicking on \"SendMoney_ScheduleCheck\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 121
+#line 152
  testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_Frequency\"", frequency_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 122
+#line 153
  testRunner.And("I am clicking on \"SendMoney_Schedule_FromDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 123
- testRunner.And(string.Format("I select date \"{0}\" on month \"{1}\" on year \"{2}\"", from_Date_Value, from_Month_Value, from_Year_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 124
+#line 154
+ testRunner.And(string.Format("I select day \"{0}\" and calculate date", from_Date_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 156
  testRunner.And("I set calendar from date", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 125
+#line 157
  testRunner.And("I am clicking on \"SendMoney_Schedule_ToDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 126
- testRunner.And(string.Format("I select date \"{0}\" on month \"{1}\" on year \"{2}\"", to_Date_Value, to_Month_Value, to_Year_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 127
+#line 158
+ testRunner.And(string.Format("I select day \"{0}\" and calculate date", to_Date_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 160
  testRunner.And("I set calendar to date", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 128
+#line 161
  testRunner.And("I am clicking on \"SendMoney_Btn_ViewSummary\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 129
+#line 162
  testRunner.And("I am verifying list of execution iterations on \"SendMoney_Btn_Summary_Iteration_D" +
                     "ates\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 130
+#line 163
  testRunner.And("I am clicking on \"SendMoney_Btn_Summary_OK\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 131
+#line 164
  testRunner.And("I am clicking on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 132
+#line 165
  testRunner.And(string.Format("I have given \"{0}\" on \"Pay_Transaction_PayBill_TransactionPassword\"", tran_Pass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 133
+#line 166
  testRunner.And("I am clicking on \"SendMoney_ScheduleBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 134
+#line 167
  testRunner.And("I save Transaction Info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 135
- testRunner.When(string.Format("verify through \"{0}\" on \"SendMoney_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 136
+#line 168
+ testRunner.Then(string.Format("verify through \"{0}\" on \"SendMoney_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 170
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranSourceAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 137
+#line 171
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFrequency\"", frequency_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 138
+#line 172
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranPurpose\"", purpose_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 139
+#line 173
  testRunner.And("I am performing on \"SendMoney_CloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 140
+#line 174
  testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 141
+#line 175
  testRunner.And("I verify Account Balance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 142
+#line 176
  testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 143
+#line 177
  testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 144
+#line 178
  testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 145
+#line 179
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranType\"", tran_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 146
+#line 180
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Success_Amou" +
                         "nt\"", tran_Amount_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 147
+#line 181
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFromAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 148
+#line 182
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToAcc\"", to_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 149
+#line 183
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToBank\"", to_Bank_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 150
+#line 184
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranPurpose\"", purpose_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 151
+#line 185
  testRunner.And("I am clicking on \"Services_Transaction_Close_btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 152
+#line 186
  testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 153
+#line 187
  testRunner.And("I am clicking on \"MyAccount_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 154
+#line 188
  testRunner.And("I am clicking on \"MyAccount_MngSch_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 155
+#line 189
  testRunner.Then("I am verifying schedule payments of Send Money from My Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Schedule Management after adding Send Money schedular " +
-            "with existing Bene: When valid Bene and Schedule Dates are provided")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Send Money Bene Schedule Management: Customer Schedule" +
+            " the Send Money with Bene of other HBL(Daily) MngSch_Send_Bene")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Bene")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_SendMoney_WithBene.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid Bene and Schedule Dates are provided")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid Bene and Schedule Dates are provided")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Customer Schedule the Send Money with Bene of other HBL(Daily) MngSch_Send_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Customer Schedule the Send Money with Bene of other HBL(Daily) MngSch_Send_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
             "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
             "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "2197900643103")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "04897901885203")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Account_Number_Value", "06047900194203")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Account_Number_Value", "07867915677101")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "10")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PurposeOfPayment_Value", "Others")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "AliAbbas1")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Mobile_No", "03121223345")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Email", "aliabb111@gmail.com")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Frequency_Value", "Weekly")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Month_Value", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Year_Value", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Month_Value", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Year_Value", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PurposeOfPayment_Value", "Tax payment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "Daily")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Mobile_No", "03343913854")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Email", "abc@test.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Frequency_Value", "Daily")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "28")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Tran_Pass_Value", "pakistan2")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "Transaction is successful.")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
@@ -584,12 +2334,12 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
-        public virtual void AsAUserIWantToVerifyScheduleManagementAfterAddingSendMoneySchedularWithExistingBene_WhenValidBeneAndScheduleDatesAreProvided()
+        public virtual void AsAUserIWantToVerifySendMoneyBeneScheduleManagement_CustomerScheduleTheSendMoneyWithBeneOfOtherHBLDailyMngSch_Send_Bene()
         {
-#line 102
-this.AsAUserIWantToVerifyScheduleManagementAfterAddingSendMoneySchedularWithExistingBene("When valid Bene and Schedule Dates are provided", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+#line 133
+this.AsAUserIWantToVerifySendMoneyBeneScheduleManagement("Customer Schedule the Send Money with Bene of other HBL(Daily) MngSch_Send_Bene", "Pass", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
                     "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
-                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "", "2197900643103", "HBL / Konnect", "06047900194203", "10", "Others", "AliAbbas1", "03121223345", "aliabb111@gmail.com", "Weekly", "", "", "", "", "", "", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "04897901885203", "HBL / Konnect", "07867915677101", "10", "Tax payment", "Daily", "03343913854", "abc@test.com", "Daily", "2", "28", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
@@ -597,310 +2347,379 @@ this.AsAUserIWantToVerifyScheduleManagementAfterAddingSendMoneySchedularWithExis
 #line hidden
         }
         
-        public virtual void AsAUserIWantToVerifyScheduleManagementAfterAddingBillPaymentSchedularWithNewBene(
-                    string @case, 
-                    string schedule_Count_Query, 
-                    string status_Query, 
-                    string status_Query2, 
-                    string category_Value, 
-                    string company_Value, 
-                    string pay_BillPayment_ConsumerNo_Value, 
-                    string bill_Amount_Query, 
-                    string company_Code_Value, 
-                    string oTP_Value, 
-                    string tran_Pass_Value, 
-                    string tran_Type_Query, 
-                    string tran_Amount_Query, 
-                    string from_Account_Query, 
-                    string company_Name_Query, 
-                    string consumer_No_Query, 
-                    string db_Val, 
-                    string db_Val2, 
-                    string account_No, 
-                    string account_Type, 
-                    string expiry_Date, 
-                    string schedule_Type, 
-                    string maximum_Amount, 
-                    string bene_Name, 
-                    string bene_Query, 
-                    string instrument_Type, 
-                    string schedule_Config, 
-                    string schedule_Verify, 
-                    string consumer_Label_Query, 
-                    string iS_SI_Allowed_Query, 
-                    string is_Paid_Query, 
-                    string bill_Status_Id_Query, 
-                    string is_Partial_Payment_Query, 
-                    string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "MngSchedule"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user I want to verify Schedule Management after adding Bill Payment schedula" +
-                    "r with new bene", @__tags);
-#line 164
-this.ScenarioSetup(scenarioInfo);
-#line 165
- testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 166
- testRunner.And(string.Format("I set value in context from data \"{0}\" as \"ConsumerNo\"", pay_BillPayment_ConsumerNo_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 167
- testRunner.And(string.Format("I set value in context from data \"{0}\" as \"Credit_Card_check\"", expiry_Date), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 168
- testRunner.And(string.Format("update the data by query \"{0}\" on QAT_BPS", status_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 169
- testRunner.And(string.Format("update the data by query \"{0}\" on DIGITAL_CHANNEL_SEC", status_Query2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 170
- testRunner.And(string.Format("I set value in context from database \"{0}\" as \"user_schedule_count\" on Schema \"{1" +
-                        "}\"", schedule_Count_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 171
- testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 172
- testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 173
- testRunner.And("I count Number of Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 174
- testRunner.And("I save Account Balances", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 175
- testRunner.And("I am clicking on \"MyAccount_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 176
- testRunner.And("I am clicking on \"MyAccount_MngSch_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 177
- testRunner.And("I am clicking on \"MyAccount_MngSch_AddNew\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 178
- testRunner.And("I am clicking on \"MyAccount_MngSch_AddNew_Bill\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 179
- testRunner.When("I am clicking on \"Pay_AddNewBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 180
- testRunner.And(string.Format("I am clicking on link \"{0}\" on \"Pay_BillPaymentCategory\"", category_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 181
- testRunner.And(string.Format("I am clicking on link \"{0}\" on \"Pay_BillPaymentCategory_Company\"", company_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 182
- testRunner.And(string.Format("I set value in context from data \"{0}\" as \"Company_Code\"", company_Code_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 183
- testRunner.And(string.Format("I set value in context from data \"{0}\" as \"Account_Type\"", account_Type), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 184
- testRunner.And(string.Format("I set value in context from database \"{0}\" as \"IS_SI_Allowed\" on Schema \"{1}\"", iS_SI_Allowed_Query, db_Val2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 185
- testRunner.And(string.Format("I set value in context from database \"{0}\" as \"IS_PAID_REQ\" on Schema \"{1}\"", is_Paid_Query, db_Val2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 186
- testRunner.And(string.Format("I set value in context from database \"{0}\" as \"IS_Partial_Payment\" on Schema \"{1}" +
-                        "\"", is_Partial_Payment_Query, db_Val2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 187
- testRunner.And(string.Format("I select \"{0}\" on \"Pay_BillPayment_accountno\"", account_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 188
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_ConsumerLabel_Check\"", consumer_Label_Query, db_Val2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 189
- testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"{1}\"", instrument_Type, db_Val2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 190
- testRunner.And(string.Format("I have given \"{0}\" on \"Pay_BillPayment_ConsumerNo\"", pay_BillPayment_ConsumerNo_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 191
- testRunner.And("I am performing on \"Pay_BillPayment_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 192
- testRunner.And("Set parameter in context class \"Pay_BillPayment_BillingMonth\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 193
- testRunner.And("I verify bill payment inquiry for Web", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 194
- testRunner.And(string.Format("I have given \"{0}\" on \"Pay_Card_Expiry_Date\"", expiry_Date), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 195
- testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 196
- testRunner.And("Set parameter in context class \"Pay_Bill_Status\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 198
- testRunner.And("I have given \"100\" on \"Pay_Transaction_Unpaid_Amount\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 199
- testRunner.And(string.Format("I want value from textbox \"Pay_Transaction_Unpaid_Amount\" on database \"{0}\" as \"{" +
-                        "1}\"", db_Val2, bill_Amount_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 200
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Unpaid_Amoun" +
-                        "t\"", bill_Amount_Query, db_Val2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 201
- testRunner.And(string.Format("I am verifying OTP and Transaction pass check on company code {0}", company_Code_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 202
- testRunner.And("I am performing on \"Pay_BillPayment_Inquiry_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 203
- testRunner.And("I scroll to element \"Pay_BillPayment_PayBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 204
- testRunner.And(string.Format("I have otp check and given {0} on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 205
- testRunner.And(string.Format("I have transaction pass check and given \"{0}\" on \"Pay_Transaction_PayBill_Transac" +
-                        "tionPassword\"", tran_Pass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 206
- testRunner.And("I press Enter on \"Pay_BillPayment_PayBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 207
- testRunner.And("I wait 10000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 208
- testRunner.And("I save Transaction Info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 209
- testRunner.And("verify through \"Transaction is successful.\" on \"Pay_Transaction_TranSuccessMessag" +
-                    "e\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 210
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Success_Amou" +
-                        "nt\"", tran_Amount_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 211
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Success_From" +
-                        "Account\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 212
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Success_Comp" +
-                        "anyName\"", company_Name_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 213
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Success_Cons" +
-                        "umerNo\"", consumer_No_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 214
- testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"{1}\"", bill_Status_Id_Query, db_Val2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 215
- testRunner.And("I am clicking on \"Pay_Transaction_ToggleAutoPay\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 217
- testRunner.And(string.Format("I am clicking on \"{0}\"", schedule_Type), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 218
- testRunner.And(string.Format("I set value in context from database \"{0}\" as \"schedule_config\" on Schema \"{1}\"", schedule_Config, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 219
- testRunner.And(string.Format("I have given \"{0}\" on \"Pay_Transaction_MaxBillAmount_value\"", maximum_Amount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 220
- testRunner.And("I am clicking on \"Pay_Transaction_PayBillAmount_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 221
- testRunner.And("I am clicking on \"Pay_Transaction_PayBillAmount_AgreeBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 222
- testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 223
- testRunner.And(string.Format("verify the schedule config \"{0}\" on Schema \"{1}\"", schedule_Verify, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 224
- testRunner.And(string.Format("I set value in context from data \"{0}\" as \"bene_name\"", bene_Name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 225
- testRunner.And(string.Format("verify bene status from {0} on Schema \"{1}\"", bene_Query, db_Val2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 226
- testRunner.And("I am clicking on \"Pay_Transaction_PayBillAmount_CloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 227
- testRunner.And("I am clicking on \"Pay_Transaction_PayBill_Rating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 228
- testRunner.And("I am clicking on \"Pay_Transaction_PayBill_RatingOkBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 229
- testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 230
- testRunner.And(string.Format("I have given \"{0}\" on \"Pay_Transaction_PayBill_BeneSearchTextbox\"", pay_BillPayment_ConsumerNo_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 231
- testRunner.Then("verify through \"ConsumerNoContextVal\" on \"Pay_Transaction_PayBill_BeneSearchConsu" +
-                    "merNo\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 232
- testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 233
- testRunner.And("I verify Account Balance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 234
- testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 235
- testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 236
- testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 237
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Success_Amou" +
-                        "nt\"", tran_Amount_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 238
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Success_From" +
-                        "Account\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 239
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Success_Comp" +
-                        "anyName\"", company_Name_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 240
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Success_Cons" +
-                        "umerNo\"", consumer_No_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 241
- testRunner.And("I am clicking on \"Services_Transaction_Close_btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 242
- testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 243
- testRunner.And("I am clicking on \"MyAccount_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 244
- testRunner.And("I am clicking on \"MyAccount_MngSch_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 245
- testRunner.Then("I am verifying schedule payments of Bill Payment from My Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Schedule Management after adding Bill Payment schedula" +
-            "r with new bene: When valid bill details are provided 06124110093801")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Send Money Bene Schedule Management: Customer Schedule" +
+            " the Send Money with Bene of other HBL(Weekly) MngSch_Send_Bene")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Bill_AddNewBene.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid bill details are provided 06124110093801")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid bill details are provided 06124110093801")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_SendMoney_WithBene.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Customer Schedule the Send Money with Bene of other HBL(Weekly) MngSch_Send_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Customer Schedule the Send Money with Bene of other HBL(Weekly) MngSch_Send_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
             "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
-            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "UPDATE LP_BILLS L SET L.BILL_STATUS_ID=1 , L.DUE_DATE=TRUNC(SYSDATE) WHERE L.CONS" +
-            "UMER_NO=\'{ConsumerNo}\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query2", @"BEGIN UPDATE DC_SCHEDULED_TRAN_MASTER STM SET STM.STATE = 46 , STM.IS_DELETED = 1 WHERE STM.BILL_BENEFICIARY_ID = (SELECT BPB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY BPB WHERE BPB.CONSUMER_NUMBER = '{ConsumerNo}' AND BPB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND BPB.IS_ACTIVE = 1);UPDATE DC_BILL_PAYMENT_BENEFICIARY DPB SET DPB.IS_SI_SCHEDULED = 0,DPB.IS_ACTIVE = 0 WHERE DPB.CONSUMER_NUMBER = '{ConsumerNo}' AND DPB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND DPB.IS_ACTIVE = 1;COMMIT;END;")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Electricity Bill Payment")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Company_Value", "GEPCO")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Pay_BillPayment_ConsumerNo_Value", "06124110093801")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bill_Amount_query", "SELECT LB.BILL_AMOUNT, LB.COMPANY_CODE, LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CON" +
-            "SUMER_NO=\'{ConsumerNo}\' ORDER BY LB.BILLING_MONTH DESC")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_code_value", "GEPCO001")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345682")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan3")]
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "04897901885203")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Account_Number_Value", "14900011079803")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "11")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PurposeOfPayment_Value", "Others")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "Weekly")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Mobile_No", "03343913854")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Email", "abc@test.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Frequency_Value", "Weekly")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "200")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Tran_Pass_Value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "Transaction is successful.")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
             "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
             "TION_ID = \'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_name_query", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no_query", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
-            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:frequency_query", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "00476000949001 | SHAISTA | HBL ANNEXE.")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_type", "RETAIL")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expiry_date", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_type", "Pay_Transaction_PayBillAmount_RadioBtn")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:maximum_amount", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "office")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_query", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
-            "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:instrument_type", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
-            "Code}\' and i.CHANNEL_CODE=\'MB\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_config", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL i where I.APPLICATION_PARA" +
-            "METER_ID=\'906\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_verify", @"SELECT TM.FIRST_EXECUTION_DATE,TM.LAST_EXECUTION_DATE FROM DC_SCHEDULED_TRAN_MASTER TM WHERE TM.BILL_BENEFICIARY_ID = (SELECT PB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY PB WHERE PB.CONSUMER_NUMBER = '{ConsumerNo}' AND PB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND PB.IS_ACTIVE = 1)")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_label_query", "Select K.CONSUMER_NO_LABEL from BPS_COMPANY_CHANNEL K where k.COMPANY_CODE = \'{Co" +
-            "mpany_Code}\' and K.CHANNEL_CODE = \'MB\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:IS_SI_Allowed_query", "SELECT L.IS_SI_ALLOWED FROM BPS_COMPANY_CHANNEL L WHERE L.COMPANY_CODE = \'{Compan" +
-            "y_Code}\' and L.CHANNEL_CODE = \'MB\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_paid_query", "SELECT K.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL  K where k.COMPANY_COD" +
-            "E = \'{Company_Code}\' and K.CHANNEL_CODE = \'MB\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bill_status_id_query", "SELECT Z.BILL_STATUS_ID FROM LP_BILLS Z where Z.CONSUMER_NO = \'{ConsumerNo}\' ")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_partial_payment_query", "Select K.IS_PARTIAL_PAYMENT_ALLOWED from BPS_COMPANY_CHANNEL K where k.COMPANY_CO" +
-            "DE =  \'{Company_Code}\'  and K.CHANNEL_CODE = \'MB\'")]
-        public virtual void AsAUserIWantToVerifyScheduleManagementAfterAddingBillPaymentSchedularWithNewBene_WhenValidBillDetailsAreProvided06124110093801()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifySendMoneyBeneScheduleManagement_CustomerScheduleTheSendMoneyWithBeneOfOtherHBLWeeklyMngSch_Send_Bene()
         {
-#line 164
-this.AsAUserIWantToVerifyScheduleManagementAfterAddingBillPaymentSchedularWithNewBene("When valid bill details are provided 06124110093801", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+#line 133
+this.AsAUserIWantToVerifySendMoneyBeneScheduleManagement("Customer Schedule the Send Money with Bene of other HBL(Weekly) MngSch_Send_Bene", "Pass", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
                     "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
-                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "UPDATE LP_BILLS L SET L.BILL_STATUS_ID=1 , L.DUE_DATE=TRUNC(SYSDATE) WHERE L.CONS" +
-                    "UMER_NO=\'{ConsumerNo}\'", @"BEGIN UPDATE DC_SCHEDULED_TRAN_MASTER STM SET STM.STATE = 46 , STM.IS_DELETED = 1 WHERE STM.BILL_BENEFICIARY_ID = (SELECT BPB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY BPB WHERE BPB.CONSUMER_NUMBER = '{ConsumerNo}' AND BPB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND BPB.IS_ACTIVE = 1);UPDATE DC_BILL_PAYMENT_BENEFICIARY DPB SET DPB.IS_SI_SCHEDULED = 0,DPB.IS_ACTIVE = 0 WHERE DPB.CONSUMER_NUMBER = '{ConsumerNo}' AND DPB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND DPB.IS_ACTIVE = 1;COMMIT;END;", "Electricity Bill Payment", "GEPCO", "06124110093801", "SELECT LB.BILL_AMOUNT, LB.COMPANY_CODE, LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CON" +
-                    "SUMER_NO=\'{ConsumerNo}\' ORDER BY LB.BILLING_MONTH DESC", "GEPCO001", "12345682", "pakistan3", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 1", "04897901885203", "HBL / Konnect", "14900011079803", "11", "Others", "Weekly", "03343913854", "abc@test.com", "Weekly", "2", "200", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
-                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
-                    "", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "00476000949001 | SHAISTA | HBL ANNEXE.", "RETAIL", "", "Pay_Transaction_PayBillAmount_RadioBtn", "", "office", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
-                    "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
-                    "Code}\' and i.CHANNEL_CODE=\'MB\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL i where I.APPLICATION_PARA" +
-                    "METER_ID=\'906\'", @"SELECT TM.FIRST_EXECUTION_DATE,TM.LAST_EXECUTION_DATE FROM DC_SCHEDULED_TRAN_MASTER TM WHERE TM.BILL_BENEFICIARY_ID = (SELECT PB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY PB WHERE PB.CONSUMER_NUMBER = '{ConsumerNo}' AND PB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND PB.IS_ACTIVE = 1)", "Select K.CONSUMER_NO_LABEL from BPS_COMPANY_CHANNEL K where k.COMPANY_CODE = \'{Co" +
-                    "mpany_Code}\' and K.CHANNEL_CODE = \'MB\'", "SELECT L.IS_SI_ALLOWED FROM BPS_COMPANY_CHANNEL L WHERE L.COMPANY_CODE = \'{Compan" +
-                    "y_Code}\' and L.CHANNEL_CODE = \'MB\'", "SELECT K.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL  K where k.COMPANY_COD" +
-                    "E = \'{Company_Code}\' and K.CHANNEL_CODE = \'MB\'", "SELECT Z.BILL_STATUS_ID FROM LP_BILLS Z where Z.CONSUMER_NO = \'{ConsumerNo}\' ", "Select K.IS_PARTIAL_PAYMENT_ALLOWED from BPS_COMPANY_CHANNEL K where k.COMPANY_CO" +
-                    "DE =  \'{Company_Code}\'  and K.CHANNEL_CODE = \'MB\'", new string[] {
-                        "source:Data/ManageSchedule_Bill_AddNewBene.xlsx"});
+                    "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/ManageSchedule_SendMoney_WithBene.xlsx"});
 #line hidden
         }
         
-        public virtual void AsAUserIWantToVerifyScheduleManagementAfterAddingBillPaymentSchedularWithExistingBene(
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Send Money Bene Schedule Management: Customer Schedule" +
+            " the Send Money with Bene of other HBL(Fortnightly) MngSch_Send_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_SendMoney_WithBene.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Customer Schedule the Send Money with Bene of other HBL(Fortnightly) MngSch_Send_" +
+            "Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Customer Schedule the Send Money with Bene of other HBL(Fortnightly) MngSch_Send_" +
+            "Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "04897901885203")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Account_Number_Value", "00476001511601")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "12")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PurposeOfPayment_Value", "Others")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "Fortnightly")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Mobile_No", "03343913854")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Email", "abc@test.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Frequency_Value", "Fortnightly")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "400")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Tran_Pass_Value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "Transaction is successful.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:frequency_query", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifySendMoneyBeneScheduleManagement_CustomerScheduleTheSendMoneyWithBeneOfOtherHBLFortnightlyMngSch_Send_Bene()
+        {
+#line 133
+this.AsAUserIWantToVerifySendMoneyBeneScheduleManagement("Customer Schedule the Send Money with Bene of other HBL(Fortnightly) MngSch_Send_" +
+                    "Bene", "Pass", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 2", "04897901885203", "HBL / Konnect", "00476001511601", "12", "Others", "Fortnightly", "03343913854", "abc@test.com", "Fortnightly", "2", "400", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/ManageSchedule_SendMoney_WithBene.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Send Money Bene Schedule Management: Customer Schedule" +
+            " the Send Money with Bene of other HBL(Monthly) MngSch_Send_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_SendMoney_WithBene.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Customer Schedule the Send Money with Bene of other HBL(Monthly) MngSch_Send_Bene" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Customer Schedule the Send Money with Bene of other HBL(Monthly) MngSch_Send_Bene" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "04897901885203")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Account_Number_Value", "09470201056703")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "13")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PurposeOfPayment_Value", "Others")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "Monthly")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Mobile_No", "03343913854")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Email", "abc@test.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Frequency_Value", "Monthly")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "800")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Tran_Pass_Value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "Transaction is successful.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:frequency_query", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifySendMoneyBeneScheduleManagement_CustomerScheduleTheSendMoneyWithBeneOfOtherHBLMonthlyMngSch_Send_Bene()
+        {
+#line 133
+this.AsAUserIWantToVerifySendMoneyBeneScheduleManagement("Customer Schedule the Send Money with Bene of other HBL(Monthly) MngSch_Send_Bene" +
+                    "", "Pass", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 3", "04897901885203", "HBL / Konnect", "09470201056703", "13", "Others", "Monthly", "03343913854", "abc@test.com", "Monthly", "2", "800", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/ManageSchedule_SendMoney_WithBene.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Send Money Bene Schedule Management: Customer Schedule" +
+            " the Send Money with Bene of other HBL(Quarterly) MngSch_Send_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_SendMoney_WithBene.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Customer Schedule the Send Money with Bene of other HBL(Quarterly) MngSch_Send_Be" +
+            "ne")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Customer Schedule the Send Money with Bene of other HBL(Quarterly) MngSch_Send_Be" +
+            "ne")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 4")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "04897901885203")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Account_Number_Value", "24460094904501")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "14")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PurposeOfPayment_Value", "Others")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "BILAL Ahmad")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Mobile_No", "03343913854")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Email", "abc@test.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Frequency_Value", "Quarterly")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "3200")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Tran_Pass_Value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "Transaction is successful.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:frequency_query", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifySendMoneyBeneScheduleManagement_CustomerScheduleTheSendMoneyWithBeneOfOtherHBLQuarterlyMngSch_Send_Bene()
+        {
+#line 133
+this.AsAUserIWantToVerifySendMoneyBeneScheduleManagement("Customer Schedule the Send Money with Bene of other HBL(Quarterly) MngSch_Send_Be" +
+                    "ne", "Pass", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 4", "04897901885203", "HBL / Konnect", "24460094904501", "14", "Others", "BILAL Ahmad", "03343913854", "abc@test.com", "Quarterly", "2", "3200", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/ManageSchedule_SendMoney_WithBene.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Send Money Bene Schedule Management: Customer Schedule" +
+            " the FCY USD (Daily) MngSch_Send_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_SendMoney_WithBene.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Customer Schedule the FCY USD (Daily) MngSch_Send_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Customer Schedule the FCY USD (Daily) MngSch_Send_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 5")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "04897901885203")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Account_Number_Value", "23087900855910")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "15")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PurposeOfPayment_Value", "Others")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "USD")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Mobile_No", "03343913854")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Email", "abc@test.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Frequency_Value", "Daily")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "28")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Tran_Pass_Value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "Transaction is successful.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:frequency_query", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifySendMoneyBeneScheduleManagement_CustomerScheduleTheFCYUSDDailyMngSch_Send_Bene()
+        {
+#line 133
+this.AsAUserIWantToVerifySendMoneyBeneScheduleManagement("Customer Schedule the FCY USD (Daily) MngSch_Send_Bene", "Pass", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 5", "04897901885203", "HBL / Konnect", "23087900855910", "15", "Others", "USD", "03343913854", "abc@test.com", "Daily", "2", "28", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/ManageSchedule_SendMoney_WithBene.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Send Money Bene Schedule Management: Customer Schedule" +
+            " the Receiver Account Blocked 15647900453401 (Daily) MngSch_Send_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_SendMoney_WithBene.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Customer Schedule the Receiver Account Blocked 15647900453401 (Daily) MngSch_Send" +
+            "_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Customer Schedule the Receiver Account Blocked 15647900453401 (Daily) MngSch_Send" +
+            "_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 6")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "04897901885203")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Account_Number_Value", "15647900453401")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "15")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PurposeOfPayment_Value", "Others")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "RecAccountBLOCKED")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Mobile_No", "03343913854")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Email", "abc@test.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Frequency_Value", "Daily")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "28")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Tran_Pass_Value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "Transaction is successful.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:frequency_query", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifySendMoneyBeneScheduleManagement_CustomerScheduleTheReceiverAccountBlocked15647900453401DailyMngSch_Send_Bene()
+        {
+#line 133
+this.AsAUserIWantToVerifySendMoneyBeneScheduleManagement("Customer Schedule the Receiver Account Blocked 15647900453401 (Daily) MngSch_Send" +
+                    "_Bene", "Pass", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 6", "04897901885203", "HBL / Konnect", "15647900453401", "15", "Others", "RecAccountBLOCKED", "03343913854", "abc@test.com", "Daily", "2", "28", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/ManageSchedule_SendMoney_WithBene.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Send Money Bene Schedule Management: Customer Schedule" +
+            " the Branchless 03334900125 (Daily) MngSch_Send_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_SendMoney_WithBene.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Customer Schedule the Branchless 03334900125 (Daily) MngSch_Send_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Customer Schedule the Branchless 03334900125 (Daily) MngSch_Send_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 7")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "04897901885203")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Account_Number_Value", "03334900125")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "15")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PurposeOfPayment_Value", "Others")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Nick", "Branchless")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Mobile_No", "03343913854")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bene_Email", "abc@test.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Frequency_Value", "Daily")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Date_Value", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:To_Date_Value", "28")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Tran_Pass_Value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Success_Message", "Transaction is successful.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:frequency_query", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:purpose_query", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_account_query", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_bank_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        public virtual void AsAUserIWantToVerifySendMoneyBeneScheduleManagement_CustomerScheduleTheBranchless03334900125DailyMngSch_Send_Bene()
+        {
+#line 133
+this.AsAUserIWantToVerifySendMoneyBeneScheduleManagement("Customer Schedule the Branchless 03334900125 (Daily) MngSch_Send_Bene", "Pass", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 7", "04897901885203", "HBL / Konnect", "03334900125", "15", "Others", "Branchless", "03343913854", "abc@test.com", "Daily", "2", "28", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", new string[] {
+                        "source:Data/ManageSchedule_SendMoney_WithBene.xlsx"});
+#line hidden
+        }
+        
+        public virtual void AsAUserIWantToVerifyAddNewBillScheduleManagement(
                     string @case, 
+                    string expected_Result, 
                     string schedule_Count_Query, 
-                    string status_Query, 
-                    string status_Query2, 
                     string category_Value, 
                     string company_Value, 
                     string pay_BillPayment_ConsumerNo_Value, 
@@ -930,180 +2749,221 @@ this.AsAUserIWantToVerifyScheduleManagementAfterAddingBillPaymentSchedularWithNe
                     string is_Paid_Query, 
                     string bill_Status_Id_Query, 
                     string is_Partial_Payment_Query, 
+                    string category_List_Query, 
+                    string partial_Amount, 
+                    string bene_Count_Query, 
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "MngSchedule"};
+                    "MngSchedule",
+                    "MngSchedule_Bill_New"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user I want to verify Schedule Management after adding Bill Payment schedula" +
-                    "r with existing bene", @__tags);
-#line 254
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user I want to verify Add New Bill Schedule Management", @__tags);
+#line 197
 this.ScenarioSetup(scenarioInfo);
-#line 255
+#line 198
  testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 256
+#line 199
+ testRunner.And(string.Format("the test case expected result is \"{0}\"", expected_Result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 200
  testRunner.And(string.Format("I set value in context from data \"{0}\" as \"ConsumerNo\"", pay_BillPayment_ConsumerNo_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 257
+#line 201
  testRunner.And(string.Format("I set value in context from data \"{0}\" as \"Credit_Card_check\"", expiry_Date), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 258
- testRunner.And(string.Format("update the data by query \"{0}\" on QAT_BPS", status_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 259
- testRunner.And(string.Format("update the data by query \"{0}\" on DIGITAL_CHANNEL_SEC", status_Query2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 260
+#line 202
  testRunner.And(string.Format("I set value in context from database \"{0}\" as \"user_schedule_count\" on Schema \"{1" +
                         "}\"", schedule_Count_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 261
+#line 203
  testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 262
+#line 204
  testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 263
+#line 205
  testRunner.And("I count Number of Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 264
+#line 206
  testRunner.And("I save Account Balances", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 265
+#line 207
  testRunner.And("I am clicking on \"MyAccount_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 266
+#line 208
  testRunner.And("I am clicking on \"MyAccount_MngSch_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 267
+#line 209
  testRunner.And("I am clicking on \"MyAccount_MngSch_AddNew\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 268
+#line 210
  testRunner.And("I am clicking on \"MyAccount_MngSch_AddNew_Bill\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 269
+#line 211
+ testRunner.When("I am clicking on \"Pay_AddNewBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 212
+ testRunner.And(string.Format("I am clicking on link \"{0}\" on \"Pay_BillPaymentCategory\"", category_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 213
+ testRunner.And(string.Format("I am clicking on link \"{0}\" on \"Pay_BillPaymentCategory_Company\"", company_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 214
  testRunner.And(string.Format("I set value in context from data \"{0}\" as \"Company_Code\"", company_Code_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 270
+#line 215
  testRunner.And(string.Format("I set value in context from data \"{0}\" as \"Account_Type\"", account_Type), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 271
+#line 216
  testRunner.And(string.Format("I set value in context from database \"{0}\" as \"IS_SI_Allowed\" on Schema \"{1}\"", iS_SI_Allowed_Query, db_Val2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 272
+#line 217
  testRunner.And(string.Format("I set value in context from database \"{0}\" as \"IS_PAID_REQ\" on Schema \"{1}\"", is_Paid_Query, db_Val2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 273
+#line 218
  testRunner.And(string.Format("I set value in context from database \"{0}\" as \"IS_Partial_Payment\" on Schema \"{1}" +
                         "\"", is_Partial_Payment_Query, db_Val2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 274
- testRunner.When(string.Format("I have given \"{0}\" on \"Pay_Transaction_PayBill_BeneSearchTextbox\"", pay_BillPayment_ConsumerNo_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 275
- testRunner.And("I am clicking on \"Pay_Transaction_PayBill_BeneSearchConsumerNo\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 276
+#line 219
  testRunner.And(string.Format("I select \"{0}\" on \"Pay_BillPayment_accountno\"", account_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 277
+#line 220
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_ConsumerLabel_Check\"", consumer_Label_Query, db_Val2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 221
  testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"{1}\"", instrument_Type, db_Val2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 278
+#line 222
  testRunner.And(string.Format("I have given \"{0}\" on \"Pay_BillPayment_ConsumerNo\"", pay_BillPayment_ConsumerNo_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 279
+#line 223
  testRunner.And("I am performing on \"Pay_BillPayment_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 280
+#line 224
+ testRunner.And("Set parameter in context class \"Pay_BillPayment_BillingMonth\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 225
+ testRunner.And("I verify bill payment inquiry for Web", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 226
  testRunner.And(string.Format("I have given \"{0}\" on \"Pay_Card_Expiry_Date\"", expiry_Date), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 281
+#line 227
  testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 282
+#line 228
  testRunner.And("Set parameter in context class \"Pay_Bill_Status\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 283
+#line 230
  testRunner.And("I have given \"100\" on \"Pay_Transaction_Unpaid_Amount\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 284
+#line 231
  testRunner.And(string.Format("I want value from textbox \"Pay_Transaction_Unpaid_Amount\" on database \"{0}\" as \"{" +
                         "1}\"", db_Val2, bill_Amount_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 285
+#line 232
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Unpaid_Amoun" +
                         "t\"", bill_Amount_Query, db_Val2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 286
+#line 233
  testRunner.And(string.Format("I am verifying OTP and Transaction pass check on company code {0}", company_Code_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 287
+#line 234
  testRunner.And("I am performing on \"Pay_BillPayment_Inquiry_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 288
+#line 235
  testRunner.And("I scroll to element \"Pay_BillPayment_PayBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 289
+#line 236
  testRunner.And(string.Format("I have otp check and given {0} on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 290
+#line 237
  testRunner.And(string.Format("I have transaction pass check and given \"{0}\" on \"Pay_Transaction_PayBill_Transac" +
                         "tionPassword\"", tran_Pass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 291
+#line 238
  testRunner.And("I press Enter on \"Pay_BillPayment_PayBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 292
- testRunner.And("I wait 8000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 293
+#line 239
+ testRunner.And("I wait 10000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 240
  testRunner.And("I save Transaction Info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 294
+#line 241
  testRunner.And("verify through \"Transaction is successful.\" on \"Pay_Transaction_TranSuccessMessag" +
                     "e\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 295
+#line 242
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Success_Amou" +
                         "nt\"", tran_Amount_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 296
+#line 243
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Success_From" +
                         "Account\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 297
+#line 244
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Success_Comp" +
                         "anyName\"", company_Name_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 298
+#line 245
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Success_Cons" +
                         "umerNo\"", consumer_No_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 299
+#line 246
  testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"{1}\"", bill_Status_Id_Query, db_Val2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 300
+#line 247
  testRunner.And("I am clicking on \"Pay_Transaction_ToggleAutoPay\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 302
+#line 249
  testRunner.And(string.Format("I am clicking on \"{0}\"", schedule_Type), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 303
+#line 250
  testRunner.And(string.Format("I set value in context from database \"{0}\" as \"schedule_config\" on Schema \"{1}\"", schedule_Config, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 304
+#line 251
  testRunner.And(string.Format("I have given \"{0}\" on \"Pay_Transaction_MaxBillAmount_value\"", maximum_Amount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 305
+#line 252
  testRunner.And("I am clicking on \"Pay_Transaction_PayBillAmount_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 306
+#line 253
  testRunner.And("I am clicking on \"Pay_Transaction_PayBillAmount_AgreeBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 307
+#line 254
  testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 308
+#line 255
  testRunner.And(string.Format("verify the schedule config \"{0}\" on Schema \"{1}\"", schedule_Verify, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 309
+#line 256
  testRunner.And(string.Format("I set value in context from data \"{0}\" as \"bene_name\"", bene_Name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 310
+#line 257
  testRunner.And(string.Format("verify bene status from {0} on Schema \"{1}\"", bene_Query, db_Val2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 311
+#line 258
  testRunner.And("I am clicking on \"Pay_Transaction_PayBillAmount_CloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 312
+#line 259
  testRunner.And("I am clicking on \"Pay_Transaction_PayBill_Rating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 313
+#line 260
  testRunner.And("I am clicking on \"Pay_Transaction_PayBill_RatingOkBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 314
+#line 261
+ testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 262
  testRunner.And(string.Format("I have given \"{0}\" on \"Pay_Transaction_PayBill_BeneSearchTextbox\"", pay_BillPayment_ConsumerNo_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 315
- testRunner.And("verify through \"ConsumerNoContextVal\" on \"Pay_Transaction_PayBill_BeneSearchConsu" +
-                    "merNo\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 316
+#line 263
+ testRunner.Then("verify through \"ConsumerNoContextVal\" on \"Pay_Transaction_PayBill_BeneSearchConsu" +
+                    "merNo\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 264
  testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 317
+#line 265
  testRunner.And("I verify Account Balance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 318
+#line 266
+ testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 267
+ testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 268
+ testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 269
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Success_Amou" +
+                        "nt\"", tran_Amount_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 270
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Success_From" +
+                        "Account\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 271
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Success_Comp" +
+                        "anyName\"", company_Name_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 272
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Success_Cons" +
+                        "umerNo\"", consumer_No_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 273
+ testRunner.And("I am clicking on \"Services_Transaction_Close_btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 274
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 275
+ testRunner.And(string.Format("I set value in context from database \"{0}\" as \"user_schedule_count\" on Schema \"{1" +
+                        "}\"", schedule_Count_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 276
+ testRunner.And("I am clicking on \"MyAccount_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 277
+ testRunner.And("I am clicking on \"MyAccount_MngSch_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 278
  testRunner.Then("I am verifying schedule payments of Bill Payment from My Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Schedule Management after adding Bill Payment schedula" +
-            "r with existing bene: When valid bill details are provided 06124110095500")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Add New Bill Schedule Management: When valid bill deta" +
+            "ils are provided of Electricity where only pass is required MngSch_Bill_AddNew")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Bill_WithBene.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid bill details are provided 06124110095500")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid bill details are provided 06124110095500")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Bill_AddNewBene.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid bill details are provided of Electricity where only pass is required M" +
+            "ngSch_Bill_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid bill details are provided of Electricity where only pass is required M" +
+            "ngSch_Bill_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
             "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
             "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "UPDATE LP_BILLS L SET L.BILL_STATUS_ID=1 , L.DUE_DATE=TRUNC(SYSDATE) WHERE L.CONS" +
-            "UMER_NO=\'{ConsumerNo}\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query2", @"BEGIN UPDATE DC_SCHEDULED_TRAN_MASTER STM SET STM.STATE = 46 , STM.IS_DELETED = 1 WHERE STM.BILL_BENEFICIARY_ID = (SELECT BPB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY BPB WHERE BPB.CONSUMER_NUMBER = '{ConsumerNo}' AND BPB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND BPB.IS_ACTIVE = 1);UPDATE DC_BILL_PAYMENT_BENEFICIARY DPB SET DPB.IS_SI_SCHEDULED = 0,DPB.IS_ACTIVE = 0 WHERE DPB.CONSUMER_NUMBER = '{ConsumerNo}' AND DPB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND DPB.IS_ACTIVE = 1;COMMIT;END;")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Electricity Bill Payment")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Company_Value", "GEPCO")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Pay_BillPayment_ConsumerNo_Value", "06124110095500")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Company_Value", "K-ELECTRIC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Pay_BillPayment_ConsumerNo_Value", "0400000484677")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bill_Amount_query", "SELECT LB.BILL_AMOUNT, LB.COMPANY_CODE, LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CON" +
             "SUMER_NO=\'{ConsumerNo}\' ORDER BY LB.BILLING_MONTH DESC")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_code_value", "GEPCO001")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345680")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_code_value", "KESC0001")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan2")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
             "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
@@ -1115,12 +2975,12 @@ this.ScenarioSetup(scenarioInfo);
             "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "00476000949001 | SHAISTA | HBL ANNEXE.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "06217900745803")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_type", "RETAIL")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expiry_date", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_type", "Pay_Transaction_PayBillAmount_RadioBtn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:maximum_amount", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "office")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "Electricity only Pass")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_query", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
             "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:instrument_type", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
@@ -1137,17 +2997,715 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bill_status_id_query", "SELECT Z.BILL_STATUS_ID FROM LP_BILLS Z where Z.CONSUMER_NO = \'{ConsumerNo}\' ")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_partial_payment_query", "Select K.IS_PARTIAL_PAYMENT_ALLOWED from BPS_COMPANY_CHANNEL K where k.COMPANY_CO" +
             "DE =  \'{Company_Code}\'  and K.CHANNEL_CODE = \'MB\'")]
-        public virtual void AsAUserIWantToVerifyScheduleManagementAfterAddingBillPaymentSchedularWithExistingBene_WhenValidBillDetailsAreProvided06124110095500()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:category_list_query", "select distinct (SUB_CATEGORY_CODE) from BPS_COMPANY_CHANNEL s where s.channel_co" +
+            "de=\'MB\' ORDER BY SUB_CATEGORY_CODE ASC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_amount", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "SELECT count(*) FROM DC_BILL_PAYMENT_BENEFICIARY TM where TM.CUSTOMER_INFO_ID = (" +
+            "SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{c" +
+            "ustomer_name}\') and TM.IS_ACTIVE = 1")]
+        public virtual void AsAUserIWantToVerifyAddNewBillScheduleManagement_WhenValidBillDetailsAreProvidedOfElectricityWhereOnlyPassIsRequiredMngSch_Bill_AddNew()
         {
-#line 254
-this.AsAUserIWantToVerifyScheduleManagementAfterAddingBillPaymentSchedularWithExistingBene("When valid bill details are provided 06124110095500", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+#line 197
+this.AsAUserIWantToVerifyAddNewBillScheduleManagement("When valid bill details are provided of Electricity where only pass is required M" +
+                    "ngSch_Bill_AddNew", "Pass", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
                     "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
-                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "UPDATE LP_BILLS L SET L.BILL_STATUS_ID=1 , L.DUE_DATE=TRUNC(SYSDATE) WHERE L.CONS" +
-                    "UMER_NO=\'{ConsumerNo}\'", @"BEGIN UPDATE DC_SCHEDULED_TRAN_MASTER STM SET STM.STATE = 46 , STM.IS_DELETED = 1 WHERE STM.BILL_BENEFICIARY_ID = (SELECT BPB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY BPB WHERE BPB.CONSUMER_NUMBER = '{ConsumerNo}' AND BPB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND BPB.IS_ACTIVE = 1);UPDATE DC_BILL_PAYMENT_BENEFICIARY DPB SET DPB.IS_SI_SCHEDULED = 0,DPB.IS_ACTIVE = 0 WHERE DPB.CONSUMER_NUMBER = '{ConsumerNo}' AND DPB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND DPB.IS_ACTIVE = 1;COMMIT;END;", "Electricity Bill Payment", "GEPCO", "06124110095500", "SELECT LB.BILL_AMOUNT, LB.COMPANY_CODE, LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CON" +
-                    "SUMER_NO=\'{ConsumerNo}\' ORDER BY LB.BILLING_MONTH DESC", "GEPCO001", "12345680", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "Electricity Bill Payment", "K-ELECTRIC", "0400000484677", "SELECT LB.BILL_AMOUNT, LB.COMPANY_CODE, LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CON" +
+                    "SUMER_NO=\'{ConsumerNo}\' ORDER BY LB.BILLING_MONTH DESC", "KESC0001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
-                    "", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "00476000949001 | SHAISTA | HBL ANNEXE.", "RETAIL", "", "Pay_Transaction_PayBillAmount_RadioBtn", "", "office", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+                    "", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "06217900745803", "RETAIL", "", "Pay_Transaction_PayBillAmount_RadioBtn", "", "Electricity only Pass", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+                    "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+                    "Code}\' and i.CHANNEL_CODE=\'MB\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL i where I.APPLICATION_PARA" +
+                    "METER_ID=\'906\'", @"SELECT TM.FIRST_EXECUTION_DATE,TM.LAST_EXECUTION_DATE FROM DC_SCHEDULED_TRAN_MASTER TM WHERE TM.BILL_BENEFICIARY_ID = (SELECT PB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY PB WHERE PB.CONSUMER_NUMBER = '{ConsumerNo}' AND PB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND PB.IS_ACTIVE = 1)", "Select K.CONSUMER_NO_LABEL from BPS_COMPANY_CHANNEL K where k.COMPANY_CODE = \'{Co" +
+                    "mpany_Code}\' and K.CHANNEL_CODE = \'MB\'", "SELECT L.IS_SI_ALLOWED FROM BPS_COMPANY_CHANNEL L WHERE L.COMPANY_CODE = \'{Compan" +
+                    "y_Code}\' and L.CHANNEL_CODE = \'MB\'", "SELECT K.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL  K where k.COMPANY_COD" +
+                    "E = \'{Company_Code}\' and K.CHANNEL_CODE = \'MB\'", "SELECT Z.BILL_STATUS_ID FROM LP_BILLS Z where Z.CONSUMER_NO = \'{ConsumerNo}\' ", "Select K.IS_PARTIAL_PAYMENT_ALLOWED from BPS_COMPANY_CHANNEL K where k.COMPANY_CO" +
+                    "DE =  \'{Company_Code}\'  and K.CHANNEL_CODE = \'MB\'", "select distinct (SUB_CATEGORY_CODE) from BPS_COMPANY_CHANNEL s where s.channel_co" +
+                    "de=\'MB\' ORDER BY SUB_CATEGORY_CODE ASC", "", "SELECT count(*) FROM DC_BILL_PAYMENT_BENEFICIARY TM where TM.CUSTOMER_INFO_ID = (" +
+                    "SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{c" +
+                    "ustomer_name}\') and TM.IS_ACTIVE = 1", new string[] {
+                        "source:Data/ManageSchedule_Bill_AddNewBene.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Add New Bill Schedule Management: When valid bill deta" +
+            "ils are provided of Water where pass and OTP both are required MngSch_Bill_AddNe" +
+            "w")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Bill_AddNewBene.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid bill details are provided of Water where pass and OTP both are require" +
+            "d MngSch_Bill_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid bill details are provided of Water where pass and OTP both are require" +
+            "d MngSch_Bill_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Water / Sanitation Bill Payment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Company_Value", "KWSB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Pay_BillPayment_ConsumerNo_Value", "65009122100096")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bill_Amount_query", "SELECT LB.BILL_AMOUNT, LB.COMPANY_CODE, LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CON" +
+            "SUMER_NO=\'{ConsumerNo}\' ORDER BY LB.BILLING_MONTH DESC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_code_value", "KWSB0001")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_name_query", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no_query", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "06217900745803")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_type", "RETAIL")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expiry_date", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_type", "Pay_Transaction_PayBillAmount_RadioBtn")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:maximum_amount", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "Water Pass and OTP")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_query", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+            "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:instrument_type", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+            "Code}\' and i.CHANNEL_CODE=\'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_config", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL i where I.APPLICATION_PARA" +
+            "METER_ID=\'906\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_verify", @"SELECT TM.FIRST_EXECUTION_DATE,TM.LAST_EXECUTION_DATE FROM DC_SCHEDULED_TRAN_MASTER TM WHERE TM.BILL_BENEFICIARY_ID = (SELECT PB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY PB WHERE PB.CONSUMER_NUMBER = '{ConsumerNo}' AND PB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND PB.IS_ACTIVE = 1)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_label_query", "Select K.CONSUMER_NO_LABEL from BPS_COMPANY_CHANNEL K where k.COMPANY_CODE = \'{Co" +
+            "mpany_Code}\' and K.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:IS_SI_Allowed_query", "SELECT L.IS_SI_ALLOWED FROM BPS_COMPANY_CHANNEL L WHERE L.COMPANY_CODE = \'{Compan" +
+            "y_Code}\' and L.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_paid_query", "SELECT K.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL  K where k.COMPANY_COD" +
+            "E = \'{Company_Code}\' and K.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bill_status_id_query", "SELECT Z.BILL_STATUS_ID FROM LP_BILLS Z where Z.CONSUMER_NO = \'{ConsumerNo}\' ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_partial_payment_query", "Select K.IS_PARTIAL_PAYMENT_ALLOWED from BPS_COMPANY_CHANNEL K where k.COMPANY_CO" +
+            "DE =  \'{Company_Code}\'  and K.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:category_list_query", "select distinct (SUB_CATEGORY_CODE) from BPS_COMPANY_CHANNEL s where s.channel_co" +
+            "de=\'MB\' ORDER BY SUB_CATEGORY_CODE ASC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_amount", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "SELECT count(*) FROM DC_BILL_PAYMENT_BENEFICIARY TM where TM.CUSTOMER_INFO_ID = (" +
+            "SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{c" +
+            "ustomer_name}\') and TM.IS_ACTIVE = 1")]
+        public virtual void AsAUserIWantToVerifyAddNewBillScheduleManagement_WhenValidBillDetailsAreProvidedOfWaterWherePassAndOTPBothAreRequiredMngSch_Bill_AddNew()
+        {
+#line 197
+this.AsAUserIWantToVerifyAddNewBillScheduleManagement("When valid bill details are provided of Water where pass and OTP both are require" +
+                    "d MngSch_Bill_AddNew", "Pass", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 1", "Water / Sanitation Bill Payment", "KWSB", "65009122100096", "SELECT LB.BILL_AMOUNT, LB.COMPANY_CODE, LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CON" +
+                    "SUMER_NO=\'{ConsumerNo}\' ORDER BY LB.BILLING_MONTH DESC", "KWSB0001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+                    "", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "06217900745803", "RETAIL", "", "Pay_Transaction_PayBillAmount_RadioBtn", "", "Water Pass and OTP", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+                    "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+                    "Code}\' and i.CHANNEL_CODE=\'MB\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL i where I.APPLICATION_PARA" +
+                    "METER_ID=\'906\'", @"SELECT TM.FIRST_EXECUTION_DATE,TM.LAST_EXECUTION_DATE FROM DC_SCHEDULED_TRAN_MASTER TM WHERE TM.BILL_BENEFICIARY_ID = (SELECT PB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY PB WHERE PB.CONSUMER_NUMBER = '{ConsumerNo}' AND PB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND PB.IS_ACTIVE = 1)", "Select K.CONSUMER_NO_LABEL from BPS_COMPANY_CHANNEL K where k.COMPANY_CODE = \'{Co" +
+                    "mpany_Code}\' and K.CHANNEL_CODE = \'MB\'", "SELECT L.IS_SI_ALLOWED FROM BPS_COMPANY_CHANNEL L WHERE L.COMPANY_CODE = \'{Compan" +
+                    "y_Code}\' and L.CHANNEL_CODE = \'MB\'", "SELECT K.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL  K where k.COMPANY_COD" +
+                    "E = \'{Company_Code}\' and K.CHANNEL_CODE = \'MB\'", "SELECT Z.BILL_STATUS_ID FROM LP_BILLS Z where Z.CONSUMER_NO = \'{ConsumerNo}\' ", "Select K.IS_PARTIAL_PAYMENT_ALLOWED from BPS_COMPANY_CHANNEL K where k.COMPANY_CO" +
+                    "DE =  \'{Company_Code}\'  and K.CHANNEL_CODE = \'MB\'", "select distinct (SUB_CATEGORY_CODE) from BPS_COMPANY_CHANNEL s where s.channel_co" +
+                    "de=\'MB\' ORDER BY SUB_CATEGORY_CODE ASC", "", "SELECT count(*) FROM DC_BILL_PAYMENT_BENEFICIARY TM where TM.CUSTOMER_INFO_ID = (" +
+                    "SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{c" +
+                    "ustomer_name}\') and TM.IS_ACTIVE = 1", new string[] {
+                        "source:Data/ManageSchedule_Bill_AddNewBene.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Add New Bill Schedule Management: When valid bill deta" +
+            "ils are provided Gas where only OTP is required MngSch_Bill_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Bill_AddNewBene.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid bill details are provided Gas where only OTP is required MngSch_Bill_A" +
+            "ddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid bill details are provided Gas where only OTP is required MngSch_Bill_A" +
+            "ddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Gas Bill Payment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Company_Value", "SSGC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Pay_BillPayment_ConsumerNo_Value", "0004069089")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bill_Amount_query", "SELECT LB.BILL_AMOUNT, LB.COMPANY_CODE, LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CON" +
+            "SUMER_NO=\'{ConsumerNo}\' ORDER BY LB.BILLING_MONTH DESC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_code_value", "SSGC0001")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_name_query", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no_query", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "06217900745803")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_type", "RETAIL")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expiry_date", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_type", "Pay_Transaction_PayBillAmount_RadioBtn")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:maximum_amount", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "Gas Only OTP")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_query", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+            "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:instrument_type", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+            "Code}\' and i.CHANNEL_CODE=\'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_config", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL i where I.APPLICATION_PARA" +
+            "METER_ID=\'906\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_verify", @"SELECT TM.FIRST_EXECUTION_DATE,TM.LAST_EXECUTION_DATE FROM DC_SCHEDULED_TRAN_MASTER TM WHERE TM.BILL_BENEFICIARY_ID = (SELECT PB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY PB WHERE PB.CONSUMER_NUMBER = '{ConsumerNo}' AND PB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND PB.IS_ACTIVE = 1)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_label_query", "Select K.CONSUMER_NO_LABEL from BPS_COMPANY_CHANNEL K where k.COMPANY_CODE = \'{Co" +
+            "mpany_Code}\' and K.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:IS_SI_Allowed_query", "SELECT L.IS_SI_ALLOWED FROM BPS_COMPANY_CHANNEL L WHERE L.COMPANY_CODE = \'{Compan" +
+            "y_Code}\' and L.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_paid_query", "SELECT K.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL  K where k.COMPANY_COD" +
+            "E = \'{Company_Code}\' and K.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bill_status_id_query", "SELECT Z.BILL_STATUS_ID FROM LP_BILLS Z where Z.CONSUMER_NO = \'{ConsumerNo}\' ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_partial_payment_query", "Select K.IS_PARTIAL_PAYMENT_ALLOWED from BPS_COMPANY_CHANNEL K where k.COMPANY_CO" +
+            "DE =  \'{Company_Code}\'  and K.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:category_list_query", "select distinct (SUB_CATEGORY_CODE) from BPS_COMPANY_CHANNEL s where s.channel_co" +
+            "de=\'MB\' ORDER BY SUB_CATEGORY_CODE ASC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_amount", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "SELECT count(*) FROM DC_BILL_PAYMENT_BENEFICIARY TM where TM.CUSTOMER_INFO_ID = (" +
+            "SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{c" +
+            "ustomer_name}\') and TM.IS_ACTIVE = 1")]
+        public virtual void AsAUserIWantToVerifyAddNewBillScheduleManagement_WhenValidBillDetailsAreProvidedGasWhereOnlyOTPIsRequiredMngSch_Bill_AddNew()
+        {
+#line 197
+this.AsAUserIWantToVerifyAddNewBillScheduleManagement("When valid bill details are provided Gas where only OTP is required MngSch_Bill_A" +
+                    "ddNew", "Pass", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 2", "Gas Bill Payment", "SSGC", "0004069089", "SELECT LB.BILL_AMOUNT, LB.COMPANY_CODE, LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CON" +
+                    "SUMER_NO=\'{ConsumerNo}\' ORDER BY LB.BILLING_MONTH DESC", "SSGC0001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+                    "", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "06217900745803", "RETAIL", "", "Pay_Transaction_PayBillAmount_RadioBtn", "", "Gas Only OTP", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+                    "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+                    "Code}\' and i.CHANNEL_CODE=\'MB\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL i where I.APPLICATION_PARA" +
+                    "METER_ID=\'906\'", @"SELECT TM.FIRST_EXECUTION_DATE,TM.LAST_EXECUTION_DATE FROM DC_SCHEDULED_TRAN_MASTER TM WHERE TM.BILL_BENEFICIARY_ID = (SELECT PB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY PB WHERE PB.CONSUMER_NUMBER = '{ConsumerNo}' AND PB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND PB.IS_ACTIVE = 1)", "Select K.CONSUMER_NO_LABEL from BPS_COMPANY_CHANNEL K where k.COMPANY_CODE = \'{Co" +
+                    "mpany_Code}\' and K.CHANNEL_CODE = \'MB\'", "SELECT L.IS_SI_ALLOWED FROM BPS_COMPANY_CHANNEL L WHERE L.COMPANY_CODE = \'{Compan" +
+                    "y_Code}\' and L.CHANNEL_CODE = \'MB\'", "SELECT K.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL  K where k.COMPANY_COD" +
+                    "E = \'{Company_Code}\' and K.CHANNEL_CODE = \'MB\'", "SELECT Z.BILL_STATUS_ID FROM LP_BILLS Z where Z.CONSUMER_NO = \'{ConsumerNo}\' ", "Select K.IS_PARTIAL_PAYMENT_ALLOWED from BPS_COMPANY_CHANNEL K where k.COMPANY_CO" +
+                    "DE =  \'{Company_Code}\'  and K.CHANNEL_CODE = \'MB\'", "select distinct (SUB_CATEGORY_CODE) from BPS_COMPANY_CHANNEL s where s.channel_co" +
+                    "de=\'MB\' ORDER BY SUB_CATEGORY_CODE ASC", "", "SELECT count(*) FROM DC_BILL_PAYMENT_BENEFICIARY TM where TM.CUSTOMER_INFO_ID = (" +
+                    "SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{c" +
+                    "ustomer_name}\') and TM.IS_ACTIVE = 1", new string[] {
+                        "source:Data/ManageSchedule_Bill_AddNewBene.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Add New Bill Schedule Management: When valid bill deta" +
+            "ils are provided Landline where OTP and pass NOT required MngSch_Bill_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Bill_AddNewBene.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid bill details are provided Landline where OTP and pass NOT required Mng" +
+            "Sch_Bill_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid bill details are provided Landline where OTP and pass NOT required Mng" +
+            "Sch_Bill_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Landline Bill Payment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Company_Value", "SCO")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Pay_BillPayment_ConsumerNo_Value", "1756156")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bill_Amount_query", "SELECT LB.BILL_AMOUNT, LB.COMPANY_CODE, LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CON" +
+            "SUMER_NO=\'{ConsumerNo}\' ORDER BY LB.BILLING_MONTH DESC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_code_value", "SCO00001")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_name_query", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no_query", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "06217900745803")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_type", "RETAIL")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expiry_date", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_type", "Pay_Transaction_PayBillAmount_RadioBtn")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:maximum_amount", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "Landline No Pass OTP")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_query", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+            "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:instrument_type", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+            "Code}\' and i.CHANNEL_CODE=\'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_config", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL i where I.APPLICATION_PARA" +
+            "METER_ID=\'906\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_verify", @"SELECT TM.FIRST_EXECUTION_DATE,TM.LAST_EXECUTION_DATE FROM DC_SCHEDULED_TRAN_MASTER TM WHERE TM.BILL_BENEFICIARY_ID = (SELECT PB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY PB WHERE PB.CONSUMER_NUMBER = '{ConsumerNo}' AND PB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND PB.IS_ACTIVE = 1)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_label_query", "Select K.CONSUMER_NO_LABEL from BPS_COMPANY_CHANNEL K where k.COMPANY_CODE = \'{Co" +
+            "mpany_Code}\' and K.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:IS_SI_Allowed_query", "SELECT L.IS_SI_ALLOWED FROM BPS_COMPANY_CHANNEL L WHERE L.COMPANY_CODE = \'{Compan" +
+            "y_Code}\' and L.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_paid_query", "SELECT K.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL  K where k.COMPANY_COD" +
+            "E = \'{Company_Code}\' and K.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bill_status_id_query", "SELECT Z.BILL_STATUS_ID FROM LP_BILLS Z where Z.CONSUMER_NO = \'{ConsumerNo}\' ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_partial_payment_query", "Select K.IS_PARTIAL_PAYMENT_ALLOWED from BPS_COMPANY_CHANNEL K where k.COMPANY_CO" +
+            "DE =  \'{Company_Code}\'  and K.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:category_list_query", "select distinct (SUB_CATEGORY_CODE) from BPS_COMPANY_CHANNEL s where s.channel_co" +
+            "de=\'MB\' ORDER BY SUB_CATEGORY_CODE ASC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_amount", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "SELECT count(*) FROM DC_BILL_PAYMENT_BENEFICIARY TM where TM.CUSTOMER_INFO_ID = (" +
+            "SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{c" +
+            "ustomer_name}\') and TM.IS_ACTIVE = 1")]
+        public virtual void AsAUserIWantToVerifyAddNewBillScheduleManagement_WhenValidBillDetailsAreProvidedLandlineWhereOTPAndPassNOTRequiredMngSch_Bill_AddNew()
+        {
+#line 197
+this.AsAUserIWantToVerifyAddNewBillScheduleManagement("When valid bill details are provided Landline where OTP and pass NOT required Mng" +
+                    "Sch_Bill_AddNew", "Pass", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 3", "Landline Bill Payment", "SCO", "1756156", "SELECT LB.BILL_AMOUNT, LB.COMPANY_CODE, LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CON" +
+                    "SUMER_NO=\'{ConsumerNo}\' ORDER BY LB.BILLING_MONTH DESC", "SCO00001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+                    "", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "06217900745803", "RETAIL", "", "Pay_Transaction_PayBillAmount_RadioBtn", "", "Landline No Pass OTP", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+                    "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+                    "Code}\' and i.CHANNEL_CODE=\'MB\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL i where I.APPLICATION_PARA" +
+                    "METER_ID=\'906\'", @"SELECT TM.FIRST_EXECUTION_DATE,TM.LAST_EXECUTION_DATE FROM DC_SCHEDULED_TRAN_MASTER TM WHERE TM.BILL_BENEFICIARY_ID = (SELECT PB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY PB WHERE PB.CONSUMER_NUMBER = '{ConsumerNo}' AND PB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND PB.IS_ACTIVE = 1)", "Select K.CONSUMER_NO_LABEL from BPS_COMPANY_CHANNEL K where k.COMPANY_CODE = \'{Co" +
+                    "mpany_Code}\' and K.CHANNEL_CODE = \'MB\'", "SELECT L.IS_SI_ALLOWED FROM BPS_COMPANY_CHANNEL L WHERE L.COMPANY_CODE = \'{Compan" +
+                    "y_Code}\' and L.CHANNEL_CODE = \'MB\'", "SELECT K.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL  K where k.COMPANY_COD" +
+                    "E = \'{Company_Code}\' and K.CHANNEL_CODE = \'MB\'", "SELECT Z.BILL_STATUS_ID FROM LP_BILLS Z where Z.CONSUMER_NO = \'{ConsumerNo}\' ", "Select K.IS_PARTIAL_PAYMENT_ALLOWED from BPS_COMPANY_CHANNEL K where k.COMPANY_CO" +
+                    "DE =  \'{Company_Code}\'  and K.CHANNEL_CODE = \'MB\'", "select distinct (SUB_CATEGORY_CODE) from BPS_COMPANY_CHANNEL s where s.channel_co" +
+                    "de=\'MB\' ORDER BY SUB_CATEGORY_CODE ASC", "", "SELECT count(*) FROM DC_BILL_PAYMENT_BENEFICIARY TM where TM.CUSTOMER_INFO_ID = (" +
+                    "SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{c" +
+                    "ustomer_name}\') and TM.IS_ACTIVE = 1", new string[] {
+                        "source:Data/ManageSchedule_Bill_AddNewBene.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Add New Bill Schedule Management: When valid bill deta" +
+            "ils SSGC max amount 5 lac only OTP MngSch_Bill_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Bill_AddNewBene.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid bill details SSGC max amount 5 lac only OTP MngSch_Bill_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid bill details SSGC max amount 5 lac only OTP MngSch_Bill_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 4")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Gas Bill Payment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Company_Value", "SSGC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Pay_BillPayment_ConsumerNo_Value", "0003979428")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bill_Amount_query", "SELECT LB.BILL_AMOUNT, LB.COMPANY_CODE, LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CON" +
+            "SUMER_NO=\'{ConsumerNo}\' ORDER BY LB.BILLING_MONTH DESC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_code_value", "SSGC0001")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_name_query", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no_query", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "06217900745803")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_type", "RETAIL")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expiry_date", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_type", "Pay_Transaction_MaxBillAmount_RadioBtn")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:maximum_amount", "500000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "max amount 5 lac")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_query", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+            "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:instrument_type", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+            "Code}\' and i.CHANNEL_CODE=\'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_config", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL i where I.APPLICATION_PARA" +
+            "METER_ID=\'906\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_verify", @"SELECT TM.FIRST_EXECUTION_DATE,TM.LAST_EXECUTION_DATE FROM DC_SCHEDULED_TRAN_MASTER TM WHERE TM.BILL_BENEFICIARY_ID = (SELECT PB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY PB WHERE PB.CONSUMER_NUMBER = '{ConsumerNo}' AND PB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND PB.IS_ACTIVE = 1)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_label_query", "Select K.CONSUMER_NO_LABEL from BPS_COMPANY_CHANNEL K where k.COMPANY_CODE = \'{Co" +
+            "mpany_Code}\' and K.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:IS_SI_Allowed_query", "SELECT L.IS_SI_ALLOWED FROM BPS_COMPANY_CHANNEL L WHERE L.COMPANY_CODE = \'{Compan" +
+            "y_Code}\' and L.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_paid_query", "SELECT K.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL  K where k.COMPANY_COD" +
+            "E = \'{Company_Code}\' and K.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bill_status_id_query", "SELECT Z.BILL_STATUS_ID FROM LP_BILLS Z where Z.CONSUMER_NO = \'{ConsumerNo}\' ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_partial_payment_query", "Select K.IS_PARTIAL_PAYMENT_ALLOWED from BPS_COMPANY_CHANNEL K where k.COMPANY_CO" +
+            "DE =  \'{Company_Code}\'  and K.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:category_list_query", "select distinct (SUB_CATEGORY_CODE) from BPS_COMPANY_CHANNEL s where s.channel_co" +
+            "de=\'MB\' ORDER BY SUB_CATEGORY_CODE ASC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_amount", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "SELECT count(*) FROM DC_BILL_PAYMENT_BENEFICIARY TM where TM.CUSTOMER_INFO_ID = (" +
+            "SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{c" +
+            "ustomer_name}\') and TM.IS_ACTIVE = 1")]
+        public virtual void AsAUserIWantToVerifyAddNewBillScheduleManagement_WhenValidBillDetailsSSGCMaxAmount5LacOnlyOTPMngSch_Bill_AddNew()
+        {
+#line 197
+this.AsAUserIWantToVerifyAddNewBillScheduleManagement("When valid bill details SSGC max amount 5 lac only OTP MngSch_Bill_AddNew", "Pass", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 4", "Gas Bill Payment", "SSGC", "0003979428", "SELECT LB.BILL_AMOUNT, LB.COMPANY_CODE, LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CON" +
+                    "SUMER_NO=\'{ConsumerNo}\' ORDER BY LB.BILLING_MONTH DESC", "SSGC0001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+                    "", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "06217900745803", "RETAIL", "", "Pay_Transaction_MaxBillAmount_RadioBtn", "500000", "max amount 5 lac", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+                    "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+                    "Code}\' and i.CHANNEL_CODE=\'MB\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL i where I.APPLICATION_PARA" +
+                    "METER_ID=\'906\'", @"SELECT TM.FIRST_EXECUTION_DATE,TM.LAST_EXECUTION_DATE FROM DC_SCHEDULED_TRAN_MASTER TM WHERE TM.BILL_BENEFICIARY_ID = (SELECT PB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY PB WHERE PB.CONSUMER_NUMBER = '{ConsumerNo}' AND PB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND PB.IS_ACTIVE = 1)", "Select K.CONSUMER_NO_LABEL from BPS_COMPANY_CHANNEL K where k.COMPANY_CODE = \'{Co" +
+                    "mpany_Code}\' and K.CHANNEL_CODE = \'MB\'", "SELECT L.IS_SI_ALLOWED FROM BPS_COMPANY_CHANNEL L WHERE L.COMPANY_CODE = \'{Compan" +
+                    "y_Code}\' and L.CHANNEL_CODE = \'MB\'", "SELECT K.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL  K where k.COMPANY_COD" +
+                    "E = \'{Company_Code}\' and K.CHANNEL_CODE = \'MB\'", "SELECT Z.BILL_STATUS_ID FROM LP_BILLS Z where Z.CONSUMER_NO = \'{ConsumerNo}\' ", "Select K.IS_PARTIAL_PAYMENT_ALLOWED from BPS_COMPANY_CHANNEL K where k.COMPANY_CO" +
+                    "DE =  \'{Company_Code}\'  and K.CHANNEL_CODE = \'MB\'", "select distinct (SUB_CATEGORY_CODE) from BPS_COMPANY_CHANNEL s where s.channel_co" +
+                    "de=\'MB\' ORDER BY SUB_CATEGORY_CODE ASC", "", "SELECT count(*) FROM DC_BILL_PAYMENT_BENEFICIARY TM where TM.CUSTOMER_INFO_ID = (" +
+                    "SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{c" +
+                    "ustomer_name}\') and TM.IS_ACTIVE = 1", new string[] {
+                        "source:Data/ManageSchedule_Bill_AddNewBene.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Add New Bill Schedule Management: When valid bill deta" +
+            "ils are provided of Water where pass and OTP max amount 10 MngSch_Bill_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_New")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Bill_AddNewBene.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid bill details are provided of Water where pass and OTP max amount 10 Mn" +
+            "gSch_Bill_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid bill details are provided of Water where pass and OTP max amount 10 Mn" +
+            "gSch_Bill_AddNew")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 5")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Water / Sanitation Bill Payment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Company_Value", "KWSB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Pay_BillPayment_ConsumerNo_Value", "65009121900045")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bill_Amount_query", "SELECT LB.BILL_AMOUNT, LB.COMPANY_CODE, LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CON" +
+            "SUMER_NO=\'{ConsumerNo}\' ORDER BY LB.BILLING_MONTH DESC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_code_value", "KWSB0001")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_name_query", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no_query", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "06217900745803")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_type", "RETAIL")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expiry_date", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_type", "Pay_Transaction_MaxBillAmount_RadioBtn")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:maximum_amount", "10")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "Max amount 10")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_query", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+            "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:instrument_type", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+            "Code}\' and i.CHANNEL_CODE=\'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_config", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL i where I.APPLICATION_PARA" +
+            "METER_ID=\'906\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_verify", @"SELECT TM.FIRST_EXECUTION_DATE,TM.LAST_EXECUTION_DATE FROM DC_SCHEDULED_TRAN_MASTER TM WHERE TM.BILL_BENEFICIARY_ID = (SELECT PB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY PB WHERE PB.CONSUMER_NUMBER = '{ConsumerNo}' AND PB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND PB.IS_ACTIVE = 1)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_label_query", "Select K.CONSUMER_NO_LABEL from BPS_COMPANY_CHANNEL K where k.COMPANY_CODE = \'{Co" +
+            "mpany_Code}\' and K.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:IS_SI_Allowed_query", "SELECT L.IS_SI_ALLOWED FROM BPS_COMPANY_CHANNEL L WHERE L.COMPANY_CODE = \'{Compan" +
+            "y_Code}\' and L.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_paid_query", "SELECT K.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL  K where k.COMPANY_COD" +
+            "E = \'{Company_Code}\' and K.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bill_status_id_query", "SELECT Z.BILL_STATUS_ID FROM LP_BILLS Z where Z.CONSUMER_NO = \'{ConsumerNo}\' ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_partial_payment_query", "Select K.IS_PARTIAL_PAYMENT_ALLOWED from BPS_COMPANY_CHANNEL K where k.COMPANY_CO" +
+            "DE =  \'{Company_Code}\'  and K.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:category_list_query", "select distinct (SUB_CATEGORY_CODE) from BPS_COMPANY_CHANNEL s where s.channel_co" +
+            "de=\'MB\' ORDER BY SUB_CATEGORY_CODE ASC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:partial_amount", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "SELECT count(*) FROM DC_BILL_PAYMENT_BENEFICIARY TM where TM.CUSTOMER_INFO_ID = (" +
+            "SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{c" +
+            "ustomer_name}\') and TM.IS_ACTIVE = 1")]
+        public virtual void AsAUserIWantToVerifyAddNewBillScheduleManagement_WhenValidBillDetailsAreProvidedOfWaterWherePassAndOTPMaxAmount10MngSch_Bill_AddNew()
+        {
+#line 197
+this.AsAUserIWantToVerifyAddNewBillScheduleManagement("When valid bill details are provided of Water where pass and OTP max amount 10 Mn" +
+                    "gSch_Bill_AddNew", "Pass", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 5", "Water / Sanitation Bill Payment", "KWSB", "65009121900045", "SELECT LB.BILL_AMOUNT, LB.COMPANY_CODE, LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CON" +
+                    "SUMER_NO=\'{ConsumerNo}\' ORDER BY LB.BILLING_MONTH DESC", "KWSB0001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+                    "", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "06217900745803", "RETAIL", "", "Pay_Transaction_MaxBillAmount_RadioBtn", "10", "Max amount 10", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+                    "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+                    "Code}\' and i.CHANNEL_CODE=\'MB\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL i where I.APPLICATION_PARA" +
+                    "METER_ID=\'906\'", @"SELECT TM.FIRST_EXECUTION_DATE,TM.LAST_EXECUTION_DATE FROM DC_SCHEDULED_TRAN_MASTER TM WHERE TM.BILL_BENEFICIARY_ID = (SELECT PB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY PB WHERE PB.CONSUMER_NUMBER = '{ConsumerNo}' AND PB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND PB.IS_ACTIVE = 1)", "Select K.CONSUMER_NO_LABEL from BPS_COMPANY_CHANNEL K where k.COMPANY_CODE = \'{Co" +
+                    "mpany_Code}\' and K.CHANNEL_CODE = \'MB\'", "SELECT L.IS_SI_ALLOWED FROM BPS_COMPANY_CHANNEL L WHERE L.COMPANY_CODE = \'{Compan" +
+                    "y_Code}\' and L.CHANNEL_CODE = \'MB\'", "SELECT K.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL  K where k.COMPANY_COD" +
+                    "E = \'{Company_Code}\' and K.CHANNEL_CODE = \'MB\'", "SELECT Z.BILL_STATUS_ID FROM LP_BILLS Z where Z.CONSUMER_NO = \'{ConsumerNo}\' ", "Select K.IS_PARTIAL_PAYMENT_ALLOWED from BPS_COMPANY_CHANNEL K where k.COMPANY_CO" +
+                    "DE =  \'{Company_Code}\'  and K.CHANNEL_CODE = \'MB\'", "select distinct (SUB_CATEGORY_CODE) from BPS_COMPANY_CHANNEL s where s.channel_co" +
+                    "de=\'MB\' ORDER BY SUB_CATEGORY_CODE ASC", "", "SELECT count(*) FROM DC_BILL_PAYMENT_BENEFICIARY TM where TM.CUSTOMER_INFO_ID = (" +
+                    "SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{c" +
+                    "ustomer_name}\') and TM.IS_ACTIVE = 1", new string[] {
+                        "source:Data/ManageSchedule_Bill_AddNewBene.xlsx"});
+#line hidden
+        }
+        
+        public virtual void AsAUserIWantToVerifyBillBeneScheduleManagement(
+                    string @case, 
+                    string expected_Result, 
+                    string schedule_Count_Query, 
+                    string category_Value, 
+                    string company_Value, 
+                    string pay_BillPayment_ConsumerNo_Value, 
+                    string bill_Amount_Query, 
+                    string company_Code_Value, 
+                    string oTP_Value, 
+                    string tran_Pass_Value, 
+                    string tran_Type_Query, 
+                    string tran_Amount_Query, 
+                    string from_Account_Query, 
+                    string company_Name_Query, 
+                    string consumer_No_Query, 
+                    string db_Val, 
+                    string db_Val2, 
+                    string account_No, 
+                    string account_Type, 
+                    string expiry_Date, 
+                    string schedule_Type, 
+                    string maximum_Amount, 
+                    string bene_Name, 
+                    string bene_Query, 
+                    string instrument_Type, 
+                    string schedule_Config, 
+                    string schedule_Verify, 
+                    string consumer_Label_Query, 
+                    string iS_SI_Allowed_Query, 
+                    string is_Paid_Query, 
+                    string bill_Status_Id_Query, 
+                    string is_Partial_Payment_Query, 
+                    string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "MngSchedule",
+                    "MngSchedule_Bill_Bene"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user I want to verify Bill Bene Schedule Management", @__tags);
+#line 287
+this.ScenarioSetup(scenarioInfo);
+#line 288
+ testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 289
+ testRunner.And(string.Format("the test case expected result is \"{0}\"", expected_Result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 290
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"ConsumerNo\"", pay_BillPayment_ConsumerNo_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 291
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"Credit_Card_check\"", expiry_Date), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 294
+ testRunner.And(string.Format("I set value in context from database \"{0}\" as \"user_schedule_count\" on Schema \"{1" +
+                        "}\"", schedule_Count_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 295
+ testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 296
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 297
+ testRunner.And("I count Number of Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 298
+ testRunner.And("I save Account Balances", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 299
+ testRunner.And("I am clicking on \"MyAccount_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 300
+ testRunner.And("I am clicking on \"MyAccount_MngSch_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 301
+ testRunner.And("I am clicking on \"MyAccount_MngSch_AddNew\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 302
+ testRunner.And("I am clicking on \"MyAccount_MngSch_AddNew_Bill\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 303
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"Company_Code\"", company_Code_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 304
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"Account_Type\"", account_Type), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 305
+ testRunner.And(string.Format("I set value in context from database \"{0}\" as \"IS_SI_Allowed\" on Schema \"{1}\"", iS_SI_Allowed_Query, db_Val2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 306
+ testRunner.And(string.Format("I set value in context from database \"{0}\" as \"IS_PAID_REQ\" on Schema \"{1}\"", is_Paid_Query, db_Val2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 307
+ testRunner.And(string.Format("I set value in context from database \"{0}\" as \"IS_Partial_Payment\" on Schema \"{1}" +
+                        "\"", is_Partial_Payment_Query, db_Val2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 308
+ testRunner.When(string.Format("I have given \"{0}\" on \"Pay_Transaction_PayBill_BeneSearchTextbox\"", pay_BillPayment_ConsumerNo_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 309
+ testRunner.And("I am clicking on \"Pay_Transaction_PayBill_BeneSearchConsumerNo\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 310
+ testRunner.And(string.Format("I select \"{0}\" on \"Pay_BillPayment_accountno\"", account_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 311
+ testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"{1}\"", instrument_Type, db_Val2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 312
+ testRunner.And(string.Format("I have given \"{0}\" on \"Pay_BillPayment_ConsumerNo\"", pay_BillPayment_ConsumerNo_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 313
+ testRunner.And("I am performing on \"Pay_BillPayment_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 314
+ testRunner.And(string.Format("I have given \"{0}\" on \"Pay_Card_Expiry_Date\"", expiry_Date), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 315
+ testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 316
+ testRunner.And("Set parameter in context class \"Pay_Bill_Status\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 317
+ testRunner.And("I have given \"100\" on \"Pay_Transaction_Unpaid_Amount\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 318
+ testRunner.And(string.Format("I want value from textbox \"Pay_Transaction_Unpaid_Amount\" on database \"{0}\" as \"{" +
+                        "1}\"", db_Val2, bill_Amount_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 319
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Unpaid_Amoun" +
+                        "t\"", bill_Amount_Query, db_Val2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 320
+ testRunner.And(string.Format("I am verifying OTP and Transaction pass check on company code {0}", company_Code_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 321
+ testRunner.And("I am performing on \"Pay_BillPayment_Inquiry_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 322
+ testRunner.And("I scroll to element \"Pay_BillPayment_PayBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 323
+ testRunner.And(string.Format("I have otp check and given {0} on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 324
+ testRunner.And(string.Format("I have transaction pass check and given \"{0}\" on \"Pay_Transaction_PayBill_Transac" +
+                        "tionPassword\"", tran_Pass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 325
+ testRunner.And("I press Enter on \"Pay_BillPayment_PayBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 326
+ testRunner.And("I wait 8000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 327
+ testRunner.And("I save Transaction Info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 328
+ testRunner.And("verify through \"Transaction is successful.\" on \"Pay_Transaction_TranSuccessMessag" +
+                    "e\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 329
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Success_Amou" +
+                        "nt\"", tran_Amount_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 330
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Success_From" +
+                        "Account\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 331
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Success_Comp" +
+                        "anyName\"", company_Name_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 332
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Success_Cons" +
+                        "umerNo\"", consumer_No_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 333
+ testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"{1}\"", bill_Status_Id_Query, db_Val2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 334
+ testRunner.And("I am clicking on \"Pay_Transaction_ToggleAutoPay\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 336
+ testRunner.And(string.Format("I am clicking on \"{0}\"", schedule_Type), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 337
+ testRunner.And(string.Format("I set value in context from database \"{0}\" as \"schedule_config\" on Schema \"{1}\"", schedule_Config, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 338
+ testRunner.And(string.Format("I have given \"{0}\" on \"Pay_Transaction_MaxBillAmount_value\"", maximum_Amount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 339
+ testRunner.And("I am clicking on \"Pay_Transaction_PayBillAmount_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 340
+ testRunner.And("I am clicking on \"Pay_Transaction_PayBillAmount_AgreeBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 341
+ testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 342
+ testRunner.And(string.Format("verify the schedule config \"{0}\" on Schema \"{1}\"", schedule_Verify, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 343
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"bene_name\"", bene_Name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 344
+ testRunner.And(string.Format("verify bene status from {0} on Schema \"{1}\"", bene_Query, db_Val2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 345
+ testRunner.And("I am clicking on \"Pay_Transaction_PayBillAmount_CloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 346
+ testRunner.And("I am clicking on \"Pay_Transaction_PayBill_Rating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 347
+ testRunner.And("I am clicking on \"Pay_Transaction_PayBill_RatingOkBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 348
+ testRunner.And(string.Format("I have given \"{0}\" on \"Pay_Transaction_PayBill_BeneSearchTextbox\"", pay_BillPayment_ConsumerNo_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 349
+ testRunner.And("verify through \"ConsumerNoContextVal\" on \"Pay_Transaction_PayBill_BeneSearchConsu" +
+                    "merNo\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 350
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 351
+ testRunner.And("I verify Account Balance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 352
+ testRunner.Then("I am verifying schedule payments of Bill Payment from My Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Bill Bene Schedule Management: When valid bill details" +
+            " are provided of Electricity where only pass is required MngSch_Bill_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Bill_WithBene.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid bill details are provided of Electricity where only pass is required M" +
+            "ngSch_Bill_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid bill details are provided of Electricity where only pass is required M" +
+            "ngSch_Bill_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Electricity Bill Payment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Company_Value", "K-ELECTRIC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Pay_BillPayment_ConsumerNo_Value", "0400000064511")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bill_Amount_query", "SELECT LB.BILL_AMOUNT, LB.COMPANY_CODE, LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CON" +
+            "SUMER_NO=\'{ConsumerNo}\' ORDER BY LB.BILLING_MONTH DESC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_code_value", "KESC0001")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_name_query", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no_query", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "06217900745803")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_type", "RETAIL")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expiry_date", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_type", "Pay_Transaction_PayBillAmount_RadioBtn")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:maximum_amount", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "Electricity only Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_query", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+            "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:instrument_type", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+            "Code}\' and i.CHANNEL_CODE=\'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_config", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL i where I.APPLICATION_PARA" +
+            "METER_ID=\'906\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_verify", @"SELECT TM.FIRST_EXECUTION_DATE,TM.LAST_EXECUTION_DATE FROM DC_SCHEDULED_TRAN_MASTER TM WHERE TM.BILL_BENEFICIARY_ID = (SELECT PB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY PB WHERE PB.CONSUMER_NUMBER = '{ConsumerNo}' AND PB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND PB.IS_ACTIVE = 1)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_label_query", "Select K.CONSUMER_NO_LABEL from BPS_COMPANY_CHANNEL K where k.COMPANY_CODE = \'{Co" +
+            "mpany_Code}\' and K.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:IS_SI_Allowed_query", "SELECT L.IS_SI_ALLOWED FROM BPS_COMPANY_CHANNEL L WHERE L.COMPANY_CODE = \'{Compan" +
+            "y_Code}\' and L.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_paid_query", "SELECT K.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL  K where k.COMPANY_COD" +
+            "E = \'{Company_Code}\' and K.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bill_status_id_query", "SELECT Z.BILL_STATUS_ID FROM LP_BILLS Z where Z.CONSUMER_NO = \'{ConsumerNo}\' ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_partial_payment_query", "Select K.IS_PARTIAL_PAYMENT_ALLOWED from BPS_COMPANY_CHANNEL K where k.COMPANY_CO" +
+            "DE =  \'{Company_Code}\'  and K.CHANNEL_CODE = \'MB\'")]
+        public virtual void AsAUserIWantToVerifyBillBeneScheduleManagement_WhenValidBillDetailsAreProvidedOfElectricityWhereOnlyPassIsRequiredMngSch_Bill_Bene()
+        {
+#line 287
+this.AsAUserIWantToVerifyBillBeneScheduleManagement("When valid bill details are provided of Electricity where only pass is required M" +
+                    "ngSch_Bill_Bene", "Pass", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "Electricity Bill Payment", "K-ELECTRIC", "0400000064511", "SELECT LB.BILL_AMOUNT, LB.COMPANY_CODE, LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CON" +
+                    "SUMER_NO=\'{ConsumerNo}\' ORDER BY LB.BILLING_MONTH DESC", "KESC0001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+                    "", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "06217900745803", "RETAIL", "", "Pay_Transaction_PayBillAmount_RadioBtn", "", "Electricity only Pass", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
                     "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
                     "Code}\' and i.CHANNEL_CODE=\'MB\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL i where I.APPLICATION_PARA" +
                     "METER_ID=\'906\'", @"SELECT TM.FIRST_EXECUTION_DATE,TM.LAST_EXECUTION_DATE FROM DC_SCHEDULED_TRAN_MASTER TM WHERE TM.BILL_BENEFICIARY_ID = (SELECT PB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY PB WHERE PB.CONSUMER_NUMBER = '{ConsumerNo}' AND PB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND PB.IS_ACTIVE = 1)", "Select K.CONSUMER_NO_LABEL from BPS_COMPANY_CHANNEL K where k.COMPANY_CODE = \'{Co" +
@@ -1159,87 +3717,1224 @@ this.AsAUserIWantToVerifyScheduleManagementAfterAddingBillPaymentSchedularWithEx
 #line hidden
         }
         
-        public virtual void AsAUserIWantToVerifyDeletingASendMoneySchedule(string @case, string db_Val, string account_No, string success_Msg, string delete_Verify_Query, string[] exampleTags)
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Bill Bene Schedule Management: When valid bill details" +
+            " are provided of Water where pass and OTP both are required MngSch_Bill_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Bill_WithBene.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid bill details are provided of Water where pass and OTP both are require" +
+            "d MngSch_Bill_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid bill details are provided of Water where pass and OTP both are require" +
+            "d MngSch_Bill_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Water / Sanitation Bill Payment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Company_Value", "KWSB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Pay_BillPayment_ConsumerNo_Value", "65009121600066")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bill_Amount_query", "SELECT LB.BILL_AMOUNT, LB.COMPANY_CODE, LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CON" +
+            "SUMER_NO=\'{ConsumerNo}\' ORDER BY LB.BILLING_MONTH DESC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_code_value", "KWSB0001")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_name_query", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no_query", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "06217900745803")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_type", "RETAIL")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expiry_date", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_type", "Pay_Transaction_PayBillAmount_RadioBtn")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:maximum_amount", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "Water Pass and OTP")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_query", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+            "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:instrument_type", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+            "Code}\' and i.CHANNEL_CODE=\'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_config", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL i where I.APPLICATION_PARA" +
+            "METER_ID=\'906\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_verify", @"SELECT TM.FIRST_EXECUTION_DATE,TM.LAST_EXECUTION_DATE FROM DC_SCHEDULED_TRAN_MASTER TM WHERE TM.BILL_BENEFICIARY_ID = (SELECT PB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY PB WHERE PB.CONSUMER_NUMBER = '{ConsumerNo}' AND PB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND PB.IS_ACTIVE = 1)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_label_query", "Select K.CONSUMER_NO_LABEL from BPS_COMPANY_CHANNEL K where k.COMPANY_CODE = \'{Co" +
+            "mpany_Code}\' and K.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:IS_SI_Allowed_query", "SELECT L.IS_SI_ALLOWED FROM BPS_COMPANY_CHANNEL L WHERE L.COMPANY_CODE = \'{Compan" +
+            "y_Code}\' and L.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_paid_query", "SELECT K.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL  K where k.COMPANY_COD" +
+            "E = \'{Company_Code}\' and K.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bill_status_id_query", "SELECT Z.BILL_STATUS_ID FROM LP_BILLS Z where Z.CONSUMER_NO = \'{ConsumerNo}\' ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_partial_payment_query", "Select K.IS_PARTIAL_PAYMENT_ALLOWED from BPS_COMPANY_CHANNEL K where k.COMPANY_CO" +
+            "DE =  \'{Company_Code}\'  and K.CHANNEL_CODE = \'MB\'")]
+        public virtual void AsAUserIWantToVerifyBillBeneScheduleManagement_WhenValidBillDetailsAreProvidedOfWaterWherePassAndOTPBothAreRequiredMngSch_Bill_Bene()
+        {
+#line 287
+this.AsAUserIWantToVerifyBillBeneScheduleManagement("When valid bill details are provided of Water where pass and OTP both are require" +
+                    "d MngSch_Bill_Bene", "Pass", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 1", "Water / Sanitation Bill Payment", "KWSB", "65009121600066", "SELECT LB.BILL_AMOUNT, LB.COMPANY_CODE, LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CON" +
+                    "SUMER_NO=\'{ConsumerNo}\' ORDER BY LB.BILLING_MONTH DESC", "KWSB0001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+                    "", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "06217900745803", "RETAIL", "", "Pay_Transaction_PayBillAmount_RadioBtn", "", "Water Pass and OTP", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+                    "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+                    "Code}\' and i.CHANNEL_CODE=\'MB\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL i where I.APPLICATION_PARA" +
+                    "METER_ID=\'906\'", @"SELECT TM.FIRST_EXECUTION_DATE,TM.LAST_EXECUTION_DATE FROM DC_SCHEDULED_TRAN_MASTER TM WHERE TM.BILL_BENEFICIARY_ID = (SELECT PB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY PB WHERE PB.CONSUMER_NUMBER = '{ConsumerNo}' AND PB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND PB.IS_ACTIVE = 1)", "Select K.CONSUMER_NO_LABEL from BPS_COMPANY_CHANNEL K where k.COMPANY_CODE = \'{Co" +
+                    "mpany_Code}\' and K.CHANNEL_CODE = \'MB\'", "SELECT L.IS_SI_ALLOWED FROM BPS_COMPANY_CHANNEL L WHERE L.COMPANY_CODE = \'{Compan" +
+                    "y_Code}\' and L.CHANNEL_CODE = \'MB\'", "SELECT K.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL  K where k.COMPANY_COD" +
+                    "E = \'{Company_Code}\' and K.CHANNEL_CODE = \'MB\'", "SELECT Z.BILL_STATUS_ID FROM LP_BILLS Z where Z.CONSUMER_NO = \'{ConsumerNo}\' ", "Select K.IS_PARTIAL_PAYMENT_ALLOWED from BPS_COMPANY_CHANNEL K where k.COMPANY_CO" +
+                    "DE =  \'{Company_Code}\'  and K.CHANNEL_CODE = \'MB\'", new string[] {
+                        "source:Data/ManageSchedule_Bill_WithBene.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Bill Bene Schedule Management: When valid bill details" +
+            " are provided Gas where only OTP is required MngSch_Bill_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Bill_WithBene.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid bill details are provided Gas where only OTP is required MngSch_Bill_B" +
+            "ene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid bill details are provided Gas where only OTP is required MngSch_Bill_B" +
+            "ene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Gas Bill Payment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Company_Value", "SSGC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Pay_BillPayment_ConsumerNo_Value", "0003950000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bill_Amount_query", "SELECT LB.BILL_AMOUNT, LB.COMPANY_CODE, LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CON" +
+            "SUMER_NO=\'{ConsumerNo}\' ORDER BY LB.BILLING_MONTH DESC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_code_value", "SSGC0001")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_name_query", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no_query", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "06217900745803")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_type", "RETAIL")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expiry_date", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_type", "Pay_Transaction_PayBillAmount_RadioBtn")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:maximum_amount", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "Gas Only OTP")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_query", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+            "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:instrument_type", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+            "Code}\' and i.CHANNEL_CODE=\'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_config", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL i where I.APPLICATION_PARA" +
+            "METER_ID=\'906\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_verify", @"SELECT TM.FIRST_EXECUTION_DATE,TM.LAST_EXECUTION_DATE FROM DC_SCHEDULED_TRAN_MASTER TM WHERE TM.BILL_BENEFICIARY_ID = (SELECT PB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY PB WHERE PB.CONSUMER_NUMBER = '{ConsumerNo}' AND PB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND PB.IS_ACTIVE = 1)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_label_query", "Select K.CONSUMER_NO_LABEL from BPS_COMPANY_CHANNEL K where k.COMPANY_CODE = \'{Co" +
+            "mpany_Code}\' and K.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:IS_SI_Allowed_query", "SELECT L.IS_SI_ALLOWED FROM BPS_COMPANY_CHANNEL L WHERE L.COMPANY_CODE = \'{Compan" +
+            "y_Code}\' and L.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_paid_query", "SELECT K.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL  K where k.COMPANY_COD" +
+            "E = \'{Company_Code}\' and K.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bill_status_id_query", "SELECT Z.BILL_STATUS_ID FROM LP_BILLS Z where Z.CONSUMER_NO = \'{ConsumerNo}\' ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_partial_payment_query", "Select K.IS_PARTIAL_PAYMENT_ALLOWED from BPS_COMPANY_CHANNEL K where k.COMPANY_CO" +
+            "DE =  \'{Company_Code}\'  and K.CHANNEL_CODE = \'MB\'")]
+        public virtual void AsAUserIWantToVerifyBillBeneScheduleManagement_WhenValidBillDetailsAreProvidedGasWhereOnlyOTPIsRequiredMngSch_Bill_Bene()
+        {
+#line 287
+this.AsAUserIWantToVerifyBillBeneScheduleManagement("When valid bill details are provided Gas where only OTP is required MngSch_Bill_B" +
+                    "ene", "Pass", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 2", "Gas Bill Payment", "SSGC", "0003950000", "SELECT LB.BILL_AMOUNT, LB.COMPANY_CODE, LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CON" +
+                    "SUMER_NO=\'{ConsumerNo}\' ORDER BY LB.BILLING_MONTH DESC", "SSGC0001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+                    "", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "06217900745803", "RETAIL", "", "Pay_Transaction_PayBillAmount_RadioBtn", "", "Gas Only OTP", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+                    "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+                    "Code}\' and i.CHANNEL_CODE=\'MB\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL i where I.APPLICATION_PARA" +
+                    "METER_ID=\'906\'", @"SELECT TM.FIRST_EXECUTION_DATE,TM.LAST_EXECUTION_DATE FROM DC_SCHEDULED_TRAN_MASTER TM WHERE TM.BILL_BENEFICIARY_ID = (SELECT PB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY PB WHERE PB.CONSUMER_NUMBER = '{ConsumerNo}' AND PB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND PB.IS_ACTIVE = 1)", "Select K.CONSUMER_NO_LABEL from BPS_COMPANY_CHANNEL K where k.COMPANY_CODE = \'{Co" +
+                    "mpany_Code}\' and K.CHANNEL_CODE = \'MB\'", "SELECT L.IS_SI_ALLOWED FROM BPS_COMPANY_CHANNEL L WHERE L.COMPANY_CODE = \'{Compan" +
+                    "y_Code}\' and L.CHANNEL_CODE = \'MB\'", "SELECT K.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL  K where k.COMPANY_COD" +
+                    "E = \'{Company_Code}\' and K.CHANNEL_CODE = \'MB\'", "SELECT Z.BILL_STATUS_ID FROM LP_BILLS Z where Z.CONSUMER_NO = \'{ConsumerNo}\' ", "Select K.IS_PARTIAL_PAYMENT_ALLOWED from BPS_COMPANY_CHANNEL K where k.COMPANY_CO" +
+                    "DE =  \'{Company_Code}\'  and K.CHANNEL_CODE = \'MB\'", new string[] {
+                        "source:Data/ManageSchedule_Bill_WithBene.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Bill Bene Schedule Management: When valid bill details" +
+            " are provided Landline where OTP and pass NOT required MngSch_Bill_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Bill_WithBene.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid bill details are provided Landline where OTP and pass NOT required Mng" +
+            "Sch_Bill_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid bill details are provided Landline where OTP and pass NOT required Mng" +
+            "Sch_Bill_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Landline Bill Payment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Company_Value", "SCO")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Pay_BillPayment_ConsumerNo_Value", "1756155")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bill_Amount_query", "SELECT LB.BILL_AMOUNT, LB.COMPANY_CODE, LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CON" +
+            "SUMER_NO=\'{ConsumerNo}\' ORDER BY LB.BILLING_MONTH DESC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_code_value", "SCO00001")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_name_query", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no_query", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "06217900745803")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_type", "RETAIL")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expiry_date", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_type", "Pay_Transaction_PayBillAmount_RadioBtn")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:maximum_amount", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "Landline No Pass OTP")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_query", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+            "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:instrument_type", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+            "Code}\' and i.CHANNEL_CODE=\'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_config", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL i where I.APPLICATION_PARA" +
+            "METER_ID=\'906\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_verify", @"SELECT TM.FIRST_EXECUTION_DATE,TM.LAST_EXECUTION_DATE FROM DC_SCHEDULED_TRAN_MASTER TM WHERE TM.BILL_BENEFICIARY_ID = (SELECT PB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY PB WHERE PB.CONSUMER_NUMBER = '{ConsumerNo}' AND PB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND PB.IS_ACTIVE = 1)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_label_query", "Select K.CONSUMER_NO_LABEL from BPS_COMPANY_CHANNEL K where k.COMPANY_CODE = \'{Co" +
+            "mpany_Code}\' and K.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:IS_SI_Allowed_query", "SELECT L.IS_SI_ALLOWED FROM BPS_COMPANY_CHANNEL L WHERE L.COMPANY_CODE = \'{Compan" +
+            "y_Code}\' and L.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_paid_query", "SELECT K.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL  K where k.COMPANY_COD" +
+            "E = \'{Company_Code}\' and K.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bill_status_id_query", "SELECT Z.BILL_STATUS_ID FROM LP_BILLS Z where Z.CONSUMER_NO = \'{ConsumerNo}\' ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_partial_payment_query", "Select K.IS_PARTIAL_PAYMENT_ALLOWED from BPS_COMPANY_CHANNEL K where k.COMPANY_CO" +
+            "DE =  \'{Company_Code}\'  and K.CHANNEL_CODE = \'MB\'")]
+        public virtual void AsAUserIWantToVerifyBillBeneScheduleManagement_WhenValidBillDetailsAreProvidedLandlineWhereOTPAndPassNOTRequiredMngSch_Bill_Bene()
+        {
+#line 287
+this.AsAUserIWantToVerifyBillBeneScheduleManagement("When valid bill details are provided Landline where OTP and pass NOT required Mng" +
+                    "Sch_Bill_Bene", "Pass", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 3", "Landline Bill Payment", "SCO", "1756155", "SELECT LB.BILL_AMOUNT, LB.COMPANY_CODE, LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CON" +
+                    "SUMER_NO=\'{ConsumerNo}\' ORDER BY LB.BILLING_MONTH DESC", "SCO00001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+                    "", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "06217900745803", "RETAIL", "", "Pay_Transaction_PayBillAmount_RadioBtn", "", "Landline No Pass OTP", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+                    "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+                    "Code}\' and i.CHANNEL_CODE=\'MB\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL i where I.APPLICATION_PARA" +
+                    "METER_ID=\'906\'", @"SELECT TM.FIRST_EXECUTION_DATE,TM.LAST_EXECUTION_DATE FROM DC_SCHEDULED_TRAN_MASTER TM WHERE TM.BILL_BENEFICIARY_ID = (SELECT PB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY PB WHERE PB.CONSUMER_NUMBER = '{ConsumerNo}' AND PB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND PB.IS_ACTIVE = 1)", "Select K.CONSUMER_NO_LABEL from BPS_COMPANY_CHANNEL K where k.COMPANY_CODE = \'{Co" +
+                    "mpany_Code}\' and K.CHANNEL_CODE = \'MB\'", "SELECT L.IS_SI_ALLOWED FROM BPS_COMPANY_CHANNEL L WHERE L.COMPANY_CODE = \'{Compan" +
+                    "y_Code}\' and L.CHANNEL_CODE = \'MB\'", "SELECT K.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL  K where k.COMPANY_COD" +
+                    "E = \'{Company_Code}\' and K.CHANNEL_CODE = \'MB\'", "SELECT Z.BILL_STATUS_ID FROM LP_BILLS Z where Z.CONSUMER_NO = \'{ConsumerNo}\' ", "Select K.IS_PARTIAL_PAYMENT_ALLOWED from BPS_COMPANY_CHANNEL K where k.COMPANY_CO" +
+                    "DE =  \'{Company_Code}\'  and K.CHANNEL_CODE = \'MB\'", new string[] {
+                        "source:Data/ManageSchedule_Bill_WithBene.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Bill Bene Schedule Management: When valid bill details" +
+            " Gas max amount 5 lac only OTP MngSch_Bill_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Bill_WithBene.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid bill details Gas max amount 5 lac only OTP MngSch_Bill_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid bill details Gas max amount 5 lac only OTP MngSch_Bill_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 4")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Gas Bill Payment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Company_Value", "SSGC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Pay_BillPayment_ConsumerNo_Value", "0318660000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bill_Amount_query", "SELECT LB.BILL_AMOUNT, LB.COMPANY_CODE, LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CON" +
+            "SUMER_NO=\'{ConsumerNo}\' ORDER BY LB.BILLING_MONTH DESC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_code_value", "SSGC0001")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_name_query", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no_query", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "06217900745803")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_type", "RETAIL")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expiry_date", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_type", "Pay_Transaction_MaxBillAmount_RadioBtn")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:maximum_amount", "500000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "max amount 5 lac")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_query", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+            "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:instrument_type", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+            "Code}\' and i.CHANNEL_CODE=\'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_config", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL i where I.APPLICATION_PARA" +
+            "METER_ID=\'906\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_verify", @"SELECT TM.FIRST_EXECUTION_DATE,TM.LAST_EXECUTION_DATE FROM DC_SCHEDULED_TRAN_MASTER TM WHERE TM.BILL_BENEFICIARY_ID = (SELECT PB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY PB WHERE PB.CONSUMER_NUMBER = '{ConsumerNo}' AND PB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND PB.IS_ACTIVE = 1)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_label_query", "Select K.CONSUMER_NO_LABEL from BPS_COMPANY_CHANNEL K where k.COMPANY_CODE = \'{Co" +
+            "mpany_Code}\' and K.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:IS_SI_Allowed_query", "SELECT L.IS_SI_ALLOWED FROM BPS_COMPANY_CHANNEL L WHERE L.COMPANY_CODE = \'{Compan" +
+            "y_Code}\' and L.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_paid_query", "SELECT K.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL  K where k.COMPANY_COD" +
+            "E = \'{Company_Code}\' and K.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bill_status_id_query", "SELECT Z.BILL_STATUS_ID FROM LP_BILLS Z where Z.CONSUMER_NO = \'{ConsumerNo}\' ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_partial_payment_query", "Select K.IS_PARTIAL_PAYMENT_ALLOWED from BPS_COMPANY_CHANNEL K where k.COMPANY_CO" +
+            "DE =  \'{Company_Code}\'  and K.CHANNEL_CODE = \'MB\'")]
+        public virtual void AsAUserIWantToVerifyBillBeneScheduleManagement_WhenValidBillDetailsGasMaxAmount5LacOnlyOTPMngSch_Bill_Bene()
+        {
+#line 287
+this.AsAUserIWantToVerifyBillBeneScheduleManagement("When valid bill details Gas max amount 5 lac only OTP MngSch_Bill_Bene", "Pass", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 4", "Gas Bill Payment", "SSGC", "0318660000", "SELECT LB.BILL_AMOUNT, LB.COMPANY_CODE, LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CON" +
+                    "SUMER_NO=\'{ConsumerNo}\' ORDER BY LB.BILLING_MONTH DESC", "SSGC0001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+                    "", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "06217900745803", "RETAIL", "", "Pay_Transaction_MaxBillAmount_RadioBtn", "500000", "max amount 5 lac", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+                    "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+                    "Code}\' and i.CHANNEL_CODE=\'MB\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL i where I.APPLICATION_PARA" +
+                    "METER_ID=\'906\'", @"SELECT TM.FIRST_EXECUTION_DATE,TM.LAST_EXECUTION_DATE FROM DC_SCHEDULED_TRAN_MASTER TM WHERE TM.BILL_BENEFICIARY_ID = (SELECT PB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY PB WHERE PB.CONSUMER_NUMBER = '{ConsumerNo}' AND PB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND PB.IS_ACTIVE = 1)", "Select K.CONSUMER_NO_LABEL from BPS_COMPANY_CHANNEL K where k.COMPANY_CODE = \'{Co" +
+                    "mpany_Code}\' and K.CHANNEL_CODE = \'MB\'", "SELECT L.IS_SI_ALLOWED FROM BPS_COMPANY_CHANNEL L WHERE L.COMPANY_CODE = \'{Compan" +
+                    "y_Code}\' and L.CHANNEL_CODE = \'MB\'", "SELECT K.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL  K where k.COMPANY_COD" +
+                    "E = \'{Company_Code}\' and K.CHANNEL_CODE = \'MB\'", "SELECT Z.BILL_STATUS_ID FROM LP_BILLS Z where Z.CONSUMER_NO = \'{ConsumerNo}\' ", "Select K.IS_PARTIAL_PAYMENT_ALLOWED from BPS_COMPANY_CHANNEL K where k.COMPANY_CO" +
+                    "DE =  \'{Company_Code}\'  and K.CHANNEL_CODE = \'MB\'", new string[] {
+                        "source:Data/ManageSchedule_Bill_WithBene.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Bill Bene Schedule Management: When valid bill details" +
+            " are provided of Water where pass and OTP max amount 10 MngSch_Bill_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Bill_WithBene.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid bill details are provided of Water where pass and OTP max amount 10 Mn" +
+            "gSch_Bill_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid bill details are provided of Water where pass and OTP max amount 10 Mn" +
+            "gSch_Bill_Bene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_count_query", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+            "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+            "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 5")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Category_Value", "Water / Sanitation Bill Payment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Company_Value", "KWSB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Pay_BillPayment_ConsumerNo_Value", "65009121500021")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bill_Amount_query", "SELECT LB.BILL_AMOUNT, LB.COMPANY_CODE, LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CON" +
+            "SUMER_NO=\'{ConsumerNo}\' ORDER BY LB.BILLING_MONTH DESC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_code_value", "KWSB0001")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_pass_value", "pakistan2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_amount_query", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:from_account_query", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:company_name_query", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no_query", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val2", "QAT_BPS")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "06217900745803")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_type", "RETAIL")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expiry_date", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_type", "Pay_Transaction_MaxBillAmount_RadioBtn")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:maximum_amount", "10")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_name", "Max amount 10")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_query", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+            "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:instrument_type", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+            "Code}\' and i.CHANNEL_CODE=\'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_config", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL i where I.APPLICATION_PARA" +
+            "METER_ID=\'906\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_verify", @"SELECT TM.FIRST_EXECUTION_DATE,TM.LAST_EXECUTION_DATE FROM DC_SCHEDULED_TRAN_MASTER TM WHERE TM.BILL_BENEFICIARY_ID = (SELECT PB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY PB WHERE PB.CONSUMER_NUMBER = '{ConsumerNo}' AND PB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND PB.IS_ACTIVE = 1)")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_label_query", "Select K.CONSUMER_NO_LABEL from BPS_COMPANY_CHANNEL K where k.COMPANY_CODE = \'{Co" +
+            "mpany_Code}\' and K.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:IS_SI_Allowed_query", "SELECT L.IS_SI_ALLOWED FROM BPS_COMPANY_CHANNEL L WHERE L.COMPANY_CODE = \'{Compan" +
+            "y_Code}\' and L.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_paid_query", "SELECT K.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL  K where k.COMPANY_COD" +
+            "E = \'{Company_Code}\' and K.CHANNEL_CODE = \'MB\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bill_status_id_query", "SELECT Z.BILL_STATUS_ID FROM LP_BILLS Z where Z.CONSUMER_NO = \'{ConsumerNo}\' ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:is_partial_payment_query", "Select K.IS_PARTIAL_PAYMENT_ALLOWED from BPS_COMPANY_CHANNEL K where k.COMPANY_CO" +
+            "DE =  \'{Company_Code}\'  and K.CHANNEL_CODE = \'MB\'")]
+        public virtual void AsAUserIWantToVerifyBillBeneScheduleManagement_WhenValidBillDetailsAreProvidedOfWaterWherePassAndOTPMaxAmount10MngSch_Bill_Bene()
+        {
+#line 287
+this.AsAUserIWantToVerifyBillBeneScheduleManagement("When valid bill details are provided of Water where pass and OTP max amount 10 Mn" +
+                    "gSch_Bill_Bene", "Pass", "SELECT count(*) FROM DC_SCHEDULED_TRAN_MASTER TM where TM.CUSTOMER_INFO_ID = (SEL" +
+                    "ECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = \'{cust" +
+                    "omer_name}\') and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 5", "Water / Sanitation Bill Payment", "KWSB", "65009121500021", "SELECT LB.BILL_AMOUNT, LB.COMPANY_CODE, LB.DUE_DATE FROM LP_BILLS LB WHERE LB.CON" +
+                    "SUMER_NO=\'{ConsumerNo}\' ORDER BY LB.BILLING_MONTH DESC", "KWSB0001", "12345678", "pakistan2", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_COMPANY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.BILL_CONSUMER_NUMBER FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'" +
+                    "", "DIGITAL_CHANNEL_SEC", "QAT_BPS", "06217900745803", "RETAIL", "", "Pay_Transaction_MaxBillAmount_RadioBtn", "10", "Max amount 10", "SELECT CC.IS_RECURRING_PAYMENT FROM BPS_COMPANY_CHANNEL CC WHERE CC.COMPANY_CODE " +
+                    "= \'{Company_Code}\' AND CC.CHANNEL_CODE = \'MB\'", "Select Instrument_type from BPS_COMPANY_CHANNEL i where i.COMPANY_CODE=\'{Company_" +
+                    "Code}\' and i.CHANNEL_CODE=\'MB\'", "Select PARAMTER_VALUE from DC_APPLICATION_PARAM_DETAIL i where I.APPLICATION_PARA" +
+                    "METER_ID=\'906\'", @"SELECT TM.FIRST_EXECUTION_DATE,TM.LAST_EXECUTION_DATE FROM DC_SCHEDULED_TRAN_MASTER TM WHERE TM.BILL_BENEFICIARY_ID = (SELECT PB.BENEFICIARY_ID FROM DC_BILL_PAYMENT_BENEFICIARY PB WHERE PB.CONSUMER_NUMBER = '{ConsumerNo}' AND PB.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') AND PB.IS_ACTIVE = 1)", "Select K.CONSUMER_NO_LABEL from BPS_COMPANY_CHANNEL K where k.COMPANY_CODE = \'{Co" +
+                    "mpany_Code}\' and K.CHANNEL_CODE = \'MB\'", "SELECT L.IS_SI_ALLOWED FROM BPS_COMPANY_CHANNEL L WHERE L.COMPANY_CODE = \'{Compan" +
+                    "y_Code}\' and L.CHANNEL_CODE = \'MB\'", "SELECT K.IS_PAID_MARKING_REQUIRED FROM BPS_COMPANY_CHANNEL  K where k.COMPANY_COD" +
+                    "E = \'{Company_Code}\' and K.CHANNEL_CODE = \'MB\'", "SELECT Z.BILL_STATUS_ID FROM LP_BILLS Z where Z.CONSUMER_NO = \'{ConsumerNo}\' ", "Select K.IS_PARTIAL_PAYMENT_ALLOWED from BPS_COMPANY_CHANNEL K where k.COMPANY_CO" +
+                    "DE =  \'{Company_Code}\'  and K.CHANNEL_CODE = \'MB\'", new string[] {
+                        "source:Data/ManageSchedule_Bill_WithBene.xlsx"});
+#line hidden
+        }
+        
+        public virtual void AsAUserIWantToVerifyDeletingASendMoneySchedule(string @case, string expected_Result, string db_Val, string account_No, string success_Msg, string delete_Verify_Query, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "MngSchedule"};
+                    "MngSchedule",
+                    "MngSchedule_Send_Delete"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user I want to verify deleting a Send Money Schedule", @__tags);
-#line 327
+#line 361
 this.ScenarioSetup(scenarioInfo);
-#line 328
+#line 362
  testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 329
+#line 363
+ testRunner.And(string.Format("the test case expected result is \"{0}\"", expected_Result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 364
  testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 331
+#line 366
  testRunner.And(string.Format("I set value in context from data \"{0}\" as \"Bene_AccountNo\"", account_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 332
+#line 367
  testRunner.When("I am clicking on \"MyAccount_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 333
+#line 368
  testRunner.And("I am clicking on \"MyAccount_MngSch_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 334
+#line 369
  testRunner.Then("I am performing \"OK\" alert operation on cross icon on \"MyAccount_MngSch_Delete\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 335
+#line 370
  testRunner.And(string.Format("verify through \"{0}\" on \"MyAccount_MngSch_DeleteMsg\"", success_Msg), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 336
+#line 371
  testRunner.And("I am performing on \"MyAccount_MngSch_DeleteOkBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 337
+#line 372
  testRunner.And(string.Format("verify the message \"1\" through database on \"{0}\" on Schema \"{1}\"", delete_Verify_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Send Money Schedule: As a user I want to ve" +
-            "rify deleting a scheduled payment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Send Money Schedule: Verify deleting a send" +
+            " money schedule with all valid details Mng_Send_Delete")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_SendMoney.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify deleting a scheduled payment")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify deleting a scheduled payment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify deleting a send money schedule with all valid details Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify deleting a send money schedule with all valid details Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "69069109100038")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "00147900721001")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ")]
-        public virtual void AsAUserIWantToVerifyDeletingASendMoneySchedule_AsAUserIWantToVerifyDeletingAScheduledPayment()
+        public virtual void AsAUserIWantToVerifyDeletingASendMoneySchedule_VerifyDeletingASendMoneyScheduleWithAllValidDetailsMng_Send_Delete()
         {
-#line 327
-this.AsAUserIWantToVerifyDeletingASendMoneySchedule("As a user I want to verify deleting a scheduled payment", "DIGITAL_CHANNEL_SEC", "69069109100038", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ", new string[] {
+#line 361
+this.AsAUserIWantToVerifyDeletingASendMoneySchedule("Verify deleting a send money schedule with all valid details Mng_Send_Delete", "Pass", "DIGITAL_CHANNEL_SEC", "00147900721001", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ", new string[] {
                         "source:Data/ManageSchedule_Delete_SendMoney.xlsx"});
 #line hidden
         }
         
-        public virtual void AsAUserIWantToVerifyDeletingABillPaymentSchedule(string @case, string db_Val, string consumer_No, string success_Msg, string delete_Verify_Query, string[] exampleTags)
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Send Money Schedule: Verify deleting a send" +
+            " money schedule with all valid details iban Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify deleting a send money schedule with all valid details iban Mng_Send_Delete" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify deleting a send money schedule with all valid details iban Mng_Send_Delete" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK50HABB0013227900983503")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingASendMoneySchedule_VerifyDeletingASendMoneyScheduleWithAllValidDetailsIbanMng_Send_Delete()
+        {
+#line 361
+this.AsAUserIWantToVerifyDeletingASendMoneySchedule("Verify deleting a send money schedule with all valid details iban Mng_Send_Delete" +
+                    "", "Pass", "DIGITAL_CHANNEL_SEC", "PK50HABB0013227900983503", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Send Money Schedule: Verify deleting a send" +
+            " money schedule HBL Acc Daily Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify deleting a send money schedule HBL Acc Daily Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify deleting a send money schedule HBL Acc Daily Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "23457913894303")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingASendMoneySchedule_VerifyDeletingASendMoneyScheduleHBLAccDailyMng_Send_Delete()
+        {
+#line 361
+this.AsAUserIWantToVerifyDeletingASendMoneySchedule("Verify deleting a send money schedule HBL Acc Daily Mng_Send_Delete", "Pass", "DIGITAL_CHANNEL_SEC", "23457913894303", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Send Money Schedule: Verify deleting a send" +
+            " money schedule HBL Acc Weekly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify deleting a send money schedule HBL Acc Weekly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify deleting a send money schedule HBL Acc Weekly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "08497900068901")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingASendMoneySchedule_VerifyDeletingASendMoneyScheduleHBLAccWeeklyMng_Send_Delete()
+        {
+#line 361
+this.AsAUserIWantToVerifyDeletingASendMoneySchedule("Verify deleting a send money schedule HBL Acc Weekly Mng_Send_Delete", "Pass", "DIGITAL_CHANNEL_SEC", "08497900068901", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Send Money Schedule: Verify deleting a send" +
+            " money schedule HBL Acc Fortnightly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify deleting a send money schedule HBL Acc Fortnightly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify deleting a send money schedule HBL Acc Fortnightly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "00277900350711")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingASendMoneySchedule_VerifyDeletingASendMoneyScheduleHBLAccFortnightlyMng_Send_Delete()
+        {
+#line 361
+this.AsAUserIWantToVerifyDeletingASendMoneySchedule("Verify deleting a send money schedule HBL Acc Fortnightly Mng_Send_Delete", "Pass", "DIGITAL_CHANNEL_SEC", "00277900350711", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Send Money Schedule: Verify deleting a send" +
+            " money schedule HBL Acc Monthly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify deleting a send money schedule HBL Acc Monthly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify deleting a send money schedule HBL Acc Monthly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "07867901527301")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingASendMoneySchedule_VerifyDeletingASendMoneyScheduleHBLAccMonthlyMng_Send_Delete()
+        {
+#line 361
+this.AsAUserIWantToVerifyDeletingASendMoneySchedule("Verify deleting a send money schedule HBL Acc Monthly Mng_Send_Delete", "Pass", "DIGITAL_CHANNEL_SEC", "07867901527301", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Send Money Schedule: Verify deleting a send" +
+            " money schedule HBL Acc Quarterly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify deleting a send money schedule HBL Acc Quarterly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify deleting a send money schedule HBL Acc Quarterly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "07867916249703")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingASendMoneySchedule_VerifyDeletingASendMoneyScheduleHBLAccQuarterlyMng_Send_Delete()
+        {
+#line 361
+this.AsAUserIWantToVerifyDeletingASendMoneySchedule("Verify deleting a send money schedule HBL Acc Quarterly Mng_Send_Delete", "Pass", "DIGITAL_CHANNEL_SEC", "07867916249703", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Send Money Schedule: Verify deleting a send" +
+            " money schedule IBFT Acc Daily Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify deleting a send money schedule IBFT Acc Daily Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify deleting a send money schedule IBFT Acc Daily Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "02800320004636")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingASendMoneySchedule_VerifyDeletingASendMoneyScheduleIBFTAccDailyMng_Send_Delete()
+        {
+#line 361
+this.AsAUserIWantToVerifyDeletingASendMoneySchedule("Verify deleting a send money schedule IBFT Acc Daily Mng_Send_Delete", "Pass", "DIGITAL_CHANNEL_SEC", "02800320004636", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Send Money Schedule: Verify deleting a send" +
+            " money schedule IBFT Acc Weekly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify deleting a send money schedule IBFT Acc Weekly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify deleting a send money schedule IBFT Acc Weekly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "0605060510946074")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingASendMoneySchedule_VerifyDeletingASendMoneyScheduleIBFTAccWeeklyMng_Send_Delete()
+        {
+#line 361
+this.AsAUserIWantToVerifyDeletingASendMoneySchedule("Verify deleting a send money schedule IBFT Acc Weekly Mng_Send_Delete", "Pass", "DIGITAL_CHANNEL_SEC", "0605060510946074", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Send Money Schedule: Verify deleting a send" +
+            " money schedule IBFT Acc Fortnightly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify deleting a send money schedule IBFT Acc Fortnightly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify deleting a send money schedule IBFT Acc Fortnightly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "01719020101")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingASendMoneySchedule_VerifyDeletingASendMoneyScheduleIBFTAccFortnightlyMng_Send_Delete()
+        {
+#line 361
+this.AsAUserIWantToVerifyDeletingASendMoneySchedule("Verify deleting a send money schedule IBFT Acc Fortnightly Mng_Send_Delete", "Pass", "DIGITAL_CHANNEL_SEC", "01719020101", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Send Money Schedule: Verify deleting a send" +
+            " money schedule IBFT Acc Monthly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify deleting a send money schedule IBFT Acc Monthly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify deleting a send money schedule IBFT Acc Monthly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "100605050300201")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingASendMoneySchedule_VerifyDeletingASendMoneyScheduleIBFTAccMonthlyMng_Send_Delete()
+        {
+#line 361
+this.AsAUserIWantToVerifyDeletingASendMoneySchedule("Verify deleting a send money schedule IBFT Acc Monthly Mng_Send_Delete", "Pass", "DIGITAL_CHANNEL_SEC", "100605050300201", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Send Money Schedule: Verify deleting a send" +
+            " money schedule IBFT Acc Quarterly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify deleting a send money schedule IBFT Acc Quarterly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify deleting a send money schedule IBFT Acc Quarterly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "0300777261006679")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingASendMoneySchedule_VerifyDeletingASendMoneyScheduleIBFTAccQuarterlyMng_Send_Delete()
+        {
+#line 361
+this.AsAUserIWantToVerifyDeletingASendMoneySchedule("Verify deleting a send money schedule IBFT Acc Quarterly Mng_Send_Delete", "Pass", "DIGITAL_CHANNEL_SEC", "0300777261006679", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Send Money Schedule: Verify deleting a send" +
+            " money schedule IBFT via IBAN Acc Daily Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify deleting a send money schedule IBFT via IBAN Acc Daily Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify deleting a send money schedule IBFT via IBAN Acc Daily Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK27BAHL1083009501262002")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingASendMoneySchedule_VerifyDeletingASendMoneyScheduleIBFTViaIBANAccDailyMng_Send_Delete()
+        {
+#line 361
+this.AsAUserIWantToVerifyDeletingASendMoneySchedule("Verify deleting a send money schedule IBFT via IBAN Acc Daily Mng_Send_Delete", "Pass", "DIGITAL_CHANNEL_SEC", "PK27BAHL1083009501262002", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Send Money Schedule: Verify deleting a send" +
+            " money schedule IBFT via IBAN Acc Weekly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify deleting a send money schedule IBFT via IBAN Acc Weekly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify deleting a send money schedule IBFT via IBAN Acc Weekly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK97BAHL1108009500890601")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingASendMoneySchedule_VerifyDeletingASendMoneyScheduleIBFTViaIBANAccWeeklyMng_Send_Delete()
+        {
+#line 361
+this.AsAUserIWantToVerifyDeletingASendMoneySchedule("Verify deleting a send money schedule IBFT via IBAN Acc Weekly Mng_Send_Delete", "Pass", "DIGITAL_CHANNEL_SEC", "PK97BAHL1108009500890601", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Send Money Schedule: Verify deleting a send" +
+            " money schedule IBFT via IBAN Acc Fortnightly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify deleting a send money schedule IBFT via IBAN Acc Fortnightly Mng_Send_Dele" +
+            "te")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify deleting a send money schedule IBFT via IBAN Acc Fortnightly Mng_Send_Dele" +
+            "te")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK48BAHL0070009500457801")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingASendMoneySchedule_VerifyDeletingASendMoneyScheduleIBFTViaIBANAccFortnightlyMng_Send_Delete()
+        {
+#line 361
+this.AsAUserIWantToVerifyDeletingASendMoneySchedule("Verify deleting a send money schedule IBFT via IBAN Acc Fortnightly Mng_Send_Dele" +
+                    "te", "Pass", "DIGITAL_CHANNEL_SEC", "PK48BAHL0070009500457801", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Send Money Schedule: Verify deleting a send" +
+            " money schedule IBFT via IBAN Acc Monthly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify deleting a send money schedule IBFT via IBAN Acc Monthly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify deleting a send money schedule IBFT via IBAN Acc Monthly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK97BAHL1108009500890601")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingASendMoneySchedule_VerifyDeletingASendMoneyScheduleIBFTViaIBANAccMonthlyMng_Send_Delete()
+        {
+#line 361
+this.AsAUserIWantToVerifyDeletingASendMoneySchedule("Verify deleting a send money schedule IBFT via IBAN Acc Monthly Mng_Send_Delete", "Pass", "DIGITAL_CHANNEL_SEC", "PK97BAHL1108009500890601", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Send Money Schedule: Verify deleting a send" +
+            " money schedule IBFT via IBAN Acc Quarterly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify deleting a send money schedule IBFT via IBAN Acc Quarterly Mng_Send_Delete" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify deleting a send money schedule IBFT via IBAN Acc Quarterly Mng_Send_Delete" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK27BAHL1083009501262002")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingASendMoneySchedule_VerifyDeletingASendMoneyScheduleIBFTViaIBANAccQuarterlyMng_Send_Delete()
+        {
+#line 361
+this.AsAUserIWantToVerifyDeletingASendMoneySchedule("Verify deleting a send money schedule IBFT via IBAN Acc Quarterly Mng_Send_Delete" +
+                    "", "Pass", "DIGITAL_CHANNEL_SEC", "PK27BAHL1083009501262002", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Send Money Schedule: Verify deleting a send" +
+            " money schedule LOAN Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify deleting a send money schedule LOAN Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify deleting a send money schedule LOAN Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "22667230559903")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingASendMoneySchedule_VerifyDeletingASendMoneyScheduleLOANMng_Send_Delete()
+        {
+#line 361
+this.AsAUserIWantToVerifyDeletingASendMoneySchedule("Verify deleting a send money schedule LOAN Mng_Send_Delete", "Pass", "DIGITAL_CHANNEL_SEC", "22667230559903", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Send Money Schedule: Verify deleting a send" +
+            " money schedule FCY Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify deleting a send money schedule FCY Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify deleting a send money schedule FCY Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "23087900855910")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingASendMoneySchedule_VerifyDeletingASendMoneyScheduleFCYMng_Send_Delete()
+        {
+#line 361
+this.AsAUserIWantToVerifyDeletingASendMoneySchedule("Verify deleting a send money schedule FCY Mng_Send_Delete", "Pass", "DIGITAL_CHANNEL_SEC", "23087900855910", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Send Money Schedule: Verify deleting a send" +
+            " money schedule MONEY CLUB Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify deleting a send money schedule MONEY CLUB Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify deleting a send money schedule MONEY CLUB Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "12497900564101")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingASendMoneySchedule_VerifyDeletingASendMoneyScheduleMONEYCLUBMng_Send_Delete()
+        {
+#line 361
+this.AsAUserIWantToVerifyDeletingASendMoneySchedule("Verify deleting a send money schedule MONEY CLUB Mng_Send_Delete", "Pass", "DIGITAL_CHANNEL_SEC", "12497900564101", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Send Money Schedule: Verify deleting a send" +
+            " money schedule BRANCHLESS Konnect Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify deleting a send money schedule BRANCHLESS Konnect Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify deleting a send money schedule BRANCHLESS Konnect Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "03334900125")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingASendMoneySchedule_VerifyDeletingASendMoneyScheduleBRANCHLESSKonnectMng_Send_Delete()
+        {
+#line 361
+this.AsAUserIWantToVerifyDeletingASendMoneySchedule("Verify deleting a send money schedule BRANCHLESS Konnect Mng_Send_Delete", "Pass", "DIGITAL_CHANNEL_SEC", "03334900125", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Send Money Schedule: Verify deleting a send" +
+            " money schedule Daily Limit Exceeds on HBL Acc Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify deleting a send money schedule Daily Limit Exceeds on HBL Acc Mng_Send_Del" +
+            "ete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify deleting a send money schedule Daily Limit Exceeds on HBL Acc Mng_Send_Del" +
+            "ete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "12757900758503")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingASendMoneySchedule_VerifyDeletingASendMoneyScheduleDailyLimitExceedsOnHBLAccMng_Send_Delete()
+        {
+#line 361
+this.AsAUserIWantToVerifyDeletingASendMoneySchedule("Verify deleting a send money schedule Daily Limit Exceeds on HBL Acc Mng_Send_Del" +
+                    "ete", "Pass", "DIGITAL_CHANNEL_SEC", "12757900758503", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Send Money Schedule: Verify deleting a send" +
+            " money schedule Daily Limit Exceeds on IBFT Acc Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify deleting a send money schedule Daily Limit Exceeds on IBFT Acc Mng_Send_De" +
+            "lete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify deleting a send money schedule Daily Limit Exceeds on IBFT Acc Mng_Send_De" +
+            "lete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "00020000011005730")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingASendMoneySchedule_VerifyDeletingASendMoneyScheduleDailyLimitExceedsOnIBFTAccMng_Send_Delete()
+        {
+#line 361
+this.AsAUserIWantToVerifyDeletingASendMoneySchedule("Verify deleting a send money schedule Daily Limit Exceeds on IBFT Acc Mng_Send_De" +
+                    "lete", "Pass", "DIGITAL_CHANNEL_SEC", "00020000011005730", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Send Money Schedule: Verify deleting a send" +
+            " money schedule INSUFFICIENT BALANCE Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify deleting a send money schedule INSUFFICIENT BALANCE Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify deleting a send money schedule INSUFFICIENT BALANCE Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "22837900580401")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingASendMoneySchedule_VerifyDeletingASendMoneyScheduleINSUFFICIENTBALANCEMng_Send_Delete()
+        {
+#line 361
+this.AsAUserIWantToVerifyDeletingASendMoneySchedule("Verify deleting a send money schedule INSUFFICIENT BALANCE Mng_Send_Delete", "Pass", "DIGITAL_CHANNEL_SEC", "22837900580401", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Send Money Schedule: Verify deleting a send" +
+            " money schedule Bene of other HBL Daily Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify deleting a send money schedule Bene of other HBL Daily Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify deleting a send money schedule Bene of other HBL Daily Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "07867915677101")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingASendMoneySchedule_VerifyDeletingASendMoneyScheduleBeneOfOtherHBLDailyMng_Send_Delete()
+        {
+#line 361
+this.AsAUserIWantToVerifyDeletingASendMoneySchedule("Verify deleting a send money schedule Bene of other HBL Daily Mng_Send_Delete", "Pass", "DIGITAL_CHANNEL_SEC", "07867915677101", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Send Money Schedule: Verify deleting a send" +
+            " money schedule Bene of other HBL Weekly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify deleting a send money schedule Bene of other HBL Weekly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify deleting a send money schedule Bene of other HBL Weekly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "14900011079803")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingASendMoneySchedule_VerifyDeletingASendMoneyScheduleBeneOfOtherHBLWeeklyMng_Send_Delete()
+        {
+#line 361
+this.AsAUserIWantToVerifyDeletingASendMoneySchedule("Verify deleting a send money schedule Bene of other HBL Weekly Mng_Send_Delete", "Pass", "DIGITAL_CHANNEL_SEC", "14900011079803", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Send Money Schedule: Verify deleting a send" +
+            " money schedule Bene of other HBL Fortnightly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify deleting a send money schedule Bene of other HBL Fortnightly Mng_Send_Dele" +
+            "te")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify deleting a send money schedule Bene of other HBL Fortnightly Mng_Send_Dele" +
+            "te")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "00476001511601")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingASendMoneySchedule_VerifyDeletingASendMoneyScheduleBeneOfOtherHBLFortnightlyMng_Send_Delete()
+        {
+#line 361
+this.AsAUserIWantToVerifyDeletingASendMoneySchedule("Verify deleting a send money schedule Bene of other HBL Fortnightly Mng_Send_Dele" +
+                    "te", "Pass", "DIGITAL_CHANNEL_SEC", "00476001511601", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Send Money Schedule: Verify deleting a send" +
+            " money schedule Bene of other HBL Monthly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify deleting a send money schedule Bene of other HBL Monthly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify deleting a send money schedule Bene of other HBL Monthly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "09470201056703")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingASendMoneySchedule_VerifyDeletingASendMoneyScheduleBeneOfOtherHBLMonthlyMng_Send_Delete()
+        {
+#line 361
+this.AsAUserIWantToVerifyDeletingASendMoneySchedule("Verify deleting a send money schedule Bene of other HBL Monthly Mng_Send_Delete", "Pass", "DIGITAL_CHANNEL_SEC", "09470201056703", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Send Money Schedule: Verify deleting a send" +
+            " money schedule Bene of other HBL Quarterly Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify deleting a send money schedule Bene of other HBL Quarterly Mng_Send_Delete" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify deleting a send money schedule Bene of other HBL Quarterly Mng_Send_Delete" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094904501")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingASendMoneySchedule_VerifyDeletingASendMoneyScheduleBeneOfOtherHBLQuarterlyMng_Send_Delete()
+        {
+#line 361
+this.AsAUserIWantToVerifyDeletingASendMoneySchedule("Verify deleting a send money schedule Bene of other HBL Quarterly Mng_Send_Delete" +
+                    "", "Pass", "DIGITAL_CHANNEL_SEC", "24460094904501", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Send Money Schedule: Verify deleting a send" +
+            " money schedule FCY USD Daily Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify deleting a send money schedule FCY USD Daily Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify deleting a send money schedule FCY USD Daily Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "23087900855910")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingASendMoneySchedule_VerifyDeletingASendMoneyScheduleFCYUSDDailyMng_Send_Delete()
+        {
+#line 361
+this.AsAUserIWantToVerifyDeletingASendMoneySchedule("Verify deleting a send money schedule FCY USD Daily Mng_Send_Delete", "Pass", "DIGITAL_CHANNEL_SEC", "23087900855910", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Send Money Schedule: Verify deleting a send" +
+            " money schedule Account Blocked Daily Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify deleting a send money schedule Account Blocked Daily Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify deleting a send money schedule Account Blocked Daily Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "15647900453401")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingASendMoneySchedule_VerifyDeletingASendMoneyScheduleAccountBlockedDailyMng_Send_Delete()
+        {
+#line 361
+this.AsAUserIWantToVerifyDeletingASendMoneySchedule("Verify deleting a send money schedule Account Blocked Daily Mng_Send_Delete", "Pass", "DIGITAL_CHANNEL_SEC", "15647900453401", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Send Money Schedule: Verify deleting a send" +
+            " money schedule Branchless Daily Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify deleting a send money schedule Branchless Daily Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify deleting a send money schedule Branchless Daily Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "03334900125")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingASendMoneySchedule_VerifyDeletingASendMoneyScheduleBranchlessDailyMng_Send_Delete()
+        {
+#line 361
+this.AsAUserIWantToVerifyDeletingASendMoneySchedule("Verify deleting a send money schedule Branchless Daily Mng_Send_Delete", "Pass", "DIGITAL_CHANNEL_SEC", "03334900125", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Send Money Schedule: Verify deleting a non " +
+            "scheduled payment Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify deleting a non scheduled payment Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify deleting a non scheduled payment Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "12527900056501")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingASendMoneySchedule_VerifyDeletingANonScheduledPaymentMng_Send_Delete()
+        {
+#line 361
+this.AsAUserIWantToVerifyDeletingASendMoneySchedule("Verify deleting a non scheduled payment Mng_Send_Delete", "Fail", "DIGITAL_CHANNEL_SEC", "12527900056501", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Send Money Schedule: Verify deleting a alre" +
+            "ady deleted scheduled send money DAILY Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify deleting a already deleted scheduled send money DAILY Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify deleting a already deleted scheduled send money DAILY Mng_Send_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "03334900128")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingASendMoneySchedule_VerifyDeletingAAlreadyDeletedScheduledSendMoneyDAILYMng_Send_Delete()
+        {
+#line 361
+this.AsAUserIWantToVerifyDeletingASendMoneySchedule("Verify deleting a already deleted scheduled send money DAILY Mng_Send_Delete", "Fail", "DIGITAL_CHANNEL_SEC", "03334900128", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        public virtual void AsAUserIWantToVerifyDeletingABillPaymentSchedule(string @case, string expected_Result, string db_Val, string consumer_No, string success_Msg, string delete_Verify_Query, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "MngSchedule"};
+                    "MngSchedule",
+                    "MngSchedule_Bill_Delete"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user I want to verify deleting a Bill Payment Schedule", @__tags);
-#line 346
+#line 381
 this.ScenarioSetup(scenarioInfo);
-#line 347
+#line 382
  testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 348
+#line 383
+ testRunner.And(string.Format("the test case expected result is \"{0}\"", expected_Result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 384
  testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 350
+#line 386
  testRunner.And(string.Format("I set value in context from data \"{0}\" as \"Bene_AccountNo\"", consumer_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 351
+#line 387
  testRunner.When("I am clicking on \"MyAccount_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 352
+#line 388
  testRunner.And("I am clicking on \"MyAccount_MngSch_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 353
+#line 389
  testRunner.Then("I am performing \"OK\" alert operation on cross icon on \"MyAccount_MngSch_Delete\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 354
+#line 390
  testRunner.And(string.Format("verify through \"{0}\" on \"MyAccount_MngSch_DeleteMsg\"", success_Msg), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 355
+#line 391
  testRunner.And("I am performing on \"MyAccount_MngSch_DeleteOkBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 356
+#line 392
  testRunner.And(string.Format("verify the message \"1\" through database on \"{0}\" on Schema \"{1}\"", delete_Verify_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1247,126 +4942,1294 @@ this.ScenarioSetup(scenarioInfo);
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Bill Payment Schedule: As a user I want to " +
-            "verify deleting a scheduled payment")]
+            "verify deleting a bill payment scheduled Electricity Mng_Bill_Delete")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Delete")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_BillPayment.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify deleting a scheduled payment")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify deleting a scheduled payment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify deleting a bill payment scheduled Electricity Mng_Bill" +
+            "_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify deleting a bill payment scheduled Electricity Mng_Bill" +
+            "_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no", "0400000178630")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no", "0400000484677")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.CONSUMER_NUMBER =  '{account_number}' ")]
-        public virtual void AsAUserIWantToVerifyDeletingABillPaymentSchedule_AsAUserIWantToVerifyDeletingAScheduledPayment()
+        public virtual void AsAUserIWantToVerifyDeletingABillPaymentSchedule_AsAUserIWantToVerifyDeletingABillPaymentScheduledElectricityMng_Bill_Delete()
         {
-#line 346
-this.AsAUserIWantToVerifyDeletingABillPaymentSchedule("As a user I want to verify deleting a scheduled payment", "DIGITAL_CHANNEL_SEC", "0400000178630", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.CONSUMER_NUMBER =  '{account_number}' ", new string[] {
+#line 381
+this.AsAUserIWantToVerifyDeletingABillPaymentSchedule("As a user I want to verify deleting a bill payment scheduled Electricity Mng_Bill" +
+                    "_Delete", "Pass", "DIGITAL_CHANNEL_SEC", "0400000484677", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.CONSUMER_NUMBER =  '{account_number}' ", new string[] {
                         "source:Data/ManageSchedule_Delete_BillPayment.xlsx"});
 #line hidden
         }
         
-        public virtual void AsAUserIWantToVerifyCancelingASingleSendMoneySchedule(string @case, string db_Val, string account_No, string success_Msg, string schedule_Tran_Id_Query, string cancel_Date, string schedule_Status, string schedule_Status_Query, string[] exampleTags)
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Bill Payment Schedule: As a user I want to " +
+            "verify deleting a bill payment scheduled Water Mng_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify deleting a bill payment scheduled Water Mng_Bill_Delet" +
+            "e")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify deleting a bill payment scheduled Water Mng_Bill_Delet" +
+            "e")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no", "65009122100096")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.CONSUMER_NUMBER =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingABillPaymentSchedule_AsAUserIWantToVerifyDeletingABillPaymentScheduledWaterMng_Bill_Delete()
+        {
+#line 381
+this.AsAUserIWantToVerifyDeletingABillPaymentSchedule("As a user I want to verify deleting a bill payment scheduled Water Mng_Bill_Delet" +
+                    "e", "Pass", "DIGITAL_CHANNEL_SEC", "65009122100096", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.CONSUMER_NUMBER =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Bill Payment Schedule: As a user I want to " +
+            "verify deleting a bill payment scheduled Gas Mng_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify deleting a bill payment scheduled Gas Mng_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify deleting a bill payment scheduled Gas Mng_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no", "0004069089")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.CONSUMER_NUMBER =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingABillPaymentSchedule_AsAUserIWantToVerifyDeletingABillPaymentScheduledGasMng_Bill_Delete()
+        {
+#line 381
+this.AsAUserIWantToVerifyDeletingABillPaymentSchedule("As a user I want to verify deleting a bill payment scheduled Gas Mng_Bill_Delete", "Pass", "DIGITAL_CHANNEL_SEC", "0004069089", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.CONSUMER_NUMBER =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Bill Payment Schedule: As a user I want to " +
+            "verify deleting a bill payment scheduled Landline Mng_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify deleting a bill payment scheduled Landline Mng_Bill_De" +
+            "lete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify deleting a bill payment scheduled Landline Mng_Bill_De" +
+            "lete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no", "1756156")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.CONSUMER_NUMBER =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingABillPaymentSchedule_AsAUserIWantToVerifyDeletingABillPaymentScheduledLandlineMng_Bill_Delete()
+        {
+#line 381
+this.AsAUserIWantToVerifyDeletingABillPaymentSchedule("As a user I want to verify deleting a bill payment scheduled Landline Mng_Bill_De" +
+                    "lete", "Pass", "DIGITAL_CHANNEL_SEC", "1756156", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.CONSUMER_NUMBER =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Bill Payment Schedule: As a user I want to " +
+            "verify deleting a bill payment scheduled SSGC 5 lac Mng_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify deleting a bill payment scheduled SSGC 5 lac Mng_Bill_" +
+            "Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify deleting a bill payment scheduled SSGC 5 lac Mng_Bill_" +
+            "Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no", "0003979428")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.CONSUMER_NUMBER =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingABillPaymentSchedule_AsAUserIWantToVerifyDeletingABillPaymentScheduledSSGC5LacMng_Bill_Delete()
+        {
+#line 381
+this.AsAUserIWantToVerifyDeletingABillPaymentSchedule("As a user I want to verify deleting a bill payment scheduled SSGC 5 lac Mng_Bill_" +
+                    "Delete", "Pass", "DIGITAL_CHANNEL_SEC", "0003979428", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.CONSUMER_NUMBER =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Bill Payment Schedule: As a user I want to " +
+            "verify deleting a bill payment scheduled Water 10 Mng_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify deleting a bill payment scheduled Water 10 Mng_Bill_De" +
+            "lete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify deleting a bill payment scheduled Water 10 Mng_Bill_De" +
+            "lete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no", "65009121900045")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.CONSUMER_NUMBER =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingABillPaymentSchedule_AsAUserIWantToVerifyDeletingABillPaymentScheduledWater10Mng_Bill_Delete()
+        {
+#line 381
+this.AsAUserIWantToVerifyDeletingABillPaymentSchedule("As a user I want to verify deleting a bill payment scheduled Water 10 Mng_Bill_De" +
+                    "lete", "Pass", "DIGITAL_CHANNEL_SEC", "65009121900045", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.CONSUMER_NUMBER =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Bill Payment Schedule: As a user I want to " +
+            "verify deleting a bill payment bene scheduled Electricity Mng_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify deleting a bill payment bene scheduled Electricity Mng" +
+            "_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify deleting a bill payment bene scheduled Electricity Mng" +
+            "_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no", "0400000064511")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.CONSUMER_NUMBER =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingABillPaymentSchedule_AsAUserIWantToVerifyDeletingABillPaymentBeneScheduledElectricityMng_Bill_Delete()
+        {
+#line 381
+this.AsAUserIWantToVerifyDeletingABillPaymentSchedule("As a user I want to verify deleting a bill payment bene scheduled Electricity Mng" +
+                    "_Bill_Delete", "Pass", "DIGITAL_CHANNEL_SEC", "0400000064511", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.CONSUMER_NUMBER =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Bill Payment Schedule: As a user I want to " +
+            "verify deleting a bill payment bene scheduled Water Mng_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify deleting a bill payment bene scheduled Water Mng_Bill_" +
+            "Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify deleting a bill payment bene scheduled Water Mng_Bill_" +
+            "Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no", "65009121600066")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.CONSUMER_NUMBER =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingABillPaymentSchedule_AsAUserIWantToVerifyDeletingABillPaymentBeneScheduledWaterMng_Bill_Delete()
+        {
+#line 381
+this.AsAUserIWantToVerifyDeletingABillPaymentSchedule("As a user I want to verify deleting a bill payment bene scheduled Water Mng_Bill_" +
+                    "Delete", "Pass", "DIGITAL_CHANNEL_SEC", "65009121600066", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.CONSUMER_NUMBER =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Bill Payment Schedule: As a user I want to " +
+            "verify deleting a bill payment bene scheduled Gas Mng_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify deleting a bill payment bene scheduled Gas Mng_Bill_De" +
+            "lete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify deleting a bill payment bene scheduled Gas Mng_Bill_De" +
+            "lete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no", "0003950000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.CONSUMER_NUMBER =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingABillPaymentSchedule_AsAUserIWantToVerifyDeletingABillPaymentBeneScheduledGasMng_Bill_Delete()
+        {
+#line 381
+this.AsAUserIWantToVerifyDeletingABillPaymentSchedule("As a user I want to verify deleting a bill payment bene scheduled Gas Mng_Bill_De" +
+                    "lete", "Pass", "DIGITAL_CHANNEL_SEC", "0003950000", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.CONSUMER_NUMBER =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Bill Payment Schedule: As a user I want to " +
+            "verify deleting a bill payment bene scheduled Landline Mng_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify deleting a bill payment bene scheduled Landline Mng_Bi" +
+            "ll_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify deleting a bill payment bene scheduled Landline Mng_Bi" +
+            "ll_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no", "1756155")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.CONSUMER_NUMBER =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingABillPaymentSchedule_AsAUserIWantToVerifyDeletingABillPaymentBeneScheduledLandlineMng_Bill_Delete()
+        {
+#line 381
+this.AsAUserIWantToVerifyDeletingABillPaymentSchedule("As a user I want to verify deleting a bill payment bene scheduled Landline Mng_Bi" +
+                    "ll_Delete", "Pass", "DIGITAL_CHANNEL_SEC", "1756155", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.CONSUMER_NUMBER =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Bill Payment Schedule: As a user I want to " +
+            "verify deleting a bill payment bene scheduled SSGC 5 lac Mng_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify deleting a bill payment bene scheduled SSGC 5 lac Mng_" +
+            "Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify deleting a bill payment bene scheduled SSGC 5 lac Mng_" +
+            "Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no", "0318660000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.CONSUMER_NUMBER =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingABillPaymentSchedule_AsAUserIWantToVerifyDeletingABillPaymentBeneScheduledSSGC5LacMng_Bill_Delete()
+        {
+#line 381
+this.AsAUserIWantToVerifyDeletingABillPaymentSchedule("As a user I want to verify deleting a bill payment bene scheduled SSGC 5 lac Mng_" +
+                    "Bill_Delete", "Pass", "DIGITAL_CHANNEL_SEC", "0318660000", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.CONSUMER_NUMBER =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Bill Payment Schedule: As a user I want to " +
+            "verify deleting a bill payment bene scheduled Water 10 Mng_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify deleting a bill payment bene scheduled Water 10 Mng_Bi" +
+            "ll_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify deleting a bill payment bene scheduled Water 10 Mng_Bi" +
+            "ll_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no", "65009121500021")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.CONSUMER_NUMBER =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingABillPaymentSchedule_AsAUserIWantToVerifyDeletingABillPaymentBeneScheduledWater10Mng_Bill_Delete()
+        {
+#line 381
+this.AsAUserIWantToVerifyDeletingABillPaymentSchedule("As a user I want to verify deleting a bill payment bene scheduled Water 10 Mng_Bi" +
+                    "ll_Delete", "Pass", "DIGITAL_CHANNEL_SEC", "65009121500021", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.CONSUMER_NUMBER =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Bill Payment Schedule: As a user I want to " +
+            "verify deleting a already deleted scheduled Gas Mng_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify deleting a already deleted scheduled Gas Mng_Bill_Dele" +
+            "te")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify deleting a already deleted scheduled Gas Mng_Bill_Dele" +
+            "te")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no", "0003950000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.CONSUMER_NUMBER =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingABillPaymentSchedule_AsAUserIWantToVerifyDeletingAAlreadyDeletedScheduledGasMng_Bill_Delete()
+        {
+#line 381
+this.AsAUserIWantToVerifyDeletingABillPaymentSchedule("As a user I want to verify deleting a already deleted scheduled Gas Mng_Bill_Dele" +
+                    "te", "Fail", "DIGITAL_CHANNEL_SEC", "0003950000", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.CONSUMER_NUMBER =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify deleting a Bill Payment Schedule: As a user I want to " +
+            "verify deleting a inavalid schedule Gas Mng_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify deleting a inavalid schedule Gas Mng_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify deleting a inavalid schedule Gas Mng_Bill_Delete")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no", "124823232582")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_verify_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.CONSUMER_NUMBER =  '{account_number}' ")]
+        public virtual void AsAUserIWantToVerifyDeletingABillPaymentSchedule_AsAUserIWantToVerifyDeletingAInavalidScheduleGasMng_Bill_Delete()
+        {
+#line 381
+this.AsAUserIWantToVerifyDeletingABillPaymentSchedule("As a user I want to verify deleting a inavalid schedule Gas Mng_Bill_Delete", "Fail", "DIGITAL_CHANNEL_SEC", "124823232582", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.CONSUMER_NUMBER =  '{account_number}' ", new string[] {
+                        "source:Data/ManageSchedule_Delete_BillPayment.xlsx"});
+#line hidden
+        }
+        
+        public virtual void AsAUserIWantToVerifyCancelingASingleSendMoneySchedule(string @case, string expected_Result, string db_Val, string account_No, string success_Msg, string schedule_Tran_Id_Query, string cancel_Date, string schedule_Status, string schedule_Status_Query, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "MngSchedule"};
+                    "MngSchedule",
+                    "MngSchedule_Send_Cancel"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user I want to verify canceling a single send money schedule", @__tags);
-#line 365
+#line 401
 this.ScenarioSetup(scenarioInfo);
-#line 366
+#line 402
  testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 367
+#line 403
+ testRunner.And(string.Format("the test case expected result is \"{0}\"", expected_Result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 404
  testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 369
+#line 406
  testRunner.And(string.Format("I set value in context from data \"{0}\" as \"Bene_AccountNo\"", account_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 370
+#line 407
  testRunner.And(string.Format("I set value in context from data \"{0}\" as \"String_Date\"", cancel_Date), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 371
+#line 408
  testRunner.And(string.Format("I set value in context from database \"{0}\" as \"schedule_tran_id\" on Schema \"{1}\"", schedule_Tran_Id_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 372
+#line 409
  testRunner.When("I am clicking on \"MyAccount_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 373
+#line 410
  testRunner.And("I am clicking on \"MyAccount_MngSch_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 374
+#line 411
  testRunner.And("I am clicking on \"MyAccount_MngSch_Cancel_RowClick\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 375
+#line 412
  testRunner.And("I am clicking on \"MyAccount_MngSch_SummaryClick\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 376
- testRunner.Then("I am performing \"OK\" alert operation on cross icon on \"MyAccount_MngSch_CancelDat" +
-                    "eBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 377
+#line 413
+ testRunner.Then("I am performing \"OK\" alert operation on cross icon on \"MyAccount_MngSchSend_Cance" +
+                    "lDateBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 414
  testRunner.And(string.Format("verify through \"{0}\" on \"MyAccount_MngSch_DeleteMsg\"", success_Msg), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 378
+#line 415
  testRunner.And("I am performing on \"MyAccount_MngSch_DeleteOkBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 379
+#line 416
  testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"{2}\"", schedule_Status, schedule_Status_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single send money schedule: As a user I wa" +
-            "nt to verify deleting a scheduled payment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single send money schedule: Verify Cancel " +
+            "Schedule when Details are provided with all valid details Mng_Send_Cancel")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Delete_SendMoney.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify deleting a scheduled payment")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify deleting a scheduled payment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify Cancel Schedule when Details are provided with all valid details Mng_Send_" +
+            "Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify Cancel Schedule when Details are provided with all valid details Mng_Send_" +
+            "Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "69069109100038")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", "")]
-        public virtual void AsAUserIWantToVerifyCancelingASingleSendMoneySchedule_AsAUserIWantToVerifyDeletingAScheduledPayment()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "00147900721001")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payment has been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleSendMoneySchedule_VerifyCancelScheduleWhenDetailsAreProvidedWithAllValidDetailsMng_Send_Cancel()
         {
-#line 365
-this.AsAUserIWantToVerifyCancelingASingleSendMoneySchedule("As a user I want to verify deleting a scheduled payment", "DIGITAL_CHANNEL_SEC", "69069109100038", "Your scheduled payments have been cancelled successfully", @"SELECT TM.IS_DELETED FROM DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO =  '{account_number}' ", "", "", "", new string[] {
-                        "source:Data/ManageSchedule_Delete_SendMoney.xlsx"});
+#line 401
+this.AsAUserIWantToVerifyCancelingASingleSendMoneySchedule("Verify Cancel Schedule when Details are provided with all valid details Mng_Send_" +
+                    "Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "00147900721001", "Your scheduled payment has been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'", "2", "Disabled", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_SendMoney.xlsx"});
 #line hidden
         }
         
-        public virtual void AsAUserIWantToVerifyCancelingASingleBillPaymentSchedule(string @case, string db_Val, string consumer_No, string success_Msg, string schedule_Tran_Id_Query, string cancel_Date, string schedule_Status, string schedule_Status_Query, string[] exampleTags)
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single send money schedule: Verify Cancel " +
+            "Schedule when Details are provided with all valid details iban Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify Cancel Schedule when Details are provided with all valid details iban Mng_" +
+            "Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify Cancel Schedule when Details are provided with all valid details iban Mng_" +
+            "Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK50HABB0013227900983503")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payment has been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleSendMoneySchedule_VerifyCancelScheduleWhenDetailsAreProvidedWithAllValidDetailsIbanMng_Send_Cancel()
+        {
+#line 401
+this.AsAUserIWantToVerifyCancelingASingleSendMoneySchedule("Verify Cancel Schedule when Details are provided with all valid details iban Mng_" +
+                    "Send_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "PK50HABB0013227900983503", "Your scheduled payment has been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'", "2", "Disabled", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single send money schedule: Verify Cancel " +
+            "Schedule when given valid data of HBL Acc Daily Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify Cancel Schedule when given valid data of HBL Acc Daily Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify Cancel Schedule when given valid data of HBL Acc Daily Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "23457913894303")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payment has been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleSendMoneySchedule_VerifyCancelScheduleWhenGivenValidDataOfHBLAccDailyMng_Send_Cancel()
+        {
+#line 401
+this.AsAUserIWantToVerifyCancelingASingleSendMoneySchedule("Verify Cancel Schedule when given valid data of HBL Acc Daily Mng_Send_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "23457913894303", "Your scheduled payment has been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'", "2", "Disabled", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single send money schedule: Verify Cancel " +
+            "Schedule when given valid data of HBL Acc Weekly Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify Cancel Schedule when given valid data of HBL Acc Weekly Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify Cancel Schedule when given valid data of HBL Acc Weekly Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "08497900068901")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payment has been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleSendMoneySchedule_VerifyCancelScheduleWhenGivenValidDataOfHBLAccWeeklyMng_Send_Cancel()
+        {
+#line 401
+this.AsAUserIWantToVerifyCancelingASingleSendMoneySchedule("Verify Cancel Schedule when given valid data of HBL Acc Weekly Mng_Send_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "08497900068901", "Your scheduled payment has been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'", "2", "Disabled", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single send money schedule: Verify Cancel " +
+            "Schedule when given valid data of HBL Acc Fortnightly Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify Cancel Schedule when given valid data of HBL Acc Fortnightly Mng_Send_Canc" +
+            "el")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify Cancel Schedule when given valid data of HBL Acc Fortnightly Mng_Send_Canc" +
+            "el")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "00277900350711")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payment has been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleSendMoneySchedule_VerifyCancelScheduleWhenGivenValidDataOfHBLAccFortnightlyMng_Send_Cancel()
+        {
+#line 401
+this.AsAUserIWantToVerifyCancelingASingleSendMoneySchedule("Verify Cancel Schedule when given valid data of HBL Acc Fortnightly Mng_Send_Canc" +
+                    "el", "Pass", "DIGITAL_CHANNEL_SEC", "00277900350711", "Your scheduled payment has been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'", "2", "Disabled", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single send money schedule: Verify Cancel " +
+            "Schedule when given valid data of HBL Acc Monthly Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify Cancel Schedule when given valid data of HBL Acc Monthly Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify Cancel Schedule when given valid data of HBL Acc Monthly Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "07867901527301")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payment has been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleSendMoneySchedule_VerifyCancelScheduleWhenGivenValidDataOfHBLAccMonthlyMng_Send_Cancel()
+        {
+#line 401
+this.AsAUserIWantToVerifyCancelingASingleSendMoneySchedule("Verify Cancel Schedule when given valid data of HBL Acc Monthly Mng_Send_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "07867901527301", "Your scheduled payment has been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'", "2", "Disabled", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single send money schedule: Verify Cancel " +
+            "Schedule when given valid data of HBL Acc Quarterly Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify Cancel Schedule when given valid data of HBL Acc Quarterly Mng_Send_Cancel" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify Cancel Schedule when given valid data of HBL Acc Quarterly Mng_Send_Cancel" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "07867916249703")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payment has been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleSendMoneySchedule_VerifyCancelScheduleWhenGivenValidDataOfHBLAccQuarterlyMng_Send_Cancel()
+        {
+#line 401
+this.AsAUserIWantToVerifyCancelingASingleSendMoneySchedule("Verify Cancel Schedule when given valid data of HBL Acc Quarterly Mng_Send_Cancel" +
+                    "", "Pass", "DIGITAL_CHANNEL_SEC", "07867916249703", "Your scheduled payment has been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'", "2", "Disabled", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single send money schedule: Verify Cancel " +
+            "Schedule when given valid data of IBFT Acc Daily Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify Cancel Schedule when given valid data of IBFT Acc Daily Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify Cancel Schedule when given valid data of IBFT Acc Daily Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "02800320004636")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payment has been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleSendMoneySchedule_VerifyCancelScheduleWhenGivenValidDataOfIBFTAccDailyMng_Send_Cancel()
+        {
+#line 401
+this.AsAUserIWantToVerifyCancelingASingleSendMoneySchedule("Verify Cancel Schedule when given valid data of IBFT Acc Daily Mng_Send_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "02800320004636", "Your scheduled payment has been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'", "2", "Disabled", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single send money schedule: Verify Cancel " +
+            "Schedule when given valid data of IBFT Acc Weekly Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify Cancel Schedule when given valid data of IBFT Acc Weekly Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify Cancel Schedule when given valid data of IBFT Acc Weekly Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "0605060510946074")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payment has been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleSendMoneySchedule_VerifyCancelScheduleWhenGivenValidDataOfIBFTAccWeeklyMng_Send_Cancel()
+        {
+#line 401
+this.AsAUserIWantToVerifyCancelingASingleSendMoneySchedule("Verify Cancel Schedule when given valid data of IBFT Acc Weekly Mng_Send_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "0605060510946074", "Your scheduled payment has been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'", "2", "Disabled", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single send money schedule: Verify Cancel " +
+            "Schedule when given valid data of IBFT Acc Fortnightly Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify Cancel Schedule when given valid data of IBFT Acc Fortnightly Mng_Send_Can" +
+            "cel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify Cancel Schedule when given valid data of IBFT Acc Fortnightly Mng_Send_Can" +
+            "cel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "01719020101")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payment has been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleSendMoneySchedule_VerifyCancelScheduleWhenGivenValidDataOfIBFTAccFortnightlyMng_Send_Cancel()
+        {
+#line 401
+this.AsAUserIWantToVerifyCancelingASingleSendMoneySchedule("Verify Cancel Schedule when given valid data of IBFT Acc Fortnightly Mng_Send_Can" +
+                    "cel", "Pass", "DIGITAL_CHANNEL_SEC", "01719020101", "Your scheduled payment has been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'", "2", "Disabled", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single send money schedule: Verify Cancel " +
+            "Schedule when given valid data of IBFT Acc Monthly Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify Cancel Schedule when given valid data of IBFT Acc Monthly Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify Cancel Schedule when given valid data of IBFT Acc Monthly Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "100605050300201")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payment has been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleSendMoneySchedule_VerifyCancelScheduleWhenGivenValidDataOfIBFTAccMonthlyMng_Send_Cancel()
+        {
+#line 401
+this.AsAUserIWantToVerifyCancelingASingleSendMoneySchedule("Verify Cancel Schedule when given valid data of IBFT Acc Monthly Mng_Send_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "100605050300201", "Your scheduled payment has been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'", "2", "Disabled", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single send money schedule: Verify Cancel " +
+            "Schedule when given valid data of IBFT Acc Quarterly Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify Cancel Schedule when given valid data of IBFT Acc Quarterly Mng_Send_Cance" +
+            "l")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify Cancel Schedule when given valid data of IBFT Acc Quarterly Mng_Send_Cance" +
+            "l")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "0300777261006679")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payment has been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleSendMoneySchedule_VerifyCancelScheduleWhenGivenValidDataOfIBFTAccQuarterlyMng_Send_Cancel()
+        {
+#line 401
+this.AsAUserIWantToVerifyCancelingASingleSendMoneySchedule("Verify Cancel Schedule when given valid data of IBFT Acc Quarterly Mng_Send_Cance" +
+                    "l", "Pass", "DIGITAL_CHANNEL_SEC", "0300777261006679", "Your scheduled payment has been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'", "2", "Disabled", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single send money schedule: Verify Cancel " +
+            "Schedule when given valid data of IBFT via IBAN Acc Daily Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify Cancel Schedule when given valid data of IBFT via IBAN Acc Daily Mng_Send_" +
+            "Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify Cancel Schedule when given valid data of IBFT via IBAN Acc Daily Mng_Send_" +
+            "Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK27BAHL1083009501262002")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payment has been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleSendMoneySchedule_VerifyCancelScheduleWhenGivenValidDataOfIBFTViaIBANAccDailyMng_Send_Cancel()
+        {
+#line 401
+this.AsAUserIWantToVerifyCancelingASingleSendMoneySchedule("Verify Cancel Schedule when given valid data of IBFT via IBAN Acc Daily Mng_Send_" +
+                    "Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "PK27BAHL1083009501262002", "Your scheduled payment has been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'", "2", "Disabled", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single send money schedule: Verify Cancel " +
+            "Schedule when given valid data of IBFT via IBAN Acc Weekly Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify Cancel Schedule when given valid data of IBFT via IBAN Acc Weekly Mng_Send" +
+            "_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify Cancel Schedule when given valid data of IBFT via IBAN Acc Weekly Mng_Send" +
+            "_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK97BAHL1108009500890601")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payment has been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleSendMoneySchedule_VerifyCancelScheduleWhenGivenValidDataOfIBFTViaIBANAccWeeklyMng_Send_Cancel()
+        {
+#line 401
+this.AsAUserIWantToVerifyCancelingASingleSendMoneySchedule("Verify Cancel Schedule when given valid data of IBFT via IBAN Acc Weekly Mng_Send" +
+                    "_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "PK97BAHL1108009500890601", "Your scheduled payment has been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'", "2", "Disabled", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single send money schedule: Verify Cancel " +
+            "Schedule when given valid data of IBFT via IBAN Acc Fortnightly Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify Cancel Schedule when given valid data of IBFT via IBAN Acc Fortnightly Mng" +
+            "_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify Cancel Schedule when given valid data of IBFT via IBAN Acc Fortnightly Mng" +
+            "_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK48BAHL0070009500457801")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payment has been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleSendMoneySchedule_VerifyCancelScheduleWhenGivenValidDataOfIBFTViaIBANAccFortnightlyMng_Send_Cancel()
+        {
+#line 401
+this.AsAUserIWantToVerifyCancelingASingleSendMoneySchedule("Verify Cancel Schedule when given valid data of IBFT via IBAN Acc Fortnightly Mng" +
+                    "_Send_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "PK48BAHL0070009500457801", "Your scheduled payment has been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'", "2", "Disabled", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single send money schedule: Verify Cancel " +
+            "Schedule when given valid data of IBFT via IBAN Acc Monthly Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify Cancel Schedule when given valid data of IBFT via IBAN Acc Monthly Mng_Sen" +
+            "d_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify Cancel Schedule when given valid data of IBFT via IBAN Acc Monthly Mng_Sen" +
+            "d_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK97BAHL1108009500890601")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payment has been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleSendMoneySchedule_VerifyCancelScheduleWhenGivenValidDataOfIBFTViaIBANAccMonthlyMng_Send_Cancel()
+        {
+#line 401
+this.AsAUserIWantToVerifyCancelingASingleSendMoneySchedule("Verify Cancel Schedule when given valid data of IBFT via IBAN Acc Monthly Mng_Sen" +
+                    "d_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "PK97BAHL1108009500890601", "Your scheduled payment has been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'", "2", "Disabled", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single send money schedule: Verify Cancel " +
+            "Schedule when given valid data of IBFT via IBAN Acc Quarterly Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify Cancel Schedule when given valid data of IBFT via IBAN Acc Quarterly Mng_S" +
+            "end_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify Cancel Schedule when given valid data of IBFT via IBAN Acc Quarterly Mng_S" +
+            "end_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK27BAHL1083009501262002")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payment has been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleSendMoneySchedule_VerifyCancelScheduleWhenGivenValidDataOfIBFTViaIBANAccQuarterlyMng_Send_Cancel()
+        {
+#line 401
+this.AsAUserIWantToVerifyCancelingASingleSendMoneySchedule("Verify Cancel Schedule when given valid data of IBFT via IBAN Acc Quarterly Mng_S" +
+                    "end_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "PK27BAHL1083009501262002", "Your scheduled payment has been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'", "2", "Disabled", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single send money schedule: Verify Cancel " +
+            "Schedule when Bene Account is LOAN Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify Cancel Schedule when Bene Account is LOAN Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify Cancel Schedule when Bene Account is LOAN Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "22667230559903")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payment has been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleSendMoneySchedule_VerifyCancelScheduleWhenBeneAccountIsLOANMng_Send_Cancel()
+        {
+#line 401
+this.AsAUserIWantToVerifyCancelingASingleSendMoneySchedule("Verify Cancel Schedule when Bene Account is LOAN Mng_Send_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "22667230559903", "Your scheduled payment has been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'", "2", "Disabled", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single send money schedule: Verify Cancel " +
+            "Schedule when Bene Account is FCY Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify Cancel Schedule when Bene Account is FCY Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify Cancel Schedule when Bene Account is FCY Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "23087900855910")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payment has been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleSendMoneySchedule_VerifyCancelScheduleWhenBeneAccountIsFCYMng_Send_Cancel()
+        {
+#line 401
+this.AsAUserIWantToVerifyCancelingASingleSendMoneySchedule("Verify Cancel Schedule when Bene Account is FCY Mng_Send_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "23087900855910", "Your scheduled payment has been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'", "2", "Disabled", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single send money schedule: Verify Cancel " +
+            "Schedule when Bene Account is MONEY CLUB Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify Cancel Schedule when Bene Account is MONEY CLUB Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify Cancel Schedule when Bene Account is MONEY CLUB Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "12497900564101")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payment has been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleSendMoneySchedule_VerifyCancelScheduleWhenBeneAccountIsMONEYCLUBMng_Send_Cancel()
+        {
+#line 401
+this.AsAUserIWantToVerifyCancelingASingleSendMoneySchedule("Verify Cancel Schedule when Bene Account is MONEY CLUB Mng_Send_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "12497900564101", "Your scheduled payment has been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'", "2", "Disabled", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single send money schedule: Verify Cancel " +
+            "Schedule when Bene Account is BRANCHLESS Konnect Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify Cancel Schedule when Bene Account is BRANCHLESS Konnect Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify Cancel Schedule when Bene Account is BRANCHLESS Konnect Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "03334900125")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payment has been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleSendMoneySchedule_VerifyCancelScheduleWhenBeneAccountIsBRANCHLESSKonnectMng_Send_Cancel()
+        {
+#line 401
+this.AsAUserIWantToVerifyCancelingASingleSendMoneySchedule("Verify Cancel Schedule when Bene Account is BRANCHLESS Konnect Mng_Send_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "03334900125", "Your scheduled payment has been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'", "2", "Disabled", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single send money schedule: Verify Cancel " +
+            "Schedule when Daily Limit Exceeds on HBL Acc Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify Cancel Schedule when Daily Limit Exceeds on HBL Acc Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify Cancel Schedule when Daily Limit Exceeds on HBL Acc Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "12757900758503")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payment has been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleSendMoneySchedule_VerifyCancelScheduleWhenDailyLimitExceedsOnHBLAccMng_Send_Cancel()
+        {
+#line 401
+this.AsAUserIWantToVerifyCancelingASingleSendMoneySchedule("Verify Cancel Schedule when Daily Limit Exceeds on HBL Acc Mng_Send_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "12757900758503", "Your scheduled payment has been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'", "2", "Disabled", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single send money schedule: Verify Cancel " +
+            "Schedule when Daily Limit Exceeds on IBFT Acc Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify Cancel Schedule when Daily Limit Exceeds on IBFT Acc Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify Cancel Schedule when Daily Limit Exceeds on IBFT Acc Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "00020000011005730")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payment has been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleSendMoneySchedule_VerifyCancelScheduleWhenDailyLimitExceedsOnIBFTAccMng_Send_Cancel()
+        {
+#line 401
+this.AsAUserIWantToVerifyCancelingASingleSendMoneySchedule("Verify Cancel Schedule when Daily Limit Exceeds on IBFT Acc Mng_Send_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "00020000011005730", "Your scheduled payment has been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'", "2", "Disabled", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single send money schedule: Verify Cancel " +
+            "Schedule when Senders have INSUFFICIENT BALANCE Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify Cancel Schedule when Senders have INSUFFICIENT BALANCE Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify Cancel Schedule when Senders have INSUFFICIENT BALANCE Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "22837900580401")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payment has been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleSendMoneySchedule_VerifyCancelScheduleWhenSendersHaveINSUFFICIENTBALANCEMng_Send_Cancel()
+        {
+#line 401
+this.AsAUserIWantToVerifyCancelingASingleSendMoneySchedule("Verify Cancel Schedule when Senders have INSUFFICIENT BALANCE Mng_Send_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "22837900580401", "Your scheduled payment has been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'", "2", "Disabled", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single send money schedule: Verify Cancel " +
+            "Schedule when invalid HBL Acc is provided Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify Cancel Schedule when invalid HBL Acc is provided Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify Cancel Schedule when invalid HBL Acc is provided Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "22837900584582")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payment has been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleSendMoneySchedule_VerifyCancelScheduleWhenInvalidHBLAccIsProvidedMng_Send_Cancel()
+        {
+#line 401
+this.AsAUserIWantToVerifyCancelingASingleSendMoneySchedule("Verify Cancel Schedule when invalid HBL Acc is provided Mng_Send_Cancel", "Fail", "DIGITAL_CHANNEL_SEC", "22837900584582", "Your scheduled payment has been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'", "2", "Disabled", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single send money schedule: Verify Cancel " +
+            "Schedule Send Money Bene of other HBL Daily Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify Cancel Schedule Send Money Bene of other HBL Daily Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify Cancel Schedule Send Money Bene of other HBL Daily Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "07867915677101")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payment has been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleSendMoneySchedule_VerifyCancelScheduleSendMoneyBeneOfOtherHBLDailyMng_Send_Cancel()
+        {
+#line 401
+this.AsAUserIWantToVerifyCancelingASingleSendMoneySchedule("Verify Cancel Schedule Send Money Bene of other HBL Daily Mng_Send_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "07867915677101", "Your scheduled payment has been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'", "", "Disabled", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single send money schedule: Verify Cancel " +
+            "Schedule Send Money Bene of other HBL Weekly Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify Cancel Schedule Send Money Bene of other HBL Weekly Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify Cancel Schedule Send Money Bene of other HBL Weekly Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "14900011079803")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payment has been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleSendMoneySchedule_VerifyCancelScheduleSendMoneyBeneOfOtherHBLWeeklyMng_Send_Cancel()
+        {
+#line 401
+this.AsAUserIWantToVerifyCancelingASingleSendMoneySchedule("Verify Cancel Schedule Send Money Bene of other HBL Weekly Mng_Send_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "14900011079803", "Your scheduled payment has been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'", "", "Disabled", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single send money schedule: Verify Cancel " +
+            "Schedule Send Money Bene of other HBL Fortnightly Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify Cancel Schedule Send Money Bene of other HBL Fortnightly Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify Cancel Schedule Send Money Bene of other HBL Fortnightly Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "00476001511601")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payment has been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleSendMoneySchedule_VerifyCancelScheduleSendMoneyBeneOfOtherHBLFortnightlyMng_Send_Cancel()
+        {
+#line 401
+this.AsAUserIWantToVerifyCancelingASingleSendMoneySchedule("Verify Cancel Schedule Send Money Bene of other HBL Fortnightly Mng_Send_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "00476001511601", "Your scheduled payment has been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'", "", "Disabled", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single send money schedule: Verify Cancel " +
+            "Schedule Send Money Bene of other HBL Monthly Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify Cancel Schedule Send Money Bene of other HBL Monthly Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify Cancel Schedule Send Money Bene of other HBL Monthly Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "09470201056703")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payment has been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleSendMoneySchedule_VerifyCancelScheduleSendMoneyBeneOfOtherHBLMonthlyMng_Send_Cancel()
+        {
+#line 401
+this.AsAUserIWantToVerifyCancelingASingleSendMoneySchedule("Verify Cancel Schedule Send Money Bene of other HBL Monthly Mng_Send_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "09470201056703", "Your scheduled payment has been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'", "", "Disabled", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single send money schedule: Verify Cancel " +
+            "Schedule Send Money Bene of other HBL Quarterly Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify Cancel Schedule Send Money Bene of other HBL Quarterly Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify Cancel Schedule Send Money Bene of other HBL Quarterly Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24460094904501")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payment has been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleSendMoneySchedule_VerifyCancelScheduleSendMoneyBeneOfOtherHBLQuarterlyMng_Send_Cancel()
+        {
+#line 401
+this.AsAUserIWantToVerifyCancelingASingleSendMoneySchedule("Verify Cancel Schedule Send Money Bene of other HBL Quarterly Mng_Send_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "24460094904501", "Your scheduled payment has been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'", "", "Disabled", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single send money schedule: Verify Cancel " +
+            "Schedule the FCY USD Daily Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify Cancel Schedule the FCY USD Daily Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify Cancel Schedule the FCY USD Daily Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "23087900855910")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payment has been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleSendMoneySchedule_VerifyCancelScheduleTheFCYUSDDailyMng_Send_Cancel()
+        {
+#line 401
+this.AsAUserIWantToVerifyCancelingASingleSendMoneySchedule("Verify Cancel Schedule the FCY USD Daily Mng_Send_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "23087900855910", "Your scheduled payment has been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'", "", "Disabled", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single send money schedule: Verify Cancel " +
+            "Schedule the Receiver Account Blocked Daily Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify Cancel Schedule the Receiver Account Blocked Daily Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify Cancel Schedule the Receiver Account Blocked Daily Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "15647900453401")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payment has been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleSendMoneySchedule_VerifyCancelScheduleTheReceiverAccountBlockedDailyMng_Send_Cancel()
+        {
+#line 401
+this.AsAUserIWantToVerifyCancelingASingleSendMoneySchedule("Verify Cancel Schedule the Receiver Account Blocked Daily Mng_Send_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "15647900453401", "Your scheduled payment has been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'", "", "Disabled", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single send money schedule: Verify Cancel " +
+            "Schedule the Branchless 03334900125 Daily Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Verify Cancel Schedule the Branchless 03334900125 Daily Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "Verify Cancel Schedule the Branchless 03334900125 Daily Mng_Send_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "03334900125")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payment has been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleSendMoneySchedule_VerifyCancelScheduleTheBranchless03334900125DailyMng_Send_Cancel()
+        {
+#line 401
+this.AsAUserIWantToVerifyCancelingASingleSendMoneySchedule("Verify Cancel Schedule the Branchless 03334900125 Daily Mng_Send_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "03334900125", "Your scheduled payment has been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'", "", "Disabled", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        public virtual void AsAUserIWantToVerifyCancelingASingleBillPaymentSchedule(string @case, string expected_Result, string db_Val, string consumer_No, string success_Msg, string schedule_Tran_Id_Query, string cancel_Date, string schedule_Status, string schedule_Status_Query, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "MngSchedule"};
+                    "MngSchedule",
+                    "MngSchedule_Bill_Cancel"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user I want to verify canceling a single bill payment schedule", @__tags);
-#line 391
+#line 426
 this.ScenarioSetup(scenarioInfo);
-#line 392
+#line 427
  testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 393
+#line 428
+ testRunner.And(string.Format("the test case expected result is \"{0}\"", expected_Result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 429
  testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 395
+#line 431
  testRunner.And(string.Format("I set value in context from data \"{0}\" as \"Bene_AccountNo\"", consumer_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 396
+#line 432
  testRunner.And(string.Format("I set value in context from data \"{0}\" as \"String_Date\"", cancel_Date), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 397
+#line 433
+ testRunner.And("I am performing \"OK\" alert operation on cross icon on \"MyAccount_MngSchBill_Cance" +
+                    "lDateBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 434
  testRunner.And(string.Format("I set value in context from database \"{0}\" as \"schedule_tran_id\" on Schema \"{1}\"", schedule_Tran_Id_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 398
+#line 435
  testRunner.When("I am clicking on \"MyAccount_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 399
+#line 436
  testRunner.And("I am clicking on \"MyAccount_MngSch_Icon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 400
+#line 437
  testRunner.And("I am clicking on \"MyAccount_MngSch_Cancel_RowClick\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 401
+#line 438
  testRunner.And("I am clicking on \"MyAccount_MngSch_SummaryClick\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 402
- testRunner.Then("I am performing \"OK\" alert operation on cross icon on \"MyAccount_MngSch_CancelDat" +
-                    "eBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 403
+#line 439
+ testRunner.Then("I am performing \"OK\" alert operation on cross icon on \"MyAccount_MngSchBill_Cance" +
+                    "lDateBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 440
  testRunner.And(string.Format("verify through \"{0}\" on \"MyAccount_MngSch_DeleteMsg\"", success_Msg), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 404
+#line 441
  testRunner.And("I am performing on \"MyAccount_MngSch_DeleteOkBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 405
+#line 442
  testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"{2}\"", schedule_Status, schedule_Status_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1374,23 +6237,375 @@ this.ScenarioSetup(scenarioInfo);
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single bill payment schedule: As a user I " +
-            "want to verify cancelling a single send money scheduled payment")]
+            "want to verify cancelling a single bill payment scheduled Electricity Mng_Bill_C" +
+            "ancel")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Cancel")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_BillPayment.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify cancelling a single send money scheduled payment")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify cancelling a single send money scheduled payment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify cancelling a single bill payment scheduled Electricity" +
+            " Mng_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify cancelling a single bill payment scheduled Electricity" +
+            " Mng_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no", "06124110095500")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no", "0400000484677")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "24-10-2020")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}' and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'")]
-        public virtual void AsAUserIWantToVerifyCancelingASingleBillPaymentSchedule_AsAUserIWantToVerifyCancellingASingleSendMoneyScheduledPayment()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @" SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'Mon YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleBillPaymentSchedule_AsAUserIWantToVerifyCancellingASingleBillPaymentScheduledElectricityMng_Bill_Cancel()
         {
-#line 391
-this.AsAUserIWantToVerifyCancelingASingleBillPaymentSchedule("As a user I want to verify cancelling a single send money scheduled payment", "DIGITAL_CHANNEL_SEC", "06124110095500", "Your scheduled payments have been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_FUND_TRANSFER_BENEFICIARY LM ON TM.FUND_TRANSFER_BENEFICIARY_ID = LM.FUND_TRANSFER_BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}'", "24-10-2020", "Disabled", @"SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'DD-MM-YYYY') = '{string_date}'", new string[] {
+#line 426
+this.AsAUserIWantToVerifyCancelingASingleBillPaymentSchedule("As a user I want to verify cancelling a single bill payment scheduled Electricity" +
+                    " Mng_Bill_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "0400000484677", "Your scheduled payments have been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}' and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "1", "Disabled", @" SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'Mon YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single bill payment schedule: As a user I " +
+            "want to verify cancelling a single bill payment scheduled Water Mng_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify cancelling a single bill payment scheduled Water Mng_B" +
+            "ill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify cancelling a single bill payment scheduled Water Mng_B" +
+            "ill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no", "65009122100096")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}' and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @" SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'Mon YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleBillPaymentSchedule_AsAUserIWantToVerifyCancellingASingleBillPaymentScheduledWaterMng_Bill_Cancel()
+        {
+#line 426
+this.AsAUserIWantToVerifyCancelingASingleBillPaymentSchedule("As a user I want to verify cancelling a single bill payment scheduled Water Mng_B" +
+                    "ill_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "65009122100096", "Your scheduled payments have been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}' and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "1", "Disabled", @" SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'Mon YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single bill payment schedule: As a user I " +
+            "want to verify cancelling a single bill payment scheduled Gas Mng_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify cancelling a single bill payment scheduled Gas Mng_Bil" +
+            "l_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify cancelling a single bill payment scheduled Gas Mng_Bil" +
+            "l_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no", "0004069089")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}' and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @" SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'Mon YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleBillPaymentSchedule_AsAUserIWantToVerifyCancellingASingleBillPaymentScheduledGasMng_Bill_Cancel()
+        {
+#line 426
+this.AsAUserIWantToVerifyCancelingASingleBillPaymentSchedule("As a user I want to verify cancelling a single bill payment scheduled Gas Mng_Bil" +
+                    "l_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "0004069089", "Your scheduled payments have been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}' and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "1", "Disabled", @" SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'Mon YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single bill payment schedule: As a user I " +
+            "want to verify cancelling a single bill payment scheduled Landline Mng_Bill_Canc" +
+            "el")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify cancelling a single bill payment scheduled Landline Mn" +
+            "g_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify cancelling a single bill payment scheduled Landline Mn" +
+            "g_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no", "1756156")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}' and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @" SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'Mon YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleBillPaymentSchedule_AsAUserIWantToVerifyCancellingASingleBillPaymentScheduledLandlineMng_Bill_Cancel()
+        {
+#line 426
+this.AsAUserIWantToVerifyCancelingASingleBillPaymentSchedule("As a user I want to verify cancelling a single bill payment scheduled Landline Mn" +
+                    "g_Bill_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "1756156", "Your scheduled payments have been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}' and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "1", "Disabled", @" SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'Mon YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single bill payment schedule: As a user I " +
+            "want to verify cancelling a single bill payment scheduled SSGC 5 lac Mng_Bill_Ca" +
+            "ncel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify cancelling a single bill payment scheduled SSGC 5 lac " +
+            "Mng_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify cancelling a single bill payment scheduled SSGC 5 lac " +
+            "Mng_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no", "0003979428")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}' and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @" SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'Mon YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleBillPaymentSchedule_AsAUserIWantToVerifyCancellingASingleBillPaymentScheduledSSGC5LacMng_Bill_Cancel()
+        {
+#line 426
+this.AsAUserIWantToVerifyCancelingASingleBillPaymentSchedule("As a user I want to verify cancelling a single bill payment scheduled SSGC 5 lac " +
+                    "Mng_Bill_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "0003979428", "Your scheduled payments have been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}' and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "1", "Disabled", @" SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'Mon YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single bill payment schedule: As a user I " +
+            "want to verify cancelling a single bill payment scheduled Water 10 Mng_Bill_Canc" +
+            "el")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify cancelling a single bill payment scheduled Water 10 Mn" +
+            "g_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify cancelling a single bill payment scheduled Water 10 Mn" +
+            "g_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no", "65009121900045")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}' and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @" SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'Mon YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleBillPaymentSchedule_AsAUserIWantToVerifyCancellingASingleBillPaymentScheduledWater10Mng_Bill_Cancel()
+        {
+#line 426
+this.AsAUserIWantToVerifyCancelingASingleBillPaymentSchedule("As a user I want to verify cancelling a single bill payment scheduled Water 10 Mn" +
+                    "g_Bill_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "65009121900045", "Your scheduled payments have been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}' and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "1", "Disabled", @" SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'Mon YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single bill payment schedule: As a user I " +
+            "want to verify cancelling a single bill payment bene scheduled Electricity Mng_B" +
+            "ill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify cancelling a single bill payment bene scheduled Electr" +
+            "icity Mng_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify cancelling a single bill payment bene scheduled Electr" +
+            "icity Mng_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no", "0400000064511")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}' and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @" SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'Mon YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleBillPaymentSchedule_AsAUserIWantToVerifyCancellingASingleBillPaymentBeneScheduledElectricityMng_Bill_Cancel()
+        {
+#line 426
+this.AsAUserIWantToVerifyCancelingASingleBillPaymentSchedule("As a user I want to verify cancelling a single bill payment bene scheduled Electr" +
+                    "icity Mng_Bill_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "0400000064511", "Your scheduled payments have been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}' and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "1", "Disabled", @" SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'Mon YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single bill payment schedule: As a user I " +
+            "want to verify cancelling a single bill payment bene scheduled Water Mng_Bill_Ca" +
+            "ncel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify cancelling a single bill payment bene scheduled Water " +
+            "Mng_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify cancelling a single bill payment bene scheduled Water " +
+            "Mng_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no", "65009121600066")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}' and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @" SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'Mon YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleBillPaymentSchedule_AsAUserIWantToVerifyCancellingASingleBillPaymentBeneScheduledWaterMng_Bill_Cancel()
+        {
+#line 426
+this.AsAUserIWantToVerifyCancelingASingleBillPaymentSchedule("As a user I want to verify cancelling a single bill payment bene scheduled Water " +
+                    "Mng_Bill_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "65009121600066", "Your scheduled payments have been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}' and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "1", "Disabled", @" SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'Mon YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single bill payment schedule: As a user I " +
+            "want to verify cancelling a single bill payment bene scheduled Gas Mng_Bill_Canc" +
+            "el")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify cancelling a single bill payment bene scheduled Gas Mn" +
+            "g_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify cancelling a single bill payment bene scheduled Gas Mn" +
+            "g_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no", "0003950000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}' and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @" SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'Mon YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleBillPaymentSchedule_AsAUserIWantToVerifyCancellingASingleBillPaymentBeneScheduledGasMng_Bill_Cancel()
+        {
+#line 426
+this.AsAUserIWantToVerifyCancelingASingleBillPaymentSchedule("As a user I want to verify cancelling a single bill payment bene scheduled Gas Mn" +
+                    "g_Bill_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "0003950000", "Your scheduled payments have been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}' and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "1", "Disabled", @" SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'Mon YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single bill payment schedule: As a user I " +
+            "want to verify cancelling a single bill payment bene scheduled Landline Mng_Bill" +
+            "_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify cancelling a single bill payment bene scheduled Landli" +
+            "ne Mng_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify cancelling a single bill payment bene scheduled Landli" +
+            "ne Mng_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no", "1756155")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}' and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @" SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'Mon YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleBillPaymentSchedule_AsAUserIWantToVerifyCancellingASingleBillPaymentBeneScheduledLandlineMng_Bill_Cancel()
+        {
+#line 426
+this.AsAUserIWantToVerifyCancelingASingleBillPaymentSchedule("As a user I want to verify cancelling a single bill payment bene scheduled Landli" +
+                    "ne Mng_Bill_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "1756155", "Your scheduled payments have been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}' and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "1", "Disabled", @" SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'Mon YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single bill payment schedule: As a user I " +
+            "want to verify cancelling a single bill payment bene scheduled SSGC 5 lac Mng_Bi" +
+            "ll_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify cancelling a single bill payment bene scheduled SSGC 5" +
+            " lac Mng_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify cancelling a single bill payment bene scheduled SSGC 5" +
+            " lac Mng_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no", "0318660000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}' and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @" SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'Mon YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleBillPaymentSchedule_AsAUserIWantToVerifyCancellingASingleBillPaymentBeneScheduledSSGC5LacMng_Bill_Cancel()
+        {
+#line 426
+this.AsAUserIWantToVerifyCancelingASingleBillPaymentSchedule("As a user I want to verify cancelling a single bill payment bene scheduled SSGC 5" +
+                    " lac Mng_Bill_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "0318660000", "Your scheduled payments have been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}' and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "1", "Disabled", @" SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'Mon YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single bill payment schedule: As a user I " +
+            "want to verify cancelling a single bill payment bene scheduled Water 10 Mng_Bill" +
+            "_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify cancelling a single bill payment bene scheduled Water " +
+            "10 Mng_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify cancelling a single bill payment bene scheduled Water " +
+            "10 Mng_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no", "65009121500021")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}' and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @" SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'Mon YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleBillPaymentSchedule_AsAUserIWantToVerifyCancellingASingleBillPaymentBeneScheduledWater10Mng_Bill_Cancel()
+        {
+#line 426
+this.AsAUserIWantToVerifyCancelingASingleBillPaymentSchedule("As a user I want to verify cancelling a single bill payment bene scheduled Water " +
+                    "10 Mng_Bill_Cancel", "Pass", "DIGITAL_CHANNEL_SEC", "65009121500021", "Your scheduled payments have been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}' and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "1", "Disabled", @" SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'Mon YYYY') = '{string_date}'", new string[] {
+                        "source:Data/ManageSchedule_Cancel_BillPayment.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify canceling a single bill payment schedule: As a user I " +
+            "want to verify cancelling a invalid bill payment bene scheduled Water 10 Mng_Bil" +
+            "l_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ManageSchedulePayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("MngSchedule_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/ManageSchedule_Cancel_BillPayment.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify cancelling a invalid bill payment bene scheduled Water" +
+            " 10 Mng_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify cancelling a invalid bill payment bene scheduled Water" +
+            " 10 Mng_Bill_Cancel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:consumer_no", "53568765432543")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_msg", "Your scheduled payments have been cancelled successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_tran_id_query", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}' and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cancel_date", "1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status", "Disabled")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:schedule_status_query", @" SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'Mon YYYY') = '{string_date}'")]
+        public virtual void AsAUserIWantToVerifyCancelingASingleBillPaymentSchedule_AsAUserIWantToVerifyCancellingAInvalidBillPaymentBeneScheduledWater10Mng_Bill_Cancel()
+        {
+#line 426
+this.AsAUserIWantToVerifyCancelingASingleBillPaymentSchedule("As a user I want to verify cancelling a invalid bill payment bene scheduled Water" +
+                    " 10 Mng_Bill_Cancel", "Fail", "DIGITAL_CHANNEL_SEC", "53568765432543", "Your scheduled payments have been cancelled successfully", @"Select TM.SCHEDULED_TRAN_MASTER_ID from DC_SCHEDULED_TRAN_MASTER TM INNER JOIN DC_BILL_PAYMENT_BENEFICIARY LM ON TM.BILL_BENEFICIARY_ID = LM.BENEFICIARY_ID where TM.CUSTOMER_INFO_ID = (SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME = '{customer_name}') and LM.ACCOUNT_NO = '{account_number}' and TM.LAST_EXECUTION_DATE > sysdate and TM.IS_DELETED = 0", "1", "Disabled", @" SELECT JK.PARAMETER_NAME FROM DC_SCHEDULED_TRAN_DETAIL ZM INNER JOIN DC_APPLICATION_PARAM_DETAIL JK ON ZM.PARAM_EXECUTION_STATUS_ID = JK.APPLICATION_PARAMETER_ID WHERE ZM.SCHEDULED_TRAN_MASTER_ID = '{schedule_tran_id}' AND ZM.CREATED_BY = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CL WHERE CL.CUSTOMER_NAME = '{customer_name}') and To_Char(ZM.EXECUTION_DATE,'Mon YYYY') = '{string_date}'", new string[] {
                         "source:Data/ManageSchedule_Cancel_BillPayment.xlsx"});
 #line hidden
         }

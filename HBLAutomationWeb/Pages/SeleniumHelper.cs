@@ -19,6 +19,7 @@ using Tamir.SharpSsh;
 using System.Data;
 using OpenQA.Selenium.Interactions;
 using HBLAutomationWeb.Beans;
+using System.Diagnostics;
 
 namespace HBLAutomationWeb.Pages
 {
@@ -96,6 +97,8 @@ namespace HBLAutomationWeb.Pages
                 IWebElement elementbutton = waitDriver.Until(ExpectedConditions.ElementExists(By.XPath(locator)));
                 IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
                 js.ExecuteScript("arguments[0].scrollIntoView();", elementbutton);
+                //js.ExecuteScript("arguments[0].scrollIntoView();", elementbutton);
+                //js.ExecuteScript("arguments[0].scrollIntoView();", elementbutton);
                 // var elmnt = document.getElementById("content");
                 //  elmnt.scrollIntoView();
                 //IWebElement button = waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
@@ -122,7 +125,7 @@ namespace HBLAutomationWeb.Pages
                     value = Control.Text;
                 }
                 value = value.Trim();
-                Assert.AreEqual(message, value);
+                Assert.AreEqual(message.Trim(), value.Trim());
 
             }
             catch (ElementNotVisibleException ex)
@@ -187,6 +190,16 @@ namespace HBLAutomationWeb.Pages
             string hex = myColor.R.ToString("X2") + myColor.G.ToString("X2") + myColor.B.ToString("X2");
             return hex;
         }
+        //Return Line No For Exception
+        public static string Get_Error_LineNo_exception(Exception ex)
+        {
+            var st = new StackTrace(ex, true);
+            // Get the top stack frame
+            var frame = st.GetFrame(st.FrameCount - 1);
+            // Get the line number from the stack frame
+            var line = frame.GetFileLineNumber();
+            return (" And Exception Line Number Is " + line.ToString());
+        }
 
 
         ////For Taking Screenshot
@@ -237,10 +250,8 @@ namespace HBLAutomationWeb.Pages
         {
             try
             {
-
                 waitDriver.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
                 {
-
                     IWebElement Value = waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
                     Thread.Sleep(100);
                     Value.Click();
@@ -342,8 +353,6 @@ namespace HBLAutomationWeb.Pages
         {
             try
             {
-
-
                 //Home Page Locator
                 if (locator.Equals("//img[@class='desk-logo']"))
                 {
@@ -356,7 +365,6 @@ namespace HBLAutomationWeb.Pages
                 }
                 else
                 {
-
                     Thread.Sleep(3000);
 
                     waitDriver.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locator)));
@@ -391,15 +399,11 @@ namespace HBLAutomationWeb.Pages
 
         }
 
-
-
         //Method For Rating
         public void rating(string locator)
         {
             try
             {
-
-
                 //Home Page Locator
                 if (locator.Equals("//img[@class='desk-logo']"))
                 {
@@ -464,7 +468,6 @@ namespace HBLAutomationWeb.Pages
                 Thread.Sleep(200);
                 return;
             }
-
         }
 
         //Method For Combobox
@@ -478,6 +481,7 @@ namespace HBLAutomationWeb.Pages
                 Thread.Sleep(2000);
                 var selectElement = new SelectElement(Combobox);
                 var selecteditem = selectElement.Options;
+
                 foreach (var item in selecteditem)
                 {
                     if (item.Text.Contains(value))
@@ -510,8 +514,6 @@ namespace HBLAutomationWeb.Pages
 
                 //}
                 Thread.Sleep(3000);
-
-
             }
 
             catch (ElementNotVisibleException)
@@ -530,11 +532,7 @@ namespace HBLAutomationWeb.Pages
                 throw new Exception("ex message: " + ex.Message);
 
             }
-
-
         }
-
-
 
         //Method For Combobox With Search Field
         public void comboboxSearch(string value, string locator1, string locator2)
@@ -562,8 +560,6 @@ namespace HBLAutomationWeb.Pages
                     throw new AssertFailedException(string.Format("The given value {0} is not present in the list", value));
                 }
                 Thread.Sleep(3000);
-
-
             }
 
             catch (ElementNotVisibleException)
@@ -580,7 +576,6 @@ namespace HBLAutomationWeb.Pages
             catch (Exception ex)
             {
                 throw new Exception("ex message: " + ex.Message);
-
             }
         }
 
@@ -606,7 +601,7 @@ namespace HBLAutomationWeb.Pages
                 query = "Select I.OTP from DC_OTP_HISTORY I where I.CNIC='{CNIC}' AND I.TRANSACTION_TYPE_ID = '247' ORDER BY I.GENERATED_ON DESC";
                 query = query.Replace("{CNIC}", context.GetCustomerCNIC());
             }
-            if (context.Get_Change_LoginID_Check() == true)
+            else if (context.Get_Change_LoginID_Check() == true)
             {
                 query = "Select I.OTP from DC_OTP_HISTORY I where I.CUSTOMER_INFO_ID='{CUSTOMER_INFO_ID}' ORDER BY I.GENERATED_ON DESC";
                 query = query.Replace("{CUSTOMER_INFO_ID}", context.GetCustomerInfoID());
@@ -620,6 +615,7 @@ namespace HBLAutomationWeb.Pages
             DataAccessComponent.DataAccessLink dLink2 = new DataAccessComponent.DataAccessLink();
             DataTable SourceDataTable2 = dLink2.GetDataTable(query, schema);
             otp = SourceDataTable2.Rows[0][0].ToString();
+            
 
             string chk_encrypt_query = "Select PARAMTER_VALUE  from DC_APPLICATION_PARAM_DETAIL i where I.PARAMETER_NAME='OTP_HISTORY_ENCRYPTED'";
             DataAccessComponent.DataAccessLink dLink = new DataAccessComponent.DataAccessLink();
@@ -670,8 +666,8 @@ namespace HBLAutomationWeb.Pages
             {
                 js.ExecuteScript("window.confirm = function(msg) { return false; }");
             }
-            link.Click();
-
+            PressEnter(locator);
+            //link.Click();
         }
 
         // For Range Slider with count and option for Left and Right arrow Key

@@ -83,15 +83,20 @@ namespace HBLAutomationWeb.Resources.Feature.InternetBanking
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void _1AsAUserIWantToVerifyLoginForHBLWebBeneficiaryManagement(string @case, string login_UserId_Value, string login_Password_Value, string oTP_Value, string[] exampleTags)
+        public virtual void AAAsAUserIWantToVerifyLoginForHBLWebBeneficiaryManagement(string @case, string login_UserId_Value, string login_Password_Value, string oTP_Value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "Login"};
+                    "BeneMng",
+                    "BeneVerificationSendMoney",
+                    "BeneVerificationBillPay",
+                    "BeneEditing",
+                    "BeneDeletion",
+                    "BeneAddition"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1 As a user i want to Verify login for HBL Web Beneficiary Management", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("AA As a user i want to Verify login for HBL Web Beneficiary Management", @__tags);
 #line 7
 this.ScenarioSetup(scenarioInfo);
 #line 8
@@ -119,33 +124,135 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 As a user i want to Verify login for HBL Web Beneficiary Management: When user " +
-            "id and password are valid")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("AA As a user i want to Verify login for HBL Web Beneficiary Management: When user" +
+            " id and password are valid for Bene_Addition")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Login")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/IBLogin.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "YASIR113")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneVerificationSendMoney")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneVerificationBillPay")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneEditing")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneDeletion")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/Bene_Mng_Login.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid for Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid for Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "AUTOMATIONBENE")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
-        public virtual void _1AsAUserIWantToVerifyLoginForHBLWebBeneficiaryManagement_WhenUserIdAndPasswordAreValid()
+        public virtual void AAAsAUserIWantToVerifyLoginForHBLWebBeneficiaryManagement_WhenUserIdAndPasswordAreValidForBene_Addition()
         {
 #line 7
-this._1AsAUserIWantToVerifyLoginForHBLWebBeneficiaryManagement("When user id and password are valid", "YASIR113", "pakistan1", "12345678", new string[] {
-                        "source:Data/IBLogin.xlsx"});
+this.AAAsAUserIWantToVerifyLoginForHBLWebBeneficiaryManagement("When user id and password are valid for Bene_Addition", "AUTOMATIONBENE", "pakistan1", "12345678", new string[] {
+                        "source:Data/Bene_Mng_Login.xlsx"});
 #line hidden
         }
         
-        public virtual void AsAUserIWantToVerifyBeneficiaries(string @case, string db_Val, string send_Money_Query, string pay_Query, string[] exampleTags)
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("AA As a user i want to Verify login for HBL Web Beneficiary Management: When user" +
+            " id and password are valid for Bene_Deletion")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneVerificationSendMoney")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneVerificationBillPay")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneEditing")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneDeletion")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/Bene_Mng_Login.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid for Bene_Deletion")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid for Bene_Deletion")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "SHAHZAD77")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        public virtual void AAAsAUserIWantToVerifyLoginForHBLWebBeneficiaryManagement_WhenUserIdAndPasswordAreValidForBene_Deletion()
+        {
+#line 7
+this.AAAsAUserIWantToVerifyLoginForHBLWebBeneficiaryManagement("When user id and password are valid for Bene_Deletion", "SHAHZAD77", "pakistan1", "12345678", new string[] {
+                        "source:Data/Bene_Mng_Login.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("AA As a user i want to Verify login for HBL Web Beneficiary Management: When user" +
+            " id and password are valid for Bene_Updation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneVerificationSendMoney")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneVerificationBillPay")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneEditing")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneDeletion")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/Bene_Mng_Login.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid for Bene_Updation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid for Bene_Updation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "Talhawani")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        public virtual void AAAsAUserIWantToVerifyLoginForHBLWebBeneficiaryManagement_WhenUserIdAndPasswordAreValidForBene_Updation()
+        {
+#line 7
+this.AAAsAUserIWantToVerifyLoginForHBLWebBeneficiaryManagement("When user id and password are valid for Bene_Updation", "Talhawani", "pakistan1", "12345678", new string[] {
+                        "source:Data/Bene_Mng_Login.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("AA As a user i want to Verify login for HBL Web Beneficiary Management: When user" +
+            " id and password are valid for Bene_Verification_send")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneVerificationSendMoney")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneVerificationBillPay")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneEditing")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneDeletion")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/Bene_Mng_Login.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid for Bene_Verification_send")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid for Bene_Verification_send")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "Beneverification")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        public virtual void AAAsAUserIWantToVerifyLoginForHBLWebBeneficiaryManagement_WhenUserIdAndPasswordAreValidForBene_Verification_Send()
+        {
+#line 7
+this.AAAsAUserIWantToVerifyLoginForHBLWebBeneficiaryManagement("When user id and password are valid for Bene_Verification_send", "Beneverification", "pakistan1", "12345678", new string[] {
+                        "source:Data/Bene_Mng_Login.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("AA As a user i want to Verify login for HBL Web Beneficiary Management: When user" +
+            " id and password are valid for Bene_Verification_pay")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneVerificationSendMoney")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneVerificationBillPay")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneEditing")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneDeletion")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/Bene_Mng_Login.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user id and password are valid for Bene_Verification_pay")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user id and password are valid for Bene_Verification_pay")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        public virtual void AAAsAUserIWantToVerifyLoginForHBLWebBeneficiaryManagement_WhenUserIdAndPasswordAreValidForBene_Verification_Pay()
+        {
+#line 7
+this.AAAsAUserIWantToVerifyLoginForHBLWebBeneficiaryManagement("When user id and password are valid for Bene_Verification_pay", "", "pakistan1", "12345678", new string[] {
+                        "source:Data/Bene_Mng_Login.xlsx"});
+#line hidden
+        }
+        
+        public virtual void AsAUserIWantToVerifySendMoneyBeneficiaries(string @case, string db_Val, string send_Money_Query, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "BeneMng"};
+                    "BeneMng",
+                    "BeneVerificationSendMoney"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user I want to verify Beneficiaries", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user I want to verify Send Money Beneficiaries", @__tags);
 #line 25
 this.ScenarioSetup(scenarioInfo);
 #line 26
@@ -157,17 +264,63 @@ this.ScenarioSetup(scenarioInfo);
 #line 29
  testRunner.When("I am clicking on \"BeneManage_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 30
- testRunner.And("I am clicking on \"BeneManage_SendMoney_Tab\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I wait 10000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 31
+ testRunner.And("I am clicking on \"BeneManage_SendMoney_Tab\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 32
  testRunner.Then(string.Format("I want to verify already added beneficiaries with query \"{0}\" of Schema \"{1}\" on " +
                         "keyword \"BeneManage_SendMoney_BeneCount\"", send_Money_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 32
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Send Money Beneficiaries: As a user I want to verify A" +
+            "lready Added Beneficiaries of Send Money Bene_Verification_send")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneVerificationSendMoney")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneVerification_SendMoney.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify Already Added Beneficiaries of Send Money Bene_Verific" +
+            "ation_send")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify Already Added Beneficiaries of Send Money Bene_Verific" +
+            "ation_send")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:send_money_query", "DIGITAL_CHANNEL_SEC")]
+        public virtual void AsAUserIWantToVerifySendMoneyBeneficiaries_AsAUserIWantToVerifyAlreadyAddedBeneficiariesOfSendMoneyBene_Verification_Send()
+        {
+#line 25
+this.AsAUserIWantToVerifySendMoneyBeneficiaries("As a user I want to verify Already Added Beneficiaries of Send Money Bene_Verific" +
+                    "ation_send", "Pass", "DIGITAL_CHANNEL_SEC", new string[] {
+                        "source:Data/BeneVerification_SendMoney.xlsx"});
+#line hidden
+        }
+        
+        public virtual void AsAUserIWantToVerifyBillPaymentBeneficiaries(string @case, string db_Val, string pay_Query, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "BeneMng",
+                    "BeneVerificationBillPay"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user I want to verify Bill Payment Beneficiaries", @__tags);
+#line 40
+this.ScenarioSetup(scenarioInfo);
+#line 41
+ testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 42
+ testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 43
  testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 33
- testRunner.And("I am clicking on \"BeneManage_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 34
+#line 44
+ testRunner.When("I am clicking on \"BeneManage_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 45
+ testRunner.And("I wait 10000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 46
  testRunner.And("I am clicking on \"BeneManage_Pay_Tab\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 35
+#line 47
  testRunner.Then(string.Format("I want to verify already added beneficiaries with query \"{0}\" of Schema \"{1}\" on " +
                         "keyword \"BeneManage_Pay_BeneCount\"", pay_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -175,124 +328,300 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Beneficiaries: As a user I want to verify Already Adde" +
-            "d Beneficiaries")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Bill Payment Beneficiaries: As a user I want to verify" +
+            " Already Added Beneficiaries of Bill Payment")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneVerification.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify Already Added Beneficiaries")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify Already Added Beneficiaries")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:send_money_query", "select  ACCOUNT_NO, ACCOUNT_TITLE, NICK from DC_FUND_TRANSFER_BENEFICIARY b where" +
-            " B.IS_DELETED =0 and B.CUSTOMER_INFO_ID=(Select customer_info_id from dc_custome" +
-            "r_info k where k.customer_name = \'{customer_name}\')")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pay_query", @"Select L.CONSUMER_NUMBER, COMPANY_NAME, BILL_BENE_NICK from DC_BILL_PAYMENT_BENEFICIARY  l where L.CUSTOMER_INFO_ID= (Select customer_info_id from dc_customer_info k where k.customer_name = '{customer_name}') and L.IS_ACTIVE = '1' and L.COMPANY_SUB_CATEGORY = '{company_sub_category}'")]
-        public virtual void AsAUserIWantToVerifyBeneficiaries_AsAUserIWantToVerifyAlreadyAddedBeneficiaries()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneVerificationBillPay")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneVerification_Pay.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "As a user I want to verify Already Added Beneficiaries of Bill Payment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "As a user I want to verify Already Added Beneficiaries of Bill Payment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pay_query", "DIGITAL_CHANNEL_SEC")]
+        public virtual void AsAUserIWantToVerifyBillPaymentBeneficiaries_AsAUserIWantToVerifyAlreadyAddedBeneficiariesOfBillPayment()
         {
-#line 25
-this.AsAUserIWantToVerifyBeneficiaries("As a user I want to verify Already Added Beneficiaries", "DIGITAL_CHANNEL_SEC", "select  ACCOUNT_NO, ACCOUNT_TITLE, NICK from DC_FUND_TRANSFER_BENEFICIARY b where" +
-                    " B.IS_DELETED =0 and B.CUSTOMER_INFO_ID=(Select customer_info_id from dc_custome" +
-                    "r_info k where k.customer_name = \'{customer_name}\')", @"Select L.CONSUMER_NUMBER, COMPANY_NAME, BILL_BENE_NICK from DC_BILL_PAYMENT_BENEFICIARY  l where L.CUSTOMER_INFO_ID= (Select customer_info_id from dc_customer_info k where k.customer_name = '{customer_name}') and L.IS_ACTIVE = '1' and L.COMPANY_SUB_CATEGORY = '{company_sub_category}'", new string[] {
-                        "source:Data/BeneVerification.xlsx"});
+#line 40
+this.AsAUserIWantToVerifyBillPaymentBeneficiaries("As a user I want to verify Already Added Beneficiaries of Bill Payment", "Pass", "DIGITAL_CHANNEL_SEC", new string[] {
+                        "source:Data/BeneVerification_Pay.xlsx"});
 #line hidden
         }
         
         public virtual void AsAUserIWantToVerifyEditingBeneficiaries(string @case, string account_No, string success_Message, string nick, string email, string mobile, string tran_Type_Query, string tran_Date_Query, string tran_Bene_Name_Query, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "BeneMng"};
+                    "BeneMng",
+                    "BeneEditing"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user I want to verify Editing Beneficiaries", @__tags);
-#line 43
+#line 55
 this.ScenarioSetup(scenarioInfo);
-#line 44
+#line 56
  testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 45
+#line 57
  testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 46
+#line 58
  testRunner.And(string.Format("I set value in context from data \"{0}\" as \"Bene_AccountNo\"", account_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 47
+#line 59
  testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 48
+#line 60
  testRunner.When("I am clicking on \"BeneManage_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 49
+#line 61
+ testRunner.And("I wait 10000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 62
  testRunner.And("I am clicking on \"BeneManage_SendMoney_Tab\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 50
- testRunner.Then("I am clicking on \"BeneManage_Edit\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 51
+#line 63
+ testRunner.And("I scroll to element \"BeneManage_Edit\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 64
+ testRunner.Then("I press Enter on \"BeneManage_Edit\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 65
  testRunner.And(string.Format("I have given \"{0}\" on \"BeneManage_Edit_Nick\"", nick), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 52
+#line 66
  testRunner.And(string.Format("I have given \"{0}\" on \"BeneManage_Edit_Email\"", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 53
+#line 67
  testRunner.And(string.Format("I have given \"{0}\" on \"BeneManage_Edit_Mobile\"", mobile), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 54
+#line 68
  testRunner.And("I am performing \"OK\" alert operation on cross icon on \"BeneManage_Edit_UpdateBtn\"" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 55
- testRunner.And(string.Format("verify through \"{0}\" on \"BeneManage_Delete_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 57
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_D" +
-                        "elete_TranDate\"", tran_Date_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 58
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_D" +
-                        "elete_TranBene\"", tran_Bene_Name_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 59
- testRunner.And("I am performing on \"MyAccount_TranPopUp_CloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 60
- testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 61
- testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 62
- testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 63
- testRunner.And("I select \"Non Financial\" on \"Services_CategoryFilter\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 64
- testRunner.And("I scroll to element \"Services_Clear_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 65
- testRunner.And("I am performing on \"Services_Search_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 66
- testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 67
- testRunner.And("verify through \"Successful\" on \"MyAccount_Forgot_TranSuccessMessage\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 69
+ testRunner.And(string.Format("verify through \"{0}\" on \"BeneManage_Delete_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 71
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_D" +
                         "elete_TranDate\"", tran_Date_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 70
+#line 72
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_D" +
                         "elete_TranBene\"", tran_Bene_Name_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 71
+#line 73
+ testRunner.And("I am performing on \"MyAccount_TranPopUp_CloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 74
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 75
+ testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 76
+ testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 77
+ testRunner.And("I select \"Non Financial\" on \"Services_CategoryFilter\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 78
+ testRunner.And("I scroll to element \"Services_Clear_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 79
+ testRunner.And("I am performing on \"Services_Search_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 80
+ testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 81
+ testRunner.And("verify through \"Successful\" on \"MyAccount_Forgot_TranSuccessMessage\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 83
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_D" +
+                        "elete_TranDate\"", tran_Date_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 84
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_D" +
+                        "elete_TranBene\"", tran_Bene_Name_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 85
  testRunner.And("I am performing on \"Investment_TranActivityCloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Editing Beneficiaries: When user want to edit benefici" +
-            "ary")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Editing Beneficiaries: To verify bene updation without" +
+            " editing Bene_Updation")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneEditing")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneEditing.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user want to edit beneficiary")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user want to edit beneficiary")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "Beneficiary details has been updated successfully.")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify bene updation without editing Bene_Updation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify bene updation without editing Bene_Updation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "016020005202378")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick", "Beneficiary details has been updated successfully.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "asfand")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile", "a@a.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "03001212000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
             "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
             "TION_ID = \'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "")]
-        public virtual void AsAUserIWantToVerifyEditingBeneficiaries_WhenUserWantToEditBeneficiary()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        public virtual void AsAUserIWantToVerifyEditingBeneficiaries_ToVerifyBeneUpdationWithoutEditingBene_Updation()
         {
-#line 43
-this.AsAUserIWantToVerifyEditingBeneficiaries("When user want to edit beneficiary", "Beneficiary details has been updated successfully.", "", "", "", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+#line 55
+this.AsAUserIWantToVerifyEditingBeneficiaries("To verify bene updation without editing Bene_Updation", "Fail", "016020005202378", "Beneficiary details has been updated successfully.", "asfand", "a@a.com", "03001212000", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
-                    "TION_ID = \'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "", new string[] {
+                    "TION_ID = \'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", new string[] {
+                        "source:Data/BeneEditing.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Editing Beneficiaries: To verify bene updation with mo" +
+            "bile number update Bene_Updation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneEditing")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneEditing.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify bene updation with mobile number update Bene_Updation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify bene updation with mobile number update Bene_Updation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "06350010046515330017")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick", "Beneficiary details has been updated successfully.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "hani")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile", "a@a.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "03472709133")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        public virtual void AsAUserIWantToVerifyEditingBeneficiaries_ToVerifyBeneUpdationWithMobileNumberUpdateBene_Updation()
+        {
+#line 55
+this.AsAUserIWantToVerifyEditingBeneficiaries("To verify bene updation with mobile number update Bene_Updation", "Pass", "06350010046515330017", "Beneficiary details has been updated successfully.", "hani", "a@a.com", "03472709133", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", new string[] {
+                        "source:Data/BeneEditing.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Editing Beneficiaries: To very bene updation with emai" +
+            "l update Bene_Updation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneEditing")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneEditing.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To very bene updation with email update Bene_Updation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To very bene updation with email update Bene_Updation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "03334961458")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick", "Beneficiary details has been updated successfully.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "Zaid")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile", "u@u.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "03001212000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        public virtual void AsAUserIWantToVerifyEditingBeneficiaries_ToVeryBeneUpdationWithEmailUpdateBene_Updation()
+        {
+#line 55
+this.AsAUserIWantToVerifyEditingBeneficiaries("To very bene updation with email update Bene_Updation", "Pass", "03334961458", "Beneficiary details has been updated successfully.", "Zaid", "u@u.com", "03001212000", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", new string[] {
+                        "source:Data/BeneEditing.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Editing Beneficiaries: To very bene updation with nick" +
+            " update Bene_Updation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneEditing")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneEditing.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To very bene updation with nick update Bene_Updation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To very bene updation with nick update Bene_Updation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "02840103423929")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick", "Beneficiary details has been updated successfully.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "Usman")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile", "a@a.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "03001212000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        public virtual void AsAUserIWantToVerifyEditingBeneficiaries_ToVeryBeneUpdationWithNickUpdateBene_Updation()
+        {
+#line 55
+this.AsAUserIWantToVerifyEditingBeneficiaries("To very bene updation with nick update Bene_Updation", "Pass", "02840103423929", "Beneficiary details has been updated successfully.", "Usman", "a@a.com", "03001212000", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", new string[] {
+                        "source:Data/BeneEditing.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Editing Beneficiaries: To very bene updation null nick" +
+            " field Bene_Updation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneEditing")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneEditing.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To very bene updation null nick field Bene_Updation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To very bene updation null nick field Bene_Updation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "1726524101")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick", "Beneficiary details has been updated successfully.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile", "a@a.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "03001212000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        public virtual void AsAUserIWantToVerifyEditingBeneficiaries_ToVeryBeneUpdationNullNickFieldBene_Updation()
+        {
+#line 55
+this.AsAUserIWantToVerifyEditingBeneficiaries("To very bene updation null nick field Bene_Updation", "Fail", "1726524101", "Beneficiary details has been updated successfully.", "", "a@a.com", "03001212000", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", new string[] {
+                        "source:Data/BeneEditing.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Editing Beneficiaries: To very bene updation null emai" +
+            "l field Bene_Updation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneEditing")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneEditing.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To very bene updation null email field Bene_Updation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To very bene updation null email field Bene_Updation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "1726524101")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick", "Beneficiary details has been updated successfully.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "Iqbal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "03001212000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        public virtual void AsAUserIWantToVerifyEditingBeneficiaries_ToVeryBeneUpdationNullEmailFieldBene_Updation()
+        {
+#line 55
+this.AsAUserIWantToVerifyEditingBeneficiaries("To very bene updation null email field Bene_Updation", "Pass", "1726524101", "Beneficiary details has been updated successfully.", "Iqbal", "", "03001212000", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", new string[] {
+                        "source:Data/BeneEditing.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Editing Beneficiaries: To very bene updation null mobi" +
+            "le num field Bene_Updation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneEditing")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneEditing.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To very bene updation null mobile num field Bene_Updation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To very bene updation null mobile num field Bene_Updation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "03334900121")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick", "Beneficiary details has been updated successfully.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email", "sadasd")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile", "a@a.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        public virtual void AsAUserIWantToVerifyEditingBeneficiaries_ToVeryBeneUpdationNullMobileNumFieldBene_Updation()
+        {
+#line 55
+this.AsAUserIWantToVerifyEditingBeneficiaries("To very bene updation null mobile num field Bene_Updation", "Pass", "03334900121", "Beneficiary details has been updated successfully.", "sadasd", "a@a.com", "", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", new string[] {
                         "source:Data/BeneEditing.xlsx"});
 #line hidden
         }
@@ -300,102 +629,128 @@ this.AsAUserIWantToVerifyEditingBeneficiaries("When user want to edit beneficiar
         public virtual void AsAUserIWantToVerifyDeletingBeneficiaries(string @case, string account_No, string success_Message, string tran_Type_Query, string tran_Bene_Name_Query, string tran_Date_Query, string delete_Bene_Query, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "BeneMng"};
+                    "BeneMng",
+                    "BeneDeletion"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user I want to verify Deleting Beneficiaries", @__tags);
-#line 80
-this.ScenarioSetup(scenarioInfo);
-#line 81
- testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 82
- testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 83
- testRunner.And(string.Format("I set value in context from data \"{0}\" as \"Bene_AccountNo\"", account_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 84
- testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 85
- testRunner.When("I am clicking on \"BeneManage_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 86
- testRunner.And("I am clicking on \"BeneManage_SendMoney_Tab\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 87
- testRunner.Then("I am clicking on \"BeneManage_Delete\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 88
- testRunner.And("I am performing \"OK\" alert operation on cross icon on \"Signup_CrossIcon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 89
- testRunner.And(string.Format("verify through \"{0}\" on \"BeneManage_Delete_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 91
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_D" +
-                        "elete_TranDate\"", tran_Date_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 92
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_D" +
-                        "elete_TranBene\"", tran_Bene_Name_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 93
- testRunner.And("I am performing on \"BeneManage_Delete_TranCloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 94
- testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"<db_val>\"", delete_Bene_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 95
- testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 96
- testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 97
- testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"Bene_AccountNo\"", account_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 98
- testRunner.And("I select \"Non Financial\" on \"Services_CategoryFilter\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 99
- testRunner.And("I scroll to element \"Services_Clear_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I am clicking on \"BeneManage_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 100
- testRunner.And("I am performing on \"Services_Search_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I wait 10000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 101
- testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 102
- testRunner.And("verify through \"Successful\" on \"MyAccount_Forgot_TranSuccessMessage\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 104
+ testRunner.And("I am clicking on \"BeneManage_SendMoney_Tab\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 105
+ testRunner.Then("I am performing \"OK\" alert operation on cross icon on \"BeneManage_Delete\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 106
+ testRunner.And(string.Format("verify through \"{0}\" on \"BeneManage_Delete_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 108
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_D" +
                         "elete_TranDate\"", tran_Date_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 105
+#line 109
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_D" +
                         "elete_TranBene\"", tran_Bene_Name_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 106
+#line 110
+ testRunner.And("I am performing on \"BeneManage_Delete_TranCloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 111
+ testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", delete_Bene_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 112
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 113
+ testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 114
+ testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 115
+ testRunner.And("I select \"Non Financial\" on \"Services_CategoryFilter\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 116
+ testRunner.And("I scroll to element \"Services_Clear_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 117
+ testRunner.And("I am performing on \"Services_Search_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 118
+ testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 119
+ testRunner.And("verify through \"Successful\" on \"MyAccount_Forgot_TranSuccessMessage\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 121
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_D" +
+                        "elete_TranDate\"", tran_Date_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 122
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_D" +
+                        "elete_TranBene\"", tran_Bene_Name_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 123
  testRunner.And("I am performing on \"Investment_TranActivityCloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Deleting Beneficiaries: When user wants to add benefic" +
-            "iary")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Deleting Beneficiaries: To verify bene deletion of HBL" +
+            " account Bene_Deletion")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneDeletion")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneDeletion.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user wants to add beneficiary")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user wants to add beneficiary")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "03449557078")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "Beneficiary has been removed successfully.")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify bene deletion of HBL account Bene_Deletion")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify bene deletion of HBL account Bene_Deletion")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "08147900733103")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "Beneficiary has been removed successfully.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
             "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
             "TION_ID = \'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_bene_query", "select B.IS_DELETED from DC_FUND_TRANSFER_BENEFICIARY b where B.ACCOUNT_NO =  \'{b" +
-            "ene_account_no}\' and B.CUSTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from dc_custo" +
-            "mer_info I WHERE I.CUSTOMER_NAME=\'{customer_name}\')")]
-        public virtual void AsAUserIWantToVerifyDeletingBeneficiaries_WhenUserWantsToAddBeneficiary()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_bene_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        public virtual void AsAUserIWantToVerifyDeletingBeneficiaries_ToVerifyBeneDeletionOfHBLAccountBene_Deletion()
         {
-#line 80
-this.AsAUserIWantToVerifyDeletingBeneficiaries("When user wants to add beneficiary", "03449557078", "Beneficiary has been removed successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+#line 94
+this.AsAUserIWantToVerifyDeletingBeneficiaries("To verify bene deletion of HBL account Bene_Deletion", "Pass", "08147900733103", "Beneficiary has been removed successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
-                    "TION_ID = \'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "select B.IS_DELETED from DC_FUND_TRANSFER_BENEFICIARY b where B.ACCOUNT_NO =  \'{b" +
-                    "ene_account_no}\' and B.CUSTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from dc_custo" +
-                    "mer_info I WHERE I.CUSTOMER_NAME=\'{customer_name}\')", new string[] {
+                    "TION_ID = \'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", new string[] {
+                        "source:Data/BeneDeletion.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user I want to verify Deleting Beneficiaries: To verify bene deletion of Kon" +
+            "nect account Bene_Deletion")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneDeletion")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneDeletion.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify bene deletion of Konnect account Bene_Deletion")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify bene deletion of Konnect account Bene_Deletion")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:success_message", "03334900121")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "Beneficiary has been removed successfully.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:delete_bene_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        public virtual void AsAUserIWantToVerifyDeletingBeneficiaries_ToVerifyBeneDeletionOfKonnectAccountBene_Deletion()
+        {
+#line 94
+this.AsAUserIWantToVerifyDeletingBeneficiaries("To verify bene deletion of Konnect account Bene_Deletion", "Pass", "03334900121", "Beneficiary has been removed successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", new string[] {
                         "source:Data/BeneDeletion.xlsx"});
 #line hidden
         }
         
         public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney(
                     string @case, 
+                    string expected_Result, 
                     string account_No, 
                     string statusQuery, 
                     string bank_Value, 
@@ -414,114 +769,123 @@ this.AsAUserIWantToVerifyDeletingBeneficiaries("When user wants to add beneficia
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "BeneMng"};
+                    "BeneMng",
+                    "BeneAddition"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user i want to Verify Beneficiary Addition for Send Money", @__tags);
-#line 114
-this.ScenarioSetup(scenarioInfo);
-#line 115
- testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 116
- testRunner.And(string.Format("I set value in context from data \"{0}\" as \"Bene_AccountNo\"", account_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 117
- testRunner.And(string.Format("update the data by query \"{0}\" on DIGITAL_CHANNEL_SEC", statusQuery), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 118
- testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 119
-  testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 120
- testRunner.And("I am clicking on \"BeneManage_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 121
- testRunner.And("I am clicking on \"BeneManage_SendMoney_Tab\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 122
- testRunner.And("I am clicking on \"BeneManage_AddNewBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 123
- testRunner.When(string.Format("I select \"{0}\" on \"BeneManage_Bank\"", bank_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 124
- testRunner.And(string.Format("I have given \"{0}\" on \"BeneManage_AccountNo\"", account_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 125
- testRunner.And(string.Format("I have given \"{0}\" on \"BeneManage_BeneNick\"", beneNick_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 126
- testRunner.And(string.Format("I have given \"{0}\" on \"BeneManage_PayeeEmail\"", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 127
- testRunner.And(string.Format("I have given \"{0}\" on \"BeneManage_PayeeMobileNumber\"", mobile_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 128
- testRunner.Then("I am performing on \"BeneManage_Validate_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 129
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 130
- testRunner.And("I am performing on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 131
- testRunner.And("verify through \"Congratulations\" on \"BeneManage_TranCongrats\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 132
+ testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 133
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"Bene_AccountNo\"", account_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 135
+ testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 136
+ testRunner.And(string.Format("the test case expected result is \"{0}\"", expected_Result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 137
+  testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 138
+ testRunner.And("I am clicking on \"BeneManage_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 139
+ testRunner.And("I wait 6000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 140
+ testRunner.And("I am clicking on \"BeneManage_SendMoney_Tab\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 141
+ testRunner.And("I am clicking on \"BeneManage_AddNewBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 142
+ testRunner.When(string.Format("I select \"{0}\" on \"BeneManage_Bank\"", bank_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 143
+ testRunner.And(string.Format("I have given \"{0}\" on \"BeneManage_AccountNo\"", account_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 144
+ testRunner.And("I am performing on \"BeneManage_Validate_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 145
+ testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 146
+ testRunner.And(string.Format("I have given \"{0}\" on \"BeneManage_BeneNick\"", beneNick_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 147
+ testRunner.And(string.Format("I have given \"{0}\" on \"BeneManage_PayeeEmail\"", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 148
+ testRunner.And(string.Format("I have given \"{0}\" on \"BeneManage_PayeeMobileNumber\"", mobile_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 149
+ testRunner.Then("I am performing on \"Forget_PasswordNextbtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 151
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 152
+ testRunner.And("I press Enter on \"BeneManage_Add_OtpSaveBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 154
+ testRunner.And("verify through \"Congratulations\" on \"BeneManage_TranSuccessMessage\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 155
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_T" +
                         "ranResponseMsg\"", tran_Response_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 134
+#line 157
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_T" +
                         "ranDate\"", tran_Date_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 135
+#line 158
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_T" +
                         "ranNick\"", tran_Bene_Name_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 136
+#line 159
  testRunner.And("I am performing on \"BeneManage_Tran_CloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 137
+#line 160
  testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"DIGITAL_CHANNEL_SEC" +
                         "\"", account_No, account_No_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 138
+#line 161
  testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"DIGITAL_CHANNEL_SEC" +
                         "\"", email, email_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 139
+#line 162
  testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"DIGITAL_CHANNEL_SEC" +
                         "\"", mobile_No, mobile_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 140
+#line 163
  testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"DIGITAL_CHANNEL_SEC" +
                         "\"", beneNick_Value, nick_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 141
+#line 164
  testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 142
+#line 165
  testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 143
+#line 166
  testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 144
+#line 167
  testRunner.And("I select \"Non Financial\" on \"Services_CategoryFilter\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 145
+#line 168
  testRunner.And("I scroll to element \"Services_Clear_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 146
+#line 169
  testRunner.And("I am performing on \"Services_Search_Btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 147
+#line 170
  testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 148
+#line 171
+ testRunner.And("verify through \"Successful\" on \"MyAccount_Forgot_TranSuccessMessage\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 172
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_T" +
                         "ranResponseMsg\"", tran_Response_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 150
+#line 174
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_T" +
                         "ranDate\"", tran_Date_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 151
+#line 175
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\" on \"BeneManage_T" +
                         "ranNick\"", tran_Bene_Name_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 152
+#line 176
  testRunner.And("I am performing on \"Investment_TranActivityCloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: When user wants t" +
-            "o add beneficiary")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify HBL Ben" +
+            "e addition from beneficiary management Bene_Addition")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When user wants to add beneficiary")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When user wants to add beneficiary")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "07867917196701")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "BEGIN DELETE FROM DC_FUND_TRANSFER_BENEFICIARY TF WHERE TF.ACCOUNT_NO = \'{account" +
-            "_number}\' AND TF.CUSTOMER_INFO_ID = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_IN" +
-            "FO DCI WHERE DCI.CUSTOMER_NAME = \'{customer_name}\');COMMIT;END;")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify HBL Bene addition from beneficiary management Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify HBL Bene addition from beneficiary management Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "17767902128503")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Ali")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "AutomationHBLBene")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
@@ -531,34 +895,5260 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l  where L.CUSTOMER_INFO_ID= " +
-            "( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cust" +
-            "omer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l  where L.CUSTOMER_INFO_I" +
-            "D= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{c" +
-            "ustomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l  where L.CUSTOMER_INFO_ID= (" +
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
             " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
-            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l  where L.CUSTOMER_INFO_ID= ( Sele" +
-            "ct customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_n" +
-            "ame}\') and L.ACCOUNT_NO=\'{account_number}\'")]
-        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_WhenUserWantsToAddBeneficiary()
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyHBLBeneAdditionFromBeneficiaryManagementBene_Addition()
         {
-#line 114
-this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("When user wants to add beneficiary", "07867917196701", "BEGIN DELETE FROM DC_FUND_TRANSFER_BENEFICIARY TF WHERE TF.ACCOUNT_NO = \'{account" +
-                    "_number}\' AND TF.CUSTOMER_INFO_ID = (SELECT CUSTOMER_INFO_ID FROM DC_CUSTOMER_IN" +
-                    "FO DCI WHERE DCI.CUSTOMER_NAME = \'{customer_name}\');COMMIT;END;", "HBL / Konnect", "Ali", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify HBL Bene addition from beneficiary management Bene_Addition", "Pass", "17767902128503", "", "HBL / Konnect", "AutomationHBLBene", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
-                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l  where L.CUSTOMER_INFO_ID= " +
-                    "( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cust" +
-                    "omer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l  where L.CUSTOMER_INFO_I" +
-                    "D= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{c" +
-                    "ustomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l  where L.CUSTOMER_INFO_ID= (" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
                     " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
-                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l  where L.CUSTOMER_INFO_ID= ( Sele" +
-                    "ct customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_n" +
-                    "ame}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify Konnect" +
+            " Bene addition from beneficiary management Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Konnect Bene addition from beneficiary management Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Konnect Bene addition from beneficiary management Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "03334900120")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "AutomationKonnectBene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyKonnectBeneAdditionFromBeneficiaryManagementBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify Konnect Bene addition from beneficiary management Bene_Addition", "Pass", "03334900120", "", "HBL / Konnect", "AutomationKonnectBene", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify IBFT Be" +
+            "ne addition from beneficiary management Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify IBFT Bene addition from beneficiary management Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify IBFT Bene addition from beneficiary management Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "00020000011005730")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Model Bank")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "AutomationIBFTBene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyIBFTBeneAdditionFromBeneficiaryManagementBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify IBFT Bene addition from beneficiary management Bene_Addition", "Pass", "00020000011005730", "", "Model Bank", "AutomationIBFTBene", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify HBL IBA" +
+            "N Bene addition from beneficiary management Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify HBL IBAN Bene addition from beneficiary management Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify HBL IBAN Bene addition from beneficiary management Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK50HABB0013227900983503")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "AutomationHBLIBANBene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyHBLIBANBeneAdditionFromBeneficiaryManagementBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify HBL IBAN Bene addition from beneficiary management Bene_Addition", "Pass", "PK50HABB0013227900983503", "", "HBL / Konnect", "AutomationHBLIBANBene", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify IBFT IB" +
+            "AN Bene addition from beneficiary management Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify IBFT IBAN Bene addition from beneficiary management Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify IBFT IBAN Bene addition from beneficiary management Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK97BAHL1108009500890601")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Bank AL Habib Limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "AutomationIBFTIBANBene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyIBFTIBANBeneAdditionFromBeneficiaryManagementBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify IBFT IBAN Bene addition from beneficiary management Bene_Addition", "Pass", "PK97BAHL1108009500890601", "", "Bank AL Habib Limited", "AutomationIBFTIBANBene", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify Bene ad" +
+            "dition when Nick already added Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify Bene addition when Nick already added Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify Bene addition when Nick already added Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "00147900721001")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "AutomationHBLBene")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyBeneAdditionWhenNickAlreadyAddedBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify Bene addition when Nick already added Bene_Addition", "Fail", "00147900721001", "", "HBL / Konnect", "AutomationHBLBene", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify convent" +
+            "ional HBL Bene addition when IBAN is already added Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify conventional HBL Bene addition when IBAN is already added Bene_Addition" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify conventional HBL Bene addition when IBAN is already added Bene_Addition" +
+            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "13227900983503")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "IBANalreadyadded")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyConventionalHBLBeneAdditionWhenIBANIsAlreadyAddedBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify conventional HBL Bene addition when IBAN is already added Bene_Addition" +
+                    "", "Pass", "13227900983503", "", "HBL / Konnect", "IBANalreadyadded", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify convent" +
+            "ional HBL Bene addition when conventional bene already added Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify conventional HBL Bene addition when conventional bene already added Ben" +
+            "e_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify conventional HBL Bene addition when conventional bene already added Ben" +
+            "e_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "17767902128503")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Conventionalalreadyadded")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyConventionalHBLBeneAdditionWhenConventionalBeneAlreadyAddedBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify conventional HBL Bene addition when conventional bene already added Ben" +
+                    "e_Addition", "Fail", "17767902128503", "", "HBL / Konnect", "Conventionalalreadyadded", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify HBL IBA" +
+            "N Bene addition when conventional already exist Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify HBL IBAN Bene addition when conventional already exist Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify HBL IBAN Bene addition when conventional already exist Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK96HABB0017767902128503")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "IBANaddingConventionalalreadyadded")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyHBLIBANBeneAdditionWhenConventionalAlreadyExistBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify HBL IBAN Bene addition when conventional already exist Bene_Addition", "Fail", "PK96HABB0017767902128503", "", "HBL / Konnect", "IBANaddingConventionalalreadyadded", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify HBL IBA" +
+            "N Bene addition when IBAN bene already exist Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify HBL IBAN Bene addition when IBAN bene already exist Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify HBL IBAN Bene addition when IBAN bene already exist Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK50HABB0013227900983503")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "IBANaddingIBANalreadyexist")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyHBLIBANBeneAdditionWhenIBANBeneAlreadyExistBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify HBL IBAN Bene addition when IBAN bene already exist Bene_Addition", "Fail", "PK50HABB0013227900983503", "", "HBL / Konnect", "IBANaddingIBANalreadyexist", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify bene ad" +
+            "dition with empty account number field Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify bene addition with empty account number field Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify bene addition with empty account number field Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Emptyaccountnumber")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyBeneAdditionWithEmptyAccountNumberFieldBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify bene addition with empty account number field Bene_Addition", "Fail", "", "", "HBL / Konnect", "Emptyaccountnumber", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify bene ad" +
+            "dition with empty Nick field Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify bene addition with empty Nick field Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify bene addition with empty Nick field Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "03334900121")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyBeneAdditionWithEmptyNickFieldBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify bene addition with empty Nick field Bene_Addition", "Fail", "03334900121", "", "HBL / Konnect", "", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify bene ad" +
+            "dition with empty Mobile number field Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify bene addition with empty Mobile number field Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify bene addition with empty Mobile number field Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "03334900121")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "EmptyMobileNumber")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyBeneAdditionWithEmptyMobileNumberFieldBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify bene addition with empty Mobile number field Bene_Addition", "Pass", "03334900121", "", "HBL / Konnect", "EmptyMobileNumber", "ali@hbl.com", "", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify bene ad" +
+            "dition with empty Email field Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify bene addition with empty Email field Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify bene addition with empty Email field Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "03334900121")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "EmptyEmail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyBeneAdditionWithEmptyEmailFieldBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify bene addition with empty Email field Bene_Addition", "Pass", "03334900121", "", "HBL / Konnect", "EmptyEmail", "", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify bene ad" +
+            "dition with invalid account number Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify bene addition with invalid account number Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify bene addition with invalid account number Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "00000000000000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Invalidacctnum")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyBeneAdditionWithInvalidAccountNumberBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify bene addition with invalid account number Bene_Addition", "Fail", "00000000000000", "", "HBL / Konnect", "Invalidacctnum", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify bene ad" +
+            "dition with invalid IBAN (other than pakistan) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify bene addition with invalid IBAN (other than pakistan) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify bene addition with invalid IBAN (other than pakistan) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "UK50HABB0013227900983503")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "InvalidIBAN")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyBeneAdditionWithInvalidIBANOtherThanPakistanBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify bene addition with invalid IBAN (other than pakistan) Bene_Addition", "Fail", "UK50HABB0013227900983503", "", "HBL / Konnect", "InvalidIBAN", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify bene ad" +
+            "dition with nick exceeding maximum characters length Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify bene addition with nick exceeding maximum characters length Bene_Additi" +
+            "on")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify bene addition with nick exceeding maximum characters length Bene_Additi" +
+            "on")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "03334900121")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "123456789123456789asdasdddddddddddddddddddd13222222222222222222222222222222222222" +
+            "asd2asdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd" +
+            "dddddddddd")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyBeneAdditionWithNickExceedingMaximumCharactersLengthBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify bene addition with nick exceeding maximum characters length Bene_Additi" +
+                    "on", "Pass", "03334900121", "", "HBL / Konnect", "123456789123456789asdasdddddddddddddddddddd13222222222222222222222222222222222222" +
+                    "asd2asdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd" +
+                    "dddddddddd", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify bene ad" +
+            "dition of FCY account Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify bene addition of FCY account Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify bene addition of FCY account Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Pass")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "23087900855910")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "FCYBENE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyBeneAdditionOfFCYAccountBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify bene addition of FCY account Bene_Addition", "Pass", "23087900855910", "", "HBL / Konnect", "FCYBENE", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify bene ad" +
+            "dition of block account Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify bene addition of block account Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify bene addition of block account Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "16817900545603")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "BLOCKBENE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyBeneAdditionOfBlockAccountBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify bene addition of block account Bene_Addition", "Fail", "16817900545603", "", "HBL / Konnect", "BLOCKBENE", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify bene ad" +
+            "dition of Inactive account Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify bene addition of Inactive account Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify bene addition of Inactive account Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "22927902145603")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "InActiveBENE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyBeneAdditionOfInactiveAccountBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify bene addition of Inactive account Bene_Addition", "Fail", "22927902145603", "", "HBL / Konnect", "InActiveBENE", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify bene ad" +
+            "dition of Deceased account Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify bene addition of Deceased account Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify bene addition of Deceased account Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "24877000096103")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "DeceaseBENE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyBeneAdditionOfDeceasedAccountBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify bene addition of Deceased account Bene_Addition", "Fail", "24877000096103", "", "HBL / Konnect", "DeceaseBENE", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify bene ad" +
+            "dition of account closing condition Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify bene addition of account closing condition Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify bene addition of account closing condition Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "12697900802903")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "HBL / Konnect")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "AccountclosingBENE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyBeneAdditionOfAccountClosingConditionBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify bene addition of account closing condition Bene_Addition", "Fail", "12697900802903", "", "HBL / Konnect", "AccountclosingBENE", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f United Bank Limited (12 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of United Bank Limited (12 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of United Bank Limited (12 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "123456789100")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "United Bank Limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "12DigitUBL")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfUnitedBankLimited12DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of United Bank Limited (12 digit Acct Num) Bene_Addition", "Fail", "123456789100", "", "United Bank Limited", "12DigitUBL", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f United Bank Limited (14 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of United Bank Limited (14 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of United Bank Limited (14 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "12345678910011")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "United Bank Limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "14DigitUBL")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfUnitedBankLimited14DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of United Bank Limited (14 digit Acct Num) Bene_Addition", "Fail", "12345678910011", "", "United Bank Limited", "14DigitUBL", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f United Bank Limited (17 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of United Bank Limited (17 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of United Bank Limited (17 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "1.2345678910111E+16")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "United Bank Limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "17DigitUBL")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfUnitedBankLimited17DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of United Bank Limited (17 digit Acct Num) Bene_Addition", "Fail", "1.2345678910111E+16", "", "United Bank Limited", "17DigitUBL", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f United Bank Limited (30 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of United Bank Limited (30 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of United Bank Limited (30 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "1.11111111122222E+29")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "United Bank Limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "30DigitUBL")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfUnitedBankLimited30DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of United Bank Limited (30 digit Acct Num) Bene_Addition", "Fail", "1.11111111122222E+29", "", "United Bank Limited", "30DigitUBL", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f United Bank Limited (11 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of United Bank Limited (11 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of United Bank Limited (11 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "12345465111")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "United Bank Limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "11DigitUBL")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfUnitedBankLimited11DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of United Bank Limited (11 digit Acct Num) Bene_Addition", "Fail", "12345465111", "", "United Bank Limited", "11DigitUBL", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f United Bank Limited (special characters Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of United Bank Limited (special characters Acct Num) Bene_Additio" +
+            "n")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of United Bank Limited (special characters Acct Num) Bene_Additio" +
+            "n")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "!@#$%^&*()}{?><:\"{12345465111")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "United Bank Limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "specialcharactersUBL")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfUnitedBankLimitedSpecialCharactersAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of United Bank Limited (special characters Acct Num) Bene_Additio" +
+                    "n", "Fail", "!@#$%^&*()}{?><:\"{12345465111", "", "United Bank Limited", "specialcharactersUBL", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f United Bank Limited (13 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of United Bank Limited (13 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of United Bank Limited (13 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "1234567891011")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "United Bank Limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "13digitUBL")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfUnitedBankLimited13DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of United Bank Limited (13 digit Acct Num) Bene_Addition", "Fail", "1234567891011", "", "United Bank Limited", "13digitUBL", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f United Bank Limited (15 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of United Bank Limited (15 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of United Bank Limited (15 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "551234567891011")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "United Bank Limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "13digitUBL")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfUnitedBankLimited15DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of United Bank Limited (15 digit Acct Num) Bene_Addition", "Fail", "551234567891011", "", "United Bank Limited", "13digitUBL", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f United Bank Limited (18 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of United Bank Limited (18 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of United Bank Limited (18 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "551521234567891011")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "United Bank Limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "13digitUBL")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfUnitedBankLimited18DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of United Bank Limited (18 digit Acct Num) Bene_Addition", "Fail", "551521234567891011", "", "United Bank Limited", "13digitUBL", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f United Bank Limited (24 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of United Bank Limited (24 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of United Bank Limited (24 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK02UNIL0112052500300197")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "United Bank Limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "24digitIBANUBL")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfUnitedBankLimited24DigitIBANBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of United Bank Limited (24 digit IBAN) Bene_Addition", "Fail", "PK02UNIL0112052500300197", "", "United Bank Limited", "24digitIBANUBL", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f ICBC (13 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of ICBC (13 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of ICBC (13 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "3216549873216")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "ICBC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "ICBC13digit")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfICBC13DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of ICBC (13 digit Acct Num) Bene_Addition", "Fail", "3216549873216", "", "ICBC", "ICBC13digit", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f ICBC (14 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of ICBC (14 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of ICBC (14 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "32165498732166")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "ICBC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "ICBC14digit")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03125698552")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfICBC14DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of ICBC (14 digit Acct Num) Bene_Addition", "Fail", "32165498732166", "", "ICBC", "ICBC14digit", "ali@hbl.com", "03125698552", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f ICBC (12 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of ICBC (12 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of ICBC (12 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "321654987321")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "ICBC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "ICBC12digit")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfICBC12DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of ICBC (12 digit Acct Num) Bene_Addition", "Fail", "321654987321", "", "ICBC", "ICBC12digit", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f ICBC (16 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of ICBC (16 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of ICBC (16 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK32165498732166")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "ICBC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "ICBC16digitIBAN")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfICBC16DigitIBANBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of ICBC (16 digit IBAN) Bene_Addition", "Fail", "PK32165498732166", "", "ICBC", "ICBC16digitIBAN", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f ICBC (17 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of ICBC (17 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of ICBC (17 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK321654987321666")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "ICBC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "ICBC17digitIBAN")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfICBC17DigitIBANBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of ICBC (17 digit IBAN) Bene_Addition", "Fail", "PK321654987321666", "", "ICBC", "ICBC17digitIBAN", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f ICBC (15 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of ICBC (15 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of ICBC (15 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK3216549873216")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "ICBC")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "ICBC15digitIBAN")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfICBC15DigitIBANBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of ICBC (15 digit IBAN) Bene_Addition", "Fail", "PK3216549873216", "", "ICBC", "ICBC15digitIBAN", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f First Women Bank (20 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of First Women Bank (20 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of First Women Bank (20 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "32165498732165498732")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "First Women Bank")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "First Women Bank20digit")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfFirstWomenBank20DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of First Women Bank (20 digit Acct Num) Bene_Addition", "Fail", "32165498732165498732", "", "First Women Bank", "First Women Bank20digit", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f First Women Bank (21 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of First Women Bank (21 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of First Women Bank (21 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "321654987321654987321")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "First Women Bank")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "First Women Bank21digit")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfFirstWomenBank21DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of First Women Bank (21 digit Acct Num) Bene_Addition", "Fail", "321654987321654987321", "", "First Women Bank", "First Women Bank21digit", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f First Women Bank (19 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of First Women Bank (19 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of First Women Bank (19 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "3216549873216549873")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "First Women Bank")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "First Women Bank19digit")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfFirstWomenBank19DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of First Women Bank (19 digit Acct Num) Bene_Addition", "Fail", "3216549873216549873", "", "First Women Bank", "First Women Bank19digit", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f First Women Bank (24 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of First Women Bank (24 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of First Women Bank (24 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "321654987321654987321654")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "First Women Bank")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "First Women Bank24IBAN")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfFirstWomenBank24DigitIBANBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of First Women Bank (24 digit IBAN) Bene_Addition", "Fail", "321654987321654987321654", "", "First Women Bank", "First Women Bank24IBAN", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f First Women Bank (25 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of First Women Bank (25 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of First Women Bank (25 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "3216549873216549873216549")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "First Women Bank")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "First Women Bank25IBAN")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfFirstWomenBank25DigitIBANBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of First Women Bank (25 digit IBAN) Bene_Addition", "Fail", "3216549873216549873216549", "", "First Women Bank", "First Women Bank25IBAN", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f First Women Bank (23 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of First Women Bank (23 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of First Women Bank (23 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "32165498732165498732165")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "First Women Bank")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "First Women Bank23IBAN")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfFirstWomenBank23DigitIBANBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of First Women Bank (23 digit IBAN) Bene_Addition", "Fail", "32165498732165498732165", "", "First Women Bank", "First Women Bank23IBAN", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Bank of Khyber (12 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Bank of Khyber (12 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Bank of Khyber (12 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "123456789123")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Bank of Khyber")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Bank of Khyber12digit")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfBankOfKhyber12DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Bank of Khyber (12 digit Acct Num) Bene_Addition", "Fail", "123456789123", "", "Bank of Khyber", "Bank of Khyber12digit", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Bank of Khyber (13 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Bank of Khyber (13 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Bank of Khyber (13 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "1234567891234")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Bank of Khyber")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Bank of Khyber13digit")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfBankOfKhyber13DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Bank of Khyber (13 digit Acct Num) Bene_Addition", "Fail", "1234567891234", "", "Bank of Khyber", "Bank of Khyber13digit", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Bank of Khyber (11 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Bank of Khyber (11 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Bank of Khyber (11 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "12345678912")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Bank of Khyber")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Bank of Khyber11digit")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfBankOfKhyber11DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Bank of Khyber (11 digit Acct Num) Bene_Addition", "Fail", "12345678912", "", "Bank of Khyber", "Bank of Khyber11digit", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Bank of Khyber (16 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Bank of Khyber (16 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Bank of Khyber (16 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "1234567891234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Bank of Khyber")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Bank of Khyber16digit")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfBankOfKhyber16DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Bank of Khyber (16 digit Acct Num) Bene_Addition", "Fail", "1234567891234567", "", "Bank of Khyber", "Bank of Khyber16digit", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Bank of Khyber (17 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Bank of Khyber (17 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Bank of Khyber (17 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "12345678912345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Bank of Khyber")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Bank of Khyber17digit")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfBankOfKhyber17DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Bank of Khyber (17 digit Acct Num) Bene_Addition", "Fail", "12345678912345678", "", "Bank of Khyber", "Bank of Khyber17digit", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Bank of Khyber (15 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Bank of Khyber (15 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Bank of Khyber (15 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "123456789123456")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Bank of Khyber")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Bank of Khyber15digit")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfBankOfKhyber15DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Bank of Khyber (15 digit Acct Num) Bene_Addition", "Fail", "123456789123456", "", "Bank of Khyber", "Bank of Khyber15digit", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Bank of Khyber (24 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Bank of Khyber (24 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Bank of Khyber (24 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK1234567891234567891234")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Bank of Khyber")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Bank of Khyber24IBAN")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfBankOfKhyber24DigitIBANBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Bank of Khyber (24 digit IBAN) Bene_Addition", "Fail", "PK1234567891234567891234", "", "Bank of Khyber", "Bank of Khyber24IBAN", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Bank of Khyber (25 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Bank of Khyber (25 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Bank of Khyber (25 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK12345678912345678912345")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Bank of Khyber")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Bank of Khyber25IBAN")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfBankOfKhyber25DigitIBANBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Bank of Khyber (25 digit IBAN) Bene_Addition", "Fail", "PK12345678912345678912345", "", "Bank of Khyber", "Bank of Khyber25IBAN", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Bank of Khyber (23 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Bank of Khyber (23 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Bank of Khyber (23 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK123456789123456789123")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Bank of Khyber")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Bank of Khyber23IBAN")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfBankOfKhyber23DigitIBANBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Bank of Khyber (23 digit IBAN) Bene_Addition", "Fail", "PK123456789123456789123", "", "Bank of Khyber", "Bank of Khyber23IBAN", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Silk Bank (14 digit Acct Num)  Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Silk Bank (14 digit Acct Num)  Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Silk Bank (14 digit Acct Num)  Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "1234123456789")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Silk Bank")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Silk Bank14digit")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfSilkBank14DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Silk Bank (14 digit Acct Num)  Bene_Addition", "Fail", "1234123456789", "", "Silk Bank", "Silk Bank14digit", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Silk Bank (15 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Silk Bank (15 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Silk Bank (15 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "12341234567891")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Silk Bank")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Silk Bank15digit")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03125698552")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfSilkBank15DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Silk Bank (15 digit Acct Num) Bene_Addition", "Fail", "12341234567891", "", "Silk Bank", "Silk Bank15digit", "ali@hbl.com", "03125698552", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Silk Bank (13 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Silk Bank (13 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Silk Bank (13 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "123412345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Silk Bank")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Silk Bank13digt")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfSilkBank13DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Silk Bank (13 digit Acct Num) Bene_Addition", "Fail", "123412345678", "", "Silk Bank", "Silk Bank13digt", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Silk Bank (24 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Silk Bank (24 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Silk Bank (24 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK1234567891234567891234")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Silk Bank")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Silk Bank24IBAN")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfSilkBank24DigitIBANBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Silk Bank (24 digit IBAN) Bene_Addition", "Fail", "PK1234567891234567891234", "", "Silk Bank", "Silk Bank24IBAN", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Silk Bank (25 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Silk Bank (25 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Silk Bank (25 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK12345678912345678912345")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Silk Bank")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Silk Bank25IBAN")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfSilkBank25DigitIBANBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Silk Bank (25 digit IBAN) Bene_Addition", "Fail", "PK12345678912345678912345", "", "Silk Bank", "Silk Bank25IBAN", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Silk Bank (23 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Silk Bank (23 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Silk Bank (23 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK123456789123456789123")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Silk Bank")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Silk Bank23IBAN")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfSilkBank23DigitIBANBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Silk Bank (23 digit IBAN) Bene_Addition", "Fail", "PK123456789123456789123", "", "Silk Bank", "Silk Bank23IBAN", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Bank Alfalah limited (14 digit Acct Num) (Conventional) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Bank Alfalah limited (14 digit Acct Num) (Conventional) Bene_A" +
+            "ddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Bank Alfalah limited (14 digit Acct Num) (Conventional) Bene_A" +
+            "ddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "45671234567891")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Bank Alfalah limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Bank Alfalah limited14digit")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfBankAlfalahLimited14DigitAcctNumConventionalBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Bank Alfalah limited (14 digit Acct Num) (Conventional) Bene_A" +
+                    "ddition", "Fail", "45671234567891", "", "Bank Alfalah limited", "Bank Alfalah limited14digit", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Bank Alfalah limited (15 digit Acct Num) (Conventional) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Bank Alfalah limited (15 digit Acct Num) (Conventional) Bene_A" +
+            "ddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Bank Alfalah limited (15 digit Acct Num) (Conventional) Bene_A" +
+            "ddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "456712345678912")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Bank Alfalah limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Bank Alfalah limited15digit")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfBankAlfalahLimited15DigitAcctNumConventionalBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Bank Alfalah limited (15 digit Acct Num) (Conventional) Bene_A" +
+                    "ddition", "Fail", "456712345678912", "", "Bank Alfalah limited", "Bank Alfalah limited15digit", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Bank Alfalah limited (13 digit Acct Num) (Conventional) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Bank Alfalah limited (13 digit Acct Num) (Conventional) Bene_A" +
+            "ddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Bank Alfalah limited (13 digit Acct Num) (Conventional) Bene_A" +
+            "ddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "4567123456789")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Bank Alfalah limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Bank Alfalah limited13digit")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfBankAlfalahLimited13DigitAcctNumConventionalBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Bank Alfalah limited (13 digit Acct Num) (Conventional) Bene_A" +
+                    "ddition", "Fail", "4567123456789", "", "Bank Alfalah limited", "Bank Alfalah limited13digit", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Bank Alfalah limited (18 digit Acct Num) (Islamic) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Bank Alfalah limited (18 digit Acct Num) (Islamic) Bene_Additi" +
+            "on")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Bank Alfalah limited (18 digit Acct Num) (Islamic) Bene_Additi" +
+            "on")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "456712345678912345")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Bank Alfalah limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Bank Alfalah limited18digit")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfBankAlfalahLimited18DigitAcctNumIslamicBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Bank Alfalah limited (18 digit Acct Num) (Islamic) Bene_Additi" +
+                    "on", "Fail", "456712345678912345", "", "Bank Alfalah limited", "Bank Alfalah limited18digit", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Bank Alfalah limited (19 digit Acct Num) (Islamic) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Bank Alfalah limited (19 digit Acct Num) (Islamic) Bene_Additi" +
+            "on")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Bank Alfalah limited (19 digit Acct Num) (Islamic) Bene_Additi" +
+            "on")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "4567123456789123456")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Bank Alfalah limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Bank Alfalah limited19digit")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfBankAlfalahLimited19DigitAcctNumIslamicBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Bank Alfalah limited (19 digit Acct Num) (Islamic) Bene_Additi" +
+                    "on", "Fail", "4567123456789123456", "", "Bank Alfalah limited", "Bank Alfalah limited19digit", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Bank Alfalah limited (17 digit Acct Num) (Islamic) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Bank Alfalah limited (17 digit Acct Num) (Islamic) Bene_Additi" +
+            "on")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Bank Alfalah limited (17 digit Acct Num) (Islamic) Bene_Additi" +
+            "on")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "45671234567891234")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Bank Alfalah limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Bank Alfalah limited17digit")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfBankAlfalahLimited17DigitAcctNumIslamicBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Bank Alfalah limited (17 digit Acct Num) (Islamic) Bene_Additi" +
+                    "on", "Fail", "45671234567891234", "", "Bank Alfalah limited", "Bank Alfalah limited17digit", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Bank Alfalah limited (Branchless 11 digits) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Bank Alfalah limited (Branchless 11 digits) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Bank Alfalah limited (Branchless 11 digits) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "03212013366")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Bank Alfalah limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Bank Alfalah limited11BB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfBankAlfalahLimitedBranchless11DigitsBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Bank Alfalah limited (Branchless 11 digits) Bene_Addition", "Fail", "03212013366", "", "Bank Alfalah limited", "Bank Alfalah limited11BB", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Bank Alfalah limited (Branchless 12 digits) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Bank Alfalah limited (Branchless 12 digits) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Bank Alfalah limited (Branchless 12 digits) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "032120133666")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Bank Alfalah limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Bank Alfalah limited12bb")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfBankAlfalahLimitedBranchless12DigitsBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Bank Alfalah limited (Branchless 12 digits) Bene_Addition", "Fail", "032120133666", "", "Bank Alfalah limited", "Bank Alfalah limited12bb", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Bank Alfalah limited (Branchless 10 digits) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Bank Alfalah limited (Branchless 10 digits) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Bank Alfalah limited (Branchless 10 digits) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "0321201336")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Bank Alfalah limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Bank Alfalah limited10bb")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfBankAlfalahLimitedBranchless10DigitsBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Bank Alfalah limited (Branchless 10 digits) Bene_Addition", "Fail", "0321201336", "", "Bank Alfalah limited", "Bank Alfalah limited10bb", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Bank Alfalah limited (IBAN 24 digits) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Bank Alfalah limited (IBAN 24 digits) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Bank Alfalah limited (IBAN 24 digits) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK1234567891234567891234")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Bank Alfalah limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Bank Alfalah limited24IBAN")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfBankAlfalahLimitedIBAN24DigitsBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Bank Alfalah limited (IBAN 24 digits) Bene_Addition", "Fail", "PK1234567891234567891234", "", "Bank Alfalah limited", "Bank Alfalah limited24IBAN", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Bank Alfalah limited (IBAN 25 digits) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Bank Alfalah limited (IBAN 25 digits) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Bank Alfalah limited (IBAN 25 digits) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK12345678912345678912345")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Bank Alfalah limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Bank Alfalah limited25IBAN")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfBankAlfalahLimitedIBAN25DigitsBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Bank Alfalah limited (IBAN 25 digits) Bene_Addition", "Fail", "PK12345678912345678912345", "", "Bank Alfalah limited", "Bank Alfalah limited25IBAN", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Bank Alfalah limited (IBAN 23 digits) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Bank Alfalah limited (IBAN 23 digits) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Bank Alfalah limited (IBAN 23 digits) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK123456789123456789123")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Bank Alfalah limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Bank Alfalah limited23IBAN")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfBankAlfalahLimitedIBAN23DigitsBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Bank Alfalah limited (IBAN 23 digits) Bene_Addition", "Fail", "PK123456789123456789123", "", "Bank Alfalah limited", "Bank Alfalah limited23IBAN", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Samba (10 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Samba (10 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Samba (10 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "1234567809")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Samba")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Samba10digit")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfSamba10DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Samba (10 digit Acct Num) Bene_Addition", "Fail", "1234567809", "", "Samba", "Samba10digit", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Samba (11 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Samba (11 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Samba (11 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "12345678091")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Samba")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Samba11digit")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfSamba11DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Samba (11 digit Acct Num) Bene_Addition", "Fail", "12345678091", "", "Samba", "Samba11digit", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Samba (09 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Samba (09 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Samba (09 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "123456780")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Samba")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Samba09digit")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfSamba09DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Samba (09 digit Acct Num) Bene_Addition", "Fail", "123456780", "", "Samba", "Samba09digit", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Samba (24 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Samba (24 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Samba (24 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK1234567881234567891234")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Samba")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Samba24IBAN")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfSamba24DigitIBANBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Samba (24 digit IBAN) Bene_Addition", "Fail", "PK1234567881234567891234", "", "Samba", "Samba24IBAN", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Samba (25 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Samba (25 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Samba (25 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK12345678912345678912344")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Samba")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Samba25IBAN")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03125698552")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfSamba25DigitIBANBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Samba (25 digit IBAN) Bene_Addition", "Fail", "PK12345678912345678912344", "", "Samba", "Samba25IBAN", "ali@hbl.com", "03125698552", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Samba (23 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Samba (23 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Samba (23 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK123456789123456789123")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Samba")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Samba23IBAN")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfSamba23DigitIBANBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Samba (23 digit IBAN) Bene_Addition", "Fail", "PK123456789123456789123", "", "Samba", "Samba23IBAN", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Summit Bank (20 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Summit Bank (20 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Summit Bank (20 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "01020120311714020909")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Summit Bank")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Summit Bank20digit")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfSummitBank20DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Summit Bank (20 digit Acct Num) Bene_Addition", "Fail", "01020120311714020909", "", "Summit Bank", "Summit Bank20digit", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Summit Bank (21 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Summit Bank (21 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Summit Bank (21 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "010201203117140209099")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Summit Bank")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Summit Bank21digit")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfSummitBank21DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Summit Bank (21 digit Acct Num) Bene_Addition", "Fail", "010201203117140209099", "", "Summit Bank", "Summit Bank21digit", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Summit Bank (19 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Summit Bank (19 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Summit Bank (19 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "0102012031171402090")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Summit Bank")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Summit Bank19digit")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfSummitBank19DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Summit Bank (19 digit Acct Num) Bene_Addition", "Fail", "0102012031171402090", "", "Summit Bank", "Summit Bank19digit", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Summit Bank (24 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Summit Bank (24 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Summit Bank (24 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK1233567881234567891234")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Summit Bank")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Summit Bank24IBAN")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfSummitBank24DigitIBANBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Summit Bank (24 digit IBAN) Bene_Addition", "Fail", "PK1233567881234567891234", "", "Summit Bank", "Summit Bank24IBAN", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Summit Bank (25 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Summit Bank (25 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Summit Bank (25 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK12335678812345678912344")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Summit Bank")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Summit Bank25ibaN")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfSummitBank25DigitIBANBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Summit Bank (25 digit IBAN) Bene_Addition", "Fail", "PK12335678812345678912344", "", "Summit Bank", "Summit Bank25ibaN", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Summit Bank (23 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Summit Bank (23 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Summit Bank (23 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK123356788123456789123")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Summit Bank")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Summit Bank25iban")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfSummitBank23DigitIBANBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Summit Bank (23 digit IBAN) Bene_Addition", "Fail", "PK123356788123456789123", "", "Summit Bank", "Summit Bank25iban", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Faysal bank limited (14 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Faysal bank limited (14 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Faysal bank limited (14 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "45671234567891")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Faysal bank limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Faysal bank limited14digit")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfFaysalBankLimited14DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Faysal bank limited (14 digit Acct Num) Bene_Addition", "Fail", "45671234567891", "", "Faysal bank limited", "Faysal bank limited14digit", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Faysal bank limited (15 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Faysal bank limited (15 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Faysal bank limited (15 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "456712345678911")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Faysal bank limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Faysal bank limited15digit")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfFaysalBankLimited15DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Faysal bank limited (15 digit Acct Num) Bene_Addition", "Fail", "456712345678911", "", "Faysal bank limited", "Faysal bank limited15digit", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Faysal bank limited (13 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Faysal bank limited (13 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Faysal bank limited (13 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "4567123456789")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Faysal bank limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Faysal bank limited13digit")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfFaysalBankLimited13DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Faysal bank limited (13 digit Acct Num) Bene_Addition", "Fail", "4567123456789", "", "Faysal bank limited", "Faysal bank limited13digit", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Faysal bank limited (24 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Faysal bank limited (24 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Faysal bank limited (24 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK1234567891234567891234")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Faysal bank limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Faysal bank limited24IBAN")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfFaysalBankLimited24DigitIBANBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Faysal bank limited (24 digit IBAN) Bene_Addition", "Fail", "PK1234567891234567891234", "", "Faysal bank limited", "Faysal bank limited24IBAN", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Faysal bank limited (25 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Faysal bank limited (25 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Faysal bank limited (25 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK12345678912345678912346")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Faysal bank limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Faysal bank limited25IBAN")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfFaysalBankLimited25DigitIBANBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Faysal bank limited (25 digit IBAN) Bene_Addition", "Fail", "PK12345678912345678912346", "", "Faysal bank limited", "Faysal bank limited25IBAN", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Faysal bank limited (23 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Faysal bank limited (23 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Faysal bank limited (23 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK123456789123456789123")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Faysal bank limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Faysal bank limited23digit")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfFaysalBankLimited23DigitIBANBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Faysal bank limited (23 digit IBAN) Bene_Addition", "Fail", "PK123456789123456789123", "", "Faysal bank limited", "Faysal bank limited23digit", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Faysal bank limited (16 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Faysal bank limited (16 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Faysal bank limited (16 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "4567123456789119")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Faysal bank limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Faysal bank limited16digit")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfFaysalBankLimited16DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Faysal bank limited (16 digit Acct Num) Bene_Addition", "Fail", "4567123456789119", "", "Faysal bank limited", "Faysal bank limited16digit", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Faysal bank limited (17 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Faysal bank limited (17 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Faysal bank limited (17 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "45671234567891199")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Faysal bank limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Faysal bank limited17digit")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfFaysalBankLimited17DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Faysal bank limited (17 digit Acct Num) Bene_Addition", "Fail", "45671234567891199", "", "Faysal bank limited", "Faysal bank limited17digit", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Dubai Islamic Bank Limited (10 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Dubai Islamic Bank Limited (10 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Dubai Islamic Bank Limited (10 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "1234867809")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Dubai Islamic Bank Limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Dubai Islamic Bank Limited10digit")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfDubaiIslamicBankLimited10DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Dubai Islamic Bank Limited (10 digit Acct Num) Bene_Addition", "Fail", "1234867809", "", "Dubai Islamic Bank Limited", "Dubai Islamic Bank Limited10digit", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Dubai Islamic Bank Limited (11 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Dubai Islamic Bank Limited (11 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Dubai Islamic Bank Limited (11 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "12348678096")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Dubai Islamic Bank Limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Dubai Islamic Bank Limited11digit")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfDubaiIslamicBankLimited11DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Dubai Islamic Bank Limited (11 digit Acct Num) Bene_Addition", "Fail", "12348678096", "", "Dubai Islamic Bank Limited", "Dubai Islamic Bank Limited11digit", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Dubai Islamic Bank Limited (09 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Dubai Islamic Bank Limited (09 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Dubai Islamic Bank Limited (09 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "123486780")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Dubai Islamic Bank Limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Dubai Islamic Bank Limited09digit")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfDubaiIslamicBankLimited09DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Dubai Islamic Bank Limited (09 digit Acct Num) Bene_Addition", "Fail", "123486780", "", "Dubai Islamic Bank Limited", "Dubai Islamic Bank Limited09digit", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Dubai Islamic bank limited (24 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Dubai Islamic bank limited (24 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Dubai Islamic bank limited (24 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK1234567891234567891234")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Dubai Islamic Bank Limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Dubai Islamic Bank Limited24IBAN")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfDubaiIslamicBankLimited24DigitIBANBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Dubai Islamic bank limited (24 digit IBAN) Bene_Addition", "Fail", "PK1234567891234567891234", "", "Dubai Islamic Bank Limited", "Dubai Islamic Bank Limited24IBAN", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Dubai Islamic bank limited (25 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Dubai Islamic bank limited (25 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Dubai Islamic bank limited (25 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK12345678912345678912341")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Dubai Islamic Bank Limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Dubai Islamic Bank Limited25IBAN")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03125698552")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfDubaiIslamicBankLimited25DigitIBANBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Dubai Islamic bank limited (25 digit IBAN) Bene_Addition", "Fail", "PK12345678912345678912341", "", "Dubai Islamic Bank Limited", "Dubai Islamic Bank Limited25IBAN", "ali@hbl.com", "03125698552", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Dubai Islamic bank limited (23 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Dubai Islamic bank limited (23 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Dubai Islamic bank limited (23 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK123456789123456789121")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Dubai Islamic Bank Limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Dubai Islamic Bank Limited23IBAN")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfDubaiIslamicBankLimited23DigitIBANBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Dubai Islamic bank limited (23 digit IBAN) Bene_Addition", "Fail", "PK123456789123456789121", "", "Dubai Islamic Bank Limited", "Dubai Islamic Bank Limited23IBAN", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f Soneri bank limited (16 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of Soneri bank limited (16 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of Soneri bank limited (16 digit Acct Num) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "4567123456789119")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "Soneri bank limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "Soneri bank limited16digit")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfSoneriBankLimited16DigitAcctNumBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of Soneri bank limited (16 digit Acct Num) Bene_Addition", "Fail", "4567123456789119", "", "Soneri bank limited", "Soneri bank limited16digit", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
+                        "source:Data/BeneficiaryAddition.xlsx"});
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("As a user i want to Verify Beneficiary Addition for Send Money: To verify regex o" +
+            "f MCB Bank Limited (23 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BeneManagement")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneMng")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BeneAddition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("source:Data/BeneficiaryAddition.xlsx")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "To verify regex of MCB Bank Limited (23 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "To verify regex of MCB Bank Limited (23 digit IBAN) Bene_Addition")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "Fail")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no", "PK123457078910345678912")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StatusQuery", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Bank_Value", "MCB Bank Limited")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneNick_Value", "MCB Bank Limited 23iban")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "ali@hbl.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Mobile_No", "03121234567")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_type_query", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+            "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+            "TION_ID = \'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_response_query", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_date_query", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:tran_bene_name_query", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:account_no_query", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+            " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+            "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_query", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+            "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+            "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_query", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+            "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+            "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:nick_query", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+            "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+            "me}\') and L.ACCOUNT_NO=\'{account_number}\'")]
+        public virtual void AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney_ToVerifyRegexOfMCBBankLimited23DigitIBANBene_Addition()
+        {
+#line 131
+this.AsAUserIWantToVerifyBeneficiaryAdditionForSendMoney("To verify regex of MCB Bank Limited (23 digit IBAN) Bene_Addition", "Fail", "PK123457078910345678912", "", "MCB Bank Limited", "MCB Bank Limited 23iban", "ali@hbl.com", "03121234567", "12345678", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
+                    "TION_ID = \'", "SELECT RESPONSE_MESSAGE FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT CREATED_ON FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "SELECT BENEFICIARY_NAME FROM DC_TRANSACTION DT where DT.TRANSACTION_ID=\'", "Select ACCOUNT_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= (" +
+                    " Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custo" +
+                    "mer_name}\') and L.ACCOUNT_NO=\'{account_number}\' Order By L.CREATED_ON desc", "Select EMAIL_ADDRESS from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID" +
+                    "= ( Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{cu" +
+                    "stomer_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select MOBILE_NO from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( " +
+                    "Select customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{custom" +
+                    "er_name}\') and L.ACCOUNT_NO=\'{account_number}\'", "Select NICK from DC_FUND_TRANSFER_BENEFICIARY l where L.CUSTOMER_INFO_ID= ( Selec" +
+                    "t customer_info_id from dc_customer_info K where K.CUSTOMER_NAME = \'{customer_na" +
+                    "me}\') and L.ACCOUNT_NO=\'{account_number}\'", new string[] {
                         "source:Data/BeneficiaryAddition.xlsx"});
 #line hidden
         }

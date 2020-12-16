@@ -150,9 +150,11 @@ namespace HBLAutomationWeb.Core
                     error = error.Replace("\r", " ");
                     rec.ErrorMessage = error;
                 }
-                if (rec.ExpectedResult != null && rec.ActualResult != null)
+                //if (rec.ExpectedResult != null && rec.ActualResult != null)
+                if (rec.ExpectedResult != null)
                 {
-                    if (rec.ExpectedResult.Equals(rec.ActualResult) && ScenarioContext.Current.TestError == null)
+                    //if (rec.ExpectedResult.Equals(rec.ActualResult) && ScenarioContext.Current.TestError == null)
+                    if (ScenarioContext.Current.TestError == null)
                     {
                         rec.Result = "PASS";
                     }

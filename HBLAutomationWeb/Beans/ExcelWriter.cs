@@ -35,7 +35,7 @@ namespace HBLAutomationWeb.Beans
 
             using (var w = new StreamWriter(savelocation + fileName + ".csv"))
             {
-                var header = string.Format("{0},{1},{2},{3},{4}", "Feature", "Scenario", "Status", "Error Message","Screenshot Path");
+                var header = string.Format("{0},{1},{2},{3},{4},{5}", "Feature", "Scenario","Expected Result", "Actual Result", "Error Message","Screenshot Path");
                 w.WriteLine(header);
                 w.Flush();
 
@@ -48,7 +48,7 @@ namespace HBLAutomationWeb.Beans
                     if (!(rec == null))
                     {
                         //var line = string.Format("{0},{1},{2},{3},{4}", rec.FeatureName, rec.ScenarioName, "'" + rec.STAN, "'" + rec.ExpectedResult, "'" + rec.ActualResult);
-                        var line = string.Format("{0},{1},{2},{3},{4}", rec.FeatureName, rec.ScenarioName, rec.Result, rec.ErrorMessage,rec.ScreenshotPath);
+                        var line = string.Format("{0},{1},{2},{3},{4},{5}", rec.FeatureName, rec.ScenarioName,rec.ExpectedResult,rec.Result, rec.ErrorMessage,rec.ScreenshotPath);
                         w.WriteLine(line);
                         w.Flush();
                     }
