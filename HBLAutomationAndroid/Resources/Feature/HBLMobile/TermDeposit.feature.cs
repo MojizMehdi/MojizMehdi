@@ -127,7 +127,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 23
  testRunner.And("I wait 30000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 24
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I scroll to element text as \"One Time Password (OTP)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 25
  testRunner.And("I am clicking on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 26
@@ -1213,4 +1213,3 @@ this.WhenUserTryToTermDeposit("To verify that Customer can not apply for Term De
 }
 #pragma warning restore
 #endregion
-

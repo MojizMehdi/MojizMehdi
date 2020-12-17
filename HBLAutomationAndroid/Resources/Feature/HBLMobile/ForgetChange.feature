@@ -26,7 +26,7 @@ Scenario Outline: As a user i want to verify forget password for mobile banking
 	And I am clicking on "Forget_Passowrd_Next"
 	And I wait 5000
 	And verify the message "<lead_field_value>" through database on "<lead_field_query>" on Schema "DIGITAL_CHANNEL_SEC"
-	And I have given "<OTP_Value>" on "Login_OTP_field"
+	And I scroll to element text as "One Time Password (OTP)"
 	And I am clicking on "Forget_Passowrd_Next"
 	And I wait 3000
 	And verify the result from "<password_reset_req_query_old>" on Schema "DIGITAL_CHANNEL_SEC"
@@ -43,7 +43,7 @@ Scenario Outline: As a user i want to verify forget password for mobile banking
 	And I am performing on "Login_SignIn_Button"
 	And I set value in context from data "<login_id_value>" as "username"
 	And I wait 30000
-	And I have given "<OTP_Value>" on "Login_OTP_field"
+	And I scroll to element text as "One Time Password (OTP)"
 	And I am clicking on "Login_OTP_Verify_Button"
 	And I wait 5000
 	And I am clicking on "BillPayment_Rating"
@@ -110,7 +110,7 @@ Scenario Outline: As a user i want to verify change login id for mobile banking
 	And I have given "<new_login_id>" on "Forget_Change_New_Login_Id"
 	And I am clicking on "Forget_Passowrd_Next"
 	And I wait 5000
-	And I have given "<OTP_Value>" on "Login_OTP_field"
+	And I scroll to element text as "One Time Password (OTP)"
 	And I am clicking on "Login_OTP_Verify_Button"
 	And I have given "<Forget_Password_NewPass_Value>" on "Forget_Change_Password"
 	And I have given "<Forget_Password_RepeatNewPass_Value>" on "Forget_Change_Repeat_Password"
@@ -126,7 +126,7 @@ Scenario Outline: As a user i want to verify change login id for mobile banking
 	And I am performing on "Login_SignIn_Button"
 	And I set value in context from data "<new_login_id>" as "username"
 	And I wait 30000
-	And I have given "<OTP_Value>" on "Login_OTP_field"
+	And I scroll to element text as "One Time Password (OTP)"
 	And I am clicking on "Login_OTP_Verify_Button"
 	And I wait 5000
 	And I am clicking on "BillPayment_Rating"

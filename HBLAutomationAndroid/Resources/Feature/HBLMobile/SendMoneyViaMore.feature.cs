@@ -178,7 +178,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 35
  testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 36
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I scroll to element text as \"One Time Password (OTP)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 37
  testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 38
@@ -391,7 +391,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 106
  testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 107
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I scroll to element text as \"One Time Password (OTP)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 108
  testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 109
@@ -636,7 +636,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 192
  testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 193
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I scroll to element text as \"One Time Password (OTP)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 194
  testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 195
@@ -888,7 +888,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 279
  testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 280
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I scroll to element text as \"One Time Password (OTP)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 281
  testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 282
@@ -1796,4 +1796,3 @@ this.WhenUserTryToSendMoneyMobileScheduleInterbankUsingAlreadyAddedBeneViaMore("
 }
 #pragma warning restore
 #endregion
-

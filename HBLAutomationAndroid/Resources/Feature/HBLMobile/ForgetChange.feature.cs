@@ -156,7 +156,7 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"DIGITAL_CHANNEL_SEC" +
                         "\"", lead_Field_Value, lead_Field_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 29
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I scroll to element text as \"One Time Password (OTP)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 30
  testRunner.And("I am clicking on \"Forget_Passowrd_Next\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 31
@@ -188,7 +188,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 45
  testRunner.And("I wait 30000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 46
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I scroll to element text as \"One Time Password (OTP)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 47
  testRunner.And("I am clicking on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 48
@@ -1210,7 +1210,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 112
  testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 113
- testRunner.And("I have given \"<OTP_Value>\" on \"Login_OTP_field\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I scroll to element text as \"One Time Password (OTP)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 114
  testRunner.And("I am clicking on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 115
@@ -1240,7 +1240,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 128
  testRunner.And("I wait 30000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 129
- testRunner.And("I have given \"<OTP_Value>\" on \"Login_OTP_field\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I scroll to element text as \"One Time Password (OTP)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 130
  testRunner.And("I am clicking on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 131
@@ -1324,4 +1324,3 @@ this.AsAUserIWantToVerifyChangeLoginIdForMobileBanking("When I am verifying Chan
 }
 #pragma warning restore
 #endregion
-

@@ -21,7 +21,7 @@ Scenario Outline: When user try to login mobile banking term deposit
 	And I am performing on "Login_SignIn_Button"
 	And I set value in context from data "<Login_UserId_Value>" as "username"
 	And I wait 30000
-	And I have given "<OTP_Value>" on "Login_OTP_field"
+	And I scroll to element text as "One Time Password (OTP)"
 	And I am clicking on "Login_OTP_Verify_Button"
 	And I wait 5000 
 	Then verify through "Welcome, " on "Login_Success_Text"

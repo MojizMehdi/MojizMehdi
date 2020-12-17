@@ -3,7 +3,7 @@
 	As a math idiot
 	I want to be told the sum of two numbers
 
-@BillPayment @MultiBillPyament @AddNew_BillPayment @Bill_Payment_Exisitng_Bene @Bill_Payment_Exisitng_Bene_Via_Home
+@BillPayment @MultiBillPyament @AddNew_BillPayment @Bill_Payment_Exisitng_Bene @Bill_Payment_Exisitng_Bene_Via_Home @Add_New_BillPayment_Schedule @Bill_Payment_Exisitng_Bene_Schedule
 Scenario Outline: When user try to login mobile banking for bill payment
 	Given the test case title is "<Case>"
 	And the user is arrive to Mobile Banking home page 
@@ -83,6 +83,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 	And I have given "<partial_payment_amount>" on "BillPayment_Transaction_Unpaid_Amount_Field"
 	And I am verifying OTP and Transaction pass check on company code "<company_code_value>"
 	And I am clicking on "BillPayment_NextBtn"
+	#And I scroll to element text as "One Time Password (OTP)"
 	And I have otp check and given <OTP_Value> on "Login_OTP_field"
 	And I am clicking on "BillPayment_CheckNextBtn"
 	And I have transaction pass check and given <tran_pass_value> on "BillPayment_TransactionPassword"
@@ -128,7 +129,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 	Examples: 
 	|Case|status_query|status_query2|account_count_query|Category_Value|Company_Value|BillPayment_ConsumerNo_Value|Bill_Amount_query|company_code_value|OTP_Value|tran_pass_value|tran_type_query|tran_amount_query|from_account_query|company_name_query|consumer_no_query|db_val|db_val2|account_no|account_type|expiry_date|bene_name|bene_query|instrument_type|consumer_number_label_query|paid_marking_query|LP_BillStatus_query|partial_payment_check_query|partial_payment_amount|Expected_Result|
 
-@BillPayment
+@BillPayment @Add_New_BillPayment_Schedule
 Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make new payment schedule
 	Given the test case title is "<Case>"
 	And I set value in context from data "<BillPayment_ConsumerNo_Value>" as "ConsumerNo"
@@ -224,7 +225,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 
 
 @BillPayment @Bill_Payment_Exisitng_Bene_Schedule
-Scenario Outline: As a user i want to Verify Bill Payment through Mobile by already added bene schedule
+Scenario Outline: As a user i want to Verify Bill Payment through Mobile bene schedule
 	Given the test case title is "<Case>"
 	And I set value in context from data "<BillPayment_ConsumerNo_Value>" as "ConsumerNo"
 	And I set value in context from data "1" as "TranTypeBene"
@@ -257,8 +258,8 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by alre
 	#And verify color of bill status on "Pay_Bill_Status_Color"
 	#partial_payment_req_query
 	And I set value in context from database "<partial_payment_check_query>" as "IS_PARTIAL_PAYMENT_ALLOWED" on Schema "<db_val2>"
-	And I want value from textview "BillPayment_Transaction_Unpaid_Amount" on database "<db_val2>" as "<Bill_Amount_query>"
-	And verify through database on "<Bill_Amount_query>" on Schema "<db_val2>" on "BillPayment_Transaction_Unpaid_Amount"
+	And I want value from textview "BillPayment_Transaction_Unpaid_Amount_Bene" on database "<db_val2>" as "<Bill_Amount_query>"
+	And verify through database on "<Bill_Amount_query>" on Schema "<db_val2>" on "BillPayment_Transaction_Unpaid_Amount_Bene"
 	#partial_payment
 	And I have given "<partial_payment_amount>" on "BillPayment_Transaction_Unpaid_Amount_Field"
 	And I am verifying OTP and Transaction pass check on company code "<company_code_value>"
@@ -345,8 +346,8 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by alre
 	#And verify color of bill status on "Pay_Bill_Status_Color"
 	#partial_payment_req_query
 	And I set value in context from database "<partial_payment_check_query>" as "IS_PARTIAL_PAYMENT_ALLOWED" on Schema "<db_val2>"
-	And I want value from textview "BillPayment_Transaction_Unpaid_Amount" on database "<db_val2>" as "<Bill_Amount_query>"
-	And verify through database on "<Bill_Amount_query>" on Schema "<db_val2>" on "BillPayment_Transaction_Unpaid_Amount"
+	And I want value from textview "BillPayment_Transaction_Unpaid_Amount_Bene" on database "<db_val2>" as "<Bill_Amount_query>"
+	And verify through database on "<Bill_Amount_query>" on Schema "<db_val2>" on "BillPayment_Transaction_Unpaid_Amount_Bene"
 	#partial_payment
 	And I have given "<partial_payment_amount>" on "BillPayment_Transaction_Unpaid_Amount_Field"
 	And I am verifying OTP and Transaction pass check on company code "<company_code_value>"
@@ -426,8 +427,8 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by adde
 	#And verify color of bill status on "Pay_Bill_Status_Color"
 	#partial_payment_req_query
 	And I set value in context from database "<partial_payment_check_query>" as "IS_PARTIAL_PAYMENT_ALLOWED" on Schema "<db_val2>"
-	And I want value from textview "BillPayment_Transaction_Unpaid_Amount" on database "<db_val2>" as "<Bill_Amount_query>"
-	And verify through database on "<Bill_Amount_query>" on Schema "<db_val2>" on "BillPayment_Transaction_Unpaid_Amount"
+	And I want value from textview "BillPayment_Transaction_Unpaid_Amount_Bene" on database "<db_val2>" as "<Bill_Amount_query>"
+	And verify through database on "<Bill_Amount_query>" on Schema "<db_val2>" on "BillPayment_Transaction_Unpaid_Amount_Bene"
 	#partial_payment
 	And I have given "<partial_payment_amount>" on "BillPayment_Transaction_Unpaid_Amount_Field"
 	And I am verifying OTP and Transaction pass check on company code "<company_code_value>"

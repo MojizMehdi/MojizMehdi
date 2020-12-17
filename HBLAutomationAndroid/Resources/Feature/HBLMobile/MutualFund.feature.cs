@@ -83,7 +83,7 @@ namespace HBLAutomationAndroid.Resources.Feature.HBLMobile
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void _1WhenUserTryToLoginMobileBankingForMutualFund(string @case, string status_Query, string login_UserId_Value, string login_Password_Value, string cnic_Query, string oTP_Value, string expected_Result, string[] exampleTags)
+        public virtual void _1WhenUserTryToLoginMobileBankingForMutualFund(string @case, string status_Query, string login_UserId_Value, string login_Password_Value, string oTP_Value, string expected_Result, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Mutual_Fund"};
@@ -151,15 +151,14 @@ this.ScenarioSetup(scenarioInfo);
             "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "MFMB12")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Cnic_query", "12345678")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "PASS")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
         public virtual void _1WhenUserTryToLoginMobileBankingForMutualFund_WhenUserIdAndPasswordAreValidMFMB12()
         {
 #line 7
 this._1WhenUserTryToLoginMobileBankingForMutualFund("When user id and password are valid MFMB12", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
                     "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
-                    "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;", "MFMB12", "pakistan1", "12345678", "PASS", "", new string[] {
+                    "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;", "MFMB12", "pakistan1", "12345678", "PASS", new string[] {
                         "source:Data/MutualFundMobileLogin.xlsx"});
 #line hidden
         }
@@ -177,15 +176,14 @@ this._1WhenUserTryToLoginMobileBankingForMutualFund("When user id and password a
             "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "LTPMB")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Cnic_query", "12345678")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "PASS")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
         public virtual void _1WhenUserTryToLoginMobileBankingForMutualFund_WhenUserIdAndPasswordAreValidLTPMB()
         {
 #line 7
 this._1WhenUserTryToLoginMobileBankingForMutualFund("When user id and password are valid LTPMB", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
                     "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
-                    "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;", "LTPMB", "pakistan1", "12345678", "PASS", "", new string[] {
+                    "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;", "LTPMB", "pakistan1", "12345678", "PASS", new string[] {
                         "source:Data/MutualFundMobileLogin.xlsx"});
 #line hidden
         }
@@ -203,15 +201,14 @@ this._1WhenUserTryToLoginMobileBankingForMutualFund("When user id and password a
             "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "Automatepsdy")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Cnic_query", "12345678")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "PASS")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
         public virtual void _1WhenUserTryToLoginMobileBankingForMutualFund_WhenUserIdAndPasswordAreValidNTP22()
         {
 #line 7
 this._1WhenUserTryToLoginMobileBankingForMutualFund("When user id and password are valid NTP22", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
                     "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
-                    "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;", "Automatepsdy", "pakistan1", "12345678", "PASS", "", new string[] {
+                    "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;", "Automatepsdy", "pakistan1", "12345678", "PASS", new string[] {
                         "source:Data/MutualFundMobileLogin.xlsx"});
 #line hidden
         }
@@ -229,15 +226,14 @@ this._1WhenUserTryToLoginMobileBankingForMutualFund("When user id and password a
             "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "PSDYMB")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Cnic_query", "12345678")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "PASS")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
         public virtual void _1WhenUserTryToLoginMobileBankingForMutualFund_WhenUserIdAndPasswordAreValidPSDYMB()
         {
 #line 7
 this._1WhenUserTryToLoginMobileBankingForMutualFund("When user id and password are valid PSDYMB", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
                     "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
-                    "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;", "PSDYMB", "pakistan1", "12345678", "PASS", "", new string[] {
+                    "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;", "PSDYMB", "pakistan1", "12345678", "PASS", new string[] {
                         "source:Data/MutualFundMobileLogin.xlsx"});
 #line hidden
         }
@@ -255,15 +251,14 @@ this._1WhenUserTryToLoginMobileBankingForMutualFund("When user id and password a
             "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "LINKMB")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Cnic_query", "12345678")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "PASS")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
         public virtual void _1WhenUserTryToLoginMobileBankingForMutualFund_WhenUserIdAndPasswordAreValidLINKMB()
         {
 #line 7
 this._1WhenUserTryToLoginMobileBankingForMutualFund("When user id and password are valid LINKMB", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
                     "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
-                    "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;", "LINKMB", "pakistan1", "12345678", "PASS", "", new string[] {
+                    "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;", "LINKMB", "pakistan1", "12345678", "PASS", new string[] {
                         "source:Data/MutualFundMobileLogin.xlsx"});
 #line hidden
         }
@@ -281,15 +276,14 @@ this._1WhenUserTryToLoginMobileBankingForMutualFund("When user id and password a
             "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "NOMFMB")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Cnic_query", "12345678")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "PASS")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
         public virtual void _1WhenUserTryToLoginMobileBankingForMutualFund_WhenUserIdAndPasswordAreValidNOMFMB()
         {
 #line 7
 this._1WhenUserTryToLoginMobileBankingForMutualFund("When user id and password are valid NOMFMB", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
                     "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
-                    "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;", "NOMFMB", "pakistan1", "12345678", "PASS", "", new string[] {
+                    "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;", "NOMFMB", "pakistan1", "12345678", "PASS", new string[] {
                         "source:Data/MutualFundMobileLogin.xlsx"});
 #line hidden
         }
@@ -307,15 +301,14 @@ this._1WhenUserTryToLoginMobileBankingForMutualFund("When user id and password a
             "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_UserId_Value", "PSDNMB")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Login_Password_Value", "pakistan1")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Cnic_query", "12345678")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "PASS")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:OTP_Value", "12345678")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
         public virtual void _1WhenUserTryToLoginMobileBankingForMutualFund_WhenUserIdAndPasswordAreValidPSDNMB()
         {
 #line 7
 this._1WhenUserTryToLoginMobileBankingForMutualFund("When user id and password are valid PSDNMB", "BEGIN UPDATE DC_REGISTERED_DEVICES RD SET RD.IS_ACTIVE = 0 WHERE RD.CUSTOMER_INFO" +
                     "_ID=(SELECT CI.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO CI WHERE CI.CUSTOMER_NAME " +
-                    "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;", "PSDNMB", "pakistan1", "12345678", "PASS", "", new string[] {
+                    "= \'{username}\') AND RD.DEVICE_OS=\'Android\';COMMIT;END;", "PSDNMB", "pakistan1", "12345678", "PASS", new string[] {
                         "source:Data/MutualFundMobileLogin.xlsx"});
 #line hidden
         }
@@ -420,7 +413,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 63
  testRunner.And("I wait 10000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 64
- testRunner.And("I scroll to element text as \"and risks involved\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I scroll to element text as \"Terms and Conditions which shall be binding upon him" +
+                    "\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 65
  testRunner.And("I am clicking on \"MutualFund_AgreeBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 66
@@ -3566,4 +3560,3 @@ this.WhenUserTryToMutualFund("To verify that Customer can not apply for Mutual F
 }
 #pragma warning restore
 #endregion
-
