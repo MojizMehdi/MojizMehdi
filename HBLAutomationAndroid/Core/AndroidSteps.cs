@@ -202,11 +202,17 @@ namespace HBLAutomationAndroid.Core
         [Then(@"I have given ""(.*)"" on ""(.*)""")]
         public void WhenIHaveGivenOn(string textboxvalue, string Keyword)
         {
+            AppiumHelper apmhelper = new AppiumHelper();
             string locator_type = "id";
             if (Keyword.Contains("Login_OTP_field"))
             {
-                AppiumHelper apmhelper = new AppiumHelper();
+                //AppiumHelper apmhelper = new AppiumHelper();
+                apmhelper.scroll_to_element_text("One Time Password (OTP)");
                 textboxvalue = apmhelper.GetOTP();
+            }
+            if (Keyword.Contains("SendMoney_TranPass"))
+            {
+                apmhelper.scroll_to_element_text("Transaction Password");
             }
             //if (Keyword.Equals("Forget_PasswordCardPin") && context.GetCustomerType() != "D")
             //{
@@ -239,13 +245,14 @@ namespace HBLAutomationAndroid.Core
                     return;
                 }
             }
+
             if (String.IsNullOrEmpty(textboxvalue))
             {
                 return;
             }
             try
             {
-                AppiumHelper apmhelper = new AppiumHelper();
+                //AppiumHelper apmhelper = new AppiumHelper();
                 //apmhelper.checkPageIsReady();
                 Element keyword = ContextPage.GetInstance().GetElement(Keyword);
                 //keyword.Locator used instead od locator
@@ -604,7 +611,7 @@ namespace HBLAutomationAndroid.Core
                         value2 = SourceDataTable.Rows[0][0].ToString();
                         context.SetAccStatementDays(value2);
                     }
-                    if (Keyword.Equals("BillPayment_Transaction_Unpaid_Amount"))
+                    if (Keyword.Equals("BillPayment_Transaction_Unpaid_Amount") || Keyword.Equals("BillPayment_Transaction_Unpaid_Amount_Bene"))
                     {
                         if (context.Get_Is_Partial_Payment_Allowed() != "0")
                         {
@@ -726,6 +733,7 @@ namespace HBLAutomationAndroid.Core
                     {
                         locator_type = "xpath";
                     }
+                    apmhelper.scroll_to_element_text("One Time Password (OTP)");
                     apmhelper.SetTextBoxValue(otp_value, keyword.Locator, locator_type);
                 }
             }
@@ -753,6 +761,7 @@ namespace HBLAutomationAndroid.Core
                     {
                         locator_type = "xpath";
                     }
+                    apmhelper.scroll_to_element_text("Transaction Password");
                     apmhelper.SetTextBoxValue(tran_pass_value, keyword.Locator, locator_type);
                 }
             }
@@ -1511,7 +1520,6 @@ namespace HBLAutomationAndroid.Core
                 throw new AssertFailedException(exception.Message);
             }
         }
-
         [When(@"I am verifying list of execution iterations on ""(.*)""")]
         public void WhenIAmVerifyingListOfExecutionIterationsOn(string Keyword)
         {
@@ -1557,16 +1565,17 @@ namespace HBLAutomationAndroid.Core
                     DateTime temp = (st_date.Date.AddDays(i));
                     temp = temp.Date;
                     lst.Add(temp.ToString("dd-MM-yyyy"));
+                    apmhelper.scroll_to_element_text(temp.ToString("dd-MM-yyyy"));
                     string locator = keyword.Locator.Replace("{Date}", lst[counter - 1].ToString());
                     lstui.Add(apmhelper.ReturnKeywordValue(locator, "xpath"));
                     if (lst[counter - 1] != lstui[counter - 1])
                     {
                         throw new AssertFailedException(string.Format("The Iteration Date against keyword is: {0} and Iteration Date calculated by code is {1}", lstui[counter], lst[counter]));
                     }
-                    if (counter != 0 && counter % 8 == 0)
-                    {
-                        apmhelper.scroll_down(0.65, 0.30);
-                    }
+                    //if (counter != 0 && counter % 8 == 0)
+                    //{
+                    //    apmhelper.scroll_down(0.65, 0.30);
+                    //}
                     counter++;
                 }
                 context.Set_iteration_dates_schedule(lst);
@@ -1577,6 +1586,73 @@ namespace HBLAutomationAndroid.Core
                 throw new AssertFailedException(exception.Message);
             }
         }
+
+
+        //[When(@"I am verifying list of execution iterations on ""(.*)""")]
+        //public void WhenIAmVerifyingListOfExecutionIterationsOn(string Keyword)
+        //{
+        //    try
+        //    {
+        //        Element keyword = ContextPage.GetInstance().GetElement(Keyword);
+        //        AppiumHelper apmhelper = new AppiumHelper();
+        //        //selhelper.checkPageIsReady();
+        //        //int loop_counter = 0;
+        //        int loop_increment_counter = 0;
+        //        string frequency = context.Getfrequency();
+        //        if (frequency == "Daily")
+        //        {
+        //            loop_increment_counter = 1;
+        //        }
+        //        else if (frequency == "Weekly")
+        //        {
+        //            loop_increment_counter = 7;
+        //        }
+        //        else if (frequency == "Fortnightly")
+        //        {
+        //            loop_increment_counter = 15;
+        //        }
+        //        else if (frequency == "Monthly")
+        //        {
+        //            loop_increment_counter = 30;
+        //        }
+        //        else if (frequency == "Quarterly")
+        //        {
+        //            loop_increment_counter = 90;
+        //        }
+        //        List<string> lst = new List<string>();
+        //        List<string> lstui = new List<string>();
+        //        double difference = 0;
+        //        DateTime st_date = context.Getcalendar_fromdate().Date;
+        //        DateTime ed_date = context.Getcalendar_todate().Date;
+        //        difference = ((ed_date - st_date).TotalDays) + 1;
+        //        difference = difference / loop_increment_counter;
+        //        int diff = Convert.ToInt32(Math.Ceiling(difference));
+        //        int counter = 1;
+        //        for (int i = 0; i < diff * loop_increment_counter; i += loop_increment_counter)
+        //        {
+        //            DateTime temp = (st_date.Date.AddDays(i));
+        //            temp = temp.Date;
+        //            lst.Add(temp.ToString("dd-MM-yyyy"));
+        //            string locator = keyword.Locator.Replace("{Date}", lst[counter - 1].ToString());
+        //            lstui.Add(apmhelper.ReturnKeywordValue(locator, "xpath"));
+        //            if (lst[counter - 1] != lstui[counter - 1])
+        //            {
+        //                throw new AssertFailedException(string.Format("The Iteration Date against keyword is: {0} and Iteration Date calculated by code is {1}", lstui[counter], lst[counter]));
+        //            }
+        //            if (counter != 0 && counter % 8 == 0)
+        //            {
+        //                apmhelper.scroll_down(0.65, 0.30);
+        //            }
+        //            counter++;
+        //        }
+        //        context.Set_iteration_dates_schedule(lst);
+        //    }
+        //    catch (Exception exception)
+        //    {
+        //        AppiumHelper.TakeScreenshot();
+        //        throw new AssertFailedException(exception.Message);
+        //    }
+        //}
 
         [When(@"I scroll down")]
         public void WhenIScrollDown()
@@ -1953,7 +2029,7 @@ namespace HBLAutomationAndroid.Core
                     DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
                     DataTable SourceDataTable = dlink.GetDataTable(query, schema);
                     message = SourceDataTable.Rows[0][0].ToString();
-                    if (Keyword.Equals("BillPayment_Transaction_Unpaid_Amount"))
+                    if (Keyword.Equals("BillPayment_Transaction_Unpaid_Amount") || Keyword.Equals("BillPayment_Transaction_Unpaid_Amount_Bene"))
                     {
                         if (context.Get_Is_Partial_Payment_Allowed() != "0")
                         {

@@ -170,7 +170,9 @@
     <Element keyword="BillPayment_Bill_Status" locator ="//android.widget.TextView[@text='Bill Status']/following-sibling::android.widget.TextView" />
     <Element keyword="BillPayment_Bill_Inquiry_Fields" locator ="//android.widget.TextView[@text='{Field_Name}']/following-sibling::android.widget.TextView" />
     <!--<Element keyword="BillPayment_Transaction_Unpaid_Amount" locator ="//android.widget.TextView[@text='Amount']/following-sibling::android.widget.TextView" />-->
-    <Element keyword="BillPayment_Transaction_Unpaid_Amount" locator ="com.hbl.android.hblmobilebanking:id/textReceiverAmount" />
+    <!--<Element keyword="BillPayment_Transaction_Unpaid_Amount" locator ="com.hbl.android.hblmobilebanking:id/textReceiverAmount" />-->
+    <Element keyword="BillPayment_Transaction_Unpaid_Amount" locator ="com.hbl.android.hblmobilebanking:id/billAmountValue" />
+    <Element keyword="BillPayment_Transaction_Unpaid_Amount_Bene" locator ="com.hbl.android.hblmobilebanking:id/amount_V" />
     <Element keyword="BillPayment_Transaction_Unpaid_Amount_Field" locator ="com.hbl.android.hblmobilebanking:id/textReceiverAmount" />
     <Element keyword="BillPayment_TranFromAcc" locator="//android.widget.TextView[@text='From']/following-sibling::android.widget.TextView"/>
     <Element keyword="BillPayment_TranSuccess" locator="com.hbl.android.hblmobilebanking:id/successMessageTxt"/>
@@ -183,7 +185,8 @@
     <Element keyword="BillPayment_TranInfoClose" locator="com.hbl.android.hblmobilebanking:id/submitRequestLay"/>
     <Element keyword="BillPayment_TranInfoClose_Bene" locator="com.hbl.android.hblmobilebanking:id/onCloseClicked"/>
     <Element keyword="BillPayment_SearchBeneField" locator="com.hbl.android.hblmobilebanking:id/txtView_Search"/>
-    <Element keyword="BillPayment_SearchBeneConsumerNo" locator="com.hbl.android.hblmobilebanking:id/companyName"/>
+    <!--<Element keyword="BillPayment_SearchBeneConsumerNo" locator="com.hbl.android.hblmobilebanking:id/companyName"/>-->
+    <Element keyword="BillPayment_SearchBeneConsumerNo" locator="com.hbl.android.hblmobilebanking:id/beneficiaryDetail"/>
     <Element keyword="BillPayment_Rating" locator="com.hbl.android.hblmobilebanking:id/dialog_neg_btn"/>
     <Element keyword="BillPayment_RatingOkBtn" locator="com.hbl.android.hblmobilebanking:id/dialog_pos_btn"/>
     <Element keyword="BillPayment_Rating_Feedback_OkBtn" locator="com.hbl.android.hblmobilebanking:id/dialog_pos_btn"/>

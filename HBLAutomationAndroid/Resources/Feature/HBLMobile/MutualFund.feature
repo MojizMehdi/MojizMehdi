@@ -27,7 +27,7 @@ Scenario Outline: 1When user try to login mobile banking for mutual fund
 	Then verify through "Welcome, " on "Login_Success_Text"
 	@source:Data/MutualFundMobileLogin.xlsx
 	Examples: 
-	|Case|Status_query|Login_UserId_Value|Login_Password_Value|Cnic_query|OTP_Value|Expected_Result|
+	|Case|Status_query|Login_UserId_Value|Login_Password_Value|OTP_Value|Expected_Result|
 
 
 @Mutual_Fund
@@ -61,7 +61,7 @@ Scenario Outline: When user try to mutual fund
 	#And verify through database on "<tran_timing_query>" on Schema "<db_val3>" on "Investment_MutualFund_TranTiming"
 	And I am clicking on "MutualFund_NextBtn"
 	And I wait 10000
-	And I scroll to element text as "and risks involved"
+	And I scroll to element text as "Terms and Conditions which shall be binding upon him"
 	And I am clicking on "MutualFund_AgreeBtn"
 	And verify through database on "<tran_timing_query>" on Schema "<db_val3>" on "MutualFund_CutOff_Timings"
 	And I have given "<tran_pass_value>" on "SendMoney_TranPass"

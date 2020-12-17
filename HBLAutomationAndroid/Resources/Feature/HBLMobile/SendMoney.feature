@@ -21,7 +21,7 @@ Scenario Outline: When user try to login mobile banking for SendMoney
 	And I wait 2000
 	And I am performing on "Login_SignIn_Button"
 	And I wait 30000
-	And I have given "<OTP_Value>" on "Login_OTP_field"
+	And I scroll to element text as "One Time Password (OTP)"
 	And I am clicking on "Login_OTP_Verify_Button"
 	And I wait 5000
 	And I am clicking on "BillPayment_Rating"
@@ -68,7 +68,7 @@ Scenario Outline: When user try to send money mobile
 	And I wait 3000
 	And I scroll down
 	And I wait 2000
-	And I have given "<OTP_Value>" on "Login_OTP_field"
+	And I scroll to element text as "One Time Password (OTP)"
 	And I wait 2000
 	And I am performing on "SendMoney_NextBtn"
 	And I wait 3000
@@ -158,7 +158,7 @@ Scenario Outline: When user try to send money mobile
 #	And I wait 3000
 #	And I scroll down
 #	And I wait 2000
-#	And I have given "<OTP_Value>" on "Login_OTP_field"
+#	And I scroll to element text as "One Time Password (OTP)"
 #	And I wait 2000
 #	And I am performing on "SendMoney_NextBtn"
 #	And I wait 3000
@@ -232,7 +232,7 @@ Scenario Outline: When user try to send money mobile using already added bene
 	And I wait 3000
 	#And I scroll down
 	#And I wait 2000
-	#And I have given "<OTP_Value>" on "Login_OTP_field"
+	#And I scroll to element text as "One Time Password (OTP)"
 	#And I wait 2000
 	#And I am performing on "SendMoney_NextBtn"
 	#And I wait 3000

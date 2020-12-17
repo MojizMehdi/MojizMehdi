@@ -33,7 +33,7 @@ Scenario Outline: When user try to send money mobile HBL or Konnect Account usin
 	And I wait 3000
 	And I scroll down
 	And I wait 2000
-	And I have given "<OTP_Value>" on "Login_OTP_field"
+	And I scroll to element text as "One Time Password (OTP)"
 	And I wait 2000
 	And I am performing on "SendMoney_NextBtn"
 	And I wait 3000
@@ -104,7 +104,7 @@ Scenario Outline: When user try to send money mobile Other Bank Account using mo
 	And I wait 3000
 	And I scroll down
 	And I wait 2000
-	And I have given "<OTP_Value>" on "Login_OTP_field"
+	And I scroll to element text as "One Time Password (OTP)"
 	And I wait 2000
 	And I am performing on "SendMoney_NextBtn"
 	And I wait 3000
@@ -190,7 +190,7 @@ Scenario Outline: When user try to send money mobile Schedule HBL or Konnect Acc
 	And I wait 3000
 	And I scroll down
 	And I wait 2000
-	And I have given "<OTP_Value>" on "Login_OTP_field"
+	And I scroll to element text as "One Time Password (OTP)"
 	And I wait 2000
 	And I am performing on "SendMoney_NextBtn"
 	And I wait 3000
@@ -277,7 +277,7 @@ Scenario Outline: When user try to send money mobile Schedule Other Bank Account
 	And I wait 3000
 	And I scroll down
 	And I wait 2000
-	And I have given "<OTP_Value>" on "Login_OTP_field"
+	And I scroll to element text as "One Time Password (OTP)"
 	And I wait 2000
 	And I am performing on "SendMoney_NextBtn"
 	And I wait 3000
@@ -351,7 +351,7 @@ Scenario Outline: When user try to send money mobile Schedule HBL Or Konnect usi
 	And I wait 3000
 	#And I scroll down
 	#And I wait 2000
-	#And I have given "<OTP_Value>" on "Login_OTP_field"
+	#And I scroll to element text as "One Time Password (OTP)"
 	#And I wait 2000
 	#And I am performing on "SendMoney_NextBtn"
 	#And I wait 3000
@@ -427,7 +427,7 @@ Scenario Outline: When user try to send money mobile interbranch using already a
 	And I wait 3000
 	#And I scroll down
 	#And I wait 2000
-	#And I have given "<OTP_Value>" on "Login_OTP_field"
+	#And I scroll to element text as "One Time Password (OTP)"
 	#And I wait 2000
 	#And I am performing on "SendMoney_NextBtn"
 	#And I wait 3000
@@ -503,7 +503,7 @@ Scenario Outline: When user try to send money mobile interbank using already add
 	And I wait 3000
 	#And I scroll down
 	#And I wait 2000
-	#And I have given "<OTP_Value>" on "Login_OTP_field"
+	#And I scroll to element text as "One Time Password (OTP)"
 	#And I wait 2000
 	#And I am performing on "SendMoney_NextBtn"
 	#And I wait 3000
