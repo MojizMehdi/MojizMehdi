@@ -126,21 +126,21 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.And("I am performing on \"Login_SignIn_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 23
  testRunner.And("I wait 30000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 24
- testRunner.And("I scroll to element text as \"One Time Password (OTP)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 25
- testRunner.And("I am clicking on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 26
- testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 27
- testRunner.And("I am clicking on \"BillPayment_Rating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 28
- testRunner.And("I am clicking on \"SendMoney_SkipBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 29
  testRunner.And("I am clicking on \"BillPayment_Rating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 29
+ testRunner.And("I am clicking on \"SendMoney_SkipBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 30
- testRunner.And("I am clicking on \"BillPayment_RatingOkBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"BillPayment_Rating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 31
+ testRunner.And("I am clicking on \"BillPayment_RatingOkBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 32
  testRunner.Then("verify through \"Welcome, \" on \"Login_Success_Text\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -642,131 +642,131 @@ this.WhenUserTryToLoginMobileBankingForSendMoney("When user id and password are 
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When user try to send money mobile", @__tags);
-#line 37
-this.ScenarioSetup(scenarioInfo);
 #line 38
- testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 39
- testRunner.And(string.Format("update the data by query \"{0}\" on DIGITAL_CHANNEL_SEC", status_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 40
- testRunner.And("the user is arrive to Mobile Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("update the data by query \"{0}\" on DIGITAL_CHANNEL_SEC", status_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 41
- testRunner.And(string.Format("the test case expected result is \"{0}\"", expected_Result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the user is arrive to Mobile Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 42
+ testRunner.And(string.Format("the test case expected result is \"{0}\"", expected_Result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 43
  testRunner.And("I am clicking on \"Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 44
- testRunner.When("I set value in context from data \"0\" as \"term_deposit_flag\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 45
- testRunner.And("I am clicking on \"SendMoney_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I set value in context from data \"0\" as \"term_deposit_flag\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 46
- testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"SendMoney_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 47
- testRunner.And("I am clicking on \"SendMoney_SkipBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 48
- testRunner.And(string.Format("I set value in context from database \"{0}\" as \"No_Of_Accounts\" on Schema \"{1}\"", no_Of_Acconts_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"SendMoney_SkipBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 49
+ testRunner.And(string.Format("I set value in context from database \"{0}\" as \"No_Of_Accounts\" on Schema \"{1}\"", no_Of_Acconts_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 50
  testRunner.And(string.Format("I set value in context from database \"{0}\" as \"Beneficiary_Count_Inter_Branch\" on" +
                         " Schema \"{1}\"", bene_Count_Query_InterBank, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 50
+#line 51
  testRunner.And(string.Format("I set value in context from database \"{0}\" as \"Beneficiary_Count_Inter_Bank\" on S" +
                         "chema \"{1}\"", bene_Count_Query_InterBranch, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 51
- testRunner.And("I am clicking on \"SendMoney_AddNewBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 52
- testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_FromAccount\"", from_Account_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"SendMoney_AddNewBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 53
- testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_Bank\"", bank_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_FromAccount\"", from_Account_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 54
- testRunner.And(string.Format("I set value in context from data \"{0}\" as \"ToAccount\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_Bank\"", bank_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 55
- testRunner.And("I set value in context from data \"SendMoney\" as \"Transaction_Type\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"ToAccount\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 56
+ testRunner.And("I set value in context from data \"SendMoney\" as \"Transaction_Type\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 57
  testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_ToAccount\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 59
- testRunner.And("I scroll down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 60
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_Amount\"", amount_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I scroll down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 61
- testRunner.When(string.Format("I select \"{0}\" on \"SendMoney_PurposeOfPayment\"", purposeOfPayment_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_Amount\"", amount_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 62
- testRunner.And("I scroll down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When(string.Format("I select \"{0}\" on \"SendMoney_PurposeOfPayment\"", purposeOfPayment_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 63
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_BeneNick\"", bene_Nick), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 64
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_BeneMobileNo\"", bene_Mobile_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 65
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_BeneEmail\"", bene_Email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 66
- testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 67
- testRunner.And("I am performing on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 68
- testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 69
  testRunner.And("I scroll down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 70
+#line 64
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_BeneNick\"", bene_Nick), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 65
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_BeneMobileNo\"", bene_Mobile_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 66
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_BeneEmail\"", bene_Email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 67
  testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 68
+ testRunner.And("I am performing on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 69
+ testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 70
+ testRunner.And("I scroll down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 71
- testRunner.And("I scroll to element text as \"One Time Password (OTP)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 72
  testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 73
- testRunner.And("I am performing on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 74
- testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 75
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_TranPass\"", tran_Pass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 76
  testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 77
+#line 75
  testRunner.And("I am performing on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 78
+#line 76
  testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 77
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_TranPass\"", tran_Pass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 78
+ testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 79
+ testRunner.And("I am performing on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 80
+ testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 81
  testRunner.And("I am clicking on \"BillPayment_Rating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 83
- testRunner.Then(string.Format("verify through \"{0}\" on \"SendMoney_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 85
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranAmount\"", tran_Amount_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 86
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFromAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then(string.Format("verify through \"{0}\" on \"SendMoney_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 87
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToAcc\"", to_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 88
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToBank\"", to_Bank_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 89
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranBeneName\"", bene_Name_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 90
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranPurpose\"", purpose_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 91
- testRunner.And("I am clicking on \"SendMoney_TranInfoClose\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 92
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_SearchBeneField\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 93
- testRunner.Then("verify through \"ToAccountNoContextVal\" on \"SendMoney_SearchBeneAccountNo\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 94
- testRunner.And("I am clicking on \"Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 96
- testRunner.And("I am clicking on \"Dashboard_Sidebar\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 97
- testRunner.And("I am clicking on \"Dashboard_Sidebar_TranActivity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 98
- testRunner.And("I am clicking on \"TransactionActivity_Financial\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 99
- testRunner.And("I am clicking on \"TransactionActivity_LatestTranLink\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 100
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranType\"", tran_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 101
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranAmount\"", tran_Amount_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 102
+#line 88
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFromAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 103
+#line 89
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToAcc\"", to_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 104
+#line 90
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToBank\"", to_Bank_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 105
+#line 91
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranBeneName\"", bene_Name_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 92
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranPurpose\"", purpose_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 93
+ testRunner.And("I am clicking on \"SendMoney_TranInfoClose\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 94
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_SearchBeneField\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 95
+ testRunner.Then("verify through \"ToAccountNoContextVal\" on \"SendMoney_SearchBeneAccountNo\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 96
+ testRunner.And("I am clicking on \"Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 98
+ testRunner.And("I am clicking on \"Dashboard_Sidebar\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 99
+ testRunner.And("I am clicking on \"Dashboard_Sidebar_TranActivity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 100
+ testRunner.And("I am clicking on \"TransactionActivity_Financial\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 101
+ testRunner.And("I am clicking on \"TransactionActivity_LatestTranLink\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 102
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranType\"", tran_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 103
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranAmount\"", tran_Amount_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 104
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFromAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 105
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToAcc\"", to_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 106
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToBank\"", to_Bank_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 107
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranBeneName\"", bene_Name_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 108
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranPurpose\"", purpose_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -817,7 +817,7 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToCheckFundTransferCanNotBePerformedWithInsufficientAccountBalance()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To check fund transfer can not be performed with Insufficient Account Balance", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')AND CA.ACCOUNT_TYPE != \'DW\'", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
@@ -876,7 +876,7 @@ this.WhenUserTryToSendMoneyMobile("To check fund transfer can not be performed w
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifyTransactionFromFCY_Account()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To verify transaction from FCY_Account", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')AND CA.ACCOUNT_TYPE != \'DW\'", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
@@ -936,7 +936,7 @@ this.WhenUserTryToSendMoneyMobile("To verify transaction from FCY_Account", "", 
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifyTransactionWithZeroAmountPSD_N_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To verify transaction with zero amount PSD_N_AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')AND CA.ACCOUNT_TYPE != \'DW\'", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
@@ -996,7 +996,7 @@ this.WhenUserTryToSendMoneyMobile("To verify transaction with zero amount PSD_N_
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifyThatIfBeneAccountIsBlockedPSD_N_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To verify that, if Bene account is blocked PSD_N_AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')AND CA.ACCOUNT_TYPE != \'DW\'", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
@@ -1058,7 +1058,7 @@ this.WhenUserTryToSendMoneyMobile("To verify that, if Bene account is blocked PS
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifyThatIfUserDidNotSelectThePurposeOfPaymentHitTheNextButtonPSD_N_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To verify that, if user did not select the purpose of payment & hit the next butt" +
                     "on  PSD_N_AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
@@ -1119,7 +1119,7 @@ this.WhenUserTryToSendMoneyMobile("To verify that, if user did not select the pu
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifyAccountNumberFieldEnteringInvalidAccountNumberPSD_N_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To verify Account Number field entering invalid account number PSD_N_AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')AND CA.ACCOUNT_TYPE != \'DW\'", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
@@ -1179,7 +1179,7 @@ this.WhenUserTryToSendMoneyMobile("To verify Account Number field entering inval
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifyTransactionWithEmptyAmountFieldPSD_N_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To verify transaction with empty Amount field PSD_N_AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')AND CA.ACCOUNT_TYPE != \'DW\'", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
@@ -1239,7 +1239,7 @@ this.WhenUserTryToSendMoneyMobile("To verify transaction with empty Amount field
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifyTransactionWithInvalidMobileNumberPSD_N_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To verify transaction with invalid Mobile Number PSD_N_AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')AND CA.ACCOUNT_TYPE != \'DW\'", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
@@ -1299,7 +1299,7 @@ this.WhenUserTryToSendMoneyMobile("To verify transaction with invalid Mobile Num
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifyTransactionWithInvalidEmailFieldPSD_N_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To verify transaction with invalid Email field PSD_N_AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')AND CA.ACCOUNT_TYPE != \'DW\'", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
@@ -1359,7 +1359,7 @@ this.WhenUserTryToSendMoneyMobile("To verify transaction with invalid Email fiel
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifyTransactionWithEmptyAccountNumberFieldPSD_N_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To verify transaction with empty Account Number field PSD_N_AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')AND CA.ACCOUNT_TYPE != \'DW\'", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
@@ -1421,7 +1421,7 @@ this.WhenUserTryToSendMoneyMobile("To verify transaction with empty Account Numb
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifyIfCustomerEntersIBANWithCountryCodeOtherThanOfPakistanPSD_N_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To verify if customer enters IBAN with country code other than of Pakistan PSD_N_" +
                     "AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
@@ -1482,7 +1482,7 @@ this.WhenUserTryToSendMoneyMobile("To verify if customer enters IBAN with countr
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifyFTTransactionOnFCYAccountPSD_N_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To Verify FT transaction on FCY account PSD_N_AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')AND CA.ACCOUNT_TYPE != \'DW\'", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
@@ -1542,7 +1542,7 @@ this.WhenUserTryToSendMoneyMobile("To Verify FT transaction on FCY account PSD_N
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifyTransactionWithDecimalAmountPSD_N_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To verify transaction with decimal amount PSD_N_AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')AND CA.ACCOUNT_TYPE != \'DW\'", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
@@ -1604,7 +1604,7 @@ this.WhenUserTryToSendMoneyMobile("To verify transaction with decimal amount PSD
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToCheckThatUserCanNotPerformFundTransferWithInvalidTransactionPasswordPSD_N_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To Check that user can not perform fund transfer with invalid transaction passwor" +
                     "d PSD_N_AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
@@ -1665,7 +1665,7 @@ this.WhenUserTryToSendMoneyMobile("To Check that user can not perform fund trans
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifyNickFieldExceddingMaxCharactersLimitPSD_N_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To verify Nick field excedding max characters limit PSD_N_AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')AND CA.ACCOUNT_TYPE != \'DW\'", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
@@ -1725,7 +1725,7 @@ this.WhenUserTryToSendMoneyMobile("To verify Nick field excedding max characters
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifyTransactionWithEmptyNickFieldPSD_N_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To verify transaction with empty nick field PSD_N_AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')AND CA.ACCOUNT_TYPE != \'DW\'", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
@@ -1785,7 +1785,7 @@ this.WhenUserTryToSendMoneyMobile("To verify transaction with empty nick field P
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifyTransactionWithEmptyMobileNumberFieldPSD_N_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To verify transaction with empty Mobile Number field PSD_N_AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')AND CA.ACCOUNT_TYPE != \'DW\'", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
@@ -1845,7 +1845,7 @@ this.WhenUserTryToSendMoneyMobile("To verify transaction with empty Mobile Numbe
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifyTransactionWithEmptyTransactionPasswordFieldPSD_N_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To verify transaction with empty transaction password field PSD_N_AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')AND CA.ACCOUNT_TYPE != \'DW\'", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
@@ -1905,7 +1905,7 @@ this.WhenUserTryToSendMoneyMobile("To verify transaction with empty transaction 
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifyTransactionWithEmptyEmailFieldPSD_N_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To verify transaction with empty Email field PSD_N_AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')AND CA.ACCOUNT_TYPE != \'DW\'", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
@@ -1964,7 +1964,7 @@ this.WhenUserTryToSendMoneyMobile("To verify transaction with empty Email field 
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifyTransactionViaIBANPSD_N_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To verify transaction via IBAN PSD_N_AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')AND CA.ACCOUNT_TYPE != \'DW\'", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
@@ -2024,7 +2024,7 @@ this.WhenUserTryToSendMoneyMobile("To verify transaction via IBAN PSD_N_AddNew",
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifyTransactionIfBeneficiaryIsAlreadyAddedViaIBANPSD_N_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To verify transaction if beneficiary is already added via IBAN PSD_N_AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')AND CA.ACCOUNT_TYPE != \'DW\'", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
@@ -2084,7 +2084,7 @@ this.WhenUserTryToSendMoneyMobile("To verify transaction if beneficiary is alrea
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifySuccessTransactionOfConventionalPSD_N_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To verify success transaction of conventional PSD_N_AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')AND CA.ACCOUNT_TYPE != \'DW\'", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
@@ -2146,7 +2146,7 @@ this.WhenUserTryToSendMoneyMobile("To verify success transaction of conventional
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifyTransactionFromConventionalAccountIfBeneficiaryIsAlreadyAddedViaIBANPSD_N_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To verify transaction from Conventional Account if beneficiary is already added v" +
                     "ia IBAN PSD_N_AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
@@ -2209,7 +2209,7 @@ this.WhenUserTryToSendMoneyMobile("To verify transaction from Conventional Accou
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifyTransactionFromConventionalAccountIfBeneficiaryIsAlreadyAddedViaConventionalAccountPSD_N_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To verify transaction from Conventional Account if beneficiary is already added v" +
                     "ia conventional account PSD_N_AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
@@ -2270,7 +2270,7 @@ this.WhenUserTryToSendMoneyMobile("To verify transaction from Conventional Accou
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifyTransactionIfNickIsAlreadyExistPSD_N_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To verify transaction if nick is already exist  PSD_N_AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')AND CA.ACCOUNT_TYPE != \'DW\'", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
@@ -2330,7 +2330,7 @@ this.WhenUserTryToSendMoneyMobile("To verify transaction if nick is already exis
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifyIBFTTransactionWithMaxLimitAllowedLimitPSD_N_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To Verify  IBFT transaction with max limit allowed limit PSD_N_AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')AND CA.ACCOUNT_TYPE != \'DW\'", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
@@ -2389,7 +2389,7 @@ this.WhenUserTryToSendMoneyMobile("To Verify  IBFT transaction with max limit al
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifyIBFTTransactionPSD_N_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To Verify  IBFT transaction PSD_N_AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')AND CA.ACCOUNT_TYPE != \'DW\'", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
@@ -2449,7 +2449,7 @@ this.WhenUserTryToSendMoneyMobile("To Verify  IBFT transaction PSD_N_AddNew", ""
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifyIBFTTransactionWhenBeneIsAlreadyAddedPSD_N_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To Verify  IBFT transaction when bene is already added PSD_N_AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')AND CA.ACCOUNT_TYPE != \'DW\'", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
@@ -2509,7 +2509,7 @@ this.WhenUserTryToSendMoneyMobile("To Verify  IBFT transaction when bene is alre
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifyIBFTTransactionWhenNickAlreadyExistPSD_N_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To Verify  IBFT transaction when nick already exist PSD_N_AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')AND CA.ACCOUNT_TYPE != \'DW\'", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
@@ -2571,7 +2571,7 @@ this.WhenUserTryToSendMoneyMobile("To Verify  IBFT transaction when nick already
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifyIBFTTransactionViaIBANWhenConventionalAccountExistPSD_N_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To Verify  IBFT transaction Via IBAN when conventional account exist PSD_N_AddNew" +
                     "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
@@ -2632,7 +2632,7 @@ this.WhenUserTryToSendMoneyMobile("To Verify  IBFT transaction Via IBAN when con
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifyIBFTTransactionViaIBANPSD_N_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To Verify  IBFT transaction Via IBAN PSD_N_AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')AND CA.ACCOUNT_TYPE != \'DW\'", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
@@ -2692,7 +2692,7 @@ this.WhenUserTryToSendMoneyMobile("To Verify  IBFT transaction Via IBAN PSD_N_Ad
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifyIBFTTransactionViaIBANWhenIBANAlreadyExistPSD_N_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To Verify  IBFT transaction Via IBAN when IBAN already exist PSD_N_AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')AND CA.ACCOUNT_TYPE != \'DW\'", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
@@ -2754,7 +2754,7 @@ this.WhenUserTryToSendMoneyMobile("To Verify  IBFT transaction Via IBAN when IBA
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifyIBFTTransactionViaConventionalAccountWhenIBANAlreadyExistPSD_N_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To Verify  IBFT transaction Via conventional account when IBAN already exist PSD_" +
                     "N_AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
@@ -2815,7 +2815,7 @@ this.WhenUserTryToSendMoneyMobile("To Verify  IBFT transaction Via conventional 
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifyKonnectTransactionMaxLimitExceedPSD_N_AddNewPSD_N_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To Verify Konnect transaction max limit exceed PSD_N_AddNew PSD_N_AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')AND CA.ACCOUNT_TYPE != \'DW\'", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
@@ -2875,7 +2875,7 @@ this.WhenUserTryToSendMoneyMobile("To Verify Konnect transaction max limit excee
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifyMicrofinanceIBFTViaIBANTransactionMaxLimitExceedPSD_N_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To Verify Microfinance IBFT via IBAN transaction max limit exceed PSD_N_AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')AND CA.ACCOUNT_TYPE != \'DW\'", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
@@ -2935,7 +2935,7 @@ this.WhenUserTryToSendMoneyMobile("To Verify Microfinance IBFT via IBAN transact
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifySuccessMicrofinanceIBFTViaIBANPSD_N_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To Verify success Microfinance IBFT via IBAN PSD_N_AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')AND CA.ACCOUNT_TYPE != \'DW\'", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
@@ -2995,7 +2995,7 @@ this.WhenUserTryToSendMoneyMobile("To Verify success Microfinance IBFT via IBAN 
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifySuccessMicrofinanceIBFTViaConventionalAccountPSD_N_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To Verify success Microfinance IBFT via conventional account PSD_N_AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')AND CA.ACCOUNT_TYPE != \'DW\'", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
@@ -3057,7 +3057,7 @@ this.WhenUserTryToSendMoneyMobile("To Verify success Microfinance IBFT via conve
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifySendMoneyWithMaxLimitAllowedWithinHBLFundTransferPSD_Y_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To Verify Send money with max limit allowed within HBL fund transfer PSD_Y_AddNew" +
                     "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
@@ -3118,7 +3118,7 @@ this.WhenUserTryToSendMoneyMobile("To Verify Send money with max limit allowed w
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifyIBFTTransactionMaxLimitExceedPSD_Y_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To Verify IBFT transaction max limit exceed PSD_Y_AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')AND CA.ACCOUNT_TYPE != \'DW\'", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
@@ -3178,7 +3178,7 @@ this.WhenUserTryToSendMoneyMobile("To Verify IBFT transaction max limit exceed P
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifyKonnectTransactionMaxLimitExceedPSD_Y_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To Verify Konnect transaction max limit exceed PSD_Y_AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')AND CA.ACCOUNT_TYPE != \'DW\'", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
@@ -3238,7 +3238,7 @@ this.WhenUserTryToSendMoneyMobile("To Verify Konnect transaction max limit excee
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifyMicrofinanceIBFTViaIBANTransactionMaxLimitExceedPSD_Y_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To Verify Microfinance IBFT via IBAN transaction max limit exceed PSD_Y_AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')AND CA.ACCOUNT_TYPE != \'DW\'", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
@@ -3298,7 +3298,7 @@ this.WhenUserTryToSendMoneyMobile("To Verify Microfinance IBFT via IBAN transact
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifySuccessMicrofinanceIBFTViaConventionalAccountPSD_Y_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To Verify success Microfinance IBFT via conventional account PSD_Y_AddNew", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')AND CA.ACCOUNT_TYPE != \'DW\'", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
@@ -3360,7 +3360,7 @@ this.WhenUserTryToSendMoneyMobile("To Verify success Microfinance IBFT via conve
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobile_ToVerifySendMoneyWithMaxLimitAllowedWithinHBLFundTransferPSD_N_AddNew()
         {
-#line 37
+#line 38
 this.WhenUserTryToSendMoneyMobile("To Verify Send money with max limit allowed within HBL fund transfer PSD_N_AddNew" +
                     "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
@@ -3405,93 +3405,93 @@ this.WhenUserTryToSendMoneyMobile("To Verify Send money with max limit allowed w
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When user try to send money mobile using already added bene", @__tags);
-#line 204
-this.ScenarioSetup(scenarioInfo);
-#line 205
- testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 206
- testRunner.And(string.Format("update the data by query \"{0}\" on DIGITAL_CHANNEL_SEC", status_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 207
- testRunner.And("the user is arrive to Mobile Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 208
- testRunner.And(string.Format("the test case expected result is \"{0}\"", expected_Result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("update the data by query \"{0}\" on DIGITAL_CHANNEL_SEC", status_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 209
- testRunner.And("I am clicking on \"Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the user is arrive to Mobile Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 210
+ testRunner.And(string.Format("the test case expected result is \"{0}\"", expected_Result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 211
- testRunner.When("I set value in context from data \"0\" as \"term_deposit_flag\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 212
- testRunner.And("I am clicking on \"SendMoney_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 213
- testRunner.And("I am clicking on \"SendMoney_SkipBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 215
- testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 216
- testRunner.And(string.Format("I have given \"{0}\" on \"BillPayment_SearchBeneField\"", beneName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 217
- testRunner.And("I am clicking on \"SendMoney_SearchBeneConsumerNo\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 218
- testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_FromAccount\"", from_Account_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 220
- testRunner.And("I set value in context from data \"<Account_Number_Value>\" as \"ToAccount\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 221
- testRunner.And("I set value in context from data \"SendMoney\" as \"Transaction_Type\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 224
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_Amount\"", amount_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 225
- testRunner.When(string.Format("I select \"{0}\" on \"SendMoney_PurposeOfPayment\"", purposeOfPayment_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 231
- testRunner.And("I am performing on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 232
- testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 239
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_TranPass\"", tran_Pass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 240
- testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 241
- testRunner.And("I am performing on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 242
- testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 243
- testRunner.And("I am clicking on \"BillPayment_Rating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 247
- testRunner.Then(string.Format("verify through \"{0}\" on \"SendMoney_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 249
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranAmount\"", tran_Amount_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 250
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFromAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 251
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToAcc\"", to_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 252
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToBank\"", to_Bank_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 254
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranPurpose\"", purpose_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 255
- testRunner.And("I am clicking on \"SendMoney_TranInfoClose_Bene\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 256
- testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 259
  testRunner.And("I am clicking on \"Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 260
+#line 213
+ testRunner.When("I set value in context from data \"0\" as \"term_deposit_flag\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 214
+ testRunner.And("I am clicking on \"SendMoney_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 215
+ testRunner.And("I am clicking on \"SendMoney_SkipBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 217
  testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 262
- testRunner.And("I am clicking on \"Dashboard_Sidebar\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 263
- testRunner.And("I am clicking on \"Dashboard_Sidebar_TranActivity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 264
- testRunner.And("I am clicking on \"TransactionActivity_Financial\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 265
- testRunner.And("I am clicking on \"TransactionActivity_LatestTranLink\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 266
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranType\"", tran_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 267
+#line 218
+ testRunner.And(string.Format("I have given \"{0}\" on \"BillPayment_SearchBeneField\"", beneName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 219
+ testRunner.And("I am clicking on \"SendMoney_SearchBeneConsumerNo\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 220
+ testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_FromAccount\"", from_Account_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 222
+ testRunner.And("I set value in context from data \"<Account_Number_Value>\" as \"ToAccount\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 223
+ testRunner.And("I set value in context from data \"SendMoney\" as \"Transaction_Type\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 226
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_Amount\"", amount_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 227
+ testRunner.When(string.Format("I select \"{0}\" on \"SendMoney_PurposeOfPayment\"", purposeOfPayment_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 233
+ testRunner.And("I am performing on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 234
+ testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 241
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_TranPass\"", tran_Pass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 242
+ testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 243
+ testRunner.And("I am performing on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 244
+ testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 245
+ testRunner.And("I am clicking on \"BillPayment_Rating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 249
+ testRunner.Then(string.Format("verify through \"{0}\" on \"SendMoney_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 251
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranAmount\"", tran_Amount_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 268
+#line 252
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFromAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 269
+#line 253
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToAcc\"", to_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 270
+#line 254
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToBank\"", to_Bank_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 256
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranPurpose\"", purpose_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 257
+ testRunner.And("I am clicking on \"SendMoney_TranInfoClose_Bene\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 258
+ testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 261
+ testRunner.And("I am clicking on \"Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 262
+ testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 264
+ testRunner.And("I am clicking on \"Dashboard_Sidebar\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 265
+ testRunner.And("I am clicking on \"Dashboard_Sidebar_TranActivity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 266
+ testRunner.And("I am clicking on \"TransactionActivity_Financial\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 267
+ testRunner.And("I am clicking on \"TransactionActivity_LatestTranLink\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 268
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranType\"", tran_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 269
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranAmount\"", tran_Amount_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 270
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFromAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 271
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToAcc\"", to_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 272
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToBank\"", to_Bank_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 274
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranPurpose\"", purpose_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -3530,7 +3530,7 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene_ToVerifySendMoneyWithMaxLimitAllowedWithinHBLFundTransferPSD_Y_ViaBene()
         {
-#line 204
+#line 206
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To Verify Send money with max limit allowed within HBL fund transfer PSD_Y_ViaBen" +
                     "e", "FAIL", "Basit", "14660017195901", "150001", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
@@ -3571,7 +3571,7 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To Verify Send money wit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene_ToVerifyIBFTTransactionMaxLimitExceedPSD_Y_ViaBene()
         {
-#line 204
+#line 206
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To Verify IBFT transaction max limit exceed PSD_Y_ViaBene", "FAIL", "IBFTalreadybene", "14660017195901", "150001", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -3611,7 +3611,7 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To Verify IBFT transacti
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene_ToVerifyKonnectTransactionMaxLimitExceedPSD_Y_ViaBene()
         {
-#line 204
+#line 206
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To Verify Konnect transaction max limit exceed PSD_Y_ViaBene", "FAIL", "Afshaan Super Store", "14660017195901", "15001", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -3651,7 +3651,7 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To Verify Konnect transa
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene_ToVerifyMicrofinanceIBFTTransactionViaIBANMaxLimitExceedPSD_Y_ViaBene()
         {
-#line 204
+#line 206
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To Verify Microfinance IBFT transaction via IBAN max limit exceed PSD_Y_ViaBene", "FAIL", "MicrofinanceIBFTPSDYIBAN", "14660017195901", "15001", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -3691,7 +3691,7 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To Verify Microfinance I
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene_ToVerifyTransactionWithZeroAmountPSD_N_ViaBene()
         {
-#line 204
+#line 206
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To verify transaction with zero amount PSD_N_ViaBene", "FAIL", "Automatealreadybene", "22837900558401", "0", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -3731,7 +3731,7 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To verify transaction wi
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene_ToVerifyTransactionWithDecimalAmountPSD_N_ViaBene()
         {
-#line 204
+#line 206
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To verify transaction with decimal amount PSD_N_ViaBene", "PASS", "Automatealreadybene", "22837900558401", "155.55", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -3773,7 +3773,7 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To verify transaction wi
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene_ToVerifySendMoneyWithMaxLimitAllowedWithinHBLFundTransferPSD_N_ViaBene()
         {
-#line 204
+#line 206
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To Verify Send money with max limit allowed within HBL fund transfer PSD_N_ViaBen" +
                     "e", "FAIL", "Automatealreadybene", "22837900558401", "25001", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
@@ -3816,7 +3816,7 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To Verify Send money wit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene_ToCheckThatUserCanNotPerformFundTransferWithInvalidTransactionPasswordPSD_N_ViaBene()
         {
-#line 204
+#line 206
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To Check that user can not perform fund transfer with invalid transaction passwor" +
                     "d PSD_N_ViaBene", "FAIL", "Automatealreadybene", "22837900558401", "10", "Courier Services", "pakistan22", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
@@ -3859,7 +3859,7 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To Check that user can n
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene_ToVerifyThatIfUserDidNotSelectThePurposeOfPaymentHitTheNextButtonPSD_N_ViaBene()
         {
-#line 204
+#line 206
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To verify that if user did not select the purpose of payment & hit the next butto" +
                     "n PSD_N_ViaBene", "FAIL", "Automatealreadybene", "22837900558401", "10", "", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
@@ -3900,7 +3900,7 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To verify that if user d
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene_ToVerifyThatIfBeneAccountIsBlockedPSD_N_ViaBene()
         {
-#line 204
+#line 206
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To verify that if Bene account is blocked PSD_N_ViaBene", "FAIL", "BlockAccount", "22837900558401", "10", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -3940,7 +3940,7 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To verify that if Bene a
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene_ToVerifyTransactionWithEmptyAmountFieldPSD_N_ViaBene()
         {
-#line 204
+#line 206
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To verify transaction with empty Amount field PSD_N_ViaBene", "FAIL", "Automatealreadybene", "22837900558401", "", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -3980,7 +3980,7 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To verify transaction wi
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene_ToVerifyTransactionWithEmptyTransactionPasswordFieldPSD_N_ViaBene()
         {
-#line 204
+#line 206
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To verify transaction with empty transaction password field PSD_N_ViaBene", "FAIL", "Automatealreadybene", "22837900558401", "10", "Courier Services", "", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -4020,7 +4020,7 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To verify transaction wi
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene_ToVerifyFTTransactionOnFCYAccountPSD_N_ViaBene()
         {
-#line 204
+#line 206
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To Verify FT transaction on FCY account PSD_N_ViaBene", "FAIL", "FCYACCOUNT", "22837900558401", "150", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -4060,7 +4060,7 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To Verify FT transaction
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene_ToVerifyTransactionViaIBANPSD_N_ViaBene()
         {
-#line 204
+#line 206
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To verify transaction via IBAN PSD_N_ViaBene", "PASS", "IBANalreadybene", "22837900558401", "150", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -4100,7 +4100,7 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To verify transaction vi
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene_ToVerifySuccessTransactionOfConventionalPSD_N_ViaBene()
         {
-#line 204
+#line 206
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To verify success transaction of conventional PSD_N_ViaBene", "PASS", "Automatealreadybene", "22837900558401", "1050", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -4140,7 +4140,7 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To verify success transa
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene_ToVerifyIBFTTransactionPSD_N_ViaBene()
         {
-#line 204
+#line 206
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To Verify  IBFT transaction PSD_N_ViaBene", "PASS", "ZEESHAN AHMED", "22837900558401", "1050", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -4180,7 +4180,7 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To Verify  IBFT transact
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene_ToVerifyIBFTTransactionWithMaxLimitAllowedLimitPSD_N_ViaBene()
         {
-#line 204
+#line 206
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To Verify  IBFT transaction with max limit allowed limit PSD_N_ViaBene", "FAIL", "ZEESHAN AHMED", "22837900558401", "25001", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -4220,7 +4220,7 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To Verify  IBFT transact
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene_ToVerifyIBFTTransactionViaIBANPSD_N_ViaBene()
         {
-#line 204
+#line 206
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To Verify  IBFT transaction Via IBAN PSD_N_ViaBene", "PASS", "ZEESHAN AHMED IBAN", "22837900558401", "1050", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -4260,7 +4260,7 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To Verify  IBFT transact
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene_ToVerifyKonnectTransactionMaxLimitExceedPSD_N_ViaBene()
         {
-#line 204
+#line 206
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To Verify Konnect transaction max limit exceed PSD_N_ViaBene", "FAIL", "Konnect Account", "22837900558401", "5001", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -4300,7 +4300,7 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To Verify Konnect transa
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene_ToVerifyMicrofinanceIBFTTransactionViaIBANMaxLimitExceedPSD_N_ViaBene()
         {
-#line 204
+#line 206
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To Verify Microfinance IBFT transaction via IBAN max limit exceed PSD_N_ViaBene", "FAIL", "MicrofinanceIBFTPSDNIBAN", "22837900558401", "5001", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -4340,7 +4340,7 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To Verify Microfinance I
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene_ToVerifySuccessMicrofinanceIBFTViaIBANPSD_N_ViaBene()
         {
-#line 204
+#line 206
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To Verify success Microfinance IBFT via IBAN PSD_N_ViaBene", "PASS", "MicrofinanceIBFTPSDNIBAN", "22837900558401", "1050", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -4380,7 +4380,7 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To Verify success Microf
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene_ToCheckFundTransferCanNotBePerformedWithInsufficientAccountBalance()
         {
-#line 204
+#line 206
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To check fund transfer can not be performed with Insufficient Account Balance", "FAIL", "MUHAMMAD USMAN", "08527900480003", "6000", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -4392,3 +4392,4 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBene("To check fund transfer c
 }
 #pragma warning restore
 #endregion
+

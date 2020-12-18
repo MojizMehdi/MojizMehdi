@@ -155,53 +155,53 @@ this.ScenarioSetup(scenarioInfo);
 #line 28
  testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"DIGITAL_CHANNEL_SEC" +
                         "\"", lead_Field_Value, lead_Field_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 29
- testRunner.And("I scroll to element text as \"One Time Password (OTP)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 30
- testRunner.And("I am clicking on \"Forget_Passowrd_Next\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 31
- testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 32
- testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", password_Reset_Req_Query_Old), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 33
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Password_NewPass\"", forget_Password_NewPass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 34
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Password_RepeatNewPass\"", forget_Password_RepeatNewPass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 35
  testRunner.And("I am clicking on \"Forget_Passowrd_Next\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 32
+ testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 33
+ testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", password_Reset_Req_Query_Old), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 34
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Password_NewPass\"", forget_Password_NewPass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 35
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Password_RepeatNewPass\"", forget_Password_RepeatNewPass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 36
- testRunner.And(string.Format("verify through \"{0}\" on \"Forget_Password_SuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Forget_Passowrd_Next\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 37
+ testRunner.And(string.Format("verify through \"{0}\" on \"Forget_Password_SuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 38
  testRunner.And("I am clicking on \"Forget_Password_SuccessMessageOKBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 39
- testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", password_Reset_Req_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 40
- testRunner.When(string.Format("I have given \"{0}\" on \"Login_UserId\"", login_Id_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And(string.Format("verify the result from \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", password_Reset_Req_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 41
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_Password\"", forget_Password_NewPass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When(string.Format("I have given \"{0}\" on \"Login_UserId\"", login_Id_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 42
- testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_Password\"", forget_Password_NewPass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 43
- testRunner.And("I am performing on \"Login_SignIn_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 44
- testRunner.And(string.Format("I set value in context from data \"{0}\" as \"username\"", login_Id_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am performing on \"Login_SignIn_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 45
- testRunner.And("I wait 30000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"username\"", login_Id_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 46
- testRunner.And("I scroll to element text as \"One Time Password (OTP)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I wait 30000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 47
- testRunner.And("I am clicking on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I scroll to element text as \"One Time Password (OTP)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 48
- testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 49
- testRunner.And("I am clicking on \"BillPayment_Rating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 50
- testRunner.And("I am clicking on \"SendMoney_SkipBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 51
  testRunner.And("I am clicking on \"BillPayment_Rating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 51
+ testRunner.And("I am clicking on \"SendMoney_SkipBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 52
- testRunner.And("I am clicking on \"BillPayment_RatingOkBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"BillPayment_Rating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 53
+ testRunner.And("I am clicking on \"BillPayment_RatingOkBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 54
  testRunner.Then("verify through \"Welcome, \" on \"Login_Success_Text\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -775,59 +775,59 @@ this.AsAUserIWantToVerifyForgetPasswordForMobileBanking("To Verify that C-type P
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user i want to verify forget login id for mobile banking", @__tags);
-#line 60
-this.ScenarioSetup(scenarioInfo);
 #line 61
- testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 62
- testRunner.And(string.Format("I set value in context from data \"{0}\" as \"customer_cnic\"", cnic_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 63
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"customer_cnic\"", cnic_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 64
  testRunner.And(string.Format("I set value in context from database \"{0}\" as \"customer_type\" on Schema \"DIGITAL_" +
                         "CHANNEL_SEC\"", customer_Type_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 64
- testRunner.And("the user is arrive to Mobile Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 65
- testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the user is arrive to Mobile Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 66
- testRunner.And("I am clicking on \"Login_permission_allow_btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 67
- testRunner.And("I wait 1000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Login_permission_allow_btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 68
- testRunner.And("I am clicking on \"Login_permission_allow_btn2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I wait 1000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 69
- testRunner.And("I am clicking on \"SendMoney_SkipBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Login_permission_allow_btn2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 70
- testRunner.When("I am clicking on \"Forget_Login_Id_btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I am clicking on \"SendMoney_SkipBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 71
- testRunner.And("I am clicking on \"Forget_Login_Id_tab\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I am clicking on \"Forget_Login_Id_btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 72
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Login_Id_cnic\"", cnic_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Forget_Login_Id_tab\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 73
- testRunner.And("I am clicking on \"Forget_Passowrd_Next\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Login_Id_cnic\"", cnic_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 74
- testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 75
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Login_Id_MobileNo\"", mobile_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 76
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Login_Id_debitcardnumber\"", debit_Card_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 77
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Login_Id_creditcardnumber\"", credit_Card_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 78
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Login_Id_email\"", email_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 79
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Login_Id_debitcardpin\"", pin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 80
  testRunner.And("I am clicking on \"Forget_Passowrd_Next\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 75
+ testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 76
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Login_Id_MobileNo\"", mobile_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 77
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Login_Id_debitcardnumber\"", debit_Card_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 78
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Login_Id_creditcardnumber\"", credit_Card_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 79
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Login_Id_email\"", email_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 80
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Login_Id_debitcardpin\"", pin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 81
+ testRunner.And("I am clicking on \"Forget_Passowrd_Next\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 82
  testRunner.And(string.Format("I set value in context from database \"{0}\" as \"mobile_no\" on Schema \"DIGITAL_CHAN" +
                         "NEL_SEC\"", mob_No_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 82
- testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 83
- testRunner.And(string.Format("verify through \"{0}\" on \"Forget_Login_Id_SuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 84
+ testRunner.And(string.Format("verify through \"{0}\" on \"Forget_Login_Id_SuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 85
  testRunner.And(string.Format("verify through \"{0}\" on \"Forget_Login_Id_SuccessMessage_desc\"", success_Message_Desc), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 86
+#line 87
  testRunner.And("I am clicking on \"Forget_Passowrd_Next\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -854,7 +854,7 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mob_no_query", "SELECT CI.MOBILE_NO FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC = \'{customer_cnic}\'")]
         public virtual void AsAUserIWantToVerifyForgetLoginIdForMobileBanking_ToVerifyThatD_TypeCustomerCanSuccessfullyPerformForgotLoginID()
         {
-#line 60
+#line 61
 this.AsAUserIWantToVerifyForgetLoginIdForMobileBanking("To verify that D-type customer can successfully perform Forgot Login ID", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "1350314051455", "03110204994", "2205430001256567", "", "", "1234", "Success!", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
                     " with HBL.", "SELECT CI.MOBILE_NO FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC = \'{customer_cnic}\'", new string[] {
                         "source:Data/ForgetLoginId.xlsx"});
@@ -884,7 +884,7 @@ this.AsAUserIWantToVerifyForgetLoginIdForMobileBanking("To verify that D-type cu
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mob_no_query", "SELECT CI.MOBILE_NO FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC = \'{customer_cnic}\'")]
         public virtual void AsAUserIWantToVerifyForgetLoginIdForMobileBanking_ToVerifyThatD_TypeCustomerCanNotPerformForgotLoginIDWithIncorrectCNIC()
         {
-#line 60
+#line 61
 this.AsAUserIWantToVerifyForgetLoginIdForMobileBanking("To verify that D-type customer can not perform Forgot Login ID with incorrect CNI" +
                     "C", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "4552102554255", "03110204994", "2205430001256567", "", "", "1234", "Success!", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
                     " with HBL.", "SELECT CI.MOBILE_NO FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC = \'{customer_cnic}\'", new string[] {
@@ -915,7 +915,7 @@ this.AsAUserIWantToVerifyForgetLoginIdForMobileBanking("To verify that D-type cu
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mob_no_query", "SELECT CI.MOBILE_NO FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC = \'{customer_cnic}\'")]
         public virtual void AsAUserIWantToVerifyForgetLoginIdForMobileBanking_ToVerifyThatD_TypeCustomerCanNotPerformForgotLoginIDWithIncorrectMobileNumber()
         {
-#line 60
+#line 61
 this.AsAUserIWantToVerifyForgetLoginIdForMobileBanking("To verify that D-type customer can not perform Forgot Login ID with incorrect Mob" +
                     "ile Number", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "1350314051455", "03425452587", "2205430001256567", "", "", "1234", "Success!", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
                     " with HBL.", "SELECT CI.MOBILE_NO FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC = \'{customer_cnic}\'", new string[] {
@@ -947,7 +947,7 @@ this.AsAUserIWantToVerifyForgetLoginIdForMobileBanking("To verify that D-type cu
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mob_no_query", "SELECT CI.MOBILE_NO FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC = \'{customer_cnic}\'")]
         public virtual void AsAUserIWantToVerifyForgetLoginIdForMobileBanking_ToVerifyThatD_TypeCustomerCanSuccessfullyPerformForgotLoginIDWithIncorrectDebitCardNumber()
         {
-#line 60
+#line 61
 this.AsAUserIWantToVerifyForgetLoginIdForMobileBanking("To verify that D-type customer can successfully perform Forgot Login ID with inco" +
                     "rrect Debit Card number", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "1350314051455", "03110204994", "2205430001251234", "", "", "1234", "Success!", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
                     " with HBL.", "SELECT CI.MOBILE_NO FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC = \'{customer_cnic}\'", new string[] {
@@ -976,7 +976,7 @@ this.AsAUserIWantToVerifyForgetLoginIdForMobileBanking("To verify that D-type cu
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mob_no_query", "SELECT CI.MOBILE_NO FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC = \'{customer_cnic}\'")]
         public virtual void AsAUserIWantToVerifyForgetLoginIdForMobileBanking_ToVerifyThatC_TypeCustomerCanSuccessfullyPerformForgotLoginID()
         {
-#line 60
+#line 61
 this.AsAUserIWantToVerifyForgetLoginIdForMobileBanking("To verify that C-type customer can successfully perform Forgot Login ID", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "3660178807169", "03008381621", "", "4902870004884109", "farooq.leo@hotmail.com", "1234", "Success!", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
                     " with HBL.", "SELECT CI.MOBILE_NO FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC = \'{customer_cnic}\'", new string[] {
                         "source:Data/ForgetLoginId.xlsx"});
@@ -1006,7 +1006,7 @@ this.AsAUserIWantToVerifyForgetLoginIdForMobileBanking("To verify that C-type cu
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mob_no_query", "SELECT CI.MOBILE_NO FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC = \'{customer_cnic}\'")]
         public virtual void AsAUserIWantToVerifyForgetLoginIdForMobileBanking_ToVerifyThatC_TypeCustomerCanNotPerformForgotLoginIDWithIncorrectCNIC()
         {
-#line 60
+#line 61
 this.AsAUserIWantToVerifyForgetLoginIdForMobileBanking("To verify that C-type customer can not perform Forgot Login ID with incorrect CNI" +
                     "C", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "8445201335477", "03008381621", "", "4902870004884109", "farooq.leo@hotmail.com", "1234", "Success!", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
                     " with HBL.", "SELECT CI.MOBILE_NO FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC = \'{customer_cnic}\'", new string[] {
@@ -1037,7 +1037,7 @@ this.AsAUserIWantToVerifyForgetLoginIdForMobileBanking("To verify that C-type cu
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mob_no_query", "SELECT CI.MOBILE_NO FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC = \'{customer_cnic}\'")]
         public virtual void AsAUserIWantToVerifyForgetLoginIdForMobileBanking_ToVerifyThatC_TypeCustomerCanNotPerformForgotLoginIDWithIncorrectMobileNumber()
         {
-#line 60
+#line 61
 this.AsAUserIWantToVerifyForgetLoginIdForMobileBanking("To verify that C-type customer can not perform Forgot Login ID with incorrect Mob" +
                     "ile Number", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "3660178807169", "03564587547", "", "4902870004884109", "farooq.leo@hotmail.com", "1234", "Success!", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
                     " with HBL.", "SELECT CI.MOBILE_NO FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC = \'{customer_cnic}\'", new string[] {
@@ -1069,7 +1069,7 @@ this.AsAUserIWantToVerifyForgetLoginIdForMobileBanking("To verify that C-type cu
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mob_no_query", "SELECT CI.MOBILE_NO FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC = \'{customer_cnic}\'")]
         public virtual void AsAUserIWantToVerifyForgetLoginIdForMobileBanking_ToVerifyThatC_TypeCustomerCanSuccessfullyPerformForgotLoginIDWithIncorrectCreditCardNumber()
         {
-#line 60
+#line 61
 this.AsAUserIWantToVerifyForgetLoginIdForMobileBanking("To verify that C-type customer can successfully perform Forgot Login ID with inco" +
                     "rrect Credit Card number", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "3660178807169", "03008381621", "", "4902845454884109", "farooq.leo@hotmail.com", "1234", "Success!", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
                     " with HBL.", "SELECT CI.MOBILE_NO FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC = \'{customer_cnic}\'", new string[] {
@@ -1101,7 +1101,7 @@ this.AsAUserIWantToVerifyForgetLoginIdForMobileBanking("To verify that C-type cu
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mob_no_query", "SELECT CI.MOBILE_NO FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC = \'{customer_cnic}\'")]
         public virtual void AsAUserIWantToVerifyForgetLoginIdForMobileBanking_ToVerifyThatC_TypeCustomerCanSuccessfullyPerformForgotLoginIDWithIncorrectEmailAddress()
         {
-#line 60
+#line 61
 this.AsAUserIWantToVerifyForgetLoginIdForMobileBanking("To verify that C-type customer can successfully perform Forgot Login ID with inco" +
                     "rrect Email Address", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "3660178807169", "03008381621", "", "4902870004884109", "shoaib.qureshi@hbl.com", "1234", "Success!", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
                     " with HBL.", "SELECT CI.MOBILE_NO FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC = \'{customer_cnic}\'", new string[] {
@@ -1130,7 +1130,7 @@ this.AsAUserIWantToVerifyForgetLoginIdForMobileBanking("To verify that C-type cu
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mob_no_query", "SELECT CI.MOBILE_NO FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC = \'{customer_cnic}\'")]
         public virtual void AsAUserIWantToVerifyForgetLoginIdForMobileBanking_ToVerifyThatBlockedUserCanNotPerformForgotLoginIDJourney()
         {
-#line 60
+#line 61
 this.AsAUserIWantToVerifyForgetLoginIdForMobileBanking("To verify that Blocked user can not perform Forgot Login ID journey", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "3630238205916", "", "", "", "", "1234", "Success!", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
                     " with HBL.", "SELECT CI.MOBILE_NO FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC = \'{customer_cnic}\'", new string[] {
                         "source:Data/ForgetLoginId.xlsx"});
@@ -1158,7 +1158,7 @@ this.AsAUserIWantToVerifyForgetLoginIdForMobileBanking("To verify that Blocked u
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mob_no_query", "SELECT CI.MOBILE_NO FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC = \'{customer_cnic}\'")]
         public virtual void AsAUserIWantToVerifyForgetLoginIdForMobileBanking_ToVerifyThatPartialActivatedUserCanNotPerformForgotLoginIDJourney()
         {
-#line 60
+#line 61
 this.AsAUserIWantToVerifyForgetLoginIdForMobileBanking("To verify that Partial Activated user can not perform Forgot Login ID journey", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "4250148850220", "", "", "", "", "1234", "Success!", "Your login ID has been successfully sent to your mobile number xxxxxxx registered" +
                     " with HBL.", "SELECT CI.MOBILE_NO FROM DC_CUSTOMER_INFO CI WHERE CI.CNIC = \'{customer_cnic}\'", new string[] {
                         "source:Data/ForgetLoginId.xlsx"});
@@ -1174,86 +1174,86 @@ this.AsAUserIWantToVerifyForgetLoginIdForMobileBanking("To verify that Partial A
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user i want to verify change login id for mobile banking", @__tags);
-#line 95
-this.ScenarioSetup(scenarioInfo);
 #line 96
- testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 97
- testRunner.And(string.Format("I set value in context from data \"{0}\" as \"customer_cnic\"", cnic_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 98
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"customer_cnic\"", cnic_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 99
  testRunner.And(string.Format("I set value in context from database \"{0}\" as \"customer_type\" on Schema \"DIGITAL_" +
                         "CHANNEL_SEC\"", customer_Type_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 99
- testRunner.And("the user is arrive to Mobile Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 100
- testRunner.When("I am clicking on \"Forget_Login_Id_btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("the user is arrive to Mobile Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 101
- testRunner.And("I am clicking on \"Forget_Change_Login_Id_tab\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I am clicking on \"Forget_Login_Id_btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 102
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Login_Id_cnic\"", cnic_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Forget_Change_Login_Id_tab\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 103
- testRunner.And("I am clicking on \"Forget_Passowrd_Next\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Login_Id_cnic\"", cnic_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 104
+ testRunner.And("I am clicking on \"Forget_Passowrd_Next\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 105
  testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 106
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Change_Login_Id_DebitCardNo\"", debit_Card_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 107
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Login_Id_creditcardnumber\"", credit_Card_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Change_Login_Id_DebitCardNo\"", debit_Card_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 108
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Login_Id_debitcardpin\"", pin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Login_Id_creditcardnumber\"", credit_Card_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 109
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Login_Id_email\"", email_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Login_Id_debitcardpin\"", pin), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 110
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Change_New_Login_Id\"", new_Login_Id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Login_Id_email\"", email_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 111
- testRunner.And("I am clicking on \"Forget_Passowrd_Next\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Change_New_Login_Id\"", new_Login_Id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 112
- testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 113
- testRunner.And("I scroll to element text as \"One Time Password (OTP)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 114
- testRunner.And("I am clicking on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 115
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Change_Password\"", forget_Password_NewPass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 116
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Change_Repeat_Password\"", forget_Password_RepeatNewPass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 117
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Change_TranPassword\"", forget_Password_TranPass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 118
- testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Change_Repeat_TranPassword\"", forget_Password_RepeatTranPass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 119
  testRunner.And("I am clicking on \"Forget_Passowrd_Next\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 120
- testRunner.And(string.Format("verify through \"{0}\" on \"Forget_Password_SuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 121
- testRunner.And("I am clicking on \"Forget_Password_SuccessMessageOKBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 123
- testRunner.When(string.Format("I have given \"{0}\" on \"Login_UserId\"", new_Login_Id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 124
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_Password\"", forget_Password_NewPass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 125
- testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 126
- testRunner.And("I am performing on \"Login_SignIn_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 127
- testRunner.And(string.Format("I set value in context from data \"{0}\" as \"username\"", new_Login_Id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 128
- testRunner.And("I wait 30000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 129
- testRunner.And("I scroll to element text as \"One Time Password (OTP)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 130
- testRunner.And("I am clicking on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 131
+#line 113
  testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 114
+ testRunner.And("I scroll to element text as \"One Time Password (OTP)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 115
+ testRunner.And("I am clicking on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 116
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Change_Password\"", forget_Password_NewPass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 117
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Change_Repeat_Password\"", forget_Password_RepeatNewPass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 118
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Change_TranPassword\"", forget_Password_TranPass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 119
+ testRunner.And(string.Format("I have given \"{0}\" on \"Forget_Change_Repeat_TranPassword\"", forget_Password_RepeatTranPass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 120
+ testRunner.And("I am clicking on \"Forget_Passowrd_Next\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 121
+ testRunner.And(string.Format("verify through \"{0}\" on \"Forget_Password_SuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 122
+ testRunner.And("I am clicking on \"Forget_Password_SuccessMessageOKBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 124
+ testRunner.When(string.Format("I have given \"{0}\" on \"Login_UserId\"", new_Login_Id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 125
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_Password\"", forget_Password_NewPass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 126
+ testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 127
+ testRunner.And("I am performing on \"Login_SignIn_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 128
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"username\"", new_Login_Id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 129
+ testRunner.And("I wait 30000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 131
+ testRunner.And("I have given \"<OTP_Value>\" on \"Login_OTP_field\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 132
- testRunner.And("I am clicking on \"BillPayment_Rating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 133
- testRunner.And("I am clicking on \"SendMoney_SkipBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 134
  testRunner.And("I am clicking on \"BillPayment_Rating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 135
- testRunner.And("I am clicking on \"BillPayment_RatingOkBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"SendMoney_SkipBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 136
+ testRunner.And("I am clicking on \"BillPayment_Rating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 137
+ testRunner.And("I am clicking on \"BillPayment_RatingOkBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 138
  testRunner.Then("verify through \"Welcome, \" on \"Login_Success_Text\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1283,7 +1283,7 @@ this.ScenarioSetup(scenarioInfo);
             "r new password to login.")]
         public virtual void AsAUserIWantToVerifyChangeLoginIdForMobileBanking_WhenIAmVerifyingChangeLoginIdForDebitTypeCustomer()
         {
-#line 95
+#line 96
 this.AsAUserIWantToVerifyChangeLoginIdForMobileBanking("When I am verifying Change login id for Debit Type Customer", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "3640211897773", "03006943677", "4028052000002718", "", "", "1234", "ALIABBAS1985", "pakistan1", "pakistan1", "pakistan2", "pakistan2", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
                     "r new password to login.", new string[] {
                         "source:Data/ChangeLoginId.xlsx"});
@@ -1314,7 +1314,7 @@ this.AsAUserIWantToVerifyChangeLoginIdForMobileBanking("When I am verifying Chan
             "r new password to login.")]
         public virtual void AsAUserIWantToVerifyChangeLoginIdForMobileBanking_WhenIAmVerifyingChangeLoginIdForCreditTypeCustomer()
         {
-#line 95
+#line 96
 this.AsAUserIWantToVerifyChangeLoginIdForMobileBanking("When I am verifying Change login id for Credit Type Customer", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "3660178807169", "03008381621", "", "4902870004884109", "farooq.leo@hotmail.com", "", "ALIABBAS1986", "pakistan1", "pakistan1", "pakistan2", "pakistan2", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
                     "r new password to login.", new string[] {
                         "source:Data/ChangeLoginId.xlsx"});
@@ -1324,3 +1324,4 @@ this.AsAUserIWantToVerifyChangeLoginIdForMobileBanking("When I am verifying Chan
 }
 #pragma warning restore
 #endregion
+
