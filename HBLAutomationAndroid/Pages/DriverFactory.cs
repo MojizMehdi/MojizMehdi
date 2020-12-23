@@ -14,6 +14,7 @@ using OpenQA.Selenium.Appium.Android;
 using System.Data;
 using DocumentFormat.OpenXml.Drawing.Diagrams;
 
+
 namespace HBLAutomationAndroid.Pages
 {
     class DriverFactory
@@ -50,15 +51,34 @@ namespace HBLAutomationAndroid.Pages
 
                     if (String.Equals(Configuration.GetInstance().GetByKey("IsRemote"), "No", StringComparison.OrdinalIgnoreCase))
                     {
+
                         string serverURL = Configuration.GetInstance().GetByKey("AppiumServerURL");
                         string appPackage = Configuration.GetInstance().GetByKey("appPackage");
                         string appActivity = Configuration.GetInstance().GetByKey("appActivity");
                         string platformName = Configuration.GetInstance().GetByKey("platformName");
                         string deviceName = Configuration.GetInstance().GetByKey("deviceName");
                         string platformVersion = Configuration.GetInstance().GetByKey("platformVersion");
+                        string saucelab_check = Configuration.GetInstance().GetByKey("Saucelab_Execution");
                         //ContextPage.platform_version = platformVersion;
                         AppiumOptions options = new AppiumOptions();
-                        options.PlatformName = "Android";
+                        //options.AddAdditionalCapability("pCloudy_Username", "ali.abbas@hbl.com");
+                        //options.AddAdditionalCapability("pCloudy_ApiKey", "x8hd3nfqthmbktx7tt9c95j8");
+                        //options.AddAdditionalCapability("pCloudy_DurationInMinutes", 10);
+                        //options.AddAdditionalCapability("newCommandTimeout", 600);
+                        //options.AddAdditionalCapability("launchTimeout", 90000);
+                        //options.AddAdditionalCapability("pCloudy_DeviceFullName", "SAMSUNG_GalaxyJ52016_Android_7.1.1_09c99");
+                        //options.AddAdditionalCapability("platformVersion", "7.1.1");
+                        //options.AddAdditionalCapability("platformName", "Android");
+                        //options.AddAdditionalCapability("automationName", "uiautomator2");
+                        //options.AddAdditionalCapability("pCloudy_ApplicationName", "AUG20internet_new.apk");
+                        //options.AddAdditionalCapability("appPackage", "com.hbl.android.hblmobilebanking");
+                        //options.AddAdditionalCapability("appActivity", "com.hbl.android.hblmobilebanking.activity.SplashActivity");
+                        //options.AddAdditionalCapability("pCloudy_WildNet", "false");
+                        //options.AddAdditionalCapability("pCloudy_EnableVideo", "true");
+                        //options.AddAdditionalCapability("pCloudy_EnablePerformanceData", "false");
+                        //options.AddAdditionalCapability("pCloudy_EnableDeviceLogs", "false");
+                        //AndroidDriver<WebElement> driver = new AndroidDriver<WebElement>(new URL("https://us.pcloudy.com/appiumcloud/wd/hub"), capabilities);
+                        //options.PlatformName = "Android";
                         options.AddAdditionalCapability("appPackage", appPackage);
                         options.AddAdditionalCapability("appActivity", appActivity);
                         options.AddAdditionalCapability("platformName", platformName);
@@ -66,21 +86,27 @@ namespace HBLAutomationAndroid.Pages
                         options.AddAdditionalCapability("platformVersion", platformVersion);
                         options.AddAdditionalCapability("noReset", "false");
                         options.AddAdditionalCapability("fullReset", "false");
-                        options.AddAdditionalCapability("newCommandTimeout", 50000);
-                        options.AddAdditionalCapability("unicodeKeyboard", false);
-                        options.AddAdditionalCapability("resetKeyboard", false);
-                        //options.AddAdditionalCapability("autoGrantPermissions", false);
-                        //NEW_COMMAND_TIMEOUT, 300
-                        //options.AddAdditionalCapability("newCommandTimeout", 60);
-                        initialize(options,serverURL);
-                        //driver.Keyboard.send
+                        options.AddAdditionalCapability("autoGrantPermissions", false);
+                        options.AddAdditionalCapability("newCommandTimeout", 180);
+                        if(saucelab_check.ToLower() == "yes")
+                        {
+                            string sauce_username = Configuration.GetInstance().GetByKey("Saucelab_Username");
+                            string sauce_password = Configuration.GetInstance().GetByKey("Suacelab_Accesskey");
+                            options.AddAdditionalCapability("username", sauce_username);
+                            options.AddAdditionalCapability("accessKey", sauce_password);
+                            options.AddAdditionalCapability("app", "storage:filename=AUG20internet_new.apk");
+                            options.AddAdditionalCapability("appiumVersion", "1.17.1");
+                            serverURL = Configuration.GetInstance().GetByKey("Saucelab_URL");
+                            serverURL = serverURL.Replace("{UserName}", sauce_username).Replace("{Accesskey}", sauce_password);
+                        }
+                        initialize(options, serverURL);
                     }
 
                     return driver;
                 }
                 catch (Exception exception)
                 {
-                    Console.WriteLine(exception.Message);
+                    throw new Exception(exception.Message.ToString());
                 }
             }
 
@@ -94,7 +120,9 @@ namespace HBLAutomationAndroid.Pages
 
                 //driver = new AndroidDriver<AndroidElement>(new Uri(serverURL), options);
                 //driver.
-                driver = new WpDriver(new Uri(serverURL), options);
+                driver = new AndroidDriver<AndroidElement>(new Uri(serverURL), options,TimeSpan.FromSeconds(300));
+                //driver = new WpDriver(new Uri(serverURL),options);
+                //driver = new WpDriver((new SauceLabsEndpoint().SauceHubUri), options);
                 //driver = (AndroidDriver<AndroidElement>)rd;
                 //WpDriver rd = driver;
                 //driver.Manage().Window.Maximize();
