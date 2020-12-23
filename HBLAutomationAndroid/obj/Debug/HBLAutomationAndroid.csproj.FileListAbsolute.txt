@@ -797,7 +797,6 @@ D:\HBL_Auto_Bill_Payment_240920\HBLAutomationAndroid\bin\Debug\Microsoft.VisualS
 D:\HBL_Auto_Bill_Payment_240920\HBLAutomationAndroid\obj\Debug\HBLAutomationAndroid.dll
 D:\HBL_Auto_Bill_Payment_240920\HBLAutomationAndroid\obj\Debug\HBLAutomationAndroid.pdb
 D:\HBL_Auto_Konnect_Initialization\HBLAutomationAndroid\bin\Debug\ClosedXML.dll
-D:\HBL_Auto_Konnect_Initialization\HBLAutomationAndroid\obj\Debug\HBLAutomationAndroid.csprojResolveAssemblyReference.cache
 D:\HBL_Auto_Konnect_Initialization\HBLAutomationAndroid\bin\Debug\HBLAutomationAndroid.dll.config
 D:\HBL_Auto_Konnect_Initialization\HBLAutomationAndroid\bin\Debug\HBLAutomationAndroid.dll
 D:\HBL_Auto_Konnect_Initialization\HBLAutomationAndroid\bin\Debug\HBLAutomationAndroid.pdb
@@ -875,5 +874,6 @@ D:\HBL_Auto_Konnect_Initialization\HBLAutomationAndroid\bin\Debug\WebDriver.Supp
 D:\HBL_Auto_Konnect_Initialization\HBLAutomationAndroid\bin\Debug\BCrypt.Net.xml
 D:\HBL_Auto_Konnect_Initialization\HBLAutomationAndroid\bin\Debug\Microsoft.VisualStudio.TestTools.UITest.Extension.xml
 D:\HBL_Auto_Konnect_Initialization\HBLAutomationAndroid\bin\Debug\Microsoft.VisualStudio.TestTools.UITest.Common.xml
+D:\HBL_Auto_Konnect_Initialization\HBLAutomationAndroid\obj\Debug\HBLAutomationAndroid.csprojResolveAssemblyReference.cache
 D:\HBL_Auto_Konnect_Initialization\HBLAutomationAndroid\obj\Debug\HBLAutomationAndroid.dll
 D:\HBL_Auto_Konnect_Initialization\HBLAutomationAndroid\obj\Debug\HBLAutomationAndroid.pdb

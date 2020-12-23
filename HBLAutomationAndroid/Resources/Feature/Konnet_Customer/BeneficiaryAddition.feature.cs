@@ -86,3 +86,4 @@ namespace HBLAutomationAndroid.Resources.Feature.Konnet_Customer
 }
 #pragma warning restore
 #endregion
+
