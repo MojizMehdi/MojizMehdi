@@ -218,7 +218,7 @@
     <Element keyword="BillPayment_MultiPayment_Schedule_Close" locator="com.hbl.android.hblmobilebanking:id/onCloseClicked"/>
     <Element keyword="BillPayment_MultiPayment_Benelist_ConsumerNo" locator="com.hbl.android.hblmobilebanking:id/companyName"/>
     <Element keyword="BillPayment_ConsumerNo_Label" locator="com.hbl.android.hblmobilebanking:id/consumerTextLabel"/>
-
+    <Element keyword="BillPayment_Card_Expiry_Date" locator="com.hbl.android.hblmobilebanking:id/cardExpiryField"/>
 
 
     <!--<Element keyword="BillPayment_MultiPayment_Benelist_ConsumerName" locator="(//android.widget.TextView[@resource-id ='com.hbl.android.hblmobilebanking:id/companyName' and @text = '{ConsumerNo}']/preceding-sibling::android.widget.TextView)"/>-->
@@ -326,6 +326,10 @@
     <Element keyword="Accounts_Home_Previous" locator="com.hbl.android.hblmobilebanking:id/leftArrow_A"/>
     <Element keyword="Accounts_Home_No" locator="com.hbl.android.hblmobilebanking:id/accountNo_Txt"/>
     <Element keyword="Accounts_Home_Balance" locator="com.hbl.android.hblmobilebanking:id/accountB_Txt"/>
+    <Element keyword="Accounts_Home_Next_cc" locator="com.hbl.android.hblmobilebanking:id/rightArrow_C"/>
+    <Element keyword="Accounts_Home_Previous_cc" locator="com.hbl.android.hblmobilebanking:id/leftArrow_C"/>
+    <Element keyword="Accounts_Home_No_cc" locator="com.hbl.android.hblmobilebanking:id/creditCardNo_Txt"/>
+    <Element keyword="Accounts_Home_Balance_cc" locator="com.hbl.android.hblmobilebanking:id/availableCLimit"/>
     <!--<Element keyword="Accounts_Link" locator="//a[contains(text(),'Accounts')]"/>-->
     <!--<Element keyword="Accounts_FromDate" locator="//input[@name='fromDate']"/>
     <Element keyword="Accounts_ToDate" locator="//input[@name='ToDate']"/>

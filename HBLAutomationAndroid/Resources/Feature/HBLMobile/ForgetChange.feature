@@ -44,7 +44,7 @@ Scenario Outline: As a user i want to verify forget password for mobile banking
 	And I am performing on "Login_SignIn_Button"
 	And I set value in context from data "<login_id_value>" as "username"
 	And I wait 30000
-	And I scroll to element text as "One Time Password (OTP)"
+	And I have given "<OTP_Value>" on "Login_OTP_field"
 	And I am clicking on "Login_OTP_Verify_Button"
 	And I wait 5000
 	And I am clicking on "BillPayment_Rating"

@@ -43,6 +43,7 @@ namespace HBLAutomationAndroid.Common
         DateTime calendar_todate;
         DateTime tempdate;
         Dictionary<string, string> acc_info;
+        Dictionary<string, string> creditcard_balances;
         string username;
         decimal tran_balance;
         string tran_account;
@@ -95,6 +96,7 @@ namespace HBLAutomationAndroid.Common
         string old_limit;
         Dictionary<string, Tuple<string, string, string>> cust_limit_detail;
         string mobile_no;
+        string CreditCard_Check;
         //public static string platform_version;
 
         //public void Set_platform_version(string platform_version)
@@ -105,6 +107,14 @@ namespace HBLAutomationAndroid.Common
         //{
         //    return platform_version;
         //}
+        public void SetCredit_Card_Check(string CreditCard_Check)
+        {
+            this.CreditCard_Check = CreditCard_Check;
+        }
+        public string GetCredit_Card_Check()
+        {
+            return CreditCard_Check;
+        }
         public void Set_mobile_no(string kmobile_no)
         {
             this.mobile_no = kmobile_no;
@@ -502,6 +512,15 @@ namespace HBLAutomationAndroid.Common
         public Dictionary<string, string> Get_acc_balances()
         {
             return this.acc_info;
+
+        }
+        public void Set_creditcard_balances(Dictionary<string, string> creditcard_balances)
+        {
+            this.creditcard_balances = creditcard_balances;
+        }
+        public Dictionary<string, string> Get_creditcard_balances()
+        {
+            return this.creditcard_balances;
 
         }
         public void Set_BillPaymentCategory(string BillPaymentCategory)
