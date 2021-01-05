@@ -27,6 +27,7 @@ using System.Data;
 using OpenQA.Selenium.Appium.Windows.Enums;
 using HBLAutomationAndroid.Beans;
 using OpenQA.Selenium.Appium.ScreenRecording;
+using System.Globalization;
 
 namespace HBLAutomationAndroid.Pages
 {
@@ -106,6 +107,61 @@ namespace HBLAutomationAndroid.Pages
 
 
         //For returning the value from the web page of the keyword given using xpath
+
+        public void date_wheel(string year,string month)
+        {
+            try
+            {
+                month = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(Convert.ToInt32(month)).Substring(0, 3);
+                scroll_to_element_text(month);
+                var pickerChildren = driver.FindElements(By.Id("android:id/numberpicker_input"));
+                string check = pickerChildren[0].GetAttribute("text");
+                if(check != month)
+                {
+                    ITouchAction tc = new TouchAction(driver);
+                    var element = driver.FindElements(By.ClassName("android.widget.Button"));
+                    string value = element[0].GetAttribute("text");
+                    string value2 = element[1].GetAttribute("text");
+                    if(value == month)
+                    {
+                        Thread.Sleep(2000);
+                        tc.Press(pickerChildren[0]).Wait(1000).MoveTo(element[1]).Release().Perform();
+                    }
+                    else if(value2 == month)
+                    {
+                        Thread.Sleep(2000);
+                        tc.Press(pickerChildren[0]).Wait(1000).MoveTo(element[0]).Release().Perform();
+                    }
+                }
+                
+                scroll_to_element_text_instance(year,"2");
+                check = pickerChildren[1].GetAttribute("text");
+                if (check != month)
+                {
+                    ITouchAction tc = new TouchAction(driver);
+                    var element = driver.FindElements(By.ClassName("android.widget.Button"));
+                    string value = element[2].GetAttribute("text");
+                    string value2 = element[3].GetAttribute("text");
+                    if (value == year)
+                    {
+                        Thread.Sleep(2000);
+                        tc.Press(pickerChildren[1]).Wait(1000).MoveTo(element[3]).Release().Perform();
+                    }
+                    else if (value2 == year)
+                    {
+                        Thread.Sleep(2000);
+                        tc.Press(pickerChildren[1]).Wait(1000).MoveTo(element[2]).Release().Perform();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+        }
+
+
         public void longpress(string locator, string locator_type)
         {
             IWebElement Control = null;
@@ -831,7 +887,19 @@ namespace HBLAutomationAndroid.Pages
             }
             //var elements = driver.FindElements(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView("+ "new UiSelector().text(\"" + text + "\"));"));
         }
-        public void scroll_to_element_text_with_parent_sibling(string parent_text, string child)
+        //For Scroll to Element using Text
+        public void scroll_to_element_text_instance(string text, string instance)
+        {
+
+            Thread.Sleep(3000);
+            var temp = driver.FindElements(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance("+ instance +")).scrollIntoView(new UiSelector().textContains(\"" + text + "\"));"));
+            if (temp.Count == 0)
+            {
+                throw new Exception(string.Format("Element with the given text: {0} not found on screen", text));
+            }
+            //var elements = driver.FindElements(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView("+ "new UiSelector().text(\"" + text + "\"));"));
+        }
+    public void scroll_to_element_text_with_parent_sibling(string parent_text, string child)
         {
 
             Thread.Sleep(3000);

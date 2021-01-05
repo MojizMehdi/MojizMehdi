@@ -188,7 +188,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 46
  testRunner.And("I wait 30000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 47
- testRunner.And("I scroll to element text as \"One Time Password (OTP)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 48
  testRunner.And("I am clicking on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 49
@@ -1268,9 +1268,9 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When I am verifying Change login id for Debit Type Customer")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When I am verifying Change login id for Debit Type Customer")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:customer_type_query", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_no", "3640211897773")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no", "03006943677")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card_no", "4028052000002718")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:cnic_no", "3310006363749")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:mobile_no", "00000000000")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:debit_card_no", "4028052000002478")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:credit_card_no", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:email_value", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:pin", "1234")]
@@ -1284,7 +1284,7 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void AsAUserIWantToVerifyChangeLoginIdForMobileBanking_WhenIAmVerifyingChangeLoginIdForDebitTypeCustomer()
         {
 #line 96
-this.AsAUserIWantToVerifyChangeLoginIdForMobileBanking("When I am verifying Change login id for Debit Type Customer", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "3640211897773", "03006943677", "4028052000002718", "", "", "1234", "ALIABBAS1985", "pakistan1", "pakistan1", "pakistan2", "pakistan2", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
+this.AsAUserIWantToVerifyChangeLoginIdForMobileBanking("When I am verifying Change login id for Debit Type Customer", "Select I.CUSTOMER_TYPE from dc_customer_info i where I.CNIC =\'{customer_cnic}\'", "3310006363749", "00000000000", "4028052000002478", "", "", "1234", "ALIABBAS1985", "pakistan1", "pakistan1", "pakistan2", "pakistan2", "You have successfully set-up your Login and Transaction Passwords. Kindly use you" +
                     "r new password to login.", new string[] {
                         "source:Data/ChangeLoginId.xlsx"});
 #line hidden

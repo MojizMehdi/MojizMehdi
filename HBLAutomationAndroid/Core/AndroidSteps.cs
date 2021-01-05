@@ -14,6 +14,7 @@ using System.Text.RegularExpressions;
 using System.Globalization;
 using System.Linq;
 using Dynamitey.DynamicObjects;
+using System.Text;
 
 namespace HBLAutomationAndroid.Core
 {
@@ -204,6 +205,16 @@ namespace HBLAutomationAndroid.Core
         {
             AppiumHelper apmhelper = new AppiumHelper();
             string locator_type = "id";
+            if (Keyword.Contains("Expiry_Date"))
+            {
+                Element keyword = ContextPage.GetInstance().GetElement(Keyword);
+                apmhelper.links(keyword.Locator, "id");
+                string year = textboxvalue.Substring(0, 4);
+                string month = textboxvalue.Substring(4, 2);
+                apmhelper.date_wheel(year, month);
+                apmhelper.links("android:id/button1", "id");
+                return;
+            }
             if (Keyword.Contains("Login_OTP_field"))
             {
                 //AppiumHelper apmhelper = new AppiumHelper();
@@ -1122,6 +1133,13 @@ namespace HBLAutomationAndroid.Core
             }
             try
             {
+                if (context.GetCredit_Card_Check() != "")
+                {
+                    StringBuilder st = new StringBuilder(value);
+                    st.Remove(4, 8);
+                    st.Insert(4, "xxxxxxxx");
+                    value = st.ToString();
+                }
                 AppiumHelper apmhelper = new AppiumHelper();
                 //apmhelper.checkPageIsReady();
                 Element keyword = ContextPage.GetInstance().GetElement(Keyword);
@@ -2196,6 +2214,10 @@ namespace HBLAutomationAndroid.Core
                 {
                     context.Set_mobile_no(value);
                 }
+                if(attribute == "Credit_Card_check")
+                {
+                    context.SetCredit_Card_Check(value);
+                }
             }
             catch (Exception exception)
             {
@@ -3072,6 +3094,10 @@ namespace HBLAutomationAndroid.Core
             bool loop_end_check = true;
             string locator_type = "id";
             bool account_check = false;
+            Dictionary<string, string> dict_cc = new Dictionary<string, string>();
+            bool loop_end_check_cc = true;
+            string locator_type_cc = "id";
+            bool account_check_cc = false;
             //int counter = 0;
             while (loop_end_check == true)
             {
@@ -3104,9 +3130,10 @@ namespace HBLAutomationAndroid.Core
                     {
                         locator_type = "xpath";
                     }
+                    account_check = true;
                     apmhelper.links_visibility(keyword.Locator, locator_type);
                     apmhelper.links(keyword.Locator, locator_type);
-                    account_check = true;
+                    //account_check = true;
                 }
                 catch (Exception exception)
                 {
@@ -3122,6 +3149,51 @@ namespace HBLAutomationAndroid.Core
                 }
             }
             context.Set_acc_balances(dict);
+            if(context.GetCredit_Card_Check() != "" || context.GetCredit_Card_Check() != null)
+            {
+                while (loop_end_check_cc == true)
+                {
+                    try
+                    {
+                        Element keyword = ContextPage.GetInstance().GetElement("Accounts_Home_No_cc");
+                        if (keyword.Locator.StartsWith("/"))
+                        {
+                            locator_type = "xpath";
+                        }
+                        string account_no = apmhelper.ReturnKeywordValue(keyword.Locator, locator_type_cc);
+                        keyword = ContextPage.GetInstance().GetElement("Accounts_Home_Balance_cc");
+                        if (keyword.Locator.StartsWith("/"))
+                        {
+                            locator_type = "xpath";
+                        }
+                        string balance = apmhelper.ReturnKeywordValue(keyword.Locator, locator_type_cc);
+                        dict_cc.Add(account_no, balance);
+                        //counter++;
+                        keyword = ContextPage.GetInstance().GetElement("Accounts_Home_Next_cc");
+                        if (keyword.Locator.StartsWith("/"))
+                        {
+                            locator_type = "xpath";
+                        }
+                        account_check_cc = true;
+                        apmhelper.links_visibility(keyword.Locator, locator_type_cc);
+                        apmhelper.links(keyword.Locator, locator_type_cc);
+                        //account_check = true;
+                    }
+                    catch (Exception exception)
+                    {
+                        if (account_check_cc == false)
+                        {
+                            AppiumHelper.TakeScreenshot();
+                            throw new AssertFailedException(exception.Message);
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                }
+                context.Set_creditcard_balances(dict_cc);
+            }
         }
         [When(@"I save Transaction Info for MultiPayment")]
         public void WhenISaveTransactionInfoForMultiPayment()
@@ -3179,106 +3251,151 @@ namespace HBLAutomationAndroid.Core
         {
             try
             {
-                string locator_type = "id";
-                AppiumHelper apmhelper = new AppiumHelper();
-                Element keyword = null;
-                Dictionary<string, string> tran_dict = new Dictionary<string, string>();
-                bool account_bal_checker = false;
-                bool term_deposit_checker = false;
-                bool mutual_fund_checker = false;
-                if (context.GetTranType() == "SendMoney")
+                if (context.GetCredit_Card_Check() != "" || context.GetCredit_Card_Check() != null)
                 {
-                    keyword = ContextPage.GetInstance().GetElement("SendMoney_TranFromAcc");
-                }
-                else if (context.GetTranType() == "BillPayment")
-                {
-                    keyword = ContextPage.GetInstance().GetElement("BillPayment_TranFromAcc");
+                    string locator_type = "id";
+                    AppiumHelper apmhelper = new AppiumHelper();
+                    Element keyword = null;
+                    Dictionary<string, string> tran_dict = new Dictionary<string, string>();
+                    bool account_bal_checker = false;
+                    if (context.GetTranType() == "BillPayment")
+                    {
+                        keyword = ContextPage.GetInstance().GetElement("BillPayment_TranFromAcc");
+                    }
+                    if (keyword.Locator.StartsWith("/"))
+                    {
+                        locator_type = "xpath";
+                    }
+                    string tran_account = apmhelper.ReturnKeywordValue(keyword.Locator, locator_type);
+                    context.SetTran_Account(tran_account);
+                    keyword = ContextPage.GetInstance().GetElement("SendMoney_TranAmount");
+                    if (keyword.Locator.StartsWith("/"))
+                    {
+                        locator_type = "xpath";
+                    }
+                    string tran_balance = apmhelper.ReturnKeywordValue(keyword.Locator, locator_type);
+                    tran_dict = context.Get_creditcard_balances();
+
+                    foreach (var item in tran_dict)
+                    {
+                        if (tran_account == item.Key)
+                        {
+                            decimal tran_balancee = Convert.ToDecimal(item.Value) + Convert.ToDecimal(tran_balance);
+                            context.SetTran_Balance(tran_balancee);
+                            account_bal_checker = true;
+                            continue;
+                        }
+                        if (account_bal_checker == true)
+                        {
+                            break;
+                        }
+
+                    }
+
                 }
                 else
                 {
-                    keyword = ContextPage.GetInstance().GetElement("SendMoney_TranFromAcc");
-                }
-                if (keyword.Locator.StartsWith("/"))
-                {
-                    locator_type = "xpath";
-                }
-                string tran_account = apmhelper.ReturnKeywordValue(keyword.Locator, locator_type);
-                context.SetTran_Account(tran_account);
-                keyword = ContextPage.GetInstance().GetElement("SendMoney_TranAmount");
-                if (keyword.Locator.StartsWith("/"))
-                {
-                    locator_type = "xpath";
-                }
-                string tran_balance = apmhelper.ReturnKeywordValue(keyword.Locator, locator_type);
-                tran_dict = context.Get_acc_balances();
-                if (context.Get_term_deposit_check() == 1)
-                {
-                    tran_dict.Add("Term Deposit", "0");
-                }
-
-                foreach (var item in tran_dict)
-                {
-                    if (item.Key == "Term Deposit")
+                    string locator_type = "id";
+                    AppiumHelper apmhelper = new AppiumHelper();
+                    Element keyword = null;
+                    Dictionary<string, string> tran_dict = new Dictionary<string, string>();
+                    bool account_bal_checker = false;
+                    bool term_deposit_checker = false;
+                    bool mutual_fund_checker = false;
+                    if (context.GetTranType() == "SendMoney")
                     {
-                        if ((context.Get_term_deposit_check() == 1 || context.Get_term_deposit_check() == 2) && item.Key == "Term Deposit")
+                        keyword = ContextPage.GetInstance().GetElement("SendMoney_TranFromAcc");
+                    }
+                    else if (context.GetTranType() == "BillPayment")
+                    {
+                        keyword = ContextPage.GetInstance().GetElement("BillPayment_TranFromAcc");
+                    }
+                    else
+                    {
+                        keyword = ContextPage.GetInstance().GetElement("SendMoney_TranFromAcc");
+                    }
+                    if (keyword.Locator.StartsWith("/"))
+                    {
+                        locator_type = "xpath";
+                    }
+                    string tran_account = apmhelper.ReturnKeywordValue(keyword.Locator, locator_type);
+                    context.SetTran_Account(tran_account);
+                    keyword = ContextPage.GetInstance().GetElement("SendMoney_TranAmount");
+                    if (keyword.Locator.StartsWith("/"))
+                    {
+                        locator_type = "xpath";
+                    }
+                    string tran_balance = apmhelper.ReturnKeywordValue(keyword.Locator, locator_type);
+                    tran_dict = context.Get_acc_balances();
+                    if (context.Get_term_deposit_check() == 1)
+                    {
+                        tran_dict.Add("Term Deposit", "0");
+                    }
+
+                    foreach (var item in tran_dict)
+                    {
+                        if (item.Key == "Term Deposit")
                         {
-                            decimal term_deposit_bal = Convert.ToDecimal(item.Value) + Convert.ToDecimal(tran_balance);
-                            context.Set_term_deposit_balance(term_deposit_bal);
-                            term_deposit_checker = true;
+                            if ((context.Get_term_deposit_check() == 1 || context.Get_term_deposit_check() == 2) && item.Key == "Term Deposit")
+                            {
+                                decimal term_deposit_bal = Convert.ToDecimal(item.Value) + Convert.ToDecimal(tran_balance);
+                                context.Set_term_deposit_balance(term_deposit_bal);
+                                term_deposit_checker = true;
+                                continue;
+                            }
+                            //if (context.Get_term_deposit_check() == 2 && item.Key == "Term Deposit")
+                            //{
+                            //    decimal term_deposit_bal = Convert.ToDecimal(item.Value) + Convert.ToDecimal(tran_balance);
+                            //    context.Set_term_deposit_balance(term_deposit_bal);
+                            //    term_deposit_checker = true;
+                            //    continue;
+                            //}
+                            //else if (tran_account == item.Key)
+                            //{
+                            //    decimal tran_balancee = Convert.ToDecimal(item.Value) - Convert.ToDecimal(tran_balance);
+                            //    context.SetTran_Balance(tran_balancee);
+                            //    account_bal_checker = true;
+                            //    continue;
+                            //}
+                        }
+                        //if (item.Key == "HBL Mutual Funds")
+                        //{
+                        //    if (context.Get_mutual_fund_check() == 1 && item.Key == "HBL Mutual Funds")
+                        //    {
+                        //        decimal mutual_fund_bal = Convert.ToDecimal(item.Value) + Convert.ToDecimal(tran_balance);
+                        //        context.Set_mutual_fund_balance(mutual_fund_bal);
+                        //        mutual_fund_checker = true;
+                        //        continue;
+                        //    }
+                        //    //else if(context.Get_term_deposit_check() == 2 && item.Key == "HBL Mutual Funds")
+                        //    //{
+
+                        //    //}
+                        //    //else if (tran_account == item.Key)
+                        //    //{
+                        //    //    decimal tran_balancee = Convert.ToDecimal(item.Value) - Convert.ToDecimal(tran_balance);
+                        //    //    context.SetTran_Balance(tran_balancee);
+                        //    //    account_bal_checker = true;
+                        //    //    continue;
+                        //    //}
+                        //}
+                        if (tran_account == item.Key)
+                        {
+                            decimal tran_balancee = Convert.ToDecimal(item.Value) - Convert.ToDecimal(tran_balance);
+                            context.SetTran_Balance(tran_balancee);
+                            account_bal_checker = true;
                             continue;
                         }
-                        //if (context.Get_term_deposit_check() == 2 && item.Key == "Term Deposit")
+                        if (term_deposit_checker == true && account_bal_checker == true)
+                        {
+                            break;
+                        }
+                        //if (mutual_fund_checker == true && account_bal_checker == true)
                         //{
-                        //    decimal term_deposit_bal = Convert.ToDecimal(item.Value) + Convert.ToDecimal(tran_balance);
-                        //    context.Set_term_deposit_balance(term_deposit_bal);
-                        //    term_deposit_checker = true;
-                        //    continue;
+                        //    break;
                         //}
-                        //else if (tran_account == item.Key)
-                        //{
-                        //    decimal tran_balancee = Convert.ToDecimal(item.Value) - Convert.ToDecimal(tran_balance);
-                        //    context.SetTran_Balance(tran_balancee);
-                        //    account_bal_checker = true;
-                        //    continue;
-                        //}
-                    }
-                    //if (item.Key == "HBL Mutual Funds")
-                    //{
-                    //    if (context.Get_mutual_fund_check() == 1 && item.Key == "HBL Mutual Funds")
-                    //    {
-                    //        decimal mutual_fund_bal = Convert.ToDecimal(item.Value) + Convert.ToDecimal(tran_balance);
-                    //        context.Set_mutual_fund_balance(mutual_fund_bal);
-                    //        mutual_fund_checker = true;
-                    //        continue;
-                    //    }
-                    //    //else if(context.Get_term_deposit_check() == 2 && item.Key == "HBL Mutual Funds")
-                    //    //{
 
-                    //    //}
-                    //    //else if (tran_account == item.Key)
-                    //    //{
-                    //    //    decimal tran_balancee = Convert.ToDecimal(item.Value) - Convert.ToDecimal(tran_balance);
-                    //    //    context.SetTran_Balance(tran_balancee);
-                    //    //    account_bal_checker = true;
-                    //    //    continue;
-                    //    //}
-                    //}
-                    if (tran_account == item.Key)
-                    {
-                        decimal tran_balancee = Convert.ToDecimal(item.Value) - Convert.ToDecimal(tran_balance);
-                        context.SetTran_Balance(tran_balancee);
-                        account_bal_checker = true;
-                        continue;
                     }
-                    if (term_deposit_checker == true && account_bal_checker == true)
-                    {
-                        break;
-                    }
-                    //if (mutual_fund_checker == true && account_bal_checker == true)
-                    //{
-                    //    break;
-                    //}
-
                 }
             }
             catch (Exception exception)
@@ -3296,106 +3413,30 @@ namespace HBLAutomationAndroid.Core
             decimal old_account_bal = 0;
             bool account_bal_checker = false;
             bool term_deposit_checker = false;
-            bool mutual_fund_checker = false;
+            //bool mutual_fund_checker = false;
             int account_count = context.Get_acc_balances().Count;
             int counter = 0;
             while (loop_end_check == true)
             {
                 try
                 {
-                    AppiumHelper apmhelper = new AppiumHelper();
-                    Element keyword = ContextPage.GetInstance().GetElement("Accounts_Home_No");
-                    if (keyword.Locator.StartsWith("/"))
+                    if (context.GetCredit_Card_Check() != "" || context.GetCredit_Card_Check() != null)
                     {
-                        locator_type = "xpath";
-                    }
-                    string account_no = apmhelper.ReturnKeywordValue(keyword.Locator, locator_type);
-                    keyword = ContextPage.GetInstance().GetElement("Accounts_Home_Balance");
-                    if (keyword.Locator.StartsWith("/"))
-                    {
-                        locator_type = "xpath";
-                    }
-                    string balance = apmhelper.ReturnKeywordValue(keyword.Locator, locator_type);
-                    string tAccountNo = context.GeTran_Account();
-                    if (tAccountNo == account_no || account_no == "Term Deposit") //||account_no == "HBL Mutual Funds")
-                    {
-                        if ((context.Get_term_deposit_check() == 1 || context.Get_term_deposit_check() == 2) && account_no == "Term Deposit")
+                        AppiumHelper apmhelper = new AppiumHelper();
+                        Element keyword = ContextPage.GetInstance().GetElement("Accounts_Home_No_cc");
+                        if (keyword.Locator.StartsWith("/"))
                         {
-                            old_account_bal = context.GetTran_Balance();
-                            if (Convert.ToDecimal(balance) != old_account_bal)
-                            {
-                                throw new AssertFailedException(string.Format("The Term Deposit balance {0} is not equal to new Term Deposit balance {1} after successfull transaction", old_account_bal, balance));
-                            }
-                            term_deposit_checker = true;
-                            keyword = ContextPage.GetInstance().GetElement("Accounts_Home_Next");
-                            try
-                            {
-                                apmhelper.links_visibility(keyword.Locator, locator_type);
-                                apmhelper.links(keyword.Locator, locator_type);
-                                counter++;
-                                continue;
-                            }
-                            catch
-                            {
-                                continue;
-                            }
-
+                            locator_type = "xpath";
                         }
-                        else if (context.Get_term_deposit_check() == 0 && account_no == "Term Deposit")
+                        string account_no = apmhelper.ReturnKeywordValue(keyword.Locator, locator_type);
+                        keyword = ContextPage.GetInstance().GetElement("Accounts_Home_Balance_cc");
+                        if (keyword.Locator.StartsWith("/"))
                         {
-                            if (term_deposit_checker == true && account_bal_checker == true)
-                            {
-                                break;
-                            }
-                            term_deposit_checker = true;
-                            continue;
+                            locator_type = "xpath";
                         }
-                        //else if (context.Get_mutual_fund_check() == 1 && account_no == "HBL Mutual Funds")
-                        //{
-                        //    old_account_bal = context.GetTran_Balance();
-                        //    if (Convert.ToDecimal(balance) != old_account_bal)
-                        //    {
-                        //        throw new AssertFailedException(string.Format("The Mutual Fund balance {0} is not equal to new Mutual Fund balance {1} after successfull transaction", old_account_bal, balance));
-                        //    }
-                        //    mutual_fund_checker = true;
-                        //    keyword = ContextPage.GetInstance().GetElement("Accounts_Home_Next");
-                        //    try
-                        //    {
-                        //        apmhelper.links_visibility(keyword.Locator, locator_type);
-                        //        apmhelper.links(keyword.Locator, locator_type);
-                        //        counter++;
-                        //        continue;
-                        //    }
-                        //    catch
-                        //    {
-                        //        continue;
-                        //    }
-
-                        //}
-                        //else if (context.Get_mutual_fund_check() == 2 && account_no == "HBL Mutual Funds")
-                        //{
-                        //    old_account_bal = context.Get_mutual_fund_balance();
-                        //    if (Convert.ToDecimal(balance) != old_account_bal)
-                        //    {
-                        //        throw new AssertFailedException(string.Format("The Mutual Fund balance {0} is not equal to new Mutual Fund balance {1} after successfull transaction", old_account_bal, balance));
-                        //    }
-                        //    mutual_fund_checker = true;
-                        //    keyword = ContextPage.GetInstance().GetElement("Accounts_Home_Next");
-                        //    try
-                        //    {
-                        //        apmhelper.links_visibility(keyword.Locator, locator_type);
-                        //        apmhelper.links(keyword.Locator, locator_type);
-                        //        counter++;
-                        //        continue;
-                        //    }
-                        //    catch
-                        //    {
-                        //        continue;
-                        //    }
-
-                        //}
-
-                        else if (tAccountNo == account_no)
+                        string balance = apmhelper.ReturnKeywordValue(keyword.Locator, locator_type);
+                        string tAccountNo = context.GeTran_Account();
+                        if (tAccountNo == account_no)
                         {
                             old_account_bal = context.GetTran_Balance();
                             if (Convert.ToDecimal(balance) != old_account_bal)
@@ -3403,7 +3444,7 @@ namespace HBLAutomationAndroid.Core
                                 throw new AssertFailedException(string.Format("The old account balance {0} is not equal to new account balance {1} after successfull transaction", old_account_bal, balance));
                             }
                             account_bal_checker = true;
-                            keyword = ContextPage.GetInstance().GetElement("Accounts_Home_Next");
+                            keyword = ContextPage.GetInstance().GetElement("Accounts_Home_Next_cc");
                             try
                             {
                                 apmhelper.links_visibility(keyword.Locator, locator_type);
@@ -3416,24 +3457,153 @@ namespace HBLAutomationAndroid.Core
                                 continue;
                             }
                         }
+                        if (account_bal_checker == true)
+                        {
+                            break;
+                        }
+                        if (counter == account_count - 1)
+                        {
+                            break;
+                        }
+                        counter++;
+                        keyword = ContextPage.GetInstance().GetElement("Accounts_Home_Next_cc");
+                        apmhelper.links_visibility(keyword.Locator, locator_type);
+                        apmhelper.links(keyword.Locator, locator_type);
+                    }
+                    else
+                    {
+                        AppiumHelper apmhelper = new AppiumHelper();
+                        Element keyword = ContextPage.GetInstance().GetElement("Accounts_Home_No");
+                        if (keyword.Locator.StartsWith("/"))
+                        {
+                            locator_type = "xpath";
+                        }
+                        string account_no = apmhelper.ReturnKeywordValue(keyword.Locator, locator_type);
+                        keyword = ContextPage.GetInstance().GetElement("Accounts_Home_Balance");
+                        if (keyword.Locator.StartsWith("/"))
+                        {
+                            locator_type = "xpath";
+                        }
+                        string balance = apmhelper.ReturnKeywordValue(keyword.Locator, locator_type);
+                        string tAccountNo = context.GeTran_Account();
+                        if (tAccountNo == account_no || account_no == "Term Deposit") //||account_no == "HBL Mutual Funds")
+                        {
+                            if ((context.Get_term_deposit_check() == 1 || context.Get_term_deposit_check() == 2) && account_no == "Term Deposit")
+                            {
+                                old_account_bal = context.GetTran_Balance();
+                                if (Convert.ToDecimal(balance) != old_account_bal)
+                                {
+                                    throw new AssertFailedException(string.Format("The Term Deposit balance {0} is not equal to new Term Deposit balance {1} after successfull transaction", old_account_bal, balance));
+                                }
+                                term_deposit_checker = true;
+                                keyword = ContextPage.GetInstance().GetElement("Accounts_Home_Next");
+                                try
+                                {
+                                    apmhelper.links_visibility(keyword.Locator, locator_type);
+                                    apmhelper.links(keyword.Locator, locator_type);
+                                    counter++;
+                                    continue;
+                                }
+                                catch
+                                {
+                                    continue;
+                                }
 
+                            }
+                            else if (context.Get_term_deposit_check() == 0 && account_no == "Term Deposit")
+                            {
+                                if (term_deposit_checker == true && account_bal_checker == true)
+                                {
+                                    break;
+                                }
+                                term_deposit_checker = true;
+                                continue;
+                            }
+                            //else if (context.Get_mutual_fund_check() == 1 && account_no == "HBL Mutual Funds")
+                            //{
+                            //    old_account_bal = context.GetTran_Balance();
+                            //    if (Convert.ToDecimal(balance) != old_account_bal)
+                            //    {
+                            //        throw new AssertFailedException(string.Format("The Mutual Fund balance {0} is not equal to new Mutual Fund balance {1} after successfull transaction", old_account_bal, balance));
+                            //    }
+                            //    mutual_fund_checker = true;
+                            //    keyword = ContextPage.GetInstance().GetElement("Accounts_Home_Next");
+                            //    try
+                            //    {
+                            //        apmhelper.links_visibility(keyword.Locator, locator_type);
+                            //        apmhelper.links(keyword.Locator, locator_type);
+                            //        counter++;
+                            //        continue;
+                            //    }
+                            //    catch
+                            //    {
+                            //        continue;
+                            //    }
+
+                            //}
+                            //else if (context.Get_mutual_fund_check() == 2 && account_no == "HBL Mutual Funds")
+                            //{
+                            //    old_account_bal = context.Get_mutual_fund_balance();
+                            //    if (Convert.ToDecimal(balance) != old_account_bal)
+                            //    {
+                            //        throw new AssertFailedException(string.Format("The Mutual Fund balance {0} is not equal to new Mutual Fund balance {1} after successfull transaction", old_account_bal, balance));
+                            //    }
+                            //    mutual_fund_checker = true;
+                            //    keyword = ContextPage.GetInstance().GetElement("Accounts_Home_Next");
+                            //    try
+                            //    {
+                            //        apmhelper.links_visibility(keyword.Locator, locator_type);
+                            //        apmhelper.links(keyword.Locator, locator_type);
+                            //        counter++;
+                            //        continue;
+                            //    }
+                            //    catch
+                            //    {
+                            //        continue;
+                            //    }
+
+                            //}
+
+                            else if (tAccountNo == account_no)
+                            {
+                                old_account_bal = context.GetTran_Balance();
+                                if (Convert.ToDecimal(balance) != old_account_bal)
+                                {
+                                    throw new AssertFailedException(string.Format("The old account balance {0} is not equal to new account balance {1} after successfull transaction", old_account_bal, balance));
+                                }
+                                account_bal_checker = true;
+                                keyword = ContextPage.GetInstance().GetElement("Accounts_Home_Next");
+                                try
+                                {
+                                    apmhelper.links_visibility(keyword.Locator, locator_type);
+                                    apmhelper.links(keyword.Locator, locator_type);
+                                    counter++;
+                                    continue;
+                                }
+                                catch
+                                {
+                                    continue;
+                                }
+                            }
+
+                        }
+                        if (term_deposit_checker == true && account_bal_checker == true)
+                        {
+                            break;
+                        }
+                        //if (mutual_fund_checker == true && account_bal_checker == true)
+                        //{
+                        //    break;
+                        //}
+                        if (counter == account_count - 1)
+                        {
+                            break;
+                        }
+                        counter++;
+                        keyword = ContextPage.GetInstance().GetElement("Accounts_Home_Next");
+                        apmhelper.links_visibility(keyword.Locator, locator_type);
+                        apmhelper.links(keyword.Locator, locator_type);
                     }
-                    if (term_deposit_checker == true && account_bal_checker == true)
-                    {
-                        break;
-                    }
-                    //if (mutual_fund_checker == true && account_bal_checker == true)
-                    //{
-                    //    break;
-                    //}
-                    if (counter == account_count - 1)
-                    {
-                        break;
-                    }
-                    counter++;
-                    keyword = ContextPage.GetInstance().GetElement("Accounts_Home_Next");
-                    apmhelper.links_visibility(keyword.Locator, locator_type);
-                    apmhelper.links(keyword.Locator, locator_type);
                 }
                 catch (Exception exception)
                 {

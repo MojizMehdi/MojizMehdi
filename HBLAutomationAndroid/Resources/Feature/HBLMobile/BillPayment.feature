@@ -37,13 +37,14 @@ Scenario Outline: When user try to login mobile banking for bill payment
 Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make new payment
 	Given the test case title is "<Case>"
 	And I set value in context from data "<BillPayment_ConsumerNo_Value>" as "ConsumerNo"
+	And I set value in context from data "<expiry_date>" as "Credit_Card_check"
 	And update the data by query "<status_query>" on QAT_BPS
 	And update the data by query "<status_query2>" on DIGITAL_CHANNEL_SEC
 	And the user is arrive to Mobile Banking home page
 	And the test case expected result is "<Expected_Result>"
 	And I am clicking on "Dashboard"
 	#And I set value in context from database "<account_count_query>" as "account_count" on Schema "<db_val>"
-	#When I save Account Balances 
+	When I save Account Balances 
 	And I wait 3000
 	When I set value in context from data "0" as "term_deposit_flag" 
 	And I am clicking on "Dashboard_More"
@@ -70,7 +71,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 	And I verify bill payment inquiry for mobile
 	And I scroll down
 	And I select "<account_no>" on "BillPayment_FromAccount"
-	#And I have given "<expiry_date>" on "Pay_Card_Expiry_Date"
+	And I have given "<expiry_date>" on "BillPayment_Card_Expiry_Date"
 	And I wait 5000
 	And Set parameter in context class "BillPayment_Bill_Status"
 	#And verify color of element "<Bill_Status_Background>" on "Pay_Bill_Status_Color"
@@ -93,7 +94,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 	#And I am clicking on "BillPayment_RatingOkBtn"
 	And I wait 2000
 	#And I am clicking on "BillPayment_Rating_Feedback_OkBtn"
-	#And I save Transaction Info
+	And I save Transaction Info
 	Then verify through "Transaction is successful. " on "BillPayment_TranSuccess"
 	#And verify through database on "<tran_type_query>" on Schema "<db_val>" on "BillPayment_TranType"
 	And verify through database on "<tran_amount_query>" on Schema "<db_val>" on "BillPayment_TranAmount"
@@ -114,7 +115,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 	And I have given "<BillPayment_ConsumerNo_Value>" on "BillPayment_SearchBeneField"
 	Then verify through "ConsumerNoContextVal" on "BillPayment_SearchBeneConsumerNo"
 	And I am clicking on "Dashboard"
-	#And I verify Account Balance
+	And I verify Account Balance
 	And I am clicking on "Dashboard_Sidebar"
 	And I am clicking on "Dashboard_Sidebar_TranActivity"
 	And I am clicking on "TransactionActivity_Financial"
@@ -133,6 +134,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make new payment schedule
 	Given the test case title is "<Case>"
 	And I set value in context from data "<BillPayment_ConsumerNo_Value>" as "ConsumerNo"
+	And I set value in context from data "<expiry_date>" as "Credit_Card_check"
 	And update the data by query "<status_query>" on QAT_BPS
 	And update the data by query "<status_query2>" on DIGITAL_CHANNEL_SEC
 	And the user is arrive to Mobile Banking home page
@@ -161,7 +163,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 	And I set value in context from database "<paid_marking_query>" as "Is_PaidMarking_Req" on Schema "<db_val2>"
 	And I verify bill payment inquiry for mobile
 	And I select "<account_no>" on "BillPayment_FromAccount"
-	#And I have given "<expiry_date>" on "Pay_Card_Expiry_Date"
+	And I have given "<expiry_date>" on "BillPayment_Card_Expiry_Date"
 	And I wait 5000
 	And Set parameter in context class "BillPayment_Bill_Status"
 	#And verify color of element "<Bill_Status_Background>" on "Pay_Bill_Status_Color"
@@ -228,11 +230,12 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 Scenario Outline: As a user i want to Verify Bill Payment through Mobile bene schedule
 	Given the test case title is "<Case>"
 	And I set value in context from data "<BillPayment_ConsumerNo_Value>" as "ConsumerNo"
+	And I set value in context from data "<expiry_date>" as "Credit_Card_check"
 	And I set value in context from data "1" as "TranTypeBene"
 	And update the data by query "<status_query>" on QAT_BPS
 	And the user is arrive to Mobile Banking home page
 	And I am clicking on "Dashboard"
-	#When I save Account Balances 
+	When I save Account Balances 
 	When I set value in context from data "0" as "term_deposit_flag" 
 	And I am clicking on "Dashboard_More"
 	And I have given "<Category_Value>" on "SendMoney_SearchBeneField"
@@ -251,7 +254,8 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile bene sc
 	And Set parameter in context class "BillPayment_Inquiry_BillingMonth"
 	And I set value in context from database "<paid_marking_query>" as "Is_PaidMarking_Req" on Schema "<db_val2>"
 	And I verify bill payment inquiry for mobile
-	#And I have given "<expiry_date>" on "Pay_Card_Expiry_Date"
+	#And I scroll to element text as "Jan"
+	And I have given "<expiry_date>" on "BillPayment_Card_Expiry_Date"
 	And I wait 5000
 	And Set parameter in context class "BillPayment_Bill_Status"
 	#And verify color of element "<Bill_Status_Background>" on "Pay_Bill_Status_Color"
@@ -272,7 +276,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile bene sc
 	And I wait 2000
 	#And I am clicking on "BillPayment_Rating_Feedback_OkBtn"
 	And I wait 2000
-	#And I save Transaction Info
+	And I save Transaction Info
 	Then verify through "Transaction is successful. " on "BillPayment_TranSuccess"
 	#And verify through database on "<tran_type_query>" on Schema "<db_val>" on "BillPayment_TranType"
 	And verify through database on "<tran_amount_query>" on Schema "<db_val>" on "BillPayment_TranAmount"
@@ -291,7 +295,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile bene sc
 	#And I have given "<BillPayment_ConsumerNo_Value>" on "BillPayment_SearchBeneField"
 	#Then verify through "ConsumerNoContextVal" on "BillPayment_SearchBeneConsumerNo"
 	And I am clicking on "Dashboard"
-	#And I verify Account Balance
+	And I verify Account Balance
 	And I am clicking on "Dashboard_Sidebar"
 	And I am clicking on "Dashboard_Sidebar_TranActivity"
 	And I am clicking on "TransactionActivity_Financial"
@@ -316,6 +320,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile bene sc
 Scenario Outline: As a user i want to Verify Bill Payment through Mobile by already added bene
 	Given the test case title is "<Case>"
 	And I set value in context from data "<BillPayment_ConsumerNo_Value>" as "ConsumerNo"
+	And I set value in context from data "<expiry_date>" as "Credit_Card_check"
 	And I set value in context from data "1" as "TranTypeBene"
 	And update the data by query "<status_query>" on QAT_BPS
 	And the user is arrive to Mobile Banking home page
@@ -339,7 +344,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by alre
 	And Set parameter in context class "BillPayment_Inquiry_BillingMonth"
 	And I set value in context from database "<paid_marking_query>" as "Is_PaidMarking_Req" on Schema "<db_val2>"
 	And I verify bill payment inquiry for mobile
-	#And I have given "<expiry_date>" on "Pay_Card_Expiry_Date"
+	And I have given "<expiry_date>" on "BillPayment_Card_Expiry_Date"
 	And I wait 5000
 	And Set parameter in context class "BillPayment_Bill_Status"
 	#And verify color of element "<Bill_Status_Background>" on "Pay_Bill_Status_Color"
@@ -399,6 +404,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by alre
 Scenario Outline: As a user i want to Verify Bill Payment through Mobile by added bene via home
 	Given the test case title is "<Case>"
 	And I set value in context from data "<BillPayment_ConsumerNo_Value>" as "ConsumerNo"
+	And I set value in context from data "<expiry_date>" as "Credit_Card_check"
 	And I set value in context from data "1" as "TranTypeBene"
 	And update the data by query "<status_query>" on QAT_BPS
 	And the user is arrive to Mobile Banking home page
@@ -420,7 +426,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by adde
 	And I set value in context from database "<paid_marking_query>" as "Is_PaidMarking_Req" on Schema "<db_val2>"
 	And I verify bill payment inquiry for mobile
 	And I select "<account_no>" on "BillPayment_FromAccount_Bene"
-	#And I have given "<expiry_date>" on "Pay_Card_Expiry_Date"
+	And I have given "<expiry_date>" on "BillPayment_Card_Expiry_Date"
 	And I wait 5000
 	And Set parameter in context class "BillPayment_Bill_Status"
 	#And verify color of element "<Bill_Status_Background>" on "Pay_Bill_Status_Color"
@@ -479,6 +485,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by adde
 Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make new payment via home icon
 	Given the test case title is "<Case>"
 	And I set value in context from data "<BillPayment_ConsumerNo_Value>" as "ConsumerNo"
+	And I set value in context from data "<expiry_date>" as "Credit_Card_check"
 	And I set value in context from data "<BillPayment_Category_Value>" as "BillPayment_Category"
 	And update the data by query "<status_query>" on QAT_BPS
 	And update the data by query "<status_query2>" on DIGITAL_CHANNEL_SEC
@@ -506,7 +513,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 	And I set value in context from database "<paid_marking_query>" as "Is_PaidMarking_Req" on Schema "<db_val2>"
 	And I verify bill payment inquiry for mobile
 	And I select "<account_no>" on "BillPayment_FromAccount"
-	#And I have given "<expiry_date>" on "Pay_Card_Expiry_Date"
+	And I have given "<expiry_date>" on "BillPayment_Card_Expiry_Date"
 	And I wait 5000
 	And Set parameter in context class "BillPayment_Bill_Status"
 	#And verify color of element "<Bill_Status_Background>" on "Pay_Bill_Status_Color"
