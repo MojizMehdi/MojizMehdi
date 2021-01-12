@@ -22,6 +22,7 @@ Scenario Outline: Verify the response status of Call for GetCustomerByCNIC XML
     And the endpoint is "<endpoint>"
 	And the base uri is "<baseuri>"
 	When the API header is "<header>"
+	And I set value in context from data "<CNIC_Value>" as "CNIC"
 	And I set value in context from data "<format_value>" as "format"
 	And the body is "<body>"
 	And the queryparameter is "<queryparams>"
@@ -29,4 +30,4 @@ Scenario Outline: Verify the response status of Call for GetCustomerByCNIC XML
 
 	@source:Data/HBLPost.xlsx
 	Examples: 
-	|case|baseuri|header|body|endpoint|queryparams|format_value|
+	|case|baseuri|header|body|endpoint|queryparams|format_value|CNIC_Value|

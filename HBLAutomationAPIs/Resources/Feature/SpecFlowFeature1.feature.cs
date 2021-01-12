@@ -229,7 +229,7 @@ this.VerifyTheResponseStatusOfCRICallForGetCustomerByCNIC("When CNIC is 91400036
 #line hidden
         }
         
-        public virtual void VerifyTheResponseStatusOfCallForGetCustomerByCNICXML(string @case, string baseuri, string header, string body, string endpoint, string queryparams, string format_Value, string[] exampleTags)
+        public virtual void VerifyTheResponseStatusOfCallForGetCustomerByCNICXML(string @case, string baseuri, string header, string body, string endpoint, string queryparams, string format_Value, string cNIC_Value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "DemoAPI",
@@ -250,12 +250,14 @@ this.ScenarioSetup(scenarioInfo);
 #line 24
  testRunner.When(string.Format("the API header is \"{0}\"", header), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 25
- testRunner.And(string.Format("I set value in context from data \"{0}\" as \"format\"", format_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"CNIC\"", cNIC_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 26
- testRunner.And(string.Format("the body is \"{0}\"", body), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"format\"", format_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 27
- testRunner.And(string.Format("the queryparameter is \"{0}\"", queryparams), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("the body is \"{0}\"", body), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 28
+ testRunner.And(string.Format("the queryparameter is \"{0}\"", queryparams), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 29
  testRunner.And("Post request is made", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -276,10 +278,11 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:endpoint", "v2/customer/validate")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:queryparams", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:format_value", "json")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:CNIC_Value", "")]
         public virtual void VerifyTheResponseStatusOfCallForGetCustomerByCNICXML_WhenCNICIs4220107030051()
         {
 #line 20
-this.VerifyTheResponseStatusOfCallForGetCustomerByCNICXML("When CNIC is 4220107030051", "", @"x-req-id:89567890987610,x-channel-id:MB,x-sub-channel-id:MB,x-country-code:PK,x-customer-type:C,Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJhZGlsIn0.mRSZXF0glqRPyo2h15jHd51JwCeEnSUIBmYuTaAzmrQ,accept:application/json,Content-Type:application/json", "{\"nationalIdentityNo\":\"4220107030051\"}", "v2/customer/validate", "", "json", new string[] {
+this.VerifyTheResponseStatusOfCallForGetCustomerByCNICXML("When CNIC is 4220107030051", "", @"x-req-id:89567890987610,x-channel-id:MB,x-sub-channel-id:MB,x-country-code:PK,x-customer-type:C,Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJhZGlsIn0.mRSZXF0glqRPyo2h15jHd51JwCeEnSUIBmYuTaAzmrQ,accept:application/json,Content-Type:application/json", "{\"nationalIdentityNo\":\"4220107030051\"}", "v2/customer/validate", "", "json", "", new string[] {
                         "source:Data/HBLPost.xlsx"});
 #line hidden
         }
@@ -295,14 +298,15 @@ this.VerifyTheResponseStatusOfCallForGetCustomerByCNICXML("When CNIC is 42201070
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:case", "When CNIC is 1350314051455")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:baseuri", "http://10.200.64.3:8011")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:header", "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:body", @"<FCDB_REQ_ENV><FCDB_HEADER><SOURCE>FCAT</SOURCE><FCDBCOMP>FCDB</FCDBCOMP><MSGID>{RRN}</MSGID><CORRELID>{RRN}</CORRELID><USERID>615</USERID><BRANCH>000</BRANCH><MODULEID>LGN</MODULEID><SERVICE>RRCBR03</SERVICE><OPERATION>DebitCardFetch</OPERATION><SOURCE_USERID>FCAT</SOURCE_USERID><DESTINATION>FCDB</DESTINATION><COUNTRYCODE>T001</COUNTRYCODE><USERTYPE>ENS</USERTYPE><LANGID>eng</LANGID><CHANNELID>01</CHANNELID></FCDB_HEADER><FCDB_BODY><CNIC>1350314051455</CNIC><CARDSTATUS></CARDSTATUS><PRODUCTCODE></PRODUCTCODE><ADDITIONALINFO></ADDITIONALINFO></FCDB_BODY></FCDB_REQ_ENV>")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:body", @"<FCDB_REQ_ENV><FCDB_HEADER><SOURCE>FCAT</SOURCE><FCDBCOMP>FCDB</FCDBCOMP><MSGID>{RRN}</MSGID><CORRELID>{RRN}</CORRELID><USERID>615</USERID><BRANCH>000</BRANCH><MODULEID>LGN</MODULEID><SERVICE>RRCBR03</SERVICE><OPERATION>DebitCardFetch</OPERATION><SOURCE_USERID>FCAT</SOURCE_USERID><DESTINATION>FCDB</DESTINATION><COUNTRYCODE>T001</COUNTRYCODE><USERTYPE>ENS</USERTYPE><LANGID>eng</LANGID><CHANNELID>01</CHANNELID></FCDB_HEADER><FCDB_BODY><CNIC>{CNIC}</CNIC><CARDSTATUS></CARDSTATUS><PRODUCTCODE></PRODUCTCODE><ADDITIONALINFO></ADDITIONALINFO></FCDB_BODY></FCDB_REQ_ENV>")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:endpoint", "/ESBMOBAPP")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:queryparams", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:format_value", "xml")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:CNIC_Value", "")]
         public virtual void VerifyTheResponseStatusOfCallForGetCustomerByCNICXML_WhenCNICIs1350314051455()
         {
 #line 20
-this.VerifyTheResponseStatusOfCallForGetCustomerByCNICXML("When CNIC is 1350314051455", "http://10.200.64.3:8011", "", @"<FCDB_REQ_ENV><FCDB_HEADER><SOURCE>FCAT</SOURCE><FCDBCOMP>FCDB</FCDBCOMP><MSGID>{RRN}</MSGID><CORRELID>{RRN}</CORRELID><USERID>615</USERID><BRANCH>000</BRANCH><MODULEID>LGN</MODULEID><SERVICE>RRCBR03</SERVICE><OPERATION>DebitCardFetch</OPERATION><SOURCE_USERID>FCAT</SOURCE_USERID><DESTINATION>FCDB</DESTINATION><COUNTRYCODE>T001</COUNTRYCODE><USERTYPE>ENS</USERTYPE><LANGID>eng</LANGID><CHANNELID>01</CHANNELID></FCDB_HEADER><FCDB_BODY><CNIC>1350314051455</CNIC><CARDSTATUS></CARDSTATUS><PRODUCTCODE></PRODUCTCODE><ADDITIONALINFO></ADDITIONALINFO></FCDB_BODY></FCDB_REQ_ENV>", "/ESBMOBAPP", "", "xml", new string[] {
+this.VerifyTheResponseStatusOfCallForGetCustomerByCNICXML("When CNIC is 1350314051455", "http://10.200.64.3:8011", "", @"<FCDB_REQ_ENV><FCDB_HEADER><SOURCE>FCAT</SOURCE><FCDBCOMP>FCDB</FCDBCOMP><MSGID>{RRN}</MSGID><CORRELID>{RRN}</CORRELID><USERID>615</USERID><BRANCH>000</BRANCH><MODULEID>LGN</MODULEID><SERVICE>RRCBR03</SERVICE><OPERATION>DebitCardFetch</OPERATION><SOURCE_USERID>FCAT</SOURCE_USERID><DESTINATION>FCDB</DESTINATION><COUNTRYCODE>T001</COUNTRYCODE><USERTYPE>ENS</USERTYPE><LANGID>eng</LANGID><CHANNELID>01</CHANNELID></FCDB_HEADER><FCDB_BODY><CNIC>{CNIC}</CNIC><CARDSTATUS></CARDSTATUS><PRODUCTCODE></PRODUCTCODE><ADDITIONALINFO></ADDITIONALINFO></FCDB_BODY></FCDB_REQ_ENV>", "/ESBMOBAPP", "", "xml", "", new string[] {
                         "source:Data/HBLPost.xlsx"});
 #line hidden
         }

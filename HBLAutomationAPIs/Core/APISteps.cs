@@ -149,6 +149,10 @@ namespace HBLAutomationAPIs.Core
                 ContextPage.GetInstance().Set_RRN_FetchDBCard(act_res);
                 body = body.Replace("{RRN}", act_res);
             }
+            if (body.Contains("{CNIC}"))
+            {
+                body = body.Replace("{CNIC}", context.GetCustomerCNIC());
+            }
             context.Set_Api_Body(body);
         }
         [Given(@"I set value in context from data ""(.*)"" as ""(.*)""")]
@@ -159,6 +163,10 @@ namespace HBLAutomationAPIs.Core
             if(attribute == "format")
             {
                 context.Set_api_format(value);
+            }
+            if (attribute == "CNIC")
+            {
+                context.SetCustomerCNIC(value);
             }
         }
     }
