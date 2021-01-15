@@ -15,6 +15,7 @@ using System.Globalization;
 using System.Linq;
 using Dynamitey.DynamicObjects;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace HBLAutomationAndroid.Core
 {
@@ -205,7 +206,7 @@ namespace HBLAutomationAndroid.Core
         {
             AppiumHelper apmhelper = new AppiumHelper();
             string locator_type = "id";
-            if (Keyword.Contains("Expiry_Date"))
+            if (Keyword.Contains("Expiry_Date") && textboxvalue != "")
             {
                 Element keyword = ContextPage.GetInstance().GetElement(Keyword);
                 apmhelper.links(keyword.Locator, "id");
@@ -413,58 +414,139 @@ namespace HBLAutomationAndroid.Core
         [Then(@"verify the message using element ""(.*)"" through database on ""(.*)"" on Schema ""(.*)""")]
         public void ThenVerifyTheMessageUsingElementThroughDatabaseOnOnSchema(string Keyword, string query, string schema)
         {
-            try
+            if (query != "")
             {
-                bool kmobile_msg_check = false;
-                if (query.Contains("{Company_Code}"))
+                try
                 {
-                    query = query.Replace("{Company_Code}", context.GetCompany_Code());
-                }
-                if (query.Contains("{KMobileNo}"))
-                {
-                    query = query.Replace("{KMobileNo}",context.Get_mobile_no());
-                    kmobile_msg_check = true;
-                }
-                string locator_type = "id";
-                DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
-                DataTable SourceDataTable = dlink.GetDataTable(query, schema);
-                string message = SourceDataTable.Rows[0][0].ToString();
-                if (message.Contains("<br>"))
-                {
-                    message = message.Replace("<br>", string.Empty);
-                }
-                if (kmobile_msg_check == true)
-                {
-                    if (message == "")
+                    bool kmobile_msg_check = false;
+                    if (query.Contains("{Company_Code}"))
                     {
-                        query = "SELECT BB.FIRST_NAME FROM BB_CUSTOMER  BB WHERE BB.CONTACT_NUMBER = '" + context.Get_mobile_no() + "'";
-                        dlink = new DataAccessComponent.DataAccessLink();
-                        SourceDataTable = dlink.GetDataTable(query, "QAT_BB_SYSTEM");
-                        message = SourceDataTable.Rows[0][0].ToString();
-                        message = message.Remove(message.IndexOf(' '));
+                        query = query.Replace("{Company_Code}", context.GetCompany_Code());
                     }
-                    message = "HI, " + message + "!";
+                    if (query.Contains("{KMobileNo}"))
+                    {
+                        query = query.Replace("{KMobileNo}", context.Get_mobile_no());
+                        kmobile_msg_check = true;
+                    }
+                    if (query.Contains("{customer_name}"))
+                    {
+                        query = query.Replace("{customer_name}", context.GetUsername());
+                    }
+                    string locator_type = "id";
+                    DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
+                    DataTable SourceDataTable = dlink.GetDataTable(query, schema);
+                    string message = SourceDataTable.Rows[0][0].ToString();
+                    decimal foreign_rate = 0;
+                    if (Keyword.Equals("SendMoney_Buy_Rate") || Keyword.Equals("SendMoney_Converted_Amount"))
+                    {
+                        if (context.Get_FCY_Tran_Check() == true)
+                        {
+                            message = message.Split('{')[2];
+                            message = '{' + message;
+                            message = message.Remove(message.Length - 2, 2);
+                            var values = JsonConvert.DeserializeObject<Dictionary<string, string>>(message);
+                            foreign_rate = Convert.ToDecimal(values["conversionRate"]);
+                        }
+                        else
+                        {
+                            return;
+                        }
+                    }
+                    if (Keyword.Equals("BillPayment_Conversion_Rate"))
+                    {
+                        if (context.Get_FCY_Tran_Check() == true)
+                        {
+                            message = message.Split('{')[2];
+                            message = '{' + message;
+                            message = message.Remove(message.Length - 2, 2);
+                            var values = JsonConvert.DeserializeObject<Dictionary<string, string>>(message);
+                            foreign_rate = Convert.ToDecimal(values["conversionRate"]);
+                        }
+                        else
+                        {
+                            return;
+                        }
+                    }
+                    if (message.Contains("<br>"))
+                    {
+                        message = message.Replace("<br>", string.Empty);
+                    }
+                    if (kmobile_msg_check == true)
+                    {
+                        if (message == "")
+                        {
+                            query = "SELECT BB.FIRST_NAME FROM BB_CUSTOMER  BB WHERE BB.CONTACT_NUMBER = '" + context.Get_mobile_no() + "'";
+                            dlink = new DataAccessComponent.DataAccessLink();
+                            SourceDataTable = dlink.GetDataTable(query, "QAT_BB_SYSTEM");
+                            message = SourceDataTable.Rows[0][0].ToString();
+                            message = message.Remove(message.IndexOf(' '));
+                        }
+                        message = "HI, " + message + "!";
+                    }
+
+                    AppiumHelper apmhelper = new AppiumHelper();
+                    //apmhelper.checkPageIsReady();
+                    Element keyword = ContextPage.GetInstance().GetElement(Keyword);
+                    //keyword.Locator used instead od locator
+                    if (keyword.Locator.StartsWith("/"))
+                    {
+                        locator_type = "xpath";
+                    }
+                    string value = apmhelper.ReturnKeywordValue(keyword.Locator, locator_type);
+                    if (Keyword.Equals("BillPayment_Conversion_Rate"))
+                    {
+                        if (context.Get_FCY_Tran_Check() == true)
+                        {
+                            string [] amount_values = value.Split('=');
+                            decimal pkr_amount = Convert.ToDecimal(amount_values[0].Replace("PKR", string.Empty).Trim());
+                            pkr_amount = pkr_amount / foreign_rate;
+                            pkr_amount = Math.Round(pkr_amount, 15);
+                            int index = value.IndexOf('=');
+                            message = value.Remove(index + 1, value.Length - 4 - index);
+                            message = message.Replace("=", "= " + pkr_amount.ToString() + " ");
+                        }
+                    }
+                    if (Keyword.Equals("SendMoney_Buy_Rate"))
+                    {
+                        if (context.Get_FCY_Tran_Check() == true)
+                        {
+                            string[] amount_values = value.Split('=');
+                            //decimal pkr_amount = Convert.ToDecimal(amount_values[0].Replace("PKR", string.Empty).Trim());
+                            foreign_rate = Math.Round(foreign_rate, 1);
+                            //context.Set_conversion_rate(foreign_rate);
+                            //amount_values[0] = amount_values[0].Remove(0, amount_values[0].IndexOf("USD"));
+                            amount_values[1] = amount_values[1].Remove(0, amount_values[1].IndexOf("PKR"));
+                            message = amount_values[0] + "= " + foreign_rate.ToString() + " " + amount_values[1];
+                            //pkr_amount = pkr_amount / foreign_rate;
+                            //pkr_amount = Math.Round(pkr_amount, 15);
+                            //int index = value.IndexOf('=');
+                            //message = value.Remove(index + 1, value.Length - 4 - index);
+                            //message = message.Replace("=", "= " + pkr_amount.ToString() + " ");
+                        }
+                    }
+                    if (Keyword.Equals("SendMoney_Converted_Amount"))
+                    {
+                        if (context.Get_FCY_Tran_Check() == true)
+                        {
+                            //string[] amount_values = value.Split('=');
+                            foreign_rate = Math.Round(foreign_rate, 2);
+                            //double tran_amount = 
+                            foreign_rate = Convert.ToDecimal(context.Get_tran_amount()) * foreign_rate;
+                            message = foreign_rate.ToString();
+                        }
+                    }
+
+                    if (value.Contains("\r") || value.Contains("\n"))
+                    {
+                        value = value.Replace("\r", string.Empty).Replace("\n", string.Empty);
+                    }
+                    Assert.AreEqual(message, value);
                 }
-                
-                AppiumHelper apmhelper = new AppiumHelper();
-                //apmhelper.checkPageIsReady();
-                Element keyword = ContextPage.GetInstance().GetElement(Keyword);
-                //keyword.Locator used instead od locator
-                if (keyword.Locator.StartsWith("/"))
+                catch (Exception exception)
                 {
-                    locator_type = "xpath";
+                    AppiumHelper.TakeScreenshot();
+                    throw new AssertFailedException(exception.Message);
                 }
-                string value = apmhelper.ReturnKeywordValue(keyword.Locator, locator_type);
-                if (value.Contains("\r") || value.Contains("\n"))
-                {
-                    value = value.Replace("\r", string.Empty).Replace("\n", string.Empty);
-                }
-                Assert.AreEqual(message, value);
-            }
-            catch (Exception exception)
-            {
-                AppiumHelper.TakeScreenshot();
-                throw new AssertFailedException(exception.Message);
             }
         }
 
@@ -795,6 +877,20 @@ namespace HBLAutomationAndroid.Core
             Element keyword = ContextPage.GetInstance().GetElement(Keyword);
             try
             {
+                if (Keyword.Contains("BillPayment_Fcy_Toggle"))
+                {
+                    if (context.Get_FCY_Tran_Check() != true)
+                    {
+                        return;
+                    }
+                }
+                if (Keyword.Equals("BillPayment_NextBtn_Fcy"))
+                {
+                    if(context.Get_FCY_Tran_Check() == true)
+                    {
+                        return;
+                    }
+                }
 
                 //if (Keyword.Equals("Login_permission_allow_btn") || Keyword.Equals("Login_permission_allow_btn2"))
                 //{
@@ -1133,7 +1229,7 @@ namespace HBLAutomationAndroid.Core
             }
             try
             {
-                if (context.GetCredit_Card_Check() != "")
+                if (context.GetCredit_Card_Check() != "" && context.GetCredit_Card_Check() != null)
                 {
                     StringBuilder st = new StringBuilder(value);
                     st.Remove(4, 8);
@@ -2065,7 +2161,7 @@ namespace HBLAutomationAndroid.Core
                             DataTable SourceDataTable2 = dLink2.GetDataTable(temp_query, schema);
                             SURCHARGE_ATTRIBUTE = SourceDataTable2.Rows[0][0].ToString();
 
-                            string query2 = "Select " + SURCHARGE_ATTRIBUTE + " from LP_BILLS L WHERE L.CONSUMER_NO = '" + context.GetConsumer_No() + "' AND TO_CHAR(LP.BILLING_MONTH,'MM/YYYY') = '" + context.GetBilling_Month() + "'";
+                            string query2 = "Select " + SURCHARGE_ATTRIBUTE + " from LP_BILLS L WHERE L.CONSUMER_NO = '" + context.GetConsumer_No() + "' AND TO_CHAR(L.BILLING_MONTH,'MM/YYYY') = '" + context.GetBilling_Month() + "'";
 
                             dLink2 = null;
                             dLink2 = new DataAccessComponent.DataAccessLink();
@@ -2217,6 +2313,10 @@ namespace HBLAutomationAndroid.Core
                 if(attribute == "Credit_Card_check")
                 {
                     context.SetCredit_Card_Check(value);
+                }
+                if(attribute == "FCY_Tran_Check")
+                {
+                    context.Set_FCY_Tran_Check(Convert.ToBoolean(value.ToLower()));
                 }
             }
             catch (Exception exception)

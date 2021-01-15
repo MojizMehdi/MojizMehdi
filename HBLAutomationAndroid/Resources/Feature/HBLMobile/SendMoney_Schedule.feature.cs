@@ -608,6 +608,8 @@ this.WhenUserTryToLoginMobileBankingForSendMoney("When user id and password are 
         public virtual void WhenUserTryToSendMoneyMobileAddNewSchedulePayment(
                     string @case, 
                     string status_Query, 
+                    string fCY_Check, 
+                    string conversion_Query, 
                     string no_Of_Acconts_Query, 
                     string bene_Count_Query, 
                     string from_Account_Value, 
@@ -654,113 +656,123 @@ this.ScenarioSetup(scenarioInfo);
 #line 45
     testRunner.When("I set value in context from data \"0\" as \"term_deposit_flag\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 46
-    testRunner.And("I am clicking on \"SendMoney_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"FCY_Tran_Check\"", fCY_Check), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 47
-    testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("I am clicking on \"SendMoney_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 48
-    testRunner.And("I am clicking on \"SendMoney_SkipBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 49
-    testRunner.And(string.Format("I set value in context from database \"{0}\" as \"No_Of_Accounts\" on Schema \"{1}\"", no_Of_Acconts_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("I am clicking on \"SendMoney_SkipBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 50
+    testRunner.And(string.Format("I set value in context from database \"{0}\" as \"No_Of_Accounts\" on Schema \"{1}\"", no_Of_Acconts_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 51
     testRunner.And(string.Format("I set value in context from database \"{0}\" as \"Beneficiary_Count_Inter_Branch\" on" +
                         " Schema \"{1}\"", bene_Count_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 51
+#line 52
     testRunner.And(string.Format("I set value in context from database \"{0}\" as \"Beneficiary_Count_Inter_Bank\" on S" +
                         "chema \"{1}\"", bene_Count_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 52
-    testRunner.And("I am clicking on \"SendMoney_AddNewBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 53
-    testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_FromAccount\"", from_Account_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("I am clicking on \"SendMoney_AddNewBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 54
-    testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_Bank\"", bank_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_FromAccount\"", from_Account_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 55
-    testRunner.And(string.Format("I set value in context from data \"{0}\" as \"ToAccount\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_Bank\"", bank_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 56
-    testRunner.And("I set value in context from data \"SendMoney\" as \"Transaction_Type\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And(string.Format("I set value in context from data \"{0}\" as \"ToAccount\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 57
+    testRunner.And("I set value in context from data \"SendMoney\" as \"Transaction_Type\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 58
     testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_ToAccount\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 59
-    testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("I am clicking on \"SendMoney_AccVerifyBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 60
-    testRunner.And("I scroll down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("I wait 5000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 61
-    testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_Amount\"", amount_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("I scroll down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 62
-    testRunner.When(string.Format("I select \"{0}\" on \"SendMoney_PurposeOfPayment\"", purposeOfPayment_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_Amount\"", amount_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 63
-    testRunner.And("I scroll down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify the message using element \"SendMoney_Buy_Rate\" through database on \"{0}\" o" +
+                        "n Schema \"DIGITAL_CHANNEL_SEC\"", conversion_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 64
-    testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_BeneNick\"", bene_Nick), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify the message using element \"SendMoney_Converted_Amount\" through database on" +
+                        " \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", conversion_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 65
-    testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_BeneEmail\"", bene_Email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.When(string.Format("I select \"{0}\" on \"SendMoney_PurposeOfPayment\"", purposeOfPayment_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 66
-    testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_BeneMobileNo\"", bene_Mobile_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 67
-    testRunner.And("I am clicking on \"SendMoney_SchedulePayment_Check\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 68
     testRunner.And("I scroll down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 67
+    testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_BeneNick\"", bene_Nick), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 68
+    testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_BeneEmail\"", bene_Email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 69
-    testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_SchedulePayment_Frequency\"", frequency_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_BeneMobileNo\"", bene_Mobile_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 70
-    testRunner.And("I am clicking on \"SendMoney_SchedulePayment_StartDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("I am clicking on \"SendMoney_SchedulePayment_Check\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 71
-    testRunner.And(string.Format("I select from date \"{0}\"", from_Date_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("I scroll down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 72
+    testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_SchedulePayment_Frequency\"", frequency_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 73
-    testRunner.And("I am clicking on \"SendMoney_SchedulePayment_EndDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("I am clicking on \"SendMoney_SchedulePayment_StartDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 74
-    testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 75
-    testRunner.And(string.Format("I select to date \"{0}\"", to_Date_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And(string.Format("I select from date \"{0}\"", from_Date_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 76
-    testRunner.And("I am clicking on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("I am clicking on \"SendMoney_SchedulePayment_EndDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 77
-    testRunner.And("I am clicking on \"SendMoney_SchedulePayment_ViewSummary\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 78
-    testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And(string.Format("I select to date \"{0}\"", to_Date_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 79
+    testRunner.And("I am clicking on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 80
+    testRunner.And("I am clicking on \"SendMoney_SchedulePayment_ViewSummary\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 81
+    testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 82
     testRunner.And("I am verifying list of execution iterations on \"SendMoney_Btn_Summary_Iteration_D" +
                     "ates\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 80
-    testRunner.And("I am clicking on \"SendMoney_Btn_Summary_OK\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 83
+    testRunner.And("I am clicking on \"SendMoney_Btn_Summary_OK\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 86
     testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 84
-    testRunner.And("I scroll down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 85
-    testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 87
-    testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("I scroll down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 88
     testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 89
-    testRunner.And("I am performing on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 90
-    testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 91
-    testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_TranPass\"", tran_Pass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 92
     testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 93
+#line 92
     testRunner.And("I am performing on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 94
+#line 93
     testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 94
+    testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_TranPass\"", tran_Pass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 95
+    testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 96
+    testRunner.And("I am performing on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 97
+    testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 98
     testRunner.And("I am clicking on \"BillPayment_Rating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 99
-    testRunner.Then(string.Format("verify through \"{0}\" on \"SendMoney_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 102
+    testRunner.Then(string.Format("verify through \"{0}\" on \"SendMoney_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 105
     testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranSourceAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 106
-    testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFrequency\"", frequency_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 107
-    testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranPurpose\"", purpose_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 108
-    testRunner.And("I am clicking on \"SendMoney_TranInfoClose\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 109
-    testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_SearchBeneField\"", bene_Nick), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFrequency\"", frequency_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 110
-    testRunner.Then("verify through \"ToAccountNoContextVal\" on \"SendMoney_SearchBeneAccountNo\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranPurpose\"", purpose_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 111
+    testRunner.And("I am clicking on \"SendMoney_TranInfoClose\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 112
+    testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_SearchBeneField\"", bene_Nick), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 113
+    testRunner.Then("verify through \"ToAccountNoContextVal\" on \"SendMoney_SearchBeneAccountNo\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 114
     testRunner.And("verify the result of schedule payment from database", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -778,6 +790,8 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When invalid Details are provided with invalid Bene acc add_new_schedule_KAINAT71" +
             "13")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -807,7 +821,7 @@ this.ScenarioSetup(scenarioInfo);
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are provided with invalid Bene acc add_new_schedule_KAINAT71" +
-                    "13", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "13", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -826,6 +840,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When invalid Details are provided with invalid Bank add_new_schedule_KAINAT7113")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When invalid Details are provided with invalid Bank add_new_schedule_KAINAT7113")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -854,7 +870,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are
         public virtual void WhenUserTryToSendMoneyMobileAddNewSchedulePayment_WhenInvalidDetailsAreProvidedWithInvalidBankAdd_New_Schedule_KAINAT7113()
         {
 #line 38
-this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are provided with invalid Bank add_new_schedule_KAINAT7113", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are provided with invalid Bank add_new_schedule_KAINAT7113", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -875,6 +891,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When invalid Details are provided with negative amount add_new_schedule_KAINAT711" +
             "3")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -904,7 +922,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are provided with negative amount add_new_schedule_KAINAT711" +
-                    "3", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "3", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -925,6 +943,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When invalid Details are provided with invalid purpose add_new_schedule_KAINAT711" +
             "3")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -954,7 +974,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are provided with invalid purpose add_new_schedule_KAINAT711" +
-                    "3", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "3", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -975,6 +995,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When invalid Details are provided with Special Character in Bene Name add_new_sch" +
             "edule_KAINAT7113")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -1004,7 +1026,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are provided with Special Character in Bene Name add_new_sch" +
-                    "edule_KAINAT7113", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "edule_KAINAT7113", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -1025,6 +1047,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When invalid Details are provided with invalid mobile no add_new_schedule_KAINAT7" +
             "113")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -1054,7 +1078,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are provided with invalid mobile no add_new_schedule_KAINAT7" +
-                    "113", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "113", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -1073,6 +1097,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When invalid Details are provided with invalid email add_new_schedule_KAINAT7113")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When invalid Details are provided with invalid email add_new_schedule_KAINAT7113")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -1101,7 +1127,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are
         public virtual void WhenUserTryToSendMoneyMobileAddNewSchedulePayment_WhenInvalidDetailsAreProvidedWithInvalidEmailAdd_New_Schedule_KAINAT7113()
         {
 #line 38
-this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are provided with invalid email add_new_schedule_KAINAT7113", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are provided with invalid email add_new_schedule_KAINAT7113", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -1122,6 +1148,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When invalid Details are provided with invalid format from_date add_new_schedule_" +
             "KAINAT7113")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -1151,7 +1179,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are provided with invalid format from_date add_new_schedule_" +
-                    "KAINAT7113", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "KAINAT7113", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -1172,6 +1200,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When invalid Details are provided with invalid format to_date add_new_schedule_KA" +
             "INAT7113")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -1201,7 +1231,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are provided with invalid format to_date add_new_schedule_KA" +
-                    "INAT7113", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "INAT7113", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -1223,6 +1253,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When invalid Details are provided with valid Details to date less than from date " +
             "add_new_schedule_KAINAT7113")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -1252,7 +1284,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are provided with valid Details to date less than from date " +
-                    "add_new_schedule_KAINAT7113", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "add_new_schedule_KAINAT7113", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -1274,6 +1306,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When invalid Details are provided with valid Details but incorrect freqency add_n" +
             "ew_schedule_KAINAT7113")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -1303,7 +1337,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are provided with valid Details but incorrect freqency add_n" +
-                    "ew_schedule_KAINAT7113", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "ew_schedule_KAINAT7113", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -1325,6 +1359,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When invalid Details are provided with valid Details but incorrect transaction Pa" +
             "ssword add_new_schedule_KAINAT7113")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -1354,7 +1390,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are provided with valid Details but incorrect transaction Pa" +
-                    "ssword add_new_schedule_KAINAT7113", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "ssword add_new_schedule_KAINAT7113", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -1376,6 +1412,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When invalid Details are provided with valid Details but daily greater than 30 ad" +
             "d_new_schedule_KAINAT7113")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -1405,7 +1443,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are provided with valid Details but daily greater than 30 ad" +
-                    "d_new_schedule_KAINAT7113", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "d_new_schedule_KAINAT7113", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -1424,6 +1462,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When Details are provided with all valid details add_new_schedule_KAINAT7113")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When Details are provided with all valid details add_new_schedule_KAINAT7113")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -1452,7 +1492,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When invalid Details are
         public virtual void WhenUserTryToSendMoneyMobileAddNewSchedulePayment_WhenDetailsAreProvidedWithAllValidDetailsAdd_New_Schedule_KAINAT7113()
         {
 #line 38
-this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Details are provided with all valid details add_new_schedule_KAINAT7113", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Details are provided with all valid details add_new_schedule_KAINAT7113", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -1473,6 +1513,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Details are provide
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When Details are provided with all valid details iban add_new_schedule_KAINAT7113" +
             "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -1502,7 +1544,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Details are provide
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Details are provided with all valid details iban add_new_schedule_KAINAT7113" +
-                    "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -1523,6 +1565,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Details are provide
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When Details are provided with all valid details for Other Bank add_new_schedule_" +
             "KAINAT7113")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -1552,7 +1596,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Details are provide
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Details are provided with all valid details for Other Bank add_new_schedule_" +
-                    "KAINAT7113", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "KAINAT7113", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -1573,6 +1617,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Details are provide
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid HBL Acc is provided with invalid  scheduled dates Daily add_new_schedu" +
             "le_KAINAAT123")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -1602,7 +1648,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Details are provide
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid HBL Acc is provided with invalid  scheduled dates Daily add_new_schedu" +
-                    "le_KAINAAT123", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "le_KAINAAT123", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -1623,6 +1669,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid HBL Acc is pr
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid HBL Acc is provided with invalid  scheduled dates Weekly add_new_sched" +
             "ule_KAINAAT123")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -1652,7 +1700,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid HBL Acc is pr
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid HBL Acc is provided with invalid  scheduled dates Weekly add_new_sched" +
-                    "ule_KAINAAT123", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "ule_KAINAAT123", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -1674,6 +1722,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid HBL Acc is pr
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid HBL Acc is provided with invalid  scheduled dates Fortnightly add_new_" +
             "schedule_KAINAAT123")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -1703,7 +1753,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid HBL Acc is pr
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid HBL Acc is provided with invalid  scheduled dates Fortnightly add_new_" +
-                    "schedule_KAINAAT123", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "schedule_KAINAAT123", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -1724,6 +1774,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid HBL Acc is pr
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid HBL Acc is provided with invalid  scheduled dates Monthly add_new_sche" +
             "dule_KAINAAT123")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -1753,7 +1805,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid HBL Acc is pr
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid HBL Acc is provided with invalid  scheduled dates Monthly add_new_sche" +
-                    "dule_KAINAAT123", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "dule_KAINAAT123", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -1774,6 +1826,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid HBL Acc is pr
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid HBL Acc is provided with invalid  scheduled dates Quarterly add_new_sc" +
             "hedule_KAINAAT123")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -1803,7 +1857,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid HBL Acc is pr
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid HBL Acc is provided with invalid  scheduled dates Quarterly add_new_sc" +
-                    "hedule_KAINAAT123", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "hedule_KAINAAT123", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -1824,6 +1878,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid HBL Acc is pr
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid IBFT Acc is provided with invalid  scheduled dates Daily add_new_sched" +
             "ule_KAINAAT123")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -1853,7 +1909,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid HBL Acc is pr
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT Acc is provided with invalid  scheduled dates Daily add_new_sched" +
-                    "ule_KAINAAT123", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "ule_KAINAAT123", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -1874,6 +1930,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT Acc is p
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid IBFT Acc is provided with invalid  scheduled dates Weekly add_new_sche" +
             "dule_KAINAAT123")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -1903,7 +1961,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT Acc is p
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT Acc is provided with invalid  scheduled dates Weekly add_new_sche" +
-                    "dule_KAINAAT123", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "dule_KAINAAT123", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -1925,6 +1983,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT Acc is p
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid IBFT Acc is provided with invalid  scheduled dates Fortnightly add_new" +
             "_schedule_KAINAAT123")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -1954,7 +2014,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT Acc is p
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT Acc is provided with invalid  scheduled dates Fortnightly add_new" +
-                    "_schedule_KAINAAT123", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "_schedule_KAINAAT123", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -1975,6 +2035,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT Acc is p
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid IBFT Acc is provided with invalid  scheduled dates Monthly add_new_sch" +
             "edule_KAINAAT123")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -2004,7 +2066,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT Acc is p
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT Acc is provided with invalid  scheduled dates Monthly add_new_sch" +
-                    "edule_KAINAAT123", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "edule_KAINAAT123", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -2025,6 +2087,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT Acc is p
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid IBFT Acc is provided with invalid  scheduled dates Quarterly add_new_s" +
             "chedule_KAINAAT123")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -2054,7 +2118,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT Acc is p
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT Acc is provided with invalid  scheduled dates Quarterly add_new_s" +
-                    "chedule_KAINAAT123", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "chedule_KAINAAT123", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -2076,6 +2140,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT Acc is p
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid IBFT via IBAN Acc is provided with invalid  scheduled dates Daily add_" +
             "new_schedule_KAINAAT123")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -2105,7 +2171,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT Acc is p
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT via IBAN Acc is provided with invalid  scheduled dates Daily add_" +
-                    "new_schedule_KAINAAT123", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "new_schedule_KAINAAT123", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -2127,6 +2193,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT via IBAN
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid IBFT via IBAN Acc is provided with invalid  scheduled dates Weekly add" +
             "_new_schedule_KAINAAT123")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -2156,7 +2224,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT via IBAN
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT via IBAN Acc is provided with invalid  scheduled dates Weekly add" +
-                    "_new_schedule_KAINAAT123", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "_new_schedule_KAINAAT123", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -2178,6 +2246,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT via IBAN
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid IBFT via IBAN Acc is provided with invalid  scheduled dates Fortnightl" +
             "y add_new_schedule_KAINAAT123")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -2207,7 +2277,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT via IBAN
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT via IBAN Acc is provided with invalid  scheduled dates Fortnightl" +
-                    "y add_new_schedule_KAINAAT123", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "y add_new_schedule_KAINAAT123", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -2229,6 +2299,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT via IBAN
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid IBFT via IBAN Acc is provided with invalid  scheduled dates Monthly ad" +
             "d_new_schedule_KAINAAT123")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -2258,7 +2330,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT via IBAN
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT via IBAN Acc is provided with invalid  scheduled dates Monthly ad" +
-                    "d_new_schedule_KAINAAT123", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "d_new_schedule_KAINAAT123", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -2280,6 +2352,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT via IBAN
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid IBFT via IBAN Acc is provided with invalid  scheduled dates Quarterly " +
             "add_new_schedule_KAINAAT123")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -2309,7 +2383,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT via IBAN
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT via IBAN Acc is provided with invalid  scheduled dates Quarterly " +
-                    "add_new_schedule_KAINAAT123", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "add_new_schedule_KAINAAT123", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -2330,6 +2404,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT via IBAN
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid HBL Acc is provided with correct scheduled dates Daily add_new_schedul" +
             "e_KAINAT16")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -2359,7 +2435,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT via IBAN
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid HBL Acc is provided with correct scheduled dates Daily add_new_schedul" +
-                    "e_KAINAT16", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "e_KAINAT16", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -2380,6 +2456,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid HBL Acc is pr
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid HBL Acc is provided with correct scheduled dates Weekly add_new_schedu" +
             "le_KAINAT16")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -2409,7 +2487,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid HBL Acc is pr
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid HBL Acc is provided with correct scheduled dates Weekly add_new_schedu" +
-                    "le_KAINAT16", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "le_KAINAT16", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -2430,6 +2508,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid HBL Acc is pr
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid HBL Acc is provided with correct scheduled dates Fortnightly add_new_s" +
             "chedule_KAINAT16")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -2459,7 +2539,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid HBL Acc is pr
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid HBL Acc is provided with correct scheduled dates Fortnightly add_new_s" +
-                    "chedule_KAINAT16", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "chedule_KAINAT16", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -2480,6 +2560,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid HBL Acc is pr
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid HBL Acc is provided with correct scheduled dates Monthly add_new_sched" +
             "ule_KAINAT16")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -2509,7 +2591,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid HBL Acc is pr
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid HBL Acc is provided with correct scheduled dates Monthly add_new_sched" +
-                    "ule_KAINAT16", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "ule_KAINAT16", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -2530,6 +2612,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid HBL Acc is pr
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid HBL Acc is provided with correct scheduled dates Quarterly add_new_sch" +
             "edule_KAINAT16")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -2559,7 +2643,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid HBL Acc is pr
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid HBL Acc is provided with correct scheduled dates Quarterly add_new_sch" +
-                    "edule_KAINAT16", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "edule_KAINAT16", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -2580,6 +2664,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid HBL Acc is pr
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid IBFT Acc is provided with correct scheduled dates Daily add_new_schedu" +
             "le_KAINAT16")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -2609,7 +2695,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid HBL Acc is pr
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT Acc is provided with correct scheduled dates Daily add_new_schedu" +
-                    "le_KAINAT16", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "le_KAINAT16", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -2630,6 +2716,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT Acc is p
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid IBFT Acc is provided with correct scheduled dates Weekly add_new_sched" +
             "ule_KAINAT16")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -2659,7 +2747,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT Acc is p
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT Acc is provided with correct scheduled dates Weekly add_new_sched" +
-                    "ule_KAINAT16", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "ule_KAINAT16", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -2680,6 +2768,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT Acc is p
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid IBFT Acc is provided with correct scheduled dates Fortnightly add_new_" +
             "schedule_KAINAT16")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -2709,7 +2799,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT Acc is p
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT Acc is provided with correct scheduled dates Fortnightly add_new_" +
-                    "schedule_KAINAT16", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "schedule_KAINAT16", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -2730,6 +2820,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT Acc is p
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid IBFT Acc is provided with correct scheduled dates Monthly add_new_sche" +
             "dule_KAINAT16")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -2759,7 +2851,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT Acc is p
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT Acc is provided with correct scheduled dates Monthly add_new_sche" +
-                    "dule_KAINAT16", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "dule_KAINAT16", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -2780,6 +2872,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT Acc is p
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid IBFT Acc is provided with correct scheduled dates Quarterly add_new_sc" +
             "hedule_KAINAT16")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -2809,7 +2903,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT Acc is p
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT Acc is provided with correct scheduled dates Quarterly add_new_sc" +
-                    "hedule_KAINAT16", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "hedule_KAINAT16", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -2831,6 +2925,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT Acc is p
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid IBFT via IBAN Acc is provided with correct scheduled dates Daily add_n" +
             "ew_schedule_KAINAT16")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -2860,7 +2956,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT Acc is p
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT via IBAN Acc is provided with correct scheduled dates Daily add_n" +
-                    "ew_schedule_KAINAT16", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "ew_schedule_KAINAT16", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -2882,6 +2978,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT via IBAN
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid IBFT via IBAN Acc is provided with correct scheduled dates Weekly add_" +
             "new_schedule_KAINAT16")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -2911,7 +3009,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT via IBAN
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT via IBAN Acc is provided with correct scheduled dates Weekly add_" +
-                    "new_schedule_KAINAT16", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "new_schedule_KAINAT16", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -2933,6 +3031,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT via IBAN
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid IBFT via IBAN Acc is provided with correct scheduled dates Fortnightly" +
             " add_new_schedule_KAINAT16")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -2962,7 +3062,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT via IBAN
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT via IBAN Acc is provided with correct scheduled dates Fortnightly" +
-                    " add_new_schedule_KAINAT16", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    " add_new_schedule_KAINAT16", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -2984,6 +3084,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT via IBAN
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid IBFT via IBAN Acc is provided with correct scheduled dates Monthly add" +
             "_new_schedule_KAINAT16")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -3013,7 +3115,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT via IBAN
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT via IBAN Acc is provided with correct scheduled dates Monthly add" +
-                    "_new_schedule_KAINAT16", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "_new_schedule_KAINAT16", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -3035,6 +3137,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT via IBAN
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid IBFT via IBAN Acc is provided with correct scheduled dates Quarterly a" +
             "dd_new_schedule_KAINAT16")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -3064,7 +3168,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT via IBAN
         {
 #line 38
 this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT via IBAN Acc is provided with correct scheduled dates Quarterly a" +
-                    "dd_new_schedule_KAINAT16", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+                    "dd_new_schedule_KAINAT16", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -3083,6 +3187,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT via IBAN
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When Bene Account is LOAN add_new_schedule_KAINAT16")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When Bene Account is LOAN add_new_schedule_KAINAT16")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -3111,7 +3217,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When valid IBFT via IBAN
         public virtual void WhenUserTryToSendMoneyMobileAddNewSchedulePayment_WhenBeneAccountIsLOANAdd_New_Schedule_KAINAT16()
         {
 #line 38
-this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Bene Account is LOAN add_new_schedule_KAINAT16", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Bene Account is LOAN add_new_schedule_KAINAT16", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -3130,6 +3236,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Bene Account is LOA
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When Bene Account is FCY add_new_schedule_KAINAT16")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When Bene Account is FCY add_new_schedule_KAINAT16")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -3158,7 +3266,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Bene Account is LOA
         public virtual void WhenUserTryToSendMoneyMobileAddNewSchedulePayment_WhenBeneAccountIsFCYAdd_New_Schedule_KAINAT16()
         {
 #line 38
-this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Bene Account is FCY add_new_schedule_KAINAT16", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Bene Account is FCY add_new_schedule_KAINAT16", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -3177,6 +3285,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Bene Account is FCY
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When Bene Account is MONEY CLUB add_new_schedule_KAINAT16")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When Bene Account is MONEY CLUB add_new_schedule_KAINAT16")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -3205,7 +3315,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Bene Account is FCY
         public virtual void WhenUserTryToSendMoneyMobileAddNewSchedulePayment_WhenBeneAccountIsMONEYCLUBAdd_New_Schedule_KAINAT16()
         {
 #line 38
-this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Bene Account is MONEY CLUB add_new_schedule_KAINAT16", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Bene Account is MONEY CLUB add_new_schedule_KAINAT16", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -3224,6 +3334,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Bene Account is MON
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When Bene Account is BLOCKED FROM MISYS add_new_schedule_KAINAT16")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When Bene Account is BLOCKED FROM MISYS add_new_schedule_KAINAT16")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -3252,7 +3364,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Bene Account is MON
         public virtual void WhenUserTryToSendMoneyMobileAddNewSchedulePayment_WhenBeneAccountIsBLOCKEDFROMMISYSAdd_New_Schedule_KAINAT16()
         {
 #line 38
-this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Bene Account is BLOCKED FROM MISYS add_new_schedule_KAINAT16", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Bene Account is BLOCKED FROM MISYS add_new_schedule_KAINAT16", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -3271,6 +3383,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Bene Account is BLO
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When Bene Account is BRANCHLESS Konnect add_new_schedule_KAINAT16")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When Bene Account is BRANCHLESS Konnect add_new_schedule_KAINAT16")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -3299,7 +3413,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Bene Account is BLO
         public virtual void WhenUserTryToSendMoneyMobileAddNewSchedulePayment_WhenBeneAccountIsBRANCHLESSKonnectAdd_New_Schedule_KAINAT16()
         {
 #line 38
-this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Bene Account is BRANCHLESS Konnect add_new_schedule_KAINAT16", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Bene Account is BRANCHLESS Konnect add_new_schedule_KAINAT16", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -3318,6 +3432,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Bene Account is BRA
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When Bene Account has SPECIAL CONDITION add_new_schedule_KAINAT16")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When Bene Account has SPECIAL CONDITION add_new_schedule_KAINAT16")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -3346,7 +3462,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Bene Account is BRA
         public virtual void WhenUserTryToSendMoneyMobileAddNewSchedulePayment_WhenBeneAccountHasSPECIALCONDITIONAdd_New_Schedule_KAINAT16()
         {
 #line 38
-this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Bene Account has SPECIAL CONDITION add_new_schedule_KAINAT16", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Bene Account has SPECIAL CONDITION add_new_schedule_KAINAT16", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -3365,6 +3481,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Bene Account has SP
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When Daily Limit Exceeds on HBL Acc add_new_schedule_KAINAT16")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When Daily Limit Exceeds on HBL Acc add_new_schedule_KAINAT16")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -3393,7 +3511,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Bene Account has SP
         public virtual void WhenUserTryToSendMoneyMobileAddNewSchedulePayment_WhenDailyLimitExceedsOnHBLAccAdd_New_Schedule_KAINAT16()
         {
 #line 38
-this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Daily Limit Exceeds on HBL Acc add_new_schedule_KAINAT16", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Daily Limit Exceeds on HBL Acc add_new_schedule_KAINAT16", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -3412,6 +3530,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Daily Limit Exceeds
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When Daily Limit Exceeds on IBFT Acc add_new_schedule_KAINAT16")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When Daily Limit Exceeds on IBFT Acc add_new_schedule_KAINAT16")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -3440,7 +3560,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Daily Limit Exceeds
         public virtual void WhenUserTryToSendMoneyMobileAddNewSchedulePayment_WhenDailyLimitExceedsOnIBFTAccAdd_New_Schedule_KAINAT16()
         {
 #line 38
-this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Daily Limit Exceeds on IBFT Acc add_new_schedule_KAINAT16", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Daily Limit Exceeds on IBFT Acc add_new_schedule_KAINAT16", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -3459,6 +3579,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Daily Limit Exceeds
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When Daily Limit Exceeds on OWN Acc add_new_schedule_KAINAT16")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When Daily Limit Exceeds on OWN Acc add_new_schedule_KAINAT16")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -3487,7 +3609,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Daily Limit Exceeds
         public virtual void WhenUserTryToSendMoneyMobileAddNewSchedulePayment_WhenDailyLimitExceedsOnOWNAccAdd_New_Schedule_KAINAT16()
         {
 #line 38
-this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Daily Limit Exceeds on OWN Acc add_new_schedule_KAINAT16", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Daily Limit Exceeds on OWN Acc add_new_schedule_KAINAT16", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -3506,6 +3628,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Daily Limit Exceeds
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When Senders have INSUFFICIENT BALANCE add_new_schedule_KAINATISM")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When Senders have INSUFFICIENT BALANCE add_new_schedule_KAINATISM")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -3534,7 +3658,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Daily Limit Exceeds
         public virtual void WhenUserTryToSendMoneyMobileAddNewSchedulePayment_WhenSendersHaveINSUFFICIENTBALANCEAdd_New_Schedule_KAINATISM()
         {
 #line 38
-this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Senders have INSUFFICIENT BALANCE add_new_schedule_KAINATISM", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Senders have INSUFFICIENT BALANCE add_new_schedule_KAINATISM", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -3553,6 +3677,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Senders have INSUFF
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When Senders PSD Flag Y add_new_schedule_KAINATANEEL")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When Senders PSD Flag Y add_new_schedule_KAINATANEEL")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -3581,7 +3707,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Senders have INSUFF
         public virtual void WhenUserTryToSendMoneyMobileAddNewSchedulePayment_WhenSendersPSDFlagYAdd_New_Schedule_KAINATANEEL()
         {
 #line 38
-this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Senders PSD Flag Y add_new_schedule_KAINATANEEL", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Senders PSD Flag Y add_new_schedule_KAINATANEEL", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -3600,6 +3726,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Senders PSD Flag Y 
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When Senders PSD Flag N add_new_schedule_SUKAINA123")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When Senders PSD Flag N add_new_schedule_SUKAINA123")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:No_Of_Acconts_query", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
             "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
             "\')")]
@@ -3628,7 +3756,7 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Senders PSD Flag Y 
         public virtual void WhenUserTryToSendMoneyMobileAddNewSchedulePayment_WhenSendersPSDFlagNAdd_New_Schedule_SUKAINA123()
         {
 #line 38
-this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Senders PSD Flag N add_new_schedule_SUKAINA123", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
+this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Senders PSD Flag N add_new_schedule_SUKAINA123", "", "", "", "SELECT COUNT(*) FROM DC_CUSTOMER_ACCOUNT CA WHERE CA.CUSTOMER_INFO_ID = (SELECT D" +
                     "T.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{username}" +
                     "\')", "SELECT COUNT(*) FROM DC_FUND_TRANSFER_BENEFICIARY CA WHERE CA.CUSTOMER_INFO_ID = " +
                     "(SELECT DT.CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO DT WHERE DT.CUSTOMER_NAME = \'{" +
@@ -3640,6 +3768,8 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Senders PSD Flag N 
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment(
                     string @case, 
                     string status_Query, 
+                    string fCY_Check, 
+                    string conversion_Query, 
                     string beneName, 
                     string from_Account_Value, 
                     string amount_Value, 
@@ -3665,82 +3795,90 @@ this.WhenUserTryToSendMoneyMobileAddNewSchedulePayment("When Senders PSD Flag N 
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When user try to send money mobile using already added bene schedule payment", @__tags);
-#line 130
-this.ScenarioSetup(scenarioInfo);
-#line 131
- testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 132
- testRunner.And(string.Format("update the data by query \"{0}\" on DIGITAL_CHANNEL_SEC", status_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 133
- testRunner.And("the user is arrive to Mobile Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 134
- testRunner.And(string.Format("the test case expected result is \"{0}\"", expected_Result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 135
- testRunner.And("I am clicking on \"Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("update the data by query \"{0}\" on DIGITAL_CHANNEL_SEC", status_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 136
- testRunner.When("I am clicking on \"SendMoney_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("the user is arrive to Mobile Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 137
- testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("the test case expected result is \"{0}\"", expected_Result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 138
- testRunner.And("I am clicking on \"SendMoney_SkipBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"FCY_Tran_Check\"", fCY_Check), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 139
- testRunner.And(string.Format("I have given \"{0}\" on \"BillPayment_SearchBeneField\"", beneName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 140
- testRunner.And("I am clicking on \"SendMoney_SearchBeneConsumerNo\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I am clicking on \"SendMoney_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 141
- testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_FromAccount\"", from_Account_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 142
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_Amount\"", amount_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"SendMoney_SkipBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 143
- testRunner.When(string.Format("I select \"{0}\" on \"SendMoney_PurposeOfPayment\"", purposeOfPayment_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"BillPayment_SearchBeneField\"", beneName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 144
- testRunner.And("I am clicking on \"SendMoney_SchedulePayment_Check\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"SendMoney_SearchBeneConsumerNo\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 145
- testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_SchedulePayment_Frequency\"", frequency_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_FromAccount\"", from_Account_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 146
- testRunner.And("I am clicking on \"SendMoney_SchedulePayment_StartDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_Amount\"", amount_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 147
- testRunner.And(string.Format("I select from date \"{0}\"", from_Date_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify the message using element \"SendMoney_Buy_Rate\" through database on \"{0}\" o" +
+                        "n Schema \"DIGITAL_CHANNEL_SEC\"", conversion_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 148
+ testRunner.And(string.Format("verify the message using element \"SendMoney_Converted_Amount\" through database on" +
+                        " \"{0}\" on Schema \"DIGITAL_CHANNEL_SEC\"", conversion_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 149
- testRunner.And("I am clicking on \"SendMoney_SchedulePayment_EndDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When(string.Format("I select \"{0}\" on \"SendMoney_PurposeOfPayment\"", purposeOfPayment_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 150
- testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"SendMoney_SchedulePayment_Check\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 151
- testRunner.And(string.Format("I select to date \"{0}\"", to_Date_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_SchedulePayment_Frequency\"", frequency_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 152
- testRunner.And("I am clicking on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"SendMoney_SchedulePayment_StartDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 153
- testRunner.And("I am clicking on \"SendMoney_SchedulePayment_ViewSummary\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 154
- testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I select from date \"{0}\"", from_Date_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 155
- testRunner.And("I am verifying list of execution iterations on \"SendMoney_Btn_Summary_Iteration_D" +
-                    "ates\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"SendMoney_SchedulePayment_EndDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 156
- testRunner.And("I am clicking on \"SendMoney_Btn_Summary_OK\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 157
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_TranPass\"", tran_Pass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 158
  testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 157
+ testRunner.And(string.Format("I select to date \"{0}\"", to_Date_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 158
+ testRunner.And("I am clicking on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 159
- testRunner.And("I am performing on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"SendMoney_SchedulePayment_ViewSummary\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 160
  testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 161
- testRunner.And("I am clicking on \"BillPayment_Rating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am verifying list of execution iterations on \"SendMoney_Btn_Summary_Iteration_D" +
+                    "ates\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 162
+ testRunner.And("I am clicking on \"SendMoney_Btn_Summary_OK\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 163
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_TranPass\"", tran_Pass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 164
- testRunner.Then(string.Format("verify through \"{0}\" on \"SendMoney_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 165
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranType\"", tran_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am performing on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 166
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranSourceAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 167
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFrequency\"", frequency_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 168
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranPurpose\"", purpose_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 169
- testRunner.And("I am clicking on \"SendMoney_TranInfoClose_Bene\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"BillPayment_Rating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 170
+ testRunner.Then(string.Format("verify through \"{0}\" on \"SendMoney_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 171
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranType\"", tran_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 172
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranSourceAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 173
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFrequency\"", frequency_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 174
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranPurpose\"", purpose_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 175
+ testRunner.And("I am clicking on \"SendMoney_TranInfoClose_Bene\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 176
  testRunner.And("verify the result of schedule payment from database", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -3759,6 +3897,8 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid account no. and Schedule Dates are provided (Daily) schedule_bene_shak" +
             "ee1994")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneName", "Basit")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "14660017195901")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "10")]
@@ -3778,9 +3918,9 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment_WhenValidAccountNo_AndScheduleDatesAreProvidedDailySchedule_Bene_Shakee1994()
         {
-#line 130
+#line 133
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When valid account no. and Schedule Dates are provided (Daily) schedule_bene_shak" +
-                    "ee1994", "", "Basit", "14660017195901", "10", "Tax payment", "Daily", "2", "28", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "ee1994", "", "", "", "Basit", "14660017195901", "10", "Tax payment", "Daily", "2", "28", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "PASS", new string[] {
                         "source:Data/SendMoney_Schedule_Beneficiary.xlsx"});
@@ -3800,6 +3940,8 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid account no. and Schedule Dates are provided(Weekly) schedule_bene_shak" +
             "ee1994")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneName", "Basit")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "14660017195901")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "11")]
@@ -3819,9 +3961,9 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment_WhenValidAccountNo_AndScheduleDatesAreProvidedWeeklySchedule_Bene_Shakee1994()
         {
-#line 130
+#line 133
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When valid account no. and Schedule Dates are provided(Weekly) schedule_bene_shak" +
-                    "ee1994", "", "Basit", "14660017195901", "11", "Others", "Weekly", "2", "200", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "ee1994", "", "", "", "Basit", "14660017195901", "11", "Others", "Weekly", "2", "200", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "PASS", new string[] {
                         "source:Data/SendMoney_Schedule_Beneficiary.xlsx"});
@@ -3841,6 +3983,8 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid account no. and Schedule Dates are provided(Fortnightly) schedule_bene" +
             "_shakee1994")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneName", "Basit")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "14660017195901")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "12")]
@@ -3860,9 +4004,9 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment_WhenValidAccountNo_AndScheduleDatesAreProvidedFortnightlySchedule_Bene_Shakee1994()
         {
-#line 130
+#line 133
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When valid account no. and Schedule Dates are provided(Fortnightly) schedule_bene" +
-                    "_shakee1994", "", "Basit", "14660017195901", "12", "Others", "Fortnightly", "2", "400", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_shakee1994", "", "", "", "Basit", "14660017195901", "12", "Others", "Fortnightly", "2", "400", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "PASS", new string[] {
                         "source:Data/SendMoney_Schedule_Beneficiary.xlsx"});
@@ -3882,6 +4026,8 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid account no. and Schedule Dates are provided(Monthly) schedule_bene_sha" +
             "kee1994")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneName", "Basit")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "14660017195901")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "13")]
@@ -3901,9 +4047,9 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment_WhenValidAccountNo_AndScheduleDatesAreProvidedMonthlySchedule_Bene_Shakee1994()
         {
-#line 130
+#line 133
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When valid account no. and Schedule Dates are provided(Monthly) schedule_bene_sha" +
-                    "kee1994", "", "Basit", "14660017195901", "13", "Others", "Monthly", "2", "800", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "kee1994", "", "", "", "Basit", "14660017195901", "13", "Others", "Monthly", "2", "800", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "PASS", new string[] {
                         "source:Data/SendMoney_Schedule_Beneficiary.xlsx"});
@@ -3923,6 +4069,8 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid account no. and Schedule Dates are provided(Quarterly) schedule_bene_s" +
             "hakee1994")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneName", "Basit")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "14660017195901")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "14")]
@@ -3942,9 +4090,9 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment_WhenValidAccountNo_AndScheduleDatesAreProvidedQuarterlySchedule_Bene_Shakee1994()
         {
-#line 130
+#line 133
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When valid account no. and Schedule Dates are provided(Quarterly) schedule_bene_s" +
-                    "hakee1994", "", "Basit", "14660017195901", "14", "Others", "Quarterly", "2", "3200", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "hakee1994", "", "", "", "Basit", "14660017195901", "14", "Others", "Quarterly", "2", "3200", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "PASS", new string[] {
                         "source:Data/SendMoney_Schedule_Beneficiary.xlsx"});
@@ -3964,6 +4112,8 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid account no. and Schedule Dates are provided IBFT(Daily) schedule_bene_" +
             "shakee1994")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneName", "shakeel")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "14660017195901")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "1")]
@@ -3983,9 +4133,9 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment_WhenValidAccountNo_AndScheduleDatesAreProvidedIBFTDailySchedule_Bene_Shakee1994()
         {
-#line 130
+#line 133
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When valid account no. and Schedule Dates are provided IBFT(Daily) schedule_bene_" +
-                    "shakee1994", "", "shakeel", "14660017195901", "1", "Others", "Daily", "2", "28", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "shakee1994", "", "", "", "shakeel", "14660017195901", "1", "Others", "Daily", "2", "28", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "PASS", new string[] {
                         "source:Data/SendMoney_Schedule_Beneficiary.xlsx"});
@@ -4005,6 +4155,8 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid account no. and Schedule Dates are provided IBFT(Weekly) schedule_bene" +
             "_shakee1994")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneName", "shakeel")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "14660017195901")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "2")]
@@ -4024,9 +4176,9 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment_WhenValidAccountNo_AndScheduleDatesAreProvidedIBFTWeeklySchedule_Bene_Shakee1994()
         {
-#line 130
+#line 133
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When valid account no. and Schedule Dates are provided IBFT(Weekly) schedule_bene" +
-                    "_shakee1994", "", "shakeel", "14660017195901", "2", "Others", "Weekly", "2", "200", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_shakee1994", "", "", "", "shakeel", "14660017195901", "2", "Others", "Weekly", "2", "200", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "PASS", new string[] {
                         "source:Data/SendMoney_Schedule_Beneficiary.xlsx"});
@@ -4046,6 +4198,8 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid account no. and Schedule Dates are provided IBFT(Fortnightly) schedule" +
             "_bene_shakee1994")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneName", "shakeel")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "14660017195901")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "3")]
@@ -4065,9 +4219,9 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment_WhenValidAccountNo_AndScheduleDatesAreProvidedIBFTFortnightlySchedule_Bene_Shakee1994()
         {
-#line 130
+#line 133
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When valid account no. and Schedule Dates are provided IBFT(Fortnightly) schedule" +
-                    "_bene_shakee1994", "", "shakeel", "14660017195901", "3", "Others", "Fortnightly", "2", "400", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "_bene_shakee1994", "", "", "", "shakeel", "14660017195901", "3", "Others", "Fortnightly", "2", "400", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "PASS", new string[] {
                         "source:Data/SendMoney_Schedule_Beneficiary.xlsx"});
@@ -4087,6 +4241,8 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid account no. and Schedule Dates are provided IBFT(Monthly) schedule_ben" +
             "e_shakee1994")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneName", "shakeel")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "14660017195901")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "4")]
@@ -4106,9 +4262,9 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment_WhenValidAccountNo_AndScheduleDatesAreProvidedIBFTMonthlySchedule_Bene_Shakee1994()
         {
-#line 130
+#line 133
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When valid account no. and Schedule Dates are provided IBFT(Monthly) schedule_ben" +
-                    "e_shakee1994", "", "shakeel", "14660017195901", "4", "Others", "Monthly", "2", "800", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "e_shakee1994", "", "", "", "shakeel", "14660017195901", "4", "Others", "Monthly", "2", "800", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "PASS", new string[] {
                         "source:Data/SendMoney_Schedule_Beneficiary.xlsx"});
@@ -4128,6 +4284,8 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid account no. and Schedule Dates are provided IBFT(Quarterly) schedule_b" +
             "ene_shakee1994")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneName", "shakeel")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "14660017195901")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "5")]
@@ -4147,9 +4305,9 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment_WhenValidAccountNo_AndScheduleDatesAreProvidedIBFTQuarterlySchedule_Bene_Shakee1994()
         {
-#line 130
+#line 133
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When valid account no. and Schedule Dates are provided IBFT(Quarterly) schedule_b" +
-                    "ene_shakee1994", "", "shakeel", "14660017195901", "5", "Others", "Quarterly", "2", "3200", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "ene_shakee1994", "", "", "", "shakeel", "14660017195901", "5", "Others", "Quarterly", "2", "3200", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "PASS", new string[] {
                         "source:Data/SendMoney_Schedule_Beneficiary.xlsx"});
@@ -4169,6 +4327,8 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid account no. and Schedule Dates are provided IBFT via IBAN(Daily) sched" +
             "ule_bene_shakee1994")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneName", "MicrofinanceIBFTPSDYIBAN")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "14660017195901")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "6")]
@@ -4188,9 +4348,9 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment_WhenValidAccountNo_AndScheduleDatesAreProvidedIBFTViaIBANDailySchedule_Bene_Shakee1994()
         {
-#line 130
+#line 133
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When valid account no. and Schedule Dates are provided IBFT via IBAN(Daily) sched" +
-                    "ule_bene_shakee1994", "", "MicrofinanceIBFTPSDYIBAN", "14660017195901", "6", "Tax payment", "Daily", "2", "28", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "ule_bene_shakee1994", "", "", "", "MicrofinanceIBFTPSDYIBAN", "14660017195901", "6", "Tax payment", "Daily", "2", "28", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "PASS", new string[] {
                         "source:Data/SendMoney_Schedule_Beneficiary.xlsx"});
@@ -4210,6 +4370,8 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid account no. and Schedule Dates are provided IBFT via IBAN(Weekly) sche" +
             "dule_bene_shakee1994")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneName", "MicrofinanceIBFTPSDYIBAN")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "14660017195901")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "7")]
@@ -4229,9 +4391,9 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment_WhenValidAccountNo_AndScheduleDatesAreProvidedIBFTViaIBANWeeklySchedule_Bene_Shakee1994()
         {
-#line 130
+#line 133
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When valid account no. and Schedule Dates are provided IBFT via IBAN(Weekly) sche" +
-                    "dule_bene_shakee1994", "", "MicrofinanceIBFTPSDYIBAN", "14660017195901", "7", "Tax payment", "Weekly", "2", "200", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "dule_bene_shakee1994", "", "", "", "MicrofinanceIBFTPSDYIBAN", "14660017195901", "7", "Tax payment", "Weekly", "2", "200", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "PASS", new string[] {
                         "source:Data/SendMoney_Schedule_Beneficiary.xlsx"});
@@ -4251,6 +4413,8 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid account no. and Schedule Dates are provided IBFT via IBAN(Fortnightly)" +
             " schedule_bene_shakee1994")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneName", "MicrofinanceIBFTPSDYIBAN")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "14660017195901")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "8")]
@@ -4270,9 +4434,9 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment_WhenValidAccountNo_AndScheduleDatesAreProvidedIBFTViaIBANFortnightlySchedule_Bene_Shakee1994()
         {
-#line 130
+#line 133
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When valid account no. and Schedule Dates are provided IBFT via IBAN(Fortnightly)" +
-                    " schedule_bene_shakee1994", "", "MicrofinanceIBFTPSDYIBAN", "14660017195901", "8", "Tax payment", "Fortnightly", "2", "400", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    " schedule_bene_shakee1994", "", "", "", "MicrofinanceIBFTPSDYIBAN", "14660017195901", "8", "Tax payment", "Fortnightly", "2", "400", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "PASS", new string[] {
                         "source:Data/SendMoney_Schedule_Beneficiary.xlsx"});
@@ -4292,6 +4456,8 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid account no. and Schedule Dates are provided IBFT via IBAN(Monthly) sch" +
             "edule_bene_shakee1994")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneName", "MicrofinanceIBFTPSDYIBAN")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "14660017195901")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "9")]
@@ -4311,9 +4477,9 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment_WhenValidAccountNo_AndScheduleDatesAreProvidedIBFTViaIBANMonthlySchedule_Bene_Shakee1994()
         {
-#line 130
+#line 133
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When valid account no. and Schedule Dates are provided IBFT via IBAN(Monthly) sch" +
-                    "edule_bene_shakee1994", "", "MicrofinanceIBFTPSDYIBAN", "14660017195901", "9", "Tax payment", "Monthly", "2", "800", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "edule_bene_shakee1994", "", "", "", "MicrofinanceIBFTPSDYIBAN", "14660017195901", "9", "Tax payment", "Monthly", "2", "800", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "PASS", new string[] {
                         "source:Data/SendMoney_Schedule_Beneficiary.xlsx"});
@@ -4333,6 +4499,8 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid account no. and Schedule Dates are provided IBFT via IBAN(Quarterly) s" +
             "chedule_bene_shakee1994")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneName", "MicrofinanceIBFTPSDYIBAN")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "14660017195901")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "10")]
@@ -4352,9 +4520,9 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment_WhenValidAccountNo_AndScheduleDatesAreProvidedIBFTViaIBANQuarterlySchedule_Bene_Shakee1994()
         {
-#line 130
+#line 133
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When valid account no. and Schedule Dates are provided IBFT via IBAN(Quarterly) s" +
-                    "chedule_bene_shakee1994", "", "MicrofinanceIBFTPSDYIBAN", "14660017195901", "10", "Tax payment", "Quarterly", "2", "3200", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "chedule_bene_shakee1994", "", "", "", "MicrofinanceIBFTPSDYIBAN", "14660017195901", "10", "Tax payment", "Quarterly", "2", "3200", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "PASS", new string[] {
                         "source:Data/SendMoney_Schedule_Beneficiary.xlsx"});
@@ -4374,6 +4542,8 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid account no. and Schedule Dates are provided with invalid purpose of ac" +
             "count schedule_bene_shakee1994")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneName", "Basit")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "14660017195901")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "2")]
@@ -4393,9 +4563,9 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment_WhenValidAccountNo_AndScheduleDatesAreProvidedWithInvalidPurposeOfAccountSchedule_Bene_Shakee1994()
         {
-#line 130
+#line 133
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When valid account no. and Schedule Dates are provided with invalid purpose of ac" +
-                    "count schedule_bene_shakee1994", "", "Basit", "14660017195901", "2", "qaqa", "Daily", "2", "28", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "count schedule_bene_shakee1994", "", "", "", "Basit", "14660017195901", "2", "qaqa", "Daily", "2", "28", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "FAIL", new string[] {
                         "source:Data/SendMoney_Schedule_Beneficiary.xlsx"});
@@ -4414,6 +4584,8 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid account no. and from date is less than to date schedule_bene_shakee199" +
             "4")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneName", "Basit")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "14660017195901")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "2")]
@@ -4433,9 +4605,9 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment_WhenValidAccountNo_AndFromDateIsLessThanToDateSchedule_Bene_Shakee1994()
         {
-#line 130
+#line 133
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When valid account no. and from date is less than to date schedule_bene_shakee199" +
-                    "4", "", "Basit", "14660017195901", "2", "Others", "Daily", "2", "28", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "4", "", "", "", "Basit", "14660017195901", "2", "Others", "Daily", "2", "28", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "FAIL", new string[] {
                         "source:Data/SendMoney_Schedule_Beneficiary.xlsx"});
@@ -4452,6 +4624,8 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid account no. with negative amount schedule_bene_shakee1994")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid account no. with negative amount schedule_bene_shakee1994")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneName", "Basit")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "14660017195901")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "-2")]
@@ -4471,8 +4645,8 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment_WhenValidAccountNo_WithNegativeAmountSchedule_Bene_Shakee1994()
         {
-#line 130
-this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When valid account no. with negative amount schedule_bene_shakee1994", "", "Basit", "14660017195901", "-2", "Others", "Daily", "2", "28", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+#line 133
+this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When valid account no. with negative amount schedule_bene_shakee1994", "", "", "", "Basit", "14660017195901", "-2", "Others", "Daily", "2", "28", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "FAIL", new string[] {
                         "source:Data/SendMoney_Schedule_Beneficiary.xlsx"});
@@ -4492,6 +4666,8 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid account no. and Schedule Dates are provided with invalid transaction p" +
             "assword schedule_bene_shakee1994")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneName", "Basit")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "14660017195901")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "3")]
@@ -4511,9 +4687,9 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment_WhenValidAccountNo_AndScheduleDatesAreProvidedWithInvalidTransactionPasswordSchedule_Bene_Shakee1994()
         {
-#line 130
+#line 133
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When valid account no. and Schedule Dates are provided with invalid transaction p" +
-                    "assword schedule_bene_shakee1994", "", "Basit", "14660017195901", "3", "Others", "Weekly", "2", "200", "pakistan021", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "assword schedule_bene_shakee1994", "", "", "", "Basit", "14660017195901", "3", "Others", "Weekly", "2", "200", "pakistan021", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "FAIL", new string[] {
                         "source:Data/SendMoney_Schedule_Beneficiary.xlsx"});
@@ -4533,6 +4709,8 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid account no. and Schedule Dates are provided own account (Daily) schedu" +
             "le_bene_kashif")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneName", "KASHIF AHMED")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "00476001933901")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "15")]
@@ -4552,9 +4730,9 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment_WhenValidAccountNo_AndScheduleDatesAreProvidedOwnAccountDailySchedule_Bene_Kashif()
         {
-#line 130
+#line 133
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When valid account no. and Schedule Dates are provided own account (Daily) schedu" +
-                    "le_bene_kashif", "", "KASHIF AHMED", "00476001933901", "15", "Others", "Daily", "2", "28", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "le_bene_kashif", "", "", "", "KASHIF AHMED", "00476001933901", "15", "Others", "Daily", "2", "28", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "PASS", new string[] {
                         "source:Data/SendMoney_Schedule_Beneficiary.xlsx"});
@@ -4574,6 +4752,8 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid account no. and Schedule Dates are provided own account(Weekly) schedu" +
             "le_bene_kashif")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneName", "KASHIF AHMED")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "00476001933901")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "16")]
@@ -4593,9 +4773,9 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment_WhenValidAccountNo_AndScheduleDatesAreProvidedOwnAccountWeeklySchedule_Bene_Kashif()
         {
-#line 130
+#line 133
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When valid account no. and Schedule Dates are provided own account(Weekly) schedu" +
-                    "le_bene_kashif", "", "KASHIF AHMED", "00476001933901", "16", "Others", "Weekly", "2", "200", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "le_bene_kashif", "", "", "", "KASHIF AHMED", "00476001933901", "16", "Others", "Weekly", "2", "200", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "PASS", new string[] {
                         "source:Data/SendMoney_Schedule_Beneficiary.xlsx"});
@@ -4615,6 +4795,8 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid account no. and Schedule Dates are provided own account(Fortnightly) s" +
             "chedule_bene_kashif")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneName", "KASHIF AHMED")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "00476001933901")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "17")]
@@ -4634,9 +4816,9 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment_WhenValidAccountNo_AndScheduleDatesAreProvidedOwnAccountFortnightlySchedule_Bene_Kashif()
         {
-#line 130
+#line 133
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When valid account no. and Schedule Dates are provided own account(Fortnightly) s" +
-                    "chedule_bene_kashif", "", "KASHIF AHMED", "00476001933901", "17", "Others", "Fortnightly", "2", "400", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "chedule_bene_kashif", "", "", "", "KASHIF AHMED", "00476001933901", "17", "Others", "Fortnightly", "2", "400", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "PASS", new string[] {
                         "source:Data/SendMoney_Schedule_Beneficiary.xlsx"});
@@ -4656,6 +4838,8 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid account no. and Schedule Dates are provided own account(Monthly) sched" +
             "ule_bene_kashif")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneName", "KASHIF AHMED")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "00476001933901")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "18")]
@@ -4675,9 +4859,9 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment_WhenValidAccountNo_AndScheduleDatesAreProvidedOwnAccountMonthlySchedule_Bene_Kashif()
         {
-#line 130
+#line 133
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When valid account no. and Schedule Dates are provided own account(Monthly) sched" +
-                    "ule_bene_kashif", "", "KASHIF AHMED", "00476001933901", "18", "Others", "Monthly", "2", "800", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "ule_bene_kashif", "", "", "", "KASHIF AHMED", "00476001933901", "18", "Others", "Monthly", "2", "800", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "PASS", new string[] {
                         "source:Data/SendMoney_Schedule_Beneficiary.xlsx"});
@@ -4697,6 +4881,8 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid account no. and Schedule Dates are provided own account(Quarterly) sch" +
             "edule_bene_kashif")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneName", "KASHIF AHMED")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "00476001933901")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "19")]
@@ -4716,9 +4902,9 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment_WhenValidAccountNo_AndScheduleDatesAreProvidedOwnAccountQuarterlySchedule_Bene_Kashif()
         {
-#line 130
+#line 133
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When valid account no. and Schedule Dates are provided own account(Quarterly) sch" +
-                    "edule_bene_kashif", "", "KASHIF AHMED", "00476001933901", "19", "Others", "Quarterly", "2", "3200", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "edule_bene_kashif", "", "", "", "KASHIF AHMED", "00476001933901", "19", "Others", "Quarterly", "2", "3200", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "PASS", new string[] {
                         "source:Data/SendMoney_Schedule_Beneficiary.xlsx"});
@@ -4738,6 +4924,8 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid account no. and Schedule Dates are provided with HBL PSD_Y schedule_be" +
             "ne_ZUBAIR01")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneName", "qaseem HBL")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "07867902397801")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "25002")]
@@ -4757,9 +4945,9 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "PASS")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment_WhenValidAccountNo_AndScheduleDatesAreProvidedWithHBLPSD_YSchedule_Bene_ZUBAIR01()
         {
-#line 130
+#line 133
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When valid account no. and Schedule Dates are provided with HBL PSD_Y schedule_be" +
-                    "ne_ZUBAIR01", "", "qaseem HBL", "07867902397801", "25002", "Tax payment", "Daily", "2", "28", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "ne_ZUBAIR01", "", "", "", "qaseem HBL", "07867902397801", "25002", "Tax payment", "Daily", "2", "28", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "PASS", new string[] {
                         "source:Data/SendMoney_Schedule_Beneficiary.xlsx"});
@@ -4779,6 +4967,8 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid account no. and Schedule Dates are provided with HBL IVR_N schedule_be" +
             "ne_pakistan2323")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneName", "JZHVVN AZRWR")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "04037900822003")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "2")]
@@ -4798,9 +4988,9 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment_WhenValidAccountNo_AndScheduleDatesAreProvidedWithHBLIVR_NSchedule_Bene_Pakistan2323()
         {
-#line 130
+#line 133
 this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When valid account no. and Schedule Dates are provided with HBL IVR_N schedule_be" +
-                    "ne_pakistan2323", "", "JZHVVN AZRWR", "04037900822003", "2", "Tax payment", "Daily", "2", "28", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+                    "ne_pakistan2323", "", "", "", "JZHVVN AZRWR", "04037900822003", "2", "Tax payment", "Daily", "2", "28", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "FAIL", new string[] {
                         "source:Data/SendMoney_Schedule_Beneficiary.xlsx"});
@@ -4817,6 +5007,8 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "When valid account no. with lock transaction password schedule_bene_saleem236")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Case", "When valid account no. with lock transaction password schedule_bene_saleem236")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:status_query", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FCY_Check", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:conversion_query", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:BeneName", "Afzaal")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From_Account_Value", "23057904586603")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Amount_Value", "2")]
@@ -4836,8 +5028,8 @@ this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When vali
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Expected_Result", "FAIL")]
         public virtual void WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment_WhenValidAccountNo_WithLockTransactionPasswordSchedule_Bene_Saleem236()
         {
-#line 130
-this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When valid account no. with lock transaction password schedule_bene_saleem236", "", "Afzaal", "23057904586603", "2", "Others", "Daily", "2", "28", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
+#line 133
+this.WhenUserTryToSendMoneyMobileUsingAlreadyAddedBeneSchedulePayment("When valid account no. with lock transaction password schedule_bene_saleem236", "", "", "", "Afzaal", "23057904586603", "2", "Others", "Daily", "2", "28", "pakistan2", "Transaction is successful. ", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "FAIL", new string[] {
                         "source:Data/SendMoney_Schedule_Beneficiary.xlsx"});

@@ -11,6 +11,7 @@ Scenario Outline: When user try to send money mobile HBL or Konnect Account usin
 	And I am clicking on "Dashboard"
 	When I save Account Balances
 	And I set value in context from data "0" as "term_deposit_flag" 
+	And I set value in context from data "<FCY_Check>" as "FCY_Tran_Check"
 	And I set value in context from database "<No_Of_Acconts_query>" as "No_Of_Accounts" on Schema "<db_val>" 
 	And I set value in context from database "<Bene_Count_Query>" as "Beneficiary_Count_Inter_Branch" on Schema "<db_val>" 
 	And I am clicking on "Dashboard_More"
@@ -21,8 +22,12 @@ Scenario Outline: When user try to send money mobile HBL or Konnect Account usin
 	And I set value in context from data "<Account_Number_Value>" as "ToAccount"
 	And I set value in context from data "SendMoney" as "Transaction_Type"
 	And I have given "<Account_Number_Value>" on "SendMoney_ToAccount"
+	And I am clicking on "SendMoney_AccVerifyBtn"
+	And I wait 5000
 	And I scroll down
 	And I have given "<Amount_Value>" on "SendMoney_Amount"
+	And verify the message using element "SendMoney_Buy_Rate" through database on "<conversion_query>" on Schema "DIGITAL_CHANNEL_SEC"
+	And verify the message using element "SendMoney_Converted_Amount" through database on "<conversion_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	When I select "<PurposeOfPayment_Value>" on "SendMoney_PurposeOfPayment"
 	And I scroll down
 	And I have given "<Bene_Nick>" on "SendMoney_BeneNick"
@@ -72,7 +77,7 @@ Scenario Outline: When user try to send money mobile HBL or Konnect Account usin
 	And verify through database on "<purpose_query>" on Schema "<db_val>" on "SendMoney_TranPurpose"
 	@source:Data/SendMoneyViaMore_Interbranch.xlsx
 	Examples: 
-	|Case|status_query|No_Of_Acconts_query|Bene_Count_Query|Category_Value|From_Account_Value|Account_Number_Value|Amount_Value|PurposeOfPayment_Value|Bene_Nick|Bene_Mobile_No|Bene_Email|OTP_Value|Tran_Pass_Value|Success_Message|tran_type_query|tran_amount_query|from_account_query|to_account_query|to_bank_query|bene_name_query|purpose_query|db_val|count_query|
+	|Case|status_query|FCY_Check|conversion_query|No_Of_Acconts_query|Bene_Count_Query|Category_Value|From_Account_Value|Account_Number_Value|Amount_Value|PurposeOfPayment_Value|Bene_Nick|Bene_Mobile_No|Bene_Email|OTP_Value|Tran_Pass_Value|Success_Message|tran_type_query|tran_amount_query|from_account_query|to_account_query|to_bank_query|bene_name_query|purpose_query|db_val|count_query|
 
 
 @SendMoney @SendMoneyHBLKonnect
@@ -83,6 +88,7 @@ Scenario Outline: When user try to send money mobile Other Bank Account using mo
 	And I am clicking on "Dashboard"
 	When I save Account Balances
 	And I set value in context from data "0" as "term_deposit_flag" 
+	And I set value in context from data "<FCY_Check>" as "FCY_Tran_Check"
 	#And I set value in context from database "<No_Of_Acconts_query>" as "No_Of_Accounts" on Schema "<db_val>" 
 	And I set value in context from database "<Bene_Count_Query>" as "Beneficiary_Count_Inter_Bank" on Schema "<db_val>" 
 	And I am clicking on "Dashboard_More"
@@ -93,8 +99,12 @@ Scenario Outline: When user try to send money mobile Other Bank Account using mo
 	And I set value in context from data "<Account_Number_Value>" as "ToAccount"
 	And I set value in context from data "SendMoney" as "Transaction_Type"
 	And I have given "<Account_Number_Value>" on "SendMoney_ToAccount"
+	And I am clicking on "SendMoney_AccVerifyBtn"
+	And I wait 5000
 	And I scroll down
 	And I have given "<Amount_Value>" on "SendMoney_Amount"
+	And verify the message using element "SendMoney_Buy_Rate" through database on "<conversion_query>" on Schema "DIGITAL_CHANNEL_SEC"
+	And verify the message using element "SendMoney_Converted_Amount" through database on "<conversion_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	When I select "<PurposeOfPayment_Value>" on "SendMoney_PurposeOfPayment"
 	And I scroll down
 	And I have given "<Bene_Nick>" on "SendMoney_BeneNick"
@@ -144,7 +154,7 @@ Scenario Outline: When user try to send money mobile Other Bank Account using mo
 	And verify through database on "<purpose_query>" on Schema "<db_val>" on "SendMoney_TranPurpose"
 	@source:Data/SendMoneyViaMore_Interbank.xlsx
 	Examples: 
-	|Case|status_query|Bene_Count_Query|Category_Value|From_Account_Value|Account_Number_Value|Amount_Value|PurposeOfPayment_Value|Bene_Nick|Bene_Mobile_No|Bene_Email|OTP_Value|Tran_Pass_Value|Success_Message|tran_type_query|tran_amount_query|from_account_query|to_account_query|to_bank_query|bene_name_query|purpose_query|db_val|count_query|
+	|Case|status_query|FCY_Check|conversion_query|Bene_Count_Query|Category_Value|From_Account_Value|Account_Number_Value|Amount_Value|PurposeOfPayment_Value|Bene_Nick|Bene_Mobile_No|Bene_Email|OTP_Value|Tran_Pass_Value|Success_Message|tran_type_query|tran_amount_query|from_account_query|to_account_query|to_bank_query|bene_name_query|purpose_query|db_val|count_query|
 
 
 @SendMoney @SendMoneyHBLKonnect
@@ -155,6 +165,7 @@ Scenario Outline: When user try to send money mobile Schedule HBL or Konnect Acc
 	And I am clicking on "Dashboard"
 	When I save Account Balances
 	And I set value in context from data "0" as "term_deposit_flag" 
+	And I set value in context from data "<FCY_Check>" as "FCY_Tran_Check"
 	And I set value in context from database "<No_Of_Acconts_query>" as "No_Of_Accounts" on Schema "<db_val>" 
 	And I set value in context from database "<Bene_Count_Query>" as "Beneficiary_Count_Inter_Branch" on Schema "<db_val>" 
 	And I am clicking on "Dashboard_More"
@@ -166,8 +177,12 @@ Scenario Outline: When user try to send money mobile Schedule HBL or Konnect Acc
 	And I set value in context from data "<Account_Number_Value>" as "ToAccount"
 	And I set value in context from data "SendMoney" as "Transaction_Type"
 	And I have given "<Account_Number_Value>" on "SendMoney_ToAccount"
+	And I am clicking on "SendMoney_AccVerifyBtn"
+	And I wait 5000
 	And I scroll down
 	And I have given "<Amount_Value>" on "SendMoney_Amount"
+	And verify the message using element "SendMoney_Buy_Rate" through database on "<conversion_query>" on Schema "DIGITAL_CHANNEL_SEC"
+	And verify the message using element "SendMoney_Converted_Amount" through database on "<conversion_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	When I select "<PurposeOfPayment_Value>" on "SendMoney_PurposeOfPayment"
 	And I scroll down
 	And I have given "<Bene_Nick>" on "SendMoney_BeneNick"
@@ -232,7 +247,7 @@ Scenario Outline: When user try to send money mobile Schedule HBL or Konnect Acc
 	And verify through database on "<purpose_query>" on Schema "<db_val>" on "SendMoney_TranPurpose"
 	@source:Data/SendMoneyViaMore_Interbranch_Schedule.xlsx
 	Examples: 
-	|Case|status_query|No_Of_Acconts_query|Bene_Count_Query|Category_Value|From_Account_Value|Bank_Value|Account_Number_Value|Amount_Value|PurposeOfPayment_Value|Bene_Nick|Bene_Mobile_No|Bene_Email|Frequency_Value|From_Date_Value|To_Date_Value|OTP_Value|Tran_Pass_Value|Success_Message|tran_type_query|tran_amount_query|from_account_query|to_account_query|to_bank_query|bene_name_query|purpose_query|db_val|count_query|
+	|Case|status_query|FCY_Check|conversion_query|No_Of_Acconts_query|Bene_Count_Query|Category_Value|From_Account_Value|Bank_Value|Account_Number_Value|Amount_Value|PurposeOfPayment_Value|Bene_Nick|Bene_Mobile_No|Bene_Email|Frequency_Value|From_Date_Value|To_Date_Value|OTP_Value|Tran_Pass_Value|Success_Message|tran_type_query|tran_amount_query|from_account_query|to_account_query|to_bank_query|bene_name_query|purpose_query|db_val|count_query|
 
 
 @SendMoney @SendMoneyHBLKonnect
@@ -243,6 +258,7 @@ Scenario Outline: When user try to send money mobile Schedule Other Bank Account
 	And I am clicking on "Dashboard"
 	When I save Account Balances
 	And I set value in context from data "0" as "term_deposit_flag" 
+	And I set value in context from data "<FCY_Check>" as "FCY_Tran_Check"
 	#And I set value in context from database "<No_Of_Acconts_query>" as "No_Of_Accounts" on Schema "<db_val>" 
 	And I set value in context from database "<Bene_Count_Query>" as "Beneficiary_Count_Inter_Bank" on Schema "<db_val>" 
 	And I am clicking on "Dashboard_More"
@@ -254,8 +270,12 @@ Scenario Outline: When user try to send money mobile Schedule Other Bank Account
 	And I set value in context from data "<Account_Number_Value>" as "ToAccount"
 	And I set value in context from data "SendMoney" as "Transaction_Type"
 	And I have given "<Account_Number_Value>" on "SendMoney_ToAccount"
+	And I am clicking on "SendMoney_AccVerifyBtn"
+	And I wait 5000
 	And I scroll down
 	And I have given "<Amount_Value>" on "SendMoney_Amount"
+	And verify the message using element "SendMoney_Buy_Rate" through database on "<conversion_query>" on Schema "DIGITAL_CHANNEL_SEC"
+	And verify the message using element "SendMoney_Converted_Amount" through database on "<conversion_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	When I select "<PurposeOfPayment_Value>" on "SendMoney_PurposeOfPayment"
 	And I scroll down
 	And I have given "<Bene_Nick>" on "SendMoney_BeneNick"
@@ -320,7 +340,7 @@ Scenario Outline: When user try to send money mobile Schedule Other Bank Account
 	And verify through database on "<purpose_query>" on Schema "<db_val>" on "SendMoney_TranPurpose"
 	@source:Data/SendMoneyViaMore_Interbank_Schedule.xlsx
 	Examples: 
-	|Case|status_query|Bene_Count_Query|Category_Value|From_Account_Value|Bank_Value|Account_Number_Value|Amount_Value|PurposeOfPayment_Value|Bene_Nick|Bene_Mobile_No|Bene_Email|Frequency_Value|From_Date_Value|To_Date_Value|OTP_Value|Tran_Pass_Value|Success_Message|tran_type_query|tran_amount_query|from_account_query|to_account_query|to_bank_query|bene_name_query|purpose_query|db_val|count_query|
+	|Case|status_query|FCY_Check|conversion_query|Bene_Count_Query|Category_Value|From_Account_Value|Bank_Value|Account_Number_Value|Amount_Value|PurposeOfPayment_Value|Bene_Nick|Bene_Mobile_No|Bene_Email|Frequency_Value|From_Date_Value|To_Date_Value|OTP_Value|Tran_Pass_Value|Success_Message|tran_type_query|tran_amount_query|from_account_query|to_account_query|to_bank_query|bene_name_query|purpose_query|db_val|count_query|
 
 @mytag
 Scenario Outline: When user try to send money mobile Schedule HBL Or Konnect using more button 
@@ -330,6 +350,7 @@ Scenario Outline: When user try to send money mobile Schedule HBL Or Konnect usi
 	And I am clicking on "Dashboard"
 	When I save Account Balances
 	And I set value in context from data "0" as "term_deposit_flag" 
+	And I set value in context from data "<FCY_Check>" as "FCY_Tran_Check"
 	#And I set value in context from database "<No_Of_Acconts_query>" as "No_Of_Accounts" on Schema "<db_val>" 
 	#And I set value in context from database "<Bene_Count_Query>" as "Beneficiary_Count_Inter_Bank" on Schema "<db_val>" 
 	And I am clicking on "Dashboard_More"
@@ -345,6 +366,8 @@ Scenario Outline: When user try to send money mobile Schedule HBL Or Konnect usi
 	#And I have given "<Account_Number_Value>" on "SendMoney_ToAccount"
 	#And I scroll down
 	And I have given "<Amount_Value>" on "SendMoney_Amount"
+	And verify the message using element "SendMoney_Buy_Rate" through database on "<conversion_query>" on Schema "DIGITAL_CHANNEL_SEC"
+	And verify the message using element "SendMoney_Converted_Amount" through database on "<conversion_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	When I select "<PurposeOfPayment_Value>" on "SendMoney_PurposeOfPayment"
 	#And I scroll down
 	#And I have given "<Bene_Nick>" on "SendMoney_BeneNick"
@@ -395,7 +418,7 @@ Scenario Outline: When user try to send money mobile Schedule HBL Or Konnect usi
 	And verify through database on "<purpose_query>" on Schema "<db_val>" on "SendMoney_TranPurpose"
 	@source:Data/SendMoneyViaMore_Interbank_Schedule.xlsx
 	Examples: 
-	|Case|status_query|Category_Value|BeneName|From_Account_Value|Amount_Value|PurposeOfPayment_Value|Tran_Pass_Value|Success_Message|tran_type_query|tran_amount_query|from_account_query|to_account_query|to_bank_query|bene_name_query|purpose_query|db_val|count_query|
+	|Case|status_query|FCY_Check|conversion_query|Category_Value|BeneName|From_Account_Value|Amount_Value|PurposeOfPayment_Value|Tran_Pass_Value|Success_Message|tran_type_query|tran_amount_query|from_account_query|to_account_query|to_bank_query|bene_name_query|purpose_query|db_val|count_query|
 		
 
 @mytag
@@ -406,6 +429,7 @@ Scenario Outline: When user try to send money mobile interbranch using already a
 	And I am clicking on "Dashboard"
 	When I save Account Balances
 	And I set value in context from data "0" as "term_deposit_flag" 
+	And I set value in context from data "<FCY_Check>" as "FCY_Tran_Check"
 	#And I set value in context from database "<No_Of_Acconts_query>" as "No_Of_Accounts" on Schema "<db_val>" 
 	#And I set value in context from database "<Bene_Count_Query>" as "Beneficiary_Count_Inter_Bank" on Schema "<db_val>" 
 	And I am clicking on "Dashboard_More"
@@ -421,6 +445,8 @@ Scenario Outline: When user try to send money mobile interbranch using already a
 	#And I have given "<Account_Number_Value>" on "SendMoney_ToAccount"
 	#And I scroll down
 	And I have given "<Amount_Value>" on "SendMoney_Amount"
+	And verify the message using element "SendMoney_Buy_Rate" through database on "<conversion_query>" on Schema "DIGITAL_CHANNEL_SEC"
+	And verify the message using element "SendMoney_Converted_Amount" through database on "<conversion_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	When I select "<PurposeOfPayment_Value>" on "SendMoney_PurposeOfPayment"
 	#And I scroll down
 	#And I have given "<Bene_Nick>" on "SendMoney_BeneNick"
@@ -471,7 +497,7 @@ Scenario Outline: When user try to send money mobile interbranch using already a
 	And verify through database on "<purpose_query>" on Schema "<db_val>" on "SendMoney_TranPurpose"
 	@source:Data/SendMoney(ViaBene)_Interbranch.xlsx
 	Examples: 
-	|Case|status_query|Category_Value|BeneName|From_Account_Value|Amount_Value|PurposeOfPayment_Value|Tran_Pass_Value|Success_Message|tran_type_query|tran_amount_query|from_account_query|to_account_query|to_bank_query|bene_name_query|purpose_query|db_val|
+	|Case|status_query|FCY_Check|conversion_query|Category_Value|BeneName|From_Account_Value|Amount_Value|PurposeOfPayment_Value|Tran_Pass_Value|Success_Message|tran_type_query|tran_amount_query|from_account_query|to_account_query|to_bank_query|bene_name_query|purpose_query|db_val|
 
 
 	@mytag
@@ -482,6 +508,7 @@ Scenario Outline: When user try to send money mobile interbank using already add
 	And I am clicking on "Dashboard"
 	When I save Account Balances
 	And I set value in context from data "0" as "term_deposit_flag" 
+	And I set value in context from data "<FCY_Check>" as "FCY_Tran_Check"
 	#And I set value in context from database "<No_Of_Acconts_query>" as "No_Of_Accounts" on Schema "<db_val>" 
 	#And I set value in context from database "<Bene_Count_Query>" as "Beneficiary_Count_Inter_Bank" on Schema "<db_val>" 
 	And I am clicking on "Dashboard_More"
@@ -497,6 +524,8 @@ Scenario Outline: When user try to send money mobile interbank using already add
 	#And I have given "<Account_Number_Value>" on "SendMoney_ToAccount"
 	#And I scroll down
 	And I have given "<Amount_Value>" on "SendMoney_Amount"
+	And verify the message using element "SendMoney_Buy_Rate" through database on "<conversion_query>" on Schema "DIGITAL_CHANNEL_SEC"
+	And verify the message using element "SendMoney_Converted_Amount" through database on "<conversion_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	When I select "<PurposeOfPayment_Value>" on "SendMoney_PurposeOfPayment"
 	#And I scroll down
 	#And I have given "<Bene_Nick>" on "SendMoney_BeneNick"
@@ -547,7 +576,7 @@ Scenario Outline: When user try to send money mobile interbank using already add
 	And verify through database on "<purpose_query>" on Schema "<db_val>" on "SendMoney_TranPurpose"
 	@source:Data/SendMoney(ViaBene)_Interbank.xlsx
 	Examples: 
-	|Case|status_query|Category_Value|BeneName|From_Account_Value|Amount_Value|PurposeOfPayment_Value|Tran_Pass_Value|Success_Message|tran_type_query|tran_amount_query|from_account_query|to_account_query|to_bank_query|bene_name_query|purpose_query|db_val|
+	|Case|status_query|FCY_Check|conversion_query|Category_Value|BeneName|From_Account_Value|Amount_Value|PurposeOfPayment_Value|Tran_Pass_Value|Success_Message|tran_type_query|tran_amount_query|from_account_query|to_account_query|to_bank_query|bene_name_query|purpose_query|db_val|
 
 
 @mytag
@@ -558,6 +587,7 @@ Scenario Outline: When user try to send money mobile schedule interbranch using 
 	And I am clicking on "Dashboard"
 	When I save Account Balances
 	And I set value in context from data "0" as "term_deposit_flag" 
+	And I set value in context from data "<FCY_Check>" as "FCY_Tran_Check"
 	#And I set value in context from database "<No_Of_Acconts_query>" as "No_Of_Accounts" on Schema "<db_val>" 
 	#And I set value in context from database "<Bene_Count_Query>" as "Beneficiary_Count_Inter_Bank" on Schema "<db_val>" 
 	And I am clicking on "Dashboard_More"
@@ -568,6 +598,8 @@ Scenario Outline: When user try to send money mobile schedule interbranch using 
 	And I am clicking on "SendMoney_SearchBeneConsumerNo"
 	And I select "<From_Account_Value>" on "SendMoney_FromAccount"
 	And I have given "<Amount_Value>" on "SendMoney_Amount"
+	And verify the message using element "SendMoney_Buy_Rate" through database on "<conversion_query>" on Schema "DIGITAL_CHANNEL_SEC"
+	And verify the message using element "SendMoney_Converted_Amount" through database on "<conversion_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	When I select "<PurposeOfPayment_Value>" on "SendMoney_PurposeOfPayment"
 	And I am clicking on "SendMoney_SchedulePayment_Check"
 	And I select "<Frequency_Value>" on "SendMoney_SchedulePayment_Frequency"
@@ -598,7 +630,7 @@ Scenario Outline: When user try to send money mobile schedule interbranch using 
 	And verify the result of schedule payment from database 
 	@source:Data/SendMoney(ViaBene)_Interbranch_Schedule.xlsx
 	Examples: 
-	|Case|status_query|Category_Value|BeneName|From_Account_Value|Amount_Value|PurposeOfPayment_Value|Frequency_Value|From_Date_Value|To_Date_Value|Tran_Pass_Value|Success_Message|tran_type_query|from_account_query|frequency_query|purpose_query|db_val|
+	|Case|status_query|FCY_Check|conversion_query|Category_Value|BeneName|From_Account_Value|Amount_Value|PurposeOfPayment_Value|Frequency_Value|From_Date_Value|To_Date_Value|Tran_Pass_Value|Success_Message|tran_type_query|from_account_query|frequency_query|purpose_query|db_val|
 
 
 	@mytag
@@ -609,6 +641,7 @@ Scenario Outline: When user try to send money mobile schedule interbank using al
 	And I am clicking on "Dashboard"
 	When I save Account Balances
 	And I set value in context from data "0" as "term_deposit_flag" 
+	And I set value in context from data "<FCY_Check>" as "FCY_Tran_Check"
 	#And I set value in context from database "<No_Of_Acconts_query>" as "No_Of_Accounts" on Schema "<db_val>" 
 	#And I set value in context from database "<Bene_Count_Query>" as "Beneficiary_Count_Inter_Bank" on Schema "<db_val>" 
 	And I am clicking on "Dashboard_More"
@@ -619,6 +652,8 @@ Scenario Outline: When user try to send money mobile schedule interbank using al
 	And I am clicking on "SendMoney_SearchBeneConsumerNo"
 	And I select "<From_Account_Value>" on "SendMoney_FromAccount"
 	And I have given "<Amount_Value>" on "SendMoney_Amount"
+	And verify the message using element "SendMoney_Buy_Rate" through database on "<conversion_query>" on Schema "DIGITAL_CHANNEL_SEC"
+	And verify the message using element "SendMoney_Converted_Amount" through database on "<conversion_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	When I select "<PurposeOfPayment_Value>" on "SendMoney_PurposeOfPayment"
 	And I am clicking on "SendMoney_SchedulePayment_Check"
 	And I select "<Frequency_Value>" on "SendMoney_SchedulePayment_Frequency"
@@ -649,4 +684,4 @@ Scenario Outline: When user try to send money mobile schedule interbank using al
 	And verify the result of schedule payment from database 
 	@source:Data/SendMoney(ViaBene)_Interbank_Schedule.xlsx
 	Examples: 
-	|Case|status_query|Category_Value|BeneName|From_Account_Value|Amount_Value|PurposeOfPayment_Value|Frequency_Value|From_Date_Value|To_Date_Value|Tran_Pass_Value|Success_Message|tran_type_query|from_account_query|frequency_query|purpose_query|db_val|
+	|Case|status_query|FCY_Check|conversion_query|Category_Value|BeneName|From_Account_Value|Amount_Value|PurposeOfPayment_Value|Frequency_Value|From_Date_Value|To_Date_Value|Tran_Pass_Value|Success_Message|tran_type_query|from_account_query|frequency_query|purpose_query|db_val|

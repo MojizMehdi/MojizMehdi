@@ -97,6 +97,8 @@ namespace HBLAutomationAndroid.Common
         Dictionary<string, Tuple<string, string, string>> cust_limit_detail;
         string mobile_no;
         string CreditCard_Check;
+        bool FCY_Tran_Check;
+        decimal conversion_rate;
         //public static string platform_version;
 
         //public void Set_platform_version(string platform_version)
@@ -107,6 +109,22 @@ namespace HBLAutomationAndroid.Common
         //{
         //    return platform_version;
         //}
+        public void Set_conversion_rate(decimal conversion_rate)
+        {
+            this.conversion_rate = conversion_rate;
+        }
+        public decimal Get_conversion_rate()
+        {
+            return conversion_rate;
+        }
+        public void Set_FCY_Tran_Check(bool FCY_Tran_Check)
+        {
+            this.FCY_Tran_Check = FCY_Tran_Check;
+        }
+        public bool Get_FCY_Tran_Check()
+        {
+            return FCY_Tran_Check;
+        }
         public void SetCredit_Card_Check(string CreditCard_Check)
         {
             this.CreditCard_Check = CreditCard_Check;

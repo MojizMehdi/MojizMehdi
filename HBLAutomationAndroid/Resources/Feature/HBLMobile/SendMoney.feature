@@ -43,6 +43,7 @@ Scenario Outline: When user try to send money mobile
 	And I am clicking on "Dashboard"
 	#When I save Account Balances
 	When I set value in context from data "0" as "term_deposit_flag" 
+	And I set value in context from data "<FCY_Check>" as "FCY_Tran_Check"
 	And I am clicking on "SendMoney_Link"
 	And I wait 5000
 	And I am clicking on "SendMoney_SkipBtn"
@@ -55,10 +56,12 @@ Scenario Outline: When user try to send money mobile
 	And I set value in context from data "<Account_Number_Value>" as "ToAccount"
 	And I set value in context from data "SendMoney" as "Transaction_Type"
 	And I have given "<Account_Number_Value>" on "SendMoney_ToAccount"
-	#And I am clicking on "SendMoney_AccVerifyBtn"
-	#And I wait 5000
+	And I am clicking on "SendMoney_AccVerifyBtn"
+	And I wait 5000
 	And I scroll down
 	And I have given "<Amount_Value>" on "SendMoney_Amount"
+	And verify the message using element "SendMoney_Buy_Rate" through database on "<conversion_query>" on Schema "DIGITAL_CHANNEL_SEC"
+	And verify the message using element "SendMoney_Converted_Amount" through database on "<conversion_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	When I select "<PurposeOfPayment_Value>" on "SendMoney_PurposeOfPayment"
 	And I scroll down
 	And I have given "<Bene_Nick>" on "SendMoney_BeneNick"
@@ -108,7 +111,7 @@ Scenario Outline: When user try to send money mobile
 	And verify through database on "<purpose_query>" on Schema "<db_val>" on "SendMoney_TranPurpose"
 	@source:Data/SendMoney.xlsx
 	Examples: 
-	|Case|status_query|No_Of_Acconts_query|Bene_Count_Query_InterBank|Bene_Count_Query_InterBranch|From_Account_Value|Bank_Value|Account_Number_Value|Amount_Value|PurposeOfPayment_Value|Bene_Nick|Bene_Mobile_No|Bene_Email|OTP_Value|Tran_Pass_Value|Success_Message|tran_type_query|tran_amount_query|from_account_query|to_account_query|to_bank_query|bene_name_query|purpose_query|db_val|count_query|Expected_Result|
+	|Case|status_query|FCY_Check|conversion_query|No_Of_Acconts_query|Bene_Count_Query_InterBank|Bene_Count_Query_InterBranch|From_Account_Value|Bank_Value|Account_Number_Value|Amount_Value|PurposeOfPayment_Value|Bene_Nick|Bene_Mobile_No|Bene_Email|OTP_Value|Tran_Pass_Value|Success_Message|tran_type_query|tran_amount_query|from_account_query|to_account_query|to_bank_query|bene_name_query|purpose_query|db_val|count_query|Expected_Result|
 
 
 #@SendMoney @SendMoney_AddNew_Schedule
@@ -211,6 +214,7 @@ Scenario Outline: When user try to send money mobile using already added bene
 	And I am clicking on "Dashboard"
 	#When I save Account Balances
 	When I set value in context from data "0" as "term_deposit_flag" 
+	And I set value in context from data "<FCY_Check>" as "FCY_Tran_Check"
 	And I am clicking on "SendMoney_Link"
 	And I am clicking on "SendMoney_SkipBtn"
 	#And I am clicking on "SendMoney_AddNewBtn"
@@ -224,6 +228,8 @@ Scenario Outline: When user try to send money mobile using already added bene
 	#And I have given "<Account_Number_Value>" on "SendMoney_ToAccount"
 	#And I scroll down
 	And I have given "<Amount_Value>" on "SendMoney_Amount"
+	And verify the message using element "SendMoney_Buy_Rate" through database on "<conversion_query>" on Schema "DIGITAL_CHANNEL_SEC"
+	And verify the message using element "SendMoney_Converted_Amount" through database on "<conversion_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	When I select "<PurposeOfPayment_Value>" on "SendMoney_PurposeOfPayment"
 	#And I scroll down
 	#And I have given "<Bene_Nick>" on "SendMoney_BeneNick"
@@ -274,7 +280,7 @@ Scenario Outline: When user try to send money mobile using already added bene
 	And verify through database on "<purpose_query>" on Schema "<db_val>" on "SendMoney_TranPurpose"
 	@source:Data/SendMoney(ViaBene).xlsx
 	Examples: 
-	|Case|status_query|BeneName|From_Account_Value|Amount_Value|PurposeOfPayment_Value|Tran_Pass_Value|Success_Message|tran_type_query|tran_amount_query|from_account_query|to_account_query|to_bank_query|bene_name_query|purpose_query|db_val|count_query|Expected_Result|
+	|Case|status_query|FCY_Check|conversion_query|BeneName|From_Account_Value|Amount_Value|PurposeOfPayment_Value|Tran_Pass_Value|Success_Message|tran_type_query|tran_amount_query|from_account_query|to_account_query|to_bank_query|bene_name_query|purpose_query|db_val|count_query|Expected_Result|
 
 #@SendMoney @SendMoney_ViaBene_Schedule
 #Scenario Outline: When user try to send money mobile using already added bene schedule payment
