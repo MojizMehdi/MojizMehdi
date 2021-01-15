@@ -38,14 +38,15 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 	Given the test case title is "<Case>"
 	And I set value in context from data "<BillPayment_ConsumerNo_Value>" as "ConsumerNo"
 	And I set value in context from data "<expiry_date>" as "Credit_Card_check"
+	And I set value in context from data "<FCY_Check>" as "FCY_Tran_Check"
 	And update the data by query "<status_query>" on QAT_BPS
 	And update the data by query "<status_query2>" on DIGITAL_CHANNEL_SEC
 	And the user is arrive to Mobile Banking home page
 	And the test case expected result is "<Expected_Result>"
 	And I am clicking on "Dashboard"
 	#And I set value in context from database "<account_count_query>" as "account_count" on Schema "<db_val>"
-	When I save Account Balances 
-	And I wait 3000
+	#When I save Account Balances 
+	#And I wait 3000
 	When I set value in context from data "0" as "term_deposit_flag" 
 	And I am clicking on "Dashboard_More"
 	And I have given "<Category_Value>" on "SendMoney_SearchBeneField"
@@ -71,6 +72,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 	And I verify bill payment inquiry for mobile
 	And I scroll down
 	And I select "<account_no>" on "BillPayment_FromAccount"
+	And verify the message using element "BillPayment_Conversion_Rate" through database on "<conversion_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	And I have given "<expiry_date>" on "BillPayment_Card_Expiry_Date"
 	And I wait 5000
 	And Set parameter in context class "BillPayment_Bill_Status"
@@ -83,7 +85,10 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 	#partial_payment
 	And I have given "<partial_payment_amount>" on "BillPayment_Transaction_Unpaid_Amount_Field"
 	And I am verifying OTP and Transaction pass check on company code "<company_code_value>"
-	And I am clicking on "BillPayment_NextBtn"
+	And I am clicking on "BillPayment_Fcy_Toggle"
+	And I wait 3000
+	And I am clicking on "BillPayment_Fcy_Toggle_Agree"
+	And I am clicking on "BillPayment_NextBtn_Fcy"
 	#And I scroll to element text as "One Time Password (OTP)"
 	And I have otp check and given <OTP_Value> on "Login_OTP_field"
 	And I am clicking on "BillPayment_CheckNextBtn"
@@ -94,7 +99,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 	#And I am clicking on "BillPayment_RatingOkBtn"
 	And I wait 2000
 	#And I am clicking on "BillPayment_Rating_Feedback_OkBtn"
-	And I save Transaction Info
+	#And I save Transaction Info
 	Then verify through "Transaction is successful. " on "BillPayment_TranSuccess"
 	#And verify through database on "<tran_type_query>" on Schema "<db_val>" on "BillPayment_TranType"
 	And verify through database on "<tran_amount_query>" on Schema "<db_val>" on "BillPayment_TranAmount"
@@ -115,7 +120,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 	And I have given "<BillPayment_ConsumerNo_Value>" on "BillPayment_SearchBeneField"
 	Then verify through "ConsumerNoContextVal" on "BillPayment_SearchBeneConsumerNo"
 	And I am clicking on "Dashboard"
-	And I verify Account Balance
+	#And I verify Account Balance
 	And I am clicking on "Dashboard_Sidebar"
 	And I am clicking on "Dashboard_Sidebar_TranActivity"
 	And I am clicking on "TransactionActivity_Financial"
@@ -128,12 +133,13 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 
 	@source:Data/BillPayment.xlsx
 	Examples: 
-	|Case|status_query|status_query2|account_count_query|Category_Value|Company_Value|BillPayment_ConsumerNo_Value|Bill_Amount_query|company_code_value|OTP_Value|tran_pass_value|tran_type_query|tran_amount_query|from_account_query|company_name_query|consumer_no_query|db_val|db_val2|account_no|account_type|expiry_date|bene_name|bene_query|instrument_type|consumer_number_label_query|paid_marking_query|LP_BillStatus_query|partial_payment_check_query|partial_payment_amount|Expected_Result|
+	|Case|status_query|status_query2|FCY_Check|account_count_query|Category_Value|Company_Value|BillPayment_ConsumerNo_Value|Bill_Amount_query|company_code_value|OTP_Value|tran_pass_value|tran_type_query|tran_amount_query|from_account_query|company_name_query|consumer_no_query|db_val|db_val2|account_no|account_type|expiry_date|bene_name|bene_query|instrument_type|consumer_number_label_query|paid_marking_query|LP_BillStatus_query|partial_payment_check_query|partial_payment_amount|Expected_Result|conversion_query|
 
 @BillPayment @Add_New_BillPayment_Schedule
 Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make new payment schedule
 	Given the test case title is "<Case>"
 	And I set value in context from data "<BillPayment_ConsumerNo_Value>" as "ConsumerNo"
+	And I set value in context from data "<FCY_Check>" as "FCY_Tran_Check"
 	And I set value in context from data "<expiry_date>" as "Credit_Card_check"
 	And update the data by query "<status_query>" on QAT_BPS
 	And update the data by query "<status_query2>" on DIGITAL_CHANNEL_SEC
@@ -163,6 +169,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 	And I set value in context from database "<paid_marking_query>" as "Is_PaidMarking_Req" on Schema "<db_val2>"
 	And I verify bill payment inquiry for mobile
 	And I select "<account_no>" on "BillPayment_FromAccount"
+	And verify the message using element "BillPayment_Conversion_Rate" through database on "<conversion_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	And I have given "<expiry_date>" on "BillPayment_Card_Expiry_Date"
 	And I wait 5000
 	And Set parameter in context class "BillPayment_Bill_Status"
@@ -175,7 +182,10 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 	#partial_payment
 	And I have given "<partial_payment_amount>" on "BillPayment_Transaction_Unpaid_Amount_Field"
 	And I am verifying OTP and Transaction pass check on company code "<company_code_value>"
-	And I am clicking on "BillPayment_NextBtn"
+	And I am clicking on "BillPayment_Fcy_Toggle"
+	And I wait 3000
+	And I am clicking on "BillPayment_Fcy_Toggle_Agree"
+	And I am clicking on "BillPayment_NextBtn_Fcy"
 	And I have otp check and given <OTP_Value> on "Login_OTP_field"
 	And I am clicking on "BillPayment_CheckNextBtn"
 	And I have transaction pass check and given <tran_pass_value> on "BillPayment_TransactionPassword"
@@ -231,6 +241,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile bene sc
 	Given the test case title is "<Case>"
 	And I set value in context from data "<BillPayment_ConsumerNo_Value>" as "ConsumerNo"
 	And I set value in context from data "<expiry_date>" as "Credit_Card_check"
+	And I set value in context from data "<FCY_Check>" as "FCY_Tran_Check"
 	And I set value in context from data "1" as "TranTypeBene"
 	And update the data by query "<status_query>" on QAT_BPS
 	And the user is arrive to Mobile Banking home page
@@ -250,6 +261,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile bene sc
 	And verify the result from "<instrument_type>" on Schema "<db_val2>"
 	And I wait 8000
 	And I select "<account_no>" on "BillPayment_FromAccount_Bene"
+	And verify the message using element "BillPayment_Conversion_Rate" through database on "<conversion_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	#BillingMonth(Setall)
 	And Set parameter in context class "BillPayment_Inquiry_BillingMonth"
 	And I set value in context from database "<paid_marking_query>" as "Is_PaidMarking_Req" on Schema "<db_val2>"
@@ -267,7 +279,10 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile bene sc
 	#partial_payment
 	And I have given "<partial_payment_amount>" on "BillPayment_Transaction_Unpaid_Amount_Field"
 	And I am verifying OTP and Transaction pass check on company code "<company_code_value>"
-	And I am clicking on "BillPayment_NextBtn"
+	And I am clicking on "BillPayment_Fcy_Toggle"
+	And I wait 3000
+	And I am clicking on "BillPayment_Fcy_Toggle_Agree"
+	And I am clicking on "BillPayment_NextBtn_Fcy"
 	And I have transaction pass check and given <tran_pass_value> on "BillPayment_TransactionPassword"
 	And I am clicking on "BillPayment_PayBtn"
 	And I wait 10000
@@ -321,6 +336,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by alre
 	Given the test case title is "<Case>"
 	And I set value in context from data "<BillPayment_ConsumerNo_Value>" as "ConsumerNo"
 	And I set value in context from data "<expiry_date>" as "Credit_Card_check"
+	And I set value in context from data "<FCY_Check>" as "FCY_Tran_Check"
 	And I set value in context from data "1" as "TranTypeBene"
 	And update the data by query "<status_query>" on QAT_BPS
 	And the user is arrive to Mobile Banking home page
@@ -340,6 +356,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by alre
 	And verify the result from "<instrument_type>" on Schema "<db_val2>"
 	And I wait 8000
 	And I select "<account_no>" on "BillPayment_FromAccount_Bene"
+	And verify the message using element "BillPayment_Conversion_Rate" through database on "<conversion_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	#BillingMonth(Setall)
 	And Set parameter in context class "BillPayment_Inquiry_BillingMonth"
 	And I set value in context from database "<paid_marking_query>" as "Is_PaidMarking_Req" on Schema "<db_val2>"
@@ -356,7 +373,10 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by alre
 	#partial_payment
 	And I have given "<partial_payment_amount>" on "BillPayment_Transaction_Unpaid_Amount_Field"
 	And I am verifying OTP and Transaction pass check on company code "<company_code_value>"
-	And I am clicking on "BillPayment_NextBtn"
+	And I am clicking on "BillPayment_Fcy_Toggle"
+	And I wait 3000
+	And I am clicking on "BillPayment_Fcy_Toggle_Agree"
+	And I am clicking on "BillPayment_NextBtn_Fcy"
 	And I have transaction pass check and given <tran_pass_value> on "BillPayment_TransactionPassword"
 	And I am clicking on "BillPayment_PayBtn"
 	And I wait 10000
@@ -405,6 +425,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by adde
 	Given the test case title is "<Case>"
 	And I set value in context from data "<BillPayment_ConsumerNo_Value>" as "ConsumerNo"
 	And I set value in context from data "<expiry_date>" as "Credit_Card_check"
+	And I set value in context from data "<FCY_Check>" as "FCY_Tran_Check"
 	And I set value in context from data "1" as "TranTypeBene"
 	And update the data by query "<status_query>" on QAT_BPS
 	And the user is arrive to Mobile Banking home page
@@ -426,6 +447,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by adde
 	And I set value in context from database "<paid_marking_query>" as "Is_PaidMarking_Req" on Schema "<db_val2>"
 	And I verify bill payment inquiry for mobile
 	And I select "<account_no>" on "BillPayment_FromAccount_Bene"
+	And verify the message using element "BillPayment_Conversion_Rate" through database on "<conversion_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	And I have given "<expiry_date>" on "BillPayment_Card_Expiry_Date"
 	And I wait 5000
 	And Set parameter in context class "BillPayment_Bill_Status"
@@ -438,7 +460,10 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by adde
 	#partial_payment
 	And I have given "<partial_payment_amount>" on "BillPayment_Transaction_Unpaid_Amount_Field"
 	And I am verifying OTP and Transaction pass check on company code "<company_code_value>"
-	And I am clicking on "BillPayment_NextBtn"
+	And I am clicking on "BillPayment_Fcy_Toggle"
+	And I wait 3000
+	And I am clicking on "BillPayment_Fcy_Toggle_Agree"
+	And I am clicking on "BillPayment_NextBtn_Fcy"
 	And I have transaction pass check and given "<tran_pass_value>" on "BillPayment_TransactionPassword"
 	And I am clicking on "BillPayment_PayBtn"
 	And I wait 10000
@@ -486,6 +511,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 	Given the test case title is "<Case>"
 	And I set value in context from data "<BillPayment_ConsumerNo_Value>" as "ConsumerNo"
 	And I set value in context from data "<expiry_date>" as "Credit_Card_check"
+	And I set value in context from data "<FCY_Check>" as "FCY_Tran_Check"
 	And I set value in context from data "<BillPayment_Category_Value>" as "BillPayment_Category"
 	And update the data by query "<status_query>" on QAT_BPS
 	And update the data by query "<status_query2>" on DIGITAL_CHANNEL_SEC
@@ -513,6 +539,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 	And I set value in context from database "<paid_marking_query>" as "Is_PaidMarking_Req" on Schema "<db_val2>"
 	And I verify bill payment inquiry for mobile
 	And I select "<account_no>" on "BillPayment_FromAccount"
+	And verify the message using element "BillPayment_Conversion_Rate" through database on "<conversion_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	And I have given "<expiry_date>" on "BillPayment_Card_Expiry_Date"
 	And I wait 5000
 	And Set parameter in context class "BillPayment_Bill_Status"
@@ -525,7 +552,10 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 	#partial_payment
 	And I have given "<partial_payment_amount>" on "BillPayment_Transaction_Unpaid_Amount_Field"
 	And I am verifying OTP and Transaction pass check on company code "<company_code_value>"
-	And I am clicking on "BillPayment_NextBtn"
+	And I am clicking on "BillPayment_Fcy_Toggle"
+	And I wait 3000
+	And I am clicking on "BillPayment_Fcy_Toggle_Agree"
+	And I am clicking on "BillPayment_NextBtn_Fcy"
 	#partial_payment
 	And I have given "<partial_payment_amount>" on "BillPayment_Transaction_Unpaid_Amount_Field"
 	And I have otp check and given <OTP_Value> on "Login_OTP_field"
@@ -593,6 +623,7 @@ Scenario Outline: As a user i want to Verify Multiple Bill Payment
 	And I set value in context from data "BillPayment" as "Transaction_Type"
 	And I verify bill details of consumer numbers for bill payment
 	And I select "<account_no>" on "BillPayment_FromAccount_Bene"
+	And verify the message using element "BillPayment_Conversion_Rate" through database on "<conversion_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	And I am clicking on "BillPayment_NextBtn"
 	And I have transaction pass check and given "<tran_pass_value>" on "BillPayment_TransactionPassword"
 	And I scroll to element text as "Pay"
