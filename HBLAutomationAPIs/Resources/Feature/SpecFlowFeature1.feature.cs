@@ -274,15 +274,15 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:case", "When CNIC is 4220107030051")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:baseuri", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:header", @"x-req-id:89567890987610,x-channel-id:MB,x-sub-channel-id:MB,x-country-code:PK,x-customer-type:C,Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJhZGlsIn0.mRSZXF0glqRPyo2h15jHd51JwCeEnSUIBmYuTaAzmrQ,accept:application/json,Content-Type:application/json")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:body", "{\"nationalIdentityNo\":\"4220107030051\"}")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:body", "{\"nationalIdentityNo\":\"{CNIC}\"}")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:endpoint", "v2/customer/validate")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:queryparams", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:format_value", "json")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:CNIC_Value", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:CNIC_Value", "4220107030051")]
         public virtual void VerifyTheResponseStatusOfCallForGetCustomerByCNICXML_WhenCNICIs4220107030051()
         {
 #line 20
-this.VerifyTheResponseStatusOfCallForGetCustomerByCNICXML("When CNIC is 4220107030051", "", @"x-req-id:89567890987610,x-channel-id:MB,x-sub-channel-id:MB,x-country-code:PK,x-customer-type:C,Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJhZGlsIn0.mRSZXF0glqRPyo2h15jHd51JwCeEnSUIBmYuTaAzmrQ,accept:application/json,Content-Type:application/json", "{\"nationalIdentityNo\":\"4220107030051\"}", "v2/customer/validate", "", "json", "", new string[] {
+this.VerifyTheResponseStatusOfCallForGetCustomerByCNICXML("When CNIC is 4220107030051", "", @"x-req-id:89567890987610,x-channel-id:MB,x-sub-channel-id:MB,x-country-code:PK,x-customer-type:C,Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJhZGlsIn0.mRSZXF0glqRPyo2h15jHd51JwCeEnSUIBmYuTaAzmrQ,accept:application/json,Content-Type:application/json", "{\"nationalIdentityNo\":\"{CNIC}\"}", "v2/customer/validate", "", "json", "4220107030051", new string[] {
                         "source:Data/HBLPost.xlsx"});
 #line hidden
         }
