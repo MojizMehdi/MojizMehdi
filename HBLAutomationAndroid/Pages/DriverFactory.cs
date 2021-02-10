@@ -88,6 +88,8 @@ namespace HBLAutomationAndroid.Pages
                         options.AddAdditionalCapability("fullReset", "false");
                         options.AddAdditionalCapability("autoGrantPermissions", false);
                         options.AddAdditionalCapability("newCommandTimeout", 180);
+                        options.AddAdditionalCapability("chromedriverExecutable", "D:\\Automation\\");
+                        options.AddAdditionalCapability("systemPort", "8221");
                         if(saucelab_check.ToLower() == "yes")
                         {
                             string sauce_username = Configuration.GetInstance().GetByKey("Saucelab_Username");

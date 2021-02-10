@@ -223,6 +223,7 @@
     <Element keyword="BillPayment_Fcy_Toggle" locator="com.hbl.android.hblmobilebanking:id/sc_tnc_fcy"/>
     <Element keyword="BillPayment_Fcy_Toggle_Agree" locator="com.hbl.android.hblmobilebanking:id/dialog_pos_btn"/>
     <Element keyword="BillPayment_Conversion_Rate" locator="com.hbl.android.hblmobilebanking:id/textConversionRate"/>
+    <Element keyword="BillPayment_Fcy_Disclaimer" locator="(//android.view.View[not(contains(@text,'•'))])[i]"/>
     
   
   com.hbl.android.hblmobilebanking:id/textSellRate

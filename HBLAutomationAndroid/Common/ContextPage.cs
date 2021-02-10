@@ -13,6 +13,7 @@ using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace HBLAutomationAndroid.Common
@@ -109,6 +110,21 @@ namespace HBLAutomationAndroid.Common
         //{
         //    return platform_version;
         //}
+        public string GetPlainTextFromHtml(string htmlString)
+        {
+            //var plainText = HtmlUtilities.ConvertToPlainText(htmlString);
+            string htmlTagPattern = "<.*?>";
+            var regexCss = new Regex(@"<style.*?</style>", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+            htmlString = regexCss.Replace(htmlString, string.Empty);
+            regexCss = new Regex(@"<head.*?</head>", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+            htmlString = regexCss.Replace(htmlString, string.Empty);
+            htmlString = Regex.Replace(htmlString, htmlTagPattern, string.Empty);
+            htmlString = Regex.Replace(htmlString, "{.*?}",string.Empty);
+            htmlString = Regex.Replace(htmlString, @"^\s+$[\r\n]*", "", RegexOptions.Multiline);
+            htmlString = htmlString.Replace(" ", string.Empty);
+            htmlString = htmlString.Replace("\r", string.Empty).Replace("\n", string.Empty);
+            return htmlString;
+        }
         public void Set_conversion_rate(decimal conversion_rate)
         {
             this.conversion_rate = conversion_rate;
