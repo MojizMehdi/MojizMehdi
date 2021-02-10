@@ -436,6 +436,10 @@ namespace HBLAutomationAndroid.Core
                     DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
                     DataTable SourceDataTable = dlink.GetDataTable(query, schema);
                     string message = SourceDataTable.Rows[0][0].ToString();
+                    if(Keyword == "BillPayment_Fcy_Disclaimer")
+                    {
+                        message = context.GetPlainTextFromHtml(message);
+                    }
                     decimal foreign_rate = 0;
                     if (Keyword.Equals("SendMoney_Buy_Rate") || Keyword.Equals("SendMoney_Converted_Amount"))
                     {
@@ -492,15 +496,45 @@ namespace HBLAutomationAndroid.Core
                     {
                         locator_type = "xpath";
                     }
-                    string value = apmhelper.ReturnKeywordValue(keyword.Locator, locator_type);
+                    string value = "";
+                    if (Keyword.Equals("BillPayment_Fcy_Disclaimer"))
+                    {
+                        for (int i = 1; i <= 5; i++)
+                        {
+                            string temp = keyword.Locator.Replace("[i]", "[" + i.ToString() + "]");
+                            value += apmhelper.ReturnKeywordValue(temp, "xpath");
+                        }
+                        value = value.Replace(" ", string.Empty);
+                    }
+                    else
+                    {
+                        value = apmhelper.ReturnKeywordValue(keyword.Locator, locator_type);
+                    }
                     if (Keyword.Equals("BillPayment_Conversion_Rate"))
                     {
                         if (context.Get_FCY_Tran_Check() == true)
                         {
+                            string Foreign_Currency = SourceDataTable.Rows[0][1].ToString();
+                            string PKR_Currency = SourceDataTable.Rows[0][2].ToString();
+                            decimal currency_rate = Convert.ToDecimal(SourceDataTable.Rows[0][3].ToString());
+                            
                             string [] amount_values = value.Split('=');
+                            if (currency_rate != foreign_rate)
+                            {
+                                throw new Exception(string.Format("The currency rate in packet {0} is not equals to currency rate in Lead_Field3 {1}", foreign_rate, currency_rate));
+                            }
+                            if (PKR_Currency != "PKR")
+                            {
+                                throw new Exception(string.Format("The currency name in Lead Field2 is {0} which is not equal to PKR", PKR_Currency));
+                            }
+                            string foreign_currency_ui = amount_values[1].Substring(amount_values[1].Length - 3, 3);
+                            if (Foreign_Currency != foreign_currency_ui)
+                            {
+                                throw new Exception(string.Format("The currency name in Lead Field1 is {0} which is not equal to {1}", Foreign_Currency, foreign_currency_ui));
+                            }
                             decimal pkr_amount = Convert.ToDecimal(amount_values[0].Replace("PKR", string.Empty).Trim());
                             pkr_amount = pkr_amount / foreign_rate;
-                            pkr_amount = Math.Round(pkr_amount, 15);
+                            pkr_amount = Math.Round(pkr_amount,3);
                             int index = value.IndexOf('=');
                             message = value.Remove(index + 1, value.Length - 4 - index);
                             message = message.Replace("=", "= " + pkr_amount.ToString() + " ");
@@ -2179,9 +2213,14 @@ namespace HBLAutomationAndroid.Core
                             query = temp;
                         }
                     }
+                    
                     if (Keyword.Equals("SendMoney_TranAmount") || Keyword.Equals("TermDeposit_TranAmount") || Keyword.Equals("BillPayment_TranAmount"))
                     {
                         message = Convert.ToDecimal(message).ToString("0.00");
+                    }
+                    if (Keyword.Equals("BillPayment_TranAmount") && context.Get_FCY_Tran_Check() == true)
+                    {
+                        message = message + " PKR";
                     }
                     //if (Keyword.Equals("BillPayment_TranSucess_ConsumerNo"))
                     //{

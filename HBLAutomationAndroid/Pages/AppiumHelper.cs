@@ -771,16 +771,25 @@ namespace HBLAutomationAndroid.Pages
         //For returning the value from the mobile of the keyword given
         public string ReturnKeywordValue(string locator, string locator_type)
         {
+            
             IWebElement Control = null;
             if (locator_type == "id")
             {
                 Control = waitDriver.Until(ExpectedConditions.ElementIsVisible(By.Id(locator)));
+                //driver.Context
             }
             if (locator_type == "xpath")
             {
                 Control = waitDriver.Until(ExpectedConditions.ElementIsVisible(By.XPath(locator)));
             }
+            //List<string> AllContexts = new List<string>();
+            //foreach (var context in (driver.Contexts))
+            //{
+            //    AllContexts.Add(context);
+            //}
+            //driver.Context = (AllContexts[1]);
             return Control.Text;
+            //return Control.GetAttribute("text");
         }
         ////Method For Rating
         public void rating(string locator)

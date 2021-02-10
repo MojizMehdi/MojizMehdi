@@ -86,6 +86,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 	And I have given "<partial_payment_amount>" on "BillPayment_Transaction_Unpaid_Amount_Field"
 	And I am verifying OTP and Transaction pass check on company code "<company_code_value>"
 	And I am clicking on "BillPayment_Fcy_Toggle"
+	#And verify the message using element "{Keyword}" through database on "<disclaimer_query>" on Schema "DIGITAL_CHANNEL_SEC"
 	And I wait 3000
 	And I am clicking on "BillPayment_Fcy_Toggle_Agree"
 	And I am clicking on "BillPayment_NextBtn_Fcy"
@@ -133,7 +134,7 @@ Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make
 
 	@source:Data/BillPayment.xlsx
 	Examples: 
-	|Case|status_query|status_query2|FCY_Check|account_count_query|Category_Value|Company_Value|BillPayment_ConsumerNo_Value|Bill_Amount_query|company_code_value|OTP_Value|tran_pass_value|tran_type_query|tran_amount_query|from_account_query|company_name_query|consumer_no_query|db_val|db_val2|account_no|account_type|expiry_date|bene_name|bene_query|instrument_type|consumer_number_label_query|paid_marking_query|LP_BillStatus_query|partial_payment_check_query|partial_payment_amount|Expected_Result|conversion_query|
+	|Case|status_query|status_query2|FCY_Check|account_count_query|Category_Value|Company_Value|BillPayment_ConsumerNo_Value|Bill_Amount_query|company_code_value|OTP_Value|tran_pass_value|tran_type_query|tran_amount_query|from_account_query|company_name_query|consumer_no_query|db_val|db_val2|account_no|account_type|expiry_date|bene_name|bene_query|instrument_type|consumer_number_label_query|paid_marking_query|LP_BillStatus_query|partial_payment_check_query|partial_payment_amount|Expected_Result|conversion_query|disclaimer_query|
 
 @BillPayment @Add_New_BillPayment_Schedule
 Scenario Outline: As a user i want to Verify Bill Payment through Mobile by make new payment schedule

@@ -146,8 +146,9 @@ namespace HBLAutomationAPIs.Core
                     }
                     count++;
                 }
-                ContextPage.GetInstance().Set_RRN_FetchDBCard(act_res);
                 body = body.Replace("{RRN}", act_res);
+                act_res = act_res.Replace("MB_", string.Empty);
+                ContextPage.GetInstance().Set_RRN_FetchDBCard(act_res);
             }
             if (body.Contains("{CNIC}"))
             {
