@@ -93,7 +93,34 @@ namespace HBLAutomationWeb.Core
                     config.Save();
                     ConfigurationManager.RefreshSection("connectionStrings");
                 }
-
+                if (Common.Configuration.GetInstance().GetByKey("ConnectionString_QAT_AMC") != null && Common.Configuration.GetInstance().GetByKey("ProviderName") != null)
+                {
+                    connectionStringsSection.ConnectionStrings["QAT_AMC"].ConnectionString = Common.Configuration.GetInstance().GetByKey("ConnectionString_QAT_AMC");
+                    connectionStringsSection.ConnectionStrings["QAT_AMC"].ProviderName = Common.Configuration.GetInstance().GetByKey("ProviderName");
+                    config.Save();
+                    ConfigurationManager.RefreshSection("connectionStrings");
+                }
+                if (Common.Configuration.GetInstance().GetByKey("ConnectionString_QAT_BB_SYSTEM") != null && Common.Configuration.GetInstance().GetByKey("ProviderName") != null)
+                {
+                    connectionStringsSection.ConnectionStrings["QAT_BB_SYSTEM"].ConnectionString = Common.Configuration.GetInstance().GetByKey("ConnectionString_QAT_BB_SYSTEM");
+                    connectionStringsSection.ConnectionStrings["QAT_BB_SYSTEM"].ProviderName = Common.Configuration.GetInstance().GetByKey("ProviderName");
+                    config.Save();
+                    ConfigurationManager.RefreshSection("connectionStrings");
+                }
+                if (Common.Configuration.GetInstance().GetByKey("ConnectionString_QAT_ALERTING") != null && Common.Configuration.GetInstance().GetByKey("ProviderName") != null)
+                {
+                    connectionStringsSection.ConnectionStrings["QAT_ALERTING"].ConnectionString = Common.Configuration.GetInstance().GetByKey("ConnectionString_QAT_ALERTING");
+                    connectionStringsSection.ConnectionStrings["QAT_ALERTING"].ProviderName = Common.Configuration.GetInstance().GetByKey("ProviderName");
+                    config.Save();
+                    ConfigurationManager.RefreshSection("connectionStrings");
+                }
+                if (Common.Configuration.GetInstance().GetByKey("ConnectionString_QAT_TPE") != null && Common.Configuration.GetInstance().GetByKey("ProviderName") != null)
+                {
+                    connectionStringsSection.ConnectionStrings["QAT_TPE"].ConnectionString = Common.Configuration.GetInstance().GetByKey("ConnectionString_QAT_TPE");
+                    connectionStringsSection.ConnectionStrings["QAT_TPE"].ProviderName = Common.Configuration.GetInstance().GetByKey("ProviderName");
+                    config.Save();
+                    ConfigurationManager.RefreshSection("connectionStrings");
+                }
             }
             catch (Exception ex)
             {

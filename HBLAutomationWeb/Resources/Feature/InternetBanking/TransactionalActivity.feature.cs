@@ -289,4 +289,3 @@ this.AsAUserIWantToVerifyMyTransactionActivities("When I am verifying transactio
 }
 #pragma warning restore
 #endregion
-

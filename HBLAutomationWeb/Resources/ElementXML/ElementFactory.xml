@@ -3,15 +3,23 @@
   <Module name="Login">
     <Element keyword="Login_UserId" locator="//input[@name='Username']"/>
     <Element keyword="Login_Password" locator="//input[@name='Password']"/>
-    <Element keyword="Login_SignIn_Button" locator="//button[@class='btn submit-btn ng-binding']"/>
+    <Element keyword="Login_SignIn_Button" locator="//button[text()='Login']"/>
     <Element keyword="Login_OTP_field" locator="//input[@name='OneTimePassword']"/>
-    <Element keyword="Login_OTP_Verify_Button" locator="//button[@class='btn submit-btn']"/>
+    <Element keyword="Login_OTP_Verify_Button" locator="//button[text()='Verify']"/>
     <Element keyword="Login_Dashboard" locator="//img[@class='desk-logo']"/>
     <Element keyword="Login_Success_Text" locator="//h2[@class='over-lap']//span" />
     <Element keyword="Login_Logout_opt" locator="//div[@class='actions col-lg-5 col-xl-5']//a[@class='logout']" />
     <Element keyword="Login_LogoutBtn" locator="//div[@id='logoutpop']//button[@type='button' and text()='Yes']" />
+    <Element keyword="Login_APUserId" locator="//input[@name='LOGIN_ID']"/>
+    <Element keyword="Login_AP_ID_Btn" locator="//button[@id='btnsubmit']"/>
+    <Element keyword="Login_APPassword" locator="//input[@name='Password']"/>
+    <Element keyword="Login_APLogin_Btn" locator="//button[@id='btnsubmit']"/>
+    <Element keyword="Login_APSuccess_Text" locaSendMoney_ToAccounttor="//div[@class='page-header']//h3" />
+    <Element keyword="Login_APName_Success_Text" locator="//a[@class='dropdown-toggle ripple']//span[@class='hidden-sm']" />
+    <Element keyword="Login_APOTP_field" locator="//input[@name='PassCode']"/>
+    <Element keyword="Login_APOTP_Btn" locator="//button[@id='btnsubmit']"/>
+    <Element keyword="Login_APOTP_Txt" locator="//div[@id='lblMessage']"/>
 
-    /
     <!-- Agent Portal-->
     
     <!-- Agent Portal-->
@@ -180,7 +188,7 @@
     <Element keyword="Pay_Transaction_PayBill_BeneSearchTextbox" locator="//input[@ng-model='searchBill']"/>
     <Element keyword="Pay_Transaction_PayBill_BeneSearchConsumerNo" locator="//p[@class='text-right ng-binding']"/>
     <Element keyword="Pay_Transaction_PayBill_RatingCloseBtn" locator="//div[@class='text-right ng-scope']//button[contains(text(),'Close')]"/>
-    <Element keyword="Pay_Transaction_PayBill_RatingOkBtn" locator="//div[@class='text-right ng-scope']//button[contains(text(),'Ok')]"/>
+    <Element keyword="Pay_Transaction_PayBill_RatingOkBtn" locator="//div[@id='poppayments']//button[contains(text(),'Ok')]"/>
     <Element keyword="Pay_Transaction_PayBill_TransactionPassword" locator="//input[@name='TransactionPassword']"/>
     <Element keyword="Pay_Transaction_PayBill_Rating" locator="//ul[@class='rating']//li[last()]"/>
     <Element keyword="Pay_Bill_Status" locator ="//div[@class='details ng-scope']//following-sibling::div[last()]//following-sibling::p[last()]" />
@@ -240,6 +248,26 @@
     <Element keyword="Pay_ConsumerLabel_Check" locator="//label[@class='ng-binding']" />
     <Element keyword="Pay_BillPayment_BillingMonth" locator="//p[@class='label ng-binding' and text()='Billing Month']//following-sibling::p"/>
     <Element keyword="Pay_BillPayment_InquiryFields" locator="//p[@class='label ng-binding' and text()='{Field_Name}']//following-sibling::p"/>
+    <Element keyword="Pay_BillPayment_InquiryFields_AP" locator="//table[@id='divtransactions']//td[{x}]"/>
+    <Element keyword="Pay_Balance_AP" locator="//td[@id='tdcurrentBalance']"/>
+    <Element keyword="Pay_Commission_AP" locator="//td[text()='Commission']//following-sibling::td[@class='BalComm-style']"/>
+    <Element keyword="Pay_BillType_AP" locator="//select[@name='BillCompanyType']"/>
+    <Element keyword="Pay_CompanyType_AP" locator="//select[@name='BillingCompany']"/>
+    <Element keyword="Pay_ConsumerNo_AP" locator="//input[@name='ConsumerNumber']"/>
+    <Element keyword="Pay_DepositorNo_AP" locator="//input[@id='txtdepositorno']"/>
+    <Element keyword="Pay_BillNextBtn_AP" locator="//button[@id='btnNext']"/>
+    <Element keyword="Pay_BillPayment_BillingMonth_AP" locator="//table[@id='divtransactions']//td[4]"/>
+    <Element keyword="Pay_BillPayment_AddField_AP" locator="//label[contains(text(),'{x}')]//following-sibling::{y}"/>
+    <Element keyword="Pay_Amount_AP" locator="//input[@id='txtbillingamount']"/>
+    <Element keyword="Pay_Mpin_AP" locator="//input[@id='MPin']"/>
+    <Element keyword="Pay_SubmitBtn_AP" locator="//button[@id='btnSubmit']"/>
+    <Element keyword="Pay_TranMessage_AP" locator="//div[@id='lblMessage']//strong"/>
+    <Element keyword="Pay_CategoryList_AP" locator="//select[@name='BillCompanyType']//option[not(text()='Select')]"/>
+    <Element keyword="Pay_SubCategoryList_AP" locator="//select[@name='BillingCompany']//option[not(@value='0')]"/>
+    <Element keyword="Pay_Consumer_label_AP" locator="//label[@id='lblConsumerNolabel']"/>
+    <Element keyword="Pay_Tran_Full_Message_AP" locator="//div[@id='lblMessage']"/>
+
+
 
   </Module>
   <Module name ="SendMoney">
@@ -280,7 +308,7 @@
     <Element keyword="SendMoney_Rating" locator="//div[@id='SendMoneyPopupGen']//ul[@class='rating']//li[last()]"/>
     <Element keyword="SendMoney_RatingOkBtn" locator="//div[@id='SendMoneyPopupGen']//button[contains(text(),'Ok')]"/>
     <Element keyword="SendMoney_RatingThankOkBtn" locator="//div[@id='SendMoneyPopupGen']//a"/>
-
+    <Element keyword="SendMoney_VerifyButton" locator="//button[@type='button' and text()='Verify']"/>
 
   </Module>
 
@@ -518,8 +546,12 @@
     <Element keyword="BeneManage_Edit_Mobile" locator="//input[@name='MobileNumber']"/>
     <Element keyword="BeneManage_Edit_UpdateBtn" locator="//button[@class='btn submit-btn' and text()='Update']"/>
     <Element keyword="BeneManage_Add_OtpSaveBtn" locator="(//button[@class='btn submit-btn'])[1]"/>
+    <Element keyword="BeneManage_Edit_Title" locator="//p[contains(text(), '{x}')]/parent::*//preceding-sibling::div//p"/>
+    <Element keyword="BeneManage_Edit_To_Bank" locator="//div[@ng-form='ValidateForm']//p[contains(text(), '{x}')]//preceding-sibling::p"/>
+    <Element keyword="BeneManage_Add_ToAcc" locator="//input[@name='AccountTitle']"/>
 
 
+    
   </Module>
 
   <Module name="Investment">
@@ -597,7 +629,21 @@
     <Element keyword="Investment_MutualFund_FolioNumber" locator="//select[@name='folioNo']" />
     <Element keyword="Investment_MutualFund_FolioNumberList" locator="//select[@name='folioNo']//option[@class='ng-binding ng-scope']" />
     <Element keyword="Investment_MutualFund_FundList" locator="//div[@class='invest-option-cont']//li[@class='ng-scope']//div[@class='col-6 col-md-6 col-lg-6 col-xl-6 ng-binding']" />
+  </Module>
 
+  <Module name="CashWithdrawl">
+    <Element keyword="CashWithdrawl_Mobile" locator="//input[@name='CustomerMobileNumber']" />
+    <Element keyword="CashWithdrawl_Amount" locator="//input[@name='Amount']" />
+    <Element keyword="CashWithdrawl_NextBtn" locator="//button[@id='btnNext']" />
 
   </Module>
+
+  <Module name="AgentPortal">
+    <Element keyword="AgentPortal_CashWithdrawl_TabOpt" locator="//a[text()='Customer Transactions']" />
+    <Element keyword="AgentPortal_CashWithdrawl_OptClick" locator="//a[text()='Cash Withdrawal ']" />
+    <Element keyword="AgentPortal_OTCTran_TabOpt" locator="//a[text()='OTC Transactions']" />
+    <Element keyword="AgentPortal_OTCTran_BillOpt" locator="//a[text()='Bill Payment ']" />
+
+  </Module>
+  
 </ElementFactory>

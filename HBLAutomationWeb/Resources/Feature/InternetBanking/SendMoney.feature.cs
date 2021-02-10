@@ -625,6 +625,12 @@ this._1AsAUserIWantToVerifyLoginForHBLWebSendMoney("When user id and password ar
                     string purpose_Query, 
                     string db_Val, 
                     string bene_Count_Query, 
+                    string branch_Code_Query, 
+                    string to_Branch_Query, 
+                    string bene_Id_Tran_Query, 
+                    string bene_Id_Query, 
+                    string bene_Bank_Name_Query, 
+                    string bene_Bank_Tran_Query, 
                     string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -658,7 +664,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 36
  testRunner.And("I am clicking on \"SendMoney_AddNewBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 37
- testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 38
  testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_FromAccount\"", from_Account_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 39
@@ -703,43 +709,53 @@ this.ScenarioSetup(scenarioInfo);
 #line 59
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranPurpose\"", purpose_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 60
- testRunner.And("I am performing on \"SendMoney_CloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"{2}\"", from_Account_Value, branch_Code_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 61
- testRunner.And("I am clicking on \"SendMoney_Rating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify the message \"{0}\" through database on \"{1}\" on Schema \"{2}\"", account_Number_Value, to_Branch_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 62
- testRunner.And("I am clicking on \"SendMoney_RatingOkBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify the result of two queries \"{0}\" on Schema \"{1}\" with \"{2}\" on Schema \"{1}\"" +
+                        " through database", bene_Id_Query, db_Val, bene_Id_Tran_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 63
- testRunner.And("I am clicking on \"SendMoney_RatingThankOkBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify the result of two queries \"{0}\" on Schema \"{1}\" with \"{2}\" on Schema \"{1}\"" +
+                        " through database", bene_Bank_Tran_Query, db_Val, bene_Bank_Name_Query), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 64
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_SearchBeneField\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am performing on \"SendMoney_CloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 65
- testRunner.And(string.Format("verify through \"{0}\" on \"Pay_Transaction_PayBill_BeneSearchConsumerNo\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"SendMoney_Rating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 66
- testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"SendMoney_RatingOkBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 67
- testRunner.And("I verify Account Balance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"SendMoney_RatingThankOkBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 68
- testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_SearchBeneField\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 69
- testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify through \"{0}\" on \"Pay_Transaction_PayBill_BeneSearchConsumerNo\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 70
- testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 71
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranType\"", tran_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I verify Account Balance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 72
+ testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 73
+ testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 74
+ testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 75
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranType\"", tran_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 76
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Success_Amou" +
                         "nt\"", tran_Amount_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 73
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFromAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 74
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToAcc\"", to_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 75
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToBank\"", to_Bank_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 76
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranBeneName\"", bene_Name_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 77
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranPurpose\"", purpose_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFromAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 78
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToAcc\"", to_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 79
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToBank\"", to_Bank_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 80
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranBeneName\"", bene_Name_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 81
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranPurpose\"", purpose_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 82
  testRunner.And("I am clicking on \"Services_Transaction_Close_btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -780,6 +796,20 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToCheckFundTransferCanNotBePerformedWithInsuff_AddNew()
         {
 #line 25
@@ -788,7 +818,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To check fund transfer ca
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -828,6 +866,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To check fund transfer ca
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifyTransactionFromFCY_AddNew()
         {
 #line 25
@@ -836,7 +888,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify transaction fro
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -876,6 +936,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify transaction fro
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifyTransactionWithZeroAmountPSD_N_AddNew()
         {
 #line 25
@@ -884,7 +958,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify transaction wit
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -924,6 +1006,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify transaction wit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifyThatIfBeneAccountIsBlockedPSD_N_AddNew()
         {
 #line 25
@@ -932,7 +1028,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify that, if Bene a
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -974,6 +1078,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify that, if Bene a
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifyThatIfUserDidNotSelectThePurposeOfPaymentHitTheNextButtonPSD_N_AddNew()
         {
 #line 25
@@ -983,7 +1101,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify that, if user d
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -1023,6 +1149,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify that, if user d
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifyAccountNumberFieldEnteringInvalidAccountNumberPSD_N_AddNew()
         {
 #line 25
@@ -1031,7 +1171,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify Account Number 
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -1071,6 +1219,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify Account Number 
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifyTransactionWithEmptyAmountFieldPSD_N_AddNew()
         {
 #line 25
@@ -1079,7 +1241,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify transaction wit
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -1119,6 +1289,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify transaction wit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifyTransactionWithInvalidMobileNumberPSD_N_AddNew()
         {
 #line 25
@@ -1127,7 +1311,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify transaction wit
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -1167,6 +1359,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify transaction wit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifyTransactionWithInvalidEmailFieldPSD_N_AddNew()
         {
 #line 25
@@ -1175,7 +1381,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify transaction wit
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -1215,6 +1429,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify transaction wit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifyTransactionWithEmptyAccountNumberFieldPSD_N_AddNew()
         {
 #line 25
@@ -1223,7 +1451,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify transaction wit
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -1265,6 +1501,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify transaction wit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifyIfCustomerEntersIBANWithCountryCodeOtherThanOfPakistanPSD_N_AddNew()
         {
 #line 25
@@ -1274,7 +1524,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify if customer ent
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -1314,6 +1572,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify if customer ent
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifyFTTransactionOnFCYAccountPSD_N_AddNew()
         {
 #line 25
@@ -1322,7 +1594,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify FT transaction 
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -1362,6 +1642,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify FT transaction 
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifyTransactionWithDecimalAmountPSD_N_AddNew()
         {
 #line 25
@@ -1370,7 +1664,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify transaction wit
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -1412,6 +1714,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify transaction wit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToCheckThatUserCanNotPerformFundTransferWithInvalidTransactionPasswordPSD_N_AddNew()
         {
 #line 25
@@ -1421,7 +1737,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Check that user can no
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -1461,6 +1785,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Check that user can no
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifyNickFieldExceddingMaxCharactersLimitPSD_N_AddNew()
         {
 #line 25
@@ -1469,7 +1807,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify Nick field exce
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -1509,6 +1855,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify Nick field exce
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifyTransactionWithEmptyNickFieldPSD_N_AddNew()
         {
 #line 25
@@ -1517,7 +1877,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify transaction wit
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -1557,6 +1925,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify transaction wit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifyTransactionWithEmptyMobileNumberFieldPSD_N_AddNew()
         {
 #line 25
@@ -1565,7 +1947,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify transaction wit
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -1605,6 +1995,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify transaction wit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifyTransactionWithEmptyTransactionPasswordFieldPSD_N_AddNew()
         {
 #line 25
@@ -1613,7 +2017,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify transaction wit
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -1653,6 +2065,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify transaction wit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifyTransactionWithEmptyEmailFieldPSD_N_AddNew()
         {
 #line 25
@@ -1661,7 +2087,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify transaction wit
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -1701,6 +2135,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify transaction wit
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifyTransactionViaIBANPSD_N_AddNew()
         {
 #line 25
@@ -1709,7 +2157,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify transaction via
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -1749,6 +2205,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify transaction via
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifyTransactionIfBeneficiaryIsAlreadyAddedViaIBANPSD_N_AddNew()
         {
 #line 25
@@ -1757,7 +2227,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify transaction if 
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -1797,6 +2275,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify transaction if 
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifySuccessTransactionOfConventionalPSD_N_AddNew()
         {
 #line 25
@@ -1805,7 +2297,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify success transac
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -1847,6 +2347,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify success transac
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifyTransactionFromConvAccIfBeneIsAlreadyAddedViaIBANPSD_N_AddNew()
         {
 #line 25
@@ -1856,7 +2370,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify transaction fro
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -1898,6 +2420,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify transaction fro
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifyTransactionFromConvAccIfBeneIsAlreadyAddedViaConvAccPSD_N_AddNew()
         {
 #line 25
@@ -1907,7 +2443,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify transaction fro
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -1947,6 +2491,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify transaction fro
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifyTransactionIfNickIsAlreadyExistPSD_N_AddNew()
         {
 #line 25
@@ -1955,7 +2513,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify transaction if 
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -1995,6 +2561,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To verify transaction if 
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifyIBFTTransactionWithMaxLimitAllowedLimitPSD_N_AddNew()
         {
 #line 25
@@ -2003,7 +2583,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify IBFT transactio
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -2043,6 +2631,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify IBFT transactio
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifyIBFTTransactionPSD_N_AddNew()
         {
 #line 25
@@ -2051,7 +2653,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify IBFT transactio
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -2091,6 +2701,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify IBFT transactio
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifyIBFTTransactionWhenBeneIsAlreadyAddedPSD_N_AddNew()
         {
 #line 25
@@ -2099,7 +2723,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify IBFT transactio
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -2139,6 +2771,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify IBFT transactio
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifyIBFTTransactionWhenNickAlreadyExistPSD_N_AddNew()
         {
 #line 25
@@ -2147,7 +2793,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify IBFT transactio
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -2187,6 +2841,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify IBFT transactio
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifyIBFTTransactionViaIBANWhenConvAccountExistPSD_N_AddNew()
         {
 #line 25
@@ -2195,7 +2863,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify IBFT transactio
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -2235,6 +2911,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify IBFT transactio
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifyIBFTTransactionViaIBANPSD_N_AddNew()
         {
 #line 25
@@ -2243,7 +2933,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify IBFT transactio
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -2283,6 +2981,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify IBFT transactio
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifyIBFTTransactionViaIBANWhenIBANAlreadyExistPSD_N_AddNew()
         {
 #line 25
@@ -2291,7 +3003,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify IBFT transactio
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -2331,6 +3051,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify IBFT transactio
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifyIBFTTransactionViaConvAccountWhenIBANAlreadyExistPSD_N_AddNew()
         {
 #line 25
@@ -2339,7 +3073,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify IBFT transactio
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -2379,6 +3121,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify IBFT transactio
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifyKonnectTransactionMaxLimitExceedPSD_N_AddNewPSD_N_AddNew()
         {
 #line 25
@@ -2387,7 +3143,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify Konnect transac
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -2427,6 +3191,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify Konnect transac
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifyMicrofinanceIBFTViaIBANTransactionMaxLimitExceedPSD_N_AddNew()
         {
 #line 25
@@ -2435,7 +3213,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify Microfinance IB
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -2475,6 +3261,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify Microfinance IB
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifySuccessMicrofinanceIBFTViaIBANPSD_N_AddNew()
         {
 #line 25
@@ -2483,7 +3283,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify success Microfi
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -2523,6 +3331,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify success Microfi
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifySuccessMicrofinanceIBFTViaConventionalAccountPSD_N_AddNew()
         {
 #line 25
@@ -2531,7 +3353,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify success Microfi
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -2573,6 +3403,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify success Microfi
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifySendMoneyWithMaxLimitAllowedWithinHBLFundTransferPSD_N_AddNew()
         {
 #line 25
@@ -2582,7 +3426,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify Send money with
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -2624,6 +3476,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify Send money with
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifySendMoneyWithMaxLimitAllowedWithinHBLFundTransferPSD_Y_AddNew()
         {
 #line 25
@@ -2633,7 +3499,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify Send money with
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -2673,6 +3547,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify Send money with
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifyIBFTTransactionMaxLimitExceedPSD_Y_AddNew()
         {
 #line 25
@@ -2681,7 +3569,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify IBFT transactio
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -2721,6 +3617,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify IBFT transactio
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifyKonnectTransactionMaxLimitExceedPSD_Y_AddNew()
         {
 #line 25
@@ -2729,7 +3639,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify Konnect transac
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -2769,6 +3687,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify Konnect transac
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifyMicrofinanceIBFTViaIBANTransactionMaxLimitExceedPSD_Y_AddNew()
         {
 #line 25
@@ -2777,7 +3709,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify Microfinance IB
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -2817,6 +3757,20 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify Microfinance IB
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_count_query", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
             "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
             "mer_name}\') and B.IS_DELETED = 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:branch_code_query", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:to_branch_query", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+            "D = \'{TRANSACTION_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_tran_query", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+            "N_ID}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_id_query", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+            "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+            "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_name_query", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+            "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+            "ION_ID}\')")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:bene_bank_tran_query", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+            "CTION_ID}\'")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiary_ToVerifySuccessMicrofinanceIBFTViaConventionalAccountPSD_Y_AddNew()
         {
 #line 25
@@ -2825,7 +3779,15 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify success Microfi
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
                     "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FT_TO_ACCOUNT_TITLE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "Select count(*) from DC_FUND_TRANSFER_BENEFICIARY b where B.CUSTOMER_INFO_ID = ( " +
                     "Select CUSTOMER_INFO_ID FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME  = \'{custo" +
-                    "mer_name}\') and B.IS_DELETED = 0", new string[] {
+                    "mer_name}\') and B.IS_DELETED = 0", "SELECT DT.BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\'", "SELECT DT.FT_TO_ACCOUNT_BRANCH_CODE FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_I" +
+                    "D = \'{TRANSACTION_ID}\'", "SELECT BENEFICIARY_ID FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSACTIO" +
+                    "N_ID}\'", "SELECT FUND_TRANSFER_BENEFICIARY_ID FROM DC_FUND_TRANSFER_BENEFICIARY K WHERE K.C" +
+                    "USTOMER_INFO_ID = (Select CUSTOMER_INFO_ID from DC_CUSTOMER_INFO L WHERE L.CUSTO" +
+                    "MER_NAME = \'{customer_name}\' ) and K.ACCOUNT_NO = \'{account_number}\'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
+                    "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'{TRANSACT" +
+                    "ION_ID}\')", "SELECT K.BENEFICIARY_BANK FROM DC_TRANSACTION K WHERE K.TRANSACTION_ID = \'{TRANSA" +
+                    "CTION_ID}\'", new string[] {
                         "source:Data/SendMoney.xlsx"});
 #line hidden
         }
@@ -2866,123 +3828,125 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiary("To Verify success Microfi
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user i want to Verify Send Money by adding Beneficiary schedule", @__tags);
-#line 84
-this.ScenarioSetup(scenarioInfo);
-#line 85
- testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 86
- testRunner.And(string.Format("the test case expected result is \"{0}\"", expected_Result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 87
- testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 88
- testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 89
- testRunner.And("I count Number of Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 90
- testRunner.And("I save Account Balances", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("the test case expected result is \"{0}\"", expected_Result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 91
- testRunner.And(string.Format("I set value in context from database \"{0}\" as \"Bene_Count\" on Schema \"{1}\"", bene_Count_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 92
- testRunner.And(string.Format("I set value in context from data \"{0}\" as \"Bene_AccountNo\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 93
+ testRunner.And("I count Number of Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 94
- testRunner.When("I am clicking on \"SendMoney_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I save Account Balances", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 95
- testRunner.And("I am clicking on \"SendMoney_AddNewBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I set value in context from database \"{0}\" as \"Bene_Count\" on Schema \"{1}\"", bene_Count_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 96
- testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 97
- testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_FromAccount\"", from_Account_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"Bene_AccountNo\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 98
- testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_Bank\"", bank_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I am clicking on \"SendMoney_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 99
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_ToAccount\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"SendMoney_AddNewBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 100
+ testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 101
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_Amount\"", amount_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_FromAccount\"", from_Account_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 102
- testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_PurposeOfPayment\"", purposeOfPayment_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_Bank\"", bank_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 103
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_BeneNick\"", bene_Nick), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_ToAccount\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 104
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_BeneMobileNo\"", bene_Mobile_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_Amount\"", amount_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 105
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_BeneEmail\"", bene_Email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am performing on \"SendMoney_VerifyButton\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 106
- testRunner.And("I am clicking on \"SendMoney_ScheduleCheck\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_PurposeOfPayment\"", purposeOfPayment_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 107
- testRunner.And("I scroll to element \"SendMoney_Frequency\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_BeneNick\"", bene_Nick), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 108
- testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_Frequency\"", frequency_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_BeneMobileNo\"", bene_Mobile_No), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 109
- testRunner.And("I am clicking on \"SendMoney_Schedule_FromDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_BeneEmail\"", bene_Email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 110
- testRunner.And(string.Format("I select day \"{0}\" and calculate date", from_Date_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"SendMoney_ScheduleCheck\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 111
- testRunner.And("I set calendar from date", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I scroll to element \"SendMoney_Frequency\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 112
- testRunner.And("I am clicking on \"SendMoney_Schedule_ToDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_Frequency\"", frequency_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 113
- testRunner.And(string.Format("I select day \"{0}\" and calculate date", to_Date_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"SendMoney_Schedule_FromDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 114
- testRunner.And("I set calendar to date", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I select day \"{0}\" and calculate date", from_Date_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 115
- testRunner.And("I am clicking on \"SendMoney_Btn_ViewSummary\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I set calendar from date", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 116
+ testRunner.And("I am clicking on \"SendMoney_Schedule_ToDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 117
+ testRunner.And(string.Format("I select day \"{0}\" and calculate date", to_Date_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 118
+ testRunner.And("I set calendar to date", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 119
+ testRunner.And("I am clicking on \"SendMoney_Btn_ViewSummary\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 120
  testRunner.And("I am verifying list of execution iterations on \"SendMoney_Btn_Summary_Iteration_D" +
                     "ates\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 117
- testRunner.And("I am clicking on \"SendMoney_Btn_Summary_OK\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 118
- testRunner.And("I scroll to element \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 119
- testRunner.And("I am clicking on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 120
- testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 121
- testRunner.And("I am performing on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"SendMoney_Btn_Summary_OK\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 122
- testRunner.And(string.Format("I have given \"{0}\" on \"Pay_Transaction_PayBill_TransactionPassword\"", tran_Pass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I scroll to element \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 123
- testRunner.And("I am clicking on \"SendMoney_ScheduleBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 124
- testRunner.And("I save Transaction Info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Login_OTP_field\"", oTP_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 125
- testRunner.Then(string.Format("verify through \"{0}\" on \"SendMoney_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I am performing on \"Login_OTP_Verify_Button\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 126
+ testRunner.And(string.Format("I have given \"{0}\" on \"Pay_Transaction_PayBill_TransactionPassword\"", tran_Pass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 127
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranSourceAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"SendMoney_ScheduleBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 128
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFrequency\"", frequency_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I save Transaction Info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 129
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranPurpose\"", purpose_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 130
- testRunner.And("I am performing on \"SendMoney_CloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then(string.Format("verify through \"{0}\" on \"SendMoney_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 131
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_SearchBeneField\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranSourceAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 132
- testRunner.And(string.Format("verify through \"{0}\" on \"Pay_Transaction_PayBill_BeneSearchConsumerNo\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFrequency\"", frequency_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 133
- testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 134
- testRunner.And("I verify Account Balance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 135
- testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 136
- testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 137
- testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 138
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranType\"", tran_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 139
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFromAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 140
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranPurpose\"", purpose_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 134
+ testRunner.And("I am performing on \"SendMoney_CloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 135
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_SearchBeneField\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 136
+ testRunner.And(string.Format("verify through \"{0}\" on \"Pay_Transaction_PayBill_BeneSearchConsumerNo\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 137
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 138
+ testRunner.And("I verify Account Balance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 139
+ testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 140
+ testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 141
+ testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 142
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranType\"", tran_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 143
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFromAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 144
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranPurpose\"", purpose_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 145
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Success_Amou" +
                         "nt\"", tran_Amount_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 142
+#line 146
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToAcc\"", to_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 143
+#line 147
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToBank\"", to_Bank_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 144
+#line 148
  testRunner.And("I am clicking on \"Services_Transaction_Close_btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -3028,7 +3992,7 @@ this.ScenarioSetup(scenarioInfo);
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenInvalidDetailsAreProvidedWithInvalidBeneAccAddNew_Sch_Normal()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When invalid Details are provided with invalid Bene acc AddNew_Sch_Normal", "Fail", "05997901262203", "HBL / Konnect", "2308790094190", "2", "Courier Services", "AliSchedule1", "03291234567", "aliabb111@gmail.com", "Daily", "2", "28", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -3079,7 +4043,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When invalid Deta
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenInvalidDetailsAreProvidedWithInvalidBankAddNew_Sch_Normal()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When invalid Details are provided with invalid Bank AddNew_Sch_Normal", "Fail", "05997901262203", "HBLL / Konnect", "07867915677101", "2", "Courier Services", "AliSchedule2", "03291234568", "aliabb111@gmail.com", "Weekly", "2", "28", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -3130,7 +4094,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When invalid Deta
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenInvalidDetailsAreProvidedWithNegativeAmountAddNew_Sch_Normal()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When invalid Details are provided with negative amount AddNew_Sch_Normal", "Fail", "05997901262203", "HBL / Konnect", "14900011079803", "-13", "Courier Services", "AliSchedule3", "03291234569", "aliabb111@gmail.com", "Daily", "2", "28", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -3181,7 +4145,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When invalid Deta
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenInvalidDetailsAreProvidedWithInvalidPurposeAddNew_Sch_Normal()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When invalid Details are provided with invalid purpose AddNew_Sch_Normal", "Fail", "05997901262203", "HBL / Konnect", "00476001511601", "2", "Testt", "AliSchedule4", "03291234570", "aliabb111@gmail.com", "Monthly", "2", "28", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -3232,7 +4196,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When invalid Deta
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenInvalidDetailsAreProvidedWithSpecialCharInBeneAddNew_Sch_Normal()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When invalid Details are provided with Special Char in Bene AddNew_Sch_Normal", "Fail", "05997901262203", "HBL / Konnect", "09470201056703", "2", "Courier Services", "Ali!#$$Schedule5", "03291234571", "aliabb111@gmail.com", "Daily", "2", "28", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -3283,7 +4247,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When invalid Deta
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenInvalidDetailsAreProvidedWithInvalidMobileAddNew_Sch_Normal()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When invalid Details are provided with invalid mobile AddNew_Sch_Normal", "Fail", "05997901262203", "HBL / Konnect", "24460094904501", "2", "Courier Services", "AliSchedule6", "00000000000", "aliabb111@gmail.com", "Daily", "2", "28", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -3334,7 +4298,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When invalid Deta
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenInvalidDetailsAreProvidedWithInvalidEmailAddNew_Sch_Normal()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When invalid Details are provided with invalid email AddNew_Sch_Normal", "Fail", "05997901262203", "HBL / Konnect", "24460099464901", "2", "Courier Services", "AliSchedule7", "03291234573", "aliabb111#gmail.com", "Daily", "2", "28", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -3385,7 +4349,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When invalid Deta
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenInvalidDetailsAreProvidedWithInvalidFrom_DateAddNew_Sch_Normal()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When invalid Details are provided with invalid from_date AddNew_Sch_Normal", "Fail", "05997901262203", "HBL / Konnect", "18347900150103", "2", "Courier Services", "AliSchedule8", "03291234574", "aliabb111@gmail.com", "Daily", "375", "28", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -3436,7 +4400,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When invalid Deta
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenInvalidDetailsAreProvidedWithInvalidTo_DateAddNew_Sch_Normal()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When invalid Details are provided with invalid to_date AddNew_Sch_Normal", "Fail", "05997901262203", "HBL / Konnect", "13597901717701", "2", "Courier Services", "AliSchedule9", "03291234575", "aliabb111@gmail.com", "Daily", "2", "-5", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -3487,7 +4451,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When invalid Deta
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenInvalidDetailsAreProvidedWithToDateLessThanFromAddNew_Sch_Normal()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When invalid Details are provided with to date less than from AddNew_Sch_Normal", "Fail", "05997901262203", "HBL / Konnect", "00476001558901", "2", "Courier Services", "AliSchedule10", "03291234576", "aliabb111@gmail.com", "Daily", "2", "-6", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -3538,7 +4502,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When invalid Deta
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenInvalidDetailsAreProvidedWithIncorrectFreqencyAddNew_Sch_Normal()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When invalid Details are provided with incorrect freqency AddNew_Sch_Normal", "Fail", "05997901262203", "HBL / Konnect", "00476000135901", "2", "Courier Services", "AliSchedule11", "03291234577", "aliabb111@gmail.com", "Yearly", "2", "28", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -3589,7 +4553,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When invalid Deta
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenInvalidDetailsAreProvidedWithIncorrectTranPassAddNew_Sch_Normal()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When invalid Details are provided with incorrect tran Pass AddNew_Sch_Normal", "Fail", "05997901262203", "HBL / Konnect", "22647000000401", "2", "Courier Services", "AliSchedule12", "03291234578", "aliabb111@gmail.com", "Daily", "2", "28", "12345", "pakistan11", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -3640,7 +4604,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When invalid Deta
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenInvalidDetailsAreProvidedWithDailyGreaterThan30AddNew_Sch_Normal()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When invalid Details are provided with daily greater than 30 AddNew_Sch_Normal", "Fail", "05997901262203", "HBL / Konnect", "22647901476280", "2", "Courier Services", "AliSchedule16", "03291234582", "aliabb111@gmail.com", "Daily", "2", "40", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -3691,7 +4655,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When invalid Deta
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenDetailsAreProvidedWithAllValidDetailsAddNew_Sch_Normal()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When Details are provided with all valid details AddNew_Sch_Normal", "Pass", "05997901262203", "HBL / Konnect", "00147900721001", "2", "Courier Services", "AliSchedule13", "03291234579", "aliabb111@gmail.com", "Daily", "2", "28", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -3742,7 +4706,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When Details are 
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenDetailsAreProvidedWithAllValidDetailsIbanAddNew_Sch_Normal()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When Details are provided with all valid details iban AddNew_Sch_Normal", "Pass", "05997901262203", "HBL / Konnect", "PK50HABB0013227900983503", "2", "Courier Services", "AliSchedule14", "03291234580", "aliabb111@gmail.com", "Daily", "2", "28", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -3793,7 +4757,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When Details are 
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenDetailsAreProvidedWithValidDetailsForOtherBankAddNew_Sch_Normal()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When Details are provided with valid details for Other Bank AddNew_Sch_Normal", "Pass", "05997901262203", "HBL / Konnect", "00020000011005730", "25", "Courier Services", "AliSchedule15", "03291234581", "aliabb111@gmail.com", "Daily", "2", "28", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -3844,7 +4808,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When Details are 
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenUserHaveINSUFFICIENTBALANCEAddNew_Sch_Insuff()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When User have INSUFFICIENT BALANCE AddNew_Sch_insuff", "Pass", "10177900621803", "HBL / Konnect", "00020000011005730", "25000", "Courier Services", "insufficient blance", "03291234581", "aliabb111@gmail.com", "Daily", "2", "28", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -3895,7 +4859,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When User have IN
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenValidHBLAccIsProvidedWithInvalidDatesDailyAddNew_Sch_Date()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid HBL Acc is provided with invalid dates Daily AddNew_Sch_date", "Fail", "04607900692103", "HBL / Konnect", "08497900070001", "23", "Courier Services", "AliSch6", "03121223345", "aliabb111@gmail.com", "Daily", "2", "40", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -3946,7 +4910,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid HBL Ac
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenValidHBLAccIsProvidedWithInvalidDatesWeeklyAddNew_Sch_Date()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid HBL Acc is provided with invalid dates Weekly AddNew_Sch_date", "Fail", "04607900692103", "HBL / Konnect", "08527900480003", "23", "Courier Services", "AliSch7", "03121223345", "aliabb111@gmail.com", "Weekly", "2", "225", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -3997,7 +4961,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid HBL Ac
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenValidHBLAccIsProvidedWithInvalidDatesFortnightlyAddNew_Sch_Date()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid HBL Acc is provided with invalid dates Fortnightly AddNew_Sch_date", "Fail", "04607900692103", "HBL / Konnect", "07867902599901", "23", "Courier Services", "AliSch8", "03121223345", "aliabb111@gmail.com", "Fortnightly", "2", "460", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -4048,7 +5012,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid HBL Ac
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenValidHBLAccIsProvidedWithInvalidDatesMonthlyAddNew_Sch_Date()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid HBL Acc is provided with invalid dates Monthly AddNew_Sch_date", "Fail", "04607900692103", "HBL / Konnect", "22648999100880", "23", "Courier Services", "AliSch9", "03121223345", "aliabb111@gmail.com", "Monthly", "2", "1050", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -4099,7 +5063,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid HBL Ac
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenValidHBLAccIsProvidedWithInvalidDatesQuarterlyAddNew_Sch_Date()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid HBL Acc is provided with invalid dates Quarterly AddNew_Sch_date", "Fail", "04607900692103", "HBL / Konnect", "00477948322201", "23", "Courier Services", "AliSch10", "03121223345", "aliabb111@gmail.com", "Quarterly", "2", "4000", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -4150,7 +5114,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid HBL Ac
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenValidIBFTAccIsProvidedWithInvalidDatesDailyAddNew_Sch_Date()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT Acc is provided with invalid dates Daily AddNew_Sch_date", "Fail", "04607900692103", "Askari Commercial Bank Limited", "02800320004636", "23", "Courier Services", "ibft6", "03121223345", "aliabb111@gmail.com", "Daily", "2", "40", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -4201,7 +5165,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT A
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenValidIBFTAccIsProvidedWithInvalidDatesWeeklyAddNew_Sch_Date()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT Acc is provided with invalid dates Weekly AddNew_Sch_date", "Fail", "04607900692103", "United Bank Limited", "0605060510946074", "23", "Courier Services", "ibft7", "03121223345", "aliabb111@gmail.com", "Weekly", "2", "225", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -4252,7 +5216,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT A
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenValidIBFTAccIsProvidedWithInvalidDatesFortnightlyAddNew_Sch_Date()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT Acc is provided with invalid dates Fortnightly AddNew_Sch_date", "Fail", "04607900692103", "Standard Chartered Bank", "01719020101", "23", "Courier Services", "ibft8", "03121223345", "aliabb111@gmail.com", "Fortnightly", "2", "460", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -4303,7 +5267,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT A
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenValidIBFTAccIsProvidedWithInvalidDatesMonthlyAddNew_Sch_Date()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT Acc is provided with invalid dates Monthly AddNew_Sch_date", "Fail", "04607900692103", "BankIslami Pakistan Limited", "100605050300201", "23", "Courier Services", "ibft9", "03121223345", "aliabb111@gmail.com", "Monthly", "2", "1050", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -4354,7 +5318,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT A
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenValidIBFTAccIsProvidedWithInvalidDatesQuarterlyAddNew_Sch_Date()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT Acc is provided with invalid dates Quarterly AddNew_Sch_date", "Fail", "04607900692103", "MCB Bank Limited", "0300777261006679", "23", "Courier Services", "ibft10", "03121223345", "aliabb111@gmail.com", "Quarterly", "2", "4000", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -4405,7 +5369,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT A
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenValidIBFTIBANAccIsProvidedInvalidDatesDailyAddNew_Sch_Date()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT IBAN Acc is provided invalid dates Daily AddNew_Sch_date", "Fail", "04607900692103", "Bank AL Habib Limited", "PK27BAHL1083009501262002", "23", "Courier Services", "ibftiban6", "03121223345", "aliabb111@gmail.com", "Daily", "2", "40", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -4456,7 +5420,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT I
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenValidIBFTIBANAccIsProvidedInvalidDatesWeeklyAddNew_Sch_Date()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT IBAN Acc is provided invalid dates Weekly AddNew_Sch_date", "Fail", "04607900692103", "Bank AL Habib Limited", "PK97BAHL1108009500890601", "23", "Courier Services", "ibftiban7", "03121223345", "aliabb111@gmail.com", "Weekly", "2", "225", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -4507,7 +5471,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT I
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenValidIBFTIBANAccIsProvidedInvalidDatesFortnightlyAddNew_Sch_Date()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT IBAN Acc is provided invalid dates Fortnightly AddNew_Sch_date", "Fail", "04607900692103", "Bank AL Habib Limited", "PK48BAHL0070009500457801", "23", "Courier Services", "ibftiban8", "03121223345", "aliabb111@gmail.com", "Fortnightly", "2", "460", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -4558,7 +5522,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT I
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenValidIBFTIBANAccIsProvidedInvalidDatesMonthlyAddNew_Sch_Date()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT IBAN Acc is provided invalid dates Monthly AddNew_Sch_date", "Fail", "04607900692103", "Bank AL Habib Limited", "PK97BAHL1108009500890601", "23", "Courier Services", "ibftiban9", "03121223345", "aliabb111@gmail.com", "Monthly", "2", "1050", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -4609,7 +5573,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT I
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenValidIBFTIBANAccIsProvidedInvalidDatesQuarterlyAddNew_Sch_Date()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT IBAN Acc is provided invalid dates Quarterly AddNew_Sch_date", "Fail", "04607900692103", "Bank AL Habib Limited", "PK27BAHL1083009501262002", "23", "Courier Services", "ibftiban10", "03121223345", "aliabb111@gmail.com", "Quarterly", "2", "4000", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -4660,7 +5624,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT I
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenValidHBLAccIsProvidedWithCorrectDatesDailyAddNew_Sch_Pass()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid HBL Acc is provided with correct dates Daily AddNew_Sch_Pass", "Pass", "00727901890803", "HBL / Konnect", "23457913894303", "10", "Others", "AliSch1", "03121223345", "aliabb111@gmail.com", "Daily", "2", "28", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -4711,7 +5675,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid HBL Ac
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenValidHBLAccIsProvidedWithValidDatesWeeklyAddNew_Sch_Pass()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid HBL Acc is provided with valid dates Weekly AddNew_Sch_Pass", "Pass", "00727901890803", "HBL / Konnect", "08497900068901", "10", "Others", "AliSch2", "03121223345", "aliabb111@gmail.com", "Weekly", "2", "200", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -4762,7 +5726,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid HBL Ac
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenValidHBLAccIsProvidedWithValidDatesFortnightlyAddNew_Sch_Pass()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid HBL Acc is provided with valid dates Fortnightly AddNew_Sch_Pass", "Pass", "00727901890803", "HBL / Konnect", "00277900350711", "10", "Others", "AliSch3", "03121223345", "aliabb111@gmail.com", "Fortnightly", "2", "400", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -4813,7 +5777,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid HBL Ac
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenValidHBLAccIsProvidedWithValidDatesMonthlyAddNew_Sch_Pass()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid HBL Acc is provided with valid dates Monthly AddNew_Sch_Pass", "Pass", "00727901890803", "HBL / Konnect", "07867901527301", "10", "Others", "AliSch4", "03121223345", "aliabb111@gmail.com", "Monthly", "2", "800", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -4864,7 +5828,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid HBL Ac
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenValidHBLAccIsProvidedWithValidDatesQuarterlyAddNew_Sch_Pass()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid HBL Acc is provided with valid dates Quarterly AddNew_Sch_Pass", "Pass", "00727901890803", "HBL / Konnect", "07867916249703", "10", "Others", "AliSch5", "03121223345", "aliabb111@gmail.com", "Quarterly", "2", "3200", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -4915,7 +5879,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid HBL Ac
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenValidIBFTAccIsProvidedWithValidDatesDailyAddNew_Sch_Pass()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT Acc is provided with valid dates Daily AddNew_Sch_Pass", "Pass", "00727901890803", "Askari Commercial Bank Limited", "02800320004636", "10", "Others", "ibft1", "03121223345", "aliabb111@gmail.com", "Daily", "2", "28", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -4966,7 +5930,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT A
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenValidIBFTAccIsProvidedWithValidDatesWeeklyAddNew_Sch_Pass()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT Acc is provided with valid dates Weekly AddNew_Sch_Pass", "Pass", "00727901890803", "United Bank Limited", "0605060510946074", "10", "Others", "ibft2", "03121223345", "aliabb111@gmail.com", "Weekly", "2", "200", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -5017,7 +5981,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT A
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenValidIBFTAccIsProvidedWithValidDatesFortnightlyAddNew_Sch_Pass()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT Acc is provided with valid dates Fortnightly AddNew_Sch_Pass", "Pass", "00727901890803", "Standard Chartered Bank", "01719020101", "10", "Others", "ibft3", "03121223345", "aliabb111@gmail.com", "Fortnightly", "2", "400", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -5068,7 +6032,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT A
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenValidIBFTAccIsProvidedWithValidDatesMonthlyAddNew_Sch_Pass()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT Acc is provided with valid dates Monthly AddNew_Sch_Pass", "Pass", "00727901890803", "BankIslami Pakistan Limited", "100605050300201", "10", "Others", "ibft4", "03121223345", "aliabb111@gmail.com", "Monthly", "2", "800", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -5119,7 +6083,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT A
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenValidIBFTAccIsProvidedWithValidDatesQuarterlyAddNew_Sch_Pass()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT Acc is provided with valid dates Quarterly AddNew_Sch_Pass", "Pass", "00727901890803", "MCB Bank Limited", "0300777261006679", "10", "Others", "ibft5", "03121223345", "aliabb111@gmail.com", "Quarterly", "2", "3200", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -5170,7 +6134,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT A
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenValidIBFTIBANAccIsProvidedValidDatesDailyAddNew_Sch_Pass()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT IBAN Acc is provided valid dates Daily AddNew_Sch_Pass", "Pass", "00727901890803", "Bank AL Habib Limited", "PK27BAHL1083009501262002", "10", "Others", "ibftiban1", "03121223345", "aliabb111@gmail.com", "Daily", "2", "28", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -5221,7 +6185,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT I
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenValidIBFTIBANAccIsProvidedValidDatesWeeklyAddNew_Sch_Pass()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT IBAN Acc is provided valid dates Weekly AddNew_Sch_Pass", "Pass", "00727901890803", "Bank AL Habib Limited", "PK97BAHL1108009500890601", "10", "Others", "ibftiban2", "03121223345", "aliabb111@gmail.com", "Weekly", "2", "200", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -5272,7 +6236,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT I
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenValidIBFTIBANAccIsProvidedValidDatesFortnightlyAddNew_Sch_Pass()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT IBAN Acc is provided valid dates Fortnightly AddNew_Sch_Pass", "Pass", "00727901890803", "Bank AL Habib Limited", "PK48BAHL0070009500457801", "10", "Others", "ibftiban3", "03121223345", "aliabb111@gmail.com", "Fortnightly", "2", "400", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -5323,7 +6287,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT I
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenValidIBFTIBANAccIsProvidedValidDatesMonthlyAddNew_Sch_Pass()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT IBAN Acc is provided valid dates Monthly AddNew_Sch_Pass", "Pass", "00727901890803", "Bank AL Habib Limited", "PK97BAHL1108009500890601", "10", "Others", "ibftiban4", "03121223345", "aliabb111@gmail.com", "Monthly", "2", "800", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -5374,7 +6338,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT I
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenValidIBFTIBANAccIsProvidedValidDatesQuarterlyAddNew_Sch_Pass()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT IBAN Acc is provided valid dates Quarterly AddNew_Sch_Pass", "Pass", "00727901890803", "Bank AL Habib Limited", "PK27BAHL1083009501262002", "10", "Others", "ibftiban5", "03121223345", "aliabb111@gmail.com", "Quarterly", "2", "3200", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -5425,7 +6389,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When valid IBFT I
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenBeneAccountIsLOANAddNew_Sch_Pass()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When Bene Account is LOAN AddNew_Sch_Pass", "Pass", "00727901890803", "HBL / Konnect", "22667230559903", "10", "Others", "loan1", "03121223345", "aliabb111@gmail.com", "Daily", "2", "28", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -5476,7 +6440,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When Bene Account
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenBeneAccountIsFCYAddNew_Sch_Pass()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When Bene Account is FCY AddNew_Sch_Pass", "Pass", "00727901890803", "HBL / Konnect", "23087900855910", "10", "Others", "fcy1", "03121223345", "aliabb111@gmail.com", "Daily", "2", "28", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -5527,7 +6491,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When Bene Account
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenBeneAccountIsMONEYCLUBAddNew_Sch_Pass()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When Bene Account is MONEY CLUB AddNew_Sch_Pass", "Pass", "00727901890803", "HBL / Konnect", "12497900564101", "10", "Others", "moneyclub1", "03121223345", "aliabb111@gmail.com", "Daily", "2", "28", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -5578,7 +6542,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When Bene Account
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenBeneAccountIsBLOCKEDFROMMISYSAddNew_Sch_Pass()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When Bene Account is BLOCKED FROM MISYS AddNew_Sch_Pass", "Pass", "00727901890803", "HBL / Konnect", "04007902322903", "10", "Others", "misysblocked1", "03121223345", "aliabb111@gmail.com", "Daily", "2", "28", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -5629,7 +6593,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When Bene Account
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenBeneAccountIsBRANCHLESSKonnectAddNew_Sch_Pass()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When Bene Account is BRANCHLESS Konnect AddNew_Sch_Pass", "Pass", "00727901890803", "HBL / Konnect", "03334900125", "10", "Others", "branchless1", "03121223345", "aliabb111@gmail.com", "Daily", "2", "28", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -5680,7 +6644,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When Bene Account
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenBeneAccountHasSPECIALCONDITIONAddNew_Sch_Pass()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When Bene Account has SPECIAL CONDITION AddNew_Sch_Pass", "Pass", "00727901890803", "HBL / Konnect", "04007902322903", "10", "Others", "misysspecial1", "03121223345", "aliabb111@gmail.com", "Daily", "2", "28", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -5731,7 +6695,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When Bene Account
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenDailyLimitExceedsOnHBLAccAddNew_Sch_Pass()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When Daily Limit Exceeds on HBL Acc AddNew_Sch_Pass", "Pass", "00727901890803", "HBL / Konnect", "12757900758503", "10", "Others", "limitexceeds1", "03121223345", "aliabb111@gmail.com", "Daily", "2", "28", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -5782,7 +6746,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When Daily Limit 
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenDailyLimitExceedsOnIBFTAccAddNew_Sch_Pass()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When Daily Limit Exceeds on IBFT Acc AddNew_Sch_Pass", "Pass", "00727901890803", "Model Bank", "00020000011005730", "10", "Others", "limitexceeds2", "03121223345", "aliabb111@gmail.com", "Daily", "2", "28", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -5833,7 +6797,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When Daily Limit 
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenDailyLimitExceedsOnOWNAccAddNew_Sch_Pass()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When Daily Limit Exceeds on OWN Acc AddNew_Sch_Pass", "Pass", "00727901890803", "HBL / Konnect", "01797900741901", "10", "Others", "limitexceeds3", "03121223345", "aliabb111@gmail.com", "Daily", "2", "28", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -5884,7 +6848,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When Daily Limit 
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenSendersPSDFlagYAddNew_Sch_PSDY()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When Senders PSD Flag Y AddNew_Sch_PSDY", "Pass", "00580052365603", "HBL / Konnect", "23457913894303", "10", "Others", "psdy", "03121223345", "aliabb111@gmail.com", "Daily", "2", "28", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -5935,7 +6899,7 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When Senders PSD 
             "mer_name}\') and B.IS_DELETED = 0")]
         public virtual void AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule_WhenSendersPSDFlagNAddNew_Sch_PSDN()
         {
-#line 84
+#line 88
 this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When Senders PSD Flag N AddNew_Sch_PSDN", "Pass", "00580052365603", "HBL / Konnect", "23087900855910", "10", "Others", "psdn", "03121223345", "aliabb111@gmail.com", "Daily", "2", "28", "12345", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -5973,87 +6937,87 @@ this.AsAUserIWantToVerifySendMoneyByAddingBeneficiarySchedule("When Senders PSD 
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user i want to Verify Send Money by using Beneficiary", @__tags);
-#line 152
-this.ScenarioSetup(scenarioInfo);
-#line 153
- testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 154
- testRunner.And(string.Format("the test case expected result is \"{0}\"", expected_Result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 155
- testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 156
- testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 157
- testRunner.And("I count Number of Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 158
- testRunner.And("I save Account Balances", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("the test case expected result is \"{0}\"", expected_Result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 159
- testRunner.And(string.Format("I set value in context from data \"{0}\" as \"Bene_AccountNo\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 161
- testRunner.When("I am clicking on \"SendMoney_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 162
- testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 163
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_SearchBeneField\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 164
- testRunner.And("I am clicking on \"SendMoney_BeneClick\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 165
- testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 166
- testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_FromAccount\"", from_Account_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 167
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_Amount\"", amount_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 168
- testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_PurposeOfPaymentBene\"", purposeOfPayment_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 169
- testRunner.And("I am clicking on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 170
- testRunner.And(string.Format("I have given \"{0}\" on \"Pay_Transaction_PayBill_TransactionPassword\"", tran_Pass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 171
- testRunner.And("I am clicking on \"SendMoney_SendBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 172
- testRunner.And("I save Transaction Info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 173
- testRunner.Then(string.Format("verify through \"{0}\" on \"SendMoney_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 174
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Success_Amou" +
-                        "nt\"", tran_Amount_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 175
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFromAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 176
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToAcc\"", to_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 177
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToBank\"", to_Bank_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 179
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranPurpose\"", purpose_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 180
- testRunner.And("I am performing on \"SendMoney_CloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 181
+ testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 160
  testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 182
- testRunner.And("I verify Account Balance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 183
- testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 184
- testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 185
- testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 186
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranType\"", tran_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 187
+#line 161
+ testRunner.And("I count Number of Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 162
+ testRunner.And("I save Account Balances", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 163
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"Bene_AccountNo\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 165
+ testRunner.When("I am clicking on \"SendMoney_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 166
+ testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 167
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_SearchBeneField\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 168
+ testRunner.And("I am clicking on \"SendMoney_BeneClick\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 169
+ testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 170
+ testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_FromAccount\"", from_Account_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 171
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_Amount\"", amount_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 172
+ testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_PurposeOfPaymentBene\"", purposeOfPayment_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 173
+ testRunner.And("I am clicking on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 174
+ testRunner.And(string.Format("I have given \"{0}\" on \"Pay_Transaction_PayBill_TransactionPassword\"", tran_Pass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 175
+ testRunner.And("I am clicking on \"SendMoney_SendBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 176
+ testRunner.And("I save Transaction Info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 177
+ testRunner.Then(string.Format("verify through \"{0}\" on \"SendMoney_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 178
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Success_Amou" +
                         "nt\"", tran_Amount_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 188
+#line 179
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFromAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 189
+#line 180
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToAcc\"", to_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 190
+#line 181
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToBank\"", to_Bank_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 191
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranBeneName\"", bene_Name_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 192
+#line 183
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranPurpose\"", purpose_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 184
+ testRunner.And("I am performing on \"SendMoney_CloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 185
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 186
+ testRunner.And("I verify Account Balance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 187
+ testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 188
+ testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 189
+ testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 190
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranType\"", tran_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 191
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Success_Amou" +
+                        "nt\"", tran_Amount_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 192
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFromAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 193
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToAcc\"", to_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 194
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToBank\"", to_Bank_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 195
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranBeneName\"", bene_Name_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 196
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranPurpose\"", purpose_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 197
  testRunner.And("I am clicking on \"Services_Transaction_Close_btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -6088,7 +7052,7 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiary_ToVerifyTransactionWithZeroAmountBene_PSN_N()
         {
-#line 152
+#line 156
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To verify transaction with zero amount Bene_PSN_N", "Fail", "22837900558401", "14660017195901", "0", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -6126,7 +7090,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To verify transaction with
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiary_ToVerifyTransactionWithDecimalAmountBene_PSN_N()
         {
-#line 152
+#line 156
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To verify transaction with decimal amount Bene_PSN_N", "Pass", "22837900558401", "14660017195901", "155.55", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -6164,7 +7128,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To verify transaction with
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiary_ToVerifySendMoneyWithMaxLimitAllowedWithinHBLFTBene_PSN_N()
         {
-#line 152
+#line 156
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To Verify Send money with max limit allowed within HBL FT Bene_PSN_N", "Fail", "22837900558401", "14660017195901", "25001", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -6202,7 +7166,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To Verify Send money with 
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiary_ToCheckThatUserCanNotPerformFTWithInvalidTranPassBene_PSN_N()
         {
-#line 152
+#line 156
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To check that user can not perform FT with invalid tran pass Bene_PSN_N", "Fail", "22837900558401", "14660017195901", "10", "Courier Services", "pakistan22", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -6242,7 +7206,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To check that user can not
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiary_ToVerifyThatIfUserDidNotSelectThePurposeOfPaymentHitNextBtnBene_PSN_N()
         {
-#line 152
+#line 156
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To verify that, if user did not select the purpose of payment & hit next btn Bene" +
                     "_PSN_N", "Fail", "22837900558401", "14660017195901", "10", "", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
@@ -6281,7 +7245,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To verify that, if user di
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiary_ToVerifyThatIfBeneAccountIsBlockedBene_PSN_N()
         {
-#line 152
+#line 156
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To verify that, if Bene account is blocked Bene_PSN_N", "Fail", "22837900558401", "16817900545603", "10", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -6319,7 +7283,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To verify that, if Bene ac
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiary_ToVerifyTransactionWithEmptyAmountFieldBene_PSN_N()
         {
-#line 152
+#line 156
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To verify transaction with empty Amount field Bene_PSN_N", "Fail", "22837900558401", "14660017195901", "", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -6357,7 +7321,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To verify transaction with
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiary_ToVerifyTransactionWithEmptyTransactionPasswordFieldBene_PSN_N()
         {
-#line 152
+#line 156
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To verify transaction with empty transaction password field Bene_PSN_N", "Fail", "22837900558401", "14660017195901", "10", "Courier Services", "", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -6395,7 +7359,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To verify transaction with
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiary_ToVerifyFTTransactionOnFCYAccountBene_PSN_N()
         {
-#line 152
+#line 156
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To Verify FT transaction on FCY account Bene_PSN_N", "Fail", "22837900558401", "07867918480599", "150", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -6433,7 +7397,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To Verify FT transaction o
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiary_ToVerifyTransactionViaIBANBene_PSN_N()
         {
-#line 152
+#line 156
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To verify transaction via IBAN Bene_PSN_N", "Pass", "22837900558401", "PK50HABB0013227900983503", "150", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -6471,7 +7435,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To verify transaction via 
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiary_ToVerifySuccessTransactionOfConventionalBene_PSN_N()
         {
-#line 152
+#line 156
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To verify success transaction of conventional Bene_PSN_N", "Pass", "22837900558401", "14660017195901", "1050", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -6509,7 +7473,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To verify success transact
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiary_ToVerifyIBFTTransactionBene_PSN_N()
         {
-#line 152
+#line 156
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To Verify  IBFT transaction Bene_PSN_N", "Pass", "22837900558401", "00020000011005730", "1050", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -6547,7 +7511,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To Verify  IBFT transactio
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiary_ToVerifyIBFTTransactionWithMaxLimitAllowedLimitBene_PSN_N()
         {
-#line 152
+#line 156
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To Verify  IBFT transaction with max limit allowed limit Bene_PSN_N", "Fail", "22837900558401", "00020000011005730", "25001", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -6585,7 +7549,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To Verify  IBFT transactio
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiary_ToVerifyIBFTTransactionViaIBANBene_PSN_N()
         {
-#line 152
+#line 156
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To Verify  IBFT transaction Via IBAN Bene_PSN_N", "Pass", "22837900558401", "PK47ABPA0002000001100111", "1050", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -6623,7 +7587,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To Verify  IBFT transactio
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiary_ToVerifyKonnectTransactionMaxLimitExceedBene_PSN_N()
         {
-#line 152
+#line 156
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To Verify Konnect transaction max limit exceed Bene_PSN_N", "Fail", "22837900558401", "03334900122", "5001", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -6661,7 +7625,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To Verify Konnect transact
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiary_ToVerifyMicrofinanceIBFTTransactionViaIBANMaxLimitExceedBene_PSN_N()
         {
-#line 152
+#line 156
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To Verify Microfinance IBFT transaction via IBAN max limit exceed Bene_PSN_N", "Fail", "22837900558401", "PK95UNIL0308125600740993", "5001", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -6699,7 +7663,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To Verify Microfinance IBF
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiary_ToVerifySuccessMicrofinanceIBFTViaIBANBene_PSN_N()
         {
-#line 152
+#line 156
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To Verify success Microfinance IBFT via IBAN Bene_PSN_N", "Pass", "22837900558401", "PK95UNIL0308125600740993", "1050", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -6737,7 +7701,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To Verify success Microfin
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiary_ToVerifySendMoneyWithMaxLimitAllowedWithinHBLFTBene_PSN_Y()
         {
-#line 152
+#line 156
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To Verify Send money with max limit allowed within HBL FT Bene_PSN_Y", "Fail", "14660017195901", "23897000217303", "150001", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -6775,7 +7739,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To Verify Send money with 
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiary_ToVerifyIBFTTransactionMaxLimitExceedBene_PSN_Y()
         {
-#line 152
+#line 156
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To Verify IBFT transaction max limit exceed Bene_PSN_Y", "Fail", "14660017195901", "00020000011005730", "150001", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -6813,7 +7777,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To Verify IBFT transaction
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiary_ToVerifyKonnectTransactionMaxLimitExceedBene_PSN_Y()
         {
-#line 152
+#line 156
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To Verify Konnect transaction max limit exceed Bene_PSN_Y", "Fail", "14660017195901", "03334900120", "15001", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -6851,7 +7815,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To Verify Konnect transact
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiary_ToVerifyMicrofinanceIBFTTransactionViaIBANMaxLimitExceedBene_PSN_Y()
         {
-#line 152
+#line 156
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To Verify Microfinance IBFT transaction via IBAN max limit exceed Bene_PSN_Y", "Fail", "14660017195901", "PK95UNIL0308125600740993", "15001", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -6889,7 +7853,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To Verify Microfinance IBF
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:db_val", "DIGITAL_CHANNEL_SEC")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiary_ToCheckFTCanNotBePerformedWithMoreThanAvailBalBene_Insuff()
         {
-#line 152
+#line 156
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To check FT can not be performed with more than Avail bal Bene_Insuff", "Fail", "08527900480003", "22837900558401", "6000", "Courier Services", "pakistan2", "Money sent successfully.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -6933,103 +7897,103 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiary("To check FT can not be per
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a user i want to Verify Send Money by using Beneficiary schedule", @__tags);
-#line 201
-this.ScenarioSetup(scenarioInfo);
-#line 202
- testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 203
- testRunner.And(string.Format("the test case expected result is \"{0}\"", expected_Result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 204
- testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 205
- testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 206
- testRunner.And("I count Number of Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given(string.Format("the test case title is \"{0}\"", @case), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 207
- testRunner.And("I save Account Balances", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("the test case expected result is \"{0}\"", expected_Result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 208
- testRunner.And(string.Format("I set value in context from data \"{0}\" as \"Bene_AccountNo\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the user is arrive to Internet Banking home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 209
- testRunner.When("I am clicking on \"SendMoney_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 210
- testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I count Number of Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 211
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_SearchBeneField\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I save Account Balances", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 212
- testRunner.And("I am clicking on \"SendMoney_BeneClick\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I set value in context from data \"{0}\" as \"Bene_AccountNo\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 213
- testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I am clicking on \"SendMoney_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 214
- testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_FromAccount\"", from_Account_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I wait 3000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 215
- testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_Amount\"", amount_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_SearchBeneField\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 216
- testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_PurposeOfPaymentBene\"", purposeOfPayment_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"SendMoney_BeneClick\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 217
- testRunner.And("I am clicking on \"SendMoney_ScheduleCheck\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I wait 2000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 218
- testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_Frequency\"", frequency_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_FromAccount\"", from_Account_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 219
- testRunner.And("I am clicking on \"SendMoney_Schedule_FromDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"SendMoney_Amount\"", amount_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 220
- testRunner.And(string.Format("I select day \"{0}\" and calculate date", from_Date_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_PurposeOfPaymentBene\"", purposeOfPayment_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 221
- testRunner.And("I set calendar from date", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"SendMoney_ScheduleCheck\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 222
- testRunner.And("I am clicking on \"SendMoney_Schedule_ToDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I select \"{0}\" on \"SendMoney_Frequency\"", frequency_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 223
- testRunner.And(string.Format("I select day \"{0}\" and calculate date", to_Date_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"SendMoney_Schedule_FromDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 224
- testRunner.And("I set calendar to date", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I select day \"{0}\" and calculate date", from_Date_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 225
- testRunner.And("I am clicking on \"SendMoney_Btn_ViewSummary\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I set calendar from date", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 226
+ testRunner.And("I am clicking on \"SendMoney_Schedule_ToDate\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 227
+ testRunner.And(string.Format("I select day \"{0}\" and calculate date", to_Date_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 228
+ testRunner.And("I set calendar to date", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 229
+ testRunner.And("I am clicking on \"SendMoney_Btn_ViewSummary\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 230
  testRunner.And("I am verifying list of execution iterations on \"SendMoney_Btn_Summary_Iteration_D" +
                     "ates\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 227
- testRunner.And("I am clicking on \"SendMoney_Btn_Summary_OK\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 228
- testRunner.And("I am clicking on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 229
- testRunner.And(string.Format("I have given \"{0}\" on \"Pay_Transaction_PayBill_TransactionPassword\"", tran_Pass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 230
- testRunner.And("I am clicking on \"SendMoney_ScheduleBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 231
- testRunner.And("I save Transaction Info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"SendMoney_Btn_Summary_OK\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 232
- testRunner.Then(string.Format("verify through \"{0}\" on \"SendMoney_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I am clicking on \"SendMoney_NextBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 233
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranSourceAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("I have given \"{0}\" on \"Pay_Transaction_PayBill_TransactionPassword\"", tran_Pass_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 234
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFrequency\"", frequency_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"SendMoney_ScheduleBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 235
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranPurpose\"", purpose_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I save Transaction Info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 236
- testRunner.And("I am performing on \"SendMoney_CloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then(string.Format("verify through \"{0}\" on \"SendMoney_TranSuccessMessage\"", success_Message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 237
- testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranSourceAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 238
- testRunner.And("I verify Account Balance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFrequency\"", frequency_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 239
- testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranPurpose\"", purpose_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 240
- testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am performing on \"SendMoney_CloseBtn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 241
- testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 242
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranType\"", tran_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I verify Account Balance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 243
+ testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 244
+ testRunner.And("I am clicking on \"Services_Transaction_Activity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 245
+ testRunner.And("I am clicking on \"Services_Last_Transaction\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 246
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranType\"", tran_Type_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 247
  testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"Pay_Transaction_Success_Amou" +
                         "nt\"", tran_Amount_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 244
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFromAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 245
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToAcc\"", to_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 246
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToBank\"", to_Bank_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 247
- testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranPurpose\"", purpose_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 248
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranFromAcc\"", from_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 249
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToAcc\"", to_Account_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 250
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranToBank\"", to_Bank_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 251
+ testRunner.And(string.Format("verify through database on \"{0}\" on Schema \"{1}\" on \"SendMoney_TranPurpose\"", purpose_Query, db_Val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 252
  testRunner.And("I am clicking on \"Services_Transaction_Close_btn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -7074,7 +8038,7 @@ this.ScenarioSetup(scenarioInfo);
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule_ToVerifyTheSendMoneyTransactionWithBeneOfOtherHBLDailyBene_Sch_Normal()
         {
-#line 201
+#line 205
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send Money transaction with Bene of other HBL(Daily) Bene_Sch_Norma" +
                     "l", "Pass", "01907981051403", "HBL / Konnect", "07867915677101", "10", "Tax payment", "Daily", "03343913854", "abc@test.com", "Daily", "2", "28", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
@@ -7123,7 +8087,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule_ToVerifyTheSendMoneyTransactionWithBeneOfOtherHBLWeeklyBene_Sch_Normal()
         {
-#line 201
+#line 205
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send Money transaction with Bene of other HBL(Weekly) Bene_Sch_Norm" +
                     "al", "Pass", "01907981051403", "HBL / Konnect", "14900011079803", "11", "Others", "Weekly", "03343913854", "abc@test.com", "Weekly", "2", "200", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
@@ -7172,7 +8136,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule_ToVerifyTheSendMoneyTransactionWithBeneOfOtherHBLFortnightlyBene_Sch_Normal()
         {
-#line 201
+#line 205
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send Money transaction with Bene of other HBL(Fortnightly) Bene_Sch" +
                     "_Normal", "Pass", "01907981051403", "HBL / Konnect", "00476001511601", "12", "Others", "Fortnightly", "03343913854", "abc@test.com", "Fortnightly", "2", "400", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
@@ -7221,7 +8185,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule_ToVerifyTheSendMoneyTransactionWithBeneOfOtherHBLMonthlyBene_Sch_Normal()
         {
-#line 201
+#line 205
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send Money transaction with Bene of other HBL(Monthly) Bene_Sch_Nor" +
                     "mal", "Pass", "01907981051403", "HBL / Konnect", "09470201056703", "13", "Others", "Monthly", "03343913854", "abc@test.com", "Monthly", "2", "800", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
@@ -7270,7 +8234,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule_ToVerifyTheSendMoneyTransactionWithBeneOfOtherHBLQuarterlyBene_Sch_Normal()
         {
-#line 201
+#line 205
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send Money transaction with Bene of other HBL(Quarterly) Bene_Sch_N" +
                     "ormal", "Pass", "01907981051403", "HBL / Konnect", "24460094904501", "14", "Others", "BILAL Ahmad", "03343913854", "abc@test.com", "Quarterly", "2", "3200", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
@@ -7317,7 +8281,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule_ToVerifyTheSendMoneyTransactionOwnAccountDailyBene_Sch_Normal()
         {
-#line 201
+#line 205
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send Money transaction own account (Daily) Bene_Sch_Normal", "Pass", "01907981051403", "HBL / Konnect", "04220036288401", "15", "Others", "OWN", "03343913854", "abc@own.com", "Daily", "2", "28", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -7363,7 +8327,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule_ToVerifyTheSendMoneyTransactionOwnAccountWeeklyBene_Sch_Normal()
         {
-#line 201
+#line 205
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send Money transaction own account(Weekly) Bene_Sch_Normal", "Pass", "01907981051403", "HBL / Konnect", "04220036288401", "16", "Others", "OWN", "03343913854", "abc@own.com", "Weekly", "2", "200", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -7409,7 +8373,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule_ToVerifyTheSendMoneyTransactionOwnAccountFortnightlyBene_Sch_Normal()
         {
-#line 201
+#line 205
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send Money transaction own account(Fortnightly) Bene_Sch_Normal", "Pass", "01907981051403", "HBL / Konnect", "04220036288401", "17", "Others", "OWN", "03343913854", "abc@own.com", "Fortnightly", "2", "400", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -7455,7 +8419,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule_ToVerifyTheSendMoneyTransactionOwnAccountMonthlyBene_Sch_Normal()
         {
-#line 201
+#line 205
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send Money transaction own account(Monthly) Bene_Sch_Normal", "Pass", "01907981051403", "HBL / Konnect", "04220036288401", "18", "Others", "OWN", "03343913854", "abc@own.com", "Monthly", "2", "800", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -7501,7 +8465,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule_ToVerifyTheSendMoneyTransactionOwnAccountQuarterlyBene_Sch_Normal()
         {
-#line 201
+#line 205
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send Money transaction own account(Quarterly) Bene_Sch_Normal", "Pass", "01907981051403", "HBL / Konnect", "04220036288401", "19", "Others", "OWN", "03343913854", "abc@own.com", "Quarterly", "2", "3200", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -7550,7 +8514,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule_ToVerifyTheSendMoneyTransactionWithBeneOfOtherHBLIncorrectTranPassBene_Sch_Normal()
         {
-#line 201
+#line 205
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send Money transaction with Bene of other HBL Incorrect tran pass B" +
                     "ene_Sch_Normal", "Fail", "04037900822003", "HBL / Konnect", "15547900667001", "3", "Others", "Bene", "03343913854", "abc@test.com", "Daily", "2", "28", "12345678", "pakistan021", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
@@ -7600,7 +8564,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule_ToVerifyTheSendMoneyTransactionWithBeneOfOtherHBLIncorrectPurposeOfAccBene_Sch_Normal()
         {
-#line 201
+#line 205
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send Money transaction with Bene of other HBL incorrect purpose of " +
                     "acc Bene_Sch_Normal", "Fail", "23677000049803", "HBL / Konnect", "15547900667001", "2", "Incorrect Purpose", "Bene", "03343913854", "abc@test.com", "Daily", "2", "28", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
@@ -7650,7 +8614,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule_ToVerifyTheSendMoneyTransactionWithBeneOfOtherHBLFromDateLessThanToDateBene_Sch_Normal()
         {
-#line 201
+#line 205
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send Money transaction with Bene of other HBL From date less than t" +
                     "o Date Bene_Sch_Normal", "Fail", "23677000049803", "HBL / Konnect", "15547900667001", "2", "Others", "Bene", "03343913854", "abc@test.com", "Daily", "2", "28", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
@@ -7699,7 +8663,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule_ToVerifyTheSendMoneyTransactionWithBeneOfOtherHBLNegativeAmountBene_Sch_Normal()
         {
-#line 201
+#line 205
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send Money transaction with Bene of other HBL negative amount Bene_" +
                     "Sch_Normal", "Fail", "23677000049803", "HBL / Konnect", "15547900667001", "-2", "Others", "Bene", "03343913854", "abc@test.com", "Daily", "2", "28", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
@@ -7746,7 +8710,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule_ToVerifyTheFCYUSDDailyBene_Sch_Normal()
         {
-#line 201
+#line 205
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the FCY USD (Daily) Bene_Sch_Normal", "Pass", "01907981051403", "HBL / Konnect", "23087900855910", "15", "Others", "USD", "03343913854", "abc@test.com", "Daily", "2", "28", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -7792,7 +8756,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the FCY 
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule_ToVerifyTheReceiverAccountBlocked15647900453401DailyBene_Sch_Normal()
         {
-#line 201
+#line 205
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Receiver Account Blocked 15647900453401 (Daily) Bene_Sch_Normal", "Pass", "01907981051403", "HBL / Konnect", "15647900453401", "15", "Others", "RecAccountBLOCKED", "03343913854", "abc@test.com", "Daily", "2", "28", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -7838,7 +8802,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Rece
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule_ToVerifyTheReceiverAccountLocked00470042589401DailyBene_Sch_Normal()
         {
-#line 201
+#line 205
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Receiver Account Locked 00470042589401 (Daily) Bene_Sch_Normal", "Pass", "01907981051403", "HBL / Konnect", "00470042589401", "15", "Others", "RecAccountLOCKED", "03343913854", "abc@test.com", "Daily", "2", "28", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -7884,7 +8848,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Rece
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule_ToVerifyTheBranchless03334900125DailyBene_Sch_Normal()
         {
-#line 201
+#line 205
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Branchless 03334900125 (Daily) Bene_Sch_Normal", "Pass", "01907981051403", "HBL / Konnect", "03334900125", "15", "Others", "Branchless", "03343913854", "abc@test.com", "Daily", "2", "28", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -7930,7 +8894,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Bran
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule_ToVerifyTheCarLOAN22667230559903DailyBene_Sch_Normal()
         {
-#line 201
+#line 205
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the CarLOAN 22667230559903 (Daily) Bene_Sch_Normal", "Pass", "01907981051403", "HBL / Konnect", "22667230559903", "15", "Others", "CarLOAN", "03343913854", "abc@test.com", "Daily", "2", "28", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -7976,7 +8940,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the CarL
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule_ToVerifyTheMoneyCLUB12497900564101DailyBene_Sch_Normal()
         {
-#line 201
+#line 205
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the MoneyCLUB 12497900564101 (Daily) Bene_Sch_Normal", "Pass", "01907981051403", "HBL / Konnect", "12497900564101", "15", "Others", "MoneyCLUB", "03343913854", "abc@test.com", "Daily", "2", "28", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -8024,7 +8988,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Mone
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule_ToVerifyTheReceiverMISYSBlockedDeceased00477948226701DailyBene_Sch_Normal()
         {
-#line 201
+#line 205
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Receiver MISYS Blocked Deceased 00477948226701 (Daily) Bene_Sch_Nor" +
                     "mal", "Pass", "01907981051403", "HBL / Konnect", "00477948226701", "15", "Others", "RecMisysBLOCKED", "03343913854", "abc@test.com", "Daily", "2", "28", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
@@ -8071,7 +9035,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Rece
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule_ToVerifyTheDailyLimitExceedsDailyBene_Sch_Normal()
         {
-#line 201
+#line 205
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Daily Limit Exceeds (Daily) Bene_Sch_Normal", "Pass", "01907981051403", "HBL / Konnect", "12757900758503", "987500", "Others", "DailyLIMIT", "03343913854", "abc@test.com", "Daily", "2", "28", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -8117,7 +9081,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Dail
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule_ToVerifyTheSendMoneyTransactionWithBeneOfIBFTDailyBene_Sch_SI()
         {
-#line 201
+#line 205
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send Money transaction with Bene of IBFT(Daily) Bene_Sch_SI", "Pass", "03007900670903", "Bank AL Habib Limited", "10340072000183019", "1", "Others", "IBFT", "03343913854", "abc@test.com", "Daily", "2", "28", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -8163,7 +9127,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule_ToVerifyTheSendMoneyTransactionWithBeneOfIBFTWeeklyBene_Sch_SI()
         {
-#line 201
+#line 205
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send Money transaction with Bene ofIBFT(Weekly) Bene_Sch_SI", "Pass", "03007900670903", "Bank AL Habib Limited", "10340072000183019", "2", "Others", "IBFT", "03343913854", "abc@test.com", "Weekly", "2", "200", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -8209,7 +9173,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule_ToVerifyTheSendMoneyTransactionWithBeneOfIBFTFortnightlyBene_Sch_SI()
         {
-#line 201
+#line 205
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send Money transaction with Bene of IBFT(Fortnightly) Bene_Sch_SI", "Pass", "03007900670903", "Bank AL Habib Limited", "10340072000183019", "3", "Others", "IBFT", "03343913854", "abc@test.com", "Fortnightly", "2", "400", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -8255,7 +9219,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule_ToVerifyTheSendMoneyTransactionWithBeneOfIBFTMonthlyBene_Sch_SI()
         {
-#line 201
+#line 205
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send Money transaction with Bene of IBFT(Monthly) Bene_Sch_SI", "Pass", "03007900670903", "Bank AL Habib Limited", "10340072000183019", "4", "Others", "IBFT", "03343913854", "abc@test.com", "Monthly", "2", "800", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -8301,7 +9265,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule_ToVerifyTheSendMoneyTransactionWithBeneOfIBFTQuarterlyBene_Sch_SI()
         {
-#line 201
+#line 205
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send Money transaction with Bene of IBFT(Quarterly) Bene_Sch_SI", "Pass", "03007900670903", "Bank AL Habib Limited", "10340072000183019", "5", "Others", "IBFT", "03343913854", "abc@test.com", "Quarterly", "2", "3200", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -8349,7 +9313,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule_ToVerifyTheSendMoneyTransactionWithBeneOfIBFTVia_IBANDailyBene_Sch_SI()
         {
-#line 201
+#line 205
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send Money transaction with Bene of IBFT via.IBAN(Daily) Bene_Sch_S" +
                     "I", "Pass", "03007900670903", "Bank AL Habib Limited", "10340071012066011", "6", "Tax payment", "alHabib", "03343913854", "abc@test.com", "Daily", "2", "28", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
@@ -8398,7 +9362,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule_ToVerifyTheSendMoneyTransactionWithBeneOfIBFTVia_IBANWeeklyBene_Sch_SI()
         {
-#line 201
+#line 205
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send Money transaction with Bene ofIBFT via.IBAN(Weekly) Bene_Sch_S" +
                     "I", "Pass", "03007900670903", "Bank AL Habib Limited", "10340071012066011", "7", "Tax payment", "alHabib", "03343913854", "abc@test.com", "Weekly", "2", "200", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
@@ -8447,7 +9411,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule_ToVerifyTheSendMoneyTransactionWithBeneOfIBFTVia_IBANFortnightlyBene_Sch_SI()
         {
-#line 201
+#line 205
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send Money transaction with Bene of IBFT via.IBAN(Fortnightly) Bene" +
                     "_Sch_SI", "Pass", "03007900670903", "Bank AL Habib Limited", "10340071012066011", "8", "Tax payment", "alHabib", "03343913854", "abc@test.com", "Fortnightly", "2", "400", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
@@ -8496,7 +9460,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule_ToVerifyTheSendMoneyTransactionWithBeneOfIBFTVia_IBANMonthlyBene_Sch_SI()
         {
-#line 201
+#line 205
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send Money transaction with Bene of IBFT via.IBAN(Monthly) Bene_Sch" +
                     "_SI", "Pass", "03007900670903", "Bank AL Habib Limited", "10340071012066011", "9", "Tax payment", "alHabib", "03343913854", "abc@test.com", "Monthly", "2", "800", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
@@ -8545,7 +9509,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule_ToVerifyTheSendMoneyTransactionWithBeneOfIBFTVia_IBANQuarterlyBene_Sch_SI()
         {
-#line 201
+#line 205
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send Money transaction with Bene of IBFT via.IBAN(Quarterly) Bene_S" +
                     "ch_SI", "Pass", "03007900670903", "Bank AL Habib Limited", "10340071012066011", "10", "Tax payment", "alHabib", "03343913854", "abc@test.com", "Quarterly", "2", "3200", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
@@ -8592,7 +9556,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule_ToVerifyTheSendMoneyTransactionWithBeneOfOtherHBLIVR0Bene_Sch_IVR0()
         {
-#line 201
+#line 205
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send Money transaction with Bene of other HBL IVR 0 Bene_Sch_IVR0", "Fail", "08487900791803", "HBL / Konnect", "08487900214003", "2", "Tax payment", "ivr0", "03343913854", "abc@test.com", "Daily", "2", "28", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -8638,7 +9602,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule_ToVerifyTheSendMoneyTransactionWithBeneOfOtherHBLPSD0Bene_Sch_PSD0()
         {
-#line 201
+#line 205
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send Money transaction with Bene of other HBL PSD 0 Bene_Sch_PSD0", "Pass", "11177900040703", "HBL / Konnect", "00437900586703", "25002", "Tax payment", "psd0", "03343913854", "abc@test.com", "Daily", "2", "28", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -8684,7 +9648,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule_ToVerifyTheSendMoneyTransactionWithBeneOfOtherHBLPSDYBene_Sch_PSDY()
         {
-#line 201
+#line 205
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send Money transaction with Bene of other HBL PSD Y Bene_Sch_PSDY", "Pass", "07867917962301", "HBL / Konnect", "23087900855910", "2", "Tax payment", "PSDY", "03343913854", "abc@test.com", "Daily", "2", "28", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -8730,7 +9694,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule_ToVerifyTheSendMoneyTransactionWithBeneOfOtherHBLPSDNBene_Sch_PSDN()
         {
-#line 201
+#line 205
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send Money transaction with Bene of other HBL PSD N Bene_Sch_PSDN", "Pass", "10967900017901", "HBL / Konnect", "23457913894303", "2", "Tax payment", "PSDN", "03343913854", "abc@test.com", "Daily", "2", "28", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +
                     "TION_ID = \'", "SELECT DT.FROM_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", " SELECT DT.FREQUENCY FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.PURPOSE_OF_PAYMENT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "DIGITAL_CHANNEL_SEC", "SELECT DT.TRANSACTION_AMOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DT.TO_ACCOUNT FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'", "SELECT DB.BANK_NAME FROM DC_FUND_TRANSFER_BANK DB WHERE DB.FUND_TRANSFER_BANK_ID " +
@@ -8778,7 +9742,7 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send
             "= (SELECT DT.BANK_ID FROM DC_TRANSACTION DT WHERE DT.TRANSACTION_ID = \'")]
         public virtual void AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule_ToVerifyTheSendMoneyTransactionWithBeneOfOtherHBLTranPassLockBene_Sch_Tran()
         {
-#line 201
+#line 205
 this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send Money transaction with Bene of other HBL Tran pass lock Bene_S" +
                     "ch_Tran", "Fail", "01757900641603", "HBL / Konnect", "22837900580401", "2", "Others", "TxnLOCK", "03343913854", "abc@test.com", "Daily", "2", "28", "12345678", "pakistan2", "Transaction is successful.", "SELECT AC.DESCRIPTION FROM DC_TRANSACTION_ACTIVITY_CONFIG AC WHERE AC.TRANSACTION" +
                     "_TYPE_ID =(SELECT DT.TRANSACTION_TYPE_ID FROM DC_TRANSACTION DT WHERE DT.TRANSAC" +

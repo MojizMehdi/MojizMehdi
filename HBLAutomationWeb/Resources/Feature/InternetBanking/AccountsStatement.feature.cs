@@ -237,4 +237,3 @@ this._1AsAUserIWantToVerifyLoginForHBLWebSendMoney("When user id and password ar
 }
 #pragma warning restore
 #endregion
-

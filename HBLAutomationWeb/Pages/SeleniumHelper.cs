@@ -125,7 +125,12 @@ namespace HBLAutomationWeb.Pages
                     value = Control.Text;
                 }
                 value = value.Trim();
-                Assert.AreEqual(message.Trim(), value.Trim());
+                message = message.Trim();
+                if (value.Contains("×\r\n"))
+                {
+                    value = value.Replace("×\r\n", string.Empty);
+                }
+                Assert.AreEqual(message.ToLower(), value.ToLower());
 
             }
             catch (ElementNotVisibleException ex)
@@ -588,43 +593,74 @@ namespace HBLAutomationWeb.Pages
         }
 
         //For decrypting One Time Password 
-        public string GetOTP()
+        public string GetOTP(string Keyword)
         {
             string otp = "";
-            string schema = "DIGITAL_CHANNEL_SEC";
-            string Key = "cf345ae2xz40yfc8";
-            string IV = "abcaqwerabcaqwer";
             string query = "";
 
-            if (context.Get_signup_check() == true)
+            if (Keyword.Equals("Login_APOTP_field"))
             {
-                query = "Select I.OTP from DC_OTP_HISTORY I where I.CNIC='{CNIC}' AND I.TRANSACTION_TYPE_ID = '247' ORDER BY I.GENERATED_ON DESC";
-                query = query.Replace("{CNIC}", context.GetCustomerCNIC());
+                query = "Select CONFIGURATION_VALUE from AG_CONFIGURATIONS K where K.CONFIGURATION_NAME in ('LOGIN_OPT_ENABLE','IS_OTP_FIRST_LOGIN_PORTAL')";
+
+                DataAccessComponent.DataAccessLink dLink = new DataAccessComponent.DataAccessLink();
+                DataTable SourceDataTable = dLink.GetDataTable(query, "QAT_BB_SYSTEM");
+                string otp_enable_flag = SourceDataTable.Rows[0][0].ToString();
+                string is_otp_first = SourceDataTable.Rows[1][0].ToString();
+
+                if (otp_enable_flag == "F" && is_otp_first == "0")
+                {
+                    context.Set_IS_OTP_False(true);
+                }
+                else
+                {
+                    query = "SELECT TEXT_MESSAGE FROM AE_SMS_OUTBOX L WHERE L.MOBILE_NUMBER = '" + context.Get_Mobile_No() + "' and L.TEXT_MESSAGE like '%OTP%'  order by L.CREATED_DATE DESC";
+                    DataAccessComponent.DataAccessLink dLink2 = new DataAccessComponent.DataAccessLink();
+                    DataTable SourceDataTable2 = dLink2.GetDataTable(query, "QAT_ALERTING");
+                    string otp_text = SourceDataTable2.Rows[0][0].ToString();
+                    string split_text = "is";
+                    otp_text = otp_text.Substring(otp_text.IndexOf(split_text) + split_text.Length).Trim();
+                    int id1 = otp_text.IndexOf(".");
+                    otp = otp_text.Substring(0,id1);
+                    
+                }
             }
-            else if (context.Get_Change_LoginID_Check() == true)
-            {
-                query = "Select I.OTP from DC_OTP_HISTORY I where I.CUSTOMER_INFO_ID='{CUSTOMER_INFO_ID}' ORDER BY I.GENERATED_ON DESC";
-                query = query.Replace("{CUSTOMER_INFO_ID}", context.GetCustomerInfoID());
-            }
+
             else
             {
-                query = "Select I.OTP from DC_OTP_HISTORY I where I.CUSTOMER_INFO_ID=(Select CUSTOMER_INFO_ID from dc_customer_info i where I.CUSTOMER_NAME='{usernmae}') ORDER BY I.GENERATED_ON DESC";
-                query = query.Replace("{usernmae}", context.GetUsername());
-            }
+                string schema = "DIGITAL_CHANNEL_SEC";
+                string Key = "cf345ae2xz40yfc8";
+                string IV = "abcaqwerabcaqwer";
 
-            DataAccessComponent.DataAccessLink dLink2 = new DataAccessComponent.DataAccessLink();
-            DataTable SourceDataTable2 = dLink2.GetDataTable(query, schema);
-            otp = SourceDataTable2.Rows[0][0].ToString();
-            
+                if (context.Get_signup_check() == true)
+                {
+                    query = "Select I.OTP from DC_OTP_HISTORY I where I.CNIC='{CNIC}' AND I.TRANSACTION_TYPE_ID = '247' ORDER BY I.GENERATED_ON DESC";
+                    query = query.Replace("{CNIC}", context.GetCustomerCNIC());
+                }
+                else if (context.Get_Change_LoginID_Check() == true)
+                {
+                    query = "Select I.OTP from DC_OTP_HISTORY I where I.CUSTOMER_INFO_ID='{CUSTOMER_INFO_ID}' ORDER BY I.GENERATED_ON DESC";
+                    query = query.Replace("{CUSTOMER_INFO_ID}", context.GetCustomerInfoID());
+                }
+                else
+                {
+                    query = "Select I.OTP from DC_OTP_HISTORY I where I.CUSTOMER_INFO_ID=(Select CUSTOMER_INFO_ID from dc_customer_info i where I.CUSTOMER_NAME='{usernmae}') ORDER BY I.GENERATED_ON DESC";
+                    query = query.Replace("{usernmae}", context.GetUsername());
+                }
 
-            string chk_encrypt_query = "Select PARAMTER_VALUE  from DC_APPLICATION_PARAM_DETAIL i where I.PARAMETER_NAME='OTP_HISTORY_ENCRYPTED'";
-            DataAccessComponent.DataAccessLink dLink = new DataAccessComponent.DataAccessLink();
-            DataTable SourceDataTable = dLink.GetDataTable(chk_encrypt_query, schema);
-            string otp_flag = SourceDataTable.Rows[0][0].ToString();
-            if (otp_flag == "1")
-            {
-                string decryptedstring = AESEncryptorDecryptor.Decrypt(otp, Key, IV);
-                otp = decryptedstring;
+                DataAccessComponent.DataAccessLink dLink2 = new DataAccessComponent.DataAccessLink();
+                DataTable SourceDataTable2 = dLink2.GetDataTable(query, schema);
+                otp = SourceDataTable2.Rows[0][0].ToString();
+
+
+                string chk_encrypt_query = "Select PARAMTER_VALUE  from DC_APPLICATION_PARAM_DETAIL i where I.PARAMETER_NAME='OTP_HISTORY_ENCRYPTED'";
+                DataAccessComponent.DataAccessLink dLink = new DataAccessComponent.DataAccessLink();
+                DataTable SourceDataTable = dLink.GetDataTable(chk_encrypt_query, schema);
+                string otp_flag = SourceDataTable.Rows[0][0].ToString();
+                if (otp_flag == "1")
+                {
+                    string decryptedstring = AESEncryptorDecryptor.Decrypt(otp, Key, IV);
+                    otp = decryptedstring;
+                }
             }
             return otp;
         }
