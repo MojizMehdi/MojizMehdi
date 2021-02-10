@@ -34,7 +34,7 @@ Scenario Outline: As a user i want to Verify Send Money by adding Beneficiary
 	#And update the data by query "<status_query>" on DIGITAL_CHANNEL_SEC
 	When I am clicking on "SendMoney_Link"
 	And I am clicking on "SendMoney_AddNewBtn"
-	And I wait 2000
+	And I wait 3000
 	And I select "<From_Account_Value>" on "SendMoney_FromAccount"
 	And I select "<Bank_Value>" on "SendMoney_Bank"
 	And I have given "<Account_Number_Value>" on "SendMoney_ToAccount"

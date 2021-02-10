@@ -311,7 +311,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Registration.feature</DependentUpon>
     </Compile>
-    <Compile Include="Resources\Feature\InternetBanking\SendMoney1.feature.cs">
+    <Compile Include="Resources\Feature\InternetBanking\SendMoney.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SendMoney.feature</DependentUpon>
@@ -446,7 +446,7 @@
     </None>
     <None Include="Resources\Feature\InternetBanking\SendMoney.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>SendMoney1.feature.cs</LastGenOutput>
+      <LastGenOutput>SendMoney.feature.cs</LastGenOutput>
     </None>
     <None Include="Resources\Feature\InternetBanking\TransactionalActivity.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
