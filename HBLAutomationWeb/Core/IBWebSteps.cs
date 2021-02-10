@@ -14,6 +14,7 @@ using System.Globalization;
 using System.Collections.Generic;
 using System.Linq;
 using System.Diagnostics;
+using System.Text;
 
 namespace HBLAutomationWeb.Core
 {
@@ -65,10 +66,14 @@ namespace HBLAutomationWeb.Core
         public void GivenIHaveGivenOn(string textboxvalue, string Keyword)
         {
 
-            if (Keyword.Contains("Login_OTP_field"))
+            if (Keyword.Contains("Login_OTP_field") || Keyword.Contains("Login_APOTP_field"))
             {
                 SeleniumHelper selhelper = new SeleniumHelper();
-                textboxvalue = selhelper.GetOTP();
+                textboxvalue = selhelper.GetOTP(Keyword);
+            }
+            if (Keyword.Contains("Login_APOTP_field") && context.Get_IS_OTP_False() == true)
+            {
+                return;
             }
             if (Keyword.Contains("Pay_Card_Expiry_Date") && context.GetCredit_Card_Check() == null)
             {
@@ -110,9 +115,23 @@ namespace HBLAutomationWeb.Core
             {
                 context.SetTran_Balance(Convert.ToDecimal(textboxvalue));
             }
+            if (Keyword.Equals("Pay_Amount_AP"))
+            {
+                if (context.Get_Is_Partial_Allow() == "0")
+                {
+                    return;
+                }
+            }
             if (String.IsNullOrEmpty(textboxvalue))
             {
-                return;
+                if (Keyword.Equals("BeneManage_Edit_Nick") || Keyword.Equals("BeneManage_Edit_Email") || Keyword.Equals("BeneManage_Edit_Mobile"))
+                {
+                    
+                }
+                else
+                {
+                    return;
+                }
             }
             try
             {
@@ -150,6 +169,10 @@ namespace HBLAutomationWeb.Core
                 //keyword.Locator used instead of locator
                 selhelper.SetTextBoxValue(textboxvalue, keyword.Locator);
 
+                if (Keyword.Equals("Pay_Amount_AP"))
+                {
+                    context.Set_TranAmount(textboxvalue);
+                }
             }
             catch (Exception exception)
             {
@@ -191,6 +214,10 @@ namespace HBLAutomationWeb.Core
                 {
                     Keyword.Replace("Forget_ChangeLogin_SubmitBtn", "Forget_ChangeLogin_SubmitBtnCC");
                 }
+            }
+            if (Keyword.Contains("Login_APOTP_Btn") && context.Get_IS_OTP_False() == true)
+            {
+                return;
             }
             try
             {
@@ -438,18 +465,28 @@ namespace HBLAutomationWeb.Core
             }
             try
             {
-                if (context.GetCredit_Card_Check() != "")
+                if (Keyword.Equals("Pay_BillPayment_accountno"))
                 {
-                    var dict = context.Get_acc_balance();
-                    foreach (var item in dict.Keys)
+                    //if (context.GetCredit_Card_Check() != "")
+                    //{
+                    //    var dict = context.Get_acc_balance();
+                    //    foreach (var item in dict.Keys)
+                    //    {
+                    //        if (item.Contains("x"))
+                    //        {
+                    //            value = item;
+                    //            break;
+                    //        }
+                    //    }
+                    //    //value = value.Remove(4, 8).Insert(4, "xxxxxxxx");
+                    //}
+                    if (context.GetCredit_Card_Check() != "")
                     {
-                        if (item.Contains("x"))
-                        {
-                            value = item;
-                            break;
-                        }
+                        StringBuilder st = new StringBuilder(value.Trim());
+                        st.Remove(4, 8);
+                        st.Insert(4, "xxxxxxxx");
+                        value = st.ToString();
                     }
-                    //value = value.Remove(4, 8).Insert(4, "xxxxxxxx");
                 }
                 SeleniumHelper selhelper = new SeleniumHelper();
                 selhelper.checkPageIsReady();
@@ -603,6 +640,10 @@ namespace HBLAutomationWeb.Core
         {
             try
             {
+                if (attribute == "CompanyName")
+                {
+                    context.SetBillCompany(value);
+                }
                 if(attribute == "customer_type")
                 {
                     context.SetCustomerType(value);
@@ -660,6 +701,10 @@ namespace HBLAutomationWeb.Core
                     string message = SourceDataTable.Rows[0][0].ToString();
                     context.SetCustomerCNIC(message);
                 }
+                if (attribute == "AP_username")
+                {
+                    context.SetUsername(value);
+                }
                 if (attribute == "scroll_text")
                 {
                     context.SetScrollText(value);
@@ -702,6 +747,14 @@ namespace HBLAutomationWeb.Core
                 if (attribute == "String_Date")
                 {
                     context.Set_String_Date(value);
+                }
+                if (attribute == "is_delete")
+                {
+                    context.Set_IS_DELETED(Convert.ToBoolean(value));
+                }
+                if (attribute == "Category_value")
+                {
+                    context.Set_CategoryValue(value);
                 }
             }
             catch (Exception exception)
@@ -760,6 +813,22 @@ namespace HBLAutomationWeb.Core
                     {
                         query = query.Replace("{bene_account_no}", context.GetBeneAccountNo());
                     }
+                    if (query.Contains("{TRANSACTION_ID}"))
+                    {
+                        query = query.Replace("{TRANSACTION_ID}", context.GetTransaction_Id());
+                    }
+                    if (query.Contains("TRAN_ID"))
+                    {
+                        query = query + context.GetTransaction_Id() + "'";
+                    }
+                    if (query.Contains("{GUID}"))
+                    {
+                        query = query.Replace("{GUID}", context.Get_HostReferenceNo());
+                    }
+                    if (Common.Configuration.GetInstance().GetByKey("AgentPortal_Val").ToLower() == "yes" && context.Get_Category_Code() == "NON_BILL_BASED" && query.Contains("Z.BILL_STATUS_ID"))
+                    {
+                        return;
+                    }
                 }
 
                 Thread.Sleep(2000);
@@ -767,8 +836,18 @@ namespace HBLAutomationWeb.Core
                 DataTable SourceDataTable = dLink.GetDataTable(query, db_value);
                 string inst_type = SourceDataTable.Rows[0][0].ToString();
 
+                
+                //if (Common.Configuration.GetInstance().GetByKey("AgentPortal_Val").ToLower() == "yes" && query.Contains("SENDER_MOBILE"))
+                //{
+                //    Assert.AreEqual(inst_type, context.Get_Mobile_No());
+                //}
+                if (Common.Configuration.GetInstance().GetByKey("AgentPortal_Val").ToLower() == "yes" && (query.Contains("TRAN_AMOUNT") || query.Contains("PAYABLE_AMOUNT")))
+                {
+                    Assert.AreEqual(inst_type, context.Get_TranAmount());
+                }
                 if (query.Contains("Z.BILL_STATUS_ID") && context.GetIsPaidReq() == "1")
                 {
+
                     if (inst_type != "2")
                     {
                         throw new Exception("Bill Status ID in not equal to PAID in LP_BILLS table in Database");
@@ -905,7 +984,7 @@ namespace HBLAutomationWeb.Core
                         }
                     }
                 }
-                if (query.Contains("created_on") || (query.Contains("updated_on")) || (query.Contains("LAST_PASSWORD_CHANGED")) || (query.Contains("LAST_TRANS_PASSWORD_CHANGED")))
+                if ((query.Contains("created_on")) || (query.Contains("updated_on")) || (query.Contains("LAST_PASSWORD_CHANGED")) || (query.Contains("LAST_TRANS_PASSWORD_CHANGED")) || (query.Contains("TRAN_DATE") || (query.Contains("TIME_STAMP"))))
                 {
                     if (inst_type != null)
                     {
@@ -955,6 +1034,16 @@ namespace HBLAutomationWeb.Core
                     {
                         throw new AssertFailedException(string.Format("The recent deleted bene's IS DELETED property is not updated in datebase i.e. :{0}", inst_type));
                     }
+                }
+                if (query.Contains("FT_TO_ACCOUNT_TITLE"))
+                {
+                    string value = context.GetBeneName();
+                    Assert.AreEqual(value, inst_type);
+                }
+                if (query.Contains("BENEFICIARY_BANK"))
+                {
+                    string value = context.GetToBank();
+                    Assert.AreEqual(value, inst_type);
                 }
             }
             catch (Exception exception)
@@ -1026,6 +1115,11 @@ namespace HBLAutomationWeb.Core
                 //selhelper.checkPageIsReady();
                 Thread.Sleep(3000);
                 Element keyword = ContextPage.GetInstance().GetElement(Keyword);
+
+                if (Keyword.Contains("Login_APOTP_Txt") && context.Get_IS_OTP_False() == true)
+                {
+                    return;
+                }
                 //selhelper.Scroll(keyword.Locator);
                 if (message == "ConsumerNoContextVal")
                 {
@@ -1089,6 +1183,17 @@ namespace HBLAutomationWeb.Core
                     message = Convert.ToString(context.Get_term_deposit_balance());
                     Assert.AreEqual(message, amount);
                 }
+                if (context.Get_IS_DELETED() == true)
+                {
+                    if (selhelper.ReturnKeywordValue(keyword.Locator) != "")
+                    {
+                        throw new Exception("Deleted Beneficiary is still appearing on screen");
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
                 else
                 {
                     if (Keyword.Equals("Forget_Success_LoginMsg") || Keyword.Equals("Forget_Change_OTPMsg") || Keyword.Equals("Forget_Success_LoginMsg"))
@@ -1110,7 +1215,10 @@ namespace HBLAutomationWeb.Core
                         selhelper.verification(message, temp);
                         return;
                     }
-
+                    if (Keyword == "Pay_Tran_Full_Message_AP")
+                    {
+                        message = message + context.GetTransaction_Id();
+                    }
                     selhelper.verification(message, keyword.Locator);
                 }
                 if (Keyword.Equals("BeneManage_Delete_TranSuccessMessage"))
@@ -1129,7 +1237,14 @@ namespace HBLAutomationWeb.Core
                     string tran_id = selhelper.ReturnKeywordValue(keyword.Locator);
                     context.SetTransaction_Id(tran_id);
                 }
-
+                else if (Keyword.Equals("Pay_TranMessage_AP"))
+                {
+                    string temp_ap = keyword.Locator.Replace("//strong", string.Empty);
+                    string tran_id = selhelper.ReturnKeywordValue(temp_ap);
+                    string split_text = "TxnId: ";
+                    tran_id = tran_id.Substring(tran_id.IndexOf(split_text) + split_text.Length);
+                    context.SetTransaction_Id(tran_id);
+                }
             }
             catch (Exception exception)
             {
@@ -1158,6 +1273,10 @@ namespace HBLAutomationWeb.Core
             if (query.Contains("{TRANSACTION_ID}"))
             {
                 query = query.Replace("{TRANSACTION_ID}", context.GetTransaction_Id());
+            }
+            if (query.Contains("TRAN_ID"))
+            {
+                query = query + context.GetTransaction_Id() + "'";
             }
             if (query.Contains("{GUID}"))
             {
@@ -1191,6 +1310,10 @@ namespace HBLAutomationWeb.Core
             if (query.Contains("MOBILE_NO"))
             {
                 value = context.Get_Mobile_No();
+            }
+            if (Common.Configuration.GetInstance().GetByKey("AgentPortal_Val").ToLower() == "yes" && context.Get_Category_Code() == "NON_BILL_BASED" && (query.Contains("Z.BILL_STATUS_ID") || query.Contains("PAYMENT_STATUS") || query.Contains("BILL_STATUS")))
+            {
+                return;
             }
             try
             {
@@ -1245,6 +1368,10 @@ namespace HBLAutomationWeb.Core
                 }
                 else
                 {
+                    if (query.Contains("BRANCH_CODE") || query.Contains("FT_TO_ACCOUNT_BRANCH_CODE"))
+                    {
+                        value = value.Substring(0, 4);
+                    }
                     DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
                     DataTable SourceDataTable = dlink.GetDataTable(query, schema);
                     string message = SourceDataTable.Rows[0][0].ToString();
@@ -1319,6 +1446,10 @@ namespace HBLAutomationWeb.Core
                     DataTable SourceDataTable = dlink.GetDataTable(query, schema);
                     message = SourceDataTable.Rows[0][0].ToString();
 
+                    if (Keyword.Equals("Pay_Balance_AP"))
+                    {
+                        message = Convert.ToDecimal(message).ToString("N");
+                    }
                     if(Keyword.Contains("TranAmount") || Keyword.Contains("Investment_MutualFund_TranOld") || Keyword.Contains("Investment_MutualFund_TranNew"))
                     {
                         message = Convert.ToDecimal(message).ToString("0.00");
@@ -1435,6 +1566,11 @@ namespace HBLAutomationWeb.Core
                 }
                 //selhelper.Scroll(keyword.Locator);
                 selhelper.verification(message, keyword.Locator);
+
+                if (Keyword.Equals("Pay_Balance_AP"))
+                {
+                    context.Set_AccBalance_AP_DB(message);
+                }
             }
             catch (Exception exception)
             {
@@ -1552,7 +1688,7 @@ namespace HBLAutomationWeb.Core
                 if (context.GetOTPReq() == "1")
                 {
                     SeleniumHelper selhelper = new SeleniumHelper();
-                    otp_value = selhelper.GetOTP();
+                    otp_value = selhelper.GetOTP(Keyword);
                     //selhelper.checkPageIsReady();
                     Thread.Sleep(3000);
                     Element keyword = ContextPage.GetInstance().GetElement(Keyword);
@@ -1832,6 +1968,15 @@ namespace HBLAutomationWeb.Core
                 {
                     context.SetBill_Status(temp);
                 }
+                if(Keyword.Equals("Pay_BillPayment_BillingMonth_AP"))
+                {
+                    if (context.Get_Category_Code() == "BILL_BASED")
+                    {
+                        DateTime temp_var = Convert.ToDateTime(temp);
+                        temp = temp_var.ToString("MM/yyyy");
+                        context.SetBilling_Month(temp);
+                    }
+                }
                 if (Keyword.Equals("Pay_BillPayment_BillingMonth"))
                 {
                     DateTime temp_var = Convert.ToDateTime(temp);
@@ -1986,7 +2131,6 @@ namespace HBLAutomationWeb.Core
                                 Element keyword2 = ContextPage.GetInstance().GetElement("Pay_Acc_Balance");
                                 string temp2 = keyword2.Locator.Replace("{j}", "[" + temp_counter.ToString() + "]");
 
-
                                 acc_bal = selhelper.ReturnKeywordValue(temp2);
                             }
 
@@ -2059,6 +2203,19 @@ namespace HBLAutomationWeb.Core
                 SeleniumHelper selhelper = new SeleniumHelper();
                 Dictionary<string, string> tran_dict = new Dictionary<string, string>();
 
+                if (Common.Configuration.GetInstance().GetByKey("AgentPortal_Val").ToLower() == "yes")
+                {
+                    decimal AP_old_balance = Convert.ToDecimal(context.Get_AccBalance_AP());
+                    decimal tran_amount = Convert.ToDecimal(context.Get_TranAmount());
+                    decimal new_balance_ap;
+
+                    if (context.Get_Category_Code().Contains("BILL_BASED"))
+                    {
+                        new_balance_ap = AP_old_balance - tran_amount;
+                        context.SetTran_Balance(new_balance_ap);
+                    }
+                    
+                }
                 if (consumer_no_arr != null)
                 {
                     Element keyword = ContextPage.GetInstance().GetElement("Pay_MultiBill_FromAccount");
@@ -2230,6 +2387,56 @@ namespace HBLAutomationWeb.Core
                 throw new AssertFailedException(exception.Message + line_no);
             }
         }
+        [Given(@"I save Balance and Commission of Agent")]
+        [When(@"I save Balance and Commission of Agent")]
+        [Then(@"I save Balance and Commission of Agent")]
+        public void GivenISaveBalanceAndCommissionOfAgent()
+        {
+            try
+            {
+                //Set_AccBalance_AP
+                string acc_bal_ap = "";
+                string acc_commission_ap = "";
+                SeleniumHelper selhelper = new SeleniumHelper();
+                Element Keyword = ContextPage.GetInstance().GetElement("Pay_Balance_AP");
+                Element Keyword2 = ContextPage.GetInstance().GetElement("Pay_Commission_AP");
+                acc_bal_ap = selhelper.ReturnKeywordValue(Keyword.Locator);
+                acc_commission_ap = selhelper.ReturnKeywordValue(Keyword2.Locator);
+
+                context.Set_AccBalance_AP(acc_bal_ap);
+                context.Set_Acc_Commission_AP(acc_bal_ap);
+
+                if (acc_bal_ap != context.Get_AccBalance_AP_DB())
+                {
+                    throw new Exception(string.Format("Agent Account balance on website {0} is not equal with amount in Database {1}", acc_bal_ap, context.Get_AccBalance_AP_DB()));
+                }
+            }
+            catch (Exception exception)
+            {
+                SeleniumHelper.TakeScreenshot();
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
+            }
+        }
+        [When(@"I verify Balance and Commission of Agent")]
+        [Then(@"I verify Balance and Commission of Agent")]
+        public void ThenIVerifyBalanceAndCommissionOfAgent()
+        {
+            string acc_bal_ap = "";
+            string acc_commission_ap = "";
+            decimal new_acc_bal_ap = context.GetTran_Balance();
+            SeleniumHelper selhelper = new SeleniumHelper();
+            Element Keyword = ContextPage.GetInstance().GetElement("Pay_Balance_AP");
+            Element Keyword2 = ContextPage.GetInstance().GetElement("Pay_Commission_AP");
+            acc_bal_ap = selhelper.ReturnKeywordValue(Keyword.Locator);
+            acc_commission_ap = selhelper.ReturnKeywordValue(Keyword2.Locator);
+
+            if (Convert.ToDecimal(acc_bal_ap) != new_acc_bal_ap)
+            {
+                throw new AssertFailedException(string.Format("The old account balance {0} is not equal to new account balance {1} after successfull transaction", acc_bal_ap, new_acc_bal_ap));
+            }
+        }
+
 
         //To verify the schedule configuration from Data base 
         [When(@"verify the schedule config ""(.*)"" on Schema ""(.*)""")]
@@ -3085,7 +3292,7 @@ namespace HBLAutomationWeb.Core
 
                 keyword2 = ContextPage.GetInstance().GetElement("Login_OTP_field");
                 selhelper.ScrollToElement(keyword2.Locator);
-                string textboxvalue = selhelper.GetOTP();
+                string textboxvalue = selhelper.GetOTP("Login_OTP_field");
                 selhelper.SetTextBoxValue(textboxvalue, keyword2.Locator);
                 keyword2 = null;
 
@@ -4044,6 +4251,7 @@ namespace HBLAutomationWeb.Core
                         {
                             throw new Exception(string.Format("The Set of Consumer Numbers are not same in Datab base :{0} and Website :{1}", db_dict.Keys, ui_dict.Keys));
                         }
+
                         foreach (var item in db_dict)
                         {
                             // Get first items
@@ -4304,10 +4512,18 @@ namespace HBLAutomationWeb.Core
                 {
                     query = query.Replace("{Company_Code}", context.GetCompany_Code());
                 }
-
+                if (context.Get_Category_Code() == "NON_BILL_BASED")
+                {
+                    return;
+                }
                 DataAccessComponent.DataAccessLink dLink = new DataAccessComponent.DataAccessLink();
                 DataTable SourceDataTable = dLink.GetDataTable(query, schema);
                 string db_value = SourceDataTable.Rows[0][0].ToString();
+
+                if (attribute == "category_code")
+                {
+                    context.Set_Category_Code(db_value);
+                }
                 if (attribute == "fund_disclaimer_popup")
                 {
                     context.SetFundDisclaimerPopup(db_value);
@@ -5097,6 +5313,16 @@ namespace HBLAutomationWeb.Core
                 //{
                 //    lst.RemoveAt(0);
                 //}
+                if (Keyword == "Pay_CategoryList_AP" || Keyword == "Pay_SubCategoryList_AP")
+                {
+                    lst_ui.Sort();
+                    if (Keyword == "Pay_CategoryList_AP")
+                    {
+                        lst_ui.Remove("e-Vouchers");
+                        lst_ui.Insert(lst_ui.Count, "e-Vouchers");
+                    }
+                }
+
                 context.Set_scroll_items_list(lst_ui);
 
             }
@@ -5134,6 +5360,10 @@ namespace HBLAutomationWeb.Core
                     if (query.Contains("Company_Code"))
                     {
                         query = query.Replace("{Company_Code}", context.GetCompany_Code());
+                    }
+                    if (query.Contains("{category_value}"))
+                    {
+                        query = query.Replace("{category_value}", context.Get_CategoryValue());
                     }
                     //if (query.Contains("SELECT PP.NAME_OF_FUND from QAT_AMC.AMC_PRODUCT_PROFILE"))
                     //{
@@ -5224,92 +5454,229 @@ namespace HBLAutomationWeb.Core
         {
             try
             {
-                SeleniumHelper selhelper = new SeleniumHelper();
-                string consumer_template_query = "SELECT CH.CONSUMER_NAME_TEMPLATE,CH.COMPANY_CODE FROM BPS_COMPANY_CHANNEL CH WHERE CH.CHANNEL_CODE = 'MB' AND CH.COMPANY_CODE = '" + context.GetCompany_Code() + "'";
-                DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
-                DataTable SourceDataTable = dlink.GetDataTable(consumer_template_query, "QAT_BPS");
-                string consumer_template = SourceDataTable.Rows[0][0].ToString();
-                char[] char_spearator = new char[2];
-                char_spearator[0] = '|';
-                char_spearator[1] = ';';
-                string[] consumer_template_arr = consumer_template.Split(char_spearator);
-                Element keyword = ContextPage.GetInstance().GetElement("Pay_BillPayment_InquiryFields");
-                string temp = "";
-                string ui_value = "";
-                string db_value = "";
-                string[] date_fromat_arr;
-                //string date_format;
-                for (int i = 0; i < consumer_template_arr.Length; i++)
+                if (Common.Configuration.GetInstance().GetByKey("AgentPortal_Val").ToLower() == "yes")
                 {
-
-                    if (i % 2 == 0)
+                    SeleniumHelper selhelper = new SeleniumHelper();
+                    string consumer_template_query = "SELECT CH.CONSUMER_NAME_TEMPLATE,CH.COMPANY_CODE FROM BPS_COMPANY_CHANNEL CH WHERE CH.CHANNEL_CODE = 'AGENT' AND CH.COMPANY_CODE = '" + context.GetCompany_Code() + "'";
+                    DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
+                    DataTable SourceDataTable = dlink.GetDataTable(consumer_template_query, "QAT_BPS");
+                    string consumer_template = SourceDataTable.Rows[0][0].ToString();
+                    char[] char_spearator = new char[2];
+                    char_spearator[0] = '|';
+                    char_spearator[1] = ';';
+                    string[] consumer_template_arr = consumer_template.Split(char_spearator);
+                    Element keyword = ContextPage.GetInstance().GetElement("Pay_BillPayment_InquiryFields_AP");
+                    string temp = "";
+                    string ui_value = "";
+                    string db_value = "";
+                    string query = "";
+                    string[] date_fromat_arr;
+                    int ui_element_count = 1;
+                    string amount_after_due_date = "";
+                    string amount_by_due_date = "";
+                    bool by_due_date_check = false;
+                    bool after_due_date_check = false;
+                    for (int i = 0; i < consumer_template_arr.Length; i++)
                     {
-                        temp = keyword.Locator.Replace("{Field_Name}", consumer_template_arr[i]);
-                        ui_value = selhelper.ReturnKeywordValue(temp);
-                        ui_value = ui_value.Replace(" ", string.Empty);
-                    }
-                    if (i % 2 != 0)
-                    {
-                        consumer_template_arr[i] = consumer_template_arr[i].Replace("<FS_01:", string.Empty);
-                        date_fromat_arr = consumer_template_arr[i].Split('>');
-                        consumer_template_arr[i] = date_fromat_arr[0];
-                        //if (consumer_template_arr[i - 1] == "Bill Status")
-                        //{
-                        //    consumer_template_arr[i] = "BILL_STATUS_ID";
-                        //}
-                        string query = "SELECT * FROM (SELECT BI." + consumer_template_arr[i] + " FROM BPS_BILL_INFO BI WHERE BI.CREATED_ON >= trunc(sysdate) AND BI.CONSUMER_NO = '" + context.GetConsumer_No() + "' AND TO_CHAR(BI.BILLING_MONTH,'MM/YYYY') = '" + context.GetBilling_Month() + "'order by BI.BILL_INFO_ID desc) WHERE ROWNUM = 1";
-                        //if (query.Contains("COMPANY_NAME"))
-                        //{
-                        //    query = "SELECT CO.COMPANY_NAME FROM BPS_COMPANY CO WHERE CO.COMPANY_CODE = '" + context.GetCompany_Code() + "'";
-                        //}
-
-                        //if (query.Contains("ATTRIBUTE"))
-                        //{
-                        //    query = query.Replace("ATTRIBUTE", "ATTRIBUTE_");
-                        //}
-                        SourceDataTable = null;
-                        SourceDataTable = dlink.GetDataTable(query, "QAT_BPS");
-                        db_value = SourceDataTable.Rows[0][0].ToString();
-                        //if (consumer_template_arr[i] == "BILL_STATUS_ID")
-                        //{
-                        //    if (db_value == "1")
-                        //    {
-                        //        db_value = "UNPAID";
-                        //    }
-                        //    else if (db_value == "2")
-                        //    {
-                        //        db_value = "PAID";
-                        //    }
-                        //    else if (db_value == "3")
-                        //    {
-                        //        db_value = "You cannot pay this bill because the grace period after due date has passed";
-                        //    }
-                        //}
-                        //if(query.Contains("SELECT LP.BILLING_MONTH"))
-                        //{
-                        //    DateTime dt = Convert.ToDateTime(db_value);
-                        //    db_value = dt.ToString("MMM-yyyy");
-                        //}
-                        //if (query.Contains("CONSUMER_NAME"))
-                        //{
-                        //    ui_value = ui_value.Replace(" ", string.Empty);
-                        //    db_value = db_value.Replace(" ", string.Empty);
-                        //}
-                        if (date_fromat_arr[1] != "")
+                        if(i % 2 == 0)
                         {
-                            date_fromat_arr[1] = date_fromat_arr[1].Replace("^", string.Empty);
-                            DateTime dt = Convert.ToDateTime(db_value);
-                            db_value = dt.ToString(date_fromat_arr[1]);
-
+                            temp = keyword.Locator.Replace("{x}", Convert.ToString(ui_element_count));
+                            ui_value = selhelper.ReturnKeywordValue(temp);
+                            ui_value = ui_value.Replace(" ", string.Empty);
+                            ui_element_count = ui_element_count + 1;
+                            if (consumer_template_arr[i].Contains("Payable After Due Date"))
+                            {
+                                amount_after_due_date = ui_value;
+                            }
+                            if (consumer_template_arr[i].Contains("Payable By Due Date"))
+                            {
+                                amount_by_due_date = ui_value;
+                            }
                         }
-                        db_value = db_value.Replace(" ", string.Empty);
-                        if (ui_value.Trim() != db_value.Trim())
+                        //temp = keyword.Locator.Replace("{x}", Convert.ToString(i));
+                        //ui_value = selhelper.ReturnKeywordValue(temp);
+                        //ui_value = ui_value.Replace(" ", string.Empty);
+
+                        if (i % 2 != 0)
                         {
-                            throw new Exception(string.Format("The UI value is {0} and the databse value is {1}", ui_value, db_value));
+                            consumer_template_arr[i] = consumer_template_arr[i].Replace("<FS_01:", string.Empty);
+                            date_fromat_arr = consumer_template_arr[i].Split('>');
+                            consumer_template_arr[i] = date_fromat_arr[0];
+                            
+                            if (consumer_template_arr[i] == ("DUE_DATE"))
+                            {
+                                if (Convert.ToDateTime(ui_value) >= DateTime.Today) 
+                                {
+                                    by_due_date_check = true;
+                                }
+                                else
+                                {
+                                    after_due_date_check = true;
+                                }
+                            }
+
+                            if (context.Get_Category_Code() == "BILL_BASED")
+                            {
+                                if (by_due_date_check == true && consumer_template_arr[i] == "BILL_AMOUNT")
+                                {
+                                    context.Set_TranAmount(amount_by_due_date);
+                                }
+                                else if (after_due_date_check == true && (consumer_template_arr[i].Contains("FATHER_SPOUSE_NAME") || consumer_template_arr[i].Contains("ATTRIBUTE")))
+                                {
+                                    context.Set_TranAmount(amount_after_due_date);
+                                }
+                                query = "SELECT * FROM (SELECT BI." + consumer_template_arr[i] + " FROM BPS_BILL_INFO BI WHERE BI.CREATED_ON >= trunc(sysdate) AND BI.CONSUMER_NO = '" + context.GetConsumer_No() + "' AND TO_CHAR(BI.BILLING_MONTH,'MM/YYYY') = '" + context.GetBilling_Month() + "'order by BI.BILL_INFO_ID desc) WHERE ROWNUM = 1";
+                            }
+                            else
+                            {
+                                if (consumer_template_arr[i].Contains("BILL_AMOUNT"))
+                                {
+                                    context.Set_TranAmount(ui_value);
+                                }
+                                query = "SELECT * FROM (SELECT LM." + consumer_template_arr[i] + "  from BPS_BILL_INFO LM INNER JOIN BPS_COMPANY TM ON LM.COMPANY_NAME = TM.COMPANY_NAME WHERE TM.COMPANY_CODE = '" + context.GetCompany_Code() + "' AND LM.CREATED_ON >=  trunc(sysdate) and LM.CONSUMER_NO = '" + context.GetConsumer_No() + "' order by LM.BILL_INFO_ID desc) WHERE ROWNUM = 1";
+                            }
+                            //query = "SELECT * FROM (SELECT BI." + consumer_template_arr[i] + " FROM BPS_BILL_INFO BI WHERE BI.CREATED_ON >= trunc(sysdate) AND BI.CONSUMER_NO = '" + context.GetConsumer_No() + "' AND TO_CHAR(BI.BILLING_MONTH,'MM/YYYY') = '" + context.GetBilling_Month() + "'order by BI.BILL_INFO_ID desc) WHERE ROWNUM = 1";
+                            //if (query.Contains("COMPANY_NAME"))
+                            //{
+                            //    query = "SELECT CO.COMPANY_NAME FROM BPS_COMPANY CO WHERE CO.COMPANY_CODE = '" + context.GetCompany_Code() + "'";
+                            //}
+
+                            //if (query.Contains("ATTRIBUTE"))
+                            //{
+                            //    query = query.Replace("ATTRIBUTE", "ATTRIBUTE_");
+                            //}
+                            SourceDataTable = null;
+                            SourceDataTable = dlink.GetDataTable(query, "QAT_BPS");
+                            db_value = SourceDataTable.Rows[0][0].ToString();
+                            //if (consumer_template_arr[i] == "BILL_STATUS_ID")
+                            //{
+                            //    if (db_value == "1")
+                            //    {
+                            //        db_value = "UNPAID";
+                            //    }
+                            //    else if (db_value == "2")
+                            //    {
+                            //        db_value = "PAID";
+                            //    }
+                            //    else if (db_value == "3")
+                            //    {
+                            //        db_value = "You cannot pay this bill because the grace period after due date has passed";
+                            //    }
+                            //}
+                            //if(query.Contains("SELECT LP.BILLING_MONTH"))
+                            //{
+                            //    DateTime dt = Convert.ToDateTime(db_value);
+                            //    db_value = dt.ToString("MMM-yyyy");
+                            //}
+                            //if (query.Contains("CONSUMER_NAME"))
+                            //{
+                            //    ui_value = ui_value.Replace(" ", string.Empty);
+                            //    db_value = db_value.Replace(" ", string.Empty);
+                            //}
+                            if (date_fromat_arr[1] != "")
+                            {
+                                date_fromat_arr[1] = date_fromat_arr[1].Replace("^", string.Empty);
+                                DateTime dt = Convert.ToDateTime(db_value);
+                                db_value = dt.ToString(date_fromat_arr[1]);
+                            }
+                            db_value = db_value.Replace(" ", string.Empty);
+                            if (ui_value.Trim() != db_value.Trim())
+                            {
+                                throw new Exception(string.Format("The UI value is {0} and the databse value is {1}", ui_value, db_value));
+                            }
                         }
                     }
                 }
 
+                else
+                {
+                    SeleniumHelper selhelper = new SeleniumHelper();
+                    string consumer_template_query = "SELECT CH.CONSUMER_NAME_TEMPLATE,CH.COMPANY_CODE FROM BPS_COMPANY_CHANNEL CH WHERE CH.CHANNEL_CODE = 'MB' AND CH.COMPANY_CODE = '" + context.GetCompany_Code() + "'";
+                    DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
+                    DataTable SourceDataTable = dlink.GetDataTable(consumer_template_query, "QAT_BPS");
+                    string consumer_template = SourceDataTable.Rows[0][0].ToString();
+                    char[] char_spearator = new char[2];
+                    char_spearator[0] = '|';
+                    char_spearator[1] = ';';
+                    string[] consumer_template_arr = consumer_template.Split(char_spearator);
+                    Element keyword = ContextPage.GetInstance().GetElement("Pay_BillPayment_InquiryFields_AP");
+                    string temp = "";
+                    string ui_value = "";
+                    string db_value = "";
+                    string[] date_fromat_arr;
+                    //string date_format;
+                    for (int i = 0; i < consumer_template_arr.Length; i++)
+                    {
+
+                        if (i % 2 == 0)
+                        {
+                            temp = keyword.Locator.Replace("{x}", Convert.ToString(i));
+                            ui_value = selhelper.ReturnKeywordValue(temp);
+                            ui_value = ui_value.Replace(" ", string.Empty);
+                        }
+                        if (i % 2 != 0)
+                        {
+                            consumer_template_arr[i] = consumer_template_arr[i].Replace("<FS_01:", string.Empty);
+                            date_fromat_arr = consumer_template_arr[i].Split('>');
+                            consumer_template_arr[i] = date_fromat_arr[0];
+                            //if (consumer_template_arr[i - 1] == "Bill Status")
+                            //{
+                            //    consumer_template_arr[i] = "BILL_STATUS_ID";
+                            //}
+                            
+                            string query = "SELECT * FROM (SELECT BI." + consumer_template_arr[i] + " FROM BPS_BILL_INFO BI WHERE BI.CREATED_ON >= trunc(sysdate) AND BI.CONSUMER_NO = '" + context.GetConsumer_No() + "' AND TO_CHAR(BI.BILLING_MONTH,'MM/YYYY') = '" + context.GetBilling_Month() + "'order by BI.BILL_INFO_ID desc) WHERE ROWNUM = 1";
+                            
+                            //if (query.Contains("COMPANY_NAME"))
+                            //{
+                            //    query = "SELECT CO.COMPANY_NAME FROM BPS_COMPANY CO WHERE CO.COMPANY_CODE = '" + context.GetCompany_Code() + "'";
+                            //}
+
+                            //if (query.Contains("ATTRIBUTE"))
+                            //{
+                            //    query = query.Replace("ATTRIBUTE", "ATTRIBUTE_");
+                            //}
+                            SourceDataTable = null;
+                            SourceDataTable = dlink.GetDataTable(query, "QAT_BPS");
+                            db_value = SourceDataTable.Rows[0][0].ToString();
+                            //if (consumer_template_arr[i] == "BILL_STATUS_ID")
+                            //{
+                            //    if (db_value == "1")
+                            //    {
+                            //        db_value = "UNPAID";
+                            //    }
+                            //    else if (db_value == "2")
+                            //    {
+                            //        db_value = "PAID";
+                            //    }
+                            //    else if (db_value == "3")
+                            //    {
+                            //        db_value = "You cannot pay this bill because the grace period after due date has passed";
+                            //    }
+                            //}
+                            //if(query.Contains("SELECT LP.BILLING_MONTH"))
+                            //{
+                            //    DateTime dt = Convert.ToDateTime(db_value);
+                            //    db_value = dt.ToString("MMM-yyyy");
+                            //}
+                            //if (query.Contains("CONSUMER_NAME"))
+                            //{
+                            //    ui_value = ui_value.Replace(" ", string.Empty);
+                            //    db_value = db_value.Replace(" ", string.Empty);
+                            //}
+                            if (date_fromat_arr[1] != "")
+                            {
+                                date_fromat_arr[1] = date_fromat_arr[1].Replace("^", string.Empty);
+                                DateTime dt = Convert.ToDateTime(db_value);
+                                db_value = dt.ToString(date_fromat_arr[1]);
+                            }
+                            db_value = db_value.Replace(" ", string.Empty);
+                            if (ui_value.Trim() != db_value.Trim())
+                            {
+                                throw new Exception(string.Format("The UI value is {0} and the databse value is {1}", ui_value, db_value));
+                            }
+                        }
+                    }
+                }
             }
             catch (Exception exception)
             {
@@ -5366,10 +5733,96 @@ namespace HBLAutomationWeb.Core
                 throw new AssertFailedException(exception.Message + line_no);
             }
         }
+        [Given(@"verify the result of two queries ""(.*)"" on Schema ""(.*)"" with ""(.*)"" on Schema ""(.*)"" through database")]
+        [When(@"verify the result of two queries ""(.*)"" on Schema ""(.*)"" with ""(.*)"" on Schema ""(.*)"" through database")]
+        [Then(@"verify the result of two queries ""(.*)"" on Schema ""(.*)"" with ""(.*)"" on Schema ""(.*)"" through database")]
+        public void ThenVerifyTheResultOfTwoQueriesOnSchemaWithOnSchemaThroughDatabase(string query1, string schema1, string query2, string schema2)
+        {
+
+            DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
+            DataAccessComponent.DataAccessLink dlink2 = new DataAccessComponent.DataAccessLink();
+            //DataTable SourceDataTable2;
+            if (query1.Contains("{customer_name}"))
+            {
+                query1 = query1.Replace("{customer_name}", context.GetUsername());
+            }
+            if (query2.Contains("{customer_name}"))
+            {
+                query2 = query2.Replace("{customer_name}", context.GetUsername());
+            }
+            if (query1.Contains("{customer_cnic}"))
+            {
+                query1 = query1.Replace("{customer_cnic}", context.GetCustomerCNIC());
+            }
+            if (query2.Contains("{customer_cnic}"))
+            {
+                query2 = query2.Replace("{customer_cnic}", context.GetCustomerCNIC());
+            }
+            if (query1.Contains("{TRANSACTION_ID}"))
+            {
+                query1 = query1.Replace("{TRANSACTION_ID}", context.GetTransaction_Id());
+            }
+            if (query2.Contains("{TRANSACTION_ID}"))
+            {
+                query2 = query2.Replace("{TRANSACTION_ID}", context.GetTransaction_Id());
+            }
+            if (query1.Contains("{account_number}"))
+            {
+                query1 = query1.Replace("{account_number}", context.GetBeneAccountNo());
+            }
+            if (query2.Contains("{account_number}"))
+            {
+                query2 = query2.Replace("{account_number}", context.GetBeneAccountNo());
+            }
+            if (query1.Contains("{mobile_number}"))
+            {
+                query1 = query1.Replace("{mobile_number}", context.Get_Mobile_No());
+            }
+            if (query2.Contains("{mobile_number}"))
+            {
+                query2 = query2.Replace("{mobile_number}", context.Get_Mobile_No());
+            }
+            if (query1.Contains("{company_name}"))
+            {
+                query1 = query1.Replace("{company_name}", context.GetBillCompany());
+            }
+            if (query2.Contains("{company_name}"))
+            {
+                query2 = query2.Replace("{company_name}", context.GetBillCompany());
+            }
+            if (query1.Contains("TRAN_ID"))
+            {
+                query1 = query1 + context.GetTransaction_Id() + "'";
+            }
+            if (query2.Contains("TRAN_ID"))
+            {
+                query2 = query2 + context.GetTransaction_Id() + "'";
+            }
+            try
+            {
+                dlink = new DataAccessComponent.DataAccessLink();
+                DataTable SourceDataTable = dlink.GetDataTable(query1, schema1);
+                string message = SourceDataTable.Rows[0][0].ToString();
+
+                dlink2 = new DataAccessComponent.DataAccessLink();
+                DataTable SourceDataTable2 = dlink.GetDataTable(query2, schema2);
+                string message2 = SourceDataTable.Rows[0][0].ToString();
+
+                Assert.AreEqual(message, message2);
+
+            }
+            catch (Exception exception)
+            {
+                SeleniumHelper.TakeScreenshot();
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
+            }
+        }
+
         [Given(@"verify the result of two queries ""(.*)"" on ""(.*)""  through database on Schema ""(.*)""")]
         [When(@"verify the result of two queries ""(.*)"" on ""(.*)""  through database on Schema ""(.*)""")]
         [Then(@"verify the result of two queries ""(.*)"" on ""(.*)""  through database on Schema ""(.*)""")]
-        public void ThenVerifyTheResultOfTwoQueriesOnThroughDatabaseOnSchema(string query2, string query1, string schema)
+        public void ThenVerifyTheResultOfTwoQueriesOnThroughDatabaseOnSchema(string query1, string query2, string schema)
         {
             DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
             DataAccessComponent.DataAccessLink dlink2 = new DataAccessComponent.DataAccessLink();
@@ -5390,6 +5843,22 @@ namespace HBLAutomationWeb.Core
             {
                 query2 = query2.Replace("{customer_cnic}", context.GetCustomerCNIC());
             }
+            if (query1.Contains("{TRANSACTION_ID}"))
+            {
+                query1 = query1.Replace("{TRANSACTION_ID}", context.GetTransaction_Id());
+            }
+            if (query2.Contains("{TRANSACTION_ID}"))
+            {
+                query2 = query2.Replace("{TRANSACTION_ID}", context.GetTransaction_Id());
+            }
+            if (query1.Contains("{account_number}"))
+            {
+                query1 = query1.Replace("{account_number}", context.GetBeneAccountNo());
+            }
+            if (query2.Contains("{account_number}"))
+            {
+                query2 = query2.Replace("{account_number}", context.GetBeneAccountNo());
+            }
             try
             {
                 dlink = new DataAccessComponent.DataAccessLink();
@@ -5402,6 +5871,81 @@ namespace HBLAutomationWeb.Core
 
                 Assert.AreEqual(message, message2);
 
+            }
+            catch (Exception exception)
+            {
+                SeleniumHelper.TakeScreenshot();
+                string line_no = SeleniumHelper.Get_Error_LineNo_exception(exception);
+                throw new AssertFailedException(exception.Message + line_no);
+            }
+        }
+        [Given(@"I set value in context from Keyword ""(.*)"" as ""(.*)""")]
+        [When(@"I set value in context from Keyword ""(.*)"" as ""(.*)""")]
+        [Then(@"I set value in context from Keyword ""(.*)"" as ""(.*)""")]
+        public void WhenISetValueInContextFromKeywordAs(string Keyword, string attribute)
+        {
+            SeleniumHelper selhelper = new SeleniumHelper();
+            selhelper.checkPageIsReady();
+            Element keyword = ContextPage.GetInstance().GetElement(Keyword);
+            string keyword_value = "";
+
+            if (Keyword.Equals("BeneManage_Edit_Title") || Keyword.Equals("BeneManage_Edit_To_Bank"))
+            {
+                string temp = keyword.Locator.Replace("{x}", context.GetBeneAccountNo());
+                keyword.Locator = temp;
+            }
+            if (Keyword.Equals("BeneManage_Add_ToAcc"))
+            {
+                keyword_value = selhelper.ReturnTextBoxValue(keyword.Locator);
+            }
+            else
+            {
+                keyword_value = selhelper.ReturnKeywordValue(keyword.Locator);
+            }
+
+            if (attribute == "Bene_Name")
+            {
+                context.SetBeneName(keyword_value);
+            }
+            if (attribute == "bene_bank")
+            {
+                context.SetToBank(keyword_value);
+            }
+        }
+
+        [When(@"I fill out bill payment details of Agent portal with additional values ""(.*)""")]
+        public void WhenIFillOutBillPaymentDetailsOfAgentPortalWithAdditionalValues(string additional_values)
+        {
+            try
+            {
+                string[] add_values_array = additional_values.Split(',');
+
+                SeleniumHelper selhelper = new SeleniumHelper();
+                selhelper.checkPageIsReady();
+                Element keyword = ContextPage.GetInstance().GetElement("Pay_BillPayment_AddField_AP");
+
+                string query = "Select K.FIELD_LABEL, K.CONTROL_TYPE_ID from BPS_ADDITIONAL_INPUT_FIELD K WHERE K.COMPANY_CODE = '" + context.GetCompany_Code() + "'";
+                DataAccessComponent.DataAccessLink dlink = new DataAccessComponent.DataAccessLink();
+                DataTable SourceDataTable = dlink.GetDataTable(query, "QAT_BPS");
+
+                for (int i = 0; i < SourceDataTable.Rows.Count; i++)
+                {
+                    string additional_field = SourceDataTable.Rows[i][0].ToString();
+                    string field_type = SourceDataTable.Rows[i][1].ToString();
+
+                    string temp = keyword.Locator.Replace("{x}", additional_field);
+
+                    if (field_type == "1")
+                    {
+                        temp = temp.Replace("{y}", "input");
+                        selhelper.SetTextBoxValue(add_values_array[i].Trim(), temp);
+                    }
+                    else if(field_type == "2")
+                    {
+                        temp = temp.Replace("{y}", "select");
+                        selhelper.combobox(add_values_array[i].Trim(), temp);
+                    }
+                }
             }
             catch (Exception exception)
             {

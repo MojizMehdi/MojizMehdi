@@ -653,6 +653,8 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 30
  testRunner.And("I count Number of Account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 31
+ testRunner.And("I save Account Balances", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 32
  testRunner.And(string.Format("I set value in context from data \"{0}\" as \"Bene_AccountNo\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 33
@@ -730,6 +732,8 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.And(string.Format("verify through \"{0}\" on \"Pay_Transaction_PayBill_BeneSearchConsumerNo\"", account_Number_Value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 70
  testRunner.And("I am clicking on \"Login_Dashboard\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 71
+ testRunner.And("I verify Account Balance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 72
  testRunner.And("I am clicking on \"Services_Link\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 73
@@ -9751,3 +9755,4 @@ this.AsAUserIWantToVerifySendMoneyByUsingBeneficiarySchedule("To verify the Send
 }
 #pragma warning restore
 #endregion
+

@@ -57,6 +57,10 @@ Scenario Outline: As a user i want to Verify Send Money by adding Beneficiary
 	And verify through database on "<to_bank_query>" on Schema "<db_val>" on "SendMoney_TranToBank"
 	And verify through database on "<bene_name_query>" on Schema "<db_val>" on "SendMoney_TranBeneName"
 	And verify through database on "<purpose_query>" on Schema "<db_val>" on "SendMoney_TranPurpose"
+	And verify the message "<From_Account_Value>" through database on "<branch_code_query>" on Schema "<db_val>"
+	And verify the message "<Account_Number_Value>" through database on "<to_branch_query>" on Schema "<db_val>"
+	And verify the result of two queries "<bene_id_query>" on Schema "<db_val>" with "<bene_id_tran_query>" on Schema "<db_val>" through database
+	And verify the result of two queries "<bene_bank_tran_query>" on Schema "<db_val>" with "<bene_bank_name_query>" on Schema "<db_val>" through database
 	And I am performing on "SendMoney_CloseBtn"
 	And I am clicking on "SendMoney_Rating"
 	And I am clicking on "SendMoney_RatingOkBtn"
@@ -78,7 +82,7 @@ Scenario Outline: As a user i want to Verify Send Money by adding Beneficiary
 	And I am clicking on "Services_Transaction_Close_btn"
 	@source:Data/SendMoney.xlsx
 	Examples: 
-	|Case|Expected_Result|From_Account_Value|Bank_Value|Account_Number_Value|Amount_Value|PurposeOfPayment_Value|Bene_Nick|Bene_Mobile_No|Bene_Email|OTP_Value|Tran_Pass_Value|Success_Message|tran_type_query|tran_amount_query|from_account_query|to_account_query|to_bank_query|bene_name_query|purpose_query|db_val|bene_count_query|
+	|Case|Expected_Result|From_Account_Value|Bank_Value|Account_Number_Value|Amount_Value|PurposeOfPayment_Value|Bene_Nick|Bene_Mobile_No|Bene_Email|OTP_Value|Tran_Pass_Value|Success_Message|tran_type_query|tran_amount_query|from_account_query|to_account_query|to_bank_query|bene_name_query|purpose_query|db_val|bene_count_query|branch_code_query|to_branch_query|bene_id_tran_query|bene_id_query|bene_bank_name_query|bene_bank_tran_query|
 
 @SendMoney @SendMoney_AddNew_Schedule
 Scenario Outline: As a user i want to Verify Send Money by adding Beneficiary schedule
@@ -97,8 +101,8 @@ Scenario Outline: As a user i want to Verify Send Money by adding Beneficiary sc
 	And I select "<From_Account_Value>" on "SendMoney_FromAccount"
 	And I select "<Bank_Value>" on "SendMoney_Bank"
 	And I have given "<Account_Number_Value>" on "SendMoney_ToAccount"
-	#And I am performing on "{Keyword}"
 	And I have given "<Amount_Value>" on "SendMoney_Amount"
+	And I am performing on "SendMoney_VerifyButton"
 	And I select "<PurposeOfPayment_Value>" on "SendMoney_PurposeOfPayment"
 	And I have given "<Bene_Nick>" on "SendMoney_BeneNick"
 	And I have given "<Bene_Mobile_No>" on "SendMoney_BeneMobileNo"

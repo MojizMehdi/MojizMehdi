@@ -241,6 +241,26 @@
     <Compile Include="Pages\HashPassword.cs" />
     <Compile Include="Pages\SeleniumHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Feature\AgentPortal\BillPayment.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BillPayment.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Feature\AgentPortal\CashDeposit.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CashDeposit.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Feature\AgentPortal\CashWithdrawl.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CashWithdrawl.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Feature\AgentPortal\Login_AP.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Login_AP.feature</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Feature\InternetBanking\AccountsStatement.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -291,7 +311,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Registration.feature</DependentUpon>
     </Compile>
-    <Compile Include="Resources\Feature\InternetBanking\SendMoney.feature.cs">
+    <Compile Include="Resources\Feature\InternetBanking\SendMoney1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SendMoney.feature</DependentUpon>
@@ -310,6 +330,26 @@
     <None Include="license" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\Feature\AgentPortal\BillPayment.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>BillPayment.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\Feature\AgentPortal\CashDeposit.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CashDeposit.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\Feature\AgentPortal\CashWithdrawl.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CashWithdrawl.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\Feature\AgentPortal\Data\AP_Login.xlsx" />
+    <None Include="Resources\Feature\AgentPortal\Data\BillPayment.xlsx" />
+    <None Include="Resources\Feature\AgentPortal\Data\CashDeposit.xlsx" />
+    <None Include="Resources\Feature\AgentPortal\Data\CashWithdrawl.xlsx" />
+    <None Include="Resources\Feature\AgentPortal\Login_AP.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Login_AP.feature.cs</LastGenOutput>
     </None>
     <None Include="Resources\Feature\InternetBanking\AccountsStatement.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -406,7 +446,7 @@
     </None>
     <None Include="Resources\Feature\InternetBanking\SendMoney.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>SendMoney.feature.cs</LastGenOutput>
+      <LastGenOutput>SendMoney1.feature.cs</LastGenOutput>
     </None>
     <None Include="Resources\Feature\InternetBanking\TransactionalActivity.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -422,9 +462,7 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\Feature\AgentPortal\Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

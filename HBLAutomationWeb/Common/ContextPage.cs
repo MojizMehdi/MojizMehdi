@@ -103,8 +103,49 @@ namespace HBLAutomationWeb.Common
         string date_string = "";
         string schedule_tran_id = "";
         string bene_count = "";
+        string bene_id = "";
         List<string> iteration_dates_schedule;
+        bool is_delete = false;
+        bool is_otp_false_AP = false;
+        string acc_bal_ap = "";
+        string acc_bal_ap_db = "";
+        string commission_ap = "";
+        string category_code = "";
+        string tran_amount = "";
+        string category_value = "";
 
+        public void Set_CategoryValue(string category_value)
+        {
+            this.category_value = category_value;
+        }
+        public string Get_CategoryValue()
+        {
+            return category_value;
+        }
+        public void Set_TranAmount(string tran_amount)
+        {
+            this.tran_amount = tran_amount;
+        }
+        public string Get_TranAmount()
+        {
+            return tran_amount;
+        }
+        public void Set_Category_Code(string category_code)
+        {
+            this.category_code = category_code;
+        }
+        public string Get_Category_Code()
+        {
+            return this.category_code;
+        }
+        public void Set_IS_OTP_False(bool is_otp_false_AP)
+        {
+            this.is_otp_false_AP = is_otp_false_AP;
+        }
+        public bool Get_IS_OTP_False()
+        {
+            return this.is_otp_false_AP;
+        }
         public void Set_Bene_Count(string bene_count)
         {
             this.bene_count = bene_count;
@@ -113,7 +154,30 @@ namespace HBLAutomationWeb.Common
         {
             return bene_count;
         }
-
+        public void Set_AccBalance_AP_DB(string acc_bal_ap_db)
+        {
+            this.acc_bal_ap_db = acc_bal_ap_db;
+        }
+        public string Get_AccBalance_AP_DB()
+        {
+            return acc_bal_ap_db;
+        }
+        public void Set_AccBalance_AP(string acc_bal_ap)
+        {
+            this.acc_bal_ap = acc_bal_ap;
+        }
+        public string Get_AccBalance_AP()
+        {
+            return acc_bal_ap;
+        }
+        public void Set_Acc_Commission_AP(string commission_ap)
+        {
+            this.commission_ap = commission_ap;
+        }
+        public string Get_Acc_Commission_AP()
+        {
+            return commission_ap;
+        }
         public void Set_ScheduleID(string schedule_tran_id)
         {
             this.schedule_tran_id = schedule_tran_id;
@@ -257,6 +321,14 @@ namespace HBLAutomationWeb.Common
         public bool Get_Change_LoginID_Check()
         {
             return this.change_loginID_check;
+        }
+        public void Set_IS_DELETED(bool is_delete)
+        {
+            this.is_delete = is_delete;
+        }
+        public bool Get_IS_DELETED()
+        {
+            return this.is_delete;
         }
         public void SetIsPaidReq(string is_paid_req)
         {
