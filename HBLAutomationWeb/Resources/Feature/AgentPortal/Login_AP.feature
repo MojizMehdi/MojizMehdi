@@ -13,13 +13,13 @@ Scenario Outline: As a user i want to Verify login for Agent Portal Web
 	And I am performing on "Login_AP_ID_Btn"
 	And I have given "<Login_Password>" on "Login_APPassword"
 	When I am performing on "Login_APLogin_Btn"
-	And I wait 3000
+	And I wait 3000 
 	And I have given "" on "Login_APOTP_field"
 	And verify through "<otp_text>" on "Login_APOTP_Txt"
 	And I am performing on "Login_APOTP_Btn"
 	Then verify through database on "<agent_name_query>" on Schema "QAT_BB_SYSTEM" on "Login_APName_Success_Text"
 	And verify through database on "<balance_inquiry_query>" on Schema "QAT_BB_SYSTEM" on "Pay_Balance_AP"
-
+	
 
 	@source:Data/AP_Login.xlsx
 	Examples: 
