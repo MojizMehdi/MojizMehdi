@@ -38,6 +38,7 @@ Scenario Outline: As a user i want to Verify Send Money by adding Beneficiary
 	And I select "<From_Account_Value>" on "SendMoney_FromAccount"
 	And I select "<Bank_Value>" on "SendMoney_Bank"
 	And I have given "<Account_Number_Value>" on "SendMoney_ToAccount"
+	And I am performing on "SendMoney_VerifyButton"
 	And I have given "<Amount_Value>" on "SendMoney_Amount"
 	And I select "<PurposeOfPayment_Value>" on "SendMoney_PurposeOfPayment"
 	And I have given "<Bene_Nick>" on "SendMoney_BeneNick"
@@ -45,7 +46,7 @@ Scenario Outline: As a user i want to Verify Send Money by adding Beneficiary
 	And I have given "<Bene_Email>" on "SendMoney_BeneEmail"
 	And I am clicking on "SendMoney_NextBtn"
 	And I have given "<OTP_Value>" on "Login_OTP_field"
-	And I am performing on "Login_OTP_Verify_Button"
+	And I am performing on "SendMoney_OTPNextBtn"
 	And I have given "<Tran_Pass_Value>" on "Pay_Transaction_PayBill_TransactionPassword"
 	And I am clicking on "SendMoney_SendBtn"
 	And I save Transaction Info
@@ -122,7 +123,7 @@ Scenario Outline: As a user i want to Verify Send Money by adding Beneficiary sc
 	And I scroll to element "SendMoney_NextBtn"
 	And I am clicking on "SendMoney_NextBtn"
 	And I have given "<OTP_Value>" on "Login_OTP_field"
-	And I am performing on "Login_OTP_Verify_Button"
+	And I am performing on "SendMoney_OTPNextBtn"
 	And I have given "<Tran_Pass_Value>" on "Pay_Transaction_PayBill_TransactionPassword"
 	And I am clicking on "SendMoney_ScheduleBtn"
 	And I save Transaction Info

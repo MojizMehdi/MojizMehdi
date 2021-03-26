@@ -697,7 +697,8 @@ namespace HBLAutomationWeb.Core
                     context.SetUsername(value);
 
                     DataAccessComponent.DataAccessLink dLink = new DataAccessComponent.DataAccessLink();
-                    DataTable SourceDataTable = dLink.GetDataTable("SELECT CNIC FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME = '" + value.ToUpper() + "'", "DIGITAL_CHANNEL_SEC");
+                    string query = "SELECT CNIC FROM DC_CUSTOMER_INFO K WHERE K.CUSTOMER_NAME = '" + value.ToUpper() + "'";
+                    DataTable SourceDataTable = dLink.GetDataTable(query, "DIGITAL_CHANNEL_SEC");
                     string message = SourceDataTable.Rows[0][0].ToString();
                     context.SetCustomerCNIC(message);
                 }
@@ -2130,6 +2131,12 @@ namespace HBLAutomationWeb.Core
                             {
                                 Element keyword2 = ContextPage.GetInstance().GetElement("Pay_Acc_Balance");
                                 string temp2 = keyword2.Locator.Replace("{j}", "[" + temp_counter.ToString() + "]");
+
+                                //if (selhelper.ReturnKeywordValue(temp2) == null)
+                                //{
+                                //    Element keyword_temp = ContextPage.GetInstance().GetElement("Pay_Balance_UnlockIcon");
+                                //    selhelper.links(keyword_temp.Locator);
+                                //}
 
                                 acc_bal = selhelper.ReturnKeywordValue(temp2);
                             }

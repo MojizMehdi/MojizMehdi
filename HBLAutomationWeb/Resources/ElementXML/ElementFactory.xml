@@ -200,7 +200,8 @@
     <Element keyword="Pay_Acc_No_CC" locator ="//div[@class='cards account-wrap liabilities ng-scope']//div//div[@class='acc-num ng-binding']" />
     <Element keyword="Pay_Acc_No" locator="//div[@ng-repeat='accountList in CustomerAccountInfo.customerAccountDetails.customerGeneralAccounts']{i}//div[@class='acc-num ng-binding']" />
     <Element keyword="Pay_Acc_No_Investment" locator="//div[@class='account-wrap']//h5[text()='Investment']" />
-    <Element keyword="Pay_Acc_Balance" locator="//div[@ng-repeat='accountList in CustomerAccountInfo.customerAccountDetails.customerGeneralAccounts']{j}//span[@class='balance ng-binding']" />
+    <Element keyword="Pay_Acc_Balance" locator="//div[@ng-repeat='accountList in CustomerAccountInfo.customerAccountDetails.customerGeneralAccounts']{j}//span[@class='ng-binding hideBalanceDiv show']" />
+    <Element keyword="Pay_Balance_UnlockIcon" locator ="//span[@class='hideBalanceBtn lockIcon']" />
     <Element keyword="Pay_Bene_checkbox" locator ="//div[@ng-form='NickForm']//span[@class='custom-control-description']" />
     <Element keyword="Pay_Bene_text" locator ="//input[@name='Nick']" />
     <Element keyword="Pay_Bene_button" locator ="//button[@class='btn btn']" />
@@ -272,7 +273,7 @@
   </Module>
   <Module name ="SendMoney">
     <Element keyword="SendMoney_Link" locator="//*[contains(text(),'Send Money ')]"/>
-    <Element keyword="SendMoney_AddNewBtn" locator="//a[contains(text(),'Add New') and @class='btn only-icon pull-right mr-3 mt-1']"/>
+    <Element keyword="SendMoney_AddNewBtn" locator="//a[contains(text(),'Add New') and @class='btn only-icon positive pull-right mr-3 mt-1']"/>
     <Element keyword="SendMoney_FromAccount" locator="//select[@name='fromAccount']"/>
     <Element keyword="SendMoney_Bank" locator="//select[@name='bank']"/>
     <Element keyword="SendMoney_ToAccount" locator="//input[@name='account']"/>
@@ -283,6 +284,7 @@
     <Element keyword="SendMoney_BeneMobileNo" locator="//input[@name='PayeeMobileNumber']"/>
     <Element keyword="SendMoney_BeneEmail" locator="//input[@name='PayeeEmail']"/>
     <Element keyword="SendMoney_NextBtn" locator="//button[text()='Next']"/>
+    <Element keyword="SendMoney_OTPNextBtn" locator="//div[@ng-form ='otp']//button[text()='Next']"/>
     <Element keyword="SendMoney_SendBtn" locator="//button[text()='Send']"/>
     <Element keyword="SendMoney_TranAmount" locator="//h2[@class='ng-binding' and text()='Transaction Amount']//following-sibling::p"/>
     <Element keyword="SendMoney_TranFromAcc" locator="//h2[@class='ng-binding' and text()='From Account']//following-sibling::p"/>
@@ -293,7 +295,7 @@
     <Element keyword="SendMoney_TranPurpose" locator="//h2[@class='ng-binding' and text()='Purpose']//following-sibling::p"/>
     <Element keyword="SendMoney_TranFrequency" locator="//h2[@class='ng-binding' and text()='Frequency']//following-sibling::p"/>
     <Element keyword="SendMoney_TranType" locator="//h2[@class='ng-binding' and text()='Transaction Type']//following-sibling::p"/>
-    <Element keyword="SendMoney_TranSuccessMessage" locator="//div[@class='congrats-div']//p"/>
+    <Element keyword="SendMoney_TranSuccessMessage" locator="//div[@class='custom-pop modal fade showEnglish toggleTncDiv ui-draggable show']//div[@class='display-table ng-binding']"/>
     <Element keyword="SendMoney_ScheduleCheck" locator="//span[@class='custom-control-description']"/>
     <Element keyword="SendMoney_Frequency" locator="//select[@name='frequency']"/>
     <Element keyword="SendMoney_Schedule_FromDate" locator="//input[@name='FirstExecutionDate']"/>
